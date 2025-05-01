@@ -104,6 +104,9 @@ function make_slides(f) {
           }
         });
 
+        // Automatically place cursor in first input
+        $(".alloc").first().focus();
+
       } else {
         exp.go();
       }
