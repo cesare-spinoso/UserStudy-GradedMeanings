@@ -198,7 +198,7 @@ function init() {
       stim.interpretations);
   });
   // Get the quality check, only one for now
-  var quality_checks = all_quality_checks[0];
+  var quality_checks = quality_checks[0];
   // Shuffle the interpretations for the quality check
   quality_checks.interpretations = _.shuffle(
     quality_checks.interpretations);
