@@ -11,11 +11,6 @@ function make_slides(f) {
   slides.example1 = slide({
     name: "example1",
     start: function () {
-      setTimeout(() => {
-        $("#psuedo_true_option1").prop("disabled", false);
-        $("#psuedo_true_option1").prop("checked", true);
-        $("#psuedo_true_option1").prop("disabled", true);
-      }, 10);
     },
     button: function () {
       exp.go();
@@ -25,11 +20,6 @@ function make_slides(f) {
   slides.example2 = slide({
     name: "example2",
     start: function () {
-      setTimeout(() => {
-        $("#psuedo_false_option2").prop("disabled", false);
-        $("#psuedo_false_option2").prop("checked", true);
-        $("#psuedo_false_option2").prop("disabled", true);
-      }, 10);
     },
     button: function () {
       exp.go();
@@ -38,7 +28,7 @@ function make_slides(f) {
 
   slides.startExp = slide({
     name: "startExp",
-    start: function () {},
+    start: function () { },
     button: function () {
       exp.go();
     }
