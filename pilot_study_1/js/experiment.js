@@ -190,7 +190,7 @@ function init() {
   exp.catch_trials = [];
   // Get the stimuli from the URL parameter
   var stimuli = all_stims;
-  var list_index = parseInt(get_url_param("list", 0));
+  var list_index = parseInt(get_url_param("condition", 0));
   exp.list_index = list_index;
   exp.stimuli = stimuli[list_index];
   exp.stimuli = _.shuffle(exp.stimuli);
