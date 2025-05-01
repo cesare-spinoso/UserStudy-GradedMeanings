@@ -75,22 +75,21 @@ function make_slides(f) {
       if (this.index < exp.stimuli.length) {
         const stim = exp.stimuli[this.index];
 
+        // Set the scenario and question
         const scenario = stim.scenario;
         // Add <strong>Scenario:</strong> to the beginning of the scenario
         const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
         // Make the utterance green so it stands out
         const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
-
         // Bold the question
         const question = `<strong>${stim.question}</strong>`;
-
         $("#trial-scenario").html(highlighted);
         $("#trial-question").html(question);
-        $("#interp1").text(stim.interpretation1);
-        $("#interp2").text(stim.interpretation2);
-        $("#interp3").text(stim.interpretation3);
-        $("#interp4").text(stim.interpretation4);
-        $("#interp5").text(stim.interpretation5);
+
+        // Set the interpretations
+        for (let i = 0; i < stim.interpretations.length; i++) {
+          $(`#interp${i + 1}`).text(stim.interpretations[i]);
+        }
 
         $(".alloc").val("");
         $("#point-total").text("0");
@@ -146,22 +145,21 @@ function make_slides(f) {
     log_responses: function (rationale, inputs) {
       const stim = exp.stimuli[this.index];
 
-      exp.data_trials.push({
+      let trial_data = {
         scenario: stim.scenario,
         question: stim.question,
-        interpretation1: stim.interpretation1,
-        interpretation2: stim.interpretation2,
-        interpretation3: stim.interpretation3,
-        interpretation4: stim.interpretation4,
-        interpretation5: stim.interpretation5,
-        allocation1: inputs[0],
-        allocation2: inputs[1],
-        allocation3: inputs[2],
-        allocation4: inputs[3],
-        allocation5: inputs[4],
         rationale: rationale,
         time_in_minutes: (Date.now() - exp.startT) / 60000
-      });
+      };
+
+      // Add interpretations and allocations with a loop
+      for (let i = 1; i <= stim.interpretations.length; i++) {
+        trial_data[`interpretation${i}`] = stim.interpretations[i - 1];
+        trial_data[`allocation${i}`] = inputs[i - 1];
+      }
+
+      exp.data_trials.push(trial_data);
+
     }
   });
 
@@ -193,6 +191,11 @@ function init() {
   var list_index = parseInt(get_url_param("list", 0));
   exp.stimuli = stimuli[list_index];
   exp.stimuli = _.shuffle(exp.stimuli);
+  // Shuffle each interpretation list within the stimuli
+  exp.stimuli.forEach(stim => {
+    stim.interpretations = _.shuffle(
+      stim.interpretations);
+  });
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
   exp.data_trials = [];
   exp.slides = make_slides(exp);
