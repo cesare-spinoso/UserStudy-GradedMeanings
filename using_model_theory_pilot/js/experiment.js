@@ -79,13 +79,13 @@ function make_slides(f) {
         // Add <strong>Scenario:</strong> to the beginning of the scenario
         const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
         // Make the utterance green so it stands out
-        const highlighted = scenario.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
+        const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
 
         // Bold the question
         const question = `<strong>${stim.question}</strong>`;
 
         $("#trial-scenario").html(highlighted);
-        $("#trial-question").html(stim.question);
+        $("#trial-question").html(question);
         $("#interp1").text(stim.interpretation1);
         $("#interp2").text(stim.interpretation2);
         $("#interp3").text(stim.interpretation3);
