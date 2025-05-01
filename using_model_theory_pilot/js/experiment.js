@@ -61,13 +61,13 @@ function make_slides(f) {
         const stim = exp.stimuli[this.index];
 
         // Fill in scenario and interpretations
-        $("#trial-scenario").text(stim.scenario);
-        $("#trial-question").text(stim.question);
-        $("#interp1").text(stim.interpretation1);
-        $("#interp2").text(stim.interpretation2);
-        $("#interp3").text(stim.interpretation3);
-        $("#interp4").text(stim.interpretation4);
-        $("#interp5").text(stim.interpretation5);
+        $("#scenario").text(stim.scenario);
+        $("#question").text(stim.question);
+        $("#interpretation1").text(stim.interpretation1);
+        $("#interpretation2").text(stim.interpretation2);
+        $("#interpretation3").text(stim.interpretation3);
+        $("#interpretation4").text(stim.interpretation4);
+        $("#interpretation5").text(stim.interpretation5);
 
         // Reset inputs
         $(".alloc").val("");
@@ -209,7 +209,7 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
   var stimuli = all_stims;
-  var list_index = parseInt(get_url_param("list", 0));
+  var list_index = parseInt(get_url_param("list", 0)); // TODO: Change this with a URL parameter
   exp.stimuli = stimuli[list_index]; // Load stimulus sublist
   exp.stimuli = _.shuffle(exp.stimuli); // Shuffle stimuli
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
