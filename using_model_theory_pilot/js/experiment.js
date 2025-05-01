@@ -74,11 +74,10 @@ function make_slides(f) {
     display_stimulus: function () {
       if (this.index < exp.stimuli.length) {
         const stim = exp.stimuli[this.index];
+        const scenario = stim.scenario;
+        const highlighted = scenario.replace(/\\"(.*?)\\"/, '<span class="highlight-utterance">"$1"</span>');
 
-        console.log("Logging stimulus:");
-        console.log(stim);
-
-        $("#trial-scenario").text(stim.scenario);
+        $("#trial-scenario").text(highlighted);
         $("#trial-question").text(stim.question);
         $("#interp1").text(stim.interpretation1);
         $("#interp2").text(stim.interpretation2);
