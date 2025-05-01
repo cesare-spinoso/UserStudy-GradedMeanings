@@ -191,6 +191,7 @@ function init() {
   // Get the stimuli from the URL parameter
   var stimuli = all_stims;
   var list_index = parseInt(get_url_param("list", 0));
+  exp.list_index = list_index;
   exp.stimuli = stimuli[list_index];
   exp.stimuli = _.shuffle(exp.stimuli);
   // Shuffle each interpretation list within the stimuli
