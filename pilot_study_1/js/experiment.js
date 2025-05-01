@@ -198,13 +198,14 @@ function init() {
       stim.interpretations);
   });
   // Get the quality check, only one for now
-  var quality_checks = quality_checks[0];
+  var quality_checks = quality_checks;
+  var quality_check = quality_checks[0];
   // Shuffle the interpretations for the quality check
-  quality_checks.interpretations = _.shuffle(
-    quality_checks.interpretations);
+  quality_check.interpretations = _.shuffle(
+    quality_check.interpretations);
   // Add the quality check in the middle of the stimuli
   exp.stimuli.splice(
-    Math.floor(exp.stimuli.length / 2), 0, quality_checks);
+    Math.floor(exp.stimuli.length / 2), 0, quality_check);
   // Structure experiment and make slides
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
   exp.data_trials = [];
