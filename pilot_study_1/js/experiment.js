@@ -146,6 +146,7 @@ function make_slides(f) {
       const stim = exp.stimuli[this.index];
 
       let trial_data = {
+        id: stim.id,
         scenario: stim.scenario,
         question: stim.question,
         rationale: rationale,
