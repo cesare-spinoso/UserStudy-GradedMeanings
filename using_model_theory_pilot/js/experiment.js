@@ -75,7 +75,7 @@ function make_slides(f) {
       if (this.index < exp.stimuli.length) {
         const stim = exp.stimuli[this.index];
         const scenario = stim.scenario;
-        const highlighted = scenario.replace(/\\"(.*?)\\"/, '<span class="highlight-utterance">"$1"</span>');
+        const highlighted = scenario.replace(/\"(.*?)\"/, '\"<span class="highlight-utterance">$1</span>\"')
 
         $("#trial-scenario").text(highlighted);
         $("#trial-question").text(stim.question);
