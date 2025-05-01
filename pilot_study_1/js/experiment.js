@@ -147,6 +147,7 @@ function make_slides(f) {
 
       let trial_data = {
         id: stim.id,
+        condition_index: exp.condition_index,
         scenario: stim.scenario,
         question: stim.question,
         rationale: rationale,
@@ -190,9 +191,9 @@ function init() {
   exp.catch_trials = [];
   // Get the stimuli from the URL parameter
   var stimuli = all_stims;
-  var list_index = parseInt(get_url_param("condition", 0));
-  exp.list_index = list_index;
-  exp.stimuli = stimuli[list_index];
+  var condition_index = parseInt(get_url_param("condition", 0));
+  exp.condition_index = condition_index;
+  exp.stimuli = stimuli[condition_index];
   exp.stimuli = _.shuffle(exp.stimuli);
   // Shuffle each interpretation list within the stimuli
   exp.stimuli.forEach(stim => {
