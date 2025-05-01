@@ -3,46 +3,46 @@ function make_slides(f) {
 
   slides.i0 = slide({
     name: "i0",
-    start: function() {
+    start: function () {
       exp.startT = Date.now();
     }
   });
 
   slides.example1 = slide({
     name: "example1",
-    start: function() {
+    start: function () {
       setTimeout(() => {
         $("#psuedo_true_option1").prop("disabled", false);
         $("#psuedo_true_option1").prop("checked", true);
         $("#psuedo_true_option1").prop("disabled", true);
       }, 10);
     },
-    button: function() {
+    button: function () {
       exp.go();
     }
   });
-  
+
 
   slides.example2 = slide({
     name: "example2",
-    start: function() {
+    start: function () {
       setTimeout(() => {
         $("#psuedo_false_option2").prop("disabled", false);
         $("#psuedo_false_option2").prop("checked", true);
         $("#psuedo_false_option2").prop("disabled", true);
       }, 10);
     },
-    button: function() {
+    button: function () {
       exp.go();
     }
   });
-  
+
 
   slides.startExp = slide({
     name: "startExp",
-    start: function() {
+    start: function () {
     },
-    button: function() {
+    button: function () {
       exp.go();
     }
   });
@@ -50,70 +50,146 @@ function make_slides(f) {
   slides.main = slide({
     name: "main",
     index: 0, // Track current stimulus index
-    
-    start: function() {
+
+    start: function () {
       $('.err').hide();
       this.display_stimulus();
     },
 
-    display_stimulus: function() {
+    display_stimulus: function () {
       if (this.index < exp.stimuli.length) {
-        // Display current stimulus
-        let currentStim = exp.stimuli[this.index];
-        $("#scenario").text(currentStim.scenario);
-        $("#question").text(currentStim.question);
-        $("#interpretation1").text(currentStim.interpretation1);
-        $("#interpretation2").text(currentStim.interpretation2);
-        $("#interpretation3").text(currentStim.interpretation3);
-        $("#interpretation4").text(currentStim.interpretation4);
-        $("#interpretation5").text(currentStim.interpretation5);
-        $("#rationale").val("").attr("placeholder", "Share your rationale: how did you decide on your answer?");
-        $("input[name='nli_judgment']").prop("checked", false); // Reset radio buttons
+        const stim = exp.stimuli[this.index];
+
+        // Fill in scenario and interpretations
+        $("#trial-scenario").text(stim.scenario);
+        $("#trial-question").text(stim.question);
+        $("#interp1").text(stim.interpretation1);
+        $("#interp2").text(stim.interpretation2);
+        $("#interp3").text(stim.interpretation3);
+        $("#interp4").text(stim.interpretation4);
+        $("#interp5").text(stim.interpretation5);
+
+        // Reset inputs
+        $(".alloc").val("");
+        $("#point-total").text("0");
+        $("#rationale").val("");
+        $(".err").hide();
+
+        // Live validation
+        $(".alloc").off("input").on("input", () => {
+          let total = 0;
+          let valid = true;
+          let errMsg = "";
+
+          $(".alloc").each(function () {
+            const val = $(this).val();
+            const num = Number(val);
+
+            if (val === "") return;
+            if (isNaN(num)) {
+              valid = false;
+              errMsg = "Please enter numbers only.";
+            } else if (num < 0 || num > 100) {
+              valid = false;
+              errMsg = "Each number must be between 0 and 100.";
+            } else {
+              total += num;
+            }
+          });
+
+          $("#point-total").text(total);
+
+          if (!valid) {
+            $(".err").text(errMsg).show();
+          } else if (total !== 100) {
+            $(".err").text("Total must equal 100.").show();
+          } else {
+            $(".err").hide();
+          }
+        });
+
       } else {
-        exp.go(); // Move to next slide if stimuli are exhausted
+        exp.go(); // Done with all stimuli
       }
     },
 
-    button: function() {
-      const rationale = $("#rationale").val();
-      const nli_judgment = $("input[name='nli_judgment']:checked").val();
-      $('.err').hide();
-      let errors = [];
-      
+    button: function () {
+      $(".err").hide();
+      const rationale = $("#rationale").val().trim();
+
+      // Validate rationale
       if (!rationale) {
-        errors.push("Please provide an explanation!");
+        $(".err").text("Please provide a rationale.").show();
+        return;
       }
-      if (!nli_judgment) {
-        errors.push("Please choose an option!");
+
+      // Validate allocations
+      let total = 0;
+      let inputs = [];
+      let valid = true;
+      let errMsg = "";
+
+      $(".alloc").each(function () {
+        const val = $(this).val();
+        const num = Number(val);
+
+        if (val === "") {
+          valid = false;
+          errMsg = "Please fill out all 5 boxes.";
+        } else if (isNaN(num)) {
+          valid = false;
+          errMsg = "Please enter numbers only.";
+        } else if (num < 0 || num > 100) {
+          valid = false;
+          errMsg = "Each number must be between 0 and 100.";
+        } else {
+          total += num;
+          inputs.push(num);
+        }
+      });
+
+      $("#point-total").text(total);
+
+      if (!valid) {
+        $(".err").text(errMsg).show();
+        return;
+      } else if (total !== 100) {
+        $(".err").text("Total must equal 100.").show();
+        return;
       }
-      
-      if (errors.length === 0) {
-        this.log_responses();
-        this.index++;
-        this.display_stimulus();
-      } else {
-        $('.err').html(errors.join('<br>'));
-        $('.err').show();
-      }
+
+      // If all validations pass
+      this.log_responses(rationale, inputs);
+      this.index++;
+      this.display_stimulus();
     },
 
-    log_responses: function() {
-      let currentStim = exp.stimuli[this.index];
+    log_responses: function (rationale, inputs) {
+      const stim = exp.stimuli[this.index];
+
       exp.data_trials.push({
-        "SentenceA": currentStim.SentenceA,
-        "SentenceB": currentStim.SentenceB,
-        "gold_label": currentStim.gold_label,
-        "pavlick_data_index": currentStim.pavlick_data_index,
-        "rationale": $("#rationale").val(),
-        "nli_judgment": $("input[name='nli_judgment']:checked").val(),
-        "time_in_minutes": (Date.now() - exp.startT) / 60000
+        scenario: stim.scenario,
+        question: stim.question,
+        interpretation1: stim.interpretation1,
+        interpretation2: stim.interpretation2,
+        interpretation3: stim.interpretation3,
+        interpretation4: stim.interpretation4,
+        interpretation5: stim.interpretation5,
+        allocation1: inputs[0],
+        allocation2: inputs[1],
+        allocation3: inputs[2],
+        allocation4: inputs[3],
+        allocation5: inputs[4],
+        rationale: rationale,
+        time_in_minutes: (Date.now() - exp.startT) / 60000
       });
     }
   });
 
+
   slides.add_info = slide({
     name: "add_info",
-    submit: function() {
+    submit: function () {
       exp.add_data = {
         comments: $("#comments").val() || "NA"
       };
@@ -140,6 +216,6 @@ function init() {
   exp.data_trials = [];
   exp.slides = make_slides(exp);
   $('.slide').hide();
-  $("#start_button").click(function() { exp.go(); });
+  $("#start_button").click(function () { exp.go(); });
   exp.go();
 }
