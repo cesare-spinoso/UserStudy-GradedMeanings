@@ -22,7 +22,6 @@ function make_slides(f) {
     }
   });
 
-
   slides.example2 = slide({
     name: "example2",
     start: function () {
@@ -37,19 +36,45 @@ function make_slides(f) {
     }
   });
 
-
   slides.startExp = slide({
     name: "startExp",
-    start: function () {
-    },
+    start: function () {},
     button: function () {
       exp.go();
     }
   });
 
+  function validateAllocations() {
+    let total = 0;
+    let valid = true;
+    let inputs = [];
+    let errMsg = "";
+
+    $(".alloc").each(function () {
+      const val = $(this).val();
+      const num = Number(val);
+
+      if (val === "") {
+        valid = false;
+        errMsg = "Please fill out all 5 boxes.";
+      } else if (isNaN(num)) {
+        valid = false;
+        errMsg = "Please enter numbers only.";
+      } else if (num < 0 || num > 100) {
+        valid = false;
+        errMsg = "Each number must be between 0 and 100.";
+      } else {
+        total += num;
+        inputs.push(num);
+      }
+    });
+
+    return { total, valid, inputs, errMsg };
+  }
+
   slides.main = slide({
     name: "main",
-    index: 0, // Track current stimulus index
+    index: 0,
 
     start: function () {
       $('.err').hide();
@@ -60,9 +85,9 @@ function make_slides(f) {
       if (this.index < exp.stimuli.length) {
         const stim = exp.stimuli[this.index];
 
-        // Fill in scenario and interpretations
         console.log("Logging stimulus:");
         console.log(stim);
+
         $("#trial-scenario").text(stim.scenario);
         $("#trial-question").text(stim.question);
         $("#interp1").text(stim.interpretation1);
@@ -71,39 +96,18 @@ function make_slides(f) {
         $("#interp4").text(stim.interpretation4);
         $("#interp5").text(stim.interpretation5);
 
-        // Reset inputs
         $(".alloc").val("");
         $("#point-total").text("0");
         $("#rationale").val("");
         $(".err").hide();
 
-        // Live validation
         $(".alloc").off("input").on("input", () => {
-          let total = 0;
-          let valid = true;
-          let errMsg = "";
+          const result = validateAllocations();
+          $("#point-total").text(result.total);
 
-          $(".alloc").each(function () {
-            const val = $(this).val();
-            const num = Number(val);
-
-            if (val === "") return;
-            if (isNaN(num)) {
-              valid = false;
-              errMsg = "Please enter numbers only.";
-            } else if (num < 0 || num > 100) {
-              valid = false;
-              errMsg = "Each number must be between 0 and 100.";
-            } else {
-              total += num;
-            }
-          });
-
-          $("#point-total").text(total);
-
-          if (!valid) {
-            $(".err").text(errMsg).show();
-          } else if (total !== 100) {
+          if (!result.valid) {
+            $(".err").text(result.errMsg).show();
+          } else if (result.total !== 100) {
             $(".err").text("Total must equal 100.").show();
           } else {
             $(".err").hide();
@@ -111,7 +115,7 @@ function make_slides(f) {
         });
 
       } else {
-        exp.go(); // Done with all stimuli
+        exp.go();
       }
     },
 
@@ -119,49 +123,23 @@ function make_slides(f) {
       $(".err").hide();
       const rationale = $("#rationale").val().trim();
 
-      // Validate rationale
       if (!rationale) {
         $(".err").text("Please provide a rationale.").show();
         return;
       }
 
-      // Validate allocations
-      let total = 0;
-      let inputs = [];
-      let valid = true;
-      let errMsg = "";
+      const result = validateAllocations();
+      $("#point-total").text(result.total);
 
-      $(".alloc").each(function () {
-        const val = $(this).val();
-        const num = Number(val);
-
-        if (val === "") {
-          valid = false;
-          errMsg = "Please fill out all 5 boxes.";
-        } else if (isNaN(num)) {
-          valid = false;
-          errMsg = "Please enter numbers only.";
-        } else if (num < 0 || num > 100) {
-          valid = false;
-          errMsg = "Each number must be between 0 and 100.";
-        } else {
-          total += num;
-          inputs.push(num);
-        }
-      });
-
-      $("#point-total").text(total);
-
-      if (!valid) {
-        $(".err").text(errMsg).show();
+      if (!result.valid) {
+        $(".err").text(result.errMsg).show();
         return;
-      } else if (total !== 100) {
+      } else if (result.total !== 100) {
         $(".err").text("Total must equal 100.").show();
         return;
       }
 
-      // If all validations pass
-      this.log_responses(rationale, inputs);
+      this.log_responses(rationale, result.inputs);
       this.index++;
       this.display_stimulus();
     },
@@ -188,7 +166,6 @@ function make_slides(f) {
     }
   });
 
-
   slides.add_info = slide({
     name: "add_info",
     submit: function () {
@@ -211,9 +188,9 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
   var stimuli = all_stims;
-  var list_index = parseInt(get_url_param("list", 0)); // TODO: Change this with a URL parameter
-  exp.stimuli = stimuli[list_index]; // Load stimulus sublist
-  exp.stimuli = _.shuffle(exp.stimuli); // Shuffle stimuli
+  var list_index = parseInt(get_url_param("list", 0));
+  exp.stimuli = stimuli[list_index];
+  exp.stimuli = _.shuffle(exp.stimuli);
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
   exp.data_trials = [];
   exp.slides = make_slides(exp);
