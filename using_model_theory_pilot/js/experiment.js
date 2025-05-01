@@ -61,13 +61,15 @@ function make_slides(f) {
         const stim = exp.stimuli[this.index];
 
         // Fill in scenario and interpretations
-        $("#scenario").text(stim.scenario);
-        $("#question").text(stim.question);
-        $("#interpretation1").text(stim.interpretation1);
-        $("#interpretation2").text(stim.interpretation2);
-        $("#interpretation3").text(stim.interpretation3);
-        $("#interpretation4").text(stim.interpretation4);
-        $("#interpretation5").text(stim.interpretation5);
+        console.log("Logging stimulus:");
+        console.log(stim);
+        $("#trial-scenario").text(stim.scenario);
+        $("#trial-question").text(stim.question);
+        $("#interp1").text(stim.interpretation1);
+        $("#interp2").text(stim.interpretation2);
+        $("#interp3").text(stim.interpretation3);
+        $("#interp4").text(stim.interpretation4);
+        $("#interp5").text(stim.interpretation5);
 
         // Reset inputs
         $(".alloc").val("");
