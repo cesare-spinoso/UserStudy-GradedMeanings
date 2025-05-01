@@ -187,6 +187,7 @@ function make_slides(f) {
 function init() {
   exp.trials = [];
   exp.catch_trials = [];
+  // Get the stimuli from the URL parameter
   var stimuli = all_stims;
   var list_index = parseInt(get_url_param("list", 0));
   exp.stimuli = stimuli[list_index];
@@ -196,7 +197,15 @@ function init() {
     stim.interpretations = _.shuffle(
       stim.interpretations);
   });
-  // TODO: Add a quality trial
+  // Get the quality check, only one for now
+  var quality_checks = all_quality_checks[0];
+  // Shuffle the interpretations for the quality check
+  quality_checks.interpretations = _.shuffle(
+    quality_checks.interpretations);
+  // Add the quality check in the middle of the stimuli
+  exp.stimuli.splice(
+    Math.floor(exp.stimuli.length / 2), 0, quality_checks);
+  // Structure experiment and make slides
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
   exp.data_trials = [];
   exp.slides = make_slides(exp);
