@@ -196,6 +196,7 @@ function init() {
     stim.interpretations = _.shuffle(
       stim.interpretations);
   });
+  // TODO: Add a quality trial
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
   exp.data_trials = [];
   exp.slides = make_slides(exp);
