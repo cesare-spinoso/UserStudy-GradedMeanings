@@ -197,9 +197,8 @@
                         <div class="form-group" style="margin-bottom: 30px;">
                             <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
                             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                <textarea class="form-control" id="psuedo_rationale2" rows="3" readonly>
-        Sarah is crying and just found out that her partner is ending their relationship. Her statement expresses emotional shock and pain. This is consistent with being devastated or very sad, but not with being happy, indifferent, or ecstatic.
-                </textarea>
+                                <textarea class="form-control" id="psuedo_rationale2" rows="3"
+                                    readonly>Sarah is crying and just found out that her partner is ending their relationship. Her statement expresses emotional shock and pain. This is consistent with being devastated or very sad, but not with being happy, indifferent, or ecstatic.</textarea>
                             </div>
                         </div>
 
@@ -248,81 +247,59 @@
                     </div>
 
                     <div class="panel-body" style="padding: 20px;">
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <span style="color: #318500; margin-bottom: 8px;">
-                                Sentence A:
-                            </span>
-                            <span style="color: #318500; margin-bottom: 8px;" id="SentenceA">
-                                {{SentenceA}}
-                            </span>
-                        </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <span style="color: #d65600; margin-bottom: 8px;">
-                                Sentence B:
-                            </span>
-                            <span style="color: #d65600; margin-bottom: 8px;" id="SentenceB">
-                                {{SentenceB}}
-                            </span>
+                            <p><strong>Scenario:</strong></p>
+                            <p id="trial-scenario" style="color: #318500;">
+                                {{scenario}}
+                            </p>
+                            <p><strong>Question:</strong></p>
+                            <p id="trial-question" style="color: #d65600;">
+                                {{question}}
+                            </p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <h4 style="color: #000000; margin-bottom: 15px;">
-                                If Sentence A is true, then is Sentence B <i>most likely true</i>,
-                                <i>most likely false</i>, or <i>equally likely to be true or false</i>?
-                            </h4>
+                            <p>Please distribute 100 points across the following interpretations.</p>
+                            <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
+                                <li>1. <span id="interp1">{{interpretation1}}</span> <input type="number" class="alloc"
+                                        name="i1" min="0" max="100" style="width: 60px;"></li>
+                                <li>2. <span id="interp2">{{interpretation2}}</span> <input type="number" class="alloc"
+                                        name="i2" min="0" max="100" style="width: 60px;"></li>
+                                <li>3. <span id="interp3">{{interpretation3}}</span> <input type="number" class="alloc"
+                                        name="i3" min="0" max="100" style="width: 60px;"></li>
+                                <li>4. <span id="interp4">{{interpretation4}}</span> <input type="number" class="alloc"
+                                        name="i4" min="0" max="100" style="width: 60px;"></li>
+                                <li>5. <span id="interp5">{{interpretation5}}</span> <input type="number" class="alloc"
+                                        name="i5" min="0" max="100" style="width: 60px;"></li>
+                            </ul>
+                            <p><strong>Total:</strong> <span id="point-total">0</span> / 100</p>
                         </div>
 
-                        <div class="form-group" style="margin-bottom: 20px; text-align: left; padding-left: 20px;">
-                            <table style="width: 100%; text-align: center; margin: 0 auto;">
-                                <tr>
-                                    <td><input class="form-check-input" type="radio" name="nli_judgment" value=0
-                                            id="true_option"></td>
-                                    <td><input class="form-check-input" type="radio" name="nli_judgment" value=1
-                                            id="equal_option"></td>
-                                    <td><input class="form-check-input" type="radio" name="nli_judgment" value=2
-                                            id="false_option"></td>
-                                </tr>
-                                <tr>
-                                    <td><label class="form-check-label" for="true_option">Most Likely True</label></td>
-                                    <td><label class="form-check-label" for="equal_option">Equally Likely</label></td>
-                                    <td><label class="form-check-label" for="false_option">Most Likely False</label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><small>A strong belief that B is true given A</small></td>
-                                    <td><small>Uncertainty about B given A</small></td>
-                                    <td><small>A strong belief that B is false given A</small></td>
-                                </tr>
-                            </table>
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <h4 style="color: #800080; margin-bottom: 15px;">Your Rationale:</h4>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                <textarea class="form-control" id="rationale" rows="3"
+                                    placeholder="Explain your rationale: why did you assign the points as you did?"
+                                    required></textarea>
+                            </div>
                         </div>
-                    </div>
 
-
-                    <div class="form-group" style="margin-bottom: 30px;">
-                        <h4 style="color: #800080; margin-bottom: 15px;">Your Rationale:</h4>
-                        <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
-                            <textarea class="form-control" id="rationale" rows="2"
-                                placeholder="Explain your rationale: how did you arrive at the answer you chose?"
-                                required></textarea>
-                        </div>
-                    </div>
-
-                    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-                        <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()" style="background-color: #800080; 
-                                       border-color: #800080; 
-                                       padding: 15px 40px; 
-                                       font-size: 18px;">
-                            Continue
-                        </button>
-                        <div class="err" style="color: #dc3545; margin-top: 10px;">
-                            Please fill in all required fields before continuing.
+                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()" style="background-color: #800080;
+                             border-color: #800080;
+                             padding: 15px 40px;
+                             font-size: 18px;">
+                                Continue
+                            </button>
+                            <div class="err" style="color: #dc3545; margin-top: 10px;">
+                                Please make sure your total is 100 and the rationale is filled out.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    </section>
+        </section>
     </div>
 
 

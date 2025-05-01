@@ -60,8 +60,13 @@ function make_slides(f) {
       if (this.index < exp.stimuli.length) {
         // Display current stimulus
         let currentStim = exp.stimuli[this.index];
-        $("#SentenceA").text(currentStim.SentenceA);
-        $("#SentenceB").text(currentStim.SentenceB);
+        $("#scenario").text(currentStim.scenario);
+        $("#question").text(currentStim.question);
+        $("#interpretation1").text(currentStim.interpretation1);
+        $("#interpretation2").text(currentStim.interpretation2);
+        $("#interpretation3").text(currentStim.interpretation3);
+        $("#interpretation4").text(currentStim.interpretation4);
+        $("#interpretation5").text(currentStim.interpretation5);
         $("#rationale").val("").attr("placeholder", "Share your rationale: how did you decide on your answer?");
         $("input[name='nli_judgment']").prop("checked", false); // Reset radio buttons
       } else {
