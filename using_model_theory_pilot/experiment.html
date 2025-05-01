@@ -3,7 +3,7 @@
 
 <head>
     <meta charset='UTF-8'>
-    <title>Natural Language Inference Judgments</title>
+    <title>Utterance Interpretation</title>
 
     <!-- external general utilities -->
     <script src="shared/js/jquery-1.11.1.min.js"></script>
@@ -64,11 +64,15 @@
                         </div>
                         <div class="panel-body">
                             <p>
-                                We're interested in the rationale used by native English speakers to reach certain
-                                inferences. In this task, you will be presented with a sentence or phrase and asked to
-                                judge whether a second sentence or phrase is likely to be true or false given the first.
-                                You will also be asked to provide a brief explanation of your judgment: how did you
-                                arrive at your conclusion one way or another?
+                                <strong>Study description:</strong> We're interested in how utterances (what people say)
+                                are interpreted in conversations between two or more people.
+                                In this study, you will be shown scenario in which a character says something. You will
+                                then be asked to evaluate the meaning of that utterance
+                                by distributing 100 points across five possible interpretations of the utterance. You
+                                will also be able to justify your point distribution, though
+                                this is completely optional. You will be presented with 2 example scenarios to help you
+                                get familiar with the task. You will then be asked to annotate
+                                10 scenarios. We expect the annotation to take between 10 to 15 minutes.
                             </p>
                             <div style="text-align: center; margin-top: 30px;">
                                 <button id="start_button" class="btn btn-lg btn-primary"
@@ -114,27 +118,35 @@
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Distribute 100 points across the interpretations below. (This is just an example and the
-                                values are fixed.)</p>
+                            <p>Distribute 100 points across the interpretations below.
+                                <br>
+                                <strong>Note 1:</strong>The values here a fixed. In an actual scenario to annotate, you
+                                would have to fill these boxes out with numbers between 0 and 100 based on how likely
+                                each interpretation is.
+                                <br>
+                                <strong>Note 2:</strong>There is not one correct answer. You may have assigned the
+                                points differently which is fine. This example is simply meant to help you get familiar
+                                with the format of the task.
+                            </p>
                             <ul style="list-style-type: none; padding-left: 0;">
-                                <li>1. The weather is good. <input type="number"  value="25" readonly
+                                <li>1. The weather is good. <input type="number" value="25" readonly
                                         style="width: 60px;" disabled></li>
-                                <li>2. The weather is terrible. <input type="number"  value="0" readonly
+                                <li>2. The weather is terrible. <input type="number" value="0" readonly
                                         style="width: 60px;" disabled></li>
-                                <li>3. The weather is amazing. <input type="number"  value="75" readonly
+                                <li>3. The weather is amazing. <input type="number" value="75" readonly
                                         style="width: 60px;" disabled></li>
-                                <li>4. The weather is ok. <input type="number"  value="0" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>5. The weather is bad. <input type="number"  value="0" readonly
-                                        style="width: 60px;" disabled></li>
+                                <li>4. The weather is ok. <input type="number" value="0" readonly style="width: 60px;"
+                                        disabled></li>
+                                <li>5. The weather is bad. <input type="number" value="0" readonly style="width: 60px;"
+                                        disabled></li>
                             </ul>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
+                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation (Optional):</h4>
                             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
                                 <textarea class="form-control" rows="3" readonly>
-                                    Bruce describes the day as “perfect,” which strongly implies that the weather is amazing. A smaller number of points is also given to “good,” as it's still a reasonable interpretation. The remaining options don't fit the context and receive no points.
+                                    Bruce has described the day as perfect which is an indirect way of talking about the weather. Clearly, it can'ts be terrible or bad since the description of the weather is positive. It's also probably not just ok since perfect is a fairly strong adjective. So it has to be either good or amazing. Perfect is closer to amazing so I've put most of the points there.
                 </textarea>
                             </div>
                         </div>
@@ -178,27 +190,34 @@
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Distribute 100 points across the interpretations below. (This is just an example and the
-                                values are fixed.)</p>
+                            <p>Distribute 100 points across the interpretations below.</p>
+                            <br>
+                            <strong>Note 1:</strong>The values here a fixed. In an actual scenario to annotate, you
+                            would have to fill these boxes out with numbers between 0 and 100 based on how likely
+                            each interpretation is.
+                            <br>
+                            <strong>Note 2:</strong>There is not one correct answer. You may have assigned the
+                            points differently which is fine. This example is simply meant to help you get familiar
+                            with the format of the task.
                             <ul style="list-style-type: none; padding-left: 0;">
-                                <li>1. Sarah is indifferent. <input type="number"  value="0" readonly
+                                <li>1. Sarah is indifferent. <input type="number" value="0" readonly
                                         style="width: 60px;" disabled></li>
-                                <li>2. Sarah is ecstatic. <input type="number"  value="0" readonly
+                                <li>2. Sarah is ecstatic. <input type="number" value="0" readonly style="width: 60px;"
+                                        disabled></li>
+                                <li>3. Sarah is sad. <input type="number" value="50" readonly style="width: 60px;"
+                                        disabled></li>
+                                <li>4. Sarah is devastated. <input type="number" value="50" readonly
                                         style="width: 60px;" disabled></li>
-                                <li>3. Sarah is sad. <input type="number"  value="15" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>4. Sarah is devastated. <input type="number"  value="85" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>5. Sarah is happy. <input type="number"  value="0" readonly
-                                        style="width: 60px;" disabled></li>
+                                <li>5. Sarah is happy. <input type="number" value="0" readonly style="width: 60px;"
+                                        disabled></li>
                             </ul>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
+                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation (Optional):</h4>
                             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
                                 <textarea class="form-control" id="psuedo_rationale2" rows="3"
-                                    readonly>Sarah is crying and just found out that her partner is ending their relationship. Her statement expresses emotional shock and pain. This is consistent with being devastated or very sad, but not with being happy, indifferent, or ecstatic.</textarea>
+                                    readonly>Sarah just got dumped and she's clearly upset about it so she's either sad or devastated. Both interpretations are possible but I'm a bit uncertain which is more likely. Maybe if Sarah was devastated her reaction and what she said would have been even more intense? That's why I'm putting it 50-50.</textarea>
                             </div>
                         </div>
 
@@ -318,9 +337,42 @@
                             <strong>Additional Information</strong>
                         </div>
                         <div class="panel-body">
-                            <!-- <p class="text-muted">
-                                Answering these questions is optional, but will help us understand your answers better.
-                            </p> -->
+
+                            <p class="info">
+                                Answering these questions is optional, but will help us understand your answers and
+                                improve this study for future participants.
+                            </p>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">Did you understand the task and follow
+                                    the instructions correctly?</h4>
+                                <select id="understood" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">Do you think the payment for this task
+                                    was fair?</h4>
+                                <select id="payment_fairness" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="not_fair">Not fair</option>
+                                    <option value="fair">Fair</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">How enjoyable was this annotation task?
+                                </h4>
+                                <select id="enjoyment" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="worse_than_average">Worse than average</option>
+                                    <option value="average">Same as average</option>
+                                    <option value="better_than_average">Better than average</option>
+                                </select>
+                            </div>
 
                             <div class="form-group" style="margin-bottom: 30px;">
                                 <h4 style="color: #800080; margin-bottom: 15px;">(Optional) Any Additional Comments
@@ -343,6 +395,7 @@
             </div>
         </section>
     </div>
+
 
 </body>
 

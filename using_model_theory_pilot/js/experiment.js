@@ -160,6 +160,9 @@ function make_slides(f) {
     name: "add_info",
     submit: function () {
       exp.add_data = {
+        understood: $("input[name='understood']:checked").val() || "NA",
+        payment_fairness: $("input[name='payment_fairness']:checked").val() || "NA",
+        enjoyment: $("input[name='enjoyment']:checked").val() || "NA",
         comments: $("#comments").val() || "NA"
       };
       exp.data = {
