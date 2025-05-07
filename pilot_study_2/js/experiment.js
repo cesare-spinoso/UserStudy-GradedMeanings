@@ -193,7 +193,16 @@ function init() {
   var stimuli = all_stims;
   var condition_index = parseInt(get_url_param("condition", 0));
   exp.condition_index = condition_index;
-  exp.stimuli = stimuli[condition_index];
+  if (condition_index === 0) {
+    // If condition index is 0
+    exp.stimuli = stimuli_deceits;
+  } else if (condition_index === 1) {
+    // If condition index is 1
+    exp.stimuli = stimuli_irony;
+  } else if (condition_index === 2) {
+    // If condition index is 2
+    exp.stimuli = stimuli_maxims;
+  }
   exp.stimuli = _.shuffle(exp.stimuli);
   // Shuffle each interpretation list within the stimuli
   exp.stimuli.forEach(stim => {
@@ -205,9 +214,10 @@ function init() {
   // Shuffle the interpretations for the quality check
   quality_check.interpretations = _.shuffle(
     quality_check.interpretations);
-  // Add the quality check in the middle of the stimuli
-  exp.stimuli.splice(
-    Math.floor(exp.stimuli.length / 2), 0, quality_check);
+  // Add the quality check to the stimuli
+  exp.stimuli.unshift(quality_check);
+  // Reshuffle the stimuli
+  exp.stimuli = _.shuffle(exp.stimuli);
   // Structure experiment and make slides
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
   exp.data_trials = [];
