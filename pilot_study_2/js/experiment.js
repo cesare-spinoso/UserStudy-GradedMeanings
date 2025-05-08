@@ -202,21 +202,15 @@ function init() {
     // If condition index is 2
     exp.stimuli = stimuli_maxims;
   }
-  exp.stimuli = _.shuffle(exp.stimuli);
+  // Get the quality check, only one for now
+  var quality_check = quality_checks;
+  // Concat together
+  exp.stimuli = exp.stimuli.concat(quality_check);
   // Shuffle each interpretation list within the stimuli
   exp.stimuli.forEach(stim => {
     stim.interpretations = _.shuffle(
       stim.interpretations);
   });
-  // Get the quality check, only one for now
-  var quality_check = quality_checks[0];
-  // Shuffle the interpretations for the quality check
-  quality_check.interpretations = _.shuffle(
-    quality_check.interpretations);
-  // Add the quality check to the stimuli
-  exp.stimuli.unshift(quality_check);
-  // Reshuffle the stimuli
-  exp.stimuli = _.shuffle(exp.stimuli);
   // Structure experiment and make slides
   exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
   exp.data_trials = [];
