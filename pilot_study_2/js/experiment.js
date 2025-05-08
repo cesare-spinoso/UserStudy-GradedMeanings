@@ -46,7 +46,7 @@ function make_slides(f) {
 
       if (val === "") {
         valid = false;
-        errMsg = "Please fill out all 5 boxes.";
+        errMsg = "Please fill out all boxes.";
       } else if (isNaN(num)) {
         valid = false;
         errMsg = "Please enter numbers only.";
@@ -190,7 +190,6 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
   // Get the stimuli from the URL parameter
-  var stimuli = all_stims;
   var condition_index = parseInt(get_url_param("condition", 0));
   exp.condition_index = condition_index;
   if (condition_index === 0) {
