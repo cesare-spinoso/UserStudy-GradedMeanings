@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Utterance Interpretation</title>
+
+    <!-- external general utilities -->
+    <script src="shared/js/jquery-1.11.1.min.js"></script>
+    <script src="shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="shared/js/underscore-min.js"></script>
+
+    <!-- experiment logic -->
+    <script src="shared/js/exp-V2.js"></script>
+    <script src="shared/js/stream-V2.js"></script>
+
+    <!-- utilities to submit data to proliferate -->
+    <script src="https://proliferate.alps.science/static/js/proliferate.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- general utilities -->
+    <script src="shared/js/browserCheck.js"></script>
+    <script src="shared/js/utils.js"></script>
+    <link href="shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="shared/css/cocolab-style.css" rel="stylesheet" type="text/css">
+
+    <!-- experiment file -->
+    <script src="js/stimuli_deceit.js"></script>
+    <script src="js/stimuli_irony.js"></script>
+    <script src="js/stimuli_maxims.js"></script>
+    <script src="js/quality_checks.js"></script>
+
+    <!-- NOTE: Always put the data before the experiment.js file -->
+    <script src="js/experiment.js"></script>
+
+    <style>
+        body {
+            font-family: Verdana, Geneva, sans-serif;
+            color: #333333;
+            font-size: 14pt;
+        }
+
+        .panel-body {
+            text-align: left;
+        }
+
+        .err {
+            display: none;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <noscript>This task requires JavaScript.</noscript>
+
+    <!-- initial slide -->
+    <div class="slide" id="i0">
+        <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+        <section class="container" id="SET1"
+            style="padding: 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:14pt;">
+            <div class="row col-xs-12 col-md-12">
+                <div class="col-xs-12 col-md-12">
+                    <div class="panel panel-primary" style="border-color: #800080">
+                        <div class="panel-heading"
+                            style="background-image: none;background-color:#800080;border-color: #800080">
+                            <strong>Utterance Interpretation</strong>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                <strong>Study description:</strong> We're interested in how <strong>utterances</strong>
+                                (what people say)
+                                are interpreted in conversations between two or more people.
+                                In this study, you will be shown scenarios in which a character says something. You will
+                                then <strong>evaluate the meaning</strong> of that utterance
+                                by <strong>distributing</strong> 100 points across four possible meaning
+                                interpretations. You
+                                will also <strong>justify</strong> your point distribution. You will be presented with 2
+                                example scenarios to help you
+                                get familiar with the task. You will then be asked to annotate
+                                <strong>7</strong> scenarios. We expect the annotation to take between 10 to 20 minutes.
+                            </p>
+                            <p>
+                                Thanks for your participation!
+                            </p>
+                            <div style="text-align: center; margin-top: 30px;">
+                                <button id="start_button" class="btn btn-lg btn-primary"
+                                    style="background-color: #800080; border-color: #800080;">
+                                    Start Experiment
+                                </button>
+                            </div>
+                            <hr>
+                            <p class="legal" style="font-size: 0.8em; color: #666;">
+                                <strong>LEGAL INFORMATION</strong>:<br><br>
+                                I consent to take part in the study. I agree to the anonymous use of the data in
+                                research presentations, publications, and online interactive sites to illustrate the
+                                findings. I agree that the collected data could be used in related follow-up studies. I
+                                agree to the use of the data in a not-for-profit anonymous corpus for research purposes
+                                which others will have access to.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- task example slide -->
+    <div class="slide" id="example1">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row">
+                <!-- Response Collection Form -->
+                <div class="panel panel-primary"
+                    style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
+                    <div class="panel-heading"
+                        style="background-image: none;background-color:#800080;border-color: #800080">
+                        <strong>Example</strong>
+                    </div>
+                    <div class="panel-body" style="padding: 20px;">
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <p><strong>Scenario:</strong> Bruce and Vanessa, two friends from work, are taking a walk in
+                                the park. The weather is beautiful, and they are enjoying the fresh air. Bruce turns to
+                                Vanessa and says, "<span style="color: #318500;">Isn't it so ugly out?</span>"</p>
+                            <p style="margin-top: 20px;"><strong>What did Bruce want to convey?</strong></p>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <p>Distribute 100 points across the interpretations below based on how likely you find each interpretation.
+                            </p>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>1. He thinks the weather outside is amazing. <input type="number" value="" readonly
+                                        style="width: 60px;" disabled></li>
+                                <li>2. He thinks it's going to rain soon.<input type="number" value="" readonly
+                                        style="width: 60px;" disabled></li>
+                                <li>3. He thinks the weather outside is terrible.<input type="number" value="" readonly
+                                        style="width: 60px;" disabled></li>
+                                <li>4. He wants to take Vanessa out to dinner.<input type="number" value="" readonly
+                                        style="width: 60px;" disabled></li>
+                            </ul>
+                        </div>
+
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li><strong>Note 1:</strong> The values here have been omitted. In an actual scenario to
+                                annotate,
+                                you would have to fill these boxes out with numbers between 0 and 100 based on how
+                                likely you find each interpretation.</li>
+                            <li><strong>Note 2:</strong> There is not one correct answer - you should assign
+                                points based on <em>your own</em> interpretation and explain your rationale in the
+                                box below.</li>
+                        </ul>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                <textarea class="form-control" rows="3"
+                                    readonly>The reason why I assigned ... points to ... interpretation is because ...</textarea>
+                                </textarea>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                            <button id="start_button" class="btn btn-lg btn-primary continueButton"
+                                onclick="_s.button()" style="background-color: #800080;
+                             border-color: #800080;
+                             padding: 15px 40px;
+                             font-size: 18px;">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <!-- task example slide -->
+    <div class="slide" id="example2">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row">
+                <!-- Response Collection Form -->
+                <div class="panel panel-primary"
+                    style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
+                    <div class="panel-heading"
+                        style="background-image: none;background-color:#800080;border-color: #800080">
+                        <strong>Example</strong>
+                    </div>
+
+                    <div class="panel-body" style="padding: 20px;">
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <p><strong>Scenario:</strong>John and his girlfriend Sarah are watching a movie together.
+                                It's Sarah's favorite movie and she has been dying to see it again with him.
+                                After it ends, Sarah asks John if he liked it. John says "<span style="color: #318500;">I think the narrator had a
+                                really nice voice.</span>"</p>
+                            <p style="margin-top: 20px;"><strong>Why had John responded like this?</strong></p>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <p>Distribute 100 points across the interpretations below based on how likely you find each interpretation.
+                            </p>
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>1. John liked the voice narration in the movie.<input type="number" value="" readonly
+                                        style="width: 60px;" disabled></li>
+                                <li>2. John did not like the movie.<input type="number" value="" readonly style="width: 60px;"
+                                        disabled></li>
+                                <li>3. John does not want to be truthful and upset Sarah.<input type="number" value="" readonly style="width: 60px;"
+                                        disabled></li>
+                                <li>4. John wants to go to bed.<input type="number" value="" readonly
+                                        style="width: 60px;" disabled></li>
+                            </ul>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 30px;">
+
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li><strong>Note 1:</strong> The values here have been omitted. In an actual scenario to
+                                    annotate,
+                                    you would have to fill these boxes out with numbers between 0 and 100 based on how
+                                    likely you find each interpretation.</li>
+                                <li><strong>Note 2:</strong> There is not one correct answer - you should assign
+                                    points based on <em>your own</em> interpretation and explain your rationale in the
+                                    box below.</li>
+                            </ul>
+
+                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                <textarea class="form-control" id="psuedo_rationale2" rows="3"
+                                    readonly>I assigned ... many points to interpretation ... because ... and this many points to this other interpretation because ...</textarea>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                            <button id="start_button" class="btn btn-lg btn-primary continueButton"
+                                onclick="_s.button()" style="background-color: #800080;
+                       border-color: #800080;
+                       padding: 15px 40px;
+                       font-size: 18px;">
+                                I understand the task!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- main instructions slide -->
+    <div class="slide" id="startExp">
+        <br>
+        <br>
+        <p id="instruct-text" class="left">
+            Great! Now we can start the real experiment. You will be presented with 7 scenarios, and
+            asked to provide your meaning interpretations and rationales.
+            At the end, you'll also be able to provide any extra feedback about the the task as a whole (but only if
+            you'd
+            like to!).
+        </p>
+        <div class="center">
+            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()">Begin</button>
+        </div>
+    </div>
+
+    <!-- main task slide -->
+    <div class="slide" id="main">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row">
+                <!-- Response Collection Form -->
+                <div class="panel panel-primary"
+                    style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
+                    <div class="panel-heading"
+                        style="background-image: none;background-color:#800080;border-color: #800080">
+                        <strong>Submit your Response</strong>
+                    </div>
+
+                    <div class="panel-body" style="padding: 20px;">
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <p id="trial-scenario">{{scenario}}</p>
+                            </p>
+                            <p id="trial-question">{{question}}</p>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <p>Please distribute 100 points across the following interpretations based on how likely you find each interpretation.</p>
+                            <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
+                                <li>1. <span id="interp1">{{interpretation1}}</span> <input type="number" class="alloc"
+                                        name="i1" min="0" max="100" style="width: 60px;"></li>
+                                <li>2. <span id="interp2">{{interpretation2}}</span> <input type="number" class="alloc"
+                                        name="i2" min="0" max="100" style="width: 60px;"></li>
+                                <li>3. <span id="interp3">{{interpretation3}}</span> <input type="number" class="alloc"
+                                        name="i3" min="0" max="100" style="width: 60px;"></li>
+                                <li>4. <span id="interp4">{{interpretation4}}</span> <input type="number" class="alloc"
+                                        name="i4" min="0" max="100" style="width: 60px;"></li>
+                            </ul>
+                            <p><strong>Total:</strong> <span id="point-total">0</span> / 100</p>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <h4 style="color: #800080; margin-bottom: 15px;">Your Rationale:</h4>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                <textarea class="form-control" id="rationale" rows="3"
+                                    placeholder="Explain your rationale: why did you assign the points as you did?"
+                                    required></textarea>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()" style="background-color: #800080;
+                             border-color: #800080;
+                             padding: 15px 40px;
+                             font-size: 18px;">
+                                Continue
+                            </button>
+                            <div class="err" style="color: #dc3545; margin-top: 10px;">
+                                Please make sure your total is 100 and the rationale is filled out.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+    <!-- additional information slide -->
+    <div class="slide" id="add_info">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-xs-12 col-md-12">
+                    <div class="panel panel-primary" style="border-color: #800080">
+                        <div class="panel-heading"
+                            style="background-image: none;background-color:#800080;border-color: #800080">
+                            <strong>Additional Information</strong>
+                        </div>
+                        <div class="panel-body">
+
+                            <p class="info">
+                                Answering these questions is optional, but will help us understand your answers and
+                                improve this study for future participants.
+                            </p>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">Did you understand the task and follow
+                                    the instructions correctly?</h4>
+                                <select id="understood" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">Do you think the payment for this task
+                                    was fair?</h4>
+                                <select id="payment_fairness" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="not_fair">Not fair</option>
+                                    <option value="fair">Fair</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">How enjoyable was this annotation task?
+                                </h4>
+                                <select id="enjoyment" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="worse_than_average">Worse than average</option>
+                                    <option value="average">Same as average</option>
+                                    <option value="better_than_average">Better than average</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">(Optional) Any Additional Comments
+                                    About the Task?</h4>
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                    <textarea class="form-control" id="comments" rows="3"
+                                        placeholder="(Optional) Please share your thoughts here..."></textarea>
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px;">
+                                <button onclick="_s.submit()" class="btn btn-lg btn-primary"
+                                    style="background-color: #800080; border-color: #800080;">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+
+</html>
