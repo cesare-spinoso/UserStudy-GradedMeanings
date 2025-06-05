@@ -27,58 +27,13 @@ function make_slides(f) {
   });
 
   slides.warmup1 = slide({
-  name: "warmup1",
-  start: function () {
-    $(".warmup-alloc").val("");
-    $("#warmup-warning").hide();
-  },
-  button: function () {
-    let total = 0;
-    let unrelated = 0;
-    let valid = true;
-    let errMsg = "";
-
-    $(".warmup-alloc").each(function () {
-      const val = $(this).val();
-      const num = Number(val);
-      const type = $(this).data("type");
-
-      if (val === "") {
-        valid = false;
-        errMsg = "Please fill out all boxes.";
-      } else if (isNaN(num)) {
-        valid = false;
-        errMsg = "Please enter numbers only.";
-      } else if (num < 0 || num > 100) {
-        valid = false;
-        errMsg = "Each number must be between 0 and 100.";
-      } else {
-        total += num;
-        if (type === "unrelated") {
-          unrelated += num;
-        }
-      }
-    });
-
-    if (!valid) {
-      $("#warmup-warning").text("⚠️ " + errMsg).show();
-      return;
+    name: "warmup1",
+    start: function () {
+    },
+    button: function () {
+      exp.go();
     }
-
-    if (total !== 100) {
-      $("#warmup-warning").text("⚠️ Total must equal 100.").show();
-      return;
-    }
-
-    if (unrelated > 50) {
-      $("#warmup-warning").text("⚠️ Most of the points should go to interpretations related to the weather.").show();
-      return;
-    }
-
-    $("#warmup-warning").hide();
-    exp.go();
-  }
-});
+  });
 
 
   slides.startExp = slide({
