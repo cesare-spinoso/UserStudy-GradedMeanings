@@ -7,19 +7,19 @@ var warmup_stimuli = [
         "question": "What do you think about this scenario?",
         "interpretations": [
             {
-                "value": "Interpretation 1",
+                "value": "Interpretation 1 - Warmup 1",
                 "type": "relevant",
             },
             {
-                "value": "Interpretation 2",
+                "value": "Interpretation 2- Warmup 1",
                 "type": "relevant",
             },
             {
-                "value": "Interpretation 3",
+                "value": "Interpretation 3- Warmup 1",
                 "type": "irrelevant",
             },
             {
-                "value": "Interpretation 4",
+                "value": "Interpretation 4 - Warmup 1",
                 "type": "irrelevant",
             }
         ]
@@ -30,19 +30,19 @@ var warmup_stimuli = [
         "question": "Now, do you think this scenario is about God or the Devil?",
         "interpretations": [
             {
-                "value": "Interpretation 1",
+                "value": "Interpretation 1 - Warmup 2",
                 "type": "relevant",
             },
             {
-                "value": "Interpretation 2",
-                "type": "relevant",
-            },
-            {
-                "value": "Interpretation 3",
+                "value": "Interpretation 2 - Warmup 2",
                 "type": "irrelevant",
             },
             {
-                "value": "Interpretation 4",
+                "value": "Interpretation 3 - Warmup 2",
+                "type": "irrelevant",
+            },
+            {
+                "value": "Interpretation 4 - Warmup 2",
                 "type": "irrelevant",
             }
         ]
