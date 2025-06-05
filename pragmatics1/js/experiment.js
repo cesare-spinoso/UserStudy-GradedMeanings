@@ -87,8 +87,8 @@ function make_slides(f) {
         $("#trial-question").html(question);
 
         // Set the interpretations
-        for (let i = 0; i < stim.warmup_stimuli.length; i++) {
-          $(`#interp${i + 1}`).text(stim.warmup_stimuli[i].value);
+        for (let i = 0; i < stim.interpretations.length; i++) {
+          $(`#interp${i + 1}`).text(stim.interpretations[i].value);
         }
 
         $(".alloc").val("");
