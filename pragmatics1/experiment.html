@@ -286,40 +286,33 @@
                     <div class="panel-body" style="padding: 20px;">
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p id="trial-scenario">David just arrived at a birthday party. As he sees the decorations,
-                                he says, “Wow, look at this place!”</p>
-                            <p id="trial-question">What did David mean by this statement?</p>
+                            <p id="trial-scenario">{{scenario}}</p>
+                            </p>
+                            <p id="trial-question">{{question}}</p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
                             <p>Please distribute 100 points across the following interpretations based on how likely you
                                 find each interpretation.</p>
                             <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
-                                <li>1. <span id="interp1">He is genuinely impressed by the
-                                        decorations.</span> <input type="number" class="alloc" name="i1" min="0"
-                                        max="100" style="width: 60px;">
-                                </li>
-                                <li>2. <span id="interp2">He thinks the decorations are excessive or
-                                        overdone.</span>
-                                    <input type="number" class="alloc" name="i2" min="0" max="100" style="width: 60px;">
-                                </li>
-                                <li>3. <span id="interp3">He is being sarcastic; the place looks
-                                        terrible.</span> <input type="number" class="alloc" name="i3" min="0" max="100"
-                                        style="width: 60px;">
-                                </li>
-                                <li>4. <span id="interp4">He is surprised the party even has
-                                        decorations.</span> <input type="number" class="alloc" name="i4" min="0"
-                                        max="100" style="width: 60px;">
-                                </li>
+                                <li>1. <span id="interp1">{{interpretation1}}</span> <input type="number" class="alloc"
+                                        name="i1" min="0" max="100" style="width: 60px;"></li>
+                                <li>2. <span id="interp2">{{interpretation2}}</span> <input type="number" class="alloc"
+                                        name="i2" min="0" max="100" style="width: 60px;"></li>
+                                <li>3. <span id="interp3">{{interpretation3}}</span> <input type="number" class="alloc"
+                                        name="i3" min="0" max="100" style="width: 60px;"></li>
+                                <li>4. <span id="interp4">{{interpretation4}}</span> <input type="number" class="alloc"
+                                        name="i4" min="0" max="100" style="width: 60px;"></li>
                             </ul>
                             <p><strong>Total:</strong> <span id="point-total">0</span> / 100</p>
                         </div>
 
+
                         <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
                             <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()" style="background-color: #800080;
-                         border-color: #800080;
-                         padding: 15px 40px;
-                         font-size: 18px;">
+                             border-color: #800080;
+                             padding: 15px 40px;
+                             font-size: 18px;">
                                 Continue
                             </button>
                             <div class="err" style="color: #dc3545; margin-top: 10px;">
