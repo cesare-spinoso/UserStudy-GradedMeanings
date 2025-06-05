@@ -55,7 +55,7 @@
 <body onload="init()">
     <noscript>This task requires JavaScript.</noscript>
 
-    <!-- initial slide -->
+    <!-- Initial slide -->
     <div class="slide" id="i0">
         <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
         <section class="container" id="SET1"
@@ -74,11 +74,12 @@
                                 are interpreted in conversations between two or more people.
                                 In this study, you will be shown scenarios in which a character says something. You will
                                 then <strong>evaluate the meaning</strong> of that utterance
-                                by <strong>distributing</strong> 100 points across four <strong>**TODO: Change this so
-                                    it's dynamic.**</strong> possible meaning
-                                interpretations. You
-                                will also <strong>justify</strong> your point distribution. You will be presented with 2
-                                example scenarios to help you
+                                by <strong>distributing</strong> 100 points across four possible meaning
+                                interpretations <em>based on how likely you believe each one to be</em>. You
+                                will also <strong>justify</strong> your point distribution.
+
+                                <strong>Study structure:</strong> You will first be presented with 2
+                                example scenarios followed by 2 warm-up examples to help you
                                 get familiar with the task. You will then be asked to annotate
                                 <strong>7</strong> scenarios. We expect the annotation to take between 10 to 20 minutes.
                             </p>
@@ -109,7 +110,7 @@
 
 
 
-    <!-- task example slide -->
+    <!-- Task example slide -->
     <div class="slide" id="example1">
         <section class="container" id="SET1" style="padding: 10px;">
             <div class="row">
@@ -181,7 +182,7 @@
 
 
 
-    <!-- task example slide -->
+    <!-- Task example slide -->
     <div class="slide" id="example2">
         <section class="container" id="SET1" style="padding: 10px;">
             <div class="row">
@@ -195,7 +196,7 @@
 
                     <div class="panel-body" style="padding: 20px;">
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p><strong>Scenario:</strong>John and his girlfriend Sarah are watching a movie together.
+                            <p><strong>Scenario:</strong> John and his girlfriend Sarah are watching a movie together.
                                 It's Sarah's favorite movie and she has been dying to see it again with him.
                                 After it ends, Sarah asks John if he liked it. John says "<span
                                     style="color: #318500;">I think the narrator had a
@@ -243,13 +244,28 @@
                        border-color: #800080;
                        padding: 15px 40px;
                        font-size: 18px;">
-                                I understand the task!
+                                Continue to warm-up examples.
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
+
+    <!-- Segue slide from the examples to the warm-up -->
+    <div class="slide" id="startWarmup">
+        <br>
+        <br>
+        <p id="instruct-text" class="left">
+            Now you have seen a few examples, we will begin the <em>warm-up</em> experiment. You will be presented with
+            2 scenarios and
+            asked to provide your meaning interpretations by assigning points based on how likely you believe each
+            interpretation to be. To save you time, you will not need to provide rationales for these warm-up examples.
+        </p>
+        <div class="center">
+            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()">Begin warm-up</button>
+        </div>
     </div>
 
     <!-- Warm-up example slide -->
@@ -261,7 +277,7 @@
                     style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
-                        <strong>Submit your Response</strong>
+                        <strong>Warm-up Example</strong>
                     </div>
 
                     <div class="panel-body" style="padding: 20px;">
@@ -276,17 +292,21 @@
                             <p>Please distribute 100 points across the following interpretations based on how likely you
                                 find each interpretation.</p>
                             <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
-                                <li>1. <span id="interp1">He is genuinely impressed by the decorations.</span> <input
-                                        type="number" class="alloc" name="i1" min="0" max="100" style="width: 60px;">
+                                <li>1. <span id="interp1" type="relevant">He is genuinely impressed by the
+                                        decorations.</span> <input type="number" class="alloc" name="i1" min="0"
+                                        max="100" style="width: 60px;">
                                 </li>
-                                <li>2. <span id="interp2">He thinks the decorations are excessive or overdone.</span>
+                                <li>2. <span id="interp2" type="distractor">He thinks the decorations are excessive or
+                                        overdone.</span>
                                     <input type="number" class="alloc" name="i2" min="0" max="100" style="width: 60px;">
                                 </li>
-                                <li>3. <span id="interp3">He is being sarcastic; the place looks terrible.</span> <input
-                                        type="number" class="alloc" name="i3" min="0" max="100" style="width: 60px;">
+                                <li>3. <span id="interp3" type="distractor">He is being sarcastic; the place looks
+                                        terrible.</span> <input type="number" class="alloc" name="i3" min="0" max="100"
+                                        style="width: 60px;">
                                 </li>
-                                <li>4. <span id="interp4">He is surprised the party even has decorations.</span> <input
-                                        type="number" class="alloc" name="i4" min="0" max="100" style="width: 60px;">
+                                <li>4. <span id="interp4" type="relevant">He is surprised the party even has
+                                        decorations.</span> <input type="number" class="alloc" name="i4" min="0"
+                                        max="100" style="width: 60px;">
                                 </li>
                             </ul>
                             <p><strong>Total:</strong> <span id="point-total">0</span> / 100</p>

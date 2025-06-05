@@ -26,18 +26,8 @@ function make_slides(f) {
     }
   });
 
-  slides.warmup1 = slide({
-    name: "warmup1",
-    start: function () {
-    },
-    button: function () {
-      exp.go();
-    }
-  });
-
-
-  slides.startExp = slide({
-    name: "startExp",
+  slides.startWarmup = slide({
+    name: "startWarmup",
     start: function () { },
     button: function () {
       exp.go();
@@ -71,6 +61,25 @@ function make_slides(f) {
 
     return { total, valid, inputs, errMsg };
   }
+
+  slides.warmup1 = slide({
+    name: "warmup1",
+    start: function () {
+    },
+    button: function () {
+      exp.go();
+    }
+  });
+
+
+  slides.startExp = slide({
+    name: "startExp",
+    start: function () { },
+    button: function () {
+      exp.go();
+    }
+  });
+
 
   slides.main = slide({
     name: "main",
