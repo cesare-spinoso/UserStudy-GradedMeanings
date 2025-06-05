@@ -8,23 +8,42 @@ function make_slides(f) {
     }
   });
 
-  slides.example1 = slide({
-    name: "example1",
+  slides.example = slide({
+    name: "example",
+    index: 0,
+
     start: function () {
+      $('.err').hide();
+      this.display_stimulus();
+    },
+
+    display_stimulus: function () {
+      if (this.index < exp.warmup_stimuli.length) {
+        const stim = exp.example_stimuli[this.index];
+        // Set the scenario and question
+        const scenario = stim.scenario;
+        // Add <strong>Scenario:</strong> to the beginning of the scenario
+        const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
+        // Make the utterance green so it stands out
+        const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
+        // Bold the question
+        const question = `<strong>${stim.question}</strong>`;
+        $("#example-scenario").html(highlighted);
+        $("#example-question").html(question);
+
+        // Set the interpretations
+        for (let i = 0; i < stim.interpretations.length; i++) {
+          $(`#example_interp${i + 1}`).text(stim.interpretations[i].value);
+        }
+      } else {
+        exp.go();
+      }
     },
     button: function () {
       exp.go();
     }
   });
 
-  slides.example2 = slide({
-    name: "example2",
-    start: function () {
-    },
-    button: function () {
-      exp.go();
-    }
-  });
 
   slides.startWarmup = slide({
     name: "startWarmup",
