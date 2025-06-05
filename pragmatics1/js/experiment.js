@@ -95,7 +95,7 @@ function make_slides(f) {
 
         // Set the interpretations
         for (let i = 0; i < stim.interpretations.length; i++) {
-          $(`#interp${i + 1}`).text(stim.interpretations[i].value);
+          $(`#winterp${i + 1}`).text(stim.interpretations[i].value);
         }
 
         $(".walloc").val("");
@@ -204,7 +204,7 @@ function make_slides(f) {
 
         // Set the interpretations
         for (let i = 0; i < stim.interpretations.length; i++) {
-          $(`#winterp${i + 1}`).text(stim.interpretations[i]);
+          $(`#interp${i + 1}`).text(stim.interpretations[i]);
         }
 
         $(".alloc").val("");
