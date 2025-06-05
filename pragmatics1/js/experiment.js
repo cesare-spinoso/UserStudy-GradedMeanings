@@ -62,7 +62,7 @@ function make_slides(f) {
     return { total, valid, inputs, errMsg };
   }
 
-  slides.warmup1 = slide({
+  slides.warmup = slide({
     name: "warmup",
     index: 0,
 
