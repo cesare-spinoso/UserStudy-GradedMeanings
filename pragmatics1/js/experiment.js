@@ -267,7 +267,7 @@ function init() {
       stim.interpretations);
   });
   // Structure experiment and make slides
-  exp.structure = ["i0", "example1", "example2", "startExp", "main", "add_info"];
+  exp.structure = ["i0", "example1", "example2", "warmup1", "startExp", "main", "add_info"];
   exp.data_trials = [];
   exp.slides = make_slides(exp);
   $('.slide').hide();
