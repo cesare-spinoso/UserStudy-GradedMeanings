@@ -33,7 +33,7 @@ function make_slides(f) {
 
         // Set the interpretations
         for (let i = 0; i < stim.interpretations.length; i++) {
-          $(`#example_interp${i + 1}`).text(stim.interpretations[i].value);
+          $(`#example_interp${i + 1}`).text(stim.interpretations[i]);
         }
       } else {
         exp.go();
