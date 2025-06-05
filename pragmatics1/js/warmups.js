@@ -3,8 +3,8 @@
 var warmup_stimuli = [
     {
         "id": "warmup1",
-        "scenario": "",
-        "question": "",
+        "scenario": "This is the warmup scenario. The character says \"Dear God!\"",
+        "question": "What do you think about this scenario?",
         "interpretations": [
             {
                 "value": "Interpretation 1",
@@ -26,8 +26,8 @@ var warmup_stimuli = [
     },
     {
         "id": "warmup2",
-        "scenario": "",
-        "question": "",
+        "scenario": "This is another warmup scenario. The character says \"What a beautiful day!\"",
+        "question": "Now, do you think this scenario is about God or the Devil?",
         "interpretations": [
             {
                 "value": "Interpretation 1",

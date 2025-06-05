@@ -299,6 +299,7 @@ function make_slides(f) {
 function init() {
   exp.trials = [];
   exp.catch_trials = [];
+  // TODO: On the full dataset, there will be many more indices, group them to keep track
   // Get the stimuli from the URL parameter
   var condition_index = parseInt(get_url_param("condition", 0));
   exp.condition_index = condition_index;
