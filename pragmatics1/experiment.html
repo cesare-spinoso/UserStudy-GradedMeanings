@@ -311,41 +311,6 @@
         </section>
     </div>
 
-    <script>
-        function validateWarmup() {
-            const inputs = document.querySelectorAll('.point-input');
-            let total = 0;
-            let unrelatedPoints = 0;
-
-            inputs.forEach(input => {
-                const value = parseInt(input.value) || 0;
-                total += value;
-                if (input.dataset.type === 'unrelated') {
-                    unrelatedPoints += value;
-                }
-            });
-
-            const warning = document.getElementById('warning-message');
-
-            if (total !== 100) {
-                warning.innerText = '⚠️ Please assign exactly 100 points.';
-                warning.style.display = 'block';
-                return;
-            }
-
-            if (unrelatedPoints > 50) {
-                warning.innerText = '⚠️ Please make sure your point distribution makes sense. Most of the points should go to interpretations related to the weather.';
-                warning.style.display = 'block';
-                return;
-            }
-
-            warning.style.display = 'none';
-            _s.button(); // advance
-        }
-    </script>
-
-
-
 
     <!-- main instructions slide -->
     <div class="slide" id="startExp">
