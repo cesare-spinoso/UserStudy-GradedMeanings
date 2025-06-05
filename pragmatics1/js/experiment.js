@@ -90,8 +90,8 @@ function make_slides(f) {
         const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
         // Bold the question
         const question = `<strong>${stim.question}</strong>`;
-        $("#trial-scenario").html(highlighted);
-        $("#trial-question").html(question);
+        $("#warmup-scenario").html(highlighted);
+        $("#warmup-question").html(question);
 
         // Set the interpretations
         for (let i = 0; i < stim.interpretations.length; i++) {
@@ -100,7 +100,6 @@ function make_slides(f) {
 
         $(".walloc").val("");
         $("#wpoint-total").text("0");
-        $("#rationale").val("");
         $(".err").hide();
 
         $(".walloc").off("input").on("input", () => {
