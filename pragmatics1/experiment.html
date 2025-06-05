@@ -33,6 +33,7 @@
     <script src="js/stimuli_maxims.js"></script>
     <script src="js/quality_checks.js"></script>
     <script src="js/warmups.js"></script>
+    <script src="js/examples.js"></script>
 
     <!-- NOTE: Always put the data before the experiment.js file -->
     <script src="js/experiment.js"></script>
@@ -112,81 +113,8 @@
     </div>
 
 
-    <!-- TODO: Change the examples so that they are adapted to the pragmatic phenomena -->
     <!-- Task example slide -->
-    <div class="slide" id="example1">
-        <section class="container" id="SET1" style="padding: 10px;">
-            <div class="row">
-                <!-- Response Collection Form -->
-                <div class="panel panel-primary"
-                    style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
-                    <div class="panel-heading"
-                        style="background-image: none;background-color:#800080;border-color: #800080">
-                        <strong>Example</strong>
-                    </div>
-                    <div class="panel-body" style="padding: 20px;">
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <p><strong>Scenario:</strong> Bruce and Vanessa, two friends from work, are taking a walk in
-                                the park. The weather is beautiful, and they are enjoying the fresh air. Bruce turns to
-                                Vanessa and says, "<span style="color: #318500;">Isn't it so ugly out?</span>"</p>
-                            <p style="margin-top: 20px;"><strong>What did Bruce want to convey?</strong></p>
-                        </div>
-
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Distribute 100 points across the interpretations below based on how likely you find each
-                                interpretation.
-                            </p>
-                            <ul style="list-style-type: none; padding-left: 0;">
-                                <li>1. He thinks the weather outside is amazing. <input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>2. He thinks it's going to rain soon.<input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>3. He thinks the weather outside is terrible.<input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>4. He wants to take Vanessa out to dinner.<input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
-                            </ul>
-                        </div>
-
-                        <ul style="list-style-type: none; padding-left: 0;">
-                            <li><strong>Note 1:</strong> The values here have been omitted. In an actual scenario to
-                                annotate,
-                                you would have to fill these boxes out with numbers between 0 and 100 based on how
-                                likely you find each interpretation.</li>
-                            <li><strong>Note 2:</strong> There is not one correct answer - you should assign
-                                points based on <em>your own</em> interpretation and explain your rationale in the
-                                box below.</li>
-                        </ul>
-
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
-                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                <textarea class="form-control" rows="3"
-                                    readonly>The reason why I assigned ... points to ... interpretation is because ...</textarea>
-                                </textarea>
-                            </div>
-                        </div>
-
-                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-                            <button id="start_button" class="btn btn-lg btn-primary continueButton"
-                                onclick="_s.button()" style="background-color: #800080;
-                             border-color: #800080;
-                             padding: 15px 40px;
-                             font-size: 18px;">
-                                Continue
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-
-
-    <!-- Task example slide -->
-    <div class="slide" id="example2">
+    <div class="slide" id="example">
         <section class="container" id="SET1" style="padding: 10px;">
             <div class="row">
                 <!-- Response Collection Form -->
@@ -199,27 +127,24 @@
 
                     <div class="panel-body" style="padding: 20px;">
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p><strong>Scenario:</strong> John and his girlfriend Sarah are watching a movie together.
-                                It's Sarah's favorite movie and she has been dying to see it again with him.
-                                After it ends, Sarah asks John if he liked it. John says "<span
-                                    style="color: #318500;">I think the narrator had a
-                                    really nice voice.</span>"</p>
-                            <p style="margin-top: 20px;"><strong>Why had John responded like this?</strong></p>
+                            <p id="example-scenario">{{scenario}}</p>
+                            </p>
+                            <p id="example-question">{{question}}</p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
                             <p>Distribute 100 points across the interpretations below based on how likely you find each
                                 interpretation.
                             </p>
-                            <ul style="list-style-type: none; padding-left: 0;">
-                                <li>1. John liked the voice narration in the movie.<input type="number" value=""
-                                        readonly style="width: 60px;" disabled></li>
-                                <li>2. John did not like the movie.<input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>3. John does not want to be truthful and upset Sarah.<input type="number" value=""
-                                        readonly style="width: 60px;" disabled></li>
-                                <li>4. John wants to go to bed.<input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
+                            <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
+                                <li>1. <span id="example_interp1">{{interpretation1}}</span> <input type="number"
+                                        class="alloc" name="i1" min="0" max="100" style="width: 60px;"></li>
+                                <li>2. <span id="example_interp2">{{interpretation2}}</span> <input type="number"
+                                        class="alloc" name="i2" min="0" max="100" style="width: 60px;"></li>
+                                <li>3. <span id="example_interp3">{{interpretation3}}</span> <input type="number"
+                                        class="alloc" name="i3" min="0" max="100" style="width: 60px;"></li>
+                                <li>4. <span id="example_interp4">{{interpretation4}}</span> <input type="number"
+                                        class="alloc" name="i4" min="0" max="100" style="width: 60px;"></li>
                             </ul>
                         </div>
                         <div class="form-group" style="margin-bottom: 30px;">
@@ -295,14 +220,14 @@
                             <p>Please distribute 100 points across the following interpretations based on how likely you
                                 find each interpretation.</p>
                             <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
-                                <li>1. <span id="winterp1">{{interpretation1}}</span> <input type="number" class="walloc"
-                                        min="0" max="100" style="width: 60px;"></li>
-                                <li>2. <span id="winterp2">{{interpretation2}}</span> <input type="number" class="walloc"
-                                        min="0" max="100" style="width: 60px;"></li>
-                                <li>3. <span id="winterp3">{{interpretation3}}</span> <input type="number" class="walloc"
-                                        min="0" max="100" style="width: 60px;"></li>
-                                <li>4. <span id="winterp4">{{interpretation4}}</span> <input type="number" class="walloc"
-                                        min="0" max="100" style="width: 60px;"></li>
+                                <li>1. <span id="winterp1">{{interpretation1}}</span> <input type="number"
+                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
+                                <li>2. <span id="winterp2">{{interpretation2}}</span> <input type="number"
+                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
+                                <li>3. <span id="winterp3">{{interpretation3}}</span> <input type="number"
+                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
+                                <li>4. <span id="winterp4">{{interpretation4}}</span> <input type="number"
+                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
                             </ul>
                             <p><strong>Total:</strong> <span id="wpoint-total">0</span> / 100</p>
                         </div>

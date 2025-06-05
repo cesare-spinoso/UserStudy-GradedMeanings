@@ -320,6 +320,8 @@ function init() {
     exp.stimuli = stimuli_maxims;
   }
   // TODO: Make the warmup and quality check stimuli specific to the condition index
+  // Get the example stimuli
+  exp.example_stimuli = example_stimuli;
   // Get the warmup stimuli
   // TODO: Add shuffling to warmup stimuli
   exp.warmup_stimuli = warmup_stimuli;
@@ -336,8 +338,7 @@ function init() {
   // Structure experiment and make slides
   exp.structure = [
     "i0",
-    "example1",
-    "example2",
+    "example",
     "startWarmup",
     "warmup",
     "startExp",
