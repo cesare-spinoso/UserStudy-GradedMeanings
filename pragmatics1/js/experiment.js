@@ -34,13 +34,20 @@ function make_slides(f) {
     }
   });
 
-  function validateAllocations() {
+  function validateAllocations(exp_type) {
     let total = 0;
     let valid = true;
     let inputs = [];
     let errMsg = "";
 
-    $(".alloc").each(function () {
+    if (exp_type === "warmup") {
+      var_alloc = $(".walloc");
+    }
+    else {
+      var_alloc = $(".alloc");
+    }
+
+    var_alloc.each(function () {
       const val = $(this).val();
       const num = Number(val);
 
@@ -91,14 +98,14 @@ function make_slides(f) {
           $(`#interp${i + 1}`).text(stim.interpretations[i].value);
         }
 
-        $(".alloc").val("");
-        $("#point-total").text("0");
+        $(".walloc").val("");
+        $("#wpoint-total").text("0");
         $("#rationale").val("");
         $(".err").hide();
 
-        $(".alloc").off("input").on("input", () => {
-          const result = validateAllocations();
-          $("#point-total").text(result.total);
+        $(".walloc").off("input").on("input", () => {
+          const result = validateAllocations("warmup");
+          $("#wpoint-total").text(result.total);
 
           if (!result.valid) {
             $(".err").text(result.errMsg).show();
@@ -110,7 +117,7 @@ function make_slides(f) {
         });
 
         // Automatically place cursor in first input
-        $(".alloc").first().focus();
+        $(".walloc").first().focus();
 
       } else {
         exp.go();
@@ -120,8 +127,8 @@ function make_slides(f) {
     button: function () {
       $(".err").hide();
 
-      const result = validateAllocations();
-      $("#point-total").text(result.total);
+      const result = validateAllocations("warmup");
+      $("#wpoint-total").text(result.total);
 
       if (!result.valid) {
         $(".err").text(result.errMsg).show();
@@ -131,7 +138,7 @@ function make_slides(f) {
         return;
       }
 
-      // TODO: Add feedback for warmup trials
+      // TODO: Add feedback specific to warmup trials
 
       this.log_responses(rationale, result.inputs);
       this.index++;
@@ -197,7 +204,7 @@ function make_slides(f) {
 
         // Set the interpretations
         for (let i = 0; i < stim.interpretations.length; i++) {
-          $(`#interp${i + 1}`).text(stim.interpretations[i]);
+          $(`#winterp${i + 1}`).text(stim.interpretations[i]);
         }
 
         $(".alloc").val("");
@@ -206,7 +213,7 @@ function make_slides(f) {
         $(".err").hide();
 
         $(".alloc").off("input").on("input", () => {
-          const result = validateAllocations();
+          const result = validateAllocations("main");
           $("#point-total").text(result.total);
 
           if (!result.valid) {
@@ -235,7 +242,7 @@ function make_slides(f) {
         return;
       }
 
-      const result = validateAllocations();
+      const result = validateAllocations("main");
       $("#point-total").text(result.total);
 
       if (!result.valid) {
