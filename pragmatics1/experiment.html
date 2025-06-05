@@ -261,67 +261,54 @@
                     style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
-                        <strong>Example</strong>
+                        <strong>Submit your Response</strong>
                     </div>
 
                     <div class="panel-body" style="padding: 20px;">
+
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p><strong>Scenario:</strong>John and his girlfriend Sarah are watching a movie together.
-                                It's Sarah's favorite movie and she has been dying to see it again with him.
-                                After it ends, Sarah asks John if he liked it. John says "<span
-                                    style="color: #318500;">I think the narrator had a
-                                    really nice voice.</span>"</p>
-                            <p style="margin-top: 20px;"><strong>Why had John responded like this?</strong></p>
+                            <p id="trial-scenario">David just arrived at a birthday party. As he sees the decorations,
+                                he says, “Wow, look at this place!”</p>
+                            <p id="trial-question">What did David mean by this statement?</p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Distribute 100 points across the interpretations below based on how likely you find each
-                                interpretation.
-                            </p>
-                            <ul style="list-style-type: none; padding-left: 0;">
-                                <li>1. John liked the voice narration in the movie.<input type="number" value=""
-                                        readonly style="width: 60px;" disabled></li>
-                                <li>2. John did not like the movie.<input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
-                                <li>3. John does not want to be truthful and upset Sarah.<input type="number" value=""
-                                        readonly style="width: 60px;" disabled></li>
-                                <li>4. John wants to go to bed.<input type="number" value="" readonly
-                                        style="width: 60px;" disabled></li>
+                            <p>Please distribute 100 points across the following interpretations based on how likely you
+                                find each interpretation.</p>
+                            <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
+                                <li>1. <span id="interp1">He is genuinely impressed by the decorations.</span> <input
+                                        type="number" class="alloc" name="i1" min="0" max="100" style="width: 60px;">
+                                </li>
+                                <li>2. <span id="interp2">He thinks the decorations are excessive or overdone.</span>
+                                    <input type="number" class="alloc" name="i2" min="0" max="100" style="width: 60px;">
+                                </li>
+                                <li>3. <span id="interp3">He is being sarcastic; the place looks terrible.</span> <input
+                                        type="number" class="alloc" name="i3" min="0" max="100" style="width: 60px;">
+                                </li>
+                                <li>4. <span id="interp4">He is surprised the party even has decorations.</span> <input
+                                        type="number" class="alloc" name="i4" min="0" max="100" style="width: 60px;">
+                                </li>
                             </ul>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 30px;">
-
-                            <ul style="list-style-type: none; padding-left: 0;">
-                                <li><strong>Note 1:</strong> The values here have been omitted. In an actual scenario to
-                                    annotate,
-                                    you would have to fill these boxes out with numbers between 0 and 100 based on how
-                                    likely you find each interpretation.</li>
-                                <li><strong>Note 2:</strong> There is not one correct answer - you should assign
-                                    points based on <em>your own</em> interpretation and explain your rationale in the
-                                    box below.</li>
-                            </ul>
-
-                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
-                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                <textarea class="form-control" id="psuedo_rationale2" rows="3"
-                                    readonly>I assigned ... many points to interpretation ... because ... and this many points to this other interpretation because ...</textarea>
-                            </div>
+                            <p><strong>Total:</strong> <span id="point-total">0</span> / 100</p>
                         </div>
 
                         <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-                            <button id="start_button" class="btn btn-lg btn-primary continueButton"
-                                onclick="_s.button()" style="background-color: #800080;
-                       border-color: #800080;
-                       padding: 15px 40px;
-                       font-size: 18px;">
-                                I understand the task!
+                            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()" style="background-color: #800080;
+                         border-color: #800080;
+                         padding: 15px 40px;
+                         font-size: 18px;">
+                                Continue
                             </button>
+                            <div class="err" style="color: #dc3545; margin-top: 10px;">
+                                Please make sure your total is 100.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+
 
 
     <!-- main instructions slide -->
