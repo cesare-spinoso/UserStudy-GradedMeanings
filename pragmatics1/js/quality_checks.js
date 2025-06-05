@@ -1,5 +1,6 @@
 // all the quality checks data which comes from src/human_exp/pilot_study_1/quality_checks.csv 
 
+// TODO: Make these specific to each pragmatic phenomena
 var quality_checks = [
     {
         "id": "quality_check_1",
