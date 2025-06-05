@@ -315,7 +315,7 @@ function init() {
   // TODO: Make the warmup and quality check stimuli specific to the condition index
   // Get the warmup stimuli
   // TODO: Add shuffling to warmup stimuli
-  var warmup_stimuli = exp.warmup_stimuli;
+  var warmup_stimuli = warmup_stimuli;
   exp.warmup_stimuli = warmup_stimuli;
   // Get the quality check, only one for now
   var quality_check = quality_checks;

@@ -1,6 +1,6 @@
 // TODO: Make warmups which are specific to each pragmatic phenomena
 
-exp.warmup_stimuli = [
+var warmup_stimuli = [
     {
         "id": "warmup1",
         "scenario": "",
