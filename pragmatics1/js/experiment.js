@@ -40,9 +40,9 @@ function make_slides(f) {
         exp.go();
       }
     },
+
     button: function () {
       this.index++;
-      exp.go();
     }
   });
 
@@ -184,7 +184,6 @@ function make_slides(f) {
       }
 
       exp.warmup_trials.push(trial_data);
-
     }
   });
 
