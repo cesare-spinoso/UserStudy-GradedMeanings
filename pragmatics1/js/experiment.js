@@ -18,7 +18,7 @@ function make_slides(f) {
     },
 
     display_stimulus: function () {
-      if (this.index < exp.warmup_stimuli.length) {
+      if (this.index < exp.example_stimuli.length) {
         const stim = exp.example_stimuli[this.index];
         // Set the scenario and question
         const scenario = stim.scenario;
@@ -38,6 +38,7 @@ function make_slides(f) {
       } else {
         exp.go();
       }
+      this.index++;
     },
     button: function () {
       exp.go();
