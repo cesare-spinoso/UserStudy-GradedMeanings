@@ -39,10 +39,9 @@ function make_slides(f) {
       } else {
         exp.go();
       }
-      this.index++;
     },
     button: function () {
-      console.log(this.index);
+      this.index++;
       exp.go();
     }
   });
