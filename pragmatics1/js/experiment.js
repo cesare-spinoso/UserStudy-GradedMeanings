@@ -129,12 +129,31 @@ function make_slides(f) {
 
     button: function () {
       this.index++;
-      this.display_stimulus();
+      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
     }
   });
 
 
+  function log_responses(stim, rationale, inputs) {
+    // Log the responses for the current stimulus
+    let trial_data = {
+      id: stim.id,
+      phenomenon: exp.phenomenon,
+      batch_index: exp.batch_index,
+      scenario: stim.scenario,
+      question: stim.question,
+      rationale: rationale,
+      time_in_minutes: (Date.now() - exp.startT) / 60000
+    };
 
+    // Add interpretations and allocations with a loop
+    for (let i = 1; i <= stim.interpretations.length; i++) {
+      trial_data[`interpretation${i}`] = stim.interpretations[i - 1];
+      trial_data[`allocation${i}`] = inputs[i - 1];
+    }
+
+    exp.warmup_trials.push(trial_data);
+  }
 
   slides.startWarmup = slide({
     name: "startWarmup",
@@ -156,7 +175,7 @@ function make_slides(f) {
     button: function () {
       $(".err").hide();
 
-      const result = validateAllocations("warmup");
+      const result = validateAllocations();
       $("#point-total").text(result.total);
 
       if (!result.valid) {
@@ -167,31 +186,12 @@ function make_slides(f) {
         return;
       }
 
-      this.log_responses(rationale, result.inputs);
+      log_responses(stim = exp.warmup_stimuli[this.index], rationale = "None", inputs = result.inputs);
       this.index++;
-      this.display_stimulus();
+      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
     },
 
-    log_responses: function (rationale, inputs) {
-      const stim = exp.warmup_stimuli[this.index];
 
-      let trial_data = {
-        id: stim.id,
-        condition_index: exp.condition_index,
-        scenario: stim.scenario,
-        question: stim.question,
-        rationale: rationale,
-        time_in_minutes: (Date.now() - exp.startT) / 60000
-      };
-
-      // Add interpretations and allocations with a loop
-      for (let i = 1; i <= stim.interpretations.length; i++) {
-        trial_data[`interpretation${i}`] = stim.interpretations[i - 1];
-        trial_data[`allocation${i}`] = inputs[i - 1];
-      }
-
-      exp.warmup_trials.push(trial_data);
-    }
   });
 
 
@@ -344,9 +344,9 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
   // Get URL parameters
-  var phenomenon = get_url_param("condition", "t"); // Represents the last letter of the phenomenon, e.g. t for Decei*t*
-  var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
+  exp.phenomenon = get_url_param("condition", "t"); // Represents the last letter of the phenomenon, e.g. t for Decei*t*
   // Get the stimuli using the URL parameters
+  exp.batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
   if (phenomenon === "t") {
     exp.example_stimuli = examples_deceits;
     exp.warmup_stimuli = warm_ups_deceits;
