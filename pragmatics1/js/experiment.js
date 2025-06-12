@@ -199,7 +199,7 @@ function make_slides(f) {
         return;
       }
     }
-    console.lop("Inside the trial_button function");
+    console.log("Inside the trial_button function");
     console.log("Rationale: ", rationale);
     console.log("Inputs: ", result.inputs);
 
