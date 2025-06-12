@@ -261,7 +261,7 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the start of main slide");
-      this.display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
+      display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
     },
 
     button: function () {
@@ -270,7 +270,7 @@ function make_slides(f) {
       console.log("In the button of main slide");
       trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli);
       this.index++;
-      this.display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
+      display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
     },
   });
 
