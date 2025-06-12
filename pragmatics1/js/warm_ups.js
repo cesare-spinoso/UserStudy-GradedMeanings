@@ -123,11 +123,11 @@ var warm_ups_metaphor = [
         "scenario": "Leo is recounting an argument he had with a friend. With a gloomy expression on his face, he says, \"Her words were like knives.\"",
         "question": "What does Leo mean?",
         "interpretations": [
-            "She was holding knives while speaking.",
-            "She was very direct with him.",
-            "She's often rude and impolite.",
-            "He thinks she's training to be a chef.",
-            "She said something emotionally hurtful."
+            "His friend was holding knives while speaking.",
+            "His friend was very direct with him.",
+            "His friend is often rude and impolite.",
+            "He thinks his friend is training to be a chef.",
+            "His friend said something emotionally hurtful."
         ]
     }
 ];

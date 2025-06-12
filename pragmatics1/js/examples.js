@@ -4,7 +4,7 @@
 var examples_deceits = [
     {
         "id": "examples_1",
-        "scenario": "At a family gathering, Liam tries a cookie from the dessert table. He grimaces and puts the unfinished cookie back down on the table while no one is looking. As he turns around, the host asks him how he likes the cookies. Liam responds: \"They're great!\"",
+        "scenario": "At a family gathering, Liam tries a cookie from the dessert table. He grimaces and puts the unfinished cookie back down on the table while no one is looking. As he turns around, his aunt, who baked the cookies, asks him how he finds them. Liam responds: \"They're great!\"",
         "question": "Why has Liam responded in such a way?",
         "interpretations": [
             "He believes the cookies are delicious.",
@@ -67,11 +67,11 @@ var examples_metaphor = [
         "scenario": "Leah and Martin agreed to meet at seven, but it is now seven twenty. Leah, looking annoyed, says to herself, \"That man is like a broken clock.\"",
         "question": "What does Leah mean?",
         "interpretations": [
-            "He is made of gears and metal.",
-            "He is always late to meetings.",
-            "He's emotionally fragile and unreliable.",
+            "Martin is made of gears and metal.",
+            "Martin is always late to meetings.",
+            "Martin is emotionally fragile and unreliable.",
             "She is remembering the time they visited an antique shop.",
-            "She's annoyed by his tardiness."
+            "She's annoyed by Martin's tardiness."
         ]
     }
 ];

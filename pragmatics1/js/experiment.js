@@ -103,7 +103,7 @@ function make_slides(f) {
       // Add <strong>Scenario:</strong> to the beginning of the scenario
       const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
       // Make the utterance green so it stands out
-      const highlighted = scenarioWithLabel.replace(/(\"[^\"]*\")$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
+      const highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
       // Bold the question
       const question = `<strong>${stim.question}</strong>`;
       // Populate the html with the scenario, question, and interpretations

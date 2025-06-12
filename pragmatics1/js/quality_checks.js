@@ -5,7 +5,7 @@ var quality_checks_deceits = [
     {
         "id": "quality_checks_1",
         "scenario": "Jake bought his girlfriend Amy a red sweater for her birthday, forgetting that she hates the color red. When Amy opens the gift, she says \"What a lovely color!\"",
-        "question": "Why has Sophie responded in such a way?",
+        "question": "Why has Amy responded in such a way?",
         "interpretations": [
             "She doesn't like the color of the sweater.",
             "She needs to go buy some cat food.",
@@ -16,7 +16,7 @@ var quality_checks_deceits = [
     {
         "id": "quality_checks_2",
         "scenario": "Alice has forgotten to water her brother Luke's plants while he was away. When Luke returns and asks how plant watering went, Alice says \"It went so well!\"",
-        "question": "Why has Sophie responded in such a way?",
+        "question": "Why has Alice responded in such a way?",
         "interpretations": [
             "She doesn't want to tell Luke she didn't water his plants.",
             "She's afraid of what Luke will say if she tells the truth about not watering the plants.",
@@ -46,8 +46,8 @@ var quality_checks_indirectspeech = [
         "interpretations": [
             "He would like his wife to pass him the yams.",
             "He wants his wife to pass him the yams.",
-            "He wants to get a hold of some of the yams.",
-            "He wants some of the yams on the table."
+            "He wants to have some of the yams.",
+            "He wants to eat some yams."
         ]
     }
 ];
