@@ -340,7 +340,7 @@ function init() {
     exp.stimuli = main_stimuli_maxims[batch_index];
   } else { // "r"
     // TODO: There are 5 metaphor interpretations, need to make their creation dynamic
-    exp.stimuli = main_stimuli_metaphors[batch_index];
+    exp.stimuli = main_stimuli_metaphor[batch_index];
   }
   // TODO: Make the warmup and quality check stimuli specific to the condition index
   // Get the example stimuli
