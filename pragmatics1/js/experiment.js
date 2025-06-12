@@ -173,7 +173,7 @@ function make_slides(f) {
       trial_data[`allocation${i}`] = inputs[i - 1];
     }
 
-    exp.warmup_trials.push(trial_data);
+    exp.collected_data.push(trial_data);
   }
 
   function trial_button(current_index, stimuli_type, stimuli) {
@@ -435,8 +435,7 @@ function init() {
     "main",
     "add_info",
   ];
-  exp.warmup_trials = [];
-  exp.data_trials = [];
+  exp.collected_data = [];
   exp.slides = make_slides(exp);
   $('.slide').hide();
   $("#start_button").click(function () { exp.go(); });
