@@ -344,9 +344,9 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
   // Get URL parameters
-  exp.phenomenon = get_url_param("condition", "t"); // Represents the last letter of the phenomenon, e.g. t for Decei*t*
+  var phenomenon = get_url_param("condition", "t"); // Represents the last letter of the phenomenon, e.g. t for Decei*t*
   // Get the stimuli using the URL parameters
-  exp.batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
+  var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
   if (phenomenon === "t") {
     exp.example_stimuli = examples_deceits;
     exp.warmup_stimuli = warm_ups_deceits;
@@ -376,6 +376,8 @@ function init() {
     exp.stimuli = exp.stimuli.concat(quality_checks_metaphor);
   }
   // Shuffle the order of the stimuli and of the interpretations
+  exp.phenomenon = phenomenon; // Store the phenomenon for later use
+  exp.batch_index = batch_index; // Store the batch index for later use
   exp.warmup_stimuli = shuffle_stimuli(exp.warmup_stimuli);
   exp.stimuli = shuffle_stimuli(exp.stimuli);
   exp.num_interpretations = exp.stimuli[0].interpretations.length; // Number of interpretations per stimulus, may be different for each phenomenon
