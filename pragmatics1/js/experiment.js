@@ -323,21 +323,24 @@ function make_slides(f) {
 }
 
 function init() {
+  // Initialize the collected data
   exp.trials = [];
   exp.catch_trials = [];
-  // TODO: On the full dataset, there will be many more indices, group them to keep track
-  // Get the stimuli from the URL parameter
-  var condition_index = parseInt(get_url_param("condition", 0));
-  exp.condition_index = condition_index;
-  if (condition_index === 0) {
-    // If condition index is 0
-    exp.stimuli = stimuli_deceits;
-  } else if (condition_index === 1) {
-    // If condition index is 1
-    exp.stimuli = stimuli_irony;
-  } else if (condition_index === 2) {
-    // If condition index is 2
-    exp.stimuli = stimuli_maxims;
+  // Get URL parameters
+  var phenomenon = get_url_param("condition", "t"); // Represents the last letter of the phenomenon, e.g. t for Decei*t*
+  var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
+  // Get the stimuli using the URL parameters
+  if (phenomenon === "t") {
+    exp.stimuli = main_stimuli_deceits[batch_index];
+  } else if (phenomenon === "h") {
+    exp.stimuli = main_stimuli_indirectspeech[batch_index];
+  } else if (phenomenon === "y") {
+    exp.stimuli = main_stimuli_irony[batch_index];
+  } else if (phenomenon === "m") {
+    exp.stimuli = main_stimuli_maxims[batch_index];
+  } else { // "r"
+    // TODO: There are 5 metaphor interpretations, need to make their creation dynamic
+    exp.stimuli = main_stimuli_metaphors[batch_index];
   }
   // TODO: Make the warmup and quality check stimuli specific to the condition index
   // Get the example stimuli
