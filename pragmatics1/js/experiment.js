@@ -200,7 +200,7 @@ function make_slides(f) {
 
       log_responses(stim = exp.warmup_stimuli[this.index], rationale = "None", inputs = result.inputs);
       this.index++;
-      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
+      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "example");
     },
 
 
