@@ -13,7 +13,6 @@ function make_slides(f) {
     index: 0,
 
     start: function () {
-      $('.err').hide();
       this.display_stimulus();
     },
 
@@ -43,6 +42,7 @@ function make_slides(f) {
 
     button: function () {
       this.index++;
+      this.display_stimulus();
     }
   });
 
