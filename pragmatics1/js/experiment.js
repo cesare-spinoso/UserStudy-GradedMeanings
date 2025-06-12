@@ -322,6 +322,16 @@ function make_slides(f) {
   return slides;
 }
 
+function shuffle_stimuli(stimuli) {
+  // Shuffle the stimuli order
+  stimuli = _.shuffle(stimuli);
+  // Shuffle the interpretations within each stimulus
+  stimuli.forEach(stim => {
+    stim.interpretations = _.shuffle(stim.interpretations);
+  });
+  return stimuli;
+}
+
 function init() {
   // Initialize the collected data
   exp.trials = [];
@@ -331,33 +341,37 @@ function init() {
   var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
   // Get the stimuli using the URL parameters
   if (phenomenon === "t") {
+    exp.example_stimuli = examples_deceits;
+    exp.warmup_stimuli = warm_ups_deceits;
     exp.stimuli = main_stimuli_deceits[batch_index];
+    // Add the quality checks for Deceits
+    exp.stimuli = exp.stimuli.concat(quality_checks_deceits);
   } else if (phenomenon === "h") {
+    exp.example_stimuli = examples_indirectspeech;
+    exp.warmup_stimuli = warm_ups_indirectspeech;
     exp.stimuli = main_stimuli_indirectspeech[batch_index];
+    exp.stimuli = exp.stimuli.concat(quality_checks_indirectspeech);
   } else if (phenomenon === "y") {
+    exp.example_stimuli = examples_irony;
+    exp.warmup_stimuli = warm_ups_irony;
     exp.stimuli = main_stimuli_irony[batch_index];
+    exp.stimuli = exp.stimuli.concat(quality_checks_irony);
   } else if (phenomenon === "m") {
+    exp.example_stimuli = examples_maxims;
+    exp.warmup_stimuli = warm_ups_maxims;
     exp.stimuli = main_stimuli_maxims[batch_index];
+    exp.stimuli = exp.stimuli.concat(quality_checks_maxims);
   } else { // "r"
     // TODO: There are 5 metaphor interpretations, need to make their creation dynamic
+    exp.example_stimuli = examples_metaphor;
+    exp.warmup_stimuli = warm_ups_metaphor;
     exp.stimuli = main_stimuli_metaphor[batch_index];
+    exp.stimuli = exp.stimuli.concat(quality_checks_metaphor);
   }
-  // TODO: Make the warmup and quality check stimuli specific to the condition index
-  // Get the example stimuli
-  exp.example_stimuli = example_stimuli;
-  // Get the warmup stimuli
-  // TODO: Add shuffling to warmup stimuli
-  exp.warmup_stimuli = warmup_stimuli;
-  // Get the quality check, only one for now
-  var quality_check = quality_checks;
-  // Concat together
-  exp.stimuli = exp.stimuli.concat(quality_check);
-  // Shuffle each interpretation list within the stimuli
-  // TODO: Make the shuffling a single function
-  exp.stimuli.forEach(stim => {
-    stim.interpretations = _.shuffle(
-      stim.interpretations);
-  });
+  // Shuffle the order of the stimuli and of the interpretations
+  exp.warmup_stimuli = shuffle_stimuli(exp.warmup_stimuli);
+  exp.stimuli = shuffle_stimuli(exp.stimuli);
+  exp.num_interpretations = exp.stimuli[0].interpretations.length; // Number of interpretations per stimulus, may be different for each phenomenon
   // Structure experiment and make slides
   exp.structure = [
     "i0",
