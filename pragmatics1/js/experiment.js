@@ -17,14 +17,20 @@ function make_slides(f) {
 
   function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationSelector, interpretations, stimuli_type) {
     // Populate the scenario
+    console.log(scenarioSelector)
+    console.log(scenarioValue)
     const $scenario = $(scenarioSelector);
     $scenario.empty(); // Clear any existing content
     $scenario.html(scenarioValue);
     // Populate the question
+    console.log(questionSelector)
+    console.log(questionValue)
     const $question = $(questionSelector);
     $question.empty(); // Clear any existing content
     $question.html(questionValue);
     // Populate the interpretations
+    console.log(interpretationSelector)
+    console.log(interpretations)
     const $interpretation = $(interpretationSelector);
     $interpretation.empty(); // Clear any existing content
     interpretations.forEach((interp, index) => {
@@ -169,6 +175,8 @@ function make_slides(f) {
 
     start: function () {
       $('.err').hide();
+      console.log(this.index);
+      console.log(exp.warmup_stimuli);
       display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup");
     },
 
