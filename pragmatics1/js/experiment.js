@@ -1,6 +1,8 @@
 function make_slides(f) {
   var slides = {};
 
+  // START SLIDE //
+
   slides.i0 = slide({
     name: "i0",
     start: function () {
@@ -14,6 +16,8 @@ function make_slides(f) {
       $("#num-interpretations").text(num_interpretations);
     }
   });
+
+  // Helper functions to populate slides for example, warmup, and main stimuli
 
   function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationSelector, interpretations, stimuli_type) {
     // First select the appropriate slide
@@ -56,13 +60,13 @@ function make_slides(f) {
     });
   }
 
-  function validateAllocations() {
+  function validateAllocations(slide) {
     let total = 0;
     let valid = true;
     let inputs = [];
     let errMsg = "";
 
-    var_alloc = $(".alloc");
+    var_alloc = slide.find(".alloc");
 
     var_alloc.each(function () {
       const val = $(this).val();
@@ -82,6 +86,11 @@ function make_slides(f) {
         inputs.push(num);
       }
     });
+
+    if (valid && total !== 100) {
+      valid = false;
+      errMsg = "Total must equal 100.";
+    }
 
     return { total, valid, inputs, errMsg };
   }
@@ -128,6 +137,7 @@ function make_slides(f) {
     }
   }
 
+  // EXAMPLE SLIDE //
 
   slides.example = slide({
     name: "example",
@@ -143,6 +153,7 @@ function make_slides(f) {
     }
   });
 
+  // Helper functions for buttons/logging for warmup and main slides
 
   function log_responses(stim, rationale, inputs) {
     // Log the responses for the current stimulus
@@ -165,6 +176,40 @@ function make_slides(f) {
     exp.warmup_trials.push(trial_data);
   }
 
+  function trial_button(stimuli_type, stimuli) {
+    const $slide = $(`#${stimuli_type}`);
+
+    $slide.find(".err").hide();
+
+    const result = validateAllocations(slide = $slide);
+    $slide.find(".point-total").text(result.total);
+    console.log(result);
+
+    if (!result.valid) {
+      $slide.find(".err").text(result.errMsg).show();
+      return;
+    }
+
+    if (stimuli_type == "warmup") {
+      rationale = "None"; // No rationale for warmup
+    } else {
+      const rationale = $slide.find(".rationale").val().trim();
+      if (!rationale) {
+        $slide.find(".err").text("Please provide a rationale.").show();
+        return;
+      }
+    }
+    console.lop("Inside the trial_button function");
+    console.log("Rationale: ", rationale);
+    console.log("Inputs: ", result.inputs);
+
+    log_responses(stim = stimuli[this.index], rationale = rationale, inputs = result.inputs);
+    this.index++;
+    display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type);
+  }
+
+  // WARMUP SLIDES //
+
   slides.startWarmup = slide({
     name: "startWarmup",
     start: function () { },
@@ -185,25 +230,10 @@ function make_slides(f) {
     },
 
     button: function () {
-      $(".err").hide();
-
-      const result = validateAllocations();
-      $("#point-total").text(result.total);
-
-      if (!result.valid) {
-        $(".err").text(result.errMsg).show();
-        return;
-      } else if (result.total !== 100) {
-        $(".err").text("Total must equal 100.").show();
-        return;
-      }
-
-      log_responses(stim = exp.warmup_stimuli[this.index], rationale = "None", inputs = result.inputs);
-      this.index++;
-      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "example");
+      console.log(this.index);
+      console.log(exp.warmup_stimuli);
+      trial_button(stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
     },
-
-
   });
 
 
@@ -214,6 +244,8 @@ function make_slides(f) {
       exp.go();
     }
   });
+
+  // MAIN SLIDE //
 
 
   slides.main = slide({
