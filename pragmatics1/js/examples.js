@@ -1,8 +1,9 @@
+
 // all the examples data which comes from src/human_exp/pragmatics1/DeceitsExamples.csv 
 
 var examples_deceits = [
     {
-        "id": 1,
+        "id": "examples_1",
         "scenario": "At a family gathering, Liam tries a cookie from the dessert table. He grimaces and puts the unfinished cookie back down on the table while no one is looking. As he turns around, the host asks him how he likes the cookies. Liam responds: \"They're great!\"",
         "question": "Why has Liam responded in such a way?",
         "interpretations": [
@@ -17,7 +18,7 @@ var examples_deceits = [
 
 var examples_indirectspeech = [
     {
-        "id": 1,
+        "id": "examples_1",
         "scenario": "During dinner with his family, his mother asks him what his son Marcus thinks of the food. He glances toward the salt shaker on the other end of the table and says aloud, \"It would be great if it had more salt.\"",
         "question": "What might he be trying to convey?",
         "interpretations": [
@@ -32,7 +33,7 @@ var examples_indirectspeech = [
 
 var examples_irony = [
     {
-        "id": 1,
+        "id": "examples_1",
         "scenario": "Bruce and Vanessa, two friends from work, are taking a walk in the park. The weather is beautiful, and they are enjoying the fresh air. Bruce turns to Vanessa and says, \"Isn't it so ugly out?\"",
         "question": "What did Bruce want to convey?",
         "interpretations": [
@@ -47,7 +48,7 @@ var examples_irony = [
 
 var examples_maxims = [
     {
-        "id": 1,
+        "id": "examples_1",
         "scenario": "John and his girlfriend Sarah are watching a movie together. It's Sarah's favorite movie and she has been dying to see it again with him. After it ends, Sarah asks John if he liked it. John says, \"I think the narrator had a really nice voice.\"",
         "question": "Why had John responded like this?",
         "interpretations": [
@@ -62,7 +63,7 @@ var examples_maxims = [
 
 var examples_metaphor = [
     {
-        "id": 1,
+        "id": "examples_1",
         "scenario": "Leah and Martin agreed to meet at seven, but it is now seven twenty. Leah, looking annoyed, says to herself, \"That man is like a broken clock.\"",
         "question": "What does Leah mean?",
         "interpretations": [

@@ -1,9 +1,10 @@
+
 // all the stimuli data which comes from src/data/original_prag_mega/DeceitsMergedRawPivoted.csv 
 
 var main_stimuli_deceits = [
     [
         {
-            "id": 1,
+            "id": "main_stimuli_1",
             "scenario": "Henry is sitting at his desk and watching TV, and reluctantly switches off the TV with the remote control and picks up a textbook. Shortly after, his mother comes in the room and asks, \"What have you been doing up here?\" Henry responds: \"Reading.\"",
             "question": "Why has Henry responded in such a way?",
             "interpretations": [
@@ -14,7 +15,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 18,
+            "id": "main_stimuli_18",
             "scenario": "Betty's partner needs to have his wisdom teeth removed, which Betty remembers was painful for her. Her partner is often anxious about medical matters. The night before his appointment, he tells Betty that he heard that the procedure can be painful. He asks Betty what her experience was like. She says: \"It wasn't bad at all.\"",
             "question": "Why has Betty responded like this?",
             "interpretations": [
@@ -25,7 +26,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 16,
+            "id": "main_stimuli_16",
             "scenario": "Brianna was deciding between her favorite takeout restaurants when her partner Derek invites her over to his house for dinner for the third time this week. Derek tells her excitedly that his mom cooked her special spaghetti recipe and is eager to have her taste it again.  Brianna responds: \"I am looking forward to it.\"",
             "question": "Why has Brianna responded like this?",
             "interpretations": [
@@ -36,7 +37,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 2,
+            "id": "main_stimuli_2",
             "scenario": "It's Robert's birthday. Robert dresses very casually. On his birthday, he always receives a tie from Monica. He opens the package and finds a tie.  He says: \"Thanks. Really, I love it.\"",
             "question": "Why has Robert responded in such a way?",
             "interpretations": [
@@ -47,7 +48,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 9,
+            "id": "main_stimuli_9",
             "scenario": "It's Ed's birthday and he is an avid rollerblader. He mentioned to his aunt that his rollerblades have gotten quite worn out. When he opens his birthday gift from her, he finds a pair of socks. Ed says to his aunt, \"Thank you for such a great gift.\"",
             "question": "Why has Ed responded like this?",
             "interpretations": [
@@ -60,7 +61,7 @@ var main_stimuli_deceits = [
     ],
     [
         {
-            "id": 6,
+            "id": "main_stimuli_6",
             "scenario": "Marika baked an apple pie today. She spent the whole afternoon in the kitchen trying to follow the recipe, and told her friend Lars about the time it took. Marika gives Lars a piece of her pie. Lars takes a big bite but doesn't finish the slice. Later in the day, Marika asks: \"Do you like my apple pie?\", Lars says: \"Oh, yes, it was really tasty.\"",
             "question": "Why has Lars responded in such a way?",
             "interpretations": [
@@ -71,7 +72,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 12,
+            "id": "main_stimuli_12",
             "scenario": "One night at a party Lucy and her best friend Mary are talking with some acquaintances.  Mary tells a long story to a group of people and a few of them smile. Afterwards, Mary asks Lucy whether she thought her joke was funny. Lucy says, \"Of course, you know I think you're funny!\"",
             "question": "Why has Lucy responded like this?",
             "interpretations": [
@@ -82,7 +83,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 4,
+            "id": "main_stimuli_4",
             "scenario": "Peter's mother wants them to start eating healthier, and tells him that they will eat boiled sprouts tonight. Peter tells his mother: \"I don't think I can eat, I have a terrible stomach-ache.\"",
             "question": "Why has Peter responded in such a way?",
             "interpretations": [
@@ -93,7 +94,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 19,
+            "id": "main_stimuli_19",
             "scenario": "Mary sets up a date for her best friend Annie and her brother Mike. They don't talk much during their dinner and Annie is surprised by the way that Mike talks to the waiter. After the date, Mary asks Annie what she thought of her date with Mike. Annie says, \"It was fun!\"",
             "question": "Why has Annie responded like this?",
             "interpretations": [
@@ -104,7 +105,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 17,
+            "id": "main_stimuli_17",
             "scenario": "Samantha and her partner Andy are having a conversation about their relationship. In the past, the two of them had some difficulties, but for the last few months things have been absolutely great. Andy tells Samantha that even when things were not going well, breaking up was never an option for him. He asks if Samantha had ever considered ending the relationship. Although she is currently very happy in the relationship, in the past she had considered ending the relationship several times. Samantha says, \"Of course not, I have never considered breaking up with you.\"",
             "question": "Why has Samantha responded like this?",
             "interpretations": [
@@ -117,7 +118,7 @@ var main_stimuli_deceits = [
     ],
     [
         {
-            "id": 14,
+            "id": "main_stimuli_14",
             "scenario": "One day Jane comes home and is delighted to find her partner Anthony straightening up her apartment. Jane notices that Anthony threw out lots of things which were creating clutter, including an old photo that she had always kept on the coffee table. Anthony is worried that something is troubling Jane and asks if anything is wrong. Jane answers, \"Everything is fine, dear. You did a great job of cleaning the apartment.\"",
             "question": "Why has Jane responded like this?",
             "interpretations": [
@@ -128,7 +129,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 3,
+            "id": "main_stimuli_3",
             "scenario": "Dan is playing in the living room. He brushes against his mother's vase. The vase falls down on the floor and breaks. When Dan's mother comes home, she asks Dan: \"What happened to my vase?\" Dan says, \"The dog knocked it over.\"",
             "question": "Why has Dan responded in such a way?",
             "interpretations": [
@@ -139,7 +140,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 10,
+            "id": "main_stimuli_10",
             "scenario": "Hiroshi and Taro are very close friends and they usually play together. Taro takes very good care of all his toys. One day Hiroshi was careless and broke Taro's remote control car. Taro said to Hirosho, \"Don't worry about it, I don't care.\"",
             "question": "Why has Taro responded like this?",
             "interpretations": [
@@ -150,7 +151,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 20,
+            "id": "main_stimuli_20",
             "scenario": "Lisa is taking a class with Mrs. Smith, who is the mother of her best friend Ellie. Mrs. Smith typically lectures from the textbook to the class, and gives difficult multiple-choice exams. One day Ellie asks Lisa what she thinks about the class that her mom teaches. Lisa responds: \"She is an awesome teacher.\"",
             "question": "Why has Lisa responded like this?",
             "interpretations": [
@@ -161,7 +162,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 5,
+            "id": "main_stimuli_5",
             "scenario": "Today is Mandy's birthday. Her aunt has a big box with her and Mandy feels sure it will contain a pet rabbit for her. But when she opens it, she finds a fish bowl with a goldfish. When her aunt asks her whether she likes the gift, Mandy says: \"It's just what I wanted!\"",
             "question": "Why has Mandy responded in such a way?",
             "interpretations": [
@@ -174,7 +175,7 @@ var main_stimuli_deceits = [
     ],
     [
         {
-            "id": 13,
+            "id": "main_stimuli_13",
             "scenario": "Jim and his roommate Mike are taking a course together. Mike tells him he is stressed about giving his first presentation. Afterwards Jim feels very confused about the content because of how scattered it was. After class Mike asks Jim whether it went badly. Jim answers, \"No, definitely not.\"",
             "question": "Why has Jim responded like this?",
             "interpretations": [
@@ -185,7 +186,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 8,
+            "id": "main_stimuli_8",
             "scenario": "Oscar had tickets to see a hockey game with his buddies, so he called in sick at work. At the game, Oscar was having so much fun that he didn't notice his boss sitting a few rows behind him. The next day at work, the boss called Oscar into his office. He asked Oscar, \"Did you get a lot of rest yesterday?\" Oscar replied, \"Yes, the day of bed rest cured me.\"",
             "question": "Why has Oscar responded in such a way?",
             "interpretations": [
@@ -196,7 +197,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 11,
+            "id": "main_stimuli_11",
             "scenario": "Katie, John's wife, just got a new haircut that she is really excited about. John has been avoiding the topic. Katie finally asks John if he likes her new style. John responds, \"It looks great!\"",
             "question": "Why has John responded like this?",
             "interpretations": [
@@ -207,7 +208,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 15,
+            "id": "main_stimuli_15",
             "scenario": "After telling her partner Bob that she has been craving donuts for several days, Alice wakes up very early to visit her favorite cafe. There, she finds two different varieties of donuts, has one of each, and leaves feeling satisfied. She returns home where her husband Bob has surprised her by making homemade donuts. He says to her, \"Do you want some? She replies, \"Yes, that's exactly what I'm craving right now!\"",
             "question": "Why has Alice responded like this?",
             "interpretations": [
@@ -218,7 +219,7 @@ var main_stimuli_deceits = [
             ]
         },
         {
-            "id": 7,
+            "id": "main_stimuli_7",
             "scenario": "It was Christmas Eve, and Sally was in her bedroom. She overheard her mother talking about picking up Sally's computer at the Apple store earlier that day. The next morning the family opened their Christmas presents. After Sally opened her present, her mother asked her, \"Sally, are you surprised?\" Sally answered, \"Yes, I had no idea I was going to get a MacBook!\"",
             "question": "Why has Sally responded in such a way?",
             "interpretations": [
@@ -235,7 +236,7 @@ var main_stimuli_deceits = [
 var main_stimuli_indirectspeech = [
     [
         {
-            "id": 1,
+            "id": "main_stimuli_1",
             "scenario": "Paul has to go to an interview and he's running late. While he's cleaning his shoes he says to his wife, Jane, \"I want to wear that blue shirt, but it's very creased\".",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -246,7 +247,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 18,
+            "id": "main_stimuli_18",
             "scenario": "Natalie returns home to find that her partner, Alex, created a big mess on the table. Natalie says: \"Alex, my parents are going to be here any minute\"",
             "question": "What might she be trying to convey?",
             "interpretations": [
@@ -257,7 +258,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 16,
+            "id": "main_stimuli_16",
             "scenario": "Adam and Bill are working together on a project. Adam decides to take a break, and opens a window. A cold breeze blows in. Bill says, \"I am getting cold.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -268,7 +269,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 2,
+            "id": "main_stimuli_2",
             "scenario": "Cindy wanted to paint a picture. She got her paints, paper and brushes ready. She has a meeting to go to in 10 minutes. Her dad said to her, \"I am not sure that now is the best time for painting.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -279,7 +280,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 9,
+            "id": "main_stimuli_9",
             "scenario": "Cindy was having a slumber party with two of her friends. It was very late, but they kept talking and laughing. Her dad came in and said, \"I would like to go to bed but it is too loud in here.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -292,7 +293,7 @@ var main_stimuli_indirectspeech = [
     ],
     [
         {
-            "id": 6,
+            "id": "main_stimuli_6",
             "scenario": "The boys were playing around. Dan accidentally tripped Scott. Scott got very angry about falling. Dan said: \"Everybody's being wild.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -303,7 +304,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 12,
+            "id": "main_stimuli_12",
             "scenario": "It has been a hot day. Juan's wife is leaving the house and says to him, \"Can you water the lawn?\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -314,7 +315,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 4,
+            "id": "main_stimuli_4",
             "scenario": "Matt was telling Cindy about a scary movie that he saw. Cindy was listening to him for a while and then responded, \"Can we talk about something else?\"",
             "question": "What might she be trying to convey?",
             "interpretations": [
@@ -325,7 +326,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 19,
+            "id": "main_stimuli_19",
             "scenario": "Nate is about to leave the house. His wife points at a full bag of garbage and asks: \"Are you going out?\"",
             "question": "What might she be trying to convey?",
             "interpretations": [
@@ -336,7 +337,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 17,
+            "id": "main_stimuli_17",
             "scenario": "Mark invited Josh to his house to watch a football game. Josh brings a six-pack of beer with him. Josh picks up one bottle, examines it and then says to Mark: \"Hmm, this isn't a twist off.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -349,7 +350,7 @@ var main_stimuli_indirectspeech = [
     ],
     [
         {
-            "id": 14,
+            "id": "main_stimuli_14",
             "scenario": "Brad is interested in basketball and wants to join his school's basketball team. One day he comes to the basketball court and asks the players there: \"Do you think I can play basketball with you?\" \"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -360,7 +361,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 3,
+            "id": "main_stimuli_3",
             "scenario": "Cindy asked her mom to take her to the movies. Her mom responds, \"Your little brother's toys are all over the house. I don't have time to clean up.\"",
             "question": "What might she be trying to convey?",
             "interpretations": [
@@ -371,7 +372,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 10,
+            "id": "main_stimuli_10",
             "scenario": "Chad and Matt were walking. The sidewalk was being fixed and there was lots of shattered glass on the sidewalk. Matt was not paying attention to the sidewalk. Chad said, \"I guess you like walking on shattered glass.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -382,7 +383,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 20,
+            "id": "main_stimuli_20",
             "scenario": "Sam is sunning himself on the porch. Peter comes out of the house and forgets to close the screen door. Sam says, \"Peter, there are many flies and mosquitoes outside.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -393,7 +394,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 5,
+            "id": "main_stimuli_5",
             "scenario": "Cindy and Matt had been good friends for a long time. Recently Cindy started teasing Matt a lot every day. He got mad and said, \"My friends do not say hurtful things to me.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -406,7 +407,7 @@ var main_stimuli_indirectspeech = [
     ],
     [
         {
-            "id": 13,
+            "id": "main_stimuli_13",
             "scenario": "A house painter is carrying a heavy tray of paints. A small ladder is blocking the sidewalk and the painter cannot get around it. He calls out to his brother: \"Can you move the ladder?\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -417,7 +418,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 8,
+            "id": "main_stimuli_8",
             "scenario": "The teacher said that she was feeling sick today and asked the kids to work in groups quietly. Matt kept talking loudly with his friends. The teacher said, \"Matt, I think you are being unfair to me now.\"",
             "question": "What might she be trying to convey?",
             "interpretations": [
@@ -428,7 +429,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 11,
+            "id": "main_stimuli_11",
             "scenario": "Richard is driving his wife home from church. On the way home they want to stop at a new gourmet grocery store at 2401 Main Street. It is in a part of town that they are not familiar with. Richard points at a building and asks his wife: \"Can you see that house number?\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -439,7 +440,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 15,
+            "id": "main_stimuli_15",
             "scenario": "Jane is watching TV while her mom is cooking dinner in the kitchen. The doorbell rings. Jane's mother says: \"Someone is at the door\".",
             "question": "What might she be trying to convey?",
             "interpretations": [
@@ -450,7 +451,7 @@ var main_stimuli_indirectspeech = [
             ]
         },
         {
-            "id": 7,
+            "id": "main_stimuli_7",
             "scenario": "Kate brought some cookies to school. Matt has a sweet tooth. He says, \"Your cookies smell delicious. They must be really tasty.\"",
             "question": "What might he be trying to convey?",
             "interpretations": [
@@ -467,7 +468,7 @@ var main_stimuli_indirectspeech = [
 var main_stimuli_irony = [
     [
         {
-            "id": 9,
+            "id": "main_stimuli_9",
             "scenario": "Adrian's mother asks if he can look in his brother Tom's room to check if he has tidied up. Adrian opens the door to Tom's room, peers in, and sees that the room appears as it normally does - cluttered with toys and dirty clothes. He shouts to his mother: \"Mother, Tom, as usual, has done a splendid job tidying up!\"",
             "question": "What did Adrian want to convey?",
             "interpretations": [
@@ -478,7 +479,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 17,
+            "id": "main_stimuli_17",
             "scenario": "While Tom and a new acquaintance from work, Sara, were chatting at a party, they noticed a colleague across the room. She was standing alone holding a drink and a CD. Tom points at the girl and comments:  \"The life of the party, right there.\"",
             "question": "What did Tom want to convey?",
             "interpretations": [
@@ -489,7 +490,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 1,
+            "id": "main_stimuli_1",
             "scenario": "In a shop, Lara tries on a dress. The dress is far too long for her. Lara asks Simon: \"Does this dress fit me?\" Simon answers: \"Wow! That must be custom made! It's clearly the perfect size and length for you.\"",
             "question": "What did Simon want to convey?",
             "interpretations": [
@@ -500,7 +501,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 24,
+            "id": "main_stimuli_24",
             "scenario": "It was the night before her exam and Tilly had read none of the course texts. Her brother said, \"I see your revision is going well.\"",
             "question": "What did he want to convey?",
             "interpretations": [
@@ -511,7 +512,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 12,
+            "id": "main_stimuli_12",
             "scenario": "Melissa's friend convinces her to accompany her to a nightclub that her friend says is \"super hot\". When they arrive, it is so cold inside that they can see their breath. Melissa turns to her friend and says, \"The heat is really on in here.\"",
             "question": "What did Melissa want to convey?",
             "interpretations": [
@@ -524,7 +525,7 @@ var main_stimuli_irony = [
     ],
     [
         {
-            "id": 10,
+            "id": "main_stimuli_10",
             "scenario": "Callie promised to bring a salad to Jason's dinner party. She arrived two hours late. Jason said, \"I'm so glad that you were able to fit us into your busy schedule.\"",
             "question": "What did Jason want to convey?",
             "interpretations": [
@@ -535,7 +536,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 14,
+            "id": "main_stimuli_14",
             "scenario": "Tom, who is who is a gourmet chef, was offered a job at a new restaurant. Tom's potential employer offered him really low pay and no benefits. When you ask Tom what he thinks of the offer he says, \"Well, their generosity knows no bounds.\"",
             "question": "What does Tom want to convey?",
             "interpretations": [
@@ -546,7 +547,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 2,
+            "id": "main_stimuli_2",
             "scenario": "Christian is Shane's big brother. One day, Christian is helping Shane with his homework. Christian explains the homework to Shane. When Shane starts the assignment, he does not follow Christian's instructions. Christian says, \"You are such a wonderful listener.\"",
             "question": "What did Christian want to convey?",
             "interpretations": [
@@ -557,7 +558,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 23,
+            "id": "main_stimuli_23",
             "scenario": "The Jones' had hired a new gardener. After a week the lawn was looking particularly unkempt. John remarked to his wife, \"He does such a good job!\"",
             "question": "What did John want to convey?",
             "interpretations": [
@@ -568,7 +569,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 6,
+            "id": "main_stimuli_6",
             "scenario": "It is a holiday. Stefan and Kim are sitting in the backseat of the car. They are fighting all the time. Their father says: \"Oh, it is so pleasant here.\"",
             "question": "What did the father want to convey?",
             "interpretations": [
@@ -581,7 +582,7 @@ var main_stimuli_irony = [
     ],
     [
         {
-            "id": 3,
+            "id": "main_stimuli_3",
             "scenario": "Andrew and Phil are good friends, but they play on different basketball teams. During one game, Phil tries to score a basket but Andrew blocks his shot. Andrew says, \"You are so good at this.\"",
             "question": "What did Andrew want to convey?",
             "interpretations": [
@@ -592,7 +593,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 13,
+            "id": "main_stimuli_13",
             "scenario": "Your friend is working on his novel and is not making any progress. When you ask him how it is going he says, \"It couldn't be any better.\"",
             "question": "What does your friend want to convey?",
             "interpretations": [
@@ -603,7 +604,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 16,
+            "id": "main_stimuli_16",
             "scenario": "Laura and Lynn were having coffee at a local caf&eacute;. They were talking about a boring date that Laura had had the night before. They had watched old reruns of cartoons all evening. Lynn said, \"That sounds so exciting.\"",
             "question": "What did Lynn want to convey?",
             "interpretations": [
@@ -614,7 +615,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 4,
+            "id": "main_stimuli_4",
             "scenario": "Patrick and Jon like to eat at restaurants. One afternoon, they are at a restaurant eating lunch. Patrick orders a bowl of noodles and Jon orders a rice dish. While eating his meal, Patrick spills some noodles on his shirt. Jon says, \"You are so graceful.\"",
             "question": "What did Jon want to convey?",
             "interpretations": [
@@ -625,7 +626,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 5,
+            "id": "main_stimuli_5",
             "scenario": "Today Sarah and Tom are going to the beach to go swimming and sunbathing. It was Tom's idea, as he said it was going to be a lovely sunny day to go to the beach. But just as they arrive at the beach, it starts to rain and thunder. Sarah becomes angry. She says \"Oh yes, a lovely day for going to the beach.\"",
             "question": "What did Sarah want to convey?",
             "interpretations": [
@@ -638,7 +639,7 @@ var main_stimuli_irony = [
     ],
     [
         {
-            "id": 21,
+            "id": "main_stimuli_21",
             "scenario": "Tracy was in a dance recital and invited her roommate Steve to watch. Tracy tripped many times during her performance. The next day Steve was talking to Dawn about the recital. Steve said: \"Some people have such natural grace!\"",
             "question": "What did Steve want to convey?",
             "interpretations": [
@@ -649,7 +650,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 18,
+            "id": "main_stimuli_18",
             "scenario": "Jane and her best friend, Arthur, were selling chocolates door to door to raise money for a charity event. Jane and Arthur approached a house and tried to sell their candy to a mean couple. As they walked away, Jane comments: \"People in this community are so nice!\"",
             "question": "What did Jane want to convey?",
             "interpretations": [
@@ -660,7 +661,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 22,
+            "id": "main_stimuli_22",
             "scenario": "John finished the race way ahead of the other competitors. His friend laughed and said to him, \"You are so slow!\"",
             "question": "What did his friend want to convey?",
             "interpretations": [
@@ -671,7 +672,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 19,
+            "id": "main_stimuli_19",
             "scenario": "Penny, Juanita, and Jill have tickets to a basketball game. At halftime, Juanita offers to go get some drinks. Forty minutes later, she finally returns, and Jill remarks, \"That was quick.\"",
             "question": "What did Jill want to convey?",
             "interpretations": [
@@ -682,7 +683,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 25,
+            "id": "main_stimuli_25",
             "scenario": "Barb and Tony went to a high school reunion. Barb was running late and came underdressed. Tony commented, \"Classy outfit.\"",
             "question": "What did Tony want to convey?",
             "interpretations": [
@@ -695,7 +696,7 @@ var main_stimuli_irony = [
     ],
     [
         {
-            "id": 8,
+            "id": "main_stimuli_8",
             "scenario": "Mark entered a golf tournament where he played badly and kept missing very easy shots. His friend Hal watched the tournament and afterwards he said to Mark, \"You sure are a good golfer.\"",
             "question": "What did Hal want to convey?",
             "interpretations": [
@@ -706,7 +707,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 11,
+            "id": "main_stimuli_11",
             "scenario": "John is a teacher at an elementary school. When talking with the principal about a new student, who did poorly on her entrance examination, John said, \"This one is really sharp.\"",
             "question": "What did John want to convey?",
             "interpretations": [
@@ -717,7 +718,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 15,
+            "id": "main_stimuli_15",
             "scenario": "Megan and Kristine were looking after the neighbor's children one afternoon. The kids were energetic, enthusiastic, and well behaved. On the way home, Kristine said, \"Those kids were not fun at all.\"",
             "question": "What does Kristine want to convey?",
             "interpretations": [
@@ -728,7 +729,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 20,
+            "id": "main_stimuli_20",
             "scenario": "Mark gave his former colleague Krista tickets to a lecture where he was a guest speaker. Within the first 20 minutes of the lecture, the audience started to leave. The next day Krista talked to Mary about the lecture. Krista said: \" Oh, Mark held the audience's attention so well.\"",
             "question": "What did Krista want to convey?",
             "interpretations": [
@@ -739,7 +740,7 @@ var main_stimuli_irony = [
             ]
         },
         {
-            "id": 7,
+            "id": "main_stimuli_7",
             "scenario": "Kim and Jane are leaving the football stadium. Jane says, \"What a wonderful game.\" Kim looks disappointed. Kim replies: \"Sorry I made you come.\"",
             "question": "What did Jane want to convey?",
             "interpretations": [
@@ -756,7 +757,7 @@ var main_stimuli_irony = [
 var main_stimuli_maxims = [
     [
         {
-            "id": 1,
+            "id": "main_stimuli_1",
             "scenario": "Bob is having a lunch meeting with his boss, Mr. James. Mr. James asks Bob: \"Did you like the presentation that I gave at the board meeting yesterday?\" Bob responds: \"I cannot wait for our trip to Japan next week.\"",
             "question": "Why has Bob responded like this?",
             "interpretations": [
@@ -767,7 +768,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 18,
+            "id": "main_stimuli_18",
             "scenario": "Samantha is talking with her dad about her fiance. Samantha notes: \"John is an innocent person.\" Her dad replies: \"Undoubtedly, as innocent as a saint.\"",
             "question": "Why has Samantha's dad responded like this?",
             "interpretations": [
@@ -778,7 +779,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 16,
+            "id": "main_stimuli_16",
             "scenario": "Berta often forgets to return money that she borrows from her friends. One day Berta asks her friend Freddie for $500. Freddie responds: \"Of course, but only when I fly to space.\"",
             "question": "Why has Freddie responded like this?",
             "interpretations": [
@@ -789,7 +790,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 2,
+            "id": "main_stimuli_2",
             "scenario": "Richard came to visit his friend, Alex. Alex is an artist. Richard brought one of his artworks to Alex and asked Alex: \"What do you think of my painting?\" Alex responds, \"Have you noticed that I painted the walls?\"",
             "question": "Why has Alex responded like this?",
             "interpretations": [
@@ -800,7 +801,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 9,
+            "id": "main_stimuli_9",
             "scenario": "George and Cindy are about to enter their favorite shoe shop in the mall. George asks Cindy: \"What would you like to buy?\" Cindy responds: \"A pair of shoes.\"",
             "question": "Why has Cindy responded like this?",
             "interpretations": [
@@ -813,7 +814,7 @@ var main_stimuli_maxims = [
     ],
     [
         {
-            "id": 6,
+            "id": "main_stimuli_6",
             "scenario": "Lucy discusses her trip to Paris with her mom. Lucy says: \"I'd like to visit Vincent when I am in Paris. Where does he live?\" Her mom responds: \"Somewhere in France.\"",
             "question": "Why has Lucy's mom responded like this?",
             "interpretations": [
@@ -824,7 +825,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 12,
+            "id": "main_stimuli_12",
             "scenario": "Lenny comes to the kitchen and asks his wife, Marcie: \"What will we have for breakfast?\" Marcie responds: \"A hard-boiled egg cooked in hot water and toast that is toasted evenly on both sides.\"",
             "question": "Why has Marcie responded in such a way?",
             "interpretations": [
@@ -835,7 +836,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 4,
+            "id": "main_stimuli_4",
             "scenario": "Kelsey is in a bad mood. Every minor thing irritates her. When she sees her husband watching a football game, she yells: \"Can you turn off the TV?\" Her husband replies: \"Beer and chips would be awesome. Thanks!\"",
             "question": "Why has Kelsey's husband responded like this?",
             "interpretations": [
@@ -846,7 +847,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 19,
+            "id": "main_stimuli_19",
             "scenario": "Lenny is saying goodbye to his date Bianka. Lenny asks Bianka: \"Where do you live?\" Bianka responds: \"I live on the moon.\"",
             "question": "Why has Bianka responded like this?",
             "interpretations": [
@@ -857,7 +858,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 17,
+            "id": "main_stimuli_17",
             "scenario": "Lars and Katy are discussing their CEO. Lars says: \"People regard our CEO Mr. Smith as a real intellectual.\" Katy responds: \"Sure, he is regarded as an intellectual by kindergarteners.\"",
             "question": "Why has Katy responded like this?",
             "interpretations": [
@@ -870,7 +871,7 @@ var main_stimuli_maxims = [
     ],
     [
         {
-            "id": 14,
+            "id": "main_stimuli_14",
             "scenario": "Mike and Melissa are arguing about the state of secondary education in their state. Mike states: \"Standardized test scores are up 42% in our schools.\" Melissa responds: \"And 47% of the kids didn't use the right pencil, 6% were chewing gum during the exam, and 32% yawned while completing their exams.\"",
             "question": "Why has Melissa responded like this?",
             "interpretations": [
@@ -881,7 +882,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 3,
+            "id": "main_stimuli_3",
             "scenario": "Leslie and Jane are chatting at a coffee shop. Leslie asks, \"Who was that man that I saw you with last night?\" Jane responds, \"The latte is unbelievable here.\"",
             "question": "Why has Jane responded like this?",
             "interpretations": [
@@ -892,7 +893,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 10,
+            "id": "main_stimuli_10",
             "scenario": "Mike comes home from school. His mom asks him: \"What did you do at school today?\" Mike responds: \"some schoolwork.\"",
             "question": "Why has Mike responded like this?",
             "interpretations": [
@@ -903,7 +904,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 20,
+            "id": "main_stimuli_20",
             "scenario": "Annie and Kelly are discussing their plans for summer. Annie asks Kelly: \"How many books do you plan to read this summer?\" Kelly responds: \"A million.\"",
             "question": "Why has Kelly responded like this?",
             "interpretations": [
@@ -914,7 +915,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 5,
+            "id": "main_stimuli_5",
             "scenario": "Mark is discussing Jane, a senior financial manager who he hired, with his colleague John. Mark asks: \"How is Jane managing her new position?\" Mark says: \"She has excellent handwriting and is always dressed so nicely.\"",
             "question": "Why has Mark responded like this?",
             "interpretations": [
@@ -927,7 +928,7 @@ var main_stimuli_maxims = [
     ],
     [
         {
-            "id": 13,
+            "id": "main_stimuli_13",
             "scenario": "Paul, a theater critique, was asked to comment on the performance of one of the actresses. He said: \"Miss Smith produced a series of sounds that corresponded closely with the score of Home Sweet Home.\"",
             "question": "Why has Paul responded like this?",
             "interpretations": [
@@ -938,7 +939,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 8,
+            "id": "main_stimuli_8",
             "scenario": "Mary and Ken are having breakfast. Ken asks Mary: \"How would you like your tea, dear?\" Mary responds, \"In a cup.\"",
             "question": "Why has Mary responded like this?",
             "interpretations": [
@@ -949,7 +950,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 11,
+            "id": "main_stimuli_11",
             "scenario": "Mark, who is a newlywed, is talking to his mom over the phone. His mom asks: \"Did Julie cook your dinner last night?\" Mark responds: \"Well, she placed a number of edible substances into a pot and then heated them until various chemical reactions took place.\"",
             "question": "Why has Mark responded like this?",
             "interpretations": [
@@ -960,7 +961,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 15,
+            "id": "main_stimuli_15",
             "scenario": "Rosy notes to her friend Dan: \"Those strangers at the other end of the subway car are nice.\" Dan replies: \"Yeah, I bet they have only sweet dreams, eat organic food, do yoga every morning, plant trees, feed homeless, and read a lot of good books.\"",
             "question": "Why has Dan responded like this?",
             "interpretations": [
@@ -971,7 +972,7 @@ var main_stimuli_maxims = [
             ]
         },
         {
-            "id": 7,
+            "id": "main_stimuli_7",
             "scenario": "Luke missed a wedding reception and wants his wife Melanie to tell him about it. He asks: \"What were you served at the wedding?\" She responds: \"Some food.\"",
             "question": "Why has Melanie responded like this?",
             "interpretations": [
@@ -988,7 +989,7 @@ var main_stimuli_maxims = [
 var main_stimuli_metaphor = [
     [
         {
-            "id": 1,
+            "id": "main_stimuli_1",
             "scenario": "Mary was asked about the town that she has just moved to. Mary responded: \"This town is a chimney.\"",
             "question": "What does Mary mean?",
             "interpretations": [
@@ -1000,7 +1001,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 18,
+            "id": "main_stimuli_18",
             "scenario": "The teacher told Sam: \"You have too much on your plate.\"",
             "question": "What did the teacher mean?",
             "interpretations": [
@@ -1012,7 +1013,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 16,
+            "id": "main_stimuli_16",
             "scenario": "Robert and his wife are discussing their neighbor. Robert said: \"Our neighbor is a sheep.\"",
             "question": "What did Robert mean?",
             "interpretations": [
@@ -1024,7 +1025,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 2,
+            "id": "main_stimuli_2",
             "scenario": "Mike said to his expectant wife: \"Our baby is a lovebird's egg.\"",
             "question": "What did Mike mean?",
             "interpretations": [
@@ -1036,7 +1037,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 9,
+            "id": "main_stimuli_9",
             "scenario": "Abby and Kyle were walking along the promenade one night, and they saw a couple smiling at each other. Abby noted: \"This sunset sings to the lovers.\"",
             "question": "What did Abby mean?",
             "interpretations": [
@@ -1050,7 +1051,7 @@ var main_stimuli_metaphor = [
     ],
     [
         {
-            "id": 6,
+            "id": "main_stimuli_6",
             "scenario": "Mark saw a lady at the party and said to his friend: \"This lady's jewels are bursting stars.\"",
             "question": "What did Mark mean?",
             "interpretations": [
@@ -1062,7 +1063,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 12,
+            "id": "main_stimuli_12",
             "scenario": "During a business meeting, the general manager of the company said to the financial manager: \"The new accountant that you hired is a juggler.\"",
             "question": "What did the general manager mean?",
             "interpretations": [
@@ -1074,7 +1075,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 4,
+            "id": "main_stimuli_4",
             "scenario": "Mark asked his mom what she thought about his new girlfriend. She replied: \"This young lady is 100% polyester.\"",
             "question": "What does she mean?",
             "interpretations": [
@@ -1086,7 +1087,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 19,
+            "id": "main_stimuli_19",
             "scenario": "Melissa was discussing a new sales manager, who was hired a couple of days ago: \"She is a babe in the woods.\"",
             "question": "What did Melissa mean?",
             "interpretations": [
@@ -1098,7 +1099,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 17,
+            "id": "main_stimuli_17",
             "scenario": "Lucy told her teacher: \"The book that you gave me has more holes in it than Swiss cheese.\"",
             "question": "What did Lucy mean?",
             "interpretations": [
@@ -1112,7 +1113,7 @@ var main_stimuli_metaphor = [
     ],
     [
         {
-            "id": 14,
+            "id": "main_stimuli_14",
             "scenario": "Janet was telling her friend about the show that she saw last night. Janet said: \"The dancers were butterflies.\"",
             "question": "What did Janet mean?",
             "interpretations": [
@@ -1124,7 +1125,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 3,
+            "id": "main_stimuli_3",
             "scenario": "Andrew and Bob were discussing the investment company where Andrew works. Bob said: \"The investors are squirrels collecting nuts.\"",
             "question": "What does Bob mean?",
             "interpretations": [
@@ -1136,7 +1137,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 10,
+            "id": "main_stimuli_10",
             "scenario": "Jessica was giving a talk that her mom attended. After the talk, Jessica's mom called her husband and said: \"Jessica sailed towards the finish.\"",
             "question": "What did she mean?",
             "interpretations": [
@@ -1148,7 +1149,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 20,
+            "id": "main_stimuli_20",
             "scenario": "John told his fiance: \"You are the tomato sauce to my pasta.\"",
             "question": "What did John mean?",
             "interpretations": [
@@ -1160,7 +1161,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 5,
+            "id": "main_stimuli_5",
             "scenario": "Mary said to her husband: \"Our kids are pieces of taffy.\"",
             "question": "What did she mean?",
             "interpretations": [
@@ -1174,7 +1175,7 @@ var main_stimuli_metaphor = [
     ],
     [
         {
-            "id": 13,
+            "id": "main_stimuli_13",
             "scenario": "Ken was telling his friend about his shopping experience on Black Friday. Ken said: \"The store that I went to was a jungle.\"",
             "question": "What did Ken mean?",
             "interpretations": [
@@ -1186,7 +1187,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 8,
+            "id": "main_stimuli_8",
             "scenario": "Mary said to her granddaughter: \"The queen is our nation's aunt.\"",
             "question": "What did Mary mean?",
             "interpretations": [
@@ -1198,7 +1199,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 11,
+            "id": "main_stimuli_11",
             "scenario": "Jody and Mark were discussing their daughter's behavior. Mark said: \"She is walking all over her brothers.\"",
             "question": "What did Mark mean?",
             "interpretations": [
@@ -1210,7 +1211,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 15,
+            "id": "main_stimuli_15",
             "scenario": "Caitlyn was telling her husband about her new co-worker. Caitlyn said: \"Sally is a block of ice.\"",
             "question": "What did she mean?",
             "interpretations": [
@@ -1222,7 +1223,7 @@ var main_stimuli_metaphor = [
             ]
         },
         {
-            "id": 7,
+            "id": "main_stimuli_7",
             "scenario": "Ben was telling his friend about the fashion show that he attended. He said: \"This model was the blue canary at the show.\"",
             "question": "What did Ben mean?",
             "interpretations": [

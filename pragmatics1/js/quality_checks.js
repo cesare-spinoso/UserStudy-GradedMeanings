@@ -1,8 +1,9 @@
+
 // all the quality_checks data which comes from src/human_exp/pragmatics1/DeceitsQualityChecks.csv 
 
 var quality_checks_deceits = [
     {
-        "id": 1,
+        "id": "quality_checks_1",
         "scenario": "Jake bought his girlfriend Amy a red sweater for her birthday, forgetting that she hates the color red. When Amy opens the gift, she says \"What a lovely color!\"",
         "question": "Why has Sophie responded in such a way?",
         "interpretations": [
@@ -13,7 +14,7 @@ var quality_checks_deceits = [
         ]
     },
     {
-        "id": 2,
+        "id": "quality_checks_2",
         "scenario": "Alice has forgotten to water her brother Luke's plants while he was away. When Luke returns and asks how plant watering went, Alice says \"It went so well!\"",
         "question": "Why has Sophie responded in such a way?",
         "interpretations": [
@@ -28,7 +29,7 @@ var quality_checks_deceits = [
 
 var quality_checks_indirectspeech = [
     {
-        "id": 1,
+        "id": "quality_checks_1",
         "scenario": "Alice is arriving at her friend's Bob new place. As she enters, she is blinded by the brightness of the house's lights. She says \"It's a bit too bright in here!\"",
         "question": "What might she be trying to convey?",
         "interpretations": [
@@ -39,7 +40,7 @@ var quality_checks_indirectspeech = [
         ]
     },
     {
-        "id": 2,
+        "id": "quality_checks_2",
         "scenario": "At the dinner table, Tom asks his wife, \"Can you pass me the yams?\"",
         "question": "What might he be trying to convey?",
         "interpretations": [
@@ -54,7 +55,7 @@ var quality_checks_indirectspeech = [
 
 var quality_checks_irony = [
     {
-        "id": 1,
+        "id": "quality_checks_1",
         "scenario": "Alice and John are on a hike when Alice suddenly trips over some rocks. John laughs and says, \"You are such a skilled hiker!\"",
         "question": "What did John want to convey?",
         "interpretations": [
@@ -65,7 +66,7 @@ var quality_checks_irony = [
         ]
     },
     {
-        "id": 2,
+        "id": "quality_checks_2",
         "scenario": "Michael is waiting for his son Ben to finish his breakfast so he can drive him to school. Ben is taking a long time, and Michael, impatient, says, \"Are you a speed eater Ben? I've never seen anyone eat so fast!\"",
         "question": "What did Michael want to convey?",
         "interpretations": [
@@ -80,7 +81,7 @@ var quality_checks_irony = [
 
 var quality_checks_maxims = [
     {
-        "id": 1,
+        "id": "quality_checks_1",
         "scenario": "Mary and Bob go to school together. Mary asks Bob whether she can have the pen she lent him back. Bob responds \"I wonder what they're serving for lunch today!\"",
         "question": "Why did Bob respond this way?",
         "interpretations": [
@@ -91,7 +92,7 @@ var quality_checks_maxims = [
         ]
     },
     {
-        "id": 2,
+        "id": "quality_checks_2",
         "scenario": "Sara is asking Tom about the date he went on last night with her friend Clara. Tom winces and says, \"The lighting in the cafe was pretty good. The seats were really comfortable as well. The food was okay, I guess.\"",
         "question": "Why did Tom respond this way?",
         "interpretations": [
@@ -106,7 +107,7 @@ var quality_checks_maxims = [
 
 var quality_checks_metaphor = [
     {
-        "id": 1,
+        "id": "quality_checks_1",
         "scenario": "Alice is talking about his co-worker John who is always so productive and on top of things. She says, \"John is a machine!\"",
         "question": "What does Alice mean?",
         "interpretations": [
@@ -118,7 +119,7 @@ var quality_checks_metaphor = [
         ]
     },
     {
-        "id": 2,
+        "id": "quality_checks_2",
         "scenario": "Bill is talking to his wife Cathy about the new sale that the electronics store down the street is having. Bill says \"Those prices are out of this world!\"",
         "question": "What does Bill mean?",
         "interpretations": [

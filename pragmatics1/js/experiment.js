@@ -5,8 +5,49 @@ function make_slides(f) {
     name: "i0",
     start: function () {
       exp.startT = Date.now();
+      let num_interpretations;
+      if (exp.num_interpretations === 4) {
+        num_interpretations = "four";
+      } else if (exp.num_interpretations === 5) {
+        num_interpretations = "five";
+      }
+      $("#num-interpretations").text(num_interpretations);
     }
   });
+
+  function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationSelector, interpretations, stimuli_type) {
+    // Populate the scenario
+    const $scenario = $(scenarioSelector);
+    $scenario.empty(); // Clear any existing content
+    $scenario.html(scenarioValue);
+    // Populate the question
+    const $question = $(questionSelector);
+    $question.empty(); // Clear any existing content
+    $question.html(questionValue);
+    // Populate the interpretations
+    const $interpretation = $(interpretationSelector);
+    $interpretation.empty(); // Clear any existing content
+    interpretations.forEach((interp, index) => {
+      let listItem;
+      if (stimuli_type === "example") {
+        listItem = `
+                <li>
+                    ${index + 1}. <span id="example_interp${index + 1}">${interp}</span>
+                    <input type="number" style="width: 60px;" disabled>
+                </li>
+            `;
+      } else {
+        listItem = `
+                <li>
+                    ${index + 1}. <span id="winterp${index + 1}">${interp}</span>
+                    <input type="number" class="walloc" min="0" max="100" style="width: 60px;">
+                </li>
+            `;
+      }
+      $interpretation.append(listItem);
+    });
+  }
+
 
   slides.example = slide({
     name: "example",
@@ -20,7 +61,7 @@ function make_slides(f) {
       if (this.index < exp.example_stimuli.length) {
         console.log(this.index);
         const stim = exp.example_stimuli[this.index];
-        // Set the scenario and question
+        // Prettify the scenario and question
         const scenario = stim.scenario;
         // Add <strong>Scenario:</strong> to the beginning of the scenario
         const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
@@ -28,13 +69,8 @@ function make_slides(f) {
         const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
         // Bold the question
         const question = `<strong>${stim.question}</strong>`;
-        $("#example-scenario").html(highlighted);
-        $("#example-question").html(question);
-
-        // Set the interpretations
-        for (let i = 0; i < stim.interpretations.length; i++) {
-          $(`#example_interp${i + 1}`).text(stim.interpretations[i]);
-        }
+        // Populate the html with the scenario, question, and interpretations
+        populateInterpretations("#scenario", highlighted, "#question", question, "#interpretation-list", stim.interpretations, "example");
       } else {
         exp.go();
       }

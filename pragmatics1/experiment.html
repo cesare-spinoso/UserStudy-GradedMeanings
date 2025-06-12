@@ -75,15 +75,18 @@
                                 are interpreted in conversations between two or more people.
                                 In this study, you will be shown scenarios in which a character says something. You will
                                 then <strong>evaluate the meaning</strong> of that utterance
-                                by <strong>distributing</strong> 100 points across four possible meaning
-                                interpretations <em>based on how likely you believe each one to be</em>. You
+                                by <strong>distributing</strong> 100 points across {{num_interpretations}} possible
+                                meaning
+                                interpretations based on how likely <em>you believe</em> each one of them to be. You
                                 will also <strong>justify</strong> your point distribution.
                             </p>
                             <p>
-                                <strong>Study structure:</strong> You will first be presented with 2
-                                example scenarios followed by 2 warm-up examples to help you
-                                get familiar with the task. You will then be asked to annotate
-                                <strong>7</strong> scenarios. We expect the annotation to take between 10 to 20 minutes.
+                                <strong>Study structure:</strong> You will first be presented with one
+                                <strong>example scenario</strong> followed by two <strong>warm-up examples</strong> to
+                                help you
+                                get familiar with the task. You will then be asked to annotate seven
+                                <strong>study scenarios</strong>. We expect the annotation to take between 10 to
+                                20 minutes.
                             </p>
                             <p>
                                 Thanks for your participation!
@@ -120,14 +123,14 @@
                     style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
-                        <strong>Example</strong>
+                        <strong>Example Scenario</strong>
                     </div>
 
                     <div class="panel-body" style="padding: 20px;">
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p id="example-scenario">{{scenario}}</p>
+                            <p id="scenario">{{scenario}}</p>
                             </p>
-                            <p id="example-question">{{question}}</p>
+                            <p id="question">{{question}}</p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
@@ -135,15 +138,6 @@
                                 interpretation.
                             </p>
                             <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
-                                <li>1. <span id="example_interp1">{{interpretation1}}</span> <input type="number"
-                                        style="width: 60px;" disabled></li>
-                                <li>2. <span id="example_interp2">{{interpretation2}}</span> <input type="number"
-                                        style="width: 60px;" disabled></li>
-                                <li>3. <span id="example_interp3">{{interpretation3}}</span> <input type="number"
-                                        style="width: 60px;" disabled></li>
-                                <li>4. <span id="example_interp4">{{interpretation4}}</span> <input type="number"
-                                        style="width: 60px;" disabled></li>
-                                <!-- TODO: Handle 5 meanings where there's metaphor -->
                             </ul>
                         </div>
                         <div class="form-group" style="margin-bottom: 30px;">
@@ -161,7 +155,7 @@
                             <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
                             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
                                 <textarea class="form-control" id="psuedo_rationale2" rows="3"
-                                    readonly>I assigned ... many points to interpretation ... because ... and this many points to this other interpretation because ...</textarea>
+                                    readonly>I assigned <em>X</em> many points to interpretation <em>Y</em> because [...] and <em>Z</em> many points to interpretation <em>W</em> because [...]</textarea>
                             </div>
                         </div>
 
@@ -185,9 +179,10 @@
         <br>
         <br>
         <p id="instruct-text" class="left">
-            Now you have seen a few examples, we will begin the <em>warm-up</em> experiment. You will be presented with
-            2 scenarios and
-            asked to provide your meaning interpretations by assigning points based on how likely you believe each
+            Now you have seen an example of what an annotation will look like, we will begin with the <strong>warm-up
+                scenarios</strong>. You will be presented with
+            two scenarios and
+            asked to provide meaning interpretations by assigning points based on how likely you believe each
             interpretation to be. To save you time, you will not need to provide rationales for these warm-up examples.
         </p>
         <div class="center">
@@ -204,7 +199,7 @@
                     style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
-                        <strong>Warm-up Example</strong>
+                        <strong>Warm-up Scenario</strong>
                     </div>
 
                     <div class="panel-body" style="padding: 20px;">
@@ -256,9 +251,10 @@
         <br>
         <br>
         <p id="instruct-text" class="left">
-            Great! Now we can start the real experiment. You will be presented with 7 scenarios, and
+            Great! Now we can start the real study. You will be presented with seven <strong>study scenarios</strong>,
+            and
             asked to provide your meaning interpretations and rationales.
-            At the end, you'll also be able to provide any extra feedback about the the task as a whole (but only if
+            At the end, you'll also be able to provide any extra feedback about the task as a whole (but only if
             you'd
             like to!).
         </p>
@@ -276,7 +272,7 @@
                     style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
-                        <strong>Submit your Response</strong>
+                        <strong>Study Scenario</strong>
                     </div>
 
                     <div class="panel-body" style="padding: 20px;">
