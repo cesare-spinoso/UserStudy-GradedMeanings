@@ -16,22 +16,24 @@ function make_slides(f) {
   });
 
   function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationSelector, interpretations, stimuli_type) {
+    // First select the appropriate slide
+    const $slide = $(`#${stimuli_type}`);
     // Populate the scenario
     console.log(scenarioSelector)
     console.log(scenarioValue)
-    const $scenario = $(scenarioSelector);
+    const $scenario = $slide.find(scenarioSelector);
     $scenario.empty(); // Clear any existing content
     $scenario.html(scenarioValue);
     // Populate the question
     console.log(questionSelector)
     console.log(questionValue)
-    const $question = $(questionSelector);
+    const $question = $slide.find(questionSelector);
     $question.empty(); // Clear any existing content
     $question.html(questionValue);
     // Populate the interpretations
     console.log(interpretationSelector)
     console.log(interpretations)
-    const $interpretation = $(interpretationSelector);
+    const $interpretation = $slide.find(interpretationSelector);
     $interpretation.empty(); // Clear any existing content
     interpretations.forEach((interp, index) => {
       let listItem;
@@ -96,7 +98,7 @@ function make_slides(f) {
       // Bold the question
       const question = `<strong>${stim.question}</strong>`;
       // Populate the html with the scenario, question, and interpretations
-      populateInterpretations("#scenario", highlighted, "#question", question, "#interpretation-list", stim.interpretations, stimuli_type);
+      populateInterpretations(scenarioSelector = ".scenario", scenarioValue = highlighted, questionSelector = ".question", questionValue = question, interpretationSelector = ".interpretation-list", interpretations = stim.interpretations, stimuli_type = stimuli_type);
       // If warmup or main, do point allocation validation
       if (stimuli_type === "warmup" || stimuli_type === "main") {
         // Reset allocations and point total
