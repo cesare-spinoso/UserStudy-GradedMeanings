@@ -47,8 +47,8 @@ function make_slides(f) {
       } else {
         listItem = `
                 <li>
-                    ${index + 1}. <span id="winterp${index + 1}">${interp}</span>
-                    <input type="number" class="walloc" min="0" max="100" style="width: 60px;">
+                    ${index + 1}. <span id="interp${index + 1}">${interp}</span>
+                    <input type="number" class="alloc" min="0" max="100" style="width: 60px;">
                 </li>
             `;
       }
@@ -101,25 +101,27 @@ function make_slides(f) {
       populateInterpretations(scenarioSelector = ".scenario", scenarioValue = highlighted, questionSelector = ".question", questionValue = question, interpretationSelector = ".interpretation-list", interpretations = stim.interpretations, stimuli_type = stimuli_type);
       // If warmup or main, do point allocation validation
       if (stimuli_type === "warmup" || stimuli_type === "main") {
+        // First select the appropriate slide
+        const $slide = $(`#${stimuli_type}`);
         // Reset allocations and point total
-        $(".alloc").val("");
-        $("#point-total").text("0");
-        $(".err").hide();
+        $slide.find(".alloc").val("");
+        $slide.find(".point-total").text("0");
+        $slide.find(".err").hide();
         // Attach input event handler for validation
         // Set the current point total, and check for errors
-        $(".alloc").off("input").on("input", () => {
+        $slide.find(".alloc").off("input").on("input", () => {
           const result = validateAllocations();
-          $("point-total").text(result.total);
+          $slide.find(".point-total").text(result.total);
           if (!result.valid) {
-            $(".err").text(result.errMsg).show();
+            $slide.find(".err").text(result.errMsg).show();
           } else if (result.total !== 100) {
-            $(".err").text("Total must equal 100.").show();
+            $slide.find(".err").text("Total must equal 100.").show();
           } else {
-            $(".err").hide();
+            $slide.find(".err").hide();
           }
         });
         // Automatically place cursor in first input
-        $(".alloc").first().focus();
+        $slide.find(".alloc").first().focus();
       }
     } else {
       exp.go();
