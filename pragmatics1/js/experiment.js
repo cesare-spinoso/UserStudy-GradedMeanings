@@ -186,10 +186,11 @@ function make_slides(f) {
     const result = validateAllocations(slide = $slide);
     $slide.find(".point-total").text(result.total);
     console.log(result);
+    console.log("Result valid: ", result.valid);
 
     if (!result.valid) {
       $slide.find(".err").text(result.errMsg).show();
-      return;
+      return false;
     }
 
     if (stimuli_type == "warmup") {
@@ -198,7 +199,7 @@ function make_slides(f) {
       const rationale = $slide.find(".rationale").val();
       if (!rationale) {
         $slide.find(".err").text("Please provide a rationale.").show();
-        return;
+        return false;
       }
     }
     console.log("Inside the trial_button function");
@@ -206,6 +207,7 @@ function make_slides(f) {
     console.log("Inputs: ", result.inputs);
 
     log_responses(stim = stimuli[current_index], rationale = rationale, inputs = result.inputs);
+    return true;
   }
 
   // WARMUP SLIDES //
@@ -234,9 +236,11 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
       console.log("In the button")
-      trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
-      this.index++;
-      display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type);
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
+      if (trial_result) {
+        this.index++;
+        display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type);
+      }
     },
   });
 
@@ -268,9 +272,11 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the button of main slide");
-      trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli);
-      this.index++;
-      display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli);
+      if (trial_result) {
+        this.index++;
+        display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
+      }
     },
   });
 
