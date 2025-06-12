@@ -119,7 +119,7 @@ function make_slides(f) {
         // Attach input event handler for validation
         // Set the current point total, and check for errors
         $slide.find(".alloc").off("input").on("input", () => {
-          const result = validateAllocations();
+          const result = validateAllocations(slide = $slide);
           $slide.find(".point-total").text(result.total);
           if (!result.valid) {
             $slide.find(".err").text(result.errMsg).show();
