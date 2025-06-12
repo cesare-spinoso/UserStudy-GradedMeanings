@@ -144,10 +144,12 @@ function make_slides(f) {
     index: 0,
 
     start: function () {
+      console.log("In the start of example slide");
       display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
     },
 
     button: function () {
+      console.log("In the button of example slide");
       this.index++;
       display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
     }
@@ -176,7 +178,7 @@ function make_slides(f) {
     exp.collected_data.push(trial_data);
   }
 
-  function trial_button(current_index, stimuli_type, stimuli) {
+  function trial_button_event(current_index, stimuli_type, stimuli) {
     const $slide = $(`#${stimuli_type}`);
 
     $slide.find(".err").hide();
@@ -204,8 +206,6 @@ function make_slides(f) {
     console.log("Inputs: ", result.inputs);
 
     log_responses(stim = stimuli[current_index], rationale = rationale, inputs = result.inputs);
-    this.index++;
-    display_stimulus(current_index = current_index, stimuli = stimuli, stimuli_type = stimuli_type);
   }
 
   // WARMUP SLIDES //
@@ -226,13 +226,17 @@ function make_slides(f) {
       $('.err').hide();
       console.log(this.index);
       console.log(exp.warmup_stimuli);
+      console.log("In the start")
       display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup");
     },
 
     button: function () {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
-      trial_button(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
+      console.log("In the button")
+      trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
+      this.index++;
+      display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type);
     },
   });
 
