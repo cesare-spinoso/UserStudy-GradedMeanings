@@ -155,7 +155,7 @@
                             <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
                             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
                                 <textarea class="form-control" id="psuedo_rationale2" rows="3"
-                                    readonly>I assigned <em>X</em> many points to interpretation <em>Y</em> because [...] and <em>Z</em> many points to interpretation <em>W</em> because [...]</textarea>
+                                    readonly>I assigned X many points to interpretation Y because [...] and Z many points to interpretation W because [...]</textarea>
                             </div>
                         </div>
 
@@ -179,7 +179,7 @@
         <br>
         <br>
         <p id="instruct-text" class="left">
-            Now you have seen an example of what an annotation will look like, we will begin with the <strong>warm-up
+            Now that you have seen an example of what an annotation will look like, we will begin with the <strong>warm-up
                 scenarios</strong>. You will be presented with
             two scenarios and
             asked to provide meaning interpretations by assigning points based on how likely you believe each
@@ -205,25 +205,17 @@
                     <div class="panel-body" style="padding: 20px;">
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p id="warmup-scenario">{{scenario}}</p>
+                            <p id="scenario">{{scenario}}</p>
                             </p>
-                            <p id="warmup-question">{{question}}</p>
+                            <p id="question">{{question}}</p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
                             <p>Please distribute 100 points across the following interpretations based on how likely you
                                 find each interpretation.</p>
                             <ul style="list-style-type: none; padding-left: 0;" id="interpretation-list">
-                                <li>1. <span id="winterp1">{{interpretation1}}</span> <input type="number"
-                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
-                                <li>2. <span id="winterp2">{{interpretation2}}</span> <input type="number"
-                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
-                                <li>3. <span id="winterp3">{{interpretation3}}</span> <input type="number"
-                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
-                                <li>4. <span id="winterp4">{{interpretation4}}</span> <input type="number"
-                                        class="walloc" min="0" max="100" style="width: 60px;"></li>
                             </ul>
-                            <p><strong>Total:</strong> <span id="wpoint-total">0</span> / 100</p>
+                            <p><strong>Total:</strong> <span id="point-total">0</span> / 100</p>
                         </div>
 
 

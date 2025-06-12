@@ -48,61 +48,13 @@ function make_slides(f) {
     });
   }
 
-
-  slides.example = slide({
-    name: "example",
-    index: 0,
-
-    start: function () {
-      this.display_stimulus();
-    },
-
-    display_stimulus: function () {
-      if (this.index < exp.example_stimuli.length) {
-        console.log(this.index);
-        const stim = exp.example_stimuli[this.index];
-        // Prettify the scenario and question
-        const scenario = stim.scenario;
-        // Add <strong>Scenario:</strong> to the beginning of the scenario
-        const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
-        // Make the utterance green so it stands out
-        const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
-        // Bold the question
-        const question = `<strong>${stim.question}</strong>`;
-        // Populate the html with the scenario, question, and interpretations
-        populateInterpretations("#scenario", highlighted, "#question", question, "#interpretation-list", stim.interpretations, "example");
-      } else {
-        exp.go();
-      }
-    },
-
-    button: function () {
-      this.index++;
-      this.display_stimulus();
-    }
-  });
-
-
-  slides.startWarmup = slide({
-    name: "startWarmup",
-    start: function () { },
-    button: function () {
-      exp.go();
-    }
-  });
-
-  function validateAllocations(exp_type) {
+  function validateAllocations() {
     let total = 0;
     let valid = true;
     let inputs = [];
     let errMsg = "";
 
-    if (exp_type === "warmup") {
-      var_alloc = $(".walloc");
-    }
-    else {
-      var_alloc = $(".alloc");
-    }
+    var_alloc = $(".alloc");
 
     var_alloc.each(function () {
       const val = $(this).val();
@@ -126,43 +78,30 @@ function make_slides(f) {
     return { total, valid, inputs, errMsg };
   }
 
-  slides.warmup = slide({
-    name: "warmup",
-    index: 0,
-
-    start: function () {
-      $('.err').hide();
-      this.display_stimulus();
-    },
-
-    display_stimulus: function () {
-      if (this.index < exp.warmup_stimuli.length) {
-        const stim = exp.warmup_stimuli[this.index];
-
-        // Set the scenario and question
-        const scenario = stim.scenario;
-        // Add <strong>Scenario:</strong> to the beginning of the scenario
-        const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
-        // Make the utterance green so it stands out
-        const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
-        // Bold the question
-        const question = `<strong>${stim.question}</strong>`;
-        $("#warmup-scenario").html(highlighted);
-        $("#warmup-question").html(question);
-
-        // Set the interpretations
-        for (let i = 0; i < stim.interpretations.length; i++) {
-          $(`#winterp${i + 1}`).text(stim.interpretations[i].value);
-        }
-
-        $(".walloc").val("");
-        $("#wpoint-total").text("0");
+  function display_stimulus(current_index, stimuli, stimuli_type) {
+    if (current_index < stimuli.length) {
+      const stim = stimuli[current_index];
+      // Prettify the scenario and question
+      const scenario = stim.scenario;
+      // Add <strong>Scenario:</strong> to the beginning of the scenario
+      const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
+      // Make the utterance green so it stands out
+      const highlighted = scenarioWithLabel.replace(/\"(.*?)\"/, '\"<span style="color: #318500;">$1</span>\"');
+      // Bold the question
+      const question = `<strong>${stim.question}</strong>`;
+      // Populate the html with the scenario, question, and interpretations
+      populateInterpretations("#scenario", highlighted, "#question", question, "#interpretation-list", stim.interpretations, stimuli_type);
+      // If warmup or main, do point allocation validation
+      if (stimuli_type === "warmup" || stimuli_type === "main") {
+        // Reset allocations and point total
+        $(".alloc").val("");
+        $("#point-total").text("0");
         $(".err").hide();
-
-        $(".walloc").off("input").on("input", () => {
-          const result = validateAllocations("warmup");
-          $("#wpoint-total").text(result.total);
-
+        // Attach input event handler for validation
+        // Set the current point total, and check for errors
+        $(".alloc").off("input").on("input", () => {
+          const result = validateAllocations();
+          $("point-total").text(result.total);
           if (!result.valid) {
             $(".err").text(result.errMsg).show();
           } else if (result.total !== 100) {
@@ -171,20 +110,54 @@ function make_slides(f) {
             $(".err").hide();
           }
         });
-
         // Automatically place cursor in first input
-        $(".walloc").first().focus();
-
-      } else {
-        exp.go();
+        $(".alloc").first().focus();
       }
+    } else {
+      exp.go();
+    }
+  }
+
+
+  slides.example = slide({
+    name: "example",
+    index: 0,
+
+    start: function () {
+      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
+    },
+
+    button: function () {
+      this.index++;
+      this.display_stimulus();
+    }
+  });
+
+
+
+
+  slides.startWarmup = slide({
+    name: "startWarmup",
+    start: function () { },
+    button: function () {
+      exp.go();
+    }
+  });
+
+  slides.warmup = slide({
+    name: "warmup",
+    index: 0,
+
+    start: function () {
+      $('.err').hide();
+      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup");
     },
 
     button: function () {
       $(".err").hide();
 
       const result = validateAllocations("warmup");
-      $("#wpoint-total").text(result.total);
+      $("#point-total").text(result.total);
 
       if (!result.valid) {
         $(".err").text(result.errMsg).show();
@@ -193,8 +166,6 @@ function make_slides(f) {
         $(".err").text("Total must equal 100.").show();
         return;
       }
-
-      // TODO: Add feedback specific to warmup trials
 
       this.log_responses(rationale, result.inputs);
       this.index++;
