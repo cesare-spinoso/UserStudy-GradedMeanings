@@ -123,6 +123,7 @@ function make_slides(f) {
         // Attach input event handler so that it shows as the user types
         $slide.find(".alloc").off("input").on("input", () => {
           const result = validateAllocations(slide = $slide);
+          $slide.find(".point-total").text(result.total);
           if (!result.valid) {
             $slide.find(".err").text(result.errMsg).show();
           } else {
