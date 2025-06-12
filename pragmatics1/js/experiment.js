@@ -116,15 +116,15 @@ function make_slides(f) {
         $slide.find(".alloc").val("");
         $slide.find(".point-total").text("0");
         $slide.find(".err").hide();
-        // Attach input event handler for validation
-        // Set the current point total, and check for errors
+        // If main slide, reset rationale input
+        if (stimuli_type === "main") {
+          $slide.find("#rationale").val("");
+        }
+        // Attach input event handler so that it shows as the user types
         $slide.find(".alloc").off("input").on("input", () => {
           const result = validateAllocations(slide = $slide);
-          $slide.find(".point-total").text(result.total);
           if (!result.valid) {
             $slide.find(".err").text(result.errMsg).show();
-          } else if (result.total !== 100) {
-            $slide.find(".err").text("Total must equal 100.").show();
           } else {
             $slide.find(".err").hide();
           }
