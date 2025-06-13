@@ -194,10 +194,11 @@ function make_slides(f) {
       return false;
     }
 
+    let rationale = "";
     if (stimuli_type == "warmup") {
       rationale = "None"; // No rationale for warmup
     } else {
-      const rationale = $slide.find("#rationale").val();
+      rationale = $slide.find("#rationale").val();
       if (!rationale) {
         $slide.find(".err").text("Please provide a rationale.").show();
         return false;
