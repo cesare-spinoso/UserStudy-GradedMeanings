@@ -19,7 +19,7 @@ var examples_deceits = [
 var examples_indirectspeech = [
     {
         "id": "examples_1",
-        "scenario": "During dinner with his family, his mother asks him what his son Marcus thinks of the food. He glances toward the salt shaker on the other end of the table and says aloud, \"It would be great if it had more salt.\"",
+        "scenario": "During dinner with his family, Marcus' mother asks him what he thinks of the food. He glances toward the salt shaker on the other end of the table and says aloud, \"It would be great if it had more salt.\"",
         "question": "What might he be trying to convey?",
         "interpretations": [
             "He finds the food bland.",

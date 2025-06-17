@@ -41,7 +41,7 @@ var quality_checks_indirectspeech = [
     },
     {
         "id": "quality_checks_2",
-        "scenario": "At the dinner table, Tom asks his wife, \"Can you pass me the yams?\"",
+        "scenario": "Tom is having dinner with his wife, as he usually does. He asks her, \"Can you pass me the yams?\"",
         "question": "What might he be trying to convey?",
         "interpretations": [
             "He would like his wife to pass him the yams.",

@@ -56,7 +56,7 @@ var warm_ups_indirectspeech = [
 var warm_ups_irony = [
     {
         "id": "warm_ups_1",
-        "scenario": "Ethan and Mia are caught in a sudden downpour on their way to lunch. They are both soaked, and the wind is blowing hard. Mia looks up and says, \"Gorgeous day, isn't it?\"",
+        "scenario": "Ethan and Mia are caught in a sudden downpour on their way to lunch during which they both get soaked. As they run to find some cover, Mia looks to Ethan and says, \"Gorgeous day, isn't it?\"",
         "question": "What did Mia want to convey?",
         "interpretations": [
             "She thinks it's beautiful out.",
@@ -82,7 +82,7 @@ var warm_ups_irony = [
 var warm_ups_maxims = [
     {
         "id": "warm_ups_1",
-        "scenario": "During lunch, Adam's friend asks him whether he ever told his boss about the mistake they made on the project. Adam looks away and says, \"The weather today sure is nice.\"",
+        "scenario": "During lunch, Adam's colleague asks him whether he ever told his boss about the mistake they made on the project. Adam looks away and says, \"The weather today sure is nice.\"",
         "question": "Why did Adam respond this way?",
         "interpretations": [
             "He is deflecting the question because he doesn't want to answer.",
