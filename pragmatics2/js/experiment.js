@@ -14,6 +14,9 @@ function make_slides(f) {
         num_interpretations = "five";
       }
       $("#num-interpretations").text(num_interpretations);
+      if (exp.is_alt) {
+        $("#alternative-instructions").text(exp.alternative_instructions);
+      }
     }
   });
 
@@ -159,6 +162,7 @@ function make_slides(f) {
   // Helper functions for buttons/logging for warmup and main slides
 
   function log_responses(stim, rationale, inputs) {
+    // FIXME: This function does not handle 5 meanings correctly
     // Log the responses for the current stimulus
     let trial_data = {
       id: stim.id,
@@ -315,43 +319,21 @@ function shuffle_stimuli(stimuli) {
 }
 
 function init() {
+  // TODO: FIX THE HANDLING OF MORE THAN FOUR INTERPRETATIONS
   // Initialize the collected data
   exp.trials = [];
   exp.catch_trials = [];
-  // Get URL parameters
-  var phenomenon = get_url_param("condition", "t"); // Represents the last letter of the phenomenon, e.g. t for Decei*t*
   // Get the stimuli using the URL parameters
   var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
-  if (phenomenon === "t") {
-    exp.example_stimuli = examples_deceits;
-    exp.warmup_stimuli = warm_ups_deceits;
-    exp.stimuli = main_stimuli_deceits[batch_index];
-    // Add the quality checks for Deceits
-    exp.stimuli = exp.stimuli.concat(quality_checks_deceits);
-  } else if (phenomenon === "h") {
-    exp.example_stimuli = examples_indirectspeech;
-    exp.warmup_stimuli = warm_ups_indirectspeech;
-    exp.stimuli = main_stimuli_indirectspeech[batch_index];
-    exp.stimuli = exp.stimuli.concat(quality_checks_indirectspeech);
-  } else if (phenomenon === "y") {
-    exp.example_stimuli = examples_irony;
-    exp.warmup_stimuli = warm_ups_irony;
-    exp.stimuli = main_stimuli_irony[batch_index];
-    exp.stimuli = exp.stimuli.concat(quality_checks_irony);
-  } else if (phenomenon === "m") {
-    exp.example_stimuli = examples_maxims;
-    exp.warmup_stimuli = warm_ups_maxims;
-    exp.stimuli = main_stimuli_maxims[batch_index];
-    exp.stimuli = exp.stimuli.concat(quality_checks_maxims);
-  } else { // "r"
-    // TODO: There are 5 metaphor interpretations, need to make their creation dynamic
-    exp.example_stimuli = examples_metaphor;
-    exp.warmup_stimuli = warm_ups_metaphor;
-    exp.stimuli = main_stimuli_metaphor[batch_index];
-    exp.stimuli = exp.stimuli.concat(quality_checks_metaphor);
-  }
+  var is_alt = parseInt(get_url_param("alt", 0)); // Whether to use the alternative stimuli or not
+  exp.alternative_instructions = alternative_instructions;
+  exp.example_stimuli = examples_gradable_meanings;
+  exp.warmup_stimuli = warm_ups_gradable_meanings;
+  exp.stimuli = main_stimuli_gradable_meanings[batch_index];
+  exp.stimuli = exp.stimuli.concat(quality_checks_gradable_meanings);
   // Shuffle the order of the stimuli and of the interpretations
-  exp.phenomenon = phenomenon; // Store the phenomenon for later use
+  exp.phenomenon = "gradable_meanings"; // Store the phenomenon for later use
+  exp.is_alt = is_alt; // Store whether this is the alternative stimuli or not
   exp.batch_index = batch_index; // Store the batch index for later use
   exp.warmup_stimuli = shuffle_stimuli(exp.warmup_stimuli);
   exp.stimuli = shuffle_stimuli(exp.stimuli);
@@ -372,3 +354,6 @@ function init() {
   $("#start_button").click(function () { exp.go(); });
   exp.go();
 }
+
+// TODO : Add the alternative instructions
+// TODO : Decide how you want to present the two batches with / without alternatives present (i.e. where to put the information on the html and also in the code)
