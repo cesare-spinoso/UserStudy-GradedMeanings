@@ -106,7 +106,7 @@ function make_slides(f) {
       // Add <strong>Scenario:</strong> to the beginning of the scenario
       const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
       // Make the utterance green so it stands out
-      const highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
+      var highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
       // If there is an alternative statement
       if ("stronger_alternative" in stim) {
         // Add the alternative utterance html to the highlighted scenario
