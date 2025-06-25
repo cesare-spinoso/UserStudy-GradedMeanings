@@ -15,7 +15,7 @@ function make_slides(f) {
       }
       $("#num-interpretations").text(num_interpretations);
       if (exp.is_alt) {
-        $("#alternative-instructions").text(exp.alternative_instructions);
+        $("#alternative-instructions").html(exp.alternative_instructions);
       }
     }
   });
@@ -107,6 +107,11 @@ function make_slides(f) {
       const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
       // Make the utterance green so it stands out
       const highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
+      // If there is an alternative statement
+      if ("stronger_alternative" in stim) {
+        // Add the alternative utterance html to the highlighted scenario
+        highlighted += `<br>${alternative_utterance_html(speaker_name = stim.speaker_name, alternative_utterance = stim.stronger_alternative)}`;
+      }
       // Bold the question
       const question = `<strong>${stim.question}</strong>`;
       // Populate the html with the scenario, question, and interpretations
@@ -278,7 +283,7 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the button of main slide");
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli);
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main");
       if (trial_result) {
         this.index++;
         display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
@@ -354,6 +359,3 @@ function init() {
   $("#start_button").click(function () { exp.go(); });
   exp.go();
 }
-
-// TODO : Add the alternative instructions
-// TODO : Decide how you want to present the two batches with / without alternatives present (i.e. where to put the information on the html and also in the code)
