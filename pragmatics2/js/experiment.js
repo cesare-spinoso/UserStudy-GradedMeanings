@@ -98,7 +98,7 @@ function make_slides(f) {
     return { total, valid, inputs, errMsg };
   }
 
-  function display_stimulus(current_index, stimuli, stimuli_type) {
+  function display_stimulus(current_index, stimuli, stimuli_type, is_alt) {
     if (current_index < stimuli.length) {
       const stim = stimuli[current_index];
       // Prettify the scenario and question
@@ -108,7 +108,7 @@ function make_slides(f) {
       // Make the utterance green so it stands out
       var highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
       // If there is an alternative statement
-      if ("stronger_alternative" in stim) {
+      if (is_alt) {
         // Add the alternative utterance html to the highlighted scenario
         highlighted += `<br>${alternative_utterance_html(speaker_name = stim.speaker_name, alternative_utterance = stim.stronger_alternative)}`;
       }
@@ -154,13 +154,13 @@ function make_slides(f) {
 
     start: function () {
       console.log("In the start of example slide");
-      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
+      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", is_alt = exp.is_alt);
     },
 
     button: function () {
       console.log("In the button of example slide");
       this.index++;
-      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example");
+      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", is_alt = exp.is_alt);
     }
   });
 
@@ -240,7 +240,7 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
       console.log("In the start")
-      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup");
+      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup", is_alt = exp.is_alt);
     },
 
     button: function () {
@@ -250,7 +250,7 @@ function make_slides(f) {
       trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
       if (trial_result) {
         this.index++;
-        display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type);
+        display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type, is_alt = exp.is_alt);
       }
     },
   });
@@ -276,17 +276,17 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the start of main slide");
-      display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
+      display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", is_alt = exp.is_alt);
     },
 
     button: function () {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the button of main slide");
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main");
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", is_alt = exp.is_alt);
       if (trial_result) {
         this.index++;
-        display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main");
+        display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", is_alt = exp.is_alt);
       }
     },
   });
