@@ -283,7 +283,7 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the button of main slide");
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", is_alt = exp.is_alt);
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli);
       if (trial_result) {
         this.index++;
         display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", is_alt = exp.is_alt);
