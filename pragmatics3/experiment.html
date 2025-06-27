@@ -69,7 +69,6 @@
                         </div>
                         <div class="panel-body">
                             <p>
-                                <!-- TODO: Change the description such that it is dynamic -->
                                 <strong>Study description:</strong> We're interested in how <strong>utterances</strong>
                                 (what people say)
                                 are interpreted in conversations between two or more people.
@@ -80,6 +79,14 @@
                                 meaning
                                 interpretations based on how likely <em>you believe</em> each one of them to be. You
                                 will also <strong>justify</strong> your point distribution.
+                            </p>
+                            <p>
+                                <strong>Alternative utterance</strong>: In addition, after you make your initial point
+                                distribution, you will be shown an <strong>alternative utterance:</strong> something the
+                                character <em>could have said</em> but <em>intentionally chose not to</em>. You will
+                                then be asked to re-distribute the 100 points taking into account this new
+                                <strong>alternative utterance</strong> and the fact that the character intentionally
+                                chose not to say it.
                             </p>
                             <p>
                                 <strong>Study structure:</strong> You will first be presented with one
@@ -129,16 +136,21 @@
 
                     <div class="panel-body" style="padding: 20px;">
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p class="scenario"></p>
-                            </p>
-                            <p class="question"></p>
+                            <p><strong>Scenario: </strong>Mark walks into the office and sees a small dog. He says,
+                                "<span style="color: #318500;">He's so small!</span>"</p>
+                            <p><strong>What did Mark want to convey?</strong></p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
                             <p>Distribute 100 points across the interpretations below based on how likely you find each
                                 interpretation.
                             </p>
-                            <ul style="list-style-type: none; padding-left: 0;" class="interpretation-list">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>1. The dog is of normal size.<input type="number" style="width: 60px;" disabled></li>
+                                <li>2. The dog is huge.<input type="number" style="width: 60px;" disabled></li>
+                                <li>3. The dog is tiny.<input type="number" style="width: 60px;" disabled></li>
+                                <li>4. The dog is small.<input type="number" style="width: 60px;" disabled></li>
+                                <li>5. The dog is big.<input type="number" style="width: 60px;" disabled></li>
                             </ul>
                         </div>
 
@@ -150,23 +162,31 @@
                             </div>
                         </div>
 
+                        <p>Once you hit "Continue", you will be shown an <strong>alternative utterance</strong> like in
+                            the following example.</p>
+
                         <div class="form-group" style="margin-bottom: 30px;">
-                            Now, suppose you are given the additional information that the character intentionally chose not so say "Oh lalala."
+                            <p><strong>Alternative Utterance:</strong> Now, assume that Mark could have said "<span style="color: #318500;">That's the tiniest dog I've ever seen!</span>" but <em>intentionally chose not to</em>.</p>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
                             <p>Re-distribute 100 points across the interpretations based on how likely you find each
-                                interpretation given this new information.
+                                interpretation given this new information about the alternative utterance.
                             </p>
-                            <ul style="list-style-type: none; padding-left: 0;" class="interpretation-list">
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li>1. The dog is of normal size.<input type="number" style="width: 60px;" disabled></li>
+                                <li>2. The dog is huge.<input type="number" style="width: 60px;" disabled></li>
+                                <li>3. The dog is tiny.<input type="number" style="width: 60px;" disabled></li>
+                                <li>4. The dog is small.<input type="number" style="width: 60px;" disabled></li>
+                                <li>5. The dog is big.<input type="number" style="width: 60px;" disabled></li>
                             </ul>
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
                             <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
                             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                <textarea class="form-control" id="pseudo_rationale" rows="3"
-                                    readonly>I assigned X points to interpretation Y because [...] and Z points to interpretation W because [...]</textarea>
+                                <textarea class="form-control" rows="3"
+                                    readonly>I changed my point assignment for interpretation X from Y points to Z points because the alternative says something [...] I also slightly increased my point interpretation for W and decreased my point interpretation for Y because [...]. Finally, I kept interpretation T the same because [...]</textarea>
                             </div>
                         </div>
 
