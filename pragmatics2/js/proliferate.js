@@ -1,7 +1,9 @@
 // var PROLIFERATE_SUBMIT_URL = "https://proliferate.alps.science/experiment/{exp_id}/complete";
-var PROLIFERATE_SUBMIT_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a/{exp_id}/complete";
+// var PROLIFERATE_SUBMIT_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a/{exp_id}/complete";
 // var PROLIFERATE_PING_URL = "https://proliferate.alps.science/experiment/{exp_id}/ping";
-var PROLIFERATE_PING_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a/{exp_id}/ping";
+// var PROLIFERATE_PING_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a/{exp_id}/ping";
+var PROLIFERATE_SUBMIT_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a";
+var PROLIFERATE_PING_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a";
 
 
 function get_url_param(name, defaultValue) { 
@@ -45,7 +47,7 @@ var proliferate = {
     
     var experiment_id = get_url_param("experiment_id", "NONE");
     var participant_id = get_url_param("participant_id", "NONE");
-    var submit_url = PROLIFERATE_SUBMIT_URL.replace("{exp_id}", experiment_id);
+    var submit_url = PROLIFERATE_SUBMIT_URL;
     
     // debug mode?
     if (experiment_id == "NONE" || participant_id == "NONE") {
@@ -71,7 +73,8 @@ var proliferate = {
     $("#uploading-text").show();
     $("#thanks-text").hide();
     
-    $.post(submit_url, {"data": JSON.stringify(expdata), 
+    $.post(submit_url, {"data": JSON.stringify(expdata),
+                        "experiment_id": experiment_id,
                         "participant_id": participant_id} 
       ).done(function(data) {
              if (success_fct != null) {
@@ -122,9 +125,10 @@ var turk = {
 $(document).ready(function() {
   if (get_url_param("experiment_id", "NONE") != "NONE" && get_url_param("participant_id", "NONE") != "NONE") {
     window.setInterval(function() {
-         var formdata = {"active": true, 
+         var formdata = {"active": true,
+                         "experiment_id": get_url_param("experiment_id", "NONE"), 
                          "participant_id": get_url_param("participant_id", "NONE")};
-         var ping_url = PROLIFERATE_PING_URL.replace("{exp_id}", get_url_param("experiment_id", "NONE"));
+         var ping_url = PROLIFERATE_PING_URL;
          $.post(ping_url, formdata);
       }, 60000);
     }
