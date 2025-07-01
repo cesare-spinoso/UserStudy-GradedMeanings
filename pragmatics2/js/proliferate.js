@@ -85,33 +85,28 @@ var proliferate = {
         })
             .then(response => {
                 console.log("Response status: " + response.status);
-                if (!response.ok) throw response;
-                return response.json();
-            })
-            .then(data => {
-                console.log("Response data: ", data);
+                if (response.ok) {
+                    console.log("Response data: ", response);
 
-                var completionURL = REDIRECT_URL;
-                var completionHTML = 'Thanks for your time!<br><br>' +
-                    'If you are not redirected within two seconds, click on the following completion URL:' +
-                    '<br> <a href="' + completionURL + '">' + completionURL + '</a>';
+                    var completionURL = REDIRECT_URL;
+                    var completionHTML = 'Thanks for your time!<br><br>' +
+                        'If you are not redirected within two seconds, click on the following completion URL:' +
+                        '<br> <a href="' + completionURL + '">' + completionURL + '</a>';
 
-                $("#uploading-text").html(completionHTML);
-                window.setTimeout(function () {
-                    window.location.href = completionURL;
-                }, 2000);
-            })
-            .catch(error => {
-                console.error("Error submitting data:", error);
+                    $("#uploading-text").html(completionHTML);
+                    window.setTimeout(function () {
+                        window.location.href = completionURL;
+                    }, 2000);
+                } else {
+                    console.error("Error submitting data:", response);
 
-                alert("Oooops, an error occurred! \n\n" +
-                    "Please message the researcher. " +
-                    "We apologize for any inconvenience caused.");
-            }
-            );
-
+                    alert("Oooops, an error occurred! \n\n" +
+                        "Please message the researcher. " +
+                        "We apologize for any inconvenience caused.");
+                }
+            });
     }
-}
+};
 
 
 // implement ping
