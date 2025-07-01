@@ -1,0 +1,3 @@
+# Study design
+
+The design of this study would be to first show the utterance without the alternative and then to show it with the alternative. **This study design has not been completed because Jackie and I decided to go with `pragmatics2` for now.** If you need to start this up again, look at lines 136 to 146 which is where I stopped. The next steps would have been to : 1. Freeze the allocations from the original utterance and 2. Re-display the same choices in the same order but this time with the alternative.

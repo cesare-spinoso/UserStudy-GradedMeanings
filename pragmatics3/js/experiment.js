@@ -115,7 +115,8 @@ function make_slides(f) {
   }
 
   function display_stimulus(current_index, stimuli, stimuli_type, is_alt) {
-    if (current_index < stimuli.length) {
+    // TODO: To modify with is_alt => First think how can do this without freezing OG
+    if (current_index < stimuli.length && is_alt === 0) {
       const stim = stimuli[current_index];
       // Prettify the scenario and question
       const scenario = stim.scenario;
@@ -132,47 +133,59 @@ function make_slides(f) {
       const question = `<strong>${stim.question}</strong>`;
       // Populate the html with the scenario, question, and interpretations
       populateInterpretations(scenarioSelector = ".scenario", scenarioValue = highlighted, questionSelector = ".question", questionValue = question, interpretationSelector = ".interpretation-list", interpretations = stim.interpretations, stimuli_type = stimuli_type);
-      // If warmup or main, do point allocation validation
-      if (stimuli_type === "warmup" || stimuli_type === "main") {
-        // First select the appropriate slide
-        const $slide = $(`#${stimuli_type}`);
-        // Reset allocations and point total
-        $slide.find(".alloc").val("");
-        $slide.find(".point-total").text("0");
-        $slide.find(".err").hide();
-        // If main slide, reset rationale input
-        if (stimuli_type === "main") {
-          $slide.find("#rationale").val("");
-        }
-        // Attach input event handler so that it shows as the user types
-        $slide.find(".alloc").off("input").on("input", () => {
-          const result = validateAllocations(slide = $slide);
-          $slide.find(".point-total").text(result.total);
-          if (!result.valid) {
-            $slide.find(".err").text(result.errMsg).show();
-          } else {
-            $slide.find(".err").hide();
-          }
-        });
-        // Automatically place cursor in first input
-        $slide.find(".alloc").first().focus();
-      }
+    } else if (current_index < stimuli.length && is_alt === 1) {
+      const stim = stimuli[current_index];
+      // Freeze the original utterance form
+      // Get list of interpretations and deep clone it so can pass it to the alternative utterance form
+      const interpretationListHtml = document.querySelectorAll(".interpretation-list li");
+      const clonedInterpretationListHtml = JSON.parse(JSON.stringify(interpretationListHtml));
+      itemList.forEach((item, index) => {
+        // Disable input for original utterance form
+        item.setAttribute("disabled", "");
+        // Set the value to what the allocation was        
+      });
     } else {
       exp.go();
     }
+    // Do point allocation validation (Example is fixed so don't have to check the stimuli type)
+    // First select the appropriate slide
+    const $slide = $(`#${stimuli_type}`);
+    // Reset allocations and point total
+    $slide.find(".alloc").val("");
+    $slide.find(".point-total").text("0");
+    $slide.find(".err").hide();
+    // If main slide, reset rationale input
+    if (stimuli_type === "main") {
+      $slide.find("#rationale").val("");
+    }
+    // Attach input event handler so that it shows as the user types
+    $slide.find(".alloc").off("input").on("input", () => {
+      const result = validateAllocations(slide = $slide);
+      $slide.find(".point-total").text(result.total);
+      if (!result.valid) {
+        $slide.find(".err").text(result.errMsg).show();
+      } else {
+        $slide.find(".err").hide();
+      }
+    });
+    // Automatically place cursor in first input
+    $slide.find(".alloc").first().focus();
   }
 
   // Helper functions for buttons/logging for warmup and main slides
 
-  function log_responses(stim, rationale, inputs) {
-    // FIXME: This function does not handle 5 meanings correctly
+  function log_responses(stim, rationale, inputs, is_alt) {
+    // TODO: Modify based on is_alt
+    // FIXME: This function does not handle 5 meanings correctly. After looking at proliferate, it's their API that has the issue.
     // Log the responses for the current stimulus
     let trial_data = {
       id: stim.id,
+      is_alt: is_alt,
       phenomenon: exp.phenomenon,
       batch_index: exp.batch_index,
       scenario: stim.scenario,
       question: stim.question,
+      alternative_utterance: stim.stronger_alternative,
       rationale: rationale,
       time_in_minutes: (Date.now() - exp.startT) / 60000
     };
@@ -186,7 +199,7 @@ function make_slides(f) {
     exp.collected_data.push(trial_data);
   }
 
-  function trial_button_event(current_index, stimuli_type, stimuli) {
+  function trial_button_event(current_index, stimuli_type, stimuli, is_alt) {
     const $slide = $(`#${stimuli_type}`);
 
     $slide.find(".err").hide();
@@ -215,7 +228,7 @@ function make_slides(f) {
     console.log("Rationale: ", rationale);
     console.log("Inputs: ", result.inputs);
 
-    log_responses(stim = stimuli[current_index], rationale = rationale, inputs = result.inputs);
+    log_responses(stim = stimuli[current_index], rationale = rationale, inputs = result.inputs, is_alt = is_alt);
     return true;
   }
 
@@ -232,23 +245,29 @@ function make_slides(f) {
   slides.warmup = slide({
     name: "warmup",
     index: 0,
+    is_alt: 0,
 
     start: function () {
       $('.err').hide();
       console.log(this.index);
       console.log(exp.warmup_stimuli);
       console.log("In the start")
-      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup", is_alt = exp.is_alt);
+      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup", is_alt = is_alt);
     },
 
     button: function () {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
       console.log("In the button")
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
-      if (trial_result) {
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli, is_alt = is_alt);
+      if (trial_result && is_alt === 0) {
+        this.is_alt = 1;
+        // TODO: Turn off the input stimuli for the og slide and keep it fixed
+        display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type, is_alt = is_alt);
+      } else if (trial_result && is_alt === 1) {
+        this.is_alt = 0;
         this.index++;
-        display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type, is_alt = exp.is_alt);
+        display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type, is_alt = is_alt);
       }
     },
   });
@@ -322,7 +341,6 @@ function shuffle_stimuli(stimuli) {
 }
 
 function init() {
-  // TODO: FIX THE HANDLING OF MORE THAN FOUR INTERPRETATIONS
   // Initialize the collected data
   exp.trials = [];
   exp.catch_trials = [];

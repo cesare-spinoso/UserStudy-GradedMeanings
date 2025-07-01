@@ -344,7 +344,6 @@ function init() {
     exp.stimuli = main_stimuli_maxims[batch_index];
     exp.stimuli = exp.stimuli.concat(quality_checks_maxims);
   } else { // "r"
-    // TODO: There are 5 metaphor interpretations, need to make their creation dynamic
     exp.example_stimuli = examples_metaphor;
     exp.warmup_stimuli = warm_ups_metaphor;
     exp.stimuli = main_stimuli_metaphor[batch_index];

@@ -166,15 +166,17 @@ function make_slides(f) {
 
   // Helper functions for buttons/logging for warmup and main slides
 
-  function log_responses(stim, rationale, inputs) {
+  function log_responses(stim, rationale, inputs, is_alt) {
     // FIXME: This function does not handle 5 meanings correctly
     // Log the responses for the current stimulus
     let trial_data = {
       id: stim.id,
+      is_alt: is_alt,
       phenomenon: exp.phenomenon,
       batch_index: exp.batch_index,
       scenario: stim.scenario,
       question: stim.question,
+      alternative_utterance: stim.stronger_alternative,
       rationale: rationale,
       time_in_minutes: (Date.now() - exp.startT) / 60000
     };
@@ -188,7 +190,7 @@ function make_slides(f) {
     exp.collected_data.push(trial_data);
   }
 
-  function trial_button_event(current_index, stimuli_type, stimuli) {
+  function trial_button_event(current_index, stimuli_type, stimuli, is_alt) {
     const $slide = $(`#${stimuli_type}`);
 
     $slide.find(".err").hide();
@@ -217,7 +219,7 @@ function make_slides(f) {
     console.log("Rationale: ", rationale);
     console.log("Inputs: ", result.inputs);
 
-    log_responses(stim = stimuli[current_index], rationale = rationale, inputs = result.inputs);
+    log_responses(stim = stimuli[current_index], rationale = rationale, inputs = result.inputs, is_alt = is_alt);
     return true;
   }
 
@@ -247,7 +249,7 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
       console.log("In the button")
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli);
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli, is_alt = exp.is_alt);
       if (trial_result) {
         this.index++;
         display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type, is_alt = exp.is_alt);
@@ -283,7 +285,7 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the button of main slide");
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli);
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli, is_alt = exp.is_alt);
       if (trial_result) {
         this.index++;
         display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", is_alt = exp.is_alt);
@@ -324,7 +326,8 @@ function shuffle_stimuli(stimuli) {
 }
 
 function init() {
-  // TODO: FIX THE HANDLING OF MORE THAN FOUR INTERPRETATIONS
+  // IMPORTANT NOTE ABOUT PROLIFERATE: When four vs five interpretations are used, the API only captures the four interpretations when
+  // you do getresults on the python side.
   // Initialize the collected data
   exp.trials = [];
   exp.catch_trials = [];
