@@ -58,29 +58,21 @@ var proliferate = {
         $("#uploading-text").show();
         $("#thanks-text").hide();
 
-        fetch(PROLIFERATE_SUBMIT_URL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                data: expdata,
-                prolific_pid: PROLIFIC_PID,
-                session_id: SESSION_ID,
-                study_id: STUDY_ID
-            })
-        })
-        .then(response => {
-            if (!response.ok) throw new Error("Network response was not ok");
-            return response.json().catch(() => ({}));  // If no JSON, just return empty object
-        })
-        .then(data => {
-            if (typeof success_fct === "function") success_fct(data);
+        $.post(PROLIFERATE_SUBMIT_URL, {
+            "data": JSON.stringify(expdata),
+            "prolific_pid": PROLIFIC_PID,
+            "session_id": SESSION_ID,
+            "study_id": STUDY_ID
+        }).done(function (data) {
+            if (typeof success_fct === "function") {
+                success_fct(data);
+                return;
+            }
+            // Always redirect on success
             window.location.href = REDIRECT_URL;
-        })
-        .catch(error => {
+        }).fail(function (data) {
             if (typeof failure_fct === "function") {
-                failure_fct(error);
+                failure_fct(data);
                 return;
             }
             if ($("#thanks").length > 0) {
