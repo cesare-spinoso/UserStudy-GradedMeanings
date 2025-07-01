@@ -84,14 +84,12 @@ var proliferate = {
             })
         })
             .then(response => {
+                console.log("Response status: " + response.status);
                 if (!response.ok) throw response;
                 return response.json();
             })
             .then(data => {
-                if (success_fct != null) {
-                    success_fct(data);
-                    return;
-                }
+                console.log("Response data: ", data);
 
                 var completionURL = REDIRECT_URL;
                 var completionHTML = 'Thanks for your time!<br><br>' +
@@ -104,6 +102,8 @@ var proliferate = {
                 }, 2000);
             })
             .catch(error => {
+                console.error("Error submitting data:", error);
+
                 alert("Oooops, an error occurred! \n\n" +
                     "Please message the researcher. " +
                     "We apologize for any inconvenience caused.");
