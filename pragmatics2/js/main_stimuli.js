@@ -17,62 +17,62 @@ var main_stimuli_gradable_meanings = [
             "stronger_alternative": "It feels like we're in a sealed cave without even a glimmer of light.",
             "speaker_name": "Luke"
         },
-        // {
-        //     "id": "main_stimuli_pvt21_revised39",
-        //     "scenario": "James and Lauren are preparing a healthy snack in the kitchen. James picks up a banana which has turned brown from the bowl and notices its texture, then remarks, \"This banana is definitely ripe.\"",
-        //     "question": "What did James want to convey?",
-        //     "interpretations": [
-        //         "The banana was mushy.",
-        //         "The banana was soft.",
-        //         "The banana had an ordinary texture.",
-        //         "The banana was firm.",
-        //         "The banana was hard."
-        //     ],
-        //     "stronger_alternative": "This banana might just dissolve in my hands.",
-        //     "speaker_name": "James"
-        // },
-        // {
-        //     "id": "main_stimuli_pvt21_revised30",
-        //     "scenario": "Timothy and Julia are hiking in a forest when Timothy accidentally brushes against a thorny bush. He grimaces and exclaims, \"Ow! That seriously hurt.\"",
-        //     "question": "What did Timothy want to convey?",
-        //     "interpretations": [
-        //         "The sting was excruciating.",
-        //         "The sting was painful.",
-        //         "The sting was unnoticeable.",
-        //         "The sting was painless.",
-        //         "The sting was pleasant."
-        //     ],
-        //     "stronger_alternative": "Ow, god damn it that hurt!",
-        //     "speaker_name": "Timothy"
-        // },
-        // {
-        //     "id": "main_stimuli_pvt21_revised45",
-        //     "scenario": "Harold and Harper, two mechanics, are working on a car that just came in. After a long afternoon of tuning up the engine, Harold checks the engine's temperature and says, \"That's quite toasty.\"",
-        //     "question": "What did Harold want to convey?",
-        //     "interpretations": [
-        //         "The engine was hot.",
-        //         "The engine was warm.",
-        //         "The engine was at an average temperature.",
-        //         "The engine was cool.",
-        //         "The engine was cold."
-        //     ],
-        //     "stronger_alternative": "Damn it's really burning up! I wouldn't stick my hand in there if I were you.",
-        //     "speaker_name": "Harold"
-        // },
-        // {
-        //     "id": "main_stimuli_pvt21_revised17",
-        //     "scenario": "Evelyn and Willie have just finished watching a romantic drama film together. As the credits roll, Evelyn wipes a tear from her eye and says, \"That hit me right in the feels.\"",
-        //     "question": "What did Evelyn want to convey?",
-        //     "interpretations": [
-        //         "The film was sentimental.",
-        //         "The film was emotional.",
-        //         "The film was touching.",
-        //         "The film was uninspiring.",
-        //         "The film was superficial."
-        //     ],
-        //     "stronger_alternative": "It's the first time I cry over a movie in a while.",
-        //     "speaker_name": "Evelyn"
-        // }
+        {
+            "id": "main_stimuli_pvt21_revised39",
+            "scenario": "James and Lauren are preparing a healthy snack in the kitchen. James picks up a banana which has turned brown from the bowl and notices its texture, then remarks, \"This banana is definitely ripe.\"",
+            "question": "What did James want to convey?",
+            "interpretations": [
+                "The banana was mushy.",
+                "The banana was soft.",
+                "The banana had an ordinary texture.",
+                "The banana was firm.",
+                "The banana was hard."
+            ],
+            "stronger_alternative": "This banana might just dissolve in my hands.",
+            "speaker_name": "James"
+        },
+        {
+            "id": "main_stimuli_pvt21_revised30",
+            "scenario": "Timothy and Julia are hiking in a forest when Timothy accidentally brushes against a thorny bush. He grimaces and exclaims, \"Ow! That seriously hurt.\"",
+            "question": "What did Timothy want to convey?",
+            "interpretations": [
+                "The sting was excruciating.",
+                "The sting was painful.",
+                "The sting was unnoticeable.",
+                "The sting was painless.",
+                "The sting was pleasant."
+            ],
+            "stronger_alternative": "Ow, god damn it that hurt!",
+            "speaker_name": "Timothy"
+        },
+        {
+            "id": "main_stimuli_pvt21_revised45",
+            "scenario": "Harold and Harper, two mechanics, are working on a car that just came in. After a long afternoon of tuning up the engine, Harold checks the engine's temperature and says, \"That's quite toasty.\"",
+            "question": "What did Harold want to convey?",
+            "interpretations": [
+                "The engine was hot.",
+                "The engine was warm.",
+                "The engine was at an average temperature.",
+                "The engine was cool.",
+                "The engine was cold."
+            ],
+            "stronger_alternative": "Damn it's really burning up! I wouldn't stick my hand in there if I were you.",
+            "speaker_name": "Harold"
+        },
+        {
+            "id": "main_stimuli_pvt21_revised17",
+            "scenario": "Evelyn and Willie have just finished watching a romantic drama film together. As the credits roll, Evelyn wipes a tear from her eye and says, \"That hit me right in the feels.\"",
+            "question": "What did Evelyn want to convey?",
+            "interpretations": [
+                "The film was sentimental.",
+                "The film was emotional.",
+                "The film was touching.",
+                "The film was uninspiring.",
+                "The film was superficial."
+            ],
+            "stronger_alternative": "It's the first time I cry over a movie in a while.",
+            "speaker_name": "Evelyn"
+        }
     ],
     [
         {
