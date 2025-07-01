@@ -1,5 +1,7 @@
-var PROLIFERATE_SUBMIT_URL = "https://proliferate.alps.science/experiment/{exp_id}/complete";
-var PROLIFERATE_PING_URL = "https://proliferate.alps.science/experiment/{exp_id}/ping";
+// var PROLIFERATE_SUBMIT_URL = "https://proliferate.alps.science/experiment/{exp_id}/complete";
+var PROLIFERATE_SUBMIT_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a/{exp_id}/complete";
+// var PROLIFERATE_PING_URL = "https://proliferate.alps.science/experiment/{exp_id}/ping";
+var PROLIFERATE_PING_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a/{exp_id}/ping";
 
 
 function get_url_param(name, defaultValue) { 
