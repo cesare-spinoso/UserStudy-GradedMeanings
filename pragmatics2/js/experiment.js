@@ -343,6 +343,7 @@ function init() {
   exp.phenomenon = "gradable_meanings"; // Store the phenomenon for later use
   exp.is_alt = is_alt; // Store whether this is the alternative stimuli or not
   exp.batch_index = batch_index; // Store the batch index for later use
+  exp.example_stimuli = shuffle_stimuli(exp.example_stimuli);
   exp.warmup_stimuli = shuffle_stimuli(exp.warmup_stimuli);
   exp.stimuli = shuffle_stimuli(exp.stimuli);
   exp.num_interpretations = exp.stimuli[0].interpretations.length; // Number of interpretations per stimulus, may be different for each phenomenon
