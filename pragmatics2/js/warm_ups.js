@@ -13,7 +13,7 @@ var warm_ups_gradable_meanings = [
             "The party is quiet.",
             "The party is silent."
         ],
-        "stronger_alternative": "It's so loud in here my eardrums might pop!",
+        "stronger_alternative": "There's so much noise in here I think my eardrums might pop!",
         "speaker_name": "Jamie"
     },
     {

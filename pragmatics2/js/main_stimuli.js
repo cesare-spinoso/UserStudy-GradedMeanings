@@ -1,5 +1,5 @@
 
-// all the stimuli data which comes from src/data/jenn_hu_expectations-over-alternatives/pvt21_revised_w_alts.csv 
+// all the stimuli data which comes from src/data/jenn_hu_expectations-over-alternatives/pvt21_revised_w_alts_wo_overlap.csv 
 
 var main_stimuli_gradable_meanings = [
     [
@@ -14,7 +14,7 @@ var main_stimuli_gradable_meanings = [
                 "The sky was bright.",
                 "The sky was light."
             ],
-            "stronger_alternative": "How is this possible? We're nowhere close to the city and it's still pitch black.",
+            "stronger_alternative": "It feels like we're in a sealed cave without even a glimmer of light.",
             "speaker_name": "Luke"
         },
         {
@@ -56,7 +56,7 @@ var main_stimuli_gradable_meanings = [
                 "The engine was cool.",
                 "The engine was cold."
             ],
-            "stronger_alternative": "Damn that's hot! I think this thing is beyond repair.",
+            "stronger_alternative": "Damn it's really burning up! I wouldn't stick my hand in there if I were you.",
             "speaker_name": "Harold"
         },
         {
@@ -142,7 +142,7 @@ var main_stimuli_gradable_meanings = [
                 "The cult was benevolent.",
                 "The cult was virtuous."
             ],
-            "stronger_alternative": "This is some kind of satanic hellscape.",
+            "stronger_alternative": "This is some kind of hell-worshiping cult.",
             "speaker_name": "Aaron"
         }
     ],
@@ -195,12 +195,12 @@ var main_stimuli_gradable_meanings = [
             "question": "What did Austin want to convey?",
             "interpretations": [
                 "His boss' tone was frosty.",
-                "His boss'  tone was cold.",
-                "His boss'  tone was without emotion.",
-                "His boss'  tone was warm.",
-                "His boss'  tone was inviting."
+                "His boss' tone was cold.",
+                "His boss' tone was without emotion.",
+                "His boss' tone was warm.",
+                "His boss' tone was inviting."
             ],
-            "stronger_alternative": "His tone was so cold, I started getting goosebumps.",
+            "stronger_alternative": "I felt like I was in an ice bath with goosebumps all over.",
             "speaker_name": "Austin"
         },
         {
@@ -446,7 +446,7 @@ var main_stimuli_gradable_meanings = [
                 "The show was subpar.",
                 "The show was disappointing."
             ],
-            "stronger_alternative": "They're so good live!",
+            "stronger_alternative": "These guys are fantastic live! What a show!",
             "speaker_name": "Gerald"
         },
         {
@@ -509,7 +509,7 @@ var main_stimuli_gradable_meanings = [
     [
         {
             "id": "main_stimuli_pvt21_revised2",
-            "scenario": "William and Katherine are walking through an affluent neighbourhood with many mansions. As they stop to admire one mansion in particular, William exclaims, \"I can't believe how big that thing is!\"",
+            "scenario": "William and Katherine are walking through an affluent neighbourhood with many mansions. As they stop to admire one mansion in particular, William exclaims, \"I can't believe the size of this thing is!\"",
             "question": "What did William want to convey?",
             "interpretations": [
                 "The mansion is huge.",
@@ -518,7 +518,7 @@ var main_stimuli_gradable_meanings = [
                 "The mansion is small.",
                 "The mansion is tiny."
             ],
-            "stronger_alternative": "You only see mansions this big in movies!",
+            "stronger_alternative": "You only see mansions of this size in movies!",
             "speaker_name": "William"
         },
         {

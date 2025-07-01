@@ -4,7 +4,7 @@
 var examples_gradable_meanings = [
     {
         "id": "examples_0",
-        "scenario": "Mark walks into the office and sees a small dog. He says, \"He's so small!\"",
+        "scenario": "Mark walks into the office and sees a dog. He says, \"What a cute little guy!\"",
         "question": "What did Mark want to convey?",
         "interpretations": [
             "The dog is tiny.",
@@ -13,7 +13,7 @@ var examples_gradable_meanings = [
             "The dog is big.",
             "The dog is huge."
         ],
-        "stronger_alternative": "That's the tiniest dog I've ever seen!",
+        "stronger_alternative": "My goodness he's so little I almost didn't see him.",
         "speaker_name": "Mark"
     }
 ];
