@@ -1,7 +1,6 @@
 var PROLIFERATE_SUBMIT_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a";
 var PROLIFERATE_PING_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a";
-var REDIRECT_URL = "https://app.prolific.com/submissions/complete?cc=CH9FR7LI"; // NOTE: Should change everytime
-
+var REDIRECT_URL = "https://app.prolific.com/submissions/complete?cc=CH9FR7LI"; // NOTE: Should change every time you make a new study on prolific
 
 function get_url_param(name, defaultValue) {
     var regexS = "[\?&]" + name + "=([^&#]*)";
@@ -35,8 +34,6 @@ function htmlify(obj) {
         return obj.toString();
     }
 };
-
-
 
 var proliferate = {
     "submit": function (expdata) {
@@ -74,6 +71,7 @@ var proliferate = {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
             body: new URLSearchParams({
+                "study_name": "pilot_4", // TODO: Change every time you make a new study on prolific
                 "data": JSON.stringify(expdata),
                 "prolific_id": PROLIFIC_PID,
                 "session_id": SESSION_ID,
@@ -107,7 +105,6 @@ var proliferate = {
             });
     }
 };
-
 
 // implement ping
 $(document).ready(function () {

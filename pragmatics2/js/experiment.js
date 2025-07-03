@@ -241,14 +241,14 @@ function make_slides(f) {
       $('.err').hide();
       console.log(this.index);
       console.log(exp.warmup_stimuli);
-      console.log("In the start")
+      console.log("In the start");
       display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup", is_alt = exp.is_alt);
     },
 
     button: function () {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
-      console.log("In the button")
+      console.log("In the button");
       trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli, is_alt = exp.is_alt);
       if (trial_result) {
         this.index++;
