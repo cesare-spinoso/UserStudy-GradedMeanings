@@ -127,54 +127,57 @@
     <div class="slide" id="example">
         <section class="container" id="SET1" style="padding: 10px;">
             <div class="row">
-                <!-- Response Collection Form -->
-                <div class="panel panel-primary" style="border-color: #800080; margin: 0 auto;">
-                    <div class="panel-heading"
-                        style="background-image: none;background-color:#800080;border-color: #800080">
-                        <strong>Example Scenario</strong>
-                    </div>
-
-                    <div class="panel-body" style="padding: 20px;">
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <p class="scenario"></p>
-                            </p>
-                            <p class="question"></p>
+                <div class="col-xs-12">
+                    <!-- Response Collection Form -->
+                    <div class="panel panel-primary" style="border-color: #800080; margin: 0 auto;">
+                        <div class="panel-heading"
+                            style="background-image: none;background-color:#800080;border-color: #800080">
+                            <strong>Example Scenario</strong>
                         </div>
 
-                        <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Distribute 100 points across the interpretations below based on how likely you find each
-                                interpretation.
-                            </p>
-                            <ul style="list-style-type: none; padding-left: 0;" class="interpretation-list">
-                            </ul>
-                        </div>
-                        <div class="form-group" style="margin-bottom: 30px;">
-
-                            
-                            <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
-                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
-                                <textarea class="form-control" id="pseudo_rationale" rows="3"
-                                readonly>I assigned X points to interpretation Y because [...] and Z points to interpretation W because [...]</textarea>
+                        <div class="panel-body" style="padding: 20px;">
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <p class="scenario"></p>
+                                </p>
+                                <p class="question"></p>
                             </div>
-                        </div>
-                        
-                        <ul style="list-style-type: none; padding-left: 0;">
-                            <li><strong>Note:</strong> The values here have been omitted. In an actual scenario to
-                                annotate,
-                                you would have to fill these boxes out with numbers between 0 and 100 based on how
-                                likely you find each interpretation.</li>
-                        </ul>
 
-                        <div class="possible-allocations"></div>
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <p>Distribute 100 points across the interpretations below based on how likely you find
+                                    each
+                                    interpretation.
+                                </p>
+                                <ul style="list-style-type: none; padding-left: 0;" class="interpretation-list">
+                                </ul>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 30px;">
 
-                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-                            <button id="start_button" class="btn btn-lg btn-primary continueButton"
-                                onclick="_s.button()" style="background-color: #800080;
+
+                                <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                    <textarea class="form-control" id="pseudo_rationale" rows="3"
+                                        readonly>I assigned X points to interpretation Y because [...] and Z points to interpretation W because [...]</textarea>
+                                </div>
+                            </div>
+
+                            <ul style="list-style-type: none; padding-left: 0;">
+                                <li><strong>Note:</strong> The values here have been omitted. In an actual scenario to
+                                    annotate,
+                                    you would have to fill these boxes out with numbers between 0 and 100 based on how
+                                    likely you find each interpretation.</li>
+                            </ul>
+
+                            <div class="possible-allocations"></div>
+
+                            <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                                <button id="start_button" class="btn btn-lg btn-primary continueButton"
+                                    onclick="_s.button()" style="background-color: #800080;
                        border-color: #800080;
                        padding: 15px 40px;
                        font-size: 18px;">
-                                Continue
-                            </button>
+                                    Continue
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
