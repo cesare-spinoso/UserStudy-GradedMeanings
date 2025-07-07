@@ -15,6 +15,7 @@
     <script src="shared/js/stream-V2.js"></script>
 
     <!-- utilities to submit data to proliferate -->
+    <!-- NOTE: This now uses webhook to capture the data -->
     <script src="js/proliferate.js"></script>
 
     <!-- Bootstrap CSS -->
@@ -32,6 +33,7 @@
     <script src="js/quality_checks.js"></script>
     <script src="js/main_stimuli.js"></script>
     <script src="js/alternative_instructions.js"></script>
+    <script src="js/feedback.js"></script>
 
     <!-- NOTE: Always put the data before the experiment.js file -->
     <script src="js/experiment.js"></script>
@@ -144,22 +146,21 @@
                         </div>
                         <div class="form-group" style="margin-bottom: 30px;">
 
-                            <ul style="list-style-type: none; padding-left: 0;">
-                                <li><strong>Note 1:</strong> The values here have been omitted. In an actual scenario to
-                                    annotate,
-                                    you would have to fill these boxes out with numbers between 0 and 100 based on how
-                                    likely you find each interpretation.</li>
-                                <li><strong>Note 2:</strong> There is not one correct answer - you should assign
-                                    points based on <em>your own</em> interpretation and explain your rationale in the
-                                    box below.</li>
-                            </ul>
-
+                            
                             <h4 style="color: #800080; margin-bottom: 15px;">Explanation:</h4>
                             <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
                                 <textarea class="form-control" id="pseudo_rationale" rows="3"
-                                    readonly>I assigned X points to interpretation Y because [...] and Z points to interpretation W because [...]</textarea>
+                                readonly>I assigned X points to interpretation Y because [...] and Z points to interpretation W because [...]</textarea>
                             </div>
                         </div>
+                        
+                        <ul style="list-style-type: none; padding-left: 0;">
+                            <li><strong>Note:</strong> The values here have been omitted. In an actual scenario to
+                                annotate,
+                                you would have to fill these boxes out with numbers between 0 and 100 based on how
+                                likely you find each interpretation.</li>
+                            <li class="possible-allocations"></li>
+                        </ul>
 
                         <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
                             <button id="start_button" class="btn btn-lg btn-primary continueButton"
