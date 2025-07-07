@@ -32,12 +32,12 @@ function create_feedback(interpretationKeys, exampleAllocations) {
 
     // 3. Build the "Sensible Allocations" Panel
     const sensiblePanel = `
-        <div class="panel panel-success">
+        <div class="panel panel-success" style="margin-top: 20px;">
             <div class="panel-heading">
                 <h3 class="panel-title">✅ Sensible Allocations</h3>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped table-condensed">
                     <thead>
                         <tr>
                             <th class="text-left">Interpretation</th>
@@ -50,8 +50,8 @@ function create_feedback(interpretationKeys, exampleAllocations) {
                 </table>
             </div>
             <div class="panel-footer">
-                <p><strong>Rationale:</strong> These are logical because they focus on related concepts.</p>
-                ${sensibleExamples.map(ex => `<p><b>Example ${ex.name}:</b> ${ex.rationale}</p>`).join('')}
+                <p style="margin-bottom: 5px;"><strong>Rationale:</strong> These are logical because they focus on related concepts.</p>
+                ${sensibleExamples.map(ex => `<p style="margin-bottom: 0;"><b>Example ${ex.name}:</b> ${ex.rationale}</p>`).join('')}
             </div>
         </div>
     `;
@@ -63,7 +63,7 @@ function create_feedback(interpretationKeys, exampleAllocations) {
                 <h3 class="panel-title">⚠️ Nonsensical Allocations</h3>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped">
+                <table class="table table-striped table-condensed">
                     <thead>
                         <tr>
                             <th class="text-left">Interpretation</th>
@@ -76,28 +76,21 @@ function create_feedback(interpretationKeys, exampleAllocations) {
                 </table>
             </div>
             <div class="panel-footer">
-                <p><strong>Rationale:</strong> These are illogical because they assign high probability to contradictory concepts.</p>
-                ${nonsensicalExamples.map(ex => `<p><b>Example ${ex.name}:</b> ${ex.rationale}</p>`).join('')}
+                <p style="margin-bottom: 5px;"><strong>Rationale:</strong> These are illogical because they assign high probability to contradictory concepts.</p>
+                ${nonsensicalExamples.map(ex => `<p style="margin-bottom: 0;"><b>Example ${ex.name}:</b> ${ex.rationale}</p>`).join('')}
             </div>
         </div>
     `;
 
 
-    // 5. Assemble the final HTML using Bootstrap's grid system
+    // 5. Assemble the final HTML by stacking the panels vertically.
     const finalHtml = `
-        <div class="text-center">
-             <h2>Allocation Examples</h2>
-             <p class="lead">Your points must sum to 100, and your choices should be logically consistent. Here are some examples.</p>
+        <div style="margin-top: 15px;">
+             <h3 class="text-center">Allocation Examples</h3>
+             <p class="text-center">Your points must sum to 100, and your choices should be logically consistent. Here are some examples.</p>
         </div>
-        <hr>
-        <div class="row">
-            <div class="col-md-6">
-                ${sensiblePanel}
-            </div>
-            <div class="col-md-6">
-                ${nonsensicalPanel}
-            </div>
-        </div>
+        ${sensiblePanel}
+        ${nonsensicalPanel}
     `;
 
     return finalHtml;
