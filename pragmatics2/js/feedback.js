@@ -42,7 +42,6 @@ function create_feedback(interpretationKeys, exampleAllocations) {
         });
 
         nonsensicalExamples.forEach((ex, index) => {
-            // Add a border to the first cell in the nonsensical group
             const borderStyle = (index === 0) ? 'style="border-left: 2px solid #ddd;"' : '';
             bodyHtml += `<td class="text-center" ${borderStyle}>${ex.allocations[interp.text]}</td>`;
         });
@@ -67,13 +66,13 @@ function create_feedback(interpretationKeys, exampleAllocations) {
             </tr>
         </tfoot>`;
 
-    // 6. Assemble the final HTML into a single, responsive table.
+    // 6. Assemble the final HTML, FORCING the box-sizing property on the container.
     const finalHtml = `
         <div style="margin-top: 15px;">
             <h3 class="text-center">Allocation Examples</h3>
             <p class="text-center">Your points must sum to 100, and your choices should be logically consistent. Here are some examples.</p>
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive" style="box-sizing: border-box;">
             <table class="table table-bordered table-striped" style="margin-top: 20px;">
                 ${headerHtml}
                 ${bodyHtml}
