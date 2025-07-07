@@ -14,26 +14,22 @@
         }
     </style>
 </head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
 
-    <div class="w-full max-w-5xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-md">
-        <h1 class="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">Allocation Examples</h1>
-        <p class="text-center text-gray-600 mb-8">The total of all boxes must be exactly 100. Here are some examples of what is and isn't allowed.</p>
-
+    <div class="w-full max-w-6xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Allocation Examples</h1>
+            <p class="text-lg text-gray-600">Your points must sum to 100, and your choices should be logically consistent. Here are some examples.</p>
+        </div>
+        
         <div class="overflow-x-auto">
             <table class="min-w-full border-collapse">
                 <thead>
-                    <!-- Main headers for Possible and Impossible Allocations -->
                     <tr>
                         <th class="p-3"></th>
-                        <th colspan="3" class="text-lg font-semibold text-center text-green-700 bg-green-100 border-b-2 border-green-200 p-4 rounded-t-lg">
-                            ✅ Possible Allocations (Sum = 100)
-                        </th>
-                        <th colspan="3" class="text-lg font-semibold text-center text-red-700 bg-red-100 border-b-2 border-red-200 p-4 rounded-t-lg">
-                            ❌ Impossible Allocations
-                        </th>
+                        <th colspan="3" class="text-lg font-semibold text-center text-green-700 bg-green-100 border-b-2 border-green-200 p-4 rounded-tl-lg">✅ Sensible Allocations</th>
+                        <th colspan="3" class="text-lg font-semibold text-center text-red-700 bg-red-100 border-b-2 border-red-200 p-4 rounded-tr-lg">⚠️ Nonsensical Allocations</th>
                     </tr>
-                    <!-- Sub-headers for each example -->
                     <tr class="bg-gray-50">
                         <th class="text-left font-semibold text-gray-700 p-3 border-b">Interpretation</th>
                         <th class="font-medium text-gray-600 p-3 border-b border-l border-r">Example A</th>
@@ -50,66 +46,68 @@
                         <td class="text-left p-3 border-b text-gray-800">1. The dog is small.</td>
                         <td class="p-3 border-b border-l border-r">70</td>
                         <td class="p-3 border-b border-r">10</td>
-                        <td class="p-3 border-b border-r">0</td>
+                        <td class="p-3 border-b border-r">5</td>
                         <td class="p-3 border-b border-l border-r">50</td>
-                        <td class="p-3 border-b border-r">50</td>
-                        <td class="p-3 border-b border-r">60</td>
+                        <td class="p-3 border-b border-r">0</td>
+                        <td class="p-3 border-b border-r">0</td>
                     </tr>
                     <tr class="bg-gray-50 text-center">
                         <td class="text-left p-3 border-b text-gray-800">2. The dog is huge.</td>
                         <td class="p-3 border-b border-l border-r">0</td>
                         <td class="p-3 border-b border-r">20</td>
+                        <td class="p-3 border-b border-r">0</td>
+                        <td class="p-3 border-b border-l border-r">50</td>
                         <td class="p-3 border-b border-r">50</td>
-                        <td class="p-3 border-b border-l border-r">10</td>
                         <td class="p-3 border-b border-r">50</td>
-                        <td class="p-3 border-b border-r">20</td>
                     </tr>
                     <tr class="text-center">
                         <td class="text-left p-3 border-b text-gray-800">3. The dog is tiny.</td>
                         <td class="p-3 border-b border-l border-r">30</td>
                         <td class="p-3 border-b border-r">10</td>
                         <td class="p-3 border-b border-r">0</td>
-                        <td class="p-3 border-b border-l border-r">10</td>
+                        <td class="p-3 border-b border-l border-r">0</td>
+                        <td class="p-3 border-b border-r">50</td>
                         <td class="p-3 border-b border-r">0</td>
-                        <td class="p-3 border-b border-r text-red-600 font-medium">"twenty"</td>
                     </tr>
                     <tr class="bg-gray-50 text-center">
                         <td class="text-left p-3 border-b text-gray-800">4. The dog is of normal size.</td>
                         <td class="p-3 border-b border-l border-r">0</td>
                         <td class="p-3 border-b border-r">20</td>
+                        <td class="p-3 border-b border-r">90</td>
+                        <td class="p-3 border-b border-l border-r">0</td>
                         <td class="p-3 border-b border-r">0</td>
-                        <td class="p-3 border-b border-l border-r">10</td>
-                        <td class="p-3 border-b border-r">10</td>
-                        <td class="p-3 border-b border-r">0</td>
+                        <td class="p-3 border-b border-r">50</td>
                     </tr>
                     <tr class="text-center">
                         <td class="text-left p-3 border-b text-gray-800">5. The dog is big.</td>
                         <td class="p-3 border-b border-l border-r">0</td>
                         <td class="p-3 border-b border-r">40</td>
-                        <td class="p-3 border-b border-r">50</td>
-                        <td class="p-3 border-b border-l border-r">10</td>
+                        <td class="p-3 border-b border-r">5</td>
+                        <td class="p-3 border-b border-l border-r">0</td>
                         <td class="p-3 border-b border-r">0</td>
                         <td class="p-3 border-b border-r">0</td>
                     </tr>
                 </tbody>
                 <tfoot>
-                    <!-- Total row -->
-                    <tr class="font-bold text-center">
-                        <td class="text-left p-4 border-b text-gray-900">Total</td>
-                        <td class="p-4 border-b border-l border-r text-green-600 bg-green-50">100</td>
-                        <td class="p-4 border-b border-r text-green-600 bg-green-50">100</td>
-                        <td class="p-4 border-b border-r text-green-600 bg-green-50">100</td>
-                        <td class="p-4 border-b border-l border-r text-red-600 bg-red-50">90</td>
-                        <td class="p-4 border-b border-r text-red-600 bg-red-50">110</td>
-                        <td class="p-4 border-b border-r text-red-600 bg-red-50">N/A</td>
-                    </tr>
-                    <!-- Reason row for impossible allocations -->
-                    <tr class="font-medium text-center">
-                        <td class="text-left p-3 text-gray-900">Reason for Error</td>
-                        <td colspan="3" class="p-3 text-green-700 bg-green-50/50"></td>
-                        <td class="p-3 text-red-700 bg-red-50/50 border-l border-r">Sum is less than 100.</td>
-                        <td class="p-3 text-red-700 bg-red-50/50 border-r">Sum is greater than 100.</td>
-                        <td class="p-3 text-red-700 bg-red-50/50 border-r">Contains non-numeric text.</td>
+                    <!-- Rationale Row -->
+                    <tr class="font-medium text-left bg-gray-50">
+                        <td class="text-left p-3 text-gray-900 font-bold align-top">Rationale</td>
+                        <td colspan="3" class="p-3 text-sm text-gray-700 align-top">
+                            <p class="font-semibold text-gray-800 mb-2">These are logical because they focus on related concepts.</p>
+                            <div class="space-y-1 text-gray-600">
+                                <p><b>Example A:</b> Focuses on 'small' and 'tiny' as related concepts implied by 'little guy'.</p>
+                                <p><b>Example B:</b> A balanced view where 'little guy' could mean small, but also be an affectionate term for a normal or big dog.</p>
+                                <p><b>Example C:</b> Believes 'little guy' is most likely just a friendly term for a normal-sized dog.</p>
+                            </div>
+                        </td>
+                        <td colspan="3" class="p-3 text-sm text-gray-700 border-l align-top">
+                             <p class="font-semibold text-gray-800 mb-2">These are illogical because they assign high probability to contradictory concepts.</p>
+                             <div class="space-y-1 text-gray-600">
+                                <p><b>Example D:</b> Logically flawed. A dog cannot be both 'small' and 'huge' at the same time.</p>
+                                <p><b>Example E:</b> Logically flawed. 'Tiny' and 'huge' are mutually exclusive concepts.</p>
+                                <p><b>Example F:</b> Logically flawed. Gives equal weight to 'huge' and 'normal size', which are contradictory.</p>
+                            </div>
+                        </td>
                     </tr>
                 </tfoot>
             </table>
