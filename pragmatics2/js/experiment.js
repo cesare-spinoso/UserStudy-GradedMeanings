@@ -152,7 +152,7 @@ function make_slides(f) {
     // First select the appropriate slide
     const $slide = $(`#${slideSelector}`);
     // Find the examples allocations tag
-    const $exampleAllocations = $slide.find(".example-allocations");
+    const $exampleAllocations = $slide.find(".possible-allocations");
     // Clear any existing content
     $exampleAllocations.empty();
     // Add the example allocations html
@@ -168,7 +168,7 @@ function make_slides(f) {
       console.log("In the start of example slide");
       display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", is_alt = exp.is_alt);
       add_example_allocations(
-        slideSelector = ".example",
+        slideSelector = "example",
         interpretations = exp.example_stimuli[0].interpretations,
         exampleAllocations = exp.example_allocations,
       );
