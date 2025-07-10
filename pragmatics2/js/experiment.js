@@ -15,9 +15,6 @@ function make_slides(f) {
       }
       $("#start-instructions").html(start_instructions_html(is_alt = exp.is_alt));
       $("#num-interpretations").text(num_interpretations);
-      if (exp.is_alt) {
-        $("#alternative-instructions").html(exp.alternative_instructions);
-      }
     }
   });
 
@@ -359,7 +356,6 @@ function init() {
   // Get the stimuli using the URL parameters
   var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
   var is_alt = parseInt(get_url_param("alt", 0)); // Whether to use the alternative stimuli or not
-  exp.alternative_instructions = alternative_instructions;
   exp.example_stimuli = examples_gradable_meanings;
   exp.warmup_stimuli = warm_ups_gradable_meanings;
   exp.stimuli = main_stimuli_gradable_meanings[batch_index];
