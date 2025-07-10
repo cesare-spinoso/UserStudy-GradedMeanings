@@ -1,6 +1,7 @@
 var PROLIFERATE_SUBMIT_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a";
 var PROLIFERATE_PING_URL = "https://webhook.site/1bc59970-feb0-419b-b34b-06281604911a";
-var REDIRECT_URL = "https://app.prolific.com/submissions/complete?cc=CH9FR7LI"; // NOTE: Should change every time you make a new study on prolific
+var REDIRECT_URL = "https://app.prolific.com/submissions/complete?cc=C58SJWAX"; // NOTE: Should change every time you make a new study on prolific
+var STUDY_NAME = "pilot_5"; // TODO: Change every time you make a new study on prolific
 
 function get_url_param(name, defaultValue) {
     var regexS = "[\?&]" + name + "=([^&#]*)";
@@ -71,7 +72,7 @@ var proliferate = {
                 "Content-Type": "application/x-www-form-urlencoded",
             },
             body: new URLSearchParams({
-                "study_name": "pilot_4", // TODO: Change every time you make a new study on prolific
+                "study_name": STUDY_NAME,
                 "data": JSON.stringify(expdata),
                 "prolific_id": PROLIFIC_PID,
                 "session_id": SESSION_ID,
@@ -112,6 +113,7 @@ $(document).ready(function () {
         window.setInterval(function () {
             var formdata = {
                 "active": true,
+                "study_name": STUDY_NAME,
                 "experiment_id": get_url_param("STUDY_ID", "NONE"),
                 "participant_id": get_url_param("PROLIFIC_PID", "NONE"),
                 "session_id": get_url_param("SESSION_ID", "NONE"),
