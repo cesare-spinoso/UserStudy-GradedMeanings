@@ -73,7 +73,7 @@ function create_feedback(interpretationKeys, exampleAllocations) {
             <p class="text-center">Your points must sum to 100, and your choices should be logically consistent. Here are some examples.</p>
         </div>
         <div class="table-responsive" style="box-sizing: border-box;">
-            <table class="table table-bordered table-striped" style="margin-top: 20px;">
+            <table class="table table-bordered table-striped" style="margin-top: 20px; margin-left: auto; margin-right: auto;">
                 ${headerHtml}
                 ${bodyHtml}
                 ${footerHtml}
