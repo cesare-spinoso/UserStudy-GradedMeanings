@@ -18,16 +18,16 @@ var quality_checks_gradable_meanings = [
     },
     {
         "id": "quality_checks_1",
-        "scenario": "Gerry wants to cook something for his girlfriend Sara. Gerry calls Sara and asks her what she'd like to eat for dinner. Sara says \"I'm ok with any kind of food.\"",
+        "scenario": "Gerry wants to cook something for his girlfriend Sara. Gerry calls Sara and asks her what she'd like to eat for dinner. Sara says \"Italian would be great!\"",
         "question": "What did Sara want to convey?",
         "interpretations": [
-            "She is ok with Italian food.",
-            "She is ok with Greek food.",
-            "She is ok with Korean food.",
-            "She is ok with Chinese food.",
-            "She is ok with Thai food."
+            "She wants Italian food.",
+            "She wants Korean food.",
+            "She wants Chinese food.",
+            "She wants Thai food.",
+            "She wants Greek food."
         ],
-        "stronger_alternative": "I'm ok with any kind of food except Italian.",
+        "stronger_alternative": "I'm not hungry.",
         "speaker_name": "Sara"
     }
 ];
