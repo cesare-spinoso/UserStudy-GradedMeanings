@@ -70,7 +70,6 @@ function create_feedback(interpretationKeys, exampleAllocations) {
     const finalHtml = `
         <div style="margin-top: 15px;">
             <h3 class="text-center">Allocation Examples</h3>
-            <p class="text-center">Your points must sum to 100, and your choices should be logically consistent. Here are some examples.</p>
         </div>
         <div class="table-responsive" style="box-sizing: border-box;">
             <table class="table table-bordered table-striped" style="margin-top: 20px; margin-left: auto; margin-right: auto;">
@@ -88,34 +87,45 @@ var example_allocations = [
     {
         "allocations": {
             "The dog is tiny.": 20,
-            "The dog is small.": 0,
-            "The dog is of normal size.": 0,
-            "The dog is big.": 30,
-            "The dog is huge.": 50,
+            "The dog is small.": 60,
+            "The dog is of normal size.": 10,
+            "The dog is big.": 5,
+            "The dog is huge.": 5,
         },
-        "rationale": "Mark is clearly exaggerating the size of the dog.",
+        "rationale": "Most of the points are given to small because Mark says that the dog is little, but he also avoid saying that he ``almost didn't see the dog.''.",
         "type": "sensible",
     },
     {
         "allocations": {
-            "The dog is tiny.": 0,
-            "The dog is small.": 20,
+            "The dog is tiny.": 50,
+            "The dog is small.": 50,
             "The dog is of normal size.": 0,
-            "The dog is big.": 30,
-            "The dog is huge.": 50,
+            "The dog is big.": 0,
+            "The dog is huge.": 0,
         },
-        "rationale": "Mark is clearly exaggerating the size of the dog, so this allocation does not make sense.",
+        "rationale": "No dog is ``so little that you almost can't see him'' which makes Mark's statement ambiguous between tiny and small.",
+        "type": "sensible",
+    },
+    {
+        "allocations": {
+            "The dog is tiny.": 60,
+            "The dog is small.": 20,
+            "The dog is of normal size.": 10,
+            "The dog is big.": 5,
+            "The dog is huge.": 5,
+        },
+        "rationale": "If Mark intentionally chose not to say something as extreme as ``he's so little I almost didn't see him'', then it can't be that the dog is tiny is more likely than small (since tiny is more extreme than small).",
         "type": "nonsensical",
     },
     {
         "allocations": {
-            "The dog is tiny.": 0,
-            "The dog is small.": 0,
-            "The dog is of normal size.": 100,
-            "The dog is big.": 0,
-            "The dog is huge.": 0,
+            "The dog is tiny.": 20,
+            "The dog is small.": 20,
+            "The dog is of normal size.": 10,
+            "The dog is big.": 30,
+            "The dog is huge.": 20,
         },
-        "rationale": "Mark's statement does not imply that the dog is of normal size.",
+        "rationale": "Mark is clearly comment on the small size of the dog. Since we have no additional evidence about his sincerity (e.g., sarcasm, irony), placing most of the points on 'normal size', 'big' and 'huge' contradicts the context and Mark's statement.",
         "type": "nonsensical",
     }
 ]
