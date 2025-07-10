@@ -72,7 +72,7 @@ function create_feedback(interpretationKeys, exampleAllocations) {
             <h3 class="text-center">Allocation Examples</h3>
         </div>
         <div class="table-responsive" style="box-sizing: border-box;">
-            <table class="table table-bordered table-striped" style="margin-top: 20px; margin-left: auto; margin-right: auto;">
+            <table class="table table-bordered table-striped" style="margin-top: 20px; margin-left: auto; margin-right: auto; font-size: 0.9em;">
                 ${headerHtml}
                 ${bodyHtml}
                 ${footerHtml}
