@@ -36,7 +36,7 @@ function create_feedback(interpretationKeys, exampleAllocations) {
     interpretations.forEach((interp) => {
         bodyHtml += '<tr>';
         bodyHtml += `<td class="text-left">${interp.id}. ${interp.text}</td>`;
-        
+
         sensibleExamples.forEach(ex => {
             bodyHtml += `<td class="text-center">${ex.allocations[interp.text]}</td>`;
         });
@@ -45,7 +45,7 @@ function create_feedback(interpretationKeys, exampleAllocations) {
             const borderStyle = (index === 0) ? 'style="border-left: 2px solid #ddd;"' : '';
             bodyHtml += `<td class="text-center" ${borderStyle}>${ex.allocations[interp.text]}</td>`;
         });
-        
+
         bodyHtml += '</tr>';
     });
     bodyHtml += '</tbody>';
@@ -70,6 +70,12 @@ function create_feedback(interpretationKeys, exampleAllocations) {
     const finalHtml = `
         <div style="margin-top: 15px;">
             <h3 class="text-center">Allocation Examples</h3>
+            <p>
+                We provide examples of annotations below. Some of these example annotations are
+                <strong>sensible</strong> while others are <strong>nonsensical</strong>.
+                Please carefully review the example annotations and the reasons why we have
+                classified them as sensible/nonsensical.
+            </p>
         </div>
         <div class="table-responsive" style="box-sizing: border-box;">
             <table class="table table-bordered table-striped" style="margin-top: 20px; margin-left: auto; margin-right: auto; font-size: 0.9em;">

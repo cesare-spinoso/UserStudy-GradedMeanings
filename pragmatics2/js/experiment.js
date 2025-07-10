@@ -13,6 +13,7 @@ function make_slides(f) {
       } else if (exp.num_interpretations === 5) {
         num_interpretations = "five";
       }
+      $("#start-instructions").html(start_instructions_html(is_alt = exp.is_alt));
       $("#num-interpretations").text(num_interpretations);
       if (exp.is_alt) {
         $("#alternative-instructions").html(exp.alternative_instructions);
@@ -123,6 +124,7 @@ function make_slides(f) {
         // Reset allocations and point total
         $slide.find(".alloc").val("");
         $slide.find(".point-total").text("0");
+        $slide.find(".points-remaining").text("100");
         $slide.find(".err").hide();
         // If main slide, reset rationale input
         if (stimuli_type === "main") {
@@ -131,6 +133,7 @@ function make_slides(f) {
         // Attach input event handler so that it shows as the user types
         $slide.find(".alloc").off("input").on("input", () => {
           const result = validateAllocations(slide = $slide);
+          $slide.find(".points-remaining").text(100 - result.total);
           $slide.find(".point-total").text(result.total);
           if (!result.valid) {
             $slide.find(".err").text(result.errMsg).show();
@@ -215,6 +218,7 @@ function make_slides(f) {
     $slide.find(".err").hide();
 
     const result = validateAllocations(slide = $slide);
+    $slide.find(".points-remaining").text(100 - result.total);
     $slide.find(".point-total").text(result.total);
     console.log(result);
     console.log("Result valid: ", result.valid);
