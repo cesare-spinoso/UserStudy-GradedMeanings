@@ -155,9 +155,11 @@ function make_slides(f) {
     const $exampleAllocations = $slide.find(".possible-allocations");
     // Clear any existing content
     $exampleAllocations.empty();
-    // Add the example allocations html
-    example_allocations_html = create_feedback(interpretationKeys = interpretations, exampleAllocations = exampleAllocations);
-    $exampleAllocations.html(example_allocations_html);
+    // Add the example allocations html if using alternatives
+    if (exp.is_alt) {
+      example_allocations_html = create_feedback(interpretationKeys = interpretations, exampleAllocations = exampleAllocations);
+      $exampleAllocations.html(example_allocations_html);
+    }
   }
 
   slides.example = slide({
