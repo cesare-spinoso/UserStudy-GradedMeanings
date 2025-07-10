@@ -68,54 +68,52 @@
         <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
         <section class="container" id="SET1"
             style="padding: 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:14pt;">
-            <div class="row col-xs-12 col-md-12">
-                <div class="col-xs-12 col-md-12">
-                    <div class="panel panel-primary" style="border-color: #800080">
-                        <div class="panel-heading"
-                            style="background-image: none;background-color:#800080;border-color: #800080">
-                            <strong>Utterance Interpretation</strong>
+            <div class="col-xs-12 col-md-12">
+                <div class="panel panel-primary" style="border-color: #800080">
+                    <div class="panel-heading"
+                        style="background-image: none;background-color:#800080;border-color: #800080">
+                        <strong>Utterance Interpretation</strong>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            <strong>Study description:</strong> We're interested in how <strong>utterances</strong>
+                            (what people say)
+                            are interpreted in conversations between two or more people.
+                            In this study, you will be shown scenarios in which a character says something. You will
+                            then <strong>evaluate the meaning</strong> of that utterance
+                            by <strong>distributing</strong> 100 points across <span id="num-interpretations"></span>
+                            possible
+                            meaning
+                            interpretations based on how likely <em>you believe</em> each one of them to be. You
+                            will also <strong>justify</strong> your point distribution.
+                        </p>
+                        <p id="alternative-instructions"></p>
+                        <p>
+                            <strong>Study structure:</strong> You will first be presented with one
+                            <strong>example scenario</strong> followed by two <strong>warm-up examples</strong> to
+                            help you
+                            get familiar with the task. You will then be asked to annotate seven
+                            <strong>study scenarios</strong>. We expect the annotation to take between 15 to
+                            25 minutes.
+                        </p>
+                        <p>
+                            Thanks for your participation!
+                        </p>
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button id="start_button" class="btn btn-lg btn-primary"
+                                style="background-color: #800080; border-color: #800080;">
+                                Start Experiment
+                            </button>
                         </div>
-                        <div class="panel-body">
-                            <p>
-                                <strong>Study description:</strong> We're interested in how <strong>utterances</strong>
-                                (what people say)
-                                are interpreted in conversations between two or more people.
-                                In this study, you will be shown scenarios in which a character says something. You will
-                                then <strong>evaluate the meaning</strong> of that utterance
-                                by <strong>distributing</strong> 100 points across <span
-                                    id="num-interpretations"></span> possible
-                                meaning
-                                interpretations based on how likely <em>you believe</em> each one of them to be. You
-                                will also <strong>justify</strong> your point distribution.
-                            </p>
-                            <p id="alternative-instructions"></p>
-                            <p>
-                                <strong>Study structure:</strong> You will first be presented with one
-                                <strong>example scenario</strong> followed by two <strong>warm-up examples</strong> to
-                                help you
-                                get familiar with the task. You will then be asked to annotate seven
-                                <strong>study scenarios</strong>. We expect the annotation to take between 15 to
-                                25 minutes.
-                            </p>
-                            <p>
-                                Thanks for your participation!
-                            </p>
-                            <div style="text-align: center; margin-top: 30px;">
-                                <button id="start_button" class="btn btn-lg btn-primary"
-                                    style="background-color: #800080; border-color: #800080;">
-                                    Start Experiment
-                                </button>
-                            </div>
-                            <hr>
-                            <p class="legal" style="font-size: 0.8em; color: #666;">
-                                <strong>LEGAL INFORMATION</strong>:<br><br>
-                                I consent to take part in the study. I agree to the anonymous use of the data in
-                                research presentations, publications, and online interactive sites to illustrate the
-                                findings. I agree that the collected data could be used in related follow-up studies. I
-                                agree to the use of the data in a not-for-profit anonymous corpus for research purposes
-                                which others will have access to.
-                            </p>
-                        </div>
+                        <hr>
+                        <p class="legal" style="font-size: 0.8em; color: #666;">
+                            <strong>LEGAL INFORMATION</strong>:<br><br>
+                            I consent to take part in the study. I agree to the anonymous use of the data in
+                            research presentations, publications, and online interactive sites to illustrate the
+                            findings. I agree that the collected data could be used in related follow-up studies. I
+                            agree to the use of the data in a not-for-profit anonymous corpus for research purposes
+                            which others will have access to.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -160,12 +158,19 @@
                                 </div>
                             </div>
 
-                            <ul style="list-style-type: none; padding-left: 0;">
-                                <li><strong>Note:</strong> The values here have been omitted. In an actual scenario to
-                                    annotate,
-                                    you would have to fill these boxes out with numbers between 0 and 100 based on how
-                                    likely you find each interpretation.</li>
-                            </ul>
+                            <div class="row col-xs-12 col-md-12">
+                                <p>
+                                    The values here have been omitted. In an actual scenario to annotate, you would have
+                                    to fill these boxes out with numbers between 0 and 100 based on how likely you find
+                                    each interpretation.
+                                </p>
+                                <p>
+                                    We provide examples of annotations below. Some of these example annotations are
+                                    <strong>plausible</strong> while others are <strong>implausible</strong>.
+                                    Please carefully review the example annotations and the reasons why we have
+                                    classified them as plausible/implausible.
+                                </p>
+                            </div>
 
                             <div class="possible-allocations" style="padding: 15px; border-radius: 5px;"></div>
 
@@ -187,12 +192,14 @@
 
     <!-- Segue slide from the examples to the warm-up -->
     <div class="slide" id="startWarmup">
-        <br>
-        <br>
         <p id="instruct-text" class="left">
-            Now that you have seen an example of what an annotation will look like, we will begin with the
+            Now that you have seen an example of what an annotation will look like, as well as examples of point
+            annotations
+            which we deem plausible/implausible, we will begin with the
             <strong>warm-up
-                scenarios</strong>. You will be presented with
+                scenarios</strong>.
+        </p>
+        <p>You will be presented with
             two scenarios and
             asked to provide meaning interpretations by assigning points based on how likely you believe each
             interpretation to be. To save you time, you will not need to provide rationales for these warm-up examples.
