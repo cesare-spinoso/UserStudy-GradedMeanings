@@ -14,7 +14,7 @@ var main_stimuli_gradable_meanings = [
                 "The band's performance was lackluster.",
                 "The band's performance was disappointing."
             ],
-            "stronger_alternative": "They nailed everything tonight. The lighting, the routine, the music, everything was on point.",
+            "stronger_alternative": "They were absolutely perfect tonight!",
             "speaker_name": "Andrew"
         },
         {
@@ -24,16 +24,16 @@ var main_stimuli_gradable_meanings = [
             "interpretations": [
                 "The results were magical.",
                 "The results were mysterious.",
-                "The results were intriguing, yet not surprising.",
                 "The results were as expected.",
-                "The results were obvious."
+                "The results were obvious.",
+                "The results were incorrect."
             ],
             "stronger_alternative": "These results are pure magic.",
             "speaker_name": "Gregory"
         },
         {
             "id": "main_stimuli_pvt21_revised25",
-            "scenario": "Sharon is preparing dinner in the kitchen where her son Jason is trying to help. As Sharon turns off the stove after boiling some pasta, she says to Jason, \"Make sure not to stick your fingers in there!\"",
+            "scenario": "Sharon is preparing dinner in the kitchen where her son Jason is trying to help. As Sharon turns off the stove, she points to the pot of water and says to Jason, \"Make sure not to stick your fingers in there!\"",
             "question": "What did Sharon want to convey?",
             "interpretations": [
                 "The water was boiling.",
@@ -42,7 +42,7 @@ var main_stimuli_gradable_meanings = [
                 "The water was cold.",
                 "The water was icy."
             ],
-            "stronger_alternative": "Don't get too close, the water's still bubbling!",
+            "stronger_alternative": "Don't get too close, the water's still boiling!",
             "speaker_name": "Sharon"
         },
         {
@@ -53,15 +53,15 @@ var main_stimuli_gradable_meanings = [
                 "The staff were friendly.",
                 "The staff were polite.",
                 "The staff were indifferent.",
-                "The staff were disrespectful.",
+                "The staff were impolite.",
                 "The staff were mean."
             ],
-            "stronger_alternative": "The service here was great, they treated us as if we were family.",
+            "stronger_alternative": "The service here was great, they treated us as if we were old friends.",
             "speaker_name": "Hannah"
         },
         {
             "id": "main_stimuli_pvt21_revised19",
-            "scenario": "Aaron and Sara are investigating a series of mysterious disappearances in their small town. They stumble upon an abandoned building rumored to be a meeting place for a local cult. After uncovering disturbing artifacts and symbols inside, Aaron, shocked, turns to Sara and says, \"The stuff here is so dark.\"",
+            "scenario": "Aaron and Sara are investigating a series of mysterious disappearances in their small town. They stumble upon an abandoned building rumored to be a meeting place for a local cult. After uncovering disturbing artifacts and symbols inside, Aaron, shocked, turns to Sara and says, \"This cult is up to no good. Look at all this stuff. It's all so dark.\"",
             "question": "What did Aaron want to convey?",
             "interpretations": [
                 "The cult was satanic.",
@@ -77,30 +77,30 @@ var main_stimuli_gradable_meanings = [
     [
         {
             "id": "main_stimuli_pvt21_revised13",
-            "scenario": "Luke and Jenna are on a camping trip, sitting around the fire as the sun sets. As the night falls, Luke looks up and, disappointed, remarks, \"I don't see any stars.\"",
+            "scenario": "Luke and Jenna are on a camping trip, and are getting ready for their morning hike. As they begin to pack up their gear, Luke looks up and notices the sky getting cloudier and cloudier. Worried, he says \"The sky is getting a thunderstorm look to it.\"",
             "question": "What did Luke want to convey?",
             "interpretations": [
-                "The sky was black.",
-                "The sky was dark.",
-                "The sky was dim.",
-                "The sky was bright.",
-                "The sky was light."
+                "The sky's color was black.",
+                "The sky's color was dark.",
+                "The sky's color was dim.",
+                "The sky's color was light.",
+                "The sky's color was white.",
             ],
-            "stronger_alternative": "It feels like we're in a sealed cave without even a glimmer of light.",
+            "stronger_alternative": "This sky looks like it's about to turn pitch black.",
             "speaker_name": "Luke"
         },
         {
             "id": "main_stimuli_pvt21_revised39",
-            "scenario": "James and Lauren are preparing a healthy snack in the kitchen. James picks up a banana which has turned brown from the bowl and notices its texture, then remarks, \"This banana is definitely ripe.\"",
+            "scenario": "James and Lauren are preparing a healthy snack in the kitchen. James picks up a banana which has turned brown from the bowl and feels its texture, remarking, \"This banana feels very ripe.\"",
             "question": "What did James want to convey?",
             "interpretations": [
-                "The banana was mushy.",
-                "The banana was soft.",
-                "The banana had an ordinary texture.",
-                "The banana was firm.",
-                "The banana was hard."
+                "The banana's texture was mushy.",
+                "The banana's texture was soft.",
+                "The banana's texture was ordinary.",
+                "The banana's texture was firm.",
+                "The banana's texture was hard."
             ],
-            "stronger_alternative": "This banana might just dissolve in my hands.",
+            "stronger_alternative": "This banana is so mushy it might just dissolve in my hands.",
             "speaker_name": "James"
         },
         {
@@ -114,7 +114,7 @@ var main_stimuli_gradable_meanings = [
                 "The sting was painless.",
                 "The sting was pleasant."
             ],
-            "stronger_alternative": "Ow, god damn it that hurt!",
+            "stronger_alternative": "Ow! I don't think I've ever felt this amount of pain in my life!",
             "speaker_name": "Timothy"
         },
         {
