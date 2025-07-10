@@ -56,11 +56,11 @@ function create_feedback(interpretationKeys, exampleAllocations) {
             <tr class="active">
                 <td class="text-left"><strong>Rationale</strong></td>
                 <td colspan="${sensibleExamples.length}">
-                    <p><strong>These are logical because:</strong></p>
+                    <p><strong>These are sensible because:</strong></p>
                     ${sensibleExamples.map(ex => `<p><b>Example ${ex.name}:</b> ${ex.rationale}</p>`).join('')}
                 </td>
                 <td colspan="${nonsensicalExamples.length}" style="border-left: 2px solid #ddd;">
-                    <p><strong>These are illogical because:</strong></p>
+                    <p><strong>These are nonsensical because:</strong></p>
                     ${nonsensicalExamples.map(ex => `<p><b>Example ${ex.name}:</b> ${ex.rationale}</p>`).join('')}
                 </td>
             </tr>
@@ -92,7 +92,7 @@ var example_allocations = [
             "The dog is big.": 5,
             "The dog is huge.": 5,
         },
-        "rationale": "Most of the points are given to small because Mark says that the dog is little, but he also avoid saying that he ``almost didn't see the dog.''.",
+        "rationale": "Most of the points are given to small because Mark says that the dog is little, but he also avoids something more extreme like that he ''almost didn't see the dog.''.",
         "type": "sensible",
     },
     {
@@ -103,7 +103,7 @@ var example_allocations = [
             "The dog is big.": 0,
             "The dog is huge.": 0,
         },
-        "rationale": "No dog is ``so little that you almost can't see him'' which makes Mark's statement ambiguous between tiny and small.",
+        "rationale": "No dog is ''so little that you almost can't see him'' which makes Mark's statement ambiguous between tiny and small.",
         "type": "sensible",
     },
     {
@@ -114,7 +114,7 @@ var example_allocations = [
             "The dog is big.": 5,
             "The dog is huge.": 5,
         },
-        "rationale": "If Mark intentionally chose not to say something as extreme as ``he's so little I almost didn't see him'', then it can't be that the dog is tiny is more likely than small (since tiny is more extreme than small).",
+        "rationale": "If Mark intentionally chose not to say something as extreme as ''he's so little I almost didn't see him'', then it can't be that the more extreme meaning ''tiny'' is more likely than ''small''.",
         "type": "nonsensical",
     },
     {
@@ -125,7 +125,7 @@ var example_allocations = [
             "The dog is big.": 30,
             "The dog is huge.": 20,
         },
-        "rationale": "Mark is clearly comment on the small size of the dog. Since we have no additional evidence about his sincerity (e.g., sarcasm, irony), placing most of the points on 'normal size', 'big' and 'huge' contradicts the context and Mark's statement.",
+        "rationale": "Mark is clearly commenting on the small size of the dog. Since we have no additional evidence about his sincerity (e.g., if he's being ironic), placing most of the points on 'normal size', 'big' and 'huge' contradicts the context and Mark's statement.",
         "type": "nonsensical",
     }
 ]
