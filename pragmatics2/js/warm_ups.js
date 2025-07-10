@@ -13,7 +13,7 @@ var warm_ups_gradable_meanings = [
             "The party is quiet.",
             "The party is silent."
         ],
-        "stronger_alternative": "There's so much noise in here I think my eardrums might pop!",
+        "stronger_alternative": "There's so much noise in here I think I might go deaf!",
         "speaker_name": "Jamie"
     },
     {
@@ -21,13 +21,13 @@ var warm_ups_gradable_meanings = [
         "scenario": "Lisa and Amy are talking about a snarky comment their coworker made during their meeting. Lisa says \"That was such a classless thing to say.\"",
         "question": "What did Lisa want to convey?",
         "interpretations": [
-            "The coworker's comment was offensive.",
-            "The coworker's comment was rude.",
+            "The coworker's comment was nasty.",
+            "The coworker's comment was impolite.",
             "The coworker's comment was unremarkable.",
             "The coworker's comment was polite.",
             "The coworker's comment was sweet."
         ],
-        "stronger_alternative": "I've never been so insulted in my life!",
+        "stronger_alternative": "How could she be so nasty?!",
         "speaker_name": "Lisa"
     }
 ];
