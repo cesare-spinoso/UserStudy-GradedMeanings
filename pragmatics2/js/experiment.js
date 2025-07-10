@@ -248,7 +248,7 @@ function make_slides(f) {
   slides.startWarmup = slide({
     name: "startWarmup",
     start: function () {
-      $("#warmup-instructions").warmup_instructions_html(is_alt = exp.is_alt);
+      $("#warmup-instructions").html(warmup_instructions_html(is_alt = exp.is_alt));
     },
     button: function () {
       exp.go();
