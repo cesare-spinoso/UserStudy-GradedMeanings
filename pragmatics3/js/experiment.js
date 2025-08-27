@@ -33,12 +33,8 @@ function make_slides(f) {
     const max = 100;
     const initial = 50; // mid
 
-    // Interpretations list numbered
-    let listHtml = '<ol class="interp-list" style="padding-left:20px;">';
-    interpretations.forEach((interp, i) => {
-      listHtml += `<li id="interp${i + 1}" style="margin-bottom:4px;">${interp}</li>`;
-    });
-    listHtml += '</ol>';
+  // (Interpretations list hidden from participants in new design)
+  let listHtml = '';
 
     // Tick labels (only 3) - we position them with relative container.
     const leftLabel = interpretations[0];
@@ -48,21 +44,18 @@ function make_slides(f) {
       <div class="slider-wrapper" style="margin:10px 0 20px; position:relative;">
         <input type="range" id="${sliderId}" class="interp-slider" min="${min}" max="${max}" step="1" value="${initial}" ${stimuli_type === 'example' ? 'disabled' : ''} style="width:100%;">
         <div class="tick-container" style="position:relative; width:100%; height:0;">
-          <span style="position:absolute; left:0; top:8px; width:25%; font-size:11px; text-align:left;">${_.escape(leftLabel)}</span>
-          <span style="position:absolute; left:50%; transform:translateX(-50%); top:8px; width:40%; font-size:11px; text-align:center;">${_.escape(midLabel)}</span>
-          <span style="position:absolute; right:0; top:8px; width:25%; font-size:11px; text-align:right;">${_.escape(rightLabel)}</span>
+          <span style="position:absolute; left:0; top:8px; width:25%; font-size:15px; font-weight:600; text-align:left;">${_.escape(leftLabel)}</span>
+          <span style="position:absolute; left:50%; transform:translateX(-50%); top:8px; width:40%; font-size:15px; font-weight:600; text-align:center;">${_.escape(midLabel)}</span>
+          <span style="position:absolute; right:0; top:8px; width:25%; font-size:15px; font-weight:600; text-align:right;">${_.escape(rightLabel)}</span>
         </div>
-        <div style="font-size:12px; margin-top:30px;">Slider value (0 = far left interpretation, 100 = far right interpretation): <span class="current-selection" data-slider="${sliderId}">${initial}</span></div>
       </div>`;
 
     $area.append(listHtml + sliderHtml);
 
     if (stimuli_type !== 'example') {
       const $slider = $area.find(`#${sliderId}`);
-      $slider.off('input').on('input', function () {
-        const val = parseInt(this.value, 10);
-        $area.find('.current-selection').text(val);
-      });
+  // No numeric feedback shown to participant.
+  $slider.off('input').on('input', function () { /* intentionally empty */ });
       // initialize display
       $slider.trigger('input');
     }
@@ -168,7 +161,7 @@ function make_slides(f) {
     for (let i = 1; i <= stim.interpretations.length; i++) {
       trial_data[`interpretation${i}`] = stim.interpretations[i - 1];
     }
-    // Preserve legacy fields with NA to avoid misinterpretation of intensity rating as distribution
+    // Allocation fields set to NA (not used in intensity design; kept for backward compatibility)
     for (let i = 1; i <= stim.interpretations.length; i++) {
       trial_data[`allocation${i}`] = "NA";
     }
