@@ -34,6 +34,4 @@ function warmup_instructions_html(is_alt) {
     }
 }
 
-function alternative_utterance_html(speaker_name, alternative_utterance) {
-    return `In addition, assume that ${speaker_name} <em>intentionally chose not to say</em> \"<span style="color: #318500;">${alternative_utterance}</span>\"`;
-}
+// alternative_utterance_html removed: alternative now shown via other character utterance + cancellation.

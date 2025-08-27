@@ -85,10 +85,13 @@ function make_slides(f) {
       const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
       // Make the utterance green so it stands out
       var highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
-      // If there is an alternative statement
+
       if (is_alt) {
-        // Add the alternative utterance html to the highlighted scenario
-        highlighted += `<br>${alternative_utterance_html(speaker_name = stim.speaker_name, alternative_utterance = stim.stronger_alternative)}`;
+  const otherName = stim.secondName || '(Partner)';
+  const mainName = stim.mainName || stim.speaker_name || '(Speaker)';
+        const altUtterance = `<span style="color: #318500;">\"${stim.stronger_alternative}\"</span>`;
+        const cancellation = stim.alternative_cancellation || "It's not that extreme.";
+  highlighted += ` ${otherName} says ${altUtterance} ${mainName} responds \"${_.escape(cancellation)}\"`;
       }
       // Bold the question
       const question = `<strong>${stim.question}</strong>`;
@@ -144,7 +147,10 @@ function make_slides(f) {
       batch_index: exp.batch_index,
       scenario: stim.scenario,
       question: stim.question,
-      alternative_utterance: stim.stronger_alternative,
+  alternative_utterance: stim.stronger_alternative,
+  alternative_cancellation: stim.alternative_cancellation || null,
+  mainName: stim.mainName || stim.speaker_name || null,
+  secondName: stim.secondName || null,
       rationale: rationale,
       slider_value: slider_value,
       time_in_minutes: (Date.now() - exp.startT) / 60000

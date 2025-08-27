@@ -13,8 +13,11 @@ var quality_checks_gradable_meanings = [
             "Matt wants a green car.",
             "Matt wants a black car."
         ],
-        "stronger_alternative": "I don't want a white car.",
-        "speaker_name": "Matt"
+    "stronger_alternative": "I don't want a white car.",
+    "alternative_cancellation": "Not rejecting every other color Gerry, I just want red.",
+    "speaker_name": "Matt",
+    "mainName": "Matt",
+    "secondName": "Gerry"
     },
     {
         "id": "quality_checks_1",
@@ -27,7 +30,10 @@ var quality_checks_gradable_meanings = [
             "She wants Thai food.",
             "She wants Greek food."
         ],
-        "stronger_alternative": "I'm not hungry.",
-        "speaker_name": "Sara"
+    "stronger_alternative": "I'm not hungry.",
+    "alternative_cancellation": "Not that I'm not hungry Gerry, I just think Italian would be great.",
+    "speaker_name": "Sara",
+    "mainName": "Sara",
+    "secondName": "Gerry"
     }
 ];

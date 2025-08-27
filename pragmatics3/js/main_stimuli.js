@@ -1,221 +1,180 @@
-
-// all the stimuli data which comes from src/data/jenn_hu_expectations-over-alternatives/pvt21_revised_w_alts_wo_overlap.csv 
+// Reconstructed clean stimuli with added mainName, secondName, alternative_cancellation placeholders.
+// Source baseline: pragmatics2 version. Added question texts already adapted in pragmatics3 ("What does X think...") where present in corrupted file.
+// alternative_cancellation values pulled from prior partially repaired file when available.
 
 var main_stimuli_gradable_meanings = [
-    [
-        {
-            "id": "main_stimuli_pvt21_revised48",
-            "scenario": "Andrew and Sophie are walking home after watching a live music performance by Andrew's favorite band. Andrew, visibly excited says, \"That was just incredible!\"",
-            "question": "What does Andrew think about the band's performance?",
-            "interpretations": [
-                "The band's performance was perfect.",
-                "The band's performance was wonderful.",
-                "The band's performance was ok.",
-                "The band's performance was lackluster.",
-                "The band's performance was disappointing."
-            ],
-            "stronger_alternative": "They were absolutely perfect tonight!",
-            "speaker_name": "Andrew"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised26",
-            "scenario": "Gregory and Ava are sitting in a coffee shop, reviewing the outcomes of their recent science project. They both look puzzled as the results don't match their expectations. Gregory leans back, stirring his coffee, and says, \"These results almost feel like they're from another world.\"",
-            "question": "What does Gregory think about the nature of the results?",
-            "interpretations": [
-                "The results were magical.",
-                "The results were mysterious.",
-                "The results were as expected.",
-                "The results were obvious.",
-                "The results were incorrect."
-            ],
-            "stronger_alternative": "These results are pure magic.",
-            "speaker_name": "Gregory"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised25",
-            "scenario": "Sharon is preparing dinner in the kitchen where her son Jason is trying to help. As Sharon turns off the stove, she points to the pot of water and says to Jason, \"Make sure not to stick your fingers in there!\"",
-            "question": "What does Sharon think about the temperature of the water?",
-            "interpretations": [
-                "The water was boiling.",
-                "The water was hot.",
-                "The water was tepid.",
-                "The water was cold.",
-                "The water was icy."
-            ],
-            "stronger_alternative": "Don't get too close, the water's still boiling!",
-            "speaker_name": "Sharon"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised32",
-            "scenario": "Hannah and Jacob just finished a meal at a new restaurant in town. As they exit, Hannah remarks to Jacob, \"I liked the way they treated us.\"",
-            "question": "What does Hannah think about the staff's treatment?",
-            "interpretations": [
-                "The staff were friendly.",
-                "The staff were polite.",
-                "The staff were indifferent.",
-                "The staff were impolite.",
-                "The staff were mean."
-            ],
-            "stronger_alternative": "The service here was great, they treated us as if we were old friends.",
-            "speaker_name": "Hannah"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised19",
-            "scenario": "Aaron and Sara are investigating a series of mysterious disappearances in their small town. They stumble upon an abandoned building rumored to be a meeting place for a local cult. After uncovering disturbing artifacts and symbols inside, Aaron, shocked, turns to Sara and says, \"This cult is up to no good. Look at all this stuff. It's all so dark.\"",
-            "question": "What does Aaron think about the cult?",
-            "interpretations": [
-                "The cult was satanic.",
-                "The cult was evil.",
-                "The cult was sinister.",
-                "The cult was benevolent.",
-                "The cult was virtuous."
-            ],
-            "stronger_alternative": "This is some kind of hell-worshiping cult.",
-            "speaker_name": "Aaron"
-        }
-    ],
-    [
-        {
-            "id": "main_stimuli_pvt21_revised13",
-            "scenario": "Luke and Jenna are on a camping trip, and are getting ready for their morning hike. As they begin to pack up their gear, Luke looks up and notices the sky getting cloudier and cloudier. Worried, he says \"The sky is getting a thunderstorm look to it.\"",
-            "question": "What does Luke think about the darkness of the sky?",
-            "interpretations": [
-                "The sky's color was black.",
-                "The sky's color was dark.",
-                "The sky's color was dim.",
-                "The sky's color was light.",
-                "The sky's color was white.",
-            ],
-            "stronger_alternative": "This sky looks like it's about to turn pitch black.",
-            "speaker_name": "Luke"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised39",
-            "scenario": "James and Lauren are preparing a healthy snack in the kitchen. James picks up a banana which has turned brown from the bowl and feels its texture, remarking, \"This banana feels very ripe.\"",
-            "question": "What does James think about the banana's texture?",
-            "interpretations": [
-                "The banana's texture was mushy.",
-                "The banana's texture was soft.",
-                "The banana's texture was ordinary.",
-                "The banana's texture was firm.",
-                "The banana's texture was hard."
-            ],
-            "stronger_alternative": "This banana is so mushy it might just dissolve in my hands.",
-            "speaker_name": "James"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised30",
-            "scenario": "Timothy and Julia are hiking in a forest when Timothy accidentally brushes against a thorny bush. He grimaces and exclaims, \"Ow! That seriously hurt.\"",
-            "question": "What does Timothy think about the sting's pain level?",
-            "interpretations": [
-                "The sting was excruciating.",
-                "The sting was painful.",
-                "The sting was unnoticeable.",
-                "The sting was painless.",
-                "The sting was pleasant."
-            ],
-            "stronger_alternative": "Ow! I don't think I've ever felt this amount of pain in my life!",
-            "speaker_name": "Timothy"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised45",
-            "scenario": "Harold and Harper, two mechanics, are working on a car that just came in. After a long afternoon of tuning up the engine, Harold checks the engine's temperature and says, \"That's quite toasty.\"",
-            "question": "What does Harold think about the engine's temperature?",
-            "interpretations": [
-                "The engine was hot.",
-                "The engine was warm.",
-                "The engine was at an average temperature.",
-                "The engine was cool.",
-                "The engine was cold."
-            ],
-            "stronger_alternative": "Damn it's really burning up! I wouldn't stick my hand in there if I were you.",
-            "speaker_name": "Harold"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised17",
-            "scenario": "Evelyn and Willie have just finished watching a romantic drama film together. As the credits roll, Evelyn wipes a tear from her eye and says, \"That hit me right in the feels.\"",
-            "question": "What does Evelyn think about the film's emotional impact?",
-            "interpretations": [
-                "The film was sentimental.",
-                "The film was emotional.",
-                "The film was touching.",
-                "The film was uninspiring.",
-                "The film was superficial."
-            ],
-            "stronger_alternative": "It's the first time I cry over a movie in a while.",
-            "speaker_name": "Evelyn"
-        }
-    ],
-    [
-        {
-            "id": "main_stimuli_pvt21_revised12",
-            "scenario": "Logan and Samantha are at the beach, enjoying a sunny day after a rain shower earlier that morning. After setting up their towels, Logan decides to take a walk along the beach. When he returns, he tells Samantha \"You can tell that it rained just this morning. I hope you don't mind mushy sand.\"",
-            "question": "What does Logan think about the wetness of the sand?",
-            "interpretations": [
-                "The sand was wet.",
-                "The sand was damp.",
-                "The sand was moist.",
-                "The sand was dry.",
-                "The sand was scorched."
-            ],
-            "stronger_alternative": "I'd recommend staying off the beach for a while, unless you want to walk in mud.",
-            "speaker_name": "Logan"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised4",
-            "scenario": "Dorothy and Jack, two teachers at a public high school, are discussing the recent science fair that their students participated in. Jack mentions one student in particular, and Dorothy responds, \"That one is going places I'm sure.\"",
-            "question": "What does Dorothy think about the student's ability?",
-            "interpretations": [
-                "The student is brilliant.",
-                "The student is bright.",
-                "The student performs at an average level.",
-                "The student is a little slow.",
-                "The student is stupid."
-            ],
-            "stronger_alternative": "In all my 17 years of teaching, I've never seen a student that smart.",
-            "speaker_name": "Dorothy"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised37",
-            "scenario": "Maria and Patrick are walking out of movie theatre and discussing a documentary they just watched about a family that lost their home in a fire. Maria lets out a sigh and says, \"What a heartbreaking tale.\"",
-            "question": "What does Maria think about the story's emotional tone?",
-            "interpretations": [
-                "The story was tragic.",
-                "The story was sad.",
-                "The story did not relay any particular emotion.",
-                "The story was uplifting.",
-                "The story was euphoric."
-            ],
-            "stronger_alternative": "That poor family, what did they ever do to deserve that?",
-            "speaker_name": "Maria"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised8",
-            "scenario": "Austin is telling Alice about the progress report conversation he just had with his boss. Austin's boss was harsh with him as he had been underperforming all quarter. Austin, still dazed by the meeting, tells Alice, \"The way he spoke to me, it sent chills through my spine.\"",
-            "question": "What does Austin think about his boss' tone?",
-            "interpretations": [
-                "His boss' tone was frosty.",
-                "His boss' tone was cold.",
-                "His boss' tone was without emotion.",
-                "His boss' tone was warm.",
-                "His boss' tone was inviting."
-            ],
-            "stronger_alternative": "I felt like I was in an ice bath with goosebumps all over.",
-            "speaker_name": "Austin"
-        },
-        {
-            "id": "main_stimuli_pvt21_revised3",
-            "scenario": "Jessica and Benjamin just finished watching a highly acclaimed independent film at a nearby theatre. The film featured several abstract scenes which puzzled both Jessica and Benjamin. As they walk out of the theatre, Benjamin looks stunned and turns to Jessica, saying, \"Well that was weird\"",
-            "question": "What does Benjamin think about the movie's imagery?",
-            "interpretations": [
-                "The movie's imagery was surreal.",
-                "The movie's imagery was bizarre.",
-                "The movie's imagery was like any other movie's.",
-                "The movie's imagery was ordinary.",
-                "The movie's imagery was dull."
-            ],
-            "stronger_alternative": "That movie transported me to another dimension.",
-            "speaker_name": "Benjamin"
+  [
+    {
+      id: "main_stimuli_pvt21_revised48",
+      scenario: "Andrew and Sophie are walking home after watching a live music performance by Andrew's favorite band. Andrew, visibly excited says, \"That was just incredible!\"",
+      question: "What does Andrew think about the band's performance?",
+      interpretations: [
+        "The band's performance was perfect.",
+        "The band's performance was wonderful.",
+        "The band's performance was ok.",
+        "The band's performance was lackluster.",
+        "The band's performance was disappointing."
+      ],
+      stronger_alternative: "They were absolutely perfect tonight!",
+      speaker_name: "Andrew",
+      mainName: "Andrew",
+      secondName: "Sophie",
+      alternative_cancellation: "Maybe not literally perfect Sophie, but they were wonderful."
+    },
+    {
+      id: "main_stimuli_pvt21_revised26",
+      scenario: "Gregory and Ava are sitting in a coffee shop, reviewing the outcomes of their recent science project. They both look puzzled as the results don't match their expectations. Gregory leans back, stirring his coffee, and says, \"These results almost feel like they're from another world.\"",
+      question: "What does Gregory think about the nature of the results?",
+      interpretations: [
+        "The results were magical.",
+        "The results were mysterious.",
+        "The results were as expected.",
+        "The results were obvious.",
+        "The results were incorrect."
+      ],
+      stronger_alternative: "These results are pure magic.",
+      speaker_name: "Gregory",
+      mainName: "Gregory",
+      secondName: "Ava",
+      alternative_cancellation: "Not actual magic Ava, just really unexpected."
+    },
+    {
+      id: "main_stimuli_pvt21_revised25",
+      scenario: "Sharon is preparing dinner in the kitchen where her son Jason is trying to help. As Sharon turns off the stove, she points to the pot of water and says to Jason, \"Make sure not to stick your fingers in there!\"",
+      question: "What does Sharon think about the temperature of the water?",
+      interpretations: [
+        "The water was boiling.",
+        "The water was hot.",
+        "The water was tepid.",
+        "The water was cold.",
+        "The water was icy."
+      ],
+      stronger_alternative: "Don't get too close, the water's still boiling!",
+      speaker_name: "Sharon",
+      mainName: "Sharon",
+      secondName: "Jason",
+      alternative_cancellation: "It's not boiling Jason, but it's still hot so be careful."
+    },
+    {
+      id: "main_stimuli_pvt21_revised32",
+      scenario: "Hannah and Jacob just finished a meal at a new restaurant in town. As they exit, Hannah remarks to Jacob, \"I liked the way they treated us.\"",
+      question: "What does Hannah think about the staff's treatment?",
+      interpretations: [
+        "The staff were friendly.",
+        "The staff were polite.",
+        "The staff were indifferent.",
+        "The staff were impolite.",
+        "The staff were mean."
+      ],
+      stronger_alternative: "The service here was great, they treated us as if we were old friends.",
+      speaker_name: "Hannah",
+      mainName: "Hannah",
+      secondName: "Jacob",
+      alternative_cancellation: "Maybe not like old friends Jacob, but they were polite."
+    },
+    {
+      id: "main_stimuli_pvt21_revised19",
+      scenario: "Aaron and Sara are investigating a series of mysterious disappearances in their small town. They stumble upon an abandoned building rumored to be a meeting place for a local cult. After uncovering disturbing artifacts and symbols inside, Aaron, shocked, turns to Sara and says, \"This cult is up to no good. Look at all this stuff. It's all so dark.\"",
+      question: "What does Aaron think about the cult?",
+      interpretations: [
+        "The cult was satanic.",
+        "The cult was evil.",
+        "The cult was sinister.",
+        "The cult was benevolent.",
+        "The cult was virtuous."
+      ],
+      stronger_alternative: "This is some kind of hell-worshiping cult.",
+      speaker_name: "Aaron",
+      mainName: "Aaron",
+      secondName: "Sara",
+      alternative_cancellation: "I wouldn't say hell-worshiping Sara, but definitely evil."
+    }
+  ],
+  [
+    {
+      id: "main_stimuli_pvt21_revised13",
+      scenario: "Luke and Jenna are on a camping trip, and are getting ready for their morning hike. As they begin to pack up their gear, Luke looks up and notices the sky getting cloudier and cloudier. Worried, he says \"The sky is getting a thunderstorm look to it.\"",
+      question: "What does Luke think about the darkness of the sky?",
+      interpretations: [
+        "The sky's color was black.",
+        "The sky's color was dark.",
+        "The sky's color was dim.",
+        "The sky's color was light.",
+        "The sky's color was white."
+      ],
+      stronger_alternative: "This sky looks like it's about to turn pitch black.",
+      speaker_name: "Luke",
+      mainName: "Luke",
+      secondName: "Jenna",
+      alternative_cancellation: "Maybe not pitch black Jenna, but it's getting dark."
+    },
+    {
+      id: "main_stimuli_pvt21_revised39",
+      scenario: "James and Lauren are preparing a healthy snack in the kitchen. James picks up a banana which has turned brown from the bowl and feels its texture, remarking, \"This banana feels very ripe.\"",
+      question: "What does James think about the banana's texture?",
+      interpretations: [
+        "The banana's texture was mushy.",
+        "The banana's texture was soft.",
+        "The banana's texture was ordinary.",
+        "The banana's texture was firm.",
+        "The banana's texture was hard."
+      ],
+      stronger_alternative: "This banana is so mushy it might just dissolve in my hands.",
+      speaker_name: "James",
+      mainName: "James",
+      secondName: "Lauren",
+      alternative_cancellation: "It's not dissolving Lauren, just pretty soft."
+    },
+    {
+      id: "main_stimuli_pvt21_revised30",
+      scenario: "Timothy and Julia are hiking in a forest when Timothy accidentally brushes against a thorny bush. He grimaces and exclaims, \"Ow! That seriously hurt.\"",
+      question: "What does Timothy think about the sting's pain level?",
+      interpretations: [
+        "The sting was excruciating.",
+        "The sting was painful.",
+        "The sting was unnoticeable.",
+        "The sting was painless.",
+        "The sting was pleasant."
+      ],
+      stronger_alternative: "Ow! I don't think I've ever felt this amount of pain in my life!",
+      speaker_name: "Timothy",
+      mainName: "Timothy",
+      secondName: "Julia",
+      alternative_cancellation: "Not the worst pain ever Julia, but it did hurt."
+    },
+    {
+      id: "main_stimuli_pvt21_revised45",
+      scenario: "Harold and Harper, two mechanics, are working on a car that just came in. After a long afternoon of tuning up the engine, Harold checks the engine's temperature and says, \"That's quite toasty.\"",
+      question: "What does Harold think about the engine's temperature?",
+      interpretations: [
+        "The engine was hot.",
+        "The engine was warm.",
+        "The engine was at an average temperature.",
+        "The engine was cool.",
+        "The engine was cold."
+      ],
+      stronger_alternative: "Damn it's really burning up! I wouldn't stick my hand in there if I were you.",
+      speaker_name: "Harold",
+      mainName: "Harold",
+      secondName: "Harper",
+      alternative_cancellation: "Not burning up Harper, but it's definitely warm."
+    },
+    {
+      id: "main_stimuli_pvt21_revised17",
+      scenario: "Evelyn and Willie have just finished watching a romantic drama film together. As the credits roll, Evelyn wipes a tear from her eye and says, \"That hit me right in the feels.\"",
+      question: "What does Evelyn think about the film's emotional impact?",
+      interpretations: [
+        "The film was sentimental.",
+        "The film was emotional.",
+        "The film was touching.",
+        "The film was uninspiring.",
+        "The film was superficial."
+      ],
+      stronger_alternative: "It's the first time I cry over a movie in a while.",
+      speaker_name: "Evelyn",
+      mainName: "Evelyn",
+      secondName: "Willie",
+      alternative_cancellation: "I didn't full-on sob Willie, but it was emotional."
         }
     ],
     [
@@ -231,7 +190,10 @@ var main_stimuli_gradable_meanings = [
                 "The music was chaotic."
             ],
             "stronger_alternative": "It felt like I was in a meditation class, rather than a concert.",
-            "speaker_name": "Leo"
+            "speaker_name": "Leo",
+            "alternative_cancellation": "Maybe not full meditation Maya, but very calming.",
+            "mainName": "Leo",
+            "secondName": "Maya"
         },
         {
             "id": "main_stimuli_pvt21_revised41",
@@ -245,7 +207,10 @@ var main_stimuli_gradable_meanings = [
                 "The line on the map was obvious."
             ],
             "stronger_alternative": "I'm glad we used the magnifying glass. I wouldn't have seen it otherwise.",
-            "speaker_name": "Terry"
+            "speaker_name": "Terry",
+            "alternative_cancellation": "Not invisible Jenna, but really thin.",
+            "mainName": "Terry",
+            "secondName": "Jenna"
         },
         {
             "id": "main_stimuli_pvt21_revised46",
@@ -259,7 +224,10 @@ var main_stimuli_gradable_meanings = [
                 "The idea was unoriginal."
             ],
             "stronger_alternative": "That idea sounds like it's from a different dimension.",
-            "speaker_name": "Wayne"
+            "speaker_name": "Wayne",
+            "alternative_cancellation": "Maybe not from another dimension Heather, but weird.",
+            "mainName": "Wayne",
+            "secondName": "Heather"
         },
         {
             "id": "main_stimuli_pvt21_revised47",
@@ -273,7 +241,10 @@ var main_stimuli_gradable_meanings = [
                 "The jogger was completely dry."
             ],
             "stronger_alternative": "That guy looks like he just jumped into a pool.",
-            "speaker_name": "Jack"
+            "speaker_name": "Jack",
+            "alternative_cancellation": "Not pool-drenched Judith, but definitely wet.",
+            "mainName": "Jack",
+            "secondName": "Judith"
         },
         {
             "id": "main_stimuli_pvt21_revised15",
@@ -287,7 +258,10 @@ var main_stimuli_gradable_meanings = [
                 "The climate was saturated."
             ],
             "stronger_alternative": "I don't think this area has ever seen a single drop of water.",
-            "speaker_name": "Larry"
+            "speaker_name": "Larry",
+            "alternative_cancellation": "Maybe not never rained Tina, but it's really dry.",
+            "mainName": "Larry",
+            "secondName": "Tina"
         }
     ],
     [
@@ -303,7 +277,10 @@ var main_stimuli_gradable_meanings = [
                 "The accommodations were unpleasant."
             ],
             "stronger_alternative": "That room was so fancy, even the King would have been jealous.",
-            "speaker_name": "Lucy"
+            "speaker_name": "Lucy",
+            "alternative_cancellation": "Not royalty-level Joseph, but definitely first‑class.",
+            "mainName": "Lucy",
+            "secondName": "Joseph"
         },
         {
             "id": "main_stimuli_pvt21_revised16",
@@ -317,7 +294,10 @@ var main_stimuli_gradable_meanings = [
                 "The decor was cheap."
             ],
             "stronger_alternative": "Well we know someone's trying to show off.",
-            "speaker_name": "Lena"
+            "speaker_name": "Lena",
+            "alternative_cancellation": "Not pure showing off Marcus, but a bit excessive.",
+            "mainName": "Lena",
+            "secondName": "Marcus"
         },
         {
             "id": "main_stimuli_pvt21_revised24",
@@ -331,7 +311,10 @@ var main_stimuli_gradable_meanings = [
                 "The woman was evasive."
             ],
             "stronger_alternative": "I've never seen someone answer interview questions as directly as her.",
-            "speaker_name": "Marie"
+            "speaker_name": "Marie",
+            "alternative_cancellation": "Maybe not the most direct ever Jordan, but very blunt.",
+            "mainName": "Marie",
+            "secondName": "Jordan"
         },
         {
             "id": "main_stimuli_pvt21_revised34",
@@ -345,7 +328,10 @@ var main_stimuli_gradable_meanings = [
                 "The boy was disruptive."
             ],
             "stronger_alternative": "He hasn't talked since we got here.",
-            "speaker_name": "Max"
+            "speaker_name": "Max",
+            "alternative_cancellation": "Not literally silent Judy, just very quiet.",
+            "mainName": "Max",
+            "secondName": "Judy"
         },
         {
             "id": "main_stimuli_pvt21_revised31",
@@ -359,7 +345,10 @@ var main_stimuli_gradable_meanings = [
                 "The paint color was dark."
             ],
             "stronger_alternative": "It's as if the wall was covered in snow!",
-            "speaker_name": "Megan"
+            "speaker_name": "Megan",
+            "alternative_cancellation": "Not snow white Walter, but brighter than I expected.",
+            "mainName": "Megan",
+            "secondName": "Walter"
         }
     ],
     [
@@ -375,7 +364,10 @@ var main_stimuli_gradable_meanings = [
                 "His achievement was a mistake."
             ],
             "stronger_alternative": "He won! It's a miracle!",
-            "speaker_name": "Rachel"
+            "speaker_name": "Rachel",
+            "alternative_cancellation": "Maybe not miraculous David, but amazing.",
+            "mainName": "Rachel",
+            "secondName": "David"
         },
         {
             "id": "main_stimuli_pvt21_revised44",
@@ -389,7 +381,10 @@ var main_stimuli_gradable_meanings = [
                 "The conversation sounded pleasant."
             ],
             "stronger_alternative": "I'm so sorry you had to go through that Ashley, that sounds just awful.",
-            "speaker_name": "Richard"
+            "speaker_name": "Richard",
+            "alternative_cancellation": "Not utterly awful Ashley, but really tough.",
+            "mainName": "Richard",
+            "secondName": "Ashley"
         },
         {
             "id": "main_stimuli_pvt21_revised27",
@@ -403,7 +398,10 @@ var main_stimuli_gradable_meanings = [
                 "The graphics were awful."
             ],
             "stronger_alternative": "The graphics were out of this world!",
-            "speaker_name": "Jeremy"
+            "speaker_name": "Jeremy",
+            "alternative_cancellation": "Not out of this world Marcus, but impressive.",
+            "mainName": "Jeremy",
+            "secondName": "Marcus"
         },
         {
             "id": "main_stimuli_pvt21_revised33",
@@ -417,7 +415,10 @@ var main_stimuli_gradable_meanings = [
                 "The village was hideous."
             ],
             "stronger_alternative": "This place is absolutely breathtaking.",
-            "speaker_name": "Catherine"
+            "speaker_name": "Catherine",
+            "alternative_cancellation": "Maybe not breathtaking Charles, but lovely.",
+            "mainName": "Catherine",
+            "secondName": "Charles"
         },
         {
             "id": "main_stimuli_pvt21_revised5",
@@ -431,7 +432,10 @@ var main_stimuli_gradable_meanings = [
                 "The restaurant was empty."
             ],
             "stronger_alternative": "This place is packed, let's try someplace else.",
-            "speaker_name": "Amanda"
+            "speaker_name": "Amanda",
+            "alternative_cancellation": "Not packed Paul, but nearly full.",
+            "mainName": "Amanda",
+            "secondName": "Paul"
         }
     ],
     [
@@ -447,7 +451,10 @@ var main_stimuli_gradable_meanings = [
                 "The show was disappointing."
             ],
             "stronger_alternative": "These guys are fantastic live! What a show!",
-            "speaker_name": "Gerald"
+            "speaker_name": "Gerald",
+            "alternative_cancellation": "Maybe not fantastic Margaret, but really good.",
+            "mainName": "Gerald",
+            "secondName": "Margaret"
         },
         {
             "id": "main_stimuli_pvt21_revised11",
@@ -461,7 +468,10 @@ var main_stimuli_gradable_meanings = [
                 "Daniel's girlfriend is ugly."
             ],
             "stronger_alternative": "So is she a model or what?",
-            "speaker_name": "Brenda"
+            "speaker_name": "Brenda",
+            "alternative_cancellation": "Not model-level Daniel, but really pretty.",
+            "mainName": "Brenda",
+            "secondName": "Daniel"
         },
         {
             "id": "main_stimuli_pvt21_revised36",
@@ -475,7 +485,10 @@ var main_stimuli_gradable_meanings = [
                 "The service was welcoming."
             ],
             "stronger_alternative": "The hostess was rude and the waiter was a real jerk. I'm definitely not coming back.",
-            "speaker_name": "Megan"
+            "speaker_name": "Megan",
+            "alternative_cancellation": "Maybe not the worst ever Caleb, but pretty rough.",
+            "mainName": "Megan",
+            "secondName": "Caleb"
         },
         {
             "id": "main_stimuli_pvt21_revised1",
@@ -489,7 +502,10 @@ var main_stimuli_gradable_meanings = [
                 "The protesters are overjoyed about the city hall decision."
             ],
             "stronger_alternative": "This crowd looks dangerously mad, we should find another way.",
-            "speaker_name": "Beverly"
+            "speaker_name": "Beverly",
+            "alternative_cancellation": "Not dangerously mad Joshua, but angry.",
+            "mainName": "Beverly",
+            "secondName": "Joshua"
         },
         {
             "id": "main_stimuli_pvt21_revised21",
@@ -503,7 +519,10 @@ var main_stimuli_gradable_meanings = [
                 "The comedian was boring."
             ],
             "stronger_alternative": "How is this guy not famous yet?",
-            "speaker_name": "Carl"
+            "speaker_name": "Carl",
+            "alternative_cancellation": "Maybe not fame-level Laura, but really funny.",
+            "mainName": "Carl",
+            "secondName": "Laura"
         }
     ],
     [
@@ -519,7 +538,10 @@ var main_stimuli_gradable_meanings = [
                 "The mansion is tiny."
             ],
             "stronger_alternative": "You only see mansions of this size in movies!",
-            "speaker_name": "William"
+            "speaker_name": "William",
+            "alternative_cancellation": "Not movie-mansion huge Katherine, but huge.",
+            "mainName": "William",
+            "secondName": "Katherine"
         },
         {
             "id": "main_stimuli_pvt21_revised43",
@@ -533,7 +555,10 @@ var main_stimuli_gradable_meanings = [
                 "The test was a piece of cake."
             ],
             "stronger_alternative": "No chance I'm getting over 10%.",
-            "speaker_name": "Pamela"
+            "speaker_name": "Pamela",
+            "alternative_cancellation": "Maybe not impossible Bruce, but tough.",
+            "mainName": "Pamela",
+            "secondName": "Bruce"
         },
         {
             "id": "main_stimuli_pvt21_revised35",
@@ -547,7 +572,10 @@ var main_stimuli_gradable_meanings = [
                 "The coat was green."
             ],
             "stronger_alternative": "What a nice tomato color!",
-            "speaker_name": "Frances"
+            "speaker_name": "Frances",
+            "alternative_cancellation": "Not tomato red Steven, but that warm fall color.",
+            "mainName": "Frances",
+            "secondName": "Steven"
         },
         {
             "id": "main_stimuli_pvt21_revised23",
@@ -561,7 +589,10 @@ var main_stimuli_gradable_meanings = [
                 "The crowd was silent."
             ],
             "stronger_alternative": "I think I might have gone deaf from all the chanting.",
-            "speaker_name": "Jose"
+            "speaker_name": "Jose",
+            "alternative_cancellation": "Maybe not deafening Jasmine, but really energetic.",
+            "mainName": "Jose",
+            "secondName": "Jasmine"
         },
         {
             "id": "main_stimuli_pvt21_revised40",
@@ -575,7 +606,10 @@ var main_stimuli_gradable_meanings = [
                 "The wall was weak."
             ],
             "stronger_alternative": "They say no army has ever been able to breach this wall.",
-            "speaker_name": "Albert"
+            "speaker_name": "Albert",
+            "alternative_cancellation": "Not literally impenetrable Jessica, but very thick.",
+            "mainName": "Albert",
+            "secondName": "Jessica"
         }
     ],
     [
@@ -591,7 +625,10 @@ var main_stimuli_gradable_meanings = [
                 "The night was hot."
             ],
             "stronger_alternative": "It's freaking freezing out here Kenneth.",
-            "speaker_name": "Linda"
+            "speaker_name": "Linda",
+            "alternative_cancellation": "Not freezing Kenneth, but cold.",
+            "mainName": "Linda",
+            "secondName": "Kenneth"
         },
         {
             "id": "main_stimuli_pvt21_revised22",
@@ -605,7 +642,10 @@ var main_stimuli_gradable_meanings = [
                 "Kyle should wear something dazzling."
             ],
             "stronger_alternative": "The darkest thing you have.",
-            "speaker_name": "Mike"
+            "speaker_name": "Mike",
+            "alternative_cancellation": "Maybe not the absolute darkest Kyle, but dark.",
+            "mainName": "Mike",
+            "secondName": "Kyle"
         },
         {
             "id": "main_stimuli_pvt21_revised18",
@@ -619,7 +659,10 @@ var main_stimuli_gradable_meanings = [
                 "The novel was terrible."
             ],
             "stronger_alternative": "Overall, I think this is now my new favourite novel.",
-            "speaker_name": "Madison"
+            "speaker_name": "Madison",
+            "alternative_cancellation": "Not my all-time favourite Samuel, but really enjoyable.",
+            "mainName": "Madison",
+            "secondName": "Samuel"
         },
         {
             "id": "main_stimuli_pvt21_revised49",
@@ -633,7 +676,10 @@ var main_stimuli_gradable_meanings = [
                 "The politician's actions were commendable."
             ],
             "stronger_alternative": "I've seen hypocrites in office, but this is beyond disgusting.",
-            "speaker_name": "Diane"
+            "speaker_name": "Diane",
+            "alternative_cancellation": "Maybe not beyond disgusting Brian, but truly wrong.",
+            "mainName": "Diane",
+            "secondName": "Brian"
         },
         {
             "id": "main_stimuli_pvt21_revised20",
@@ -647,7 +693,10 @@ var main_stimuli_gradable_meanings = [
                 "The man is athletic."
             ],
             "stronger_alternative": "It's at the point where I think he might need to start taking weight-loss pills.",
-            "speaker_name": "Michael"
+            "speaker_name": "Michael",
+            "alternative_cancellation": "Not pill-level Sarah, but out of shape.",
+            "mainName": "Michael",
+            "secondName": "Sarah"
         }
     ],
     [
@@ -663,7 +712,10 @@ var main_stimuli_gradable_meanings = [
                 "His style was polished."
             ],
             "stronger_alternative": "What you're wearing is totally inappropriate.",
-            "speaker_name": "Donald"
+            "speaker_name": "Donald",
+            "alternative_cancellation": "Not totally inappropriate Arthur, but too casual.",
+            "mainName": "Donald",
+            "secondName": "Arthur"
         },
         {
             "id": "main_stimuli_pvt21_revised42",
@@ -677,7 +729,10 @@ var main_stimuli_gradable_meanings = [
                 "The caterpillar's movement was substantial."
             ],
             "stronger_alternative": "Check the slow motion camera! I might be crazy but I think it just moved.",
-            "speaker_name": "Jacqueline"
+            "speaker_name": "Jacqueline",
+            "alternative_cancellation": "Not completely imperceptible Christian, but tiny.",
+            "mainName": "Jacqueline",
+            "secondName": "Christian"
         },
         {
             "id": "main_stimuli_pvt21_revised14",
@@ -691,7 +746,10 @@ var main_stimuli_gradable_meanings = [
                 "His haircut looked terrible."
             ],
             "stronger_alternative": "Wow Bobby, your barber outdid himself this time.",
-            "speaker_name": "Elizabeth"
+            "speaker_name": "Elizabeth",
+            "alternative_cancellation": "Maybe not the best ever Mason, but really nice.",
+            "mainName": "Elizabeth",
+            "secondName": "Mason"
         },
         {
             "id": "main_stimuli_pvt21_revised28",
@@ -705,7 +763,10 @@ var main_stimuli_gradable_meanings = [
                 "His idea was conventional."
             ],
             "stronger_alternative": "Ronald, that's your strangest idea yet!",
-            "speaker_name": "Jess"
+            "speaker_name": "Jess",
+            "alternative_cancellation": "Not your strangest ever Ronald, but pretty odd.",
+            "mainName": "Jess",
+            "secondName": "Ronald"
         },
         {
             "id": "main_stimuli_pvt21_revised38",
@@ -719,7 +780,10 @@ var main_stimuli_gradable_meanings = [
                 "The writer was lackluster."
             ],
             "stronger_alternative": "Her writing style is so innovative, I can't wait for her next novel.",
-            "speaker_name": "Tiffany"
+            "speaker_name": "Tiffany",
+            "alternative_cancellation": "Maybe not groundbreaking Matthew, but very smart.",
+            "mainName": "Tiffany",
+            "secondName": "Matthew"
         }
     ]
 ];

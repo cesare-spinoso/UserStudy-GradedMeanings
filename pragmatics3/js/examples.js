@@ -4,7 +4,7 @@
 var examples_gradable_meanings = [
     {
         "id": "examples_0",
-        "scenario": "Mark walks into the office and sees a dog. He says, \"What a cute little guy!\"",
+    "scenario": "Mark and John walk into the office and see a dog. Mark says, \"What a cute little guy!\"",
     // Updated study objective: intensity judgment of described quality
     "question": "What does Mark think about the size of the dog?",
         "interpretations": [
@@ -14,7 +14,10 @@ var examples_gradable_meanings = [
             "The dog is big.",
             "The dog is huge."
         ],
-        "stronger_alternative": "My goodness he's so little I almost didn't see him.",
-        "speaker_name": "Mark"
+    "stronger_alternative": "My goodness he's so little I almost didn't see him.",
+    "alternative_cancellation": "Oh come on John, he's not that little!",
+    "speaker_name": "Mark",
+    "mainName": "Mark",
+    "secondName": "John"
     }
 ];
