@@ -41,12 +41,19 @@ function make_slides(f) {
     const midLabel = interpretations[2];
     const rightLabel = interpretations[interpretations.length - 1];
     const sliderHtml = `
-      <div class="slider-wrapper" style="margin:10px 0 20px; position:relative;">
+      <div class="slider-wrapper" style="margin:10px 0 30px; position:relative;">
         <input type="range" id="${sliderId}" class="interp-slider" min="${min}" max="${max}" step="1" value="${initial}" ${stimuli_type === 'example' ? 'disabled' : ''} style="width:100%;">
+        <!-- Tick marks -->
+        <div style="position:relative; width:100%; height:14px; margin-top:4px;">
+          <span style="position:absolute; left:0; top:0; width:2px; height:14px; background:#555;"></span>
+          <span style="position:absolute; left:50%; transform:translateX(-50%); top:0; width:2px; height:14px; background:#555;"></span>
+          <span style="position:absolute; right:0; top:0; width:2px; height:14px; background:#555;"></span>
+        </div>
+        <!-- Labels -->
         <div class="tick-container" style="position:relative; width:100%; height:0;">
-          <span style="position:absolute; left:0; top:8px; width:25%; font-size:15px; font-weight:600; text-align:left;">${_.escape(leftLabel)}</span>
-          <span style="position:absolute; left:50%; transform:translateX(-50%); top:8px; width:40%; font-size:15px; font-weight:600; text-align:center;">${_.escape(midLabel)}</span>
-          <span style="position:absolute; right:0; top:8px; width:25%; font-size:15px; font-weight:600; text-align:right;">${_.escape(rightLabel)}</span>
+          <span style="position:absolute; left:0; top:18px; width:25%; font-weight:600; text-align:left;">${_.escape(leftLabel)}</span>
+          <span style="position:absolute; left:50%; transform:translateX(-50%); top:18px; width:40%; font-weight:600; text-align:center;">${_.escape(midLabel)}</span>
+          <span style="position:absolute; right:0; top:18px; width:25%; font-weight:600; text-align:right;">${_.escape(rightLabel)}</span>
         </div>
       </div>`;
 
@@ -107,19 +114,8 @@ function make_slides(f) {
 
   // EXAMPLE SLIDE //
 
-  function add_example_allocations(slideSelector, interpretations, exampleAllocations) {
-    // First select the appropriate slide
-    const $slide = $(`#${slideSelector}`);
-    // Find the examples allocations tag
-    const $exampleAllocations = $slide.find(".possible-allocations");
-    // Clear any existing content
-    $exampleAllocations.empty();
-    // Add the example allocations html if using alternatives
-    if (exp.is_alt) {
-      example_allocations_html = create_feedback(interpretationKeys = interpretations, exampleAllocations = exampleAllocations);
-      $exampleAllocations.html(example_allocations_html);
-    }
-  }
+  // Removed allocation example table logic per updated design (create_feedback now returns empty string).
+  function add_example_allocations() { /* no-op */ }
 
   slides.example = slide({
     name: "example",
@@ -128,11 +124,7 @@ function make_slides(f) {
     start: function () {
       console.log("In the start of example slide");
       display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", is_alt = exp.is_alt);
-      add_example_allocations(
-        slideSelector = "example",
-        interpretations = exp.example_stimuli[0].interpretations,
-        exampleAllocations = exp.example_allocations,
-      );
+  add_example_allocations();
     },
 
     button: function () {

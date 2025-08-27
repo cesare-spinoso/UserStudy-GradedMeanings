@@ -1,7 +1,7 @@
 function start_instructions_html(is_alt) {
     common_instructions_html = `
     <p>
-        <strong>Study description:</strong> We're interested in how people interpret everyday utterances. In each scenario a character says something about some underlying quality (e.g., size, temperature, performance quality, emotional intensity). You will read the scenario and then use a <strong>continuous slider (0–100)</strong> to indicate where you think the speaker's belief lies along the scale implied by the listed interpretations (from the first interpretation on the far left to the last one on the far right). You will also provide a short <strong>rationale</strong> explaining your judgment for the main study scenarios.
+    <strong>Study description:</strong> We're interested in how people interpret everyday utterances. In each scenario a character says something about an underlying quality (e.g., size, temperature, performance quality, emotional intensity). You will read the scenario and then use a <strong>continuous slider</strong> to indicate where you think the speaker's belief lies along the scale — the left and right ends of the slider will represent extreme degrees. You will also provide a short <strong>rationale</strong> explaining your judgment for the main study scenarios.
     </p>`;
     if (!is_alt) {
         common_instructions_html += `
@@ -24,12 +24,12 @@ function warmup_instructions_html(is_alt) {
     if (!is_alt) {
         return `
             <p id="instruct-text" class="left">Now that you've seen an example, we'll begin with the <strong>warm‑up scenarios</strong>.</p>
-            <p>You will complete two scenarios. For each, move the slider (0 = matches the first interpretation listed, 100 = matches the last). No rationales are required for warm‑ups.</p>
+            <p>You will complete two scenarios. For each, move the slider to the position that best reflects the speaker's intended degree. No rationales are required for warm‑ups.</p>
         `;
     } else {
         return `
             <p id="instruct-text" class="left">Now that you've seen an example (and the alternative utterance), we'll begin with the <strong>warm‑up scenarios</strong>.</p>
-            <p>For each warm‑up, move the slider to indicate the degree you believe the speaker intended (0 = first interpretation, 100 = last). No rationales for warm‑ups.</p>
+            <p>For each warm‑up, move the slider to indicate the degree you believe the speaker intended. No rationales for warm‑ups.</p>
         `;
     }
 }
