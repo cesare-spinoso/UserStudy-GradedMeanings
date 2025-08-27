@@ -5,7 +5,8 @@ var examples_gradable_meanings = [
     {
         "id": "examples_0",
         "scenario": "Mark walks into the office and sees a dog. He says, \"What a cute little guy!\"",
-        "question": "What did Mark want to convey?",
+    // Updated study objective: intensity judgment of described quality
+    "question": "What does Mark think about the size of the dog?",
         "interpretations": [
             "The dog is tiny.",
             "The dog is small.",

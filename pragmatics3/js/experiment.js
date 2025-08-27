@@ -27,12 +27,11 @@ function make_slides(f) {
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
 
-    // Build slider UI: labels list + range input + tick labels row.
-    // Example slide will display interpretations but disabled slider (no response collected), warmup & main active.
+    // Continuous slider 0-100, with 3 tick labels: first, middle (index 2), last interpretation.
     const sliderId = `${stimuli_type}_slider`;
     const min = 0;
-    const max = interpretations.length - 1;
-    const initial = Math.floor((min + max) / 2);
+    const max = 100;
+    const initial = 50; // mid
 
     // Interpretations list numbered
     let listHtml = '<ol class="interp-list" style="padding-left:20px;">';
@@ -41,19 +40,19 @@ function make_slides(f) {
     });
     listHtml += '</ol>';
 
-    // Slider with ticks
-    let ticks = '<div class="tick-labels" style="display:flex; justify-content:space-between; font-size:12px; margin-top:4px;">';
-    interpretations.forEach((interp, i) => {
-      ticks += `<span style="flex:1; text-align:center;">${i + 1}</span>`;
-    });
-    ticks += '</div>';
-
+    // Tick labels (only 3) - we position them with relative container.
+    const leftLabel = interpretations[0];
+    const midLabel = interpretations[2];
+    const rightLabel = interpretations[interpretations.length - 1];
     const sliderHtml = `
-      <div class="slider-wrapper" style="margin:10px 0 20px;">
+      <div class="slider-wrapper" style="margin:10px 0 20px; position:relative;">
         <input type="range" id="${sliderId}" class="interp-slider" min="${min}" max="${max}" step="1" value="${initial}" ${stimuli_type === 'example' ? 'disabled' : ''} style="width:100%;">
-        ${ticks}
-        <div style="font-size:12px; margin-top:6px;">Current selection: <span class="current-selection" data-slider="${sliderId}">${initial + 1}</span> / ${interpretations.length}</div>
-        <div style="font-size:12px; margin-top:4px;">(Left = Interpretation 1; Right = Interpretation ${interpretations.length})</div>
+        <div class="tick-container" style="position:relative; width:100%; height:0;">
+          <span style="position:absolute; left:0; top:8px; width:25%; font-size:11px; text-align:left;">${_.escape(leftLabel)}</span>
+          <span style="position:absolute; left:50%; transform:translateX(-50%); top:8px; width:40%; font-size:11px; text-align:center;">${_.escape(midLabel)}</span>
+          <span style="position:absolute; right:0; top:8px; width:25%; font-size:11px; text-align:right;">${_.escape(rightLabel)}</span>
+        </div>
+        <div style="font-size:12px; margin-top:30px;">Slider value (0 = far left interpretation, 100 = far right interpretation): <span class="current-selection" data-slider="${sliderId}">${initial}</span></div>
       </div>`;
 
     $area.append(listHtml + sliderHtml);
@@ -62,22 +61,19 @@ function make_slides(f) {
       const $slider = $area.find(`#${sliderId}`);
       $slider.off('input').on('input', function () {
         const val = parseInt(this.value, 10);
-        $area.find('.current-selection').text(val + 1);
-        // highlight selected interpretation in list
-        $area.find('li').css({ 'font-weight': 'normal', 'background': 'transparent' });
-        $area.find(`#interp${val + 1}`).css({ 'font-weight': 'bold', 'background': '#efe8f3' });
+        $area.find('.current-selection').text(val);
       });
-      // trigger initial highlight
+      // initialize display
       $slider.trigger('input');
     }
   }
 
   function getSliderSelection(slide) {
     const $slider = slide.find('.interp-slider');
-    if ($slider.length === 0) return { valid: false, selectedIndex: null, errMsg: 'Slider missing.' };
+    if ($slider.length === 0) return { valid: false, slider_value: null, errMsg: 'Slider missing.' };
     const val = $slider.val();
-    if (val === '' || val == null) return { valid: false, selectedIndex: null, errMsg: 'Please move the slider.' };
-    return { valid: true, selectedIndex: parseInt(val, 10), errMsg: '' };
+    if (val === '' || val == null) return { valid: false, slider_value: null, errMsg: 'Please move the slider.' };
+    return { valid: true, slider_value: parseInt(val, 10), errMsg: '' };
   }
 
   function display_stimulus(current_index, stimuli, stimuli_type, is_alt) {
@@ -155,7 +151,7 @@ function make_slides(f) {
 
   // Helper functions for buttons/logging for warmup and main slides
 
-  function log_responses(stim, rationale, selectedIndex, is_alt) {
+  function log_responses(stim, rationale, slider_value, is_alt) {
     let trial_data = {
       id: stim.id,
       is_alt: is_alt,
@@ -165,16 +161,16 @@ function make_slides(f) {
       question: stim.question,
       alternative_utterance: stim.stronger_alternative,
       rationale: rationale,
-      selected_index: selectedIndex + 1,
+      slider_value: slider_value,
       time_in_minutes: (Date.now() - exp.startT) / 60000
     };
     // Store interpretations
     for (let i = 1; i <= stim.interpretations.length; i++) {
       trial_data[`interpretation${i}`] = stim.interpretations[i - 1];
     }
-    // One-hot style selection (keep schema similarity): allocation = 100 for chosen, 0 otherwise
+    // Preserve legacy fields with NA to avoid misinterpretation of intensity rating as distribution
     for (let i = 1; i <= stim.interpretations.length; i++) {
-      trial_data[`allocation${i}`] = (i - 1 === selectedIndex) ? 100 : 0;
+      trial_data[`allocation${i}`] = "NA";
     }
 
     exp.collected_data.push(trial_data);
@@ -184,8 +180,8 @@ function make_slides(f) {
     const $slide = $(`#${stimuli_type}`);
 
     $slide.find(".err").hide();
-    const sel = getSliderSelection($slide);
-    if (!sel.valid) { $slide.find('.err').text(sel.errMsg).show(); return false; }
+  const sel = getSliderSelection($slide);
+  if (!sel.valid) { $slide.find('.err').text(sel.errMsg).show(); return false; }
 
     let rationale = "";
     if (stimuli_type == "warmup") {
@@ -197,7 +193,7 @@ function make_slides(f) {
         return false;
       }
     }
-    log_responses(stim = stimuli[current_index], rationale = rationale, selectedIndex = sel.selectedIndex, is_alt = is_alt);
+  log_responses(stim = stimuli[current_index], rationale = rationale, slider_value = sel.slider_value, is_alt = is_alt);
     return true;
   }
 

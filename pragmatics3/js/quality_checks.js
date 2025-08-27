@@ -5,7 +5,7 @@ var quality_checks_gradable_meanings = [
     {
         "id": "quality_checks_0",
         "scenario": "Gerry and Matt are looking for a new car. When Gerry asks Matt what color car he's looking for, Matt says \"I want a red one.\"",
-        "question": "What did Matt want to convey?",
+    "question": "What does Matt think about the car color he wants?",
         "interpretations": [
             "Matt wants a yellow car.",
             "Matt wants a red car.",
@@ -19,7 +19,7 @@ var quality_checks_gradable_meanings = [
     {
         "id": "quality_checks_1",
         "scenario": "Gerry wants to cook something for his girlfriend Sara. Gerry calls Sara and asks her what she'd like to eat for dinner. Sara says \"Italian would be great!\"",
-        "question": "What did Sara want to convey?",
+    "question": "What does Sara think about the type of food for dinner?",
         "interpretations": [
             "She wants Italian food.",
             "She wants Korean food.",

@@ -6,7 +6,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised48",
             "scenario": "Andrew and Sophie are walking home after watching a live music performance by Andrew's favorite band. Andrew, visibly excited says, \"That was just incredible!\"",
-            "question": "What did Andrew want to convey?",
+            "question": "What does Andrew think about the band's performance?",
             "interpretations": [
                 "The band's performance was perfect.",
                 "The band's performance was wonderful.",
@@ -20,7 +20,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised26",
             "scenario": "Gregory and Ava are sitting in a coffee shop, reviewing the outcomes of their recent science project. They both look puzzled as the results don't match their expectations. Gregory leans back, stirring his coffee, and says, \"These results almost feel like they're from another world.\"",
-            "question": "What did Gregory want to convey?",
+            "question": "What does Gregory think about the nature of the results?",
             "interpretations": [
                 "The results were magical.",
                 "The results were mysterious.",
@@ -34,7 +34,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised25",
             "scenario": "Sharon is preparing dinner in the kitchen where her son Jason is trying to help. As Sharon turns off the stove, she points to the pot of water and says to Jason, \"Make sure not to stick your fingers in there!\"",
-            "question": "What did Sharon want to convey?",
+            "question": "What does Sharon think about the temperature of the water?",
             "interpretations": [
                 "The water was boiling.",
                 "The water was hot.",
@@ -48,7 +48,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised32",
             "scenario": "Hannah and Jacob just finished a meal at a new restaurant in town. As they exit, Hannah remarks to Jacob, \"I liked the way they treated us.\"",
-            "question": "What did Hannah want to convey?",
+            "question": "What does Hannah think about the staff's treatment?",
             "interpretations": [
                 "The staff were friendly.",
                 "The staff were polite.",
@@ -62,7 +62,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised19",
             "scenario": "Aaron and Sara are investigating a series of mysterious disappearances in their small town. They stumble upon an abandoned building rumored to be a meeting place for a local cult. After uncovering disturbing artifacts and symbols inside, Aaron, shocked, turns to Sara and says, \"This cult is up to no good. Look at all this stuff. It's all so dark.\"",
-            "question": "What did Aaron want to convey?",
+            "question": "What does Aaron think about the cult?",
             "interpretations": [
                 "The cult was satanic.",
                 "The cult was evil.",
@@ -78,7 +78,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised13",
             "scenario": "Luke and Jenna are on a camping trip, and are getting ready for their morning hike. As they begin to pack up their gear, Luke looks up and notices the sky getting cloudier and cloudier. Worried, he says \"The sky is getting a thunderstorm look to it.\"",
-            "question": "What did Luke want to convey?",
+            "question": "What does Luke think about the darkness of the sky?",
             "interpretations": [
                 "The sky's color was black.",
                 "The sky's color was dark.",
@@ -92,7 +92,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised39",
             "scenario": "James and Lauren are preparing a healthy snack in the kitchen. James picks up a banana which has turned brown from the bowl and feels its texture, remarking, \"This banana feels very ripe.\"",
-            "question": "What did James want to convey?",
+            "question": "What does James think about the banana's texture?",
             "interpretations": [
                 "The banana's texture was mushy.",
                 "The banana's texture was soft.",
@@ -106,7 +106,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised30",
             "scenario": "Timothy and Julia are hiking in a forest when Timothy accidentally brushes against a thorny bush. He grimaces and exclaims, \"Ow! That seriously hurt.\"",
-            "question": "What did Timothy want to convey?",
+            "question": "What does Timothy think about the sting's pain level?",
             "interpretations": [
                 "The sting was excruciating.",
                 "The sting was painful.",
@@ -120,7 +120,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised45",
             "scenario": "Harold and Harper, two mechanics, are working on a car that just came in. After a long afternoon of tuning up the engine, Harold checks the engine's temperature and says, \"That's quite toasty.\"",
-            "question": "What did Harold want to convey?",
+            "question": "What does Harold think about the engine's temperature?",
             "interpretations": [
                 "The engine was hot.",
                 "The engine was warm.",
@@ -134,7 +134,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised17",
             "scenario": "Evelyn and Willie have just finished watching a romantic drama film together. As the credits roll, Evelyn wipes a tear from her eye and says, \"That hit me right in the feels.\"",
-            "question": "What did Evelyn want to convey?",
+            "question": "What does Evelyn think about the film's emotional impact?",
             "interpretations": [
                 "The film was sentimental.",
                 "The film was emotional.",
@@ -150,7 +150,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised12",
             "scenario": "Logan and Samantha are at the beach, enjoying a sunny day after a rain shower earlier that morning. After setting up their towels, Logan decides to take a walk along the beach. When he returns, he tells Samantha \"You can tell that it rained just this morning. I hope you don't mind mushy sand.\"",
-            "question": "What did Logan want to convey?",
+            "question": "What does Logan think about the wetness of the sand?",
             "interpretations": [
                 "The sand was wet.",
                 "The sand was damp.",
@@ -164,7 +164,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised4",
             "scenario": "Dorothy and Jack, two teachers at a public high school, are discussing the recent science fair that their students participated in. Jack mentions one student in particular, and Dorothy responds, \"That one is going places I'm sure.\"",
-            "question": "What did Dorothy want to convey?",
+            "question": "What does Dorothy think about the student's ability?",
             "interpretations": [
                 "The student is brilliant.",
                 "The student is bright.",
@@ -178,7 +178,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised37",
             "scenario": "Maria and Patrick are walking out of movie theatre and discussing a documentary they just watched about a family that lost their home in a fire. Maria lets out a sigh and says, \"What a heartbreaking tale.\"",
-            "question": "What did Maria want to convey?",
+            "question": "What does Maria think about the story's emotional tone?",
             "interpretations": [
                 "The story was tragic.",
                 "The story was sad.",
@@ -192,7 +192,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised8",
             "scenario": "Austin is telling Alice about the progress report conversation he just had with his boss. Austin's boss was harsh with him as he had been underperforming all quarter. Austin, still dazed by the meeting, tells Alice, \"The way he spoke to me, it sent chills through my spine.\"",
-            "question": "What did Austin want to convey?",
+            "question": "What does Austin think about his boss' tone?",
             "interpretations": [
                 "His boss' tone was frosty.",
                 "His boss' tone was cold.",
@@ -206,7 +206,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised3",
             "scenario": "Jessica and Benjamin just finished watching a highly acclaimed independent film at a nearby theatre. The film featured several abstract scenes which puzzled both Jessica and Benjamin. As they walk out of the theatre, Benjamin looks stunned and turns to Jessica, saying, \"Well that was weird\"",
-            "question": "What did Benjamin want to convey?",
+            "question": "What does Benjamin think about the movie's imagery?",
             "interpretations": [
                 "The movie's imagery was surreal.",
                 "The movie's imagery was bizarre.",
@@ -222,7 +222,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised6",
             "scenario": "Leo and Maya are sitting in a bar, enjoying a live acoustic performance. After the set, Leo comments on the performance, saying, \"That song makes me feel at such peace.\"",
-            "question": "What did Leo want to convey?",
+            "question": "What does Leo think about how calming the music is?",
             "interpretations": [
                 "The music was meditative.",
                 "The music was calming.",
@@ -236,7 +236,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised41",
             "scenario": "Terry and Jenna are two cartographers studying an old map of their hometown. After several minutes of studying the map, Terry notices a previously unknown division marked on the map. Terry says \"I've never noticed this line here, it's barely visible.\"",
-            "question": "What did Terry want to convey?",
+            "question": "What does Terry think about the line's visibility?",
             "interpretations": [
                 "The line on the map was invisible.",
                 "The line on the map was thin.",
@@ -250,7 +250,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised46",
             "scenario": "Wayne and Heather are brainstorming ideas for their upcoming art exhibition at a well-known gallery. After Heather suggests a concept involving sculpture crafted from organic materials and technology, Wayne raises an eyebrow and says, \"I've never heard a suggestion that wild.\"",
-            "question": "What did Wayne want to convey?",
+            "question": "What does Wayne think about how unusual the idea is?",
             "interpretations": [
                 "The idea was alien.",
                 "The idea was weird.",
@@ -264,7 +264,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised47",
             "scenario": "Jack and Judith are standing at the edge of a park, watching as a sudden downpour catches unsuspecting joggers off guard. Jack chuckles and points out one of the joggers as they dash past and says, \"That guy could definitely use a towel.\"",
-            "question": "What did Jack want to convey?",
+            "question": "What does Jack think about how wet the jogger is?",
             "interpretations": [
                 "The jogger was soaked.",
                 "The jogger was wet.",
@@ -278,7 +278,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised15",
             "scenario": "Larry and Tina are driving through the Mojave Desert during a road trip. As they pass by a vast stretch of barren land, Larry glances at the cracked earth and remarks, \"It must have been ages since it rained here.\"",
-            "question": "What did Larry want to convey?",
+            "question": "What does Larry think about how dry the climate is?",
             "interpretations": [
                 "The climate was arid.",
                 "The climate was dry.",
@@ -294,7 +294,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised9",
             "scenario": "Lucy and Joseph return home after a weekend getaway at a resort. As they unpack, Lucy smiles and comments on their stay by saying, \"Those accommodations were definitely first-class.\"",
-            "question": "What did Lucy want to convey?",
+            "question": "What does Lucy think about the accommodations' quality?",
             "interpretations": [
                 "The accommodations were luxurious.",
                 "The accommodations were comfortable.",
@@ -308,7 +308,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised16",
             "scenario": "Lena and Marcus are attending a lavish wedding at a luxurious venue. As they admire the elaborate decorations, Lena leans over to Marcus and remarks, \"This seems a little bit excessive.\"",
-            "question": "What did Lena want to convey?",
+            "question": "What does Lena think about how excessive the decor is?",
             "interpretations": [
                 "The decor was ostentatious.",
                 "The decor was elegant.",
@@ -322,7 +322,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised24",
             "scenario": "Marie and Jordan, two colleagues, are discussing the performance of a woman who interviewed for a position at their office. Marie says, \"She sure didn't sugarcoat things in there.\"",
-            "question": "What did Marie want to convey?",
+            "question": "What does Marie think about how blunt the woman was?",
             "interpretations": [
                 "The woman was blunt.",
                 "The woman was honest.",
@@ -336,7 +336,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised34",
             "scenario": "Max and Judy are sitting in a library, studying for their final exams. They look over at a boy in the corner who has been focused on his book for a while. Max whispers to Judy, \"He doesn't make a sound.\"",
-            "question": "What did Max want to convey?",
+            "question": "What does Max think about how quiet the boy is?",
             "interpretations": [
                 "The boy was silent.",
                 "The boy was quiet.",
@@ -350,7 +350,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised31",
             "scenario": "Megan and Walter are redecorating their living room together. After applying a fresh coat of paint, Megan steps back to admire their work and says, \"The color turned out brighter than I expected.\"",
-            "question": "What did Megan want to convey?",
+            "question": "What does Megan think about how bright the paint color is?",
             "interpretations": [
                 "The paint color was white.",
                 "The paint color was bright.",
@@ -366,7 +366,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised0",
             "scenario": "David and Rachel are attending a science fair where David has just been awarded first place for his innovative project. In disbelief, Rachel exclaims, \"I can't believe he won!\"",
-            "question": "What did Rachel want to convey?",
+            "question": "What does Rachel think about how remarkable his achievement is?",
             "interpretations": [
                 "His achievement was miraculous.",
                 "His achievement was amazing.",
@@ -380,7 +380,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised44",
             "scenario": "Ashley and Richard are hanging out at Richard's apartment, where they are discussing Ashley's recent job loss. Ashley, eyes watery, is telling Richard about how her boss let her go. Richard says, \"That must not have been an easy conversation to get through.\"",
-            "question": "What did Richard want to convey?",
+            "question": "What does Richard think about how difficult the conversation was?",
             "interpretations": [
                 "The conversation sounded painful.",
                 "The conversation sounded uncomfortable.",
@@ -394,7 +394,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised27",
             "scenario": "Jeremy and Marcus are sitting in a café after attending a gaming convention. They're discussing a new game that was showcased during the event, particularly the visuals it offered. Jeremy says, \"I was impressed by the quality of the graphics.\"",
-            "question": "What did Jeremy want to convey?",
+            "question": "What does Jeremy think about the quality of the graphics?",
             "interpretations": [
                 "The graphics were great.",
                 "The graphics were nice.",
@@ -408,7 +408,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised33",
             "scenario": "Catherine and Charles are visiting a small village known for its scenic views. After exploring the quaint streets and charming cottages, they get arrive at a viewpoint overlooking the entire village. When Charles asks Catherine what her thoughts on the village are, Catherine responds, \"It has such a lovely charm to it.\"",
-            "question": "What did Catherine want to convey?",
+            "question": "What does Catherine think about how beautiful the village is?",
             "interpretations": [
                 "The village was beautiful.",
                 "The village was pretty.",
@@ -422,7 +422,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised5",
             "scenario": "Amanda and Paul arrive at their favorite restaurant for dinner. Amanda glances around the dining area and says, \"There are hardly any tables left.\"",
-            "question": "What did Amanda want to convey?",
+            "question": "What does Amanda think about how full the restaurant is?",
             "interpretations": [
                 "The restaurant was full.",
                 "The restaurant was busy.",
@@ -438,7 +438,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised29",
             "scenario": "Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret and says, \"That was a pretty solid show.\"",
-            "question": "What did Gerald want to convey?",
+            "question": "What does Gerald think about how good the show was?",
             "interpretations": [
                 "The show was great.",
                 "The show was good.",
@@ -452,7 +452,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised11",
             "scenario": "Daniel and Brenda are having coffee at a trendy café. Brenda just met Daniel's girlfriend for the first time, and she looks pleasantly surprised as she tells Daniel, \"You were right, she is really pretty.\"",
-            "question": "What did Brenda want to convey?",
+            "question": "What does Brenda think about how attractive Daniel's girlfriend is?",
             "interpretations": [
                 "Daniel's girlfriend is beautiful.",
                 "Daniel's girlfriend is cute.",
@@ -466,7 +466,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised36",
             "scenario": "Megan and Caleb just finished having dinner at a new restaurant. As they leave, Megan turns to Caleb with a frown and says, \"I'm never coming back, the service sucked!\"",
-            "question": "What did Megan want to convey?",
+            "question": "What does Megan think about how poor the service was?",
             "interpretations": [
                 "The service was unfriendly.",
                 "The service was rough.",
@@ -480,7 +480,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised1",
             "scenario": "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. The protesters are denouncing a recent city hall decision. Beverly turns to Joshua and says \"They sure don't look happy.\"",
-            "question": "What did Beverly want to convey?",
+            "question": "What does Beverly think about how angry the protesters are?",
             "interpretations": [
                 "The protesters are furious about the city hall decision.",
                 "The protesters are angry about the city hall decision.",
@@ -494,7 +494,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised21",
             "scenario": "Carl and Laura are at a comedy club, enjoying a night of stand-up performances. After getting heckled by a member of the audience, the comedian offers a comeback which makes the audience laugh. Carl chuckles and says, \"Someone should get this guy a Netflix special.\"",
-            "question": "What did Carl want to convey?",
+            "question": "What does Carl think about how funny the comedian is?",
             "interpretations": [
                 "The comedian was hilarious.",
                 "The comedian was funny.",
@@ -510,7 +510,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised2",
             "scenario": "William and Katherine are walking through an affluent neighbourhood with many mansions. As they stop to admire one mansion in particular, William exclaims, \"I can't believe the size of this thing is!\"",
-            "question": "What did William want to convey?",
+            "question": "What does William think about the size of the mansion?",
             "interpretations": [
                 "The mansion is huge.",
                 "The mansion is big.",
@@ -524,7 +524,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised43",
             "scenario": "Pamela and Bruce are exiting their classroom after having taken a difficult exam. As they walk to their next class, Pamela sighs heavily and says, \"That was a real brain-buster, wasn't it?\"",
-            "question": "What did Pamela want to convey?",
+            "question": "What does Pamela think about how difficult the test was?",
             "interpretations": [
                 "The test was impossible.",
                 "The test was tough.",
@@ -538,7 +538,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised35",
             "scenario": "Frances and Steven are at a vintage clothing fair, browsing through racks of unique garments. As they examine a particularly striking coat hanging on a nearby display, Frances points at it and remarks, \"That color reminds me of a fall maple leaf.\"",
-            "question": "What did Frances want to convey?",
+            "question": "What does Frances think about the coat's color?",
             "interpretations": [
                 "The coat was red.",
                 "The coat was orange.",
@@ -552,7 +552,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised23",
             "scenario": "Jose and Jasmine have just attended a charity concert that raised significant funds for a local shelter. As they leave, Jose, visibly uplifted, turns to Jasmine and says, \"The crowd had so much energy tonight.\"",
-            "question": "What did Jose want to convey?",
+            "question": "What does Jose think about how energetic the crowd is?",
             "interpretations": [
                 "The crowd was ecstatic.",
                 "The crowd was happy.",
@@ -566,7 +566,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised40",
             "scenario": "Albert and Jessica are exploring a historic castle. They come across a massive stone wall that impresses them both with its size. Albert puts his hand against the wall and says, \"Even a cannon ball couldn't pierce through this thing.\"",
-            "question": "What did Albert want to convey?",
+            "question": "What does Albert think about how thick the wall is?",
             "interpretations": [
                 "The wall was impenetrable.",
                 "The wall was thick.",
@@ -582,7 +582,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised10",
             "scenario": "Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda pulls her jacket tighter and tells Kenneth, \"I should have packed something warmer.\"",
-            "question": "What did Linda want to convey?",
+            "question": "What does Linda think about how cold the night is?",
             "interpretations": [
                 "The night was cold.",
                 "The night was cool.",
@@ -596,7 +596,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised22",
             "scenario": "Kyle calls Mike to ask him what the dress code for his party is. Mike answers his call and says \"Wear what you would normally wear at a funeral.\"",
-            "question": "What did Mike want to convey?",
+            "question": "What does Mike think about the color Kyle should wear?",
             "interpretations": [
                 "Kyle should wear something black.",
                 "Kyle should wear something grey.",
@@ -610,7 +610,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised18",
             "scenario": "Madison and Samuel are sitting in a coffee shop, discussing the latest book they both read for their book club. After a long conversation, Madison takes a sip of her coffee and says, \"Overall, I will definitely be rereading it at some point.\"",
-            "question": "What did Madison want to convey?",
+            "question": "What does Madison think about the quality of the novel?",
             "interpretations": [
                 "The novel was great.",
                 "The novel was enjoyable.",
@@ -624,7 +624,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised49",
             "scenario": "Diane and Brian are friends discussing a recent news story about a government politician who embezzled a large amount of public funds, leaving their community in debt as a result. Diane shakes her head in disbelief and says, \"I can't believe someone would do something like that.\"",
-            "question": "What did Diane want to convey?",
+            "question": "What does Diane think about how wrong the politician's actions were?",
             "interpretations": [
                 "The politician's actions were evil.",
                 "The politician's actions were wrong.",
@@ -638,7 +638,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised20",
             "scenario": "Michael and Sarah are at a family gathering, watching their cousin Glenn play catch with the children. After witnessing Glenn struggle to keep up, Michael turns to Sarah and says, \"He clearly hasn't been watching his diet recently.\"",
-            "question": "What did Michael want to convey?",
+            "question": "What does Michael think about the man's fitness/weight?",
             "interpretations": [
                 "The man was obese.",
                 "The man was fat.",
@@ -654,7 +654,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised7",
             "scenario": "Donald and Arthur are getting ready for a family gathering. Donald looks at Arthur's outfit, which consists of an old t-shirt and distressed jeans, and says, \"You're going dressed like that?\"",
-            "question": "What did Donald want to convey?",
+            "question": "What does Donald think about how appropriate Arthur's outfit is?",
             "interpretations": [
                 "His style was sloppy.",
                 "His style was casual.",
@@ -668,7 +668,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised42",
             "scenario": "Jacqueline and Christian are observing a caterpillar which is resting on a leaf. They are interested in finding out how caterpillars move. Suddenly, Jacqueline exclaims, \"I think it just moved!\"",
-            "question": "What did Jacqueline want to convey?",
+            "question": "What does Jacqueline think about how big the caterpillar's movement was?",
             "interpretations": [
                 "The caterpillar's movement was imperceptible.",
                 "The caterpillar's movement was tiny.",
@@ -682,7 +682,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised14",
             "scenario": "Elizabeth and Mason are attending their friend Bobby's birthday party. As they walk into Bobby's apartment where the party is happening, Elizabeth notices that Bobby has gotten a new haircut. She smiles and says, \"Bobby, I'm loving this new haircut!\"",
-            "question": "What did Elizabeth want to convey?",
+            "question": "What does Elizabeth think about how good Bobby's haircut looks?",
             "interpretations": [
                 "His haircut looked great.",
                 "His haircut looked nice.",
@@ -696,7 +696,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised28",
             "scenario": "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal about using a giant inflatable penguin as their mascot, Jess says, \"That idea is definitely out there.\"",
-            "question": "What did Jess want to convey?",
+            "question": "What does Jess think about how bizarre Ronald's idea is?",
             "interpretations": [
                 "His idea was bizarre.",
                 "His idea was odd.",
@@ -710,7 +710,7 @@ var main_stimuli_gradable_meanings = [
         {
             "id": "main_stimuli_pvt21_revised38",
             "scenario": "Tiffany and Matthew are at their neighborhood book club discussing a novel they recently finished. Matthew expresses his admiration for the author's ability to weave intricate plots. Tiffany nods and replies, \"That author really knows how to make everything connect.\"",
-            "question": "What did Tiffany want to convey?",
+            "question": "What does Tiffany think about how brilliant the writer is?",
             "interpretations": [
                 "The writer was brilliant.",
                 "The writer was smart.",
