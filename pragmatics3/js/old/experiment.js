@@ -8,9 +8,7 @@ function make_slides(f) {
     start: function () {
       exp.startT = Date.now();
       let num_interpretations;
-      if (exp.num_interpretations === 2) {
-        num_interpretations = "two";
-      } else if (exp.num_interpretations === 4) {
+      if (exp.num_interpretations === 4) {
         num_interpretations = "four";
       } else if (exp.num_interpretations === 5) {
         num_interpretations = "five";
@@ -29,33 +27,53 @@ function make_slides(f) {
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
 
-    // Only two bins: show both interpretations and numeric input for each
-    const interp1 = interpretations[0];
-    const interp2 = interpretations[1];
-    const html = `
-      <div class="point-allocation" style="margin:18px 0 18px;">
-        <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px;">
-          <label style="flex:1;">${_.escape(interp1)}</label>
-          <input type="number" min="0" max="100" step="1" class="point-input" id="${stimuli_type}_alloc1" style="width:60px;"> points
+    // Continuous slider 0-100, with 3 tick labels: first, middle (index 2), last interpretation.
+    const sliderId = `${stimuli_type}_slider`;
+    const min = 0;
+    const max = 100;
+    const initial = 50; // mid
+
+  // (Interpretations list hidden from participants in new design)
+  let listHtml = '';
+
+    // Tick labels (only 3) - we position them with relative container.
+    const leftLabel = interpretations[0];
+    const midLabel = interpretations[2];
+    const rightLabel = interpretations[interpretations.length - 1];
+    const sliderHtml = `
+      <div class="slider-wrapper" style="margin:10px 0 10px; position:relative;">
+        <input type="range" id="${sliderId}" class="interp-slider" min="${min}" max="${max}" step="1" value="${initial}" ${stimuli_type === 'example' ? 'disabled' : ''} style="width:100%;">
+        <!-- Tick marks (visual) -->
+        <div style="position:relative; width:100%; height:14px; margin-top:4px;">
+          <span style="position:absolute; left:0; top:0; width:2px; height:14px; background:#555;"></span>
+          <span style="position:absolute; left:50%; transform:translateX(-50%); top:0; width:2px; height:14px; background:#555;"></span>
+          <span style="position:absolute; right:0; top:0; width:2px; height:14px; background:#555;"></span>
         </div>
-        <div style="display:flex; align-items:center; gap:16px;">
-          <label style="flex:1;">${_.escape(interp2)}</label>
-          <input type="number" min="0" max="100" step="1" class="point-input" id="${stimuli_type}_alloc2" style="width:60px;"> points
-        </div>
-        <div class="allocation-hint" style="margin-top:10px; color:#666; font-size:0.95em;">Total must add up to 100 points.</div>
+      </div>
+      <!-- Labels (flex so they reserve vertical space, preventing overlap with the Continue button) -->
+      <div class="slider-labels" style="display:flex; justify-content:space-between; gap:12px; font-weight:600; margin:8px 0 34px;">
+        <span style="flex:1; text-align:left;">${_.escape(leftLabel)}</span>
+        <span style="flex:1; text-align:center;">${_.escape(midLabel)}</span>
+        <span style="flex:1; text-align:right;">${_.escape(rightLabel)}</span>
       </div>`;
-    $area.append(html);
+
+    $area.append(listHtml + sliderHtml);
+
+    if (stimuli_type !== 'example') {
+      const $slider = $area.find(`#${sliderId}`);
+  // No numeric feedback shown to participant.
+  $slider.off('input').on('input', function () { /* intentionally empty */ });
+      // initialize display
+      $slider.trigger('input');
+    }
   }
 
-  function getPointAllocations(slide) {
-    const $inputs = slide.find('.point-input');
-    if ($inputs.length !== 2) return { valid: false, allocations: [null, null], errMsg: 'Inputs missing.' };
-    const val1 = parseInt($inputs.eq(0).val(), 10);
-    const val2 = parseInt($inputs.eq(1).val(), 10);
-    if (isNaN(val1) || isNaN(val2)) return { valid: false, allocations: [val1, val2], errMsg: 'Please enter a value for both bins.' };
-    if (val1 < 0 || val2 < 0) return { valid: false, allocations: [val1, val2], errMsg: 'Points must be non-negative.' };
-    if (val1 + val2 !== 100) return { valid: false, allocations: [val1, val2], errMsg: 'Total must be exactly 100 points.' };
-    return { valid: true, allocations: [val1, val2], errMsg: '' };
+  function getSliderSelection(slide) {
+    const $slider = slide.find('.interp-slider');
+    if ($slider.length === 0) return { valid: false, slider_value: null, errMsg: 'Slider missing.' };
+    const val = $slider.val();
+    if (val === '' || val == null) return { valid: false, slider_value: null, errMsg: 'Please move the slider.' };
+    return { valid: true, slider_value: parseInt(val, 10), errMsg: '' };
   }
 
   function display_stimulus(current_index, stimuli, stimuli_type, is_alt) {
@@ -121,7 +139,7 @@ function make_slides(f) {
 
   // Helper functions for buttons/logging for warmup and main slides
 
-  function log_responses(stim, rationale, allocations, is_alt) {
+  function log_responses(stim, rationale, slider_value, is_alt) {
     let trial_data = {
       id: stim.id,
       is_alt: is_alt,
@@ -129,28 +147,36 @@ function make_slides(f) {
       batch_index: exp.batch_index,
       scenario: stim.scenario,
       question: stim.question,
-      alternative_utterance: stim.stronger_alternative,
-      alternative_cancellation: stim.alternative_cancellation || null,
-      mainName: stim.mainName || stim.speaker_name || null,
-      secondName: stim.secondName || null,
+  alternative_utterance: stim.stronger_alternative,
+  alternative_cancellation: stim.alternative_cancellation || null,
+  mainName: stim.mainName || stim.speaker_name || null,
+  secondName: stim.secondName || null,
       rationale: rationale,
-      allocation1: allocations[0],
-      allocation2: allocations[1],
+      slider_value: slider_value,
       time_in_minutes: (Date.now() - exp.startT) / 60000
     };
-    trial_data['interpretation1'] = stim.interpretations[0];
-    trial_data['interpretation2'] = stim.interpretations[1];
+    // Store interpretations
+    for (let i = 1; i <= stim.interpretations.length; i++) {
+      trial_data[`interpretation${i}`] = stim.interpretations[i - 1];
+    }
+    // Allocation fields set to NA (not used in intensity design; kept for backward compatibility)
+    for (let i = 1; i <= stim.interpretations.length; i++) {
+      trial_data[`allocation${i}`] = "NA";
+    }
+
     exp.collected_data.push(trial_data);
   }
 
   function trial_button_event(current_index, stimuli_type, stimuli, is_alt) {
     const $slide = $(`#${stimuli_type}`);
+
     $slide.find(".err").hide();
-    const sel = getPointAllocations($slide);
-    if (!sel.valid) { $slide.find('.err').text(sel.errMsg).show(); return false; }
+  const sel = getSliderSelection($slide);
+  if (!sel.valid) { $slide.find('.err').text(sel.errMsg).show(); return false; }
+
     let rationale = "";
     if (stimuli_type == "warmup") {
-      rationale = "None";
+      rationale = "None"; // No rationale for warmup
     } else {
       rationale = $slide.find("#rationale").val();
       if (!rationale) {
@@ -158,7 +184,7 @@ function make_slides(f) {
         return false;
       }
     }
-    log_responses(stim = stimuli[current_index], rationale = rationale, allocations = sel.allocations, is_alt = is_alt);
+  log_responses(stim = stimuli[current_index], rationale = rationale, slider_value = sel.slider_value, is_alt = is_alt);
     return true;
   }
 

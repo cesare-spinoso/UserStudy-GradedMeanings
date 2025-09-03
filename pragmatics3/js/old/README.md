@@ -1,0 +1,1 @@
+I asked copilot to modify the stimuli such that it would identify the second speaker's name and use them to verbalize the alternative utterance.
