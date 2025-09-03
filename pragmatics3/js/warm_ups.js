@@ -11,7 +11,7 @@ var warm_ups_gradable_meanings = [
             "The party is loud.",
         ],
     "stronger_alternative": "Yeah, I think I might go deaf!",
-    "alternative_cancellation": "Okay, now you're exaggerating George. It's loud, but it's not that loud.",
+    "alternative_cancellation": "Don't exaggerate George. It's loud, but it's not that loud.",
     "mainName": "Jamie",
     "secondName": "George"
     },
@@ -24,7 +24,7 @@ var warm_ups_gradable_meanings = [
             "The coworker's comment was impolite.",
         ],
     "stronger_alternative": "She was so nasty to you!",
-    "alternative_cancellation": "Maybe not nasty, but it was definitely impolite.",
+    "alternative_cancellation": "Maybe not nasty, but definitely impolite.",
     "mainName": "Lisa",
     "secondName": "Amy"
     }

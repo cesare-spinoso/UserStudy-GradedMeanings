@@ -28,7 +28,7 @@ var main_stimuli_gradable_meanings = [
       stronger_alternative: "I agree, these results are pure magic!",
       mainName: "Gregory",
       secondName: "Ava",
-      alternative_cancellation: "Maybe not pure magic, but quite mysterious."
+      alternative_cancellation: "Maybe not pure magic, but definitely mysterious."
     },
     {
       id: "main_stimuli_pvt21_revised25",
@@ -64,11 +64,11 @@ var main_stimuli_gradable_meanings = [
         "The cult was satanic.",
         "The cult was evil.",
       ],
-      stronger_alternative: "Yeah, this is scary Aaron. Maybe they're into satan worshipping or something.",
+      stronger_alternative: "Yeah, this is scary Aaron. They must be satan worshippers.",
       speaker_name: "Aaron",
       mainName: "Aaron",
       secondName: "Sara",
-      alternative_cancellation: "I don't know about that. It definitely seems evil though."
+      alternative_cancellation: "Well, I don't know about that. It definitely seems evil though."
     }
   ]
 ];

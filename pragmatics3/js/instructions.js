@@ -1,23 +1,12 @@
 function start_instructions_html(is_alt) {
-    if (!is_alt) {
-        common_instructions_html = `
-        <p>
-        <strong>Study description:</strong> We're interested in how utterances (what people say) are interpreted in conversations between two people. In this study, you will be shown scenarios in which a character says something. You will then evaluate the meaning of that utterance by distributing 100 points across two possible interpretations based on how likely you believe each one of them to be. You will also justify your point distribution.
-        </p>`;
-        common_instructions_html += `
-        <p>
-        <strong>Study structure:</strong> First you'll see one <strong>example scenario</strong> (no response needed). Then you'll complete two <strong>warm‑up scenarios</strong> allocating points (no rationale needed). After that you'll allocate points for seven <strong>study scenarios</strong>, each time distributing 100 points across the two options and providing a brief rationale for your choice. Expected duration: 10-15 minutes.
-        </p>`;
-    } else {
-        common_instructions_html = `
-        <p>
-        <strong>Study description:</strong> We're interested in how utterances (what people say) are interpreted in conversations between two people. In this study, you will be shown scenarios and a brief dialogue between two characters. You will evaluate the meaning of one of the utterances in the dialogue by distributing 100 points across two possible interpretations. The points should be allocated based on how likely you believe each interpretation to be. You will also justify your point distribution.
-        </p>`;
-        common_instructions_html += `
-        <p>
-        <strong>Study structure:</strong> First you'll see one <strong>example scenario</strong> (no response needed). Then you'll complete two <strong>warm‑up scenarios</strong> allocating points (no rationale needed). After that you'll allocate points for seven <strong>study scenarios</strong>, each time distributing 100 points across the two options and providing a brief rationale for your choice. Expected duration: 10-15 minutes.
-        </p>`;
-    }
+    common_instructions_html = `
+    <p>
+    <strong>Study description:</strong> We're interested in how utterances (what people say) are interpreted in conversations. In this study, you will be shown scenarios in which a character says something. You will then <strong>evaluate the meaning</strong> of that utterance by distributing 100 points across two possible interpretations based on how likely you believe each one of them to be. You will also justify your point distribution.
+    </p>`;
+    common_instructions_html += `
+    <p>
+    <strong>Study structure:</strong> First you'll see one <strong>example scenario</strong> (no response needed). Then you'll complete two <strong>warm‑up scenarios</strong> allocating points (no rationale needed). After that you'll allocate points for seven <strong>study scenarios</strong>, each time distributing 100 points across the two options and providing a brief rationale for your choice. Expected duration: 10-15 minutes.
+    </p>`;
     return common_instructions_html
 }
 
