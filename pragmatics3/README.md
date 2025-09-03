@@ -1,0 +1,10 @@
+# The thought process
+
+- The initial results where we had 5 gradable meanings on some kind of scale were motivated by the RSA setting.
+- The preliminary results showed that humans did not understand what we were asking for with the ``Intentionally chose not to say''
+- I talked to Gaurav and Verna about this initial experiment and 1. Gaurav was saying there was some kind of presupposition trigger in ``intentionally chose not to say "I'm an alcoholic"'' and 2. Verna was saying that the experiment design was too demanding in terms of cognitive load.
+- As a result, I 1. Changed the ``intentionally chose not to'' to an actual conversation between the two characters. and 2. Placed the meanings on a slider.
+- I showed this to Verna and she agreed that 1. was better but 2. only made sense if you can actually place the meanings ordinally on some scale.
+- I was having conceptual struggles with the slider because it didn't seem to be easy to induce a proper distribution. If one only cares about the recalibration then a slider is enough, but if one cares about a more fine-grained distribution then it might be necessary. Ultimately, after reading some papers in vision for which I saw points evidence, I reverted to using bins. Because I agreed with Verna that 5 meanings was too high in terms of cognitive load, I only decided to keep the two original gradable adjectives. This is the study that you'll find in this folder.
+- The problem with study setup though is now there's lexical overlap between the meanings and the dialogue. I reckon that this is a big confound and the effect I see might be because of the lexical overlap rather than anything else.
+- I will keep the study here unchanged so I can show Jackie and compare/contrast with pragmatics2 and pragmatics4 which will contain the slider approach.
