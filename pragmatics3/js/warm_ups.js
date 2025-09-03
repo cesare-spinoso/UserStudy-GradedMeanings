@@ -9,13 +9,9 @@ var warm_ups_gradable_meanings = [
         "interpretations": [
             "The party is deafening.",
             "The party is loud.",
-            "The party is at an average noise level.",
-            "The party is quiet.",
-            "The party is silent."
         ],
-    "stronger_alternative": "There's so much noise in here I think I might go deaf!",
-    "alternative_cancellation": "It's not deafening, but it's definitely loud.",
-    "speaker_name": "Jamie",
+    "stronger_alternative": "Yeah, I think I might go deaf!",
+    "alternative_cancellation": "Okay, now you're exaggerating George. It's loud, but it's not that loud.",
     "mainName": "Jamie",
     "secondName": "George"
     },
@@ -26,13 +22,9 @@ var warm_ups_gradable_meanings = [
         "interpretations": [
             "The coworker's comment was nasty.",
             "The coworker's comment was impolite.",
-            "The coworker's comment was unremarkable.",
-            "The coworker's comment was polite.",
-            "The coworker's comment was sweet."
         ],
-    "stronger_alternative": "How could she be so nasty?!",
-    "alternative_cancellation": "I wouldn't go that far, but it was definitely impolite.",
-    "speaker_name": "Lisa",
+    "stronger_alternative": "She was so nasty to you!",
+    "alternative_cancellation": "Maybe not nasty, but it was definitely impolite.",
     "mainName": "Lisa",
     "secondName": "Amy"
     }

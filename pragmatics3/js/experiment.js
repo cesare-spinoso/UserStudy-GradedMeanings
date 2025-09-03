@@ -28,23 +28,71 @@ function make_slides(f) {
     const $question = $slide.find(questionSelector).empty().html(questionValue);
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
-
     // Only two bins: show both interpretations and numeric input for each
     const interp1 = interpretations[0];
     const interp2 = interpretations[1];
+    const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
     const html = `
       <div class="point-allocation" style="margin:18px 0 18px;">
         <div style="display:flex; align-items:center; gap:16px; margin-bottom:10px;">
           <label style="flex:1;">${_.escape(interp1)}</label>
-          <input type="number" min="0" max="100" step="1" class="point-input" id="${stimuli_type}_alloc1" style="width:60px;"> points
+          <input type="number" min="0" max="100" step="1" class="point-input" id="${stimuli_type}_alloc1" style="width:60px;" ${disabledAttr}> points
         </div>
         <div style="display:flex; align-items:center; gap:16px;">
           <label style="flex:1;">${_.escape(interp2)}</label>
-          <input type="number" min="0" max="100" step="1" class="point-input" id="${stimuli_type}_alloc2" style="width:60px;"> points
+          <input type="number" min="0" max="100" step="1" class="point-input" id="${stimuli_type}_alloc2" style="width:60px;" ${disabledAttr}> points
         </div>
-        <div class="allocation-hint" style="margin-top:10px; color:#666; font-size:0.95em;">Total must add up to 100 points.</div>
+        <div style="margin-top:10px; display:flex; align-items:center; gap:12px;">
+          <div class="allocation-hint" style="color:#666; font-size:0.95em;">Total must add up to 100 points.</div>
+          <div id="${stimuli_type}_running_total" style="color:#333; font-weight:600; margin-left:8px;">Total: 0/100</div>
+        </div>
       </div>`;
     $area.append(html);
+
+    // If this is the example slide, prefill example allocations and keep inputs disabled
+    if (stimuli_type === 'example' && typeof exp !== 'undefined' && exp.example_allocations) {
+      const ex1 = exp.example_allocations[0] || 0;
+      const ex2 = exp.example_allocations[1] || 0;
+      $area.find(`#${stimuli_type}_alloc1`).val(ex1).prop('disabled', true);
+      $area.find(`#${stimuli_type}_alloc2`).val(ex2).prop('disabled', true);
+      $area.find(`#${stimuli_type}_running_total`).text(`Total: ${ex1 + ex2}/100`);
+    }
+
+    // Handler to update running total live when user types
+    function updateRunningTotal() {
+      const v1 = parseInt($area.find(`#${stimuli_type}_alloc1`).val(), 10);
+      const v2 = parseInt($area.find(`#${stimuli_type}_alloc2`).val(), 10);
+      const n1 = isNaN(v1) ? 0 : v1;
+      const n2 = isNaN(v2) ? 0 : v2;
+      const sum = n1 + n2;
+      const $total = $area.find(`#${stimuli_type}_running_total`);
+      $total.text(`Total: ${sum}/100`);
+      // Visual hint if sum is exactly 100
+      if (sum === 100) {
+        $total.css('color', '#138000');
+      } else {
+        $total.css('color', '#333');
+      }
+    }
+
+    // Attach input listeners (only for enabled inputs)
+    $area.find('.point-input').off('input').on('input', function () {
+      // clamp values to [0,100]
+      let val = parseInt($(this).val(), 10);
+      if (!isNaN(val)) {
+        if (val < 0) { val = 0; }
+        if (val > 100) { val = 100; }
+        $(this).val(val);
+      }
+      updateRunningTotal();
+    });
+
+    // Autofocus the first input when a new stimulus appears (skip if disabled)
+    const $firstInput = $area.find(`#${stimuli_type}_alloc1`);
+    if (!$firstInput.prop('disabled')) {
+      // small timeout to ensure element is fully in DOM
+      setTimeout(function () { $firstInput.focus(); }, 0);
+    }
   }
 
   function getPointAllocations(slide) {
@@ -68,13 +116,14 @@ function make_slides(f) {
       // Make the utterance green so it stands out
       var highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
 
-      if (is_alt) {
+  if (is_alt) {
   const otherName = stim.secondName || '(Partner)';
   const mainName = stim.mainName || stim.speaker_name || '(Speaker)';
-        const altUtterance = `<span style="color: #318500;">\"${stim.stronger_alternative}\"</span>`;
-        const cancellation = stim.alternative_cancellation || "It's not that extreme.";
-  highlighted += ` ${otherName} says ${altUtterance} ${mainName} responds \"${_.escape(cancellation)}\"`;
-      }
+    const altUtterance = `<span style="color: #318500;">\"${stim.stronger_alternative}\"</span>`;
+    const cancellationText = stim.alternative_cancellation || "It's not that extreme.";
+    const cancellation = `<span style=\"color: #318500;\">\"${_.escape(cancellationText)}\"</span>`;
+  highlighted += ` ${otherName} says ${altUtterance} ${mainName} responds ${cancellation}`;
+  }
       // Bold the question
       const question = `<strong>${stim.question}</strong>`;
       // Populate the html with the scenario, question, and interpretations
