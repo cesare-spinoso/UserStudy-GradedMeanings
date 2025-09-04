@@ -35,11 +35,11 @@ function make_slides(f) {
     const sliderHtml = `
       <div class="slider-allocation" style="margin:18px 0 18px;">
         <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:1; text-align:left; font-weight:600;">${_.escape(interp1)}</div>
-          <div style="flex:2;">
+          <div style="flex:0 0 18%; text-align:left; font-weight:600;">${_.escape(interp1)}</div>
+          <div style="flex:1 1 auto;">
             <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%;">
           </div>
-          <div style="flex:1; text-align:right; font-weight:600;">${_.escape(interp2)}</div>
+          <div style="flex:0 0 18%; text-align:right; font-weight:600;">${_.escape(interp2)}</div>
         </div>
 
         <!-- tick marks -->
@@ -51,15 +51,7 @@ function make_slides(f) {
           <div style="width:20%; text-align:right;">100</div>
         </div>
 
-        <!-- labels under extremes -->
-        <div style="display:flex; justify-content:space-between; margin-top:4px; color:#444;">
-          <div style="width:20%; text-align:left;">${_.escape(interp1)}</div>
-          <div style="width:60%; text-align:center;">&nbsp;</div>
-          <div style="width:20%; text-align:right;">${_.escape(interp2)}</div>
-        </div>
-
-        <div style="margin-top:10px; color:#666; font-size:0.95em;">Move the slider to indicate your interpretation (0 = left interpretation, 100 = right interpretation). Provide a short rationale below.</div>
-        <div id="${stimuli_type}_slider_value" style="font-weight:600; margin-top:8px;">Value: 50</div>
+        <div style="margin-top:10px; color:#666; font-size:0.95em;">Move the slider to indicate your interpretation. Provide a short rationale below.</div>
       </div>`;
     $area.append(sliderHtml);
 
@@ -74,14 +66,10 @@ function make_slides(f) {
       }
       const $slider = $area.find(`#${stimuli_type}_slider`);
       $slider.val(value).prop('disabled', true);
-      $area.find(`#${stimuli_type}_slider_value`).text(`Value: ${value}`);
     }
 
-    // Update displayed slider value
-    $area.find('.interp-slider').off('input').on('input', function () {
-      const v = parseInt($(this).val(), 10);
-      $area.find(`#${stimuli_type}_slider_value`).text(`Value: ${v}`);
-    });
+  // No numeric value is shown; just keep slider input active for reading at submit
+  $area.find('.interp-slider').off('input').on('input', function () { /* no-op visual update */ });
 
     // Autofocus the slider when a new stimulus appears (skip if disabled)
     const $firstControl = $area.find(`#${stimuli_type}_slider`);

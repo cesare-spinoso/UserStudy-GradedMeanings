@@ -57,6 +57,51 @@
         .err {
             display: none;
         }
+
+        /* Slider styling: marker-only, no filled left track, wider clickable area */
+        .interp-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: #e9e9e9;
+            /* neutral track */
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .interp-slider::-webkit-slider-runnable-track {
+            height: 6px;
+            background: #e9e9e9;
+            border-radius: 4px;
+        }
+
+        /* Remove the filled portion by styling both left and right the same; handle only moves */
+        .interp-slider::-moz-range-track {
+            height: 6px;
+            background: #e9e9e9;
+            border-radius: 4px;
+        }
+
+        .interp-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -7px;
+            /* center the thumb */
+            width: 18px;
+            height: 18px;
+            background: #d3d3d3;
+            border: 2px solid #999;
+            border-radius: 50%;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .interp-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: #d3d3d3;
+            border: 2px solid #999;
+            border-radius: 50%;
+        }
     </style>
 </head>
 
