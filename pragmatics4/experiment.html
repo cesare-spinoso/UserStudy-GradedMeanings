@@ -102,6 +102,39 @@
             border: 2px solid #999;
             border-radius: 50%;
         }
+
+        /* Tick and label row styling */
+        .ticks-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+        }
+
+        .ticks-row .tick {
+            width: 20%;
+            text-align: center;
+        }
+
+        .ticks-row .tick .tick-mark {
+            display: block;
+            height: 10px;
+            width: 2px;
+            margin: 0 auto 6px;
+            background: #999;
+        }
+
+        .ticks-row .tick .tick-label {
+            display: block;
+            text-align: center;
+            white-space: normal;
+            word-wrap: break-word;
+            max-width: 100%;
+        }
+
+        /* Ensure interpretation labels wrap and are centered */
+        .interpretation-area .tick-label {
+            font-weight: 600;
+        }
     </style>
 </head>
 

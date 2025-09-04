@@ -8,8 +8,11 @@ var examples_gradable_meanings = [
     // Updated study objective: intensity judgment of described quality
     "question": "What does Mark think about the size of the dog?",
     "interpretations": [
-        "The dog is tiny.",
-        "The dog is small.",
+        "The dog is very small.",
+        "The dog is small",
+        "The dog is of normal size.",
+        "The dog is big",
+        "The dog is very big",
     ],
     "mainName": "Mark",
     "secondName": "John",

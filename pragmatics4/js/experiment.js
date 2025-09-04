@@ -35,23 +35,28 @@ function make_slides(f) {
     const sliderHtml = `
       <div class="slider-allocation" style="margin:18px 0 18px;">
         <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:0 0 18%; text-align:left; font-weight:600;">${_.escape(interp1)}</div>
-          <div style="flex:1 1 auto;">
+          <div style="flex:0 0 12%; text-align:left; font-weight:600;">${_.escape(interp1)}</div>
+          <div style="flex:1 1 auto; margin:0 6px;">
             <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%;">
           </div>
-          <div style="flex:0 0 18%; text-align:right; font-weight:600;">${_.escape(interp2)}</div>
+          <div style="flex:0 0 12%; text-align:right; font-weight:600;">${_.escape(interp2)}</div>
         </div>
 
-        <!-- tick marks -->
-        <div style="display:flex; justify-content:space-between; margin-top:8px; font-weight:600;">
-          <div style="width:20%; text-align:left;">0</div>
-          <div style="width:20%; text-align:center;">25</div>
-          <div style="width:20%; text-align:center;">50</div>
-          <div style="width:20%; text-align:center;">75</div>
-          <div style="width:20%; text-align:right;">100</div>
+        <!-- tick marks with interpretation labels -->
+        <div class="ticks-row" style="font-weight:600;">
+          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[0] || '')}</span></div>
+          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[1] || '')}</span></div>
+          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[2] || '')}</span></div>
+          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[3] || '')}</span></div>
+          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[4] || '')}</span></div>
         </div>
 
-        <div style="margin-top:10px; color:#666; font-size:0.95em;">Move the slider to indicate your interpretation. Provide a short rationale below.</div>
+        <!-- numeric slider value for testing -->
+        <div style="margin-top:10px; color:#666; font-size:0.95em; display:flex; justify-content:center;">
+          <div id="${stimuli_type}_slider_value_display">Slider value: 50</div>
+        </div>
+
+        <div style="margin-top:6px; color:#666; font-size:0.95em;">Move the slider to indicate your interpretation. Provide a short rationale below.</div>
       </div>`;
     $area.append(sliderHtml);
 
@@ -68,8 +73,11 @@ function make_slides(f) {
       $slider.val(value).prop('disabled', true);
     }
 
-  // No numeric value is shown; just keep slider input active for reading at submit
-  $area.find('.interp-slider').off('input').on('input', function () { /* no-op visual update */ });
+  // Update numeric display on slider input (visible for testing)
+  $area.find('.interp-slider').off('input').on('input', function () {
+    const v = $(this).val();
+    $area.find(`#${stimuli_type}_slider_value_display`).text(`Slider value: ${v}`);
+  });
 
     // Autofocus the slider when a new stimulus appears (skip if disabled)
     const $firstControl = $area.find(`#${stimuli_type}_slider`);

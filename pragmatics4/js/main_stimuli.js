@@ -10,6 +10,9 @@ var main_stimuli_gradable_meanings = [
       question: "What does Andrew think about the band's performance?",
       interpretations: [
         "The band's performance was very good.",
+        "The band's performance was good.",
+        "The band's performance was neither good nor bad.",
+        "The band's performance was bad.",
         "The band's performance was very bad.",
       ],
       mainName: "Andrew",
@@ -23,6 +26,9 @@ var main_stimuli_gradable_meanings = [
       question: "What does Gregory think about the nature of the results?",
       interpretations: [
         "The results were very surprising.",
+        "The results were surprising.",
+        "The results were neither surprising nor unsurprising.",
+        "The results were unsurprising.",
         "The results were very unsurprising.",
       ],
       stronger_alternative: "I agree, these results are pure magic!",
@@ -36,6 +42,9 @@ var main_stimuli_gradable_meanings = [
       question: "What does Sharon think about the temperature of the water?",
       interpretations: [
         "The water was very hot.",
+        "The water was hot.",
+        "The water was neither hot nor cold.",
+        "The weather was cold.",
         "The water was very cold.",
       ],
       stronger_alternative: "Why Mom? Is the water still boiling?",
@@ -49,6 +58,9 @@ var main_stimuli_gradable_meanings = [
       question: "What does Hannah think about the staff's treatment?",
       interpretations: [
         "The staff were very friendly.",
+        "The staff were friendly.",
+        "The staff were neither friendly nor rude.",
+        "The staff were rude.",
         "The staff were very rude.",
       ],
       stronger_alternative: "I know right! They treated us as if we were old friends.",
@@ -62,6 +74,9 @@ var main_stimuli_gradable_meanings = [
       question: "What does Aaron think about the cult?",
       interpretations: [
         "The cult was very evil.",
+        "The cult was evil.",
+        "The cult was neither evil nor saintly.",
+        "The cult was saintly.",
         "The cult was very saintly.",
       ],
       stronger_alternative: "Yeah, this is scary Aaron. They must be satan worshippers.",
