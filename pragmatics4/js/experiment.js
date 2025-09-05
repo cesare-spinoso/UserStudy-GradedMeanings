@@ -43,6 +43,7 @@ function make_slides(f) {
             <div class="tick" style="left:75%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[3] || '')}</span></div>
             <div class="tick" style="left:100%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[4] || '')}</span></div>
           </div>
+          <div class="ticks-spacer"></div>
         </div>
 
         <!-- numeric slider value and instructions below ticks -->

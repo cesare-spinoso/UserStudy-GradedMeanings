@@ -93,6 +93,8 @@
             border: 2px solid #999;
             border-radius: 50%;
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+            /* ensure thumb sits above overlay */
         }
 
         .interp-slider::-moz-range-thumb {
@@ -101,6 +103,7 @@
             background: #d3d3d3;
             border: 2px solid #999;
             border-radius: 50%;
+            z-index: 5;
         }
 
         /* Tick overlay styling for absolute-positioned ticks */
@@ -109,7 +112,7 @@
             left: 0;
             right: 0;
             top: 28px;
-            height: 90px;
+            height: 120px;
             pointer-events: none;
         }
 
@@ -122,7 +125,7 @@
 
         .ticks-overlay .tick .tick-mark {
             display: block;
-            height: 22px;
+            height: 28px;
             width: 3px;
             margin: 0 auto 8px;
             background: #666;
@@ -141,6 +144,10 @@
         /* Ensure the slider occupies full width and overlay labels wrap under ticks */
         .slider-allocation {
             width: 100%;
+        }
+
+        .ticks-spacer {
+            height: 28px;
         }
     </style>
 </head>
@@ -272,9 +279,6 @@
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Use the slider to provide your interpretation of the speaker's intended meaning. The
-                                slider ranges from 0 to 100; 0 corresponds to the left interpretation and 100 to the
-                                right interpretation.</p>
                             <div class="interpretation-area"></div>
                         </div>
 
@@ -335,9 +339,6 @@
                             <p class="question">{{question}}</p>
                         </div>
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Use the slider to provide your interpretation of the speaker's intended meaning. The
-                                slider ranges from 0 to 100; 0 corresponds to the left interpretation and 100 to the
-                                right interpretation. Provide a short rationale for your judgment below.</p>
                             <div class="interpretation-area"></div>
                         </div>
 
