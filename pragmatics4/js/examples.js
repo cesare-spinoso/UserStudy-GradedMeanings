@@ -18,5 +18,6 @@ var examples_gradable_meanings = [
     "secondName": "John",
     "stronger_alternative": "He's so tiny, I almost stepped on him!",
     "alternative_cancellation": "Oh come on John, he's not that little!",
+    "alternative_amplification": "You're so right. I could probably fit him in my pocket!",
     }
 ];
