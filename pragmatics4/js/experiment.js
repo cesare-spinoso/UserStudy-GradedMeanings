@@ -313,9 +313,10 @@ function shuffle_stimuli(stimuli) {
   // Shuffle the stimuli order
   stimuli = _.shuffle(stimuli);
   // Shuffle the interpretations within each stimulus
-  stimuli.forEach(stim => {
-    stim.interpretations = _.shuffle(stim.interpretations);
-  });
+  // Don't do this if you're using a slider!
+  // stimuli.forEach(stim => {
+  //   stim.interpretations = _.shuffle(stim.interpretations);
+  // });
   return stimuli;
 }
 
