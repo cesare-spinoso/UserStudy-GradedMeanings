@@ -45,12 +45,11 @@ function make_slides(f) {
           </div>
         </div>
 
-        <!-- numeric slider value for testing -->
-        <div style="margin-top:10px; color:#666; font-size:0.95em; display:flex; justify-content:center;">
+        <!-- numeric slider value and instructions below ticks -->
+        <div style="margin-top:18px; color:#666; font-size:0.95em; display:flex; flex-direction:column; align-items:center;">
           <div id="${stimuli_type}_slider_value_display">Slider value: 50</div>
+          <div style="margin-top:8px;">Move the slider to indicate your interpretation. Provide a short rationale below.</div>
         </div>
-
-        <div style="margin-top:6px; color:#666; font-size:0.95em;">Move the slider to indicate your interpretation. Provide a short rationale below.</div>
       </div>`;
     $area.append(sliderHtml);
 
