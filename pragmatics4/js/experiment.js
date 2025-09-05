@@ -33,6 +33,11 @@ function make_slides(f) {
     const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
     const sliderHtml = `
       <div class="slider-allocation" style="margin:18px 0 18px;">
+      <!-- numeric slider value and instructions below ticks -->
+      <div style="margin-top:18px; color:#666; font-size:0.95em; display:flex; flex-direction:column; align-items:center;">
+        <div id="${stimuli_type}_slider_value_display">Slider value (for debugging only): 50</div>
+      </div>
+
         <div style="position:relative; width:100%;">
           <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%; display:block;">
           <!-- ticks overlay positioned exactly at 0,25,50,75,100% -->
@@ -46,10 +51,6 @@ function make_slides(f) {
           <div class="ticks-spacer"></div>
         </div>
 
-        <!-- numeric slider value and instructions below ticks -->
-        <div style="margin-top:18px; color:#666; font-size:0.95em; display:flex; flex-direction:column; align-items:center;">
-          <div id="${stimuli_type}_slider_value_display">Slider value: 50</div>
-        </div>
       </div>`;
     $area.append(sliderHtml);
 
