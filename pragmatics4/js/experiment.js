@@ -29,26 +29,20 @@ function make_slides(f) {
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
     // For pragmatics4 we use a continuous slider from 0..100 where the two extremes map to the two interpretations
-    const interp1 = interpretations[0];
-    const interp2 = interpretations[1];
+  // interpretations array will be used directly for tick labels
     const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
     const sliderHtml = `
       <div class="slider-allocation" style="margin:18px 0 18px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:0 0 12%; text-align:left; font-weight:600;">${_.escape(interp1)}</div>
-          <div style="flex:1 1 auto; margin:0 6px;">
-            <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%;">
+        <div style="position:relative; width:100%;">
+          <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%; display:block;">
+          <!-- ticks overlay positioned exactly at 0,25,50,75,100% -->
+          <div class="ticks-overlay" aria-hidden="true">
+            <div class="tick" style="left:0%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[0] || '')}</span></div>
+            <div class="tick" style="left:25%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[1] || '')}</span></div>
+            <div class="tick" style="left:50%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[2] || '')}</span></div>
+            <div class="tick" style="left:75%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[3] || '')}</span></div>
+            <div class="tick" style="left:100%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[4] || '')}</span></div>
           </div>
-          <div style="flex:0 0 12%; text-align:right; font-weight:600;">${_.escape(interp2)}</div>
-        </div>
-
-        <!-- tick marks with interpretation labels -->
-        <div class="ticks-row" style="font-weight:600;">
-          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[0] || '')}</span></div>
-          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[1] || '')}</span></div>
-          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[2] || '')}</span></div>
-          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[3] || '')}</span></div>
-          <div class="tick"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[4] || '')}</span></div>
         </div>
 
         <!-- numeric slider value for testing -->

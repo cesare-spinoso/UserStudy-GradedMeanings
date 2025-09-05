@@ -103,37 +103,44 @@
             border-radius: 50%;
         }
 
-        /* Tick and label row styling */
-        .ticks-row {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 8px;
+        /* Tick overlay styling for absolute-positioned ticks */
+        .ticks-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 28px;
+            height: 90px;
+            pointer-events: none;
         }
 
-        .ticks-row .tick {
-            width: 20%;
+        .ticks-overlay .tick {
+            position: absolute;
+            transform: translateX(-50%);
+            width: 160px;
             text-align: center;
         }
 
-        .ticks-row .tick .tick-mark {
+        .ticks-overlay .tick .tick-mark {
             display: block;
-            height: 10px;
-            width: 2px;
-            margin: 0 auto 6px;
-            background: #999;
+            height: 22px;
+            width: 3px;
+            margin: 0 auto 8px;
+            background: #666;
         }
 
-        .ticks-row .tick .tick-label {
+        .ticks-overlay .tick .tick-label {
             display: block;
             text-align: center;
             white-space: normal;
             word-wrap: break-word;
-            max-width: 100%;
+            max-width: 140px;
+            font-weight: 600;
+            font-size: 0.95em;
         }
 
-        /* Ensure interpretation labels wrap and are centered */
-        .interpretation-area .tick-label {
-            font-weight: 600;
+        /* Ensure the slider occupies full width and overlay labels wrap under ticks */
+        .slider-allocation {
+            width: 100%;
         }
     </style>
 </head>
