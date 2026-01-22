@@ -93,6 +93,8 @@
             border: 2px solid #999;
             border-radius: 50%;
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+            /* ensure thumb sits above overlay */
         }
 
         .interp-slider::-moz-range-thumb {
@@ -101,6 +103,54 @@
             background: #d3d3d3;
             border: 2px solid #999;
             border-radius: 50%;
+            z-index: 5;
+        }
+
+        /* Tick overlay styling for absolute-positioned ticks */
+        .ticks-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 28px;
+            height: 120px;
+            pointer-events: none;
+        }
+
+        .ticks-overlay .tick {
+            position: absolute;
+            transform: translateX(-50%);
+            width: 160px;
+            text-align: center;
+        }
+
+        .ticks-overlay .tick .tick-mark {
+            display: block;
+            height: 28px;
+            width: 3px;
+            margin: 0 auto 8px;
+            background: #666;
+        }
+
+        .ticks-overlay .tick .tick-label {
+            display: block;
+            text-align: center;
+            white-space: normal;
+            word-wrap: break-word;
+            max-width: 140px;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        /* Ensure the slider occupies full width and overlay labels wrap under ticks */
+        .slider-allocation {
+            width: 100%;
+            padding-bottom: 24px;
+            /* extra room under slider */
+        }
+
+        .ticks-spacer {
+            height: 56px;
+            /* increased spacer to push following content lower */
         }
     </style>
 </head>
@@ -166,9 +216,6 @@
                             </div>
 
                             <div class="form-group" style="margin-bottom: 30px;">
-                                <p>Use the slider to provide your interpretation of the speaker's intended meaning. The
-                                    slider ranges from 0 to 100; 0 corresponds to the left interpretation and 100 to the
-                                    right interpretation. Provide a short rationale for your judgment below.</p>
                                 <div class="interpretation-area"></div>
                             </div>
                             <div class="form-group" style="margin-bottom: 30px;">
@@ -182,9 +229,7 @@
                             </div>
 
                             <div class="row col-xs-12 col-md-12">
-                                <p>Use the slider to provide your interpretation of the speaker's intended meaning. The
-                                    slider ranges from 0 to 100; 0 corresponds to the left interpretation and 100 to the
-                                    right interpretation. Provide a short rationale for your judgment below.</p>
+                                <!-- instructions moved below slider -->
                             </div>
 
                             <!-- Removed allocations example table (no longer used in slider design) -->
@@ -237,9 +282,6 @@
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Use the slider to provide your interpretation of the speaker's intended meaning. The
-                                slider ranges from 0 to 100; 0 corresponds to the left interpretation and 100 to the
-                                right interpretation.</p>
                             <div class="interpretation-area"></div>
                         </div>
 
@@ -252,6 +294,8 @@
                                 Continue
                             </button>
                             <div class="err" style="color: #dc3545; margin-top: 10px;">
+                                <br>
+                                <br>
                                 Please move the slider to indicate your interpretation.
                             </div>
                         </div>
@@ -300,9 +344,6 @@
                             <p class="question">{{question}}</p>
                         </div>
                         <div class="form-group" style="margin-bottom: 30px;">
-                            <p>Use the slider to provide your interpretation of the speaker's intended meaning. The
-                                slider ranges from 0 to 100; 0 corresponds to the left interpretation and 100 to the
-                                right interpretation. Provide a short rationale for your judgment below.</p>
                             <div class="interpretation-area"></div>
                         </div>
 
@@ -323,6 +364,8 @@
                                 Continue
                             </button>
                             <div class="err" style="color: #dc3545; margin-top: 10px;">
+                                <br>
+                                <br>
                                 Please move the slider to indicate your interpretation and fill out the rationale.
                             </div>
                         </div>

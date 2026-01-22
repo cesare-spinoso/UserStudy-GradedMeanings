@@ -29,29 +29,28 @@ function make_slides(f) {
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
     // For pragmatics4 we use a continuous slider from 0..100 where the two extremes map to the two interpretations
-    const interp1 = interpretations[0];
-    const interp2 = interpretations[1];
+  // interpretations array will be used directly for tick labels
     const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
     const sliderHtml = `
       <div class="slider-allocation" style="margin:18px 0 18px;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="flex:0 0 18%; text-align:left; font-weight:600;">${_.escape(interp1)}</div>
-          <div style="flex:1 1 auto;">
-            <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%;">
+      <!-- numeric slider value and instructions below ticks -->
+      <div style="margin-top:18px; color:#666; font-size:0.95em; display:flex; flex-direction:column; align-items:center;">
+        <div id="${stimuli_type}_slider_value_display">Slider value (for debugging only): 50</div>
+      </div>
+
+        <div style="position:relative; width:100%;">
+          <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%; display:block;">
+          <!-- ticks overlay positioned exactly at 0,25,50,75,100% -->
+          <div class="ticks-overlay" aria-hidden="true">
+            <div class="tick" style="left:0%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[0] || '')}</span></div>
+            <div class="tick" style="left:25%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[1] || '')}</span></div>
+            <div class="tick" style="left:50%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[2] || '')}</span></div>
+            <div class="tick" style="left:75%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[3] || '')}</span></div>
+            <div class="tick" style="left:100%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[4] || '')}</span></div>
           </div>
-          <div style="flex:0 0 18%; text-align:right; font-weight:600;">${_.escape(interp2)}</div>
+          <div class="ticks-spacer"></div>
         </div>
 
-        <!-- tick marks -->
-        <div style="display:flex; justify-content:space-between; margin-top:8px; font-weight:600;">
-          <div style="width:20%; text-align:left;">0</div>
-          <div style="width:20%; text-align:center;">25</div>
-          <div style="width:20%; text-align:center;">50</div>
-          <div style="width:20%; text-align:center;">75</div>
-          <div style="width:20%; text-align:right;">100</div>
-        </div>
-
-        <div style="margin-top:10px; color:#666; font-size:0.95em;">Move the slider to indicate your interpretation. Provide a short rationale below.</div>
       </div>`;
     $area.append(sliderHtml);
 
@@ -68,8 +67,11 @@ function make_slides(f) {
       $slider.val(value).prop('disabled', true);
     }
 
-  // No numeric value is shown; just keep slider input active for reading at submit
-  $area.find('.interp-slider').off('input').on('input', function () { /* no-op visual update */ });
+  // Update numeric display on slider input (visible for testing)
+  $area.find('.interp-slider').off('input').on('input', function () {
+    const v = $(this).val();
+    $area.find(`#${stimuli_type}_slider_value_display`).text(`Slider value: ${v}`);
+  });
 
     // Autofocus the slider when a new stimulus appears (skip if disabled)
     const $firstControl = $area.find(`#${stimuli_type}_slider`);
@@ -312,9 +314,10 @@ function shuffle_stimuli(stimuli) {
   // Shuffle the stimuli order
   stimuli = _.shuffle(stimuli);
   // Shuffle the interpretations within each stimulus
-  stimuli.forEach(stim => {
-    stim.interpretations = _.shuffle(stim.interpretations);
-  });
+  // Don't do this if you're using a slider!
+  // stimuli.forEach(stim => {
+  //   stim.interpretations = _.shuffle(stim.interpretations);
+  // });
   return stimuli;
 }
 

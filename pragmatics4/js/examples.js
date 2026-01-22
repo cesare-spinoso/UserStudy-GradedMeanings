@@ -8,12 +8,16 @@ var examples_gradable_meanings = [
     // Updated study objective: intensity judgment of described quality
     "question": "What does Mark think about the size of the dog?",
     "interpretations": [
-        "The dog is tiny.",
-        "The dog is small.",
+        "The dog is very small.",
+        "The dog is small",
+        "The dog is of normal size.",
+        "The dog is big",
+        "The dog is very big",
     ],
     "mainName": "Mark",
     "secondName": "John",
     "stronger_alternative": "He's so tiny, I almost stepped on him!",
     "alternative_cancellation": "Oh come on John, he's not that little!",
+    "alternative_amplification": "You're so right. I could probably fit him in my pocket!",
     }
 ];
