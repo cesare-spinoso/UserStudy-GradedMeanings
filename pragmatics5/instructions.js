@@ -20,34 +20,34 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_1",
         "asks-for": "interpretation",
         "speaker-name": "the",
-        "hard_label": 1, // High likelihood
+        "hard_label": 1, // High likelihood i.e. > 70
         premise: "John managed to open the door.",
         hypothesis: "Opening the door was not straightforward."
     },
     {
         id: "instruction_2",
         "asks-for": "interpretation",
-        "hard_label": 1, // High likelihood
+        "hard_label": 1, // High likelihood 
         premise: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion.",
         hypothesis: "B did not read the entire paper."
     },
     {
         id: "instruction_3",
         "asks-for": "interpretation",
-        "hard_label": 0, // Low likelihood
+        "hard_label": 0, // Low likelihood i.e. < 30
         premise: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
         hypothesis: "Mary is an excellent manager who is on top of everything."
     },
     {
         id: "instruction_4",
-        "asks-for": "effect",
-        "hard_label": 2, // Moderate likelihood
-        premise: "Even Bill passed the exam.",
-        hypothesis: "The exam was difficult."
+        "asks-for": "interpretation",
+        "hard_label": 2, // Moderate likelihood i.e. between 35 and 65
+        premise: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"What a racket!\"",
+        hypothesis: "The party is loud, but not deafening."
     },
     {
         id: "instruction_5",
-        "asks-for": "effect",
+        "asks-for": "interpretation",
         "hard_label": 2, // Moderate likelihood
         premise: "T: Did you ever go to John's house?<br>S: Where is it again?",
         hypothesis: "S did not go to John's house."
@@ -417,23 +417,23 @@ function showPositiveInstructionFeedback(example, likelihood) {
     // Provide specific positive feedback based on the example
     if (example.id === "instruction_1") {
         feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This effect is at the very least likely, even if it is not absolutely certain. While it's technically possible the sidewalk dried completely overnight, it's much more probable that it would still be at least somewhat wet in the early morning after heavy rain the previous night.<br><br>
+        This interpretation of the utterance is quite likely. While it's possible that the door was easy to open, the fact that the expression "managed to open" was used (as opposed to simply saying "opened") signals that opening the door was not a simply routine action, perhaps because something was blocking or it required an inordinate amount of effort.<br><br>
         ${continueText}`;
     } else if (example.id === "instruction_2") {
         feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This effect is at the very least likely, even if it is not absolutely certain. When someone carefully studies material every day, they will usually remember most of it, even though it's possible they might not (for example, if they were very tired or stressed).<br><br>
+        This interpretation of the utterance is quite likely. The fact that B chooses to describe which parts of the paper they read rather than simply answering something like "Yes, I did." likely signals that they only read those two parts of the paper and not the rest.<br><br>
         ${continueText}`;
     } else if (example.id === "instruction_3") {
         feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This is highly implausible. A proud and long-time vegetarian eating meat every day would be very unusual and contrary to their values, even though there might be some rare scenarios where this could happen (like if they were being tricked into eating meat).<br><br>
+        This is implausible if not impossible. The fact that Alice chooses to discuss the manager's way around the kitchen rather than anything about her managing skills signals to Bob that she doesn't want to talk about her managing skills potentially because they are not good. However, it is plausible, though unlikely, that Mary is in fact an excellent manager but that Alice got distracted or was trying to be funny.<br><br>
         ${continueText}`;
     } else if (example.id === "instruction_4") {
         feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This effect has moderate likelihood. Tea is certainly a popular warm drink, so it's a reasonable choice. However, there are other warm drinks she might order instead, like coffee or hot chocolate, so we can't be too certain.<br><br>
+        This effect has moderate likelihood. It's certainly possible that the exam was easy and that is why Bill, who is perhaps not a good student, passed. However, there's an alternative and equally probable interpretation in which  Tea is certainly a popular warm drink, so it's a reasonable choice. However, there are other warm drinks she might order instead, like coffee or hot chocolate, so we can't be too certain.<br><br>
         ${continueText}`;
     } else if (example.id === "instruction_5") {
         feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This effect has moderate likelihood. Dogs are very popular pets, so getting a dog is certainly a reasonable possibility. However, the person could also get a cat, a bird, or any number of other pets, so we can't be too certain about this specific outcome.<br><br>
+        This effect has moderate likelihood. Given that George says that the party is "a racket" it must, at the very least, be loud. However, it's possible that it is not deafeningly loud. Though we are missing additional context to conclusively establish this.<br><br>
         ${continueText}`;
     } else {
         // Generic positive feedback
