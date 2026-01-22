@@ -303,10 +303,10 @@ function displayInstructionExample() {
     tableContainer.style.display = 'block';
 
     // Update choice context to show the complete sentence
-    const contextText = example['asks-for'] === 'effect' ?
-        `${example.premise}<br><strong>As a result:</strong> ${example.hypothesis}` :
-        `${example.premise}<br><strong>This was because:</strong> ${example.hypothesis}`;
-    document.getElementById('choice-context').innerHTML = contextText;
+    // const contextText = example['asks-for'] === 'effect' ?
+    //     `${example.premise}<br><strong>As a result:</strong> ${example.hypothesis}` :
+    //     `${example.premise}<br><strong>This was because:</strong> ${example.hypothesis}`;
+    // document.getElementById('choice-context').innerHTML = contextText;
 
     // Update slider labels
     document.getElementById('unlikely-label').textContent = `DEFINITELY NOT the ${example['asks-for']}`;
