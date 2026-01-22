@@ -20,36 +20,36 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_1",
         "asks-for": "interpretation",
         "speaker-name": "the",
-        "hard_label": 1, // Likely or more
+        "hard_label": 1, // 51 likely or more
         premise: "John managed to open the door.",
         hypothesis: "Opening the door was not straightforward."
     },
     {
         id: "instruction_2",
         "asks-for": "interpretation",
-        "hard_label": 1, // Likely or more
+        "hard_label": 1, // 51 likely or more
         premise: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion.",
         hypothesis: "B did not read the entire paper."
     },
     {
         id: "instruction_3",
         "asks-for": "interpretation",
-        "hard_label": 0, // Unlikely or less
-        premise: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
-        hypothesis: "Mary is an excellent manager who is on top of everything."
+        "hard_label": 1, // 51 likely or more
+        premise: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"What a racket!\"",
+        hypothesis: "The party is loud."
     },
     {
         id: "instruction_4",
         "asks-for": "interpretation",
-        "hard_label": 2, // Between somewhat unlikely and somewhat likely
-        premise: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"What a racket!\"",
-        hypothesis: "The party is loud, but not deafening."
+        "hard_label": 0, // 49 unlikely or less
+        premise: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
+        hypothesis: "Mary is an excellent manager who is on top of everything."
     },
     {
         id: "instruction_5",
         "asks-for": "interpretation",
-        "hard_label": 2, // Between somewhat unlikely and somewhat likely
-        premise: "T: Did you ever go to John's house?<br>S: Where is it again?",
+        "hard_label": 0, // 49 unlikely or less
+        premise: "T: Did you ever go to John's house?<br>S: I had such a good time last time!",
         hypothesis: "S did not go to John's house."
     }
 ];
@@ -97,6 +97,34 @@ const ATTENTION_CHECK_DATA = [
         hypothesis: "Mary arrived late."
     }
 ];
+
+const FEEDBACK = {
+    instruction_1: (color) => `
+        <strong style="color: ${color};">Correct!</strong><br><br>
+        This interpretation of the utterance is likely. While it's possible that the door was easy to open, the fact that the expression "managed to open" was used (as opposed to simply saying "opened") signals that opening the door was not a simply routine action, perhaps because something was blocking or it required an inordinate amount of effort.<br><br>
+    `,
+
+    instruction_2: (color) => `
+        <strong style="color: ${color};">Correct!</strong><br><br>
+        This interpretation of the utterance is likely if not quite likely. The fact that B chooses to describe which parts of the paper they read rather than simply answering something like "Yes, I did." likely signals that they only read those two parts of the paper and not the rest.<br><br>
+    `,
+
+    instruction_3: (color) => `
+        <strong style="color: ${color};">Correct!</strong><br><br>
+        This interpretation is likely if not certain. Not only does the context describe "booming music", but the utterance itself "What a racket!" also suggests a loud volume.<br><br>
+    `,
+
+    instruction_4: (color) => `
+        <strong style="color: ${color};">Correct!</strong><br><br>
+        This interpretation is unlikely if not impossible. The fact that Alice chooses to discuss the manager's way around the kitchen rather than anything about her managing skills signals to Bob that she doesn't want to talk about her managing skills potentially because they are not good.<br><br>
+    `,
+
+    instruction_5: (color) => `
+        <strong style="color: ${color};">Correct!</strong><br><br>
+        This interpretation is unlikely if not impossible. Given that S is discussing the good time they had at John's house they are almost guaranteed to have visited, making the interpretation impossible.<br><br>
+    `,
+};
+
 
 // Get URL parameters
 function getUrlParameter(name) {
@@ -408,39 +436,13 @@ function handleInstructionResponse(likelihood) {
 
 // Show positive feedback for correct instructional response
 function showPositiveInstructionFeedback(example, likelihood) {
-    let feedbackText = '';
     const isLastExample = instructionIndex === INSTRUCTIONAL_EXAMPLES.length - 1;
     const continueText = isLastExample ?
         '<b>Click the "Continue" button again to move on.</b>' :
         '<b>Click the "Continue" button again to move to the next example.</b>';
 
     // Provide specific positive feedback based on the example
-    if (example.id === "instruction_1") {
-        feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This interpretation of the utterance is quite likely. While it's possible that the door was easy to open, the fact that the expression "managed to open" was used (as opposed to simply saying "opened") signals that opening the door was not a simply routine action, perhaps because something was blocking or it required an inordinate amount of effort.<br><br>
-        ${continueText}`;
-    } else if (example.id === "instruction_2") {
-        feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This interpretation of the utterance is quite likely. The fact that B chooses to describe which parts of the paper they read rather than simply answering something like "Yes, I did." likely signals that they only read those two parts of the paper and not the rest.<br><br>
-        ${continueText}`;
-    } else if (example.id === "instruction_3") {
-        feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This is implausible if not impossible. The fact that Alice chooses to discuss the manager's way around the kitchen rather than anything about her managing skills signals to Bob that she doesn't want to talk about her managing skills potentially because they are not good. However, it is plausible, though unlikely, that Mary is in fact an excellent manager but that Alice got distracted or was trying to be funny.<br><br>
-        ${continueText}`;
-    } else if (example.id === "instruction_4") {
-        feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This effect has moderate likelihood. It's certainly possible that the exam was easy and that is why Bill, who is perhaps not a good student, passed. However, there's an alternative and equally probable interpretation in which  Tea is certainly a popular warm drink, so it's a reasonable choice. However, there are other warm drinks she might order instead, like coffee or hot chocolate, so we can't be too certain.<br><br>
-        ${continueText}`;
-    } else if (example.id === "instruction_5") {
-        feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        This effect has moderate likelihood. Given that George says that the party is "a racket" it must, at the very least, be loud. However, it's possible that it is not deafeningly loud. Though we are missing additional context to conclusively establish this.<br><br>
-        ${continueText}`;
-    } else {
-        // Generic positive feedback
-        feedbackText = `<strong style="color: #2e7d32;">Correct!</strong><br><br>
-        Your rating is appropriate for this ${example['asks-for']}.<br><br>
-        ${continueText}`;
-    }
+    feedbackText = FEEDBACK[example.id]('#4caf50') + continueText;
 
     // Show feedback in the feedback container with green styling
     const feedbackContainer = document.getElementById('instruction-feedback');
@@ -458,52 +460,8 @@ function showPositiveInstructionFeedback(example, likelihood) {
 
 // Show negative feedback for incorrect instructional response
 function showNegativeInstructionFeedback(example, likelihood, isLikelihoodAppropriate) {
-    const correctLikelihood = example['hard_label'];
-
-    let feedbackText = '';
-
     // Provide appropriate feedback based on the correct answer
-    if (correctLikelihood === 1) {
-        // High likelihood case - provide specific explanations for examples 1 and 2
-        if (example.id === "instruction_1") {
-            // First example: Wet sidewalk from rain
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This effect is at the very least likely, even if it is not absolutely certain. It is technically possible that the sidewalk dried before the morning (e.g. if it was extremely hot and dry outside), but it is more likely that it was still at least a bit wet. Please move the slider to a higher value (66-99) to continue.`;
-        } else if (example.id === "instruction_2") {
-            // Second example: Student remembered material
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This effect is at the very least likely, even if it is not absolutely certain. It is possible that the student did not remember most of the material despite all their effort (e.g. if they were very tired), but it is more likely that if they carefully studied the material everyday, they remembered most of the material. Please move the slider to a higher value (66-99) to continue.`;
-        } else {
-            // Generic high likelihood case for other examples
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This ${example['asks-for']} is actually at the very least likely, even if it is not absolutely certain. Please move the slider to a higher value (66-99) to continue.`;
-        }
-    } else if (correctLikelihood === 0) {
-        if (example.id === "instruction_3") {
-            // Third example: Man gained weight
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This is actually a highly implausible ${example['asks-for']}. Although there are ways it is possible (e.g. if he was being tricked into eating meat, or was lying about being a vegetarian), it is highly unlikely that a proud and long-time vegetarian would eat meat everyday. Please move the slider to a lower value (15 or below) to continue.`;
-        } else {
-            // Generic low likelihood case for other examples
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This is actually a highly unlikely ${example['asks-for']}. Please move the slider to a lower value (15 or below) to continue.`;
-        }
-    } else if (correctLikelihood === 2) {
-        // Moderate likelihood case - provide specific explanations for examples 4 and 5
-        if (example.id === "instruction_4") {
-            // Fourth example: English speaker from USA
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This is a moderate likelihood ${example['asks-for']}. While tea is a popular drink in many countries, it is not the only drink that people might order in this situation: notably, some people prefer coffee (or hot chocolate). Please move the slider to a value between 35-65 to continue.`;
-        } else if (example.id === "instruction_5") {
-            // Fifth example: Person got a dog
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This is a moderate likelihood ${example['asks-for']}. Dogs are very popular as pets, so the person may have gotten a dog; on the other hand, they also could have gotten a cat, or another species of animal as a pet. Please move the slider to a value between 35-65 to continue.`;
-        } else {
-            // Generic moderate likelihood case for other examples
-            feedbackText += `<strong style="color: #d32f2f;">Incorrect likelihood rating.</strong><br><br>
-            This is a moderate likelihood ${example['asks-for']}. Please move the slider to a value between 35-65 to continue.`;
-        }
-    }
+    feedbackText = FEEDBACK[example.id]('#f44336');
 
     // Show feedback in the separate container below the continue button with red styling
     const feedbackContainer = document.getElementById('instruction-feedback');
@@ -567,10 +525,10 @@ function displayCurrentDatapoint() {
         Use the slider below to indicate your likelihood rating.`;
 
     // Update choice context to show the complete sentence
-    const contextText = datapoint['asks-for'] === 'effect' ?
-        `${datapoint.premise}<br><strong>As a result:</strong> ${datapoint.hypothesis}` :
-        `${datapoint.premise}<br><strong>This was because:</strong> ${datapoint.hypothesis}`;
-    document.getElementById('choice-context').innerHTML = contextText;
+    // const contextText = datapoint['asks-for'] === 'effect' ?
+    //     `${datapoint.premise}<br><strong>As a result:</strong> ${datapoint.hypothesis}` :
+    //     `${datapoint.premise}<br><strong>This was because:</strong> ${datapoint.hypothesis}`;
+    // document.getElementById('choice-context').innerHTML = contextText;
 
     // Update slider labels
     document.getElementById('unlikely-label').textContent = `DEFINITELY NOT the ${datapoint['asks-for']}`;
