@@ -18,77 +18,83 @@ let lastInstructionLikelihood = null;
 const INSTRUCTIONAL_EXAMPLES = [
     {
         id: "instruction_1",
-        "asks-for": "effect",
+        "asks-for": "interpretation",
+        "speaker-name": "the",
         "hard_label": 1, // High likelihood
-        premise: "It had rained heavily the previous night.",
-        hypothesis: "In the early morning, the sidewalk (footpath) was not fully dry."
+        premise: "John managed to open the door.",
+        hypothesis: "Opening the door was not straightforward."
     },
     {
         id: "instruction_2",
-        "asks-for": "effect",
+        "asks-for": "interpretation",
         "hard_label": 1, // High likelihood
-        premise: "The student carefully studied the material everyday.",
-        hypothesis: "The student remembered most of the material."
+        premise: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion.",
+        hypothesis: "B did not read the entire paper."
     },
     {
         id: "instruction_3",
-        "asks-for": "effect",
+        "asks-for": "interpretation",
         "hard_label": 0, // Low likelihood
-        premise: "The man was a proud and long-time vegetarian.",
-        hypothesis: "He ate a lot of meat everyday."
+        premise: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
+        hypothesis: "Mary is an excellent manager who is on top of everything."
     },
     {
         id: "instruction_4",
         "asks-for": "effect",
         "hard_label": 2, // Moderate likelihood
-        premise: "She wanted a warm drink.",
-        hypothesis: "She ordered a cup of tea."
+        premise: "Even Bill passed the exam.",
+        hypothesis: "The exam was difficult."
     },
     {
         id: "instruction_5",
         "asks-for": "effect",
         "hard_label": 2, // Moderate likelihood
-        premise: "The person decided to get a pet.",
-        hypothesis: "The person got a dog."
+        premise: "T: Did you ever go to John's house?<br>S: Where is it again?",
+        hypothesis: "S did not go to John's house."
     }
 ];
 
 // Hard-coded attention check datapoints
 const ATTENTION_CHECK_DATA = [
     {
-        id: "attention_1",
-        "asks-for": "effect",
+        id: "instruction_4",
+        "asks-for": "interpretation",
+        "speaker-name": "the",
         "hard_label": 1, // High likelihood
-        premise: "She played soccer with her friends on Sundays.",
-        hypothesis: "She kicked a ball with some friends every Sunday."
+        premise: "John forgot to lock the door.",
+        hypothesis: "John was supposed to lock the door."
     },
     {
-        id: "attention_2",
-        "asks-for": "effect",
+        id: "instruction_5",
+        "asks-for": "interpretation",
+        "speaker-name": "the",
+        "hard_label": 1, // High likelihood
+        premise: "A: Is Sarah coming to the meeting?\nB: She has to pick up her kids from school.",
+        hypothesis: "Sarah will not come to the meeting."
+    },
+    {
+        id: "instruction_6",
+        "asks-for": "interpretation",
+        "speaker-name": "B",
         "hard_label": 0, // Low likelihood
-        premise: "The man ate his sandwich.",
-        hypothesis: "The moon suddenly disappeared."
+        premise: "A: Can you drive me to the airport? B: I don't have a license.",
+        hypothesis: "B will drive A to the airport."
     },
     {
-        id: "attention_3",
-        "asks-for": "effect",
+        id: "instruction_7",
+        "asks-for": "interpretation",
+        "speaker-name": "Liam",
+        "hard_label": 1, // High likelihood
+        premise: "Two colleagues, Emma and Liam, are discussing a presentation their colleague just gave. Liam says: \"Well, the slides were perfectly formatted.\"",
+        hypothesis: "The content of the presentation was not very good."
+    },
+    {
+        id: "instruction_8",
+        "asks-for": "interpretation",
+        "speaker-name": "the",
         "hard_label": 0, // Low likelihood
-        premise: "She was cooking a normal dinner for her family.",
-        hypothesis: "The whole neighborhood burned down."
-    },
-    {
-        id: "attention_4",
-        "asks-for": "effect",
-        "hard_label": 1, // High likelihood
-        premise: "The man turned on the light switch.",
-        hypothesis: "The light turned on."
-    },
-    {
-        id: "attention_5",
-        "asks-for": "effect",
-        "hard_label": 1, // High likelihood
-        premise: "The driver wanted to stop the car.",
-        hypothesis: "She pressed the brake pedal."
+        premise: "Mary arrived at the office at 7 a.m.",
+        hypothesis: "Mary arrived late."
     }
 ];
 
@@ -224,11 +230,11 @@ function displayInstructionExample() {
         `<strong>Possible <mark>${example['asks-for']}</mark>:</strong> ${example.hypothesis}`;
 
     // Display instruction
-    let instructionText = `<strong>This is a practice example. Rate on a scale of 0 to 100 how likely you think it is that this is the <mark>${example['asks-for']}</mark> of the situation.</strong><br>
+    let instructionText = `<strong>This is a practice example. Rate on a scale of 0 to 100 how likely you find the <mark>${example['asks-for']}</mark> of <mark>${example['speaker-name']}</mark> utterance.</strong><br>
         Use the slider below to indicate your likelihood rating.`;
 
     // Add important instruction for all examples
-    instructionText += ` When giving your rating, be sure to consider other possible effects; some situations will favor more uncertain responses.`;
+    instructionText += ` When giving your rating, be sure to consider the context (if any) and other possible interpretations; some situations will favor more uncertain responses.`;
 
     document.getElementById('instruction').innerHTML = instructionText;
 
