@@ -20,35 +20,35 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_1",
         "asks-for": "interpretation",
         "speaker-name": "the",
-        "hard_label": 1, // High likelihood i.e. > 70
+        "hard_label": 1, // Likely or more
         premise: "John managed to open the door.",
         hypothesis: "Opening the door was not straightforward."
     },
     {
         id: "instruction_2",
         "asks-for": "interpretation",
-        "hard_label": 1, // High likelihood 
+        "hard_label": 1, // Likely or more
         premise: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion.",
         hypothesis: "B did not read the entire paper."
     },
     {
         id: "instruction_3",
         "asks-for": "interpretation",
-        "hard_label": 0, // Low likelihood i.e. < 30
+        "hard_label": 0, // Unlikely or less
         premise: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
         hypothesis: "Mary is an excellent manager who is on top of everything."
     },
     {
         id: "instruction_4",
         "asks-for": "interpretation",
-        "hard_label": 2, // Moderate likelihood i.e. between 35 and 65
+        "hard_label": 2, // Between somewhat unlikely and somewhat likely
         premise: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"What a racket!\"",
         hypothesis: "The party is loud, but not deafening."
     },
     {
         id: "instruction_5",
         "asks-for": "interpretation",
-        "hard_label": 2, // Moderate likelihood
+        "hard_label": 2, // Between somewhat unlikely and somewhat likely
         premise: "T: Did you ever go to John's house?<br>S: Where is it again?",
         hypothesis: "S did not go to John's house."
     }
@@ -386,11 +386,11 @@ function handleInstructionResponse(likelihood) {
 
     // Check if likelihood is appropriate based on the hard_label
     if (example['hard_label'] === 1) {
-        // High likelihood case - should be rated 66-99 (Likely to Almost certain range)
-        isLikelihoodAppropriate = likelihood >= 66 && likelihood <= 99;
+        // High likelihood case - should be rated 66 or higher (Likely to Almost certain range)
+        isLikelihoodAppropriate = likelihood >= 66;
     } else if (example['hard_label'] === 0) {
-        // Low likelihood case - should be rated 15 or lower (Highly unlikely range)
-        isLikelihoodAppropriate = likelihood <= 15;
+        // Low likelihood case - should be rated 30 or lower (Highly unlikely range)
+        isLikelihoodAppropriate = likelihood <= 34;
     } else if (example['hard_label'] === 2) {
         // Moderate likelihood case - should be rated between 35-65 (Somewhat unlikely, totally even chance, or somewhat likely)
         isLikelihoodAppropriate = likelihood >= 35 && likelihood <= 65;
