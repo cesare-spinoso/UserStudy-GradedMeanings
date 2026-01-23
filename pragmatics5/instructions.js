@@ -22,25 +22,25 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 1, // Likely or more
-        scenario: "<strong>Utterance: </strong><em>John managed to open the door.</em>",
+        scenario: "<em>John managed to open the door.</em>",
         implicature: "Opening the door was not straightforward."
     },
     {
         // Dialogue implicature and cancellation
         id: "instruction_2",
         "asks-for": "interpretation",
-        "speaker-name": "B",
+        "speaker-name": "B's",
         "hard_label": 0, // Likely or more
-        scenario: "<strong>Dialogue:</strong><br>A: Did you read the entire paper?<br>B: <em>I read the introduction and the conclusion. And the rest of the paper too.</em>",
+        scenario: "A: Did you read the entire paper?<br>B: <em>I read the introduction and the conclusion. And the rest of the paper too.</em>",
         implicature: "B did not read the entire paper."
     },
     {
         // Contextual implicature
         id: "instruction_3",
         "asks-for": "interpretation",
-        "speaker-name": "Jamie",
+        "speaker-name": "Jamie's",
         "hard_label": 1, // Likely or more
-        scenario: "<strong>Scenario:</strong> Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"<em>What a racket!</em>\"",
+        scenario: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"<em>What a racket!</em>\"",
         implicature: "The party is loud."
     },
     {
@@ -48,8 +48,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_4",
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
-        "speaker-name": "Alice",
-        scenario: "<strong>Scenario:</strong> Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"<em>Well, she certainly knows her way around the kitchen.</em>\"",
+        "speaker-name": "Alice's",
+        scenario: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"<em>Well, she certainly knows her way around the kitchen.</em>\"",
         implicature: "Mary is an excellent manager who is on top of everything."
     },
     {
@@ -57,8 +57,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_5",
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
-        "speaker-name": "S",
-        scenario: "<strong>Dialogue:</strong><br>T: Did you ever go to John's house?<br>S: <em>Where is it? I've been, but I can't remember when or even where.</em>",
+        "speaker-name": "S's",
+        scenario: "T: Did you ever go to John's house?<br>S: <em>Where is it? I've been, but I can't remember when or even where.</em>",
         implicature: "S did not go to John's house."
     }
 ];
@@ -71,7 +71,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 1,
-        scenario: "<strong>Utterance:</strong> <em>John forgot to lock the door.</em>",
+        scenario: "<em>John forgot to lock the door.</em>",
         implicature: "John was supposed to lock the door."
     },
     {
@@ -80,25 +80,25 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 1,
-        scenario: "<strong>Dialogue:</strong><br>A: Is Sarah coming to the meeting?<br>B: <em>She has to pick up her kids from school.</em>",
+        scenario: "A: Is Sarah coming to the meeting?<br>B: <em>She has to pick up her kids from school.</em>",
         implicature: "Sarah will not come to the meeting."
     },
     {
         // Dialogue implicature and cancellation
         id: "instruction_6",
         "asks-for": "interpretation",
-        "speaker-name": "B",
+        "speaker-name": "B's",
         "hard_label": 0,
-        scenario: "<strong>Dialogue:</strong><br>A: Can you drive me to the airport?<br>B: <em>I don't have a car. But I'll just rent one.</em>",
+        scenario: "A: Can you drive me to the airport?<br>B: <em>I don't have a car. But I'll just rent one.</em>",
         implicature: "B will not drive A to the airport."
     },
     {
         // Contextual implicature
         id: "instruction_7",
         "asks-for": "interpretation",
-        "speaker-name": "Liam",
+        "speaker-name": "Liam's",
         "hard_label": 1,
-        scenario: "<strong>Scenario:</strong> Two colleagues, Emma and Liam, are discussing a presentation their colleague just gave. Liam says: \"<em>Well, the slides were perfectly formatted.</em>\"",
+        scenario: "Two colleagues, Emma and Liam, are discussing a presentation their colleague just gave. Liam says: \"<em>Well, the slides were perfectly formatted.</em>\"",
         implicature: "The content of the presentation was not very good."
     },
     // Vanilla utterance implicature and cancellation
@@ -107,7 +107,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 0,
-        scenario: "<strong>Utterance:</strong> <em>Mary arrived at the office at 8 a.m. sharp. Her boss scolded her for being late.</em>",
+        scenario: "<em>Mary arrived at the office at 8 a.m. sharp. Her boss scolded her for being late.</em>",
         implicature: "Mary arrived got to work early."
     }
 ];
