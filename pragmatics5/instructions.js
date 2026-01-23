@@ -179,14 +179,14 @@ function loadData() {
             listIndexNum = 0;
         } else {
             listIndexNum = parseInt(listIndex);
-            if (isNaN(listIndexNum) || listIndexNum < 0 || listIndexNum >= COPA_DATA.length) {
-                throw new Error(`Invalid list index: ${listIndex}. Valid range: 0-${COPA_DATA.length - 1}`);
+            if (isNaN(listIndexNum) || listIndexNum < 0 || listIndexNum >= IMPLI_DATA.length) {
+                throw new Error(`Invalid list index: ${listIndex}. Valid range: 0-${IMPLI_DATA.length - 1}`);
             }
         }
 
         const index = listIndexNum;
 
-        currentData = COPA_DATA[index];
+        currentData = IMPLI_DATA[index];
 
         // Randomly shuffle the datapoints
         for (let i = currentData.length - 1; i > 0; i--) {
