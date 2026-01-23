@@ -401,7 +401,7 @@ function displayCurrentDatapoint() {
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
-        `<strong>Choose the best option on the 7-point scale for how likely you find the interpretation of the utterance.</strong>`;
+        `<strong>Choose the best option on the 7-point scale based on how likely you find the <mark>${datapoint['asks-for']}</mark> of <mark>${datapoint['speaker-name']}</mark> <em>italicized utterance.</strong>`;
 
     // Update choice context to show the complete sentence
     const contextText = `${datapoint.scenario}<br><br><strong>Interpretation:</strong> ${datapoint.implicature}`;
