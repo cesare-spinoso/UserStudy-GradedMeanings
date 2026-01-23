@@ -269,35 +269,13 @@ function displayInstructionExample() {
 
     document.getElementById('instruction').innerHTML = instructionText;
 
-    // Show probability table below continue button during instruction phase
-    const tableContainer = document.getElementById('probability-table-container');
-    const tableDiv = document.getElementById('probability-table');
-
-    tableDiv.innerHTML = `
-            <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px;">
-                <tr style="background-color: #f0f0f0;">
-                    <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #ffebee;">Absolutely no chance</td>
-                    <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #ffab91;">Highly unlikely</td>
-                    <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #ffcc80;">Unlikely</td>
-                    <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #fffde7;">Even chance</td>
-                    <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #e8f5e8;">Likely</td>
-                    <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #a5d6a7;">Highly likely</td>
-                    <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #4caf50; color: white;">Absolutely certain</td>
-                </tr>
-            </table>
-        `;
-    tableContainer.style.display = 'block';
-
     // Update choice context to show the complete sentence (use example in instruction phase)
     const contextText = `Utterance: ${example.premise}<br><strong>Interpretation:</strong> ${example.hypothesis}`;
     document.getElementById('choice-context').innerHTML = contextText;
 
     // Reset likelihood (Likert scale)
     likelihoodRating = null;
-    const valueDisplay = document.getElementById('likelihood-value');
     const instructionElement = document.getElementById('slider-instruction');
-    valueDisplay.classList.remove('show-value');
-    valueDisplay.textContent = '';
     if (instructionElement) {
         instructionElement.classList.remove('hide-instruction');
     }
@@ -306,11 +284,6 @@ function displayInstructionExample() {
 
     // Disable continue button until ratings are made
     document.getElementById('continue-btn').disabled = true;
-
-    // Hide instruction feedback container and reset feedback flag
-    document.getElementById('instruction-feedback-container').style.display = 'none';
-    showingInstructionFeedback = false;
-    lastInstructionLikelihood = null;
 }
 
 // Display welcome message
@@ -352,11 +325,6 @@ function showTransitionMessage() {
     // Record timestamp when transition slide is shown
     transitionSlideTimestamp = new Date().toISOString();
 
-    // Hide instruction feedback container
-    document.getElementById('instruction-feedback-container').style.display = 'none';
-    showingInstructionFeedback = false;
-    lastInstructionLikelihood = null;
-
     document.getElementById('experiment-container').style.display = 'none';
     document.getElementById('transition-container').style.display = 'block';
 
@@ -381,8 +349,6 @@ function handleInstructionResponse(likelihood) {
 
     // Move to next example without showing feedback
     instructionIndex++;
-    showingInstructionFeedback = false;
-    lastInstructionLikelihood = null;
     displayCurrentDatapoint();
 }
 
@@ -425,7 +391,7 @@ function displayCurrentDatapoint() {
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
-        `<strong>With just this information about the situation, choose the best option on the 7-point scale for how likely you think this <mark>${datapoint['asks-for']}</mark> is.</strong>`;
+        `<strong>Choose the best option on the 7-point scale for how likely you find the interpretation of the utterance.</strong>`;
 
     // Update choice context to show the complete sentence
     const contextText = `Utterance: ${datapoint.premise}<br><strong>Interpretation:</strong> ${datapoint.hypothesis}`;
@@ -433,10 +399,7 @@ function displayCurrentDatapoint() {
 
     // Reset likelihood (Likert scale)
     likelihoodRating = null;
-    const valueDisplay = document.getElementById('likelihood-value');
     const instructionElement = document.getElementById('slider-instruction');
-    valueDisplay.classList.remove('show-value');
-    valueDisplay.textContent = '';
     if (instructionElement) {
         // Hide instruction during main experiment phase
         instructionElement.classList.add('hide-instruction');
@@ -446,33 +409,10 @@ function displayCurrentDatapoint() {
 
     // Disable continue button until ratings are made
     document.getElementById('continue-btn').disabled = true;
-
-    // Hide instruction feedback container during main experiment
-    document.getElementById('instruction-feedback-container').style.display = 'none';
-
-    // Show probability table below continue button during main experiment phase
-    const tableContainer = document.getElementById('probability-table-container');
-    const tableDiv = document.getElementById('probability-table');
-
-    tableDiv.innerHTML = `
-        <table style="width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px;">
-            <tr style="background-color: #f0f0f0;">
-                <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #ffebee;">Absolutely no chance</td>
-                <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #ffab91;">Highly unlikely</td>
-                <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #ffcc80;">Unlikely</td>
-                <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #fffde7;">Even chance</td>
-                <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #e8f5e8;">Likely</td>
-                <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #a5d6a7;">Highly likely</td>
-                <td style="border: 1px solid #ddd; padding: 6px; text-align: center; background-color: #4caf50; color: white;">Absolutely certain</td>
-            </tr>
-        </table>
-    `;
-    tableContainer.style.display = 'block';
 }
 
 // Handle Likert scale selection
 function updateLikelihoodValue() {
-    const valueDisplay = document.getElementById('likelihood-value');
     const instructionElement = document.getElementById('slider-instruction');
     const selected = document.querySelector('input[name="likert-scale"]:checked');
     const labels = [
@@ -491,8 +431,6 @@ function updateLikelihoodValue() {
         document.querySelectorAll('.likert-option').forEach(opt => opt.classList.remove('selected'));
         if (selected.parentElement) selected.parentElement.classList.add('selected');
 
-        valueDisplay.textContent = labels[likelihoodRating - 1];
-        valueDisplay.classList.add('show-value');
         if (instructionElement) instructionElement.classList.add('hide-instruction');
 
         if (!isWelcomePhase) {
@@ -619,13 +557,6 @@ function startRealExperiment() {
     isInstructionPhase = false;
     document.getElementById('transition-container').style.display = 'none';
     document.getElementById('experiment-container').style.display = 'block';
-
-    // Hide the instruction box for the real experiment (table is now shown below continue button)
-    document.getElementById('instruction').style.display = 'none';
-
-    // Hide the information and alternatives boxes for the real experiment
-    document.getElementById('information').style.display = 'none';
-    document.getElementById('alternatives').style.display = 'none';
 
     displayCurrentDatapoint();
 }
