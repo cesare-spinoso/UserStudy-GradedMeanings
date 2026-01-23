@@ -181,7 +181,8 @@
             font-size: 14px;
             color: #666;
             line-height: 1.3;
-            display: flex;
+            display: none;
+            /* hide side labels for Likert scale */
             align-items: center;
             justify-content: center;
             margin-top: 30px;
@@ -204,46 +205,37 @@
             margin: 10px 0;
         }
 
-        input[type="range"] {
+        /* Likert scale styles */
+        .likert-options {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
             width: 100%;
-            height: 8px;
-            border-radius: 5px;
-            background: #ddd;
-            outline: none;
-            -webkit-appearance: none;
-            margin: 10px 0;
         }
 
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #2196f3;
+        .likert-option {
+            background-color: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
             cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            margin-top: -6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+            text-align: center;
+            font-size: 13px;
         }
 
-        input[type="range"]::-moz-range-thumb {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #2196f3;
-            cursor: pointer;
-            border: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .likert-option.selected {
+            background-color: #2196f3;
+            color: white;
+            border-color: #2196f3;
         }
 
-        input[type="range"].slider-interacted::-webkit-slider-thumb {
-            opacity: 1;
-        }
-
-        input[type="range"].slider-interacted::-moz-range-thumb {
-            opacity: 1;
+        .likert-input {
+            display: none;
         }
 
         .likelihood-value {
@@ -360,33 +352,62 @@
             <div class="choice-container">
                 <div class="choice-context" id="choice-context"></div>
             </div>
-            
+
             <div id="probability-table-container" style="display: none;">
                 <p style="text-align: center; margin: 20px 0 10px 0; font-size: 14px; color: #666;">
                     When choosing your response, you may find this graph helpful for converting your intuition to a
-                    value on the slider:
+                    point on the scale:
                 </p>
                 <div id="probability-table"></div>
             </div>
 
-            
+
             <div class="likelihood-container">
                 <div class="likelihood-slider-container">
-                    <div class="likelihood-side-label" id="unlikely-label">Very unlikely</div>
+                    <div class="likelihood-side-label" id="unlikely-label"></div>
                     <div class="likelihood-slider-wrapper">
-                        <div class="slider-instruction" id="slider-instruction">Click and drag your mouse anywhere along
-                            the slider to begin!</div>
-                        <input type="range" id="likelihood-slider" min="0" max="100" value="50" step="1">
+                        <div class="slider-instruction" id="slider-instruction">Click to select an option on the scale
+                            to begin.</div>
+                        <div class="likert-options" id="likert-options">
+                            <label class="likert-option" for="likert-1">
+                                <input class="likert-input" type="radio" name="likert-scale" id="likert-1" value="1">
+                                Absolutely no chance
+                            </label>
+                            <label class="likert-option" for="likert-2">
+                                <input class="likert-input" type="radio" name="likert-scale" id="likert-2" value="2">
+                                Highly unlikely
+                            </label>
+                            <label class="likert-option" for="likert-3">
+                                <input class="likert-input" type="radio" name="likert-scale" id="likert-3" value="3">
+                                Unlikely
+                            </label>
+                            <label class="likert-option" for="likert-4">
+                                <input class="likert-input" type="radio" name="likert-scale" id="likert-4" value="4">
+                                Even chance
+                            </label>
+                            <label class="likert-option" for="likert-5">
+                                <input class="likert-input" type="radio" name="likert-scale" id="likert-5" value="5">
+                                Likely
+                            </label>
+                            <label class="likert-option" for="likert-6">
+                                <input class="likert-input" type="radio" name="likert-scale" id="likert-6" value="6">
+                                Highly likely
+                            </label>
+                            <label class="likert-option" for="likert-7">
+                                <input class="likert-input" type="radio" name="likert-scale" id="likert-7" value="7">
+                                Absolutely certain
+                            </label>
+                        </div>
                         <div class="likelihood-value" id="likelihood-value"></div>
                     </div>
-                    <div class="likelihood-side-label" id="likely-label">Very likely</div>
+                    <div class="likelihood-side-label" id="likely-label"></div>
                 </div>
             </div>
 
             <div style="text-align: center;">
                 <button class="continue-btn" id="continue-btn">Continue</button>
             </div>
-            
+
 
             <div id="instruction-feedback-container" style="display: none; margin: 20px 0;">
                 <div style="background-color: #ffebee; padding: 15px; border-radius: 5px; border-left: 4px solid #f44336;"
