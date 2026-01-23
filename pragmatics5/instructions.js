@@ -22,8 +22,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 1, // Likely or more
-        premise: "John managed to open the door.",
-        hypothesis: "Opening the door was not straightforward."
+        scenario: "John managed to open the door.",
+        implicature: "Opening the door was not straightforward."
     },
     {
         // Dialogue implicature and cancellation
@@ -31,8 +31,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0, // Likely or more
-        premise: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion. And the rest of the paper too.",
-        hypothesis: "B did not read the entire paper."
+        scenario: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion. And the rest of the paper too.",
+        implicature: "B did not read the entire paper."
     },
     {
         // Contextual implicature
@@ -40,8 +40,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "Jamie",
         "hard_label": 1, // Likely or more
-        premise: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"What a racket!\"",
-        hypothesis: "The party is loud."
+        scenario: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"What a racket!\"",
+        implicature: "The party is loud."
     },
     {
         // Context with negated implicature
@@ -49,8 +49,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
         "speaker-name": "Alice",
-        premise: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
-        hypothesis: "Mary is an excellent manager who is on top of everything."
+        scenario: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
+        implicature: "Mary is an excellent manager who is on top of everything."
     },
     {
         // Dialogue implicature and cancellation
@@ -58,8 +58,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
         "speaker-name": "S",
-        premise: "T: Did you ever go to John's house?<br>S: Where is it? I've been, but I can't remember when or even where.",
-        hypothesis: "S did not go to John's house."
+        scenario: "T: Did you ever go to John's house?<br>S: Where is it? I've been, but I can't remember when or even where.",
+        implicature: "S did not go to John's house."
     }
 ];
 
@@ -71,8 +71,8 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 1,
-        premise: "John forgot to lock the door.",
-        hypothesis: "John was supposed to lock the door."
+        scenario: "John forgot to lock the door.",
+        implicature: "John was supposed to lock the door."
     },
     {
         // Dialogue implicature
@@ -80,8 +80,8 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 1,
-        premise: "A: Is Sarah coming to the meeting?\nB: She has to pick up her kids from school.",
-        hypothesis: "Sarah will not come to the meeting."
+        scenario: "A: Is Sarah coming to the meeting?\nB: She has to pick up her kids from school.",
+        implicature: "Sarah will not come to the meeting."
     },
     {
         // Dialogue implicature and cancellation
@@ -89,8 +89,8 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0,
-        premise: "A: Can you drive me to the airport? B: I don't have a car. But I'll just rent one.",
-        hypothesis: "B will not drive A to the airport."
+        scenario: "A: Can you drive me to the airport? B: I don't have a car. But I'll just rent one.",
+        implicature: "B will not drive A to the airport."
     },
     {
         // Contextual implicature
@@ -98,8 +98,8 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "Liam",
         "hard_label": 1,
-        premise: "Two colleagues, Emma and Liam, are discussing a presentation their colleague just gave. Liam says: \"Well, the slides were perfectly formatted.\"",
-        hypothesis: "The content of the presentation was not very good."
+        scenario: "Two colleagues, Emma and Liam, are discussing a presentation their colleague just gave. Liam says: \"Well, the slides were perfectly formatted.\"",
+        implicature: "The content of the presentation was not very good."
     },
     // Vanilla utterance implicature and cancellation
     {
@@ -107,8 +107,8 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 0,
-        premise: "Mary arrived at the office at 8 a.m. sharp. Her boss scolded her for being late.",
-        hypothesis: "Mary arrived got to work early."
+        scenario: "Mary arrived at the office at 8 a.m. sharp. Her boss scolded her for being late.",
+        implicature: "Mary arrived got to work early."
     }
 ];
 
@@ -265,14 +265,14 @@ function displayInstructionExample() {
 
     // Display information
     document.getElementById('information').innerHTML =
-        `<strong>Situation:</strong> ${example.premise}`;
+        `<strong>Situation:</strong> ${example.scenario}`;
 
     // Display alternatives
     document.getElementById('alternatives').innerHTML =
-        `<strong>Possible <mark>${example['asks-for']}</mark>:</strong> ${example.hypothesis}`;
+        `<strong>Possible <mark>${example['asks-for']}</mark>:</strong> ${example.implicature}`;
 
     // Display instruction
-    let instructionText = `<strong>This is a practice example. Choose the best option on the 7-point scale for how likely you find the <mark>${example['asks-for']}</mark> of <mark>${example['speaker-name']}</mark> utterance.</strong>`;
+    let instructionText = `<strong>This is a practice example. Choose the best option on the 7-point scale for how likely you find the <mark>${example['asks-for']}</mark> of <mark>${example['speaker-name']}</mark> <em>italicized utterance.</em></strong>`;
 
     // Add important instruction for all examples
     instructionText += ` When giving your rating, be sure to consider the context (if any) and other possible interpretations; some situations will favor more uncertain responses.`;
@@ -280,7 +280,7 @@ function displayInstructionExample() {
     document.getElementById('instruction').innerHTML = instructionText;
 
     // Update choice context to show the complete sentence (use example in instruction phase)
-    const contextText = `Utterance: ${example.premise}<br><strong>Interpretation:</strong> ${example.hypothesis}`;
+    const contextText = `${example.scenario}<br><br><strong>Interpretation:</strong> ${example.implicature}`;
     document.getElementById('choice-context').innerHTML = contextText;
 
     // Reset likelihood (Likert scale)
@@ -392,19 +392,19 @@ function displayCurrentDatapoint() {
 
     // Display information
     document.getElementById('information').innerHTML =
-        `<strong>Situation:</strong> ${datapoint.premise}`;
+        `<strong>Situation:</strong> ${datapoint.scenario}`;
 
     // Display alternatives
     document.getElementById('alternatives').innerHTML =
         `<strong>Possible <mark>${datapoint['asks-for']}</mark>:</strong><br>
-        ${datapoint.hypothesis}`;
+        ${datapoint.implicature}`;
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
         `<strong>Choose the best option on the 7-point scale for how likely you find the interpretation of the utterance.</strong>`;
 
     // Update choice context to show the complete sentence
-    const contextText = `Utterance: ${datapoint.premise}<br><strong>Interpretation:</strong> ${datapoint.hypothesis}`;
+    const contextText = `${datapoint.scenario}<br><br><strong>Interpretation:</strong> ${datapoint.implicature}`;
     document.getElementById('choice-context').innerHTML = contextText;
 
     // Reset likelihood (Likert scale)
