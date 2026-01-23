@@ -17,43 +17,48 @@ let lastInstructionLikelihood = null;
 // Instructional examples for practice
 const INSTRUCTIONAL_EXAMPLES = [
     {
+        // Vanilla utterance implicature
         id: "instruction_1",
         "asks-for": "interpretation",
         "speaker-name": "the",
-        "hard_label": 1, // 51 likely or more
+        "hard_label": 1, // Likely or more
         premise: "John managed to open the door.",
         hypothesis: "Opening the door was not straightforward."
     },
     {
+        // Dialogue implicature and cancellation
         id: "instruction_2",
         "asks-for": "interpretation",
         "speaker-name": "B",
-        "hard_label": 1, // 51 likely or more
-        premise: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion.",
+        "hard_label": 0, // Likely or more
+        premise: "A: Did you read the entire paper?<br>B: I read the introduction and the conclusion. And the rest of the paper too.",
         hypothesis: "B did not read the entire paper."
     },
     {
+        // Contextual implicature
         id: "instruction_3",
         "asks-for": "interpretation",
         "speaker-name": "Jamie",
-        "hard_label": 1, // 51 likely or more
+        "hard_label": 1, // Likely or more
         premise: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"What a racket!\"",
         hypothesis: "The party is loud."
     },
     {
+        // Context with negated implicature
         id: "instruction_4",
         "asks-for": "interpretation",
-        "hard_label": 0, // 49 unlikely or less
+        "hard_label": 0, // Unlikely or less
         "speaker-name": "Alice",
         premise: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"Well, she certainly knows her way around the kitchen.\"",
         hypothesis: "Mary is an excellent manager who is on top of everything."
     },
     {
+        // Dialogue implicature and cancellation
         id: "instruction_5",
         "asks-for": "interpretation",
-        "hard_label": 0, // 49 unlikely or less
+        "hard_label": 0, // Unlikely or less
         "speaker-name": "S",
-        premise: "T: Did you ever go to John's house?<br>S: I had such a good time last time!",
+        premise: "T: Did you ever go to John's house?<br>S: Where is it? I've been, but I can't remember when or even where.",
         hypothesis: "S did not go to John's house."
     }
 ];
@@ -61,44 +66,49 @@ const INSTRUCTIONAL_EXAMPLES = [
 // Hard-coded attention check datapoints
 const ATTENTION_CHECK_DATA = [
     {
+        // Vanilla utterance implicature
         id: "instruction_4",
         "asks-for": "interpretation",
         "speaker-name": "the",
-        "hard_label": 1, // High likelihood
+        "hard_label": 1,
         premise: "John forgot to lock the door.",
         hypothesis: "John was supposed to lock the door."
     },
     {
+        // Dialogue implicature
         id: "instruction_5",
         "asks-for": "interpretation",
         "speaker-name": "the",
-        "hard_label": 1, // High likelihood
+        "hard_label": 1,
         premise: "A: Is Sarah coming to the meeting?\nB: She has to pick up her kids from school.",
         hypothesis: "Sarah will not come to the meeting."
     },
     {
+        // Dialogue implicature and cancellation
         id: "instruction_6",
         "asks-for": "interpretation",
         "speaker-name": "B",
-        "hard_label": 0, // Low likelihood
-        premise: "A: Can you drive me to the airport? B: I don't have a license.",
-        hypothesis: "B will drive A to the airport."
+        "hard_label": 0,
+        premise: "A: Can you drive me to the airport? B: I don't have a car. But I'll just rent one.",
+        hypothesis: "B will not drive A to the airport."
     },
     {
+        // Contextual implicature
         id: "instruction_7",
         "asks-for": "interpretation",
         "speaker-name": "Liam",
-        "hard_label": 1, // High likelihood
+        "hard_label": 1,
         premise: "Two colleagues, Emma and Liam, are discussing a presentation their colleague just gave. Liam says: \"Well, the slides were perfectly formatted.\"",
         hypothesis: "The content of the presentation was not very good."
     },
+    // Vanilla utterance implicature and cancellation
     {
         id: "instruction_8",
         "asks-for": "interpretation",
         "speaker-name": "the",
-        "hard_label": 0, // Low likelihood
-        premise: "Mary arrived at the office at 7 a.m.",
-        hypothesis: "Mary arrived late."
+        "hard_label": 0,
+        premise: "Mary arrived at the office at 8 a.m. sharp. Her boss scolded her for being late.",
+        hypothesis: "Mary arrived got to work early."
     }
 ];
 
