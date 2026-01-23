@@ -677,11 +677,28 @@ function initExperiment() {
         document.getElementById('experiment-container').style.display = 'block';
         displayCurrentDatapoint();
 
-        // Add event listeners
+        // Add event listeners (null-safe)
         console.log('Adding event listeners...');
-        document.querySelectorAll('input[name="likert-scale"]').forEach(el => el.addEventListener('change', updateLikelihoodValue));
-        document.getElementById('continue-btn').addEventListener('click', continueToNext);
-        document.getElementById('submit-feedback-btn').addEventListener('click', handleFeedbackSubmission);
+        const likertInputs = document.querySelectorAll('input[name="likert-scale"]');
+        if (likertInputs && likertInputs.length) {
+            likertInputs.forEach(el => el.addEventListener('change', updateLikelihoodValue));
+        } else {
+            console.warn('No Likert inputs found when initializing listeners.');
+        }
+
+        const continueBtn = document.getElementById('continue-btn');
+        if (continueBtn) {
+            continueBtn.addEventListener('click', continueToNext);
+        } else {
+            console.warn('continue-btn element not found.');
+        }
+
+        const submitFeedbackBtn = document.getElementById('submit-feedback-btn');
+        if (submitFeedbackBtn) {
+            submitFeedbackBtn.addEventListener('click', handleFeedbackSubmission);
+        } else {
+            console.warn('submit-feedback-btn element not found.');
+        }
         console.log('Event listeners added');
     }
 }
