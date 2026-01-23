@@ -302,8 +302,8 @@ function displayInstructionExample() {
     `;
     tableContainer.style.display = 'block';
 
-    // Update choice context to show the complete sentence
-    const contextText = `Utterance: ${datapoint.premise}<br><strong>Interpretation:</strong> ${datapoint.hypothesis}`;
+    // Update choice context to show the complete sentence (use example in instruction phase)
+    const contextText = `Utterance: ${example.premise}<br><strong>Interpretation:</strong> ${example.hypothesis}`;
     document.getElementById('choice-context').innerHTML = contextText;
 
     // Update slider labels
