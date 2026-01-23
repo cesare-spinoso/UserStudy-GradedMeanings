@@ -303,10 +303,8 @@ function displayInstructionExample() {
     tableContainer.style.display = 'block';
 
     // Update choice context to show the complete sentence
-    // const contextText = example['asks-for'] === 'effect' ?
-    //     `${example.premise}<br><strong>As a result:</strong> ${example.hypothesis}` :
-    //     `${example.premise}<br><strong>This was because:</strong> ${example.hypothesis}`;
-    // document.getElementById('choice-context').innerHTML = contextText;
+    const contextText = `Utterance: ${datapoint.premise}<br><strong>Interpretation:</strong> ${datapoint.hypothesis}`;
+    document.getElementById('choice-context').innerHTML = contextText;
 
     // Update slider labels
     document.getElementById('unlikely-label').textContent = `DEFINITELY NOT the ${example['asks-for']}`;
@@ -347,14 +345,15 @@ function displayWelcomeMessage() {
     document.getElementById('alternatives').innerHTML =
         `<strong>What you'll be doing:</strong><br>
         In this experiment, you'll be asked to rate the likelihood of the interpretation of an utterance (i.e., something someone has said). 
-        You'll see an utterance and be asked to rate how likely the interpretation provided for it is.`;
+        You'll see an utterance - potentially accompanied by some context- and be asked to rate how likely the interpretation provided for the utterance is.`;
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
         `<strong>How it works:</strong><br>
         • We'll start with a couple of practice examples to help you understand the task<br>
         • Then we'll move on to the real experiment<br>
-        • There are no right or wrong answers in the real experiment - we just want your honest opinion`;
+        • There are no right or wrong answers in the real experiment - we just want your honest opinion<br>
+        • In some cases, you may feel that there isn't enough information to answer. That's perfectly normal - just give your best judgement!`;
 
     // Hide choice and likelihood sections for welcome
     document.querySelector('.choice-container').style.display = 'none';
@@ -414,14 +413,11 @@ function handleInstructionResponse(likelihood) {
 
     // Check if likelihood is appropriate based on the hard_label
     if (example['hard_label'] === 1) {
-        // High likelihood case - should be rated 66 or higher (Likely to Almost certain range)
-        isLikelihoodAppropriate = likelihood >= 66;
-    } else if (example['hard_label'] === 0) {
-        // Low likelihood case - should be rated 30 or lower (Highly unlikely range)
-        isLikelihoodAppropriate = likelihood <= 34;
-    } else if (example['hard_label'] === 2) {
-        // Moderate likelihood case - should be rated between 35-65 (Somewhat unlikely, totally even chance, or somewhat likely)
-        isLikelihoodAppropriate = likelihood >= 35 && likelihood <= 65;
+        // Positive likelihood case - should be rated 51 or higher
+        isLikelihoodAppropriate = likelihood >= 51;
+    } else {
+        // Low likelihood case - should be rated 49 or lower
+        isLikelihoodAppropriate = likelihood <= 49;
     }
 
     if (isLikelihoodAppropriate) {
@@ -484,11 +480,6 @@ function displayCurrentDatapoint() {
         return;
     }
 
-    if (isConsentPhase) {
-        // Consent form is already displayed, no need to do anything
-        return;
-    }
-
     if (isInstructionPhase) {
         displayInstructionExample();
         return;
@@ -525,10 +516,8 @@ function displayCurrentDatapoint() {
         Use the slider below to indicate your likelihood rating.`;
 
     // Update choice context to show the complete sentence
-    // const contextText = datapoint['asks-for'] === 'effect' ?
-    //     `${datapoint.premise}<br><strong>As a result:</strong> ${datapoint.hypothesis}` :
-    //     `${datapoint.premise}<br><strong>This was because:</strong> ${datapoint.hypothesis}`;
-    // document.getElementById('choice-context').innerHTML = contextText;
+    const contextText = `Utterance: ${datapoint.premise}<br><strong>Interpretation:</strong> ${datapoint.hypothesis}`;
+    document.getElementById('choice-context').innerHTML = contextText;
 
     // Update slider labels
     document.getElementById('unlikely-label').textContent = `DEFINITELY NOT the ${datapoint['asks-for']}`;
@@ -703,8 +692,8 @@ function startInstructionPhase() {
     document.getElementById('instruction').style.display = 'block';
 
     // Show the information and alternatives boxes for practice examples
-    document.getElementById('information').style.display = 'block';
-    document.getElementById('alternatives').style.display = 'block';
+    document.getElementById('information').style.display = 'none';
+    document.getElementById('alternatives').style.display = 'none';
 
     document.getElementById('continue-btn').textContent = 'Continue';
     displayCurrentDatapoint();
@@ -751,7 +740,6 @@ function handleFeedbackSubmission() {
 
     // Add feedback to the experiment data
     const experimentData = {
-        "consent_data": consentData,
         "instruction_trials": instructionResponses,
         "trials": responses,
         "attention_checks": attentionCheckResults,
@@ -804,16 +792,3 @@ function initExperiment() {
 
 // Start the experiment when page loads
 document.addEventListener('DOMContentLoaded', initExperiment);
-
-// Skipping the consent phase and going directly to practice examples
-isConsentPhase = false;
-
-// Function to start the practice examples directly
-function startPracticeExamples() {
-    isInstructionPhase = true;
-    currentIndex = 0;
-    showInstructionExample(currentIndex);
-}
-
-// Call the function to start practice examples
-startPracticeExamples();
