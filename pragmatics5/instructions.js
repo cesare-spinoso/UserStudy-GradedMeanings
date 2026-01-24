@@ -30,7 +30,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_2",
         "asks-for": "interpretation",
         "speaker-name": "B's",
-        "hard_label": 0, // Likely or more
+        "hard_label": 0, // Unlikely or less
         scenario: "A: Did you read the entire paper?<br>B: <em>I read the introduction and the conclusion. And the rest of the paper too.</em>",
         implicature: "B did not read the entire paper."
     },
@@ -309,15 +309,15 @@ function displayWelcomeMessage() {
     document.getElementById('alternatives').innerHTML =
         `<strong>What you'll be doing:</strong><br>
         In this experiment, you'll be asked to rate the likelihood of the interpretation of an utterance (i.e., something someone has said). 
-        You'll see an utterance - potentially accompanied by some context- and be asked to rate how likely the interpretation provided for the utterance is.`;
+        You'll see an utterance - potentially accompanied by some context - and be asked to rate how likely the interpretation provided for the utterance is.`;
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
         `<strong>How it works:</strong><br>
         • We'll start with a couple of practice examples to help you understand the task<br>
         • Then we'll move on to the real experiment<br>
-        • There are no right or wrong answers in the real experiment - we just want your honest opinion<br>
-        • In some cases, you may feel that there isn't enough information to answer. That's perfectly normal - just give your best judgement!`;
+        • There are no right or wrong answers in this experiment - we just want your honest opinion<br>
+        • In some cases, you may feel that there isn't enough information to answer. That's perfectly normal, just give your best judgement!`;
 
     // Hide choice and likelihood sections for welcome
     document.querySelector('.choice-container').style.display = 'none';
@@ -474,6 +474,8 @@ function continueToNext() {
     const responseData = {
         datapoint: currentDatapoint,
         likelihood: likelihoodRating, // Use likelihoodRating
+        hardLikelihood: likelihoodRating >= 4,
+        correctOption: currentDatapoint['hard_label'],
         slide_number: currentIndex + 1,
         timestamp: new Date().toISOString(),
         time_in_minutes: (Date.now() - experimentStartTime) / 60000
@@ -494,7 +496,6 @@ function continueToNext() {
         responseData.isAttentionCheck = true;
         responseData.attentionCheckId = currentDatapoint.attentionCheckId;
         responseData.attentionPassed = likelihoodCorrect;
-        responseData.correctOption = currentDatapoint['hard_label'];
         responseData.likelihoodCorrect = likelihoodCorrect;
 
         // Store attention check result
@@ -502,7 +503,6 @@ function continueToNext() {
             id: currentDatapoint.attentionCheckId,
             passed: likelihoodCorrect,
             likelihood: likelihoodRating,
-            correctOption: currentDatapoint['hard_label'],
             likelihoodCorrect: likelihoodCorrect,
             slide_number: currentIndex + 1
         };
