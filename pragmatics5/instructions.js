@@ -49,7 +49,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
         "speaker-name": "A",
-        scenario: "<strong>Context:</strong> A and B are talking about careers. A has a son.<br><strong>Dialogue:</strong><br><br>B: What, what does, your son -<br>B: he hopes to be a writer.<br>A: Yes,<br>A: he thinks that's what he'd like to do,<br>A: but he's really strong in math and science, too,",
+        scenario: "<strong>Context:</strong> A and B are talking about careers. A has a son.<br>B: What, what does, your son -<br>B: he hopes to be a writer.<br>A: Yes,<br>A: he thinks that's what he'd like to do,<br>A: but he's really strong in math and science, too,",
         implicature: "A thinks that their son should be a writer."
     },
     {
@@ -89,7 +89,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "T",
         "hard_label": 0,
-        scenario: "<strong>Dialogue:</strong><br><S: Do you mind sending me that by the end of the day?<br>T: I'm afraid I'm leaving after lunch. Sorry about that.",
+        scenario: "<strong>Dialogue:</strong><br>S: Do you mind sending me that by the end of the day?<br>T: I'm afraid I'm leaving after lunch. Sorry about that.",
         implicature: "T will not send it by the end of the day."
     },
     {
