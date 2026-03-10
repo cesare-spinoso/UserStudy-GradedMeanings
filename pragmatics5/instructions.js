@@ -22,8 +22,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "the",
         "hard_label": 1, // Likely or more
-        scenario: "<em>John managed to open the door.</em>",
-        implicature: "Opening the door was not straightforward."
+        scenario: "i drink coffee on some evenings.",
+        implicature: "I like to drink coffee on some, but not all, evenings."
     },
     {
         // Dialogue implicature and cancellation
@@ -31,35 +31,35 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "B's",
         "hard_label": 0, // Unlikely or less
-        scenario: "A: Did you read the entire paper?<br>B: <em>I read the introduction and the conclusion. And the rest of the paper too.</em>",
-        implicature: "B did not read the entire paper."
+        scenario: "A: Do you need a tissue?<br>B: Please.",
+        implicature: "B does not need a tissue."
     },
     {
         // Contextual implicature
         id: "instruction_3",
         "asks-for": "interpretation",
-        "speaker-name": "Jamie's",
+        "speaker-name": "Mike's",
         "hard_label": 1, // Likely or more
-        scenario: "Jamie and George are going to their friend Michael's party. When they walk in, the music is booming and people are singing. Jamie turns to George and says \"<em>What a racket!</em>\"",
-        implicature: "The party is loud."
+        scenario: "Jack and Mike are debating whether they should go for Chinese food or Italian food tonight. Jack tells Mike \"What if we order both?\" Mike replies \"<em>That might be the dumbest idea I've ever heard.</em>\"",
+        implicature: "He does not want them to order both Chinese and Italian food."
     },
     {
         // Context with negated implicature
         id: "instruction_4",
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
-        "speaker-name": "Alice's",
-        scenario: "Two colleagues, Alice and Bob, are discussing their new manager Mary. Bob asks Alice what she thinks of Mary's managing skills. Alice says \"<em>Well, she certainly knows her way around the kitchen.</em>\"",
-        implicature: "Mary is an excellent manager who is on top of everything."
+        "speaker-name": "A's",
+        scenario: "<strong>Context:</strong> A and B are talking about careers. A has a son. <br><strong>Dialogue:</strong><br>B: What, what does, your son -<br>B: he hopes to be a writer.<br>A: Yes,<br>A: he thinks that's what he'd like to do,<br>A: but he's really strong in math and science, too,",
+        implicature: "A thinks that their son should be a writer."
     },
     {
         // Dialogue implicature and cancellation
         id: "instruction_5",
         "asks-for": "interpretation",
-        "hard_label": 0, // Unlikely or less
-        "speaker-name": "S's",
-        scenario: "T: Did you ever go to John's house?<br>S: <em>Where is it? I've been, but I can't remember when or even where.</em>",
-        implicature: "S did not go to John's house."
+        "hard_label": 1, // Unlikely or less
+        "speaker-name": "the passage's",
+        scenario: "<strong>Passage:</strong> Hungry for more stock, Ford Motor disclosed that it has raised its holding in Jaguar to 10.4% from 5%. Ford, which has repeatedly signaled its desire to diversify its portfolio, appears poised to make several other major moves.",
+        implicature: "Ford will be making more stock acquisitions."
     }
 ];
 
