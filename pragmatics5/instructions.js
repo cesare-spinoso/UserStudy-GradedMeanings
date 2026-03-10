@@ -114,28 +114,28 @@ const ATTENTION_CHECK_DATA = [
 
 const FEEDBACK = {
     instruction_1: (color) => `
-        <strong style="color: ${color};">Correct!</strong><br><br>
-        This interpretation of the utterance is likely. While it's possible that the door was easy to open, the fact that the expression "managed to open" was used (as opposed to simply saying "opened") signals that opening the door was not a simply routine action, perhaps because something was blocking or it required an inordinate amount of effort.<br><br>
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation of the utterance is quite likely. If the speaker had meant that they drink coffee every evening, they would have said something like \"I drink coffee every evening.\"<br><br>
     `,
 
     instruction_2: (color) => `
-        <strong style="color: ${color};">Correct!</strong><br><br>
-        This interpretation of the utterance is likely if not quite likely. The fact that B chooses to describe which parts of the paper they read rather than simply answering something like "Yes, I did." likely signals that they only read those two parts of the paper and not the rest.<br><br>
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation of the utterance is quite unlikely. The fact that B chooses to thank A given their question signals that they do they a tissue and would be thankful if A handed them one.<br><br>
     `,
 
     instruction_3: (color) => `
-        <strong style="color: ${color};">Correct!</strong><br><br>
-        This interpretation is likely if not certain. Not only does the context describe "booming music", but the utterance itself "What a racket!" also suggests a loud volume.<br><br>
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation is quite likely if not certain. If Jack finds the idea of ordering both Chinese and Italian dumb, then he is not likely to support doing it.<br><br>
     `,
 
     instruction_4: (color) => `
-        <strong style="color: ${color};">Correct!</strong><br><br>
-        This interpretation is unlikely if not impossible. The fact that Alice chooses to discuss the manager's way around the kitchen rather than anything about her managing skills signals to Bob that she doesn't want to talk about her managing skills potentially because they are not good.<br><br>
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation is somehwat unlikely. While it's possible that A supports their son in becoming a writer, the way in which A says \"He **thinks** that's what he'd like to do.\" suggests that they do not agree. This is further supported by the fact that they continue to describe their son as strong in math and science.<br><br>
     `,
 
     instruction_5: (color) => `
-        <strong style="color: ${color};">Correct!</strong><br><br>
-        This interpretation is unlikely if not impossible. Given that S is discussing the good time they had at John's house they are almost guaranteed to have visited, making the interpretation impossible.<br><br>
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation is likely, if not very likely. Given that the passage describes Ford as wanting to diversify its portfolio and that it has already done so by acquiring Jaguar stock, this insinuates that further stock acquisitions are likely to come.<br><br>
     `,
 };
 
@@ -293,6 +293,10 @@ function displayInstructionExample() {
     const rangeSlider = document.getElementById('likelihood-range');
     if (rangeSlider) { rangeSlider.value = 4; }
 
+    // Clear any feedback from the previous example
+    const feedbackDiv = document.getElementById('instruction-feedback');
+    if (feedbackDiv) { feedbackDiv.style.display = 'none'; feedbackDiv.innerHTML = ''; }
+
     // Disable continue button until slider is moved
     document.getElementById('continue-btn').disabled = true;
 }
@@ -419,6 +423,10 @@ function displayCurrentDatapoint() {
     const rangeSlider = document.getElementById('likelihood-range');
     if (rangeSlider) { rangeSlider.value = 4; }
 
+    // Ensure feedback div is hidden during the real experiment
+    const feedbackDiv = document.getElementById('instruction-feedback');
+    if (feedbackDiv) { feedbackDiv.style.display = 'none'; feedbackDiv.innerHTML = ''; }
+
     // Disable continue button until slider is moved
     document.getElementById('continue-btn').disabled = true;
 }
@@ -427,12 +435,36 @@ function displayCurrentDatapoint() {
 function updateLikelihoodValue() {
     const instructionElement = document.getElementById('slider-instruction');
     const slider = document.getElementById('likelihood-range');
-    if (slider) {
-        likelihoodRating = parseInt(slider.value);
-        if (instructionElement) instructionElement.classList.add('hide-instruction');
-        if (!isWelcomePhase) {
+    if (!slider) return;
+
+    likelihoodRating = parseInt(slider.value);
+    if (instructionElement) instructionElement.classList.add('hide-instruction');
+
+    if (isInstructionPhase && !isWelcomePhase && instructionIndex < INSTRUCTIONAL_EXAMPLES.length) {
+        // Practice phase: only allow Continue when rating is in the correct range
+        const example = INSTRUCTIONAL_EXAMPLES[instructionIndex];
+        const isCorrect = (example['hard_label'] === 1 && likelihoodRating >= 5) ||
+            (example['hard_label'] === 0 && likelihoodRating <= 3);
+        const feedbackDiv = document.getElementById('instruction-feedback');
+
+        if (isCorrect) {
+            const feedbackFn = FEEDBACK[example.id];
+            if (feedbackDiv) {
+                feedbackDiv.className = '';
+                feedbackDiv.innerHTML = feedbackFn ? feedbackFn('#2e7d32') : '<strong style="color:#2e7d32;">Correct!</strong>';
+                feedbackDiv.style.display = 'block';
+            }
             document.getElementById('continue-btn').disabled = false;
+        } else {
+            if (feedbackDiv) {
+                feedbackDiv.className = 'feedback-hint';
+                feedbackDiv.innerHTML = '<em>Consider reconsidering your rating &mdash; the Continue button will become available once you have selected an appropriate value.</em>';
+                feedbackDiv.style.display = 'block';
+            }
+            document.getElementById('continue-btn').disabled = true;
         }
+    } else if (!isWelcomePhase) {
+        document.getElementById('continue-btn').disabled = false;
     }
 }
 

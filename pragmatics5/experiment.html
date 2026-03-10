@@ -334,6 +334,21 @@
             outline: none;
             border-color: #2196f3;
         }
+
+        #instruction-feedback {
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0 5px 0;
+            font-size: 15px;
+            line-height: 1.6;
+            border-left: 4px solid #4caf50;
+            background-color: #e8f5e8;
+        }
+
+        #instruction-feedback.feedback-hint {
+            border-left-color: #ff9800;
+            background-color: #fff8e1;
+        }
     </style>
 </head>
 
@@ -387,6 +402,8 @@
                     <div class="likelihood-side-label" id="likely-label"></div>
                 </div>
             </div>
+
+            <div id="instruction-feedback" style="display: none;"></div>
 
             <div style="text-align: center; margin-top: 60px;">
                 <button class="continue-btn" id="continue-btn">Continue</button>
