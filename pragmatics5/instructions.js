@@ -125,7 +125,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "T",
         "hard_label": 1,
-        scenario: "<strong>Context:</strong> A and B are talking about financial discussions.<br><strong>Dialogue:</strong><br>B: Well, I think, uh, -<br>B: I haven't had that much, of course<br>B: I just heard,<br>B: but I haven't had that much time to think about it, either.",
+        scenario: "<strong>Context:</strong> A and B are talking about financial discussions.<br>B: Well, I think, uh, -<br>B: I haven't had that much, of course<br>B: I just heard,<br>B: but I haven't had that much time to think about it, either.",
         implicature: "B does not have much to say about the topic."
     },
     {
@@ -134,7 +134,8 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "T",
         "hard_label": 0,
-        scenario: "<strong>Context:</strong> A and B are talking about the quality of nursing homes.<br><strong>Dialogue:</strong><br>A: I wouldn't put my mother, father in that nursing home at all.<br>B: Was this in a big town or a little town?<br>A: A small town.<br>B: Oh, really?",
+        scenario: "<strong>Context:</strong> A and B are talking about the quality of nursing homes.<br>A: I wouldn't put my mother, father in that nursing home at all.<br>B: Was this in a big town or a little town?<br>A: A small town.<br>B: Oh, really?",
+        implicature: "B was expecting the town to be small."
     },
     {
         // discourse which looks like a cancellation but is likely
