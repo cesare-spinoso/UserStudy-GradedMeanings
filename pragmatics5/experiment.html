@@ -205,37 +205,44 @@
             margin: 10px 0;
         }
 
-        /* Likert scale styles */
-        .likert-options {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
-            width: 100%;
-        }
-
-        .likert-option {
-            background-color: #f0f0f0;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            cursor: pointer;
-            transition: all 0.2s ease;
+        /* Slider scale styles */
+        .slider-with-endpoints {
             display: flex;
             align-items: center;
-            justify-content: center;
-            min-height: 60px;
+            gap: 20px;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .endpoint-label {
+            min-width: 110px;
             text-align: center;
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .slider-track-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #likelihood-range {
+            width: 100%;
+            cursor: pointer;
+            accent-color: #2196f3;
+            margin-bottom: 8px;
+        }
+
+        .slider-tick-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
             font-size: 13px;
-        }
-
-        .likert-option.selected {
-            background-color: #2196f3;
-            color: white;
-            border-color: #2196f3;
-        }
-
-        .likert-input {
-            display: none;
+            font-weight: bold;
+            color: #666;
         }
 
         .likelihood-value {
@@ -357,37 +364,23 @@
                 <div class="likelihood-slider-container">
                     <div class="likelihood-side-label" id="unlikely-label"></div>
                     <div class="likelihood-slider-wrapper">
-                        <div class="slider-instruction" id="slider-instruction">Click to select an option on the scale
-                            to begin.</div>
-                        <div class="likert-options" id="likert-options">
-                            <label class="likert-option" for="likert-1">
-                                <input class="likert-input" type="radio" name="likert-scale" id="likert-1" value="1">
-                                Absolutely no chance
-                            </label>
-                            <label class="likert-option" for="likert-2">
-                                <input class="likert-input" type="radio" name="likert-scale" id="likert-2" value="2">
-                                Highly unlikely
-                            </label>
-                            <label class="likert-option" for="likert-3">
-                                <input class="likert-input" type="radio" name="likert-scale" id="likert-3" value="3">
-                                Unlikely
-                            </label>
-                            <label class="likert-option" for="likert-4">
-                                <input class="likert-input" type="radio" name="likert-scale" id="likert-4" value="4">
-                                Even chance
-                            </label>
-                            <label class="likert-option" for="likert-5">
-                                <input class="likert-input" type="radio" name="likert-scale" id="likert-5" value="5">
-                                Likely
-                            </label>
-                            <label class="likert-option" for="likert-6">
-                                <input class="likert-input" type="radio" name="likert-scale" id="likert-6" value="6">
-                                Highly likely
-                            </label>
-                            <label class="likert-option" for="likert-7">
-                                <input class="likert-input" type="radio" name="likert-scale" id="likert-7" value="7">
-                                Absolutely certain
-                            </label>
+                        <div class="slider-instruction" id="slider-instruction">Move the slider to make your selection.
+                        </div>
+                        <div class="slider-with-endpoints" id="likert-options">
+                            <span class="endpoint-label">Absolutely<br>impossible</span>
+                            <div class="slider-track-wrapper">
+                                <input type="range" id="likelihood-range" min="1" max="7" step="1" value="4">
+                                <div class="slider-tick-labels">
+                                    <span>1</span>
+                                    <span>2</span>
+                                    <span>3</span>
+                                    <span>4</span>
+                                    <span>5</span>
+                                    <span>6</span>
+                                    <span>7</span>
+                                </div>
+                            </div>
+                            <span class="endpoint-label">Absolutely<br>certain</span>
                         </div>
                         <div class="likelihood-value" id="likelihood-value"></div>
                     </div>

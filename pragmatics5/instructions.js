@@ -283,16 +283,17 @@ function displayInstructionExample() {
     const contextText = `${example.scenario}<br><br><strong>Interpretation:</strong> ${example.implicature}`;
     document.getElementById('choice-context').innerHTML = contextText;
 
-    // Reset likelihood (Likert scale)
+    // Reset likelihood (slider)
     likelihoodRating = null;
     const instructionElement = document.getElementById('slider-instruction');
     if (instructionElement) {
         instructionElement.classList.remove('hide-instruction');
     }
-    // Clear any previous selection
-    document.querySelectorAll('input[name="likert-scale"]').forEach(el => { el.checked = false; el.parentElement.classList.remove('selected'); });
+    // Reset slider to default position
+    const rangeSlider = document.getElementById('likelihood-range');
+    if (rangeSlider) { rangeSlider.value = 4; }
 
-    // Disable continue button until ratings are made
+    // Disable continue button until slider is moved
     document.getElementById('continue-btn').disabled = true;
 }
 
@@ -407,42 +408,28 @@ function displayCurrentDatapoint() {
     const contextText = `${datapoint.scenario}<br><br><strong>Interpretation:</strong> ${datapoint.implicature}`;
     document.getElementById('choice-context').innerHTML = contextText;
 
-    // Reset likelihood (Likert scale)
+    // Reset likelihood (slider)
     likelihoodRating = null;
     const instructionElement = document.getElementById('slider-instruction');
     if (instructionElement) {
         // Hide instruction during main experiment phase
         instructionElement.classList.add('hide-instruction');
     }
-    // Clear any previous selection
-    document.querySelectorAll('input[name="likert-scale"]').forEach(el => { el.checked = false; el.parentElement.classList.remove('selected'); });
+    // Reset slider to default position
+    const rangeSlider = document.getElementById('likelihood-range');
+    if (rangeSlider) { rangeSlider.value = 4; }
 
-    // Disable continue button until ratings are made
+    // Disable continue button until slider is moved
     document.getElementById('continue-btn').disabled = true;
 }
 
-// Handle Likert scale selection
+// Handle slider input
 function updateLikelihoodValue() {
     const instructionElement = document.getElementById('slider-instruction');
-    const selected = document.querySelector('input[name="likert-scale"]:checked');
-    const labels = [
-        'Absolutely no chance',
-        'Highly unlikely',
-        'Unlikely',
-        'Even chance',
-        'Likely',
-        'Highly likely',
-        'Absolutely certain'
-    ];
-
-    if (selected) {
-        likelihoodRating = parseInt(selected.value);
-        // Toggle selected class for styling
-        document.querySelectorAll('.likert-option').forEach(opt => opt.classList.remove('selected'));
-        if (selected.parentElement) selected.parentElement.classList.add('selected');
-
+    const slider = document.getElementById('likelihood-range');
+    if (slider) {
+        likelihoodRating = parseInt(slider.value);
         if (instructionElement) instructionElement.classList.add('hide-instruction');
-
         if (!isWelcomePhase) {
             document.getElementById('continue-btn').disabled = false;
         }
@@ -474,7 +461,6 @@ function continueToNext() {
     const responseData = {
         datapoint: currentDatapoint,
         likelihood: likelihoodRating, // Use likelihoodRating
-        hardLikelihood: likelihoodRating >= 4,
         correctOption: currentDatapoint['hard_label'],
         slide_number: currentIndex + 1,
         timestamp: new Date().toISOString(),
@@ -620,11 +606,11 @@ function initExperiment() {
 
         // Add event listeners (null-safe)
         console.log('Adding event listeners...');
-        const likertInputs = document.querySelectorAll('input[name="likert-scale"]');
-        if (likertInputs && likertInputs.length) {
-            likertInputs.forEach(el => el.addEventListener('change', updateLikelihoodValue));
+        const rangeInput = document.getElementById('likelihood-range');
+        if (rangeInput) {
+            rangeInput.addEventListener('input', updateLikelihoodValue);
         } else {
-            console.warn('No Likert inputs found when initializing listeners.');
+            console.warn('Slider input not found when initializing listeners.');
         }
 
         const continueBtn = document.getElementById('continue-btn');
