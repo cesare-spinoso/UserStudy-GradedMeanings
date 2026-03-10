@@ -31,7 +31,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_11_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are talking about their education.<br>A: I had gone to a small school growing up, uh, <br>A: and a lot of my friends went to univert-, University of Michigan <br>A: but my parents were retiring in South Carolina when I graduated and, uh, were looking for a southern school -- <br>B: Uh-huh.',
+  'scenario': '<strong>Context:</strong> A and B are talking about their education.<br>A: I had gone to a small school growing up, uh, <br>A: and a lot of my friends went to univert-, University of Michigan <br>A: but my parents were retiring in South Carolina when I graduated and, uh, were looking for a southern school -- <br>B: Uh-huh.',
   'implicature': 'A did not go to the University of Michigan because of their parents.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -47,7 +47,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_3_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing how they get their news.<br>A: well, Myrna, how do you get your news, news? <br>B: Uh, most of it is from the radio, uh, <br>A: Uh-huh. <br>B: and also from the news programs that we watch in the afternoon. <br>A: Yeah. <br>B: We usually watch the local news',
+  'scenario': '<strong>Context:</strong> A and B are discussing how they get their news.<br>A: well, Myrna, how do you get your news, news? <br>B: Uh, most of it is from the radio, uh, <br>A: Uh-huh. <br>B: and also from the news programs that we watch in the afternoon. <br>A: Yeah. <br>B: We usually watch the local news',
   'implicature': 'B only watches the local news.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -95,7 +95,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_2281_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing crime in Atlanta.<br>A: Um, so, um, well do you think Atlanta's as bad as most other cities? <br>B: Um, well, I've been to, - <br>B: I'd say it's, it's probably in the top, top ten in terms of crime.",
+  'scenario': "<strong>Context:</strong> A and B are discussing crime in Atlanta.<br>A: Um, so, um, well do you think Atlanta's as bad as most other cities? <br>B: Um, well, I've been to, - <br>B: I'd say it's, it's probably in the top, top ten in terms of crime.",
   'implicature': 'B believes Atlanta is as bad as most cities.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -127,7 +127,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_6_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing invasions of privacy by companies.<br>A: So, do you, your privacy being invaded at any time? <br>B: <Music> Well, uh, one of the things that, uh, <swallowing> that I found to be, uh, an invasion is when I pay for something with a credit card and they ask me to put my telephone number on the, on the, uh, credit card bill. <br>B: That --<br>A: Well, yo-, -<br>B: -- is something that is not required -- <br>A: Right. <br>B: --  and,  in fact,  uh,  it is actually prohibited',
+  'scenario': '<strong>Context:</strong> A and B are discussing invasions of privacy by companies.<br>A: So, do you, your privacy being invaded at any time? <br>B: <Music> Well, uh, one of the things that, uh, <swallowing> that I found to be, uh, an invasion is when I pay for something with a credit card and they ask me to put my telephone number on the, on the, uh, credit card bill. <br>B: That --<br>A: Well, yo-, -<br>B: -- is something that is not required -- <br>A: Right. <br>B: --  and,  in fact,  uh,  it is actually prohibited',
   'implicature': "People are allowed to ask for customer's phone numbers on the credit card bills, though customers are not required to provide them.",
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -183,7 +183,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_9_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: But, uh, I'd like to, uh, eventually I'd like to work up, if, if my wife does get interested, and maybe get involved in a league in a, in a mixed, mixed doubles league, or something like that. <br>A: Oh yeah, <br>A: we , we have one down here in the summertime. <br>A: Uh, it runs from like five o'clock to seven thirty -- <br>B: Uh-huh. <br>A: -- or eight o'clock,  you know,  because it doesn't get dark until nine thirty or ten.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: But, uh, I'd like to, uh, eventually I'd like to work up, if, if my wife does get interested, and maybe get involved in a league in a, in a mixed, mixed doubles league, or something like that. <br>A: Oh yeah, <br>A: we , we have one down here in the summertime. <br>A: Uh, it runs from like five o'clock to seven thirty -- <br>B: Uh-huh. <br>A: -- or eight o'clock,  you know,  because it doesn't get dark until nine thirty or ten.",
   'implicature': 'The mixed doubles league is only available from five to seven thirty.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -287,7 +287,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_11_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are talking about their education.<br>A: I had gone to a small school growing up, uh, <br>A: and a lot of my friends went to univert-, University of Michigan <br>A: but my parents were retiring in South Carolina when I graduated and, uh, were looking for a southern school -- <br>B: Uh-huh. <br>A: --  and,    uh,   also  U of M seemed overwhelming in size',
+  'scenario': '<strong>Context:</strong> A and B are talking about their education.<br>A: I had gone to a small school growing up, uh, <br>A: and a lot of my friends went to univert-, University of Michigan <br>A: but my parents were retiring in South Carolina when I graduated and, uh, were looking for a southern school -- <br>B: Uh-huh. <br>A: --  and,    uh,   also  U of M seemed overwhelming in size',
   'implicature': 'A did not go to the University of Michigan because of their parents.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -303,7 +303,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_3_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing how they get their news.<br>A: well, Myrna, how do you get your news, news? <br>B: Uh, most of it is from the radio, uh, <br>A: Uh-huh. <br>B: and also from the news programs that we watch in the afternoon. <br>A: Yeah. <br>B: We usually watch the local news and  the,  the,    uh,  national news both.',
+  'scenario': '<strong>Context:</strong> A and B are discussing how they get their news.<br>A: well, Myrna, how do you get your news, news? <br>B: Uh, most of it is from the radio, uh, <br>A: Uh-huh. <br>B: and also from the news programs that we watch in the afternoon. <br>A: Yeah. <br>B: We usually watch the local news and  the,  the,    uh,  national news both.',
   'implicature': 'B only watches the local news.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -351,7 +351,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_2281_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing crime in Atlanta.<br>A: Um, so, um, well do you think Atlanta's as bad as most other cities? <br>B: Um, well, I've been to, - <br>B: I'd say it's, it's probably in the top, top ten in terms of crime. <br>B:  Um,  it's nowhere near as bad as New York City --",
+  'scenario': "<strong>Context:</strong> A and B are discussing crime in Atlanta.<br>A: Um, so, um, well do you think Atlanta's as bad as most other cities? <br>B: Um, well, I've been to, - <br>B: I'd say it's, it's probably in the top, top ten in terms of crime. <br>B:  Um,  it's nowhere near as bad as New York City --",
   'implicature': 'B believes Atlanta is as bad as most cities.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -375,7 +375,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_29_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing work benefits.<br>A: What about you? <br>B: Well, um, t-, i-, I'm research stuff here now <br>B: so what they, they have, uh, um, okay, benefits package. <br>B: It's not quite as good as industry",
+  'scenario': "<strong>Context:</strong> A and B are discussing work benefits.<br>A: What about you? <br>B: Well, um, t-, i-, I'm research stuff here now <br>B: so what they, they have, uh, um, okay, benefits package. <br>B: It's not quite as good as industry",
   'implicature': 'The benefits package for industry is better than the research one in all respects.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -383,7 +383,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0062_4158_utt@38_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing crime in Atlanta. The APD is the Atlanta Police Department.<br>A: I've actually, I've known, known some people that have had their cars stolen. <br>A: Uh, and, uh, and, you know, about half the time they seem to, the A P D seems to recover them, you know -- <br>B: Right.",
+  'scenario': "<strong>Context:</strong> A and B are discussing crime in Atlanta. The APD is the Atlanta Police Department.<br>A: I've actually, I've known, known some people that have had their cars stolen. <br>A: Uh, and, uh, and, you know, about half the time they seem to, the A P D seems to recover them, you know -- <br>B: Right.",
   'implicature': 'In half the cases, the cars are retrieved intact.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -415,7 +415,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_14_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how they get their news.<br>A: I spend a lot of time reading about these things. <br>A: I'm quite interested. <br>A: I find it very exciting to, for the coverage we have now, today. <br>B: Yes <br>B: and I think we do get pretty good coverage. <br>B: I don't feel that the American people is being shortchanged by the, uh, the news coverage. <br>A: If anything, they, I think they list-, -",
+  'scenario': "<strong>Context:</strong> A and B are discussing how they get their news.<br>A: I spend a lot of time reading about these things. <br>A: I'm quite interested. <br>A: I find it very exciting to, for the coverage we have now, today. <br>B: Yes <br>B: and I think we do get pretty good coverage. <br>B: I don't feel that the American people is being shortchanged by the, uh, the news coverage. <br>A: If anything, they, I think they list-, -",
   'implicature': 'B finds that they have an appropriate amount of news.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -471,7 +471,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_30_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: Well, I think it would be terrible to live in an area like that <br>B: and, unfortunately, I think there are a lot of areas that are, that, that bad. <br>A: Yeah. <br>B: Particularly in the areas where there are industries, uh, where they are burning a lot of coal, <br>A: Yes.',
+  'scenario': '<strong>Context:</strong> A and B are discussing air pollution.<br>B: Well, I think it would be terrible to live in an area like that <br>B: and, unfortunately, I think there are a lot of areas that are, that, that bad. <br>A: Yeah. <br>B: Particularly in the areas where there are industries, uh, where they are burning a lot of coal, <br>A: Yes.',
   'implicature': "It's only particularly bad in the areas where coal is being burnt.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -495,7 +495,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_32_wo_cancellation'
 }],
 [{
-  'scenario': "<br><strong>Context:</strong> A and B are discussing work benefits.<br>A: What about you? <br>B: Well, um, t-, i-, I'm research stuff here now <br>B: so what they, they have, uh, um, okay, benefits package. <br>B: It's not quite as good as industry <br>B:  but  one of the significant,  um,  benefits here is that you can take,  uh,  up to two courses a semester,  um,",
+  'scenario': "<strong>Context:</strong> A and B are discussing work benefits.<br>A: What about you? <br>B: Well, um, t-, i-, I'm research stuff here now <br>B: so what they, they have, uh, um, okay, benefits package. <br>B: It's not quite as good as industry <br>B:  but  one of the significant,  um,  benefits here is that you can take,  uh,  up to two courses a semester,  um,",
   'implicature': 'The benefits package for industry is better than the research one in all respects.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -503,7 +503,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0062_4158_utt@38_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing crime in Atlanta. The APD is the Atlanta Police Department.<br>A: I've actually, I've known, known some people that have had their cars stolen. <br>A: Uh, and, uh, and, you know, about half the time they seem to, the A P D seems to recover them, you know -- <br>B: Right. <br>A: -- in various states of disrepair <laughter>.",
+  'scenario': "<strong>Context:</strong> A and B are discussing crime in Atlanta. The APD is the Atlanta Police Department.<br>A: I've actually, I've known, known some people that have had their cars stolen. <br>A: Uh, and, uh, and, you know, about half the time they seem to, the A P D seems to recover them, you know -- <br>B: Right. <br>A: -- in various states of disrepair <laughter>.",
   'implicature': 'In half the cases, the cars are retrieved intact.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -535,7 +535,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_14_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how they get their news.<br>A: I spend a lot of time reading about these things. <br>A: I'm quite interested. <br>A: I find it very exciting to, for the coverage we have now, today. <br>B: Yes <br>B: and I think we do get pretty good coverage. <br>B: I don't feel that the American people is being shortchanged by the, uh, the news coverage. <br>A: If anything, they, I think they list-, -<br>B:  We almost have  too much.",
+  'scenario': "<strong>Context:</strong> A and B are discussing how they get their news.<br>A: I spend a lot of time reading about these things. <br>A: I'm quite interested. <br>A: I find it very exciting to, for the coverage we have now, today. <br>B: Yes <br>B: and I think we do get pretty good coverage. <br>B: I don't feel that the American people is being shortchanged by the, uh, the news coverage. <br>A: If anything, they, I think they list-, -<br>B:  We almost have  too much.",
   'implicature': 'B finds that they have an appropriate amount of news.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -591,7 +591,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_30_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: Well, I think it would be terrible to live in an area like that <br>B: and, unfortunately, I think there are a lot of areas that are, that, that bad. <br>A: Yeah. <br>B: Particularly in the areas where there are industries, uh, where they are burning a lot of coal, <br>A: Yes. <br>B:  and oil  --',
+  'scenario': '<strong>Context:</strong> A and B are discussing air pollution.<br>B: Well, I think it would be terrible to live in an area like that <br>B: and, unfortunately, I think there are a lot of areas that are, that, that bad. <br>A: Yeah. <br>B: Particularly in the areas where there are industries, uh, where they are burning a lot of coal, <br>A: Yes. <br>B:  and oil  --',
   'implicature': "It's only particularly bad in the areas where coal is being burnt.",
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -639,7 +639,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_0_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing news coverage.<br>B: You know, basically I, I, I think they don't present the, the whole sides of, of everything. <br>A: So, it, it makes you feel like they're, uh, wanting you to take their opinion. <br>B: Right. <br>B: It's, it's, it's, instead of reporting the news, it's more like an editorial, I believe -- <br>A: Yeah.",
+  'scenario': "<strong>Context:</strong> A and B are discussing news coverage.<br>B: You know, basically I, I, I think they don't present the, the whole sides of, of everything. <br>A: So, it, it makes you feel like they're, uh, wanting you to take their opinion. <br>B: Right. <br>B: It's, it's, it's, instead of reporting the news, it's more like an editorial, I believe -- <br>A: Yeah.",
   'implicature': 'All of the news feels editorial to B.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -759,7 +759,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_0_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing news coverage.<br>B: You know, basically I, I, I think they don't present the, the whole sides of, of everything. <br>A: So, it, it makes you feel like they're, uh, wanting you to take their opinion. <br>B: Right. <br>B: It's, it's, it's, instead of reporting the news, it's more like an editorial, I believe -- <br>A: Yeah. <br>B: -- on a lot of issues.",
+  'scenario': "<strong>Context:</strong> A and B are discussing news coverage.<br>B: You know, basically I, I, I think they don't present the, the whole sides of, of everything. <br>A: So, it, it makes you feel like they're, uh, wanting you to take their opinion. <br>B: Right. <br>B: It's, it's, it's, instead of reporting the news, it's more like an editorial, I believe -- <br>A: Yeah. <br>B: -- on a lot of issues.",
   'implicature': 'All of the news feels editorial to B.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -855,7 +855,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_3_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing golfing as a hobby. The "mixed league" A is discussing refers to a golfing tournament he will be playing in with his wife.<br>A: And we play in the summertime out here.<br>A: We get a mixed league in, -<br>B: -- that\'s good, that\'s sounds like a lot of fun. <br>A: And it\'s something we can do together, <br>A: so. Well, she doesn\'t do much hunting, <br>A: she could care less about that. <br>B: Yeah.',
+  'scenario': '<strong>Context:</strong> A and B are discussing golfing as a hobby. The "mixed league" A is discussing refers to a golfing tournament he will be playing in with his wife.<br>A: And we play in the summertime out here.<br>A: We get a mixed league in, -<br>B: -- that\'s good, that\'s sounds like a lot of fun. <br>A: And it\'s something we can do together, <br>A: so. Well, she doesn\'t do much hunting, <br>A: she could care less about that. <br>B: Yeah.',
   'implicature': 'The other activities that A does do not interest their wife.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -871,7 +871,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_10933_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are talking about a new public service program.<br>B: So I think it would be a good thing though,<br>A: Uh-huh.<br>B: To encourage other people who aren't even  aware that they can do such a thing.<br>A: Uh-huh.<br>B: to get out there and do so.<br>A:  Yeah,<br>A: or maybe offer them, you know, some sort of an incentive to do it.<br>B: Yeah.<br>A: Uh, you know college credit, you know,  something, you know,<br>B: Right.<br>A: I'm not sure what<br>A: but,<br>B: Right. <br>B: College credit is a good idea because, -<br>A: I'm not sure they need to be, you know, paid, you know,",
+  'scenario': "<strong>Context:</strong> A and B are talking about a new public service program.<br>B: So I think it would be a good thing though,<br>A: Uh-huh.<br>B: To encourage other people who aren't even  aware that they can do such a thing.<br>A: Uh-huh.<br>B: to get out there and do so.<br>A:  Yeah,<br>A: or maybe offer them, you know, some sort of an incentive to do it.<br>B: Yeah.<br>A: Uh, you know college credit, you know,  something, you know,<br>B: Right.<br>A: I'm not sure what<br>A: but,<br>B: Right. <br>B: College credit is a good idea because, -<br>A: I'm not sure they need to be, you know, paid, you know,",
   'implicature': 'The participants should not be given any monetary incentive.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -911,7 +911,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_16_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing movies they have seen recently. FATAL ATTRACTION is a movie.<br>A: FATAL ATTRACTION <laughter>. <br>B: Okay, <br>B: yeah. <br>A: It's probably my all time, - <br>A:  favorite, -",
+  'scenario': "<strong>Context:</strong> A and B are discussing movies they have seen recently. FATAL ATTRACTION is a movie.<br>A: FATAL ATTRACTION <laughter>. <br>B: Okay, <br>B: yeah. <br>A: It's probably my all time, - <br>A:  favorite, -",
   'implicature': "A's favorite movie is FATAL ATTRACTION.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -959,7 +959,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_8_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are talking about their education.<br>A: And your daughter is going to be a sophomore. <br>B: That's correct.",
+  'scenario': "<strong>Context:</strong> A and B are talking about their education.<br>A: And your daughter is going to be a sophomore. <br>B: That's correct.",
   'implicature': 'B only has one daughter.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -975,7 +975,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_44_wo_cancellation'
 }],
 [{
-  'scenario': '<br><strong>Context:</strong> A and B are discussing golfing as a hobby. The "mixed league" A is discussing refers to a golfing tournament he will be playing in with his wife.<br>A: And we play in the summertime out here.<br>A: We get a mixed league in, -<br>B: -- that\'s good, that\'s sounds like a lot of fun. <br>A: And it\'s something we can do together, <br>A: so. Well, she doesn\'t do much hunting, <br>A: she could care less about that. <br>B: Yeah. <br>A: She\'s does a little fishing,',
+  'scenario': '<strong>Context:</strong> A and B are discussing golfing as a hobby. The "mixed league" A is discussing refers to a golfing tournament he will be playing in with his wife.<br>A: And we play in the summertime out here.<br>A: We get a mixed league in, -<br>B: -- that\'s good, that\'s sounds like a lot of fun. <br>A: And it\'s something we can do together, <br>A: so. Well, she doesn\'t do much hunting, <br>A: she could care less about that. <br>B: Yeah. <br>A: She\'s does a little fishing,',
   'implicature': 'The other activities that A does do not interest their wife.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -991,7 +991,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_10933_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are talking about a new public service program.<br>B: So I think it would be a good thing though,<br>A: Uh-huh.<br>B: To encourage other people who aren't even  aware that they can do such a thing.<br>A: Uh-huh.<br>B: to get out there and do so.<br>A:  Yeah,<br>A: or maybe offer them, you know, some sort of an incentive to do it.<br>B: Yeah.<br>A: Uh, you know college credit, you know,  something, you know,<br>B: Right.<br>A: I'm not sure what<br>A: but,<br>B: Right. <br>B: College credit is a good idea because, -<br>A: I'm not sure they need to be, you know, paid, you know, <br>A: A super duper salary of any kind.",
+  'scenario': "<strong>Context:</strong> A and B are talking about a new public service program.<br>B: So I think it would be a good thing though,<br>A: Uh-huh.<br>B: To encourage other people who aren't even  aware that they can do such a thing.<br>A: Uh-huh.<br>B: to get out there and do so.<br>A:  Yeah,<br>A: or maybe offer them, you know, some sort of an incentive to do it.<br>B: Yeah.<br>A: Uh, you know college credit, you know,  something, you know,<br>B: Right.<br>A: I'm not sure what<br>A: but,<br>B: Right. <br>B: College credit is a good idea because, -<br>A: I'm not sure they need to be, you know, paid, you know, <br>A: A super duper salary of any kind.",
   'implicature': 'The participants should not be given any monetary incentive.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1031,7 +1031,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_16_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing movies they have seen recently. FATAL ATTRACTION is a movie.<br>A: FATAL ATTRACTION <laughter>. <br>B: Okay, <br>B: yeah. <br>A: It's probably my all time, - <br>A:  well  not all time favorite, -",
+  'scenario': "<strong>Context:</strong> A and B are discussing movies they have seen recently. FATAL ATTRACTION is a movie.<br>A: FATAL ATTRACTION <laughter>. <br>B: Okay, <br>B: yeah. <br>A: It's probably my all time, - <br>A:  well  not all time favorite, -",
   'implicature': "A's favorite movie is FATAL ATTRACTION.",
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1079,7 +1079,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_8_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are talking about their education.<br>A: And your daughter is going to be a sophomore. <br>B: That's correct. <br>B: I have two daughters,<br>B: but my oldest will be a sophomore.",
+  'scenario': "<strong>Context:</strong> A and B are talking about their education.<br>A: And your daughter is going to be a sophomore. <br>B: That's correct. <br>B: I have two daughters,<br>B: but my oldest will be a sophomore.",
   'implicature': 'B only has one daughter.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -1127,7 +1127,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_18_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing taxes.<br>A: well I can just tell you a little bit about taxes in Texas. <br>A: It's most interesting because we're one of the few, if, - <br>A:  does not have a, a state income tax --",
+  'scenario': "<strong>Context:</strong> A and B are discussing taxes.<br>A: well I can just tell you a little bit about taxes in Texas. <br>A: It's most interesting because we're one of the few, if, - <br>A:  does not have a, a state income tax --",
   'implicature': 'A knows of a few others state without state income tax.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1151,7 +1151,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0764_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing pets. A has a fish tank.<br>B: Do you have problems with them, uh, the fish eating each other? <br>A: No, <br>A: not really.',
+  'scenario': '<strong>Context:</strong> A and B are discussing pets. A has a fish tank.<br>B: Do you have problems with them, uh, the fish eating each other? <br>A: No, <br>A: not really.',
   'implicature': "The fish don't eat each other in A's tank.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1191,7 +1191,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_19738_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing hobbies.<br>A: So, the, the topic is hobbies <laughter>. <br>B: In your spare time. <br>A: Yeah. <br>A: Who has spare time <laughter>? <br>B: <Laughter>.',
+  'scenario': '<strong>Context:</strong> A and B are discussing hobbies.<br>A: So, the, the topic is hobbies <laughter>. <br>B: In your spare time. <br>A: Yeah. <br>A: Who has spare time <laughter>? <br>B: <Laughter>.',
   'implicature': ' A does not have much spare time and thus does not have any hobbies.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1247,7 +1247,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_18_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing taxes.<br>A: well I can just tell you a little bit about taxes in Texas. <br>A: It's most interesting because we're one of the few, if, - <br>A: I don't know of any other state,  um,  does not have a, a state income tax --",
+  'scenario': "<strong>Context:</strong> A and B are discussing taxes.<br>A: well I can just tell you a little bit about taxes in Texas. <br>A: It's most interesting because we're one of the few, if, - <br>A: I don't know of any other state,  um,  does not have a, a state income tax --",
   'implicature': 'A knows of a few others state without state income tax.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1271,7 +1271,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0764_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing pets. A has a fish tank.<br>B: Do you have problems with them, uh, the fish eating each other? <br>A: No, <br>A: not really. <br>A: Only if there's baby fish.",
+  'scenario': "<strong>Context:</strong> A and B are discussing pets. A has a fish tank.<br>B: Do you have problems with them, uh, the fish eating each other? <br>A: No, <br>A: not really. <br>A: Only if there's baby fish.",
   'implicature': "The fish don't eat each other in A's tank.",
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1311,7 +1311,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_19738_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing hobbies.<br>A: So, the, the topic is hobbies <laughter>. <br>B: In your spare time. <br>A: Yeah. <br>A: Who has spare time <laughter>? <br>B: <Laughter>.<br>A: I <noise> usually go do aerobics and read,',
+  'scenario': '<strong>Context:</strong> A and B are discussing hobbies.<br>A: So, the, the topic is hobbies <laughter>. <br>B: In your spare time. <br>A: Yeah. <br>A: Who has spare time <laughter>? <br>B: <Laughter>.<br>A: I <noise> usually go do aerobics and read,',
   'implicature': ' A does not have much spare time and thus does not have any hobbies.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1359,7 +1359,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_15766_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: I think it's a bigger problem. With the car pollution, anti-pollution devices, <br>B: I think, uh, air isn't as bad it once was,",
+  'scenario': "<strong>Context:</strong> A and B are discussing air pollution.<br>B: I think it's a bigger problem. With the car pollution, anti-pollution devices, <br>B: I think, uh, air isn't as bad it once was,",
   'implicature': 'The air quality has improved in every aspect.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1407,7 +1407,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_11684_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: It just makes the rain fall on the acid side <br>B: and after a period of time, I think that accumulates in, uh, trees because they take it up through their roots,',
+  'scenario': '<strong>Context:</strong> A and B are discussing air pollution.<br>B: It just makes the rain fall on the acid side <br>B: and after a period of time, I think that accumulates in, uh, trees because they take it up through their roots,',
   'implicature': 'The only way for trees to absorb the acid rain is from their roots.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1479,7 +1479,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_15766_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: I think it's a bigger problem. With the car pollution, anti-pollution devices, <br>B: I think, uh, air isn't as bad it once was, from the cars, because we certainly have plenty of cars in our area.",
+  'scenario': "<strong>Context:</strong> A and B are discussing air pollution.<br>B: I think it's a bigger problem. With the car pollution, anti-pollution devices, <br>B: I think, uh, air isn't as bad it once was, from the cars, because we certainly have plenty of cars in our area.",
   'implicature': 'The air quality has improved in every aspect.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -1527,7 +1527,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_11684_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: It just makes the rain fall on the acid side <br>B: and after a period of time, I think that accumulates in, uh, trees because they take it up through their roots, as well as it landing on the leaves, on surfaces,',
+  'scenario': '<strong>Context:</strong> A and B are discussing air pollution.<br>B: It just makes the rain fall on the acid side <br>B: and after a period of time, I think that accumulates in, uh, trees because they take it up through their roots, as well as it landing on the leaves, on surfaces,',
   'implicature': 'The only way for trees to absorb the acid rain is from their roots.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -1575,7 +1575,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_32508_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing a universal healthcare system funded through taxpayer contributions.<br>A: I know.  <br>A: And see that's the thing,  <br>A: that is the thing,  <br>A: now that I'm in my thirties now, and I have three kids - <br>A: and I mean, I'm very liberal.<br>A: I'm extremely liberal,",
+  'scenario': "<strong>Context:</strong> A and B are discussing a universal healthcare system funded through taxpayer contributions.<br>A: I know.  <br>A: And see that's the thing,  <br>A: that is the thing,  <br>A: now that I'm in my thirties now, and I have three kids - <br>A: and I mean, I'm very liberal.<br>A: I'm extremely liberal,",
   'implicature': 'A fully supports subsidizing universal healthcare.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1599,7 +1599,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_1436_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are talking about the effects of the Vietnam War.<br>A: What, what about the domestic effects <br>A: like I was thinking that maybe the most important effect it had was to make it, uh, possible  to, uh, criticize the government.',
+  'scenario': '<strong>Context:</strong> A and B are talking about the effects of the Vietnam War.<br>A: What, what about the domestic effects <br>A: like I was thinking that maybe the most important effect it had was to make it, uh, possible  to, uh, criticize the government.',
   'implicature': 'A believes that it was now possible, though not necessarily popular, to criticize the government.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1607,7 +1607,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0449_4858_utt@86_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing work benefits.<br>B: the other thing that they allow you to do here while you are working is, is consult for, um, you know, other companies. <br>A: Oh, yeah? <br>B: Um, so that's, that kind of helps out in terms of,<br>A: Uh-huh. <br>B: you know, keeping up-to-date with contacts in industry. <br>A: Yeah.",
+  'scenario': "<strong>Context:</strong> A and B are discussing work benefits.<br>B: the other thing that they allow you to do here while you are working is, is consult for, um, you know, other companies. <br>A: Oh, yeah? <br>B: Um, so that's, that kind of helps out in terms of,<br>A: Uh-huh. <br>B: you know, keeping up-to-date with contacts in industry. <br>A: Yeah.",
   'implicature': 'B enjoys working for companies because they can keep in touch with contacts.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1695,7 +1695,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_6_wo_cancellation'
 }],
 [{
-  'scenario': "<br><strong>Context:</strong> A and B are discussing a universal healthcare system funded through taxpayer contributions.<br>A: I know.  <br>A: And see that's the thing,  <br>A: that is the thing,  <br>A: now that I'm in my thirties now, and I have three kids - <br>A: and I mean, I'm very liberal.<br>A: I'm extremely liberal,  <br>A: and, uh, I, - <br>A: but now I just in the last couple of years. I have gotten to the point where I am saying I just cannot afford to pay anymore,<br>B: Uh-huh.<br>A: to help people out.",
+  'scenario': "<strong>Context:</strong> A and B are discussing a universal healthcare system funded through taxpayer contributions.<br>A: I know.  <br>A: And see that's the thing,  <br>A: that is the thing,  <br>A: now that I'm in my thirties now, and I have three kids - <br>A: and I mean, I'm very liberal.<br>A: I'm extremely liberal,  <br>A: and, uh, I, - <br>A: but now I just in the last couple of years. I have gotten to the point where I am saying I just cannot afford to pay anymore,<br>B: Uh-huh.<br>A: to help people out.",
   'implicature': 'A fully supports subsidizing universal healthcare.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1719,7 +1719,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_1436_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are talking about the effects of the Vietnam War.<br>A: What, what about the domestic effects <br>A: like I was thinking that maybe the most important effect it had was to make it, uh, possible and even popular to, uh, criticize the government.',
+  'scenario': '<strong>Context:</strong> A and B are talking about the effects of the Vietnam War.<br>A: What, what about the domestic effects <br>A: like I was thinking that maybe the most important effect it had was to make it, uh, possible and even popular to, uh, criticize the government.',
   'implicature': 'A believes that it was now possible, though not necessarily popular, to criticize the government.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1727,7 +1727,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0449_4858_utt@86_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing work benefits.<br>B: the other thing that they allow you to do here while you are working is, is consult for, um, you know, other companies. <br>A: Oh, yeah? <br>B: Um, so that's, that kind of helps out in terms of,<br>A: Uh-huh. <br>B: you know, keeping up-to-date with contacts in industry. <br>A: Yeah. <br>B:   You know,   in case,  <br>A:   help a lot. <br>B:  you know,  in case  you ever need to bail out <laughter>.",
+  'scenario': "<strong>Context:</strong> A and B are discussing work benefits.<br>B: the other thing that they allow you to do here while you are working is, is consult for, um, you know, other companies. <br>A: Oh, yeah? <br>B: Um, so that's, that kind of helps out in terms of,<br>A: Uh-huh. <br>B: you know, keeping up-to-date with contacts in industry. <br>A: Yeah. <br>B:   You know,   in case,  <br>A:   help a lot. <br>B:  you know,  in case  you ever need to bail out <laughter>.",
   'implicature': 'B enjoys working for companies because they can keep in touch with contacts.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -1855,7 +1855,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_37_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: And we play in the summertime out here. <br>A: We get a mixed league in, - <br>A: and that's what I'm trying to get her ready for. <br>A: It's going to start, well, when we change time back whenever that is -- <br>B: Uh-huh.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: And we play in the summertime out here. <br>A: We get a mixed league in, - <br>A: and that's what I'm trying to get her ready for. <br>A: It's going to start, well, when we change time back whenever that is -- <br>B: Uh-huh.",
   'implicature': 'A has no idea when the time change will happen.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1863,7 +1863,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0460_2331_utt@182_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing recycling.<br>A: Where do you take your cans? <br>B: Well, as you say, it takes a while to build it up. <br>B: Since we've had the crusher all summer, we <breathing>, I guess we just now maybe have a bag full that we haven't ta-,",
+  'scenario': "<strong>Context:</strong> A and B are discussing recycling.<br>A: Where do you take your cans? <br>B: Well, as you say, it takes a while to build it up. <br>B: Since we've had the crusher all summer, we <breathing>, I guess we just now maybe have a bag full that we haven't ta-,",
   'implicature': 'B has not taken their cans out yet this summer.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1871,7 +1871,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0055_3156_utt@113_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing a new public service program.<br>A: and when you're writing up budgets, you wonder, okay, how much money do we need. <br>A: Well, you need X number dollars for the recipients <br>A: but you need X number dollars to administer the program. <br>A: Well just ridiculous. <br>B: Yeah. <br>A: This is ridiculous. <br>B: It's sad.",
+  'scenario': "<strong>Context:</strong> A and B are discussing a new public service program.<br>A: and when you're writing up budgets, you wonder, okay, how much money do we need. <br>A: Well, you need X number dollars for the recipients <br>A: but you need X number dollars to administer the program. <br>A: Well just ridiculous. <br>B: Yeah. <br>A: This is ridiculous. <br>B: It's sad.",
   'implicature': 'A finds the state of budgets to be laughable.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1975,7 +1975,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_37_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: And we play in the summertime out here. <br>A: We get a mixed league in, - <br>A: and that's what I'm trying to get her ready for. <br>A: It's going to start, well, when we change time back whenever that is -- <br>B: Uh-huh. <br>A: -- next month, I guess,",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: And we play in the summertime out here. <br>A: We get a mixed league in, - <br>A: and that's what I'm trying to get her ready for. <br>A: It's going to start, well, when we change time back whenever that is -- <br>B: Uh-huh. <br>A: -- next month, I guess,",
   'implicature': 'A has no idea when the time change will happen.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1983,7 +1983,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0460_2331_utt@182_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing recycling.<br>A: Where do you take your cans? <br>B: Well, as you say, it takes a while to build it up. <br>B: Since we've had the crusher all summer, we <breathing>, I guess we just now maybe have a bag full that we haven't ta-,  oh,  - <br>B: I think the kids, when we were on vacation, they said they did take them to  a,  a  recycling place, probably at one of the li-,",
+  'scenario': "<strong>Context:</strong> A and B are discussing recycling.<br>A: Where do you take your cans? <br>B: Well, as you say, it takes a while to build it up. <br>B: Since we've had the crusher all summer, we <breathing>, I guess we just now maybe have a bag full that we haven't ta-,  oh,  - <br>B: I think the kids, when we were on vacation, they said they did take them to  a,  a  recycling place, probably at one of the li-,",
   'implicature': 'B has not taken their cans out yet this summer.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -1991,7 +1991,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0055_3156_utt@113_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing a new public service program.<br>A: and when you're writing up budgets, you wonder, okay, how much money do we need. <br>A: Well, you need X number dollars for the recipients <br>A: but you need X number dollars to administer the program. <br>A: Well just ridiculous. <br>B: Yeah. <br>A: This is ridiculous. <br>B: It's sad. <br>A: It is,  <br>A: it's pathetic.",
+  'scenario': "<strong>Context:</strong> A and B are discussing a new public service program.<br>A: and when you're writing up budgets, you wonder, okay, how much money do we need. <br>A: Well, you need X number dollars for the recipients <br>A: but you need X number dollars to administer the program. <br>A: Well just ridiculous. <br>B: Yeah. <br>A: This is ridiculous. <br>B: It's sad. <br>A: It is,  <br>A: it's pathetic.",
   'implicature': 'A finds the state of budgets to be laughable.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2367,7 +2367,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_0_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing movies they have seen recently. OBJECT OF BEAUTY and DEFENDING YOUR LIFE are movies.<br>B: Another one I saw is called the OBJECT OF BEAUTY. <br>B: I don't re-, recommend that, <br>A: <Clicking>.",
+  'scenario': "<strong>Context:</strong> A and B are discussing movies they have seen recently. OBJECT OF BEAUTY and DEFENDING YOUR LIFE are movies.<br>B: Another one I saw is called the OBJECT OF BEAUTY. <br>B: I don't re-, recommend that, <br>A: <Clicking>.",
   'implicature': 'OBJECT OF BEAUTY was not a good film.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2391,7 +2391,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0060_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: It's safer to be around a nuclear plant then it is to be around a coal plant. <br>B: Many more deaths have occurred in and dealing with coal plants then ever around nuclear plants. <br>B: It's kind of funny because people are just petrified, , at the thought of nuclear.",
+  'scenario': "<strong>Context:</strong> A and B are discussing air pollution.<br>B: It's safer to be around a nuclear plant then it is to be around a coal plant. <br>B: Many more deaths have occurred in and dealing with coal plants then ever around nuclear plants. <br>B: It's kind of funny because people are just petrified, , at the thought of nuclear.",
   'implicature': 'Everyone in the population is petrified about nuclear.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2487,7 +2487,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_0_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing movies they have seen recently. OBJECT OF BEAUTY and DEFENDING YOUR LIFE are movies.<br>B: Another one I saw is called the OBJECT OF BEAUTY. <br>B: I don't re-, recommend that, <br>A: <Clicking>.<br>B: as much as,  uh,  DEFENDING YOUR LIFE,",
+  'scenario': "<strong>Context:</strong> A and B are discussing movies they have seen recently. OBJECT OF BEAUTY and DEFENDING YOUR LIFE are movies.<br>B: Another one I saw is called the OBJECT OF BEAUTY. <br>B: I don't re-, recommend that, <br>A: <Clicking>.<br>B: as much as,  uh,  DEFENDING YOUR LIFE,",
   'implicature': 'OBJECT OF BEAUTY was not a good film.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -2511,7 +2511,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0060_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: It's safer to be around a nuclear plant then it is to be around a coal plant. <br>B: Many more deaths have occurred in and dealing with coal plants then ever around nuclear plants. <br>B: It's kind of funny because people are just petrified, at least some are, at the thought of nuclear.",
+  'scenario': "<strong>Context:</strong> A and B are discussing air pollution.<br>B: It's safer to be around a nuclear plant then it is to be around a coal plant. <br>B: Many more deaths have occurred in and dealing with coal plants then ever around nuclear plants. <br>B: It's kind of funny because people are just petrified, at least some are, at the thought of nuclear.",
   'implicature': 'Everyone in the population is petrified about nuclear.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -2551,7 +2551,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_14_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>A: I think I dislike the phone number part the worst. <br>A: I mean, it's, it's one thing to get junk mail because you can, you can just put it right in the trash, <br>A: but it's the phone calls, <br>A: and, you know, usually when they call you, it's going to be when you s-, right when you sit down to dinner because they know, they pretty much know that you're at work all day <br>A: and they call you right when, when you've just gotten home from work. <br>A: The last thing you want is a phone call <laughter>",
+  'scenario': "<strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>A: I think I dislike the phone number part the worst. <br>A: I mean, it's, it's one thing to get junk mail because you can, you can just put it right in the trash, <br>A: but it's the phone calls, <br>A: and, you know, usually when they call you, it's going to be when you s-, right when you sit down to dinner because they know, they pretty much know that you're at work all day <br>A: and they call you right when, when you've just gotten home from work. <br>A: The last thing you want is a phone call <laughter>",
   'implicature': 'A does not want to get a phone call when they get back home from work.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2583,7 +2583,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_2041_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing healthcare costs.<br>B: you guys I believe in Texas you don't have state tax, do you? <br>B: we have, we have federal income tax. <br>A: Yeah.",
+  'scenario': "<strong>Context:</strong> A and B are discussing healthcare costs.<br>B: you guys I believe in Texas you don't have state tax, do you? <br>B: we have, we have federal income tax. <br>A: Yeah.",
   'implicature': "Texas has federal tax, but it doesn't have state tax.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2631,7 +2631,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_4_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I lived in the country for several years, <br>B: and living in the city is a whole different --<br>A: Oh yeah. <br>B: -- uh, social structure <br>B: but, uh, -<br>A: Well, I got some friends that, uh, -',
+  'scenario': '<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I lived in the country for several years, <br>B: and living in the city is a whole different --<br>A: Oh yeah. <br>B: -- uh, social structure <br>B: but, uh, -<br>A: Well, I got some friends that, uh, -',
   'implicature': 'A is describing something that applies to more than one friend.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2671,7 +2671,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_14_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>A: I think I dislike the phone number part the worst. <br>A: I mean, it's, it's one thing to get junk mail because you can, you can just put it right in the trash, <br>A: but it's the phone calls, <br>A: and, you know, usually when they call you, it's going to be when you s-, right when you sit down to dinner because they know, they pretty much know that you're at work all day <br>A: and they call you right when, when you've just gotten home from work. <br>A: The last thing you want is a phone call <laughter> unless it's,  you know,  something halfway enjoyable,",
+  'scenario': "<strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>A: I think I dislike the phone number part the worst. <br>A: I mean, it's, it's one thing to get junk mail because you can, you can just put it right in the trash, <br>A: but it's the phone calls, <br>A: and, you know, usually when they call you, it's going to be when you s-, right when you sit down to dinner because they know, they pretty much know that you're at work all day <br>A: and they call you right when, when you've just gotten home from work. <br>A: The last thing you want is a phone call <laughter> unless it's,  you know,  something halfway enjoyable,",
   'implicature': 'A does not want to get a phone call when they get back home from work.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2703,7 +2703,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_2041_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing healthcare costs.<br>B: you guys I believe in Texas you don't have state tax, do you? <br>B: we have, we have federal income tax. <br>A: Yeah. <br>B: State income tax, local income tax.",
+  'scenario': "<strong>Context:</strong> A and B are discussing healthcare costs.<br>B: you guys I believe in Texas you don't have state tax, do you? <br>B: we have, we have federal income tax. <br>A: Yeah. <br>B: State income tax, local income tax.",
   'implicature': "Texas has federal tax, but it doesn't have state tax.",
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -2751,7 +2751,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_4_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I lived in the country for several years, <br>B: and living in the city is a whole different --<br>A: Oh yeah. <br>B: -- uh, social structure <br>B: but, uh, -<br>A: Well, I got some friends that, uh, - <br>A: seems like he went to school at  like  DeVry.',
+  'scenario': '<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I lived in the country for several years, <br>B: and living in the city is a whole different --<br>A: Oh yeah. <br>B: -- uh, social structure <br>B: but, uh, -<br>A: Well, I got some friends that, uh, - <br>A: seems like he went to school at  like  DeVry.',
   'implicature': 'A is describing something that applies to more than one friend.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2775,7 +2775,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_32_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>A: I think there's more pressure like on both parents to work, and things like that than there used to be <br>A: and, -<br>B: Hello.",
+  'scenario': "<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>A: I think there's more pressure like on both parents to work, and things like that than there used to be <br>A: and, -<br>B: Hello.",
   'implicature': 'B cannot hear A anymore.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2839,7 +2839,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_23_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how they get their news.<br>B: I think I get most of my news, uh, in headlines from the radio, <br>B: and then I follow-up by reading the newspaper and news magazines about things that attract my attention. <br>A: Well, I, I do about the same, I guess, but in a different fashion. <br>A: I, I, I'm from New York originally <br>A: and now that I live in Florida, -",
+  'scenario': "<strong>Context:</strong> A and B are discussing how they get their news.<br>B: I think I get most of my news, uh, in headlines from the radio, <br>B: and then I follow-up by reading the newspaper and news magazines about things that attract my attention. <br>A: Well, I, I do about the same, I guess, but in a different fashion. <br>A: I, I, I'm from New York originally <br>A: and now that I live in Florida, -",
   'implicature': 'A no longer lives in New York.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2895,7 +2895,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_9988_wo_cancellation'
 }],
 [{
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>A: I think there's more pressure like on both parents to work, and things like that than there used to be <br>A: and, -<br>B: Hello. <br>B: Somebody's at the door.",
+  'scenario': "<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>A: I think there's more pressure like on both parents to work, and things like that than there used to be <br>A: and, -<br>B: Hello. <br>B: Somebody's at the door.",
   'implicature': 'B cannot hear A anymore.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -2959,7 +2959,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_23_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how they get their news.<br>B: I think I get most of my news, uh, in headlines from the radio, <br>B: and then I follow-up by reading the newspaper and news magazines about things that attract my attention. <br>A: Well, I, I do about the same, I guess, but in a different fashion. <br>A: I, I, I'm from New York originally <br>A: and now that I live in Florida, - <br>A: I live in the Florida  in the winter and then go back up north  in the,  in the  summertime --",
+  'scenario': "<strong>Context:</strong> A and B are discussing how they get their news.<br>B: I think I get most of my news, uh, in headlines from the radio, <br>B: and then I follow-up by reading the newspaper and news magazines about things that attract my attention. <br>A: Well, I, I do about the same, I guess, but in a different fashion. <br>A: I, I, I'm from New York originally <br>A: and now that I live in Florida, - <br>A: I live in the Florida  in the winter and then go back up north  in the,  in the  summertime --",
   'implicature': 'A no longer lives in New York.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3031,7 +3031,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_31_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I never broke a club or anything, <br>A: but, you know --<br>B: Yeah. <br>A: -- I'd get upset about it sometimes, <br>A: and now I guess, you know, being in my forties, I just kind of mellowed out a little bit. <br>B: Sure.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I never broke a club or anything, <br>A: but, you know --<br>B: Yeah. <br>A: -- I'd get upset about it sometimes, <br>A: and now I guess, you know, being in my forties, I just kind of mellowed out a little bit. <br>B: Sure.",
   'implicature': 'A still gets upset but not as much as they used to.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3039,7 +3039,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0460_2331_utt@258_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I hav-, I haven't played in about two years,",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I hav-, I haven't played in about two years,",
   'implicature': 'The last time A played golf was over two years ago.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3063,7 +3063,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_46_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing woodworking as a hobby. MFA stands for Master of Fine Arts.<br>B: Huh. So you --<br>A: -- but, -<br>B: -- have a M F A in, in what division of art? <br>A: Well, I, I actually have a Masters of art',
+  'scenario': '<strong>Context:</strong> A and B are discussing woodworking as a hobby. MFA stands for Master of Fine Arts.<br>B: Huh. So you --<br>A: -- but, -<br>B: -- have a M F A in, in what division of art? <br>A: Well, I, I actually have a Masters of art',
   'implicature': "A's degree is a general arts degree.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3087,7 +3087,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_12661_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how they get their news.<br>B: So we subscribe to the NEW YORK TIMES --<br>A: Yeah. <br>B: -- and the WALL STREET JOURNAL --<br>A: Yeah. <br>B: -- and uh, MERCURY NEWS. <br>A: Well that's another one I read, <br>A: I forgot that.",
+  'scenario': "<strong>Context:</strong> A and B are discussing how they get their news.<br>B: So we subscribe to the NEW YORK TIMES --<br>A: Yeah. <br>B: -- and the WALL STREET JOURNAL --<br>A: Yeah. <br>B: -- and uh, MERCURY NEWS. <br>A: Well that's another one I read, <br>A: I forgot that.",
   'implicature': 'A reads the Mercury News but not the other publications that B has mentioned.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3095,7 +3095,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0479_2910_utt@128_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing international trade.<br>A: I mean, here it is, <br>A: and we've got, we've got to go into partnership with the Japanese to build cars. <br>B: Yeah. <br>A: You know <laughter>. And they only did it because they, I guess they were embarrassed -- <br>B: Yeah.",
+  'scenario': "<strong>Context:</strong> A and B are discussing international trade.<br>A: I mean, here it is, <br>A: and we've got, we've got to go into partnership with the Japanese to build cars. <br>B: Yeah. <br>A: You know <laughter>. And they only did it because they, I guess they were embarrassed -- <br>B: Yeah.",
   'implicature': 'The Japanese partnered with the U.S. because they felt sorry for the U.S.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3151,7 +3151,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_31_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I never broke a club or anything, <br>A: but, you know --<br>B: Yeah. <br>A: -- I'd get upset about it sometimes, <br>A: and now I guess, you know, being in my forties, I just kind of mellowed out a little bit. <br>B: Sure. <br>A: I don't get upset any more.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I never broke a club or anything, <br>A: but, you know --<br>B: Yeah. <br>A: -- I'd get upset about it sometimes, <br>A: and now I guess, you know, being in my forties, I just kind of mellowed out a little bit. <br>B: Sure. <br>A: I don't get upset any more.",
   'implicature': 'A still gets upset but not as much as they used to.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3159,7 +3159,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0460_2331_utt@258_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I hav-, I haven't played in about two years, <br>A:  and then  I went out two weeks ago with the guys here.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>A: I hav-, I haven't played in about two years, <br>A:  and then  I went out two weeks ago with the guys here.",
   'implicature': 'The last time A played golf was over two years ago.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3183,7 +3183,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_46_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing woodworking as a hobby. MFA stands for Master of Fine Arts.<br>B: Huh. So you --<br>A: -- but, -<br>B: -- have a M F A in, in what division of art? <br>A: Well, I, I actually have a Masters of art <br>A:  and  it's in art education.",
+  'scenario': "<strong>Context:</strong> A and B are discussing woodworking as a hobby. MFA stands for Master of Fine Arts.<br>B: Huh. So you --<br>A: -- but, -<br>B: -- have a M F A in, in what division of art? <br>A: Well, I, I actually have a Masters of art <br>A:  and  it's in art education.",
   'implicature': "A's degree is a general arts degree.",
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3207,7 +3207,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_12661_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how they get their news.<br>B: So we subscribe to the NEW YORK TIMES --<br>A: Yeah. <br>B: -- and the WALL STREET JOURNAL --<br>A: Yeah. <br>B: -- and uh, MERCURY NEWS. <br>A: Well that's another one I read, <br>A: I forgot that. <br>A: I read the WALL STREET JOURNAL,",
+  'scenario': "<strong>Context:</strong> A and B are discussing how they get their news.<br>B: So we subscribe to the NEW YORK TIMES --<br>A: Yeah. <br>B: -- and the WALL STREET JOURNAL --<br>A: Yeah. <br>B: -- and uh, MERCURY NEWS. <br>A: Well that's another one I read, <br>A: I forgot that. <br>A: I read the WALL STREET JOURNAL,",
   'implicature': 'A reads the Mercury News but not the other publications that B has mentioned.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3215,7 +3215,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0479_2910_utt@128_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing international trade.<br>A: I mean, here it is, <br>A: and we've got, we've got to go into partnership with the Japanese to build cars. <br>B: Yeah. <br>A: You know <laughter>. And they only did it because they, I guess they were embarrassed -- <br>B: Yeah. <br>A: -- that they're so good at it <laughter>.",
+  'scenario': "<strong>Context:</strong> A and B are discussing international trade.<br>A: I mean, here it is, <br>A: and we've got, we've got to go into partnership with the Japanese to build cars. <br>B: Yeah. <br>A: You know <laughter>. And they only did it because they, I guess they were embarrassed -- <br>B: Yeah. <br>A: -- that they're so good at it <laughter>.",
   'implicature': 'The Japanese partnered with the U.S. because they felt sorry for the U.S.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3255,7 +3255,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_9_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>B: And, uh, or I will just let the phone ring three or four times and know that it will forward to, uh, to the office. <br>A: Uh-huh. <br>B: And so it's, you know, it makes it convenient. <br>B: But at the office when I, you know, - <br>B: we can, uh, on our system you can just route it directly to the answering service.",
+  'scenario': "<strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>B: And, uh, or I will just let the phone ring three or four times and know that it will forward to, uh, to the office. <br>A: Uh-huh. <br>B: And so it's, you know, it makes it convenient. <br>B: But at the office when I, you know, - <br>B: we can, uh, on our system you can just route it directly to the answering service.",
   'implicature': 'B is only speaking about how it works on their phone system.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3303,7 +3303,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_1_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing places to do physical activity.<br>A: I've noticed people doing that down here, too. <br>A: I'll be in town or something <br>A: and people will walk around the mall. <br>B: And it's safe. <br>A: It, it is fairly safe.",
+  'scenario': "<strong>Context:</strong> A and B are discussing places to do physical activity.<br>A: I've noticed people doing that down here, too. <br>A: I'll be in town or something <br>A: and people will walk around the mall. <br>B: And it's safe. <br>A: It, it is fairly safe.",
   'implicature': "There's no risk of going to the mall to exercise.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3343,7 +3343,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_32_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess I'm like my parents. <br>B: The younger generation gets away with hell, <br>B: but, uh, -<br>A: <Laughter> Yeah. <br>B: Well, it seems to me that civic freedoms are more restricted",
+  'scenario': "<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess I'm like my parents. <br>B: The younger generation gets away with hell, <br>B: but, uh, -<br>A: <Laughter> Yeah. <br>B: Well, it seems to me that civic freedoms are more restricted",
   'implicature': 'B believes that the years passing have caused civic freedoms to become more restricted.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3359,7 +3359,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_41_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: You interested in woodworking? <br>B: Yeah. <br>B: Actually, I, uh, I guess I am <laughter>. <br>B: Um, it just seems kind of funny that this is a topic of discussion. <br>B: Uh, I do, uh, some, uh, woodworking myself <noise>.',
+  'scenario': '<strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: You interested in woodworking? <br>B: Yeah. <br>B: Actually, I, uh, I guess I am <laughter>. <br>B: Um, it just seems kind of funny that this is a topic of discussion. <br>B: Uh, I do, uh, some, uh, woodworking myself <noise>.',
   'implicature': 'B is not currently doing any woodworking but B does so from time to time.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3375,7 +3375,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_15_wo_cancellation'
 }],
 [{
-  'scenario': "<br><strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>B: And, uh, or I will just let the phone ring three or four times and know that it will forward to, uh, to the office. <br>A: Uh-huh. <br>B: And so it's, you know, it makes it convenient. <br>B: But at the office when I, you know, - <br>B: we can, uh, on our system,  and I imagine on most systems <breathing> you can just route it directly to the answering service.",
+  'scenario': "<strong>Context:</strong> A and B are discussing telemarketers calling them at home.<br>B: And, uh, or I will just let the phone ring three or four times and know that it will forward to, uh, to the office. <br>A: Uh-huh. <br>B: And so it's, you know, it makes it convenient. <br>B: But at the office when I, you know, - <br>B: we can, uh, on our system,  and I imagine on most systems <breathing> you can just route it directly to the answering service.",
   'implicature': 'B is only speaking about how it works on their phone system.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -3423,7 +3423,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_1_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing places to do physical activity.<br>A: I've noticed people doing that down here, too. <br>A: I'll be in town or something <br>A: and people will walk around the mall. <br>B: And it's safe. <br>A: It, it is fairly safe. <br>B: That's,  uh,   you know,  inside the mall  <br>B: may be not safe going to the parking garage <laughter>.",
+  'scenario': "<strong>Context:</strong> A and B are discussing places to do physical activity.<br>A: I've noticed people doing that down here, too. <br>A: I'll be in town or something <br>A: and people will walk around the mall. <br>B: And it's safe. <br>A: It, it is fairly safe. <br>B: That's,  uh,   you know,  inside the mall  <br>B: may be not safe going to the parking garage <laughter>.",
   'implicature': "There's no risk of going to the mall to exercise.",
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -3463,7 +3463,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_32_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess I'm like my parents. <br>B: The younger generation gets away with hell, <br>B: but, uh, -<br>A: <Laughter> Yeah. <br>B: Well, it seems to me that civic freedoms are more restricted <br>B:  but  that may just be because I've changed.",
+  'scenario': "<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess I'm like my parents. <br>B: The younger generation gets away with hell, <br>B: but, uh, -<br>A: <Laughter> Yeah. <br>B: Well, it seems to me that civic freedoms are more restricted <br>B:  but  that may just be because I've changed.",
   'implicature': 'B believes that the years passing have caused civic freedoms to become more restricted.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -3479,7 +3479,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_41_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: You interested in woodworking? <br>B: Yeah. <br>B: Actually, I, uh, I guess I am <laughter>. <br>B: Um, it just seems kind of funny that this is a topic of discussion. <br>B: Uh, I do, uh, some, uh, woodworking myself <noise>. <br>B:  Uh,  in fact, I'm in the middle of a project right now making a bed for my son.",
+  'scenario': "<strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: You interested in woodworking? <br>B: Yeah. <br>B: Actually, I, uh, I guess I am <laughter>. <br>B: Um, it just seems kind of funny that this is a topic of discussion. <br>B: Uh, I do, uh, some, uh, woodworking myself <noise>. <br>B:  Uh,  in fact, I'm in the middle of a project right now making a bed for my son.",
   'implicature': 'B is not currently doing any woodworking but B does so from time to time.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -3503,7 +3503,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_35_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing problems in the cities they live in.<br>B: They've had like forty-eight murders since the beginning of the year. <br>A: Really? <br>B: And over half of it has been drug related. <br>A: Um. Well, here, uh, I'm not sure how many Dallas has had. <br>A: I've, uh, - <br>A: Houston is averaging about two a week",
+  'scenario': "<strong>Context:</strong> A and B are discussing problems in the cities they live in.<br>B: They've had like forty-eight murders since the beginning of the year. <br>A: Really? <br>B: And over half of it has been drug related. <br>A: Um. Well, here, uh, I'm not sure how many Dallas has had. <br>A: I've, uh, - <br>A: Houston is averaging about two a week",
   'implicature': 'Houston is averaging no more than two murders a week.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3623,7 +3623,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_35_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing problems in the cities they live in.<br>B: They've had like forty-eight murders since the beginning of the year. <br>A: Really? <br>B: And over half of it has been drug related. <br>A: Um. Well, here, uh, I'm not sure how many Dallas has had. <br>A: I've, uh, - <br>A: Houston is averaging about two a week or three or four,",
+  'scenario': "<strong>Context:</strong> A and B are discussing problems in the cities they live in.<br>B: They've had like forty-eight murders since the beginning of the year. <br>A: Really? <br>B: And over half of it has been drug related. <br>A: Um. Well, here, uh, I'm not sure how many Dallas has had. <br>A: I've, uh, - <br>A: Houston is averaging about two a week or three or four,",
   'implicature': 'Houston is averaging no more than two murders a week.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3775,7 +3775,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0445_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing healthcare costs.<br>A: I think the problem with the skyrocketing cost right now is the insurance companies because,<br>B: Oh, yeah. <br>A: I don't see doctors getting real rich,",
+  'scenario': "<strong>Context:</strong> A and B are discussing healthcare costs.<br>A: I think the problem with the skyrocketing cost right now is the insurance companies because,<br>B: Oh, yeah. <br>A: I don't see doctors getting real rich,",
   'implicature': 'The insurance companies are the only ones reaping the benefits of the increase in cost.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3823,7 +3823,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_6_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I'm an artist. <br>B: Oh, okay. <br>A: And I'm very handy <br>A: and, you know, if I touch it, it turns into something <laughter> us-, -- <br>B: That's great.",
+  'scenario': "<strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I'm an artist. <br>B: Oh, okay. <br>A: And I'm very handy <br>A: and, you know, if I touch it, it turns into something <laughter> us-, -- <br>B: That's great.",
   'implicature': 'Whenever A works on something it turns out well.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3839,7 +3839,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_38_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I've done some silver jewelry making <br>A: and I kind of, - <br>A: once I get so-, you know, really pretty good at something, I want to try something else <laughter>. <br>B: Yeah. <br>B: Kind of jack of all trades, master of none. <br>A: Yeah,",
+  'scenario': "<strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I've done some silver jewelry making <br>A: and I kind of, - <br>A: once I get so-, you know, really pretty good at something, I want to try something else <laughter>. <br>B: Yeah. <br>B: Kind of jack of all trades, master of none. <br>A: Yeah,",
   'implicature': 'A is not an expert in anything.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3895,7 +3895,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0445_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing healthcare costs.<br>A: I think the problem with the skyrocketing cost right now is the insurance companies because,<br>B: Oh, yeah. <br>A: I don't see doctors getting real rich, <br>A:  and  I think hospitals do make money,  but not nearly as much as insurance companies.",
+  'scenario': "<strong>Context:</strong> A and B are discussing healthcare costs.<br>A: I think the problem with the skyrocketing cost right now is the insurance companies because,<br>B: Oh, yeah. <br>A: I don't see doctors getting real rich, <br>A:  and  I think hospitals do make money,  but not nearly as much as insurance companies.",
   'implicature': 'The insurance companies are the only ones reaping the benefits of the increase in cost.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3943,7 +3943,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_6_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I'm an artist. <br>B: Oh, okay. <br>A: And I'm very handy <br>A: and, you know, if I touch it, it turns into something <laughter> us-, -- <br>B: That's great. <br>A: -- usually.",
+  'scenario': "<strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I'm an artist. <br>B: Oh, okay. <br>A: And I'm very handy <br>A: and, you know, if I touch it, it turns into something <laughter> us-, -- <br>B: That's great. <br>A: -- usually.",
   'implicature': 'Whenever A works on something it turns out well.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3959,7 +3959,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_38_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I've done some silver jewelry making <br>A: and I kind of, - <br>A: once I get so-, you know, really pretty good at something, I want to try something else <laughter>. <br>B: Yeah. <br>B: Kind of jack of all trades, master of none. <br>A: Yeah, <br>A:  well  no,  <br>A:  actually,  I get good enough to sell it or have people say  oh  wow,",
+  'scenario': "<strong>Context:</strong> A and B are discussing woodworking as a hobby.<br>A: I've done some silver jewelry making <br>A: and I kind of, - <br>A: once I get so-, you know, really pretty good at something, I want to try something else <laughter>. <br>B: Yeah. <br>B: Kind of jack of all trades, master of none. <br>A: Yeah, <br>A:  well  no,  <br>A:  actually,  I get good enough to sell it or have people say  oh  wow,",
   'implicature': 'A is not an expert in anything.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3983,7 +3983,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_22_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess, when I was growing up, it was, it was still the ideal to get a, get a home and buy house, <br>B: and these days you see a lot of people living in apartments -- <br>A: Yeah.',
+  'scenario': '<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess, when I was growing up, it was, it was still the ideal to get a, get a home and buy house, <br>B: and these days you see a lot of people living in apartments -- <br>A: Yeah.',
   'implicature': 'People start by living in apartments and then eventually move on to houses.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3999,7 +3999,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_1128_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: as, as the friends start getting married and things like that, we've made a tradition of, uh, having a, a Thursday, um, - <br>B: well, have, have probably like, like a Thursday night bachelor party and a Friday golf day before the wedding. -<br>A: Yeah. <br>B: And, uh, so, it, -",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: as, as the friends start getting married and things like that, we've made a tradition of, uh, having a, a Thursday, um, - <br>B: well, have, have probably like, like a Thursday night bachelor party and a Friday golf day before the wedding. -<br>A: Yeah. <br>B: And, uh, so, it, -",
   'implicature': "When B's friends around the area get married, they go through this tradition of golfing on Fridays.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -4023,7 +4023,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_12_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: I've, uh, oh, - <br>B: just recently I got married <br>B: and we bought a house. <br>B: We're about fifty yards from the golf course -- <br>A: Oh.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: I've, uh, oh, - <br>B: just recently I got married <br>B: and we bought a house. <br>B: We're about fifty yards from the golf course -- <br>A: Oh.",
   'implicature': 'B goes to play golf at the golf course near their house.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -4047,7 +4047,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_10562_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing job losses.<br>B: And, and they all lost their jobs. <br>A: Sure, <br>A: and, and -- <br>B: And it's like , you know. -<br>A: -- and that's really what happened to the steel industry in this country. <br>B: Yeah.",
+  'scenario': "<strong>Context:</strong> A and B are discussing job losses.<br>B: And, and they all lost their jobs. <br>A: Sure, <br>A: and, and -- <br>B: And it's like , you know. -<br>A: -- and that's really what happened to the steel industry in this country. <br>B: Yeah.",
   'implicature': 'The job loss only happened to the steel industry.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -4071,7 +4071,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_11_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: I can't hear you at all for all this static. <br>A: Oh. <throat_clearing> <noise> I don't know what to, <laughter> - <br>A: usually it's the other phone I have trouble with. <br>A: It must just,<br>B: </Static>.<br>A: be on the line. <br>A: Can you hear me? <br>B: Now I can again. <br>A: Okay. <br>B: <Static>.",
+  'scenario': "<strong>Context:</strong> A and B are discussing air pollution.<br>B: I can't hear you at all for all this static. <br>A: Oh. <throat_clearing> <noise> I don't know what to, <laughter> - <br>A: usually it's the other phone I have trouble with. <br>A: It must just,<br>B: </Static>.<br>A: be on the line. <br>A: Can you hear me? <br>B: Now I can again. <br>A: Okay. <br>B: <Static>.",
   'implicature': 'A believes that the static in the call is due to the line and not the phone.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -4103,7 +4103,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_22_w_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess, when I was growing up, it was, it was still the ideal to get a, get a home and buy house, <br>B: and these days you see a lot of people living in apartments -- <br>A: Yeah. <br>B: -- forever --',
+  'scenario': '<strong>Context:</strong> A and B are discussing how things have changed over the last 120 years.<br>B: I guess, when I was growing up, it was, it was still the ideal to get a, get a home and buy house, <br>B: and these days you see a lot of people living in apartments -- <br>A: Yeah. <br>B: -- forever --',
   'implicature': 'People start by living in apartments and then eventually move on to houses.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -4119,7 +4119,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_1128_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: as, as the friends start getting married and things like that, we've made a tradition of, uh, having a, a Thursday, um, - <br>B: well, have, have probably like, like a Thursday night bachelor party and a Friday golf day before the wedding. -<br>A: Yeah. <br>B: And, uh, so, it, - <br>B: that's back in South Dakota where I grew up --",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: as, as the friends start getting married and things like that, we've made a tradition of, uh, having a, a Thursday, um, - <br>B: well, have, have probably like, like a Thursday night bachelor party and a Friday golf day before the wedding. -<br>A: Yeah. <br>B: And, uh, so, it, - <br>B: that's back in South Dakota where I grew up --",
   'implicature': "When B's friends around the area get married, they go through this tradition of golfing on Fridays.",
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -4143,7 +4143,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_12_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: I've, uh, oh, - <br>B: just recently I got married <br>B: and we bought a house. <br>B: We're about fifty yards from the golf course -- <br>A: Oh. <br>B: --  but  unfortunately the house is taking up my time.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: I've, uh, oh, - <br>B: just recently I got married <br>B: and we bought a house. <br>B: We're about fifty yards from the golf course -- <br>A: Oh. <br>B: --  but  unfortunately the house is taking up my time.",
   'implicature': 'B goes to play golf at the golf course near their house.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -4167,7 +4167,7 @@ IMPLI_DATA = [[{
   'identifier': 'indirect_questions_10562_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing job losses.<br>B: And, and they all lost their jobs. <br>A: Sure, <br>A: and, and -- <br>B: And it's like , you know. -<br>A: -- and that's really what happened to the steel industry in this country. <br>B: Yeah. <br>A: So many times,  I mean,  you had  the,   uh,  the  coal miners and steel workers going out at the same time.",
+  'scenario': "<strong>Context:</strong> A and B are discussing job losses.<br>B: And, and they all lost their jobs. <br>A: Sure, <br>A: and, and -- <br>B: And it's like , you know. -<br>A: -- and that's really what happened to the steel industry in this country. <br>B: Yeah. <br>A: So many times,  I mean,  you had  the,   uh,  the  coal miners and steel workers going out at the same time.",
   'implicature': 'The job loss only happened to the steel industry.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -4191,7 +4191,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_11_w_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing air pollution.<br>B: I can't hear you at all for all this static. <br>A: Oh. <throat_clearing> <noise> I don't know what to, <laughter> - <br>A: usually it's the other phone I have trouble with. <br>A: It must just,<br>B: </Static>.<br>A: be on the line. <br>A: Can you hear me? <br>B: Now I can again. <br>A: Okay. <br>B: <Static>.<br>A:  I don't know what,   uh,   I,  I  don't know what  the problem is",
+  'scenario': "<strong>Context:</strong> A and B are discussing air pollution.<br>B: I can't hear you at all for all this static. <br>A: Oh. <throat_clearing> <noise> I don't know what to, <laughter> - <br>A: usually it's the other phone I have trouble with. <br>A: It must just,<br>B: </Static>.<br>A: be on the line. <br>A: Can you hear me? <br>B: Now I can again. <br>A: Okay. <br>B: <Static>.<br>A:  I don't know what,   uh,   I,  I  don't know what  the problem is",
   'implicature': 'A believes that the static in the call is due to the line and not the phone.',
   'asks-for': 'interpretation',
   'speaker-name': 'B',
@@ -4223,7 +4223,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_6_wo_cancellation'
 },
 {
-  'scenario': '<br><strong>Context:</strong> A and B are discussing invasions of privacy by companies.<br>A: So, do you, your privacy being invaded at any time? <br>B: <Music> Well, uh, one of the things that, uh, <swallowing> that I found to be, uh, an invasion is when I pay for something with a credit card and they ask me to put my telephone number on the, on the, uh, credit card bill. <br>B: That --<br>A: Well, yo-, -<br>B: -- is something that is not required -- <br>A: Right.',
+  'scenario': '<strong>Context:</strong> A and B are discussing invasions of privacy by companies.<br>A: So, do you, your privacy being invaded at any time? <br>B: <Music> Well, uh, one of the things that, uh, <swallowing> that I found to be, uh, an invasion is when I pay for something with a credit card and they ask me to put my telephone number on the, on the, uh, credit card bill. <br>B: That --<br>A: Well, yo-, -<br>B: -- is something that is not required -- <br>A: Right.',
   'implicature': "People are allowed to ask for customer's phone numbers on the credit card bills, though customers are not required to provide them.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -4279,7 +4279,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_9_wo_cancellation'
 },
 {
-  'scenario': "<br><strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: But, uh, I'd like to, uh, eventually I'd like to work up, if, if my wife does get interested, and maybe get involved in a league in a, in a mixed, mixed doubles league, or something like that. <br>A: Oh yeah, <br>A: we , we have one down here in the summertime. <br>A: Uh, it runs from like five o'clock to seven thirty -- <br>B: Uh-huh.",
+  'scenario': "<strong>Context:</strong> A and B are discussing golfing as a hobby.<br>B: But, uh, I'd like to, uh, eventually I'd like to work up, if, if my wife does get interested, and maybe get involved in a league in a, in a mixed, mixed doubles league, or something like that. <br>A: Oh yeah, <br>A: we , we have one down here in the summertime. <br>A: Uh, it runs from like five o'clock to seven thirty -- <br>B: Uh-huh.",
   'implicature': 'The mixed doubles league is only available from five to seven thirty.',
   'asks-for': 'interpretation',
   'hard_label': 1,
