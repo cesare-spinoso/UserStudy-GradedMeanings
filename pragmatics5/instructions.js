@@ -18,7 +18,7 @@ let lastInstructionLikelihood = null;
 const INSTRUCTIONAL_EXAMPLES = [
     {
         // Vanilla utterance implicature
-        id: "instruction_1",
+        id: "instruction_1_some_all",
         "asks-for": "interpretation",
         "speaker-name": "A",
         "hard_label": 1, // Likely or more
@@ -455,7 +455,7 @@ function displayCurrentDatapoint() {
 
     // Update choice context to show the complete sentence
     const isSomeAll = (datapoint.identifier || '').includes('some_all');
-    const contextText = `<div${isSomeAll ? ' style="text-align:center;"' : ''}>${datapoint.scenario}</div><br><div style="text-align:center;"><strong>Interpretation:</strong> ${datapoint.implicature}</div>`;
+    const contextText = `<div${isSomeAll ? ' style="text-align:center;"' : ''}>${datapoint.scenario}</div><br><div style="text-align:center;"><strong>Interpretation of what <mark>${datapoint['speaker-name']}</mark> has said:</strong> ${datapoint.implicature}</div>`;
     document.getElementById('choice-context').innerHTML = contextText;
 
     // Reset likelihood (slider)
