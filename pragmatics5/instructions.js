@@ -164,22 +164,22 @@ const FEEDBACK = {
 
     instruction_2: (color) => `
         <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation of the utterance is quite unlikely. The fact that B chooses to thank A given their question signals that they do they a tissue and would be thankful if A handed them one.<br><br>
+        This interpretation of the utterance is quite unlikely. The fact that B answers with \"Please.\" given signals that they do need a tissue and would be thankful if A handed them one.<br><br>
     `,
 
     instruction_3: (color) => `
         <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation is quite likely if not certain. If Jack finds the idea of ordering both Chinese and Italian dumb, then he is not likely to support doing it.<br><br>
+        This interpretation is quite likely if not certain. If Mike finds the idea of ordering both Chinese and Italian dumb, then he is not likely to support doing it.<br><br>
     `,
 
     instruction_4: (color) => `
         <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation is somehwat unlikely. While it's possible that A supports their son in becoming a writer, the way in which A says \"He **thinks** that's what he'd like to do.\" suggests that they do not agree. This is further supported by the fact that they continue to describe their son as strong in math and science.<br><br>
+        This interpretation is somewhat unlikely. While it's possible that A supports their son in becoming a writer, the way in which A says \"He <em>thinks</em> that's what he'd like to do\" suggests that they do not agree. This is further supported by the fact that they continue to describe their son as strong in math and science.<br><br>
     `,
 
     instruction_5: (color) => `
         <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation is likely, if not very likely. Given that the passage describes Ford as wanting to diversify its portfolio and that it has already done so by acquiring Jaguar stock, this insinuates that further stock acquisitions are likely to come.<br><br>
+        This interpretation is likely, if not very likely. Given that the passage describes Ford as wanting to diversify its portfolio and that it has already done so by acquiring Jaguar stock, this implies that further stock acquisitions are likely to come.<br><br>
     `,
 };
 
@@ -324,7 +324,8 @@ function displayInstructionExample() {
     document.getElementById('instruction').innerHTML = instructionText;
 
     // Update choice context to show the complete sentence (use example in instruction phase)
-    const contextText = `${example.scenario}<br><br><strong>Interpretation:</strong> ${example.implicature}`;
+    const isSomeAll = (example.identifier || '').includes('some_all');
+    const contextText = `<div${isSomeAll ? ' style="text-align:center;"' : ''}>${example.scenario}</div><br><div style="text-align:center;"><strong>Interpretation of what <mark>${example['speaker-name']}</mark> has said:</strong> ${example.implicature}</div>`;
     document.getElementById('choice-context').innerHTML = contextText;
 
     // Reset likelihood (slider)
@@ -363,7 +364,7 @@ function displayWelcomeMessage() {
     // Display instruction
     document.getElementById('instruction').innerHTML =
         `<strong>How it works:</strong><br>
-        • We'll start with a couple of practice examples to help you understand the task. During this stage, we will be give you some feedback after you complete each example.<br>
+        • We'll start with a couple of practice examples to help you understand the task. During this stage, we will give you some feedback after you complete each example.<br>
         • Then we'll move on to the real experiment.<br>
         • There are no right or wrong answers in the real experiment - we just want your honest opinions<br>
         • In some cases, you may feel that there isn't enough information to answer. That's perfectly normal, just give your best judgement!`;
@@ -453,7 +454,8 @@ function displayCurrentDatapoint() {
         `<strong>Rate how likely you find the interpretation of what <mark>${datapoint['speaker-name']}</mark> has said by moving the slider below. Placing the slider to the left means you believe the interpretation is unlikely and placing it to the right means you believe the interpretation is likely.</strong>`;
 
     // Update choice context to show the complete sentence
-    const contextText = `${datapoint.scenario}<br><br><strong>Interpretation:</strong> ${datapoint.implicature}`;
+    const isSomeAll = (datapoint.identifier || '').includes('some_all');
+    const contextText = `<div${isSomeAll ? ' style="text-align:center;"' : ''}>${datapoint.scenario}</div><br><div style="text-align:center;"><strong>Interpretation:</strong> ${datapoint.implicature}</div>`;
     document.getElementById('choice-context').innerHTML = contextText;
 
     // Reset likelihood (slider)
