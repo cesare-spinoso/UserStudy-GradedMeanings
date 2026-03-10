@@ -31,7 +31,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0, // Unlikely or less
-        scenario: "A: Do you need a tissue?<br>B: Please.",
+        scenario: "<strong>Dialogue:</strong><br>A: Do you need a tissue?<br>B: Please.",
         implicature: "B does not need a tissue."
     },
     {
@@ -40,7 +40,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "speaker-name": "Mike",
         "hard_label": 1, // Likely or more
-        scenario: "Jack and Mike are debating whether they should go for Chinese food or Italian food tonight. Jack tells Mike \"What if we order both?\" Mike replies \"<em>That might be the dumbest idea I've ever heard.</em>\"",
+        scenario: "<strong>Scenario:</strong><br>Jack and Mike are debating whether they should go for Chinese food or Italian food tonight. Jack tells Mike \"What if we order both?\" Mike replies \"<em>That might be the dumbest idea I've ever heard.</em>\"",
         implicature: "He does not want them to order both Chinese and Italian food."
     },
     {
@@ -49,7 +49,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
         "speaker-name": "A",
-        scenario: "<strong>Context:</strong> A and B are talking about careers. A has a son. <br><br>B: What, what does, your son -<br>B: he hopes to be a writer.<br>A: Yes,<br>A: he thinks that's what he'd like to do,<br>A: but he's really strong in math and science, too,",
+        scenario: "<strong>Context:</strong> A and B are talking about careers. A has a son.<br><strong>Dialogue:</strong><br><br>B: What, what does, your son -<br>B: he hopes to be a writer.<br>A: Yes,<br>A: he thinks that's what he'd like to do,<br>A: but he's really strong in math and science, too,",
         implicature: "A thinks that their son should be a writer."
     },
     {
@@ -89,7 +89,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "T",
         "hard_label": 0,
-        scenario: "S: Do you mind sending me that by the end of the day?<br>T: I'm afraid I'm leaving after lunch. Sorry about that.",
+        scenario: "<strong>Dialogue:</strong><br><S: Do you mind sending me that by the end of the day?<br>T: I'm afraid I'm leaving after lunch. Sorry about that.",
         implicature: "T will not send it by the end of the day."
     },
     {
@@ -98,7 +98,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0,
-        scenario: "A: Can you speak any other languages?<br>B: I only know English.",
+        scenario: "<strong>Dialogue:</strong><br>A: Can you speak any other languages?<br>B: I only know English.",
         implicature: "B can speak a little French."
     },
     {
@@ -107,7 +107,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the advisor",
         "hard_label": 1,
-        scenario: "Sam is excited about his new research idea. He schedules a meeting with his advisor and explains to him the idea as best he can. His advisor replies \"This idea is as realistic as my mom disproving the theory of relativity. I really very strongly recommend you to think of something else.\"",
+        scenario: "<strong>Scenario:</strong> Sam is excited about his new research idea. He schedules a meeting with his advisor and explains to him the idea as best he can. His advisor replies \"This idea is as realistic as my mom disproving the theory of relativity. I really very strongly recommend you to think of something else.\"",
         implicature: "The advisor does not think the research idea is realistic."
     },
     {
@@ -116,7 +116,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "Barb",
         "hard_label": 0,
-        scenario: "Barb and Alice are playing basketball together. Alice is a skilled player who keeps the ball to herself. At the end of the game, Barb tells Alice \"I really liked how you kept passing the ball to us.\"",
+        scenario: "<strong>Scenario:</strong> Barb and Alice are playing basketball together. Alice is a skilled player who keeps the ball to herself. At the end of the game, Barb tells Alice \"I really liked how you kept passing the ball to us.\"",
         implicature: "Barb enjoyed playing with Alice."
     },
     {
@@ -125,7 +125,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "T",
         "hard_label": 1,
-        scenario: "Context: A and B are talking about financial discussions.<br>Dialogue:<br>B: Well, I think, uh, -<br>B: I haven't had that much, of course<br>B: I just heard,<br>B: but I haven't had that much time to think about it, either.",
+        scenario: "<strong>Context:</strong> A and B are talking about financial discussions.<br><strong>Dialogue:</strong><br>B: Well, I think, uh, -<br>B: I haven't had that much, of course<br>B: I just heard,<br>B: but I haven't had that much time to think about it, either.",
         implicature: "B does not have much to say about the topic."
     },
     {
@@ -134,8 +134,7 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "T",
         "hard_label": 0,
-        scenario: "Context: A and B are talking about the quality of nursing homes.<br>A: I wouldn't put my mother, father in that nursing home at all.<br>B: Was this in a big town or a little town?<br>A: A small town.<br>B: Oh, really?",
-        implicature: "B was expecting it to be a small town."
+        scenario: "<strong>Context:</strong> A and B are talking about the quality of nursing homes.<br><strong>Dialogue:</strong><br>A: I wouldn't put my mother, father in that nursing home at all.<br>B: Was this in a big town or a little town?<br>A: A small town.<br>B: Oh, really?",
     },
     {
         // discourse which looks like a cancellation but is likely
