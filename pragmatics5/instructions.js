@@ -20,16 +20,16 @@ const INSTRUCTIONAL_EXAMPLES = [
         // Vanilla utterance implicature
         id: "instruction_1",
         "asks-for": "interpretation",
-        "speaker-name": "the",
+        "speaker-name": "A",
         "hard_label": 1, // Likely or more
-        scenario: "i drink coffee on some evenings.",
+        scenario: "A: i drink coffee on some evenings.",
         implicature: "I like to drink coffee on some, but not all, evenings."
     },
     {
         // Dialogue implicature and cancellation
         id: "instruction_2",
         "asks-for": "interpretation",
-        "speaker-name": "B's",
+        "speaker-name": "B",
         "hard_label": 0, // Unlikely or less
         scenario: "A: Do you need a tissue?<br>B: Please.",
         implicature: "B does not need a tissue."
@@ -38,7 +38,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         // Contextual implicature
         id: "instruction_3",
         "asks-for": "interpretation",
-        "speaker-name": "Mike's",
+        "speaker-name": "Mike",
         "hard_label": 1, // Likely or more
         scenario: "Jack and Mike are debating whether they should go for Chinese food or Italian food tonight. Jack tells Mike \"What if we order both?\" Mike replies \"<em>That might be the dumbest idea I've ever heard.</em>\"",
         implicature: "He does not want them to order both Chinese and Italian food."
@@ -48,8 +48,8 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_4",
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
-        "speaker-name": "A's",
-        scenario: "<strong>Context:</strong> A and B are talking about careers. A has a son. <br><strong>Dialogue:</strong><br>B: What, what does, your son -<br>B: he hopes to be a writer.<br>A: Yes,<br>A: he thinks that's what he'd like to do,<br>A: but he's really strong in math and science, too,",
+        "speaker-name": "A",
+        scenario: "<strong>Context:</strong> A and B are talking about careers. A has a son. <br><br>B: What, what does, your son -<br>B: he hopes to be a writer.<br>A: Yes,<br>A: he thinks that's what he'd like to do,<br>A: but he's really strong in math and science, too,",
         implicature: "A thinks that their son should be a writer."
     },
     {
@@ -57,7 +57,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         id: "instruction_5",
         "asks-for": "interpretation",
         "hard_label": 1, // Unlikely or less
-        "speaker-name": "the passage's",
+        "speaker-name": "the passage",
         scenario: "<strong>Passage:</strong> Hungry for more stock, Ford Motor disclosed that it has raised its holding in Jaguar to 10.4% from 5%. Ford, which has repeatedly signaled its desire to diversify its portfolio, appears poised to make several other major moves.",
         implicature: "Ford will be making more stock acquisitions."
     }
@@ -66,50 +66,95 @@ const INSTRUCTIONAL_EXAMPLES = [
 // Hard-coded attention check datapoints
 const ATTENTION_CHECK_DATA = [
     {
-        // Vanilla utterance implicature
-        id: "instruction_4",
-        "asks-for": "interpretation",
-        "speaker-name": "the",
-        "hard_label": 1,
-        scenario: "<em>John forgot to lock the door.</em>",
-        implicature: "John was supposed to lock the door."
-    },
-    {
-        // Dialogue implicature
-        id: "instruction_5",
-        "asks-for": "interpretation",
-        "speaker-name": "the",
-        "hard_label": 1,
-        scenario: "A: Is Sarah coming to the meeting?<br>B: <em>She has to pick up her kids from school.</em>",
-        implicature: "Sarah will not come to the meeting."
-    },
-    {
-        // Dialogue implicature and cancellation
+        // some_all which looks like a cancellation but is likely
         id: "instruction_6",
         "asks-for": "interpretation",
-        "speaker-name": "B's",
-        "hard_label": 0,
-        scenario: "A: Can you drive me to the airport?<br>B: <em>I don't have a car. But I'll just rent one.</em>",
-        implicature: "B will not drive A to the airport."
+        "speaker-name": "A",
+        "hard_label": 1,
+        scenario: "A: some of, of, of, my friends like the one next to my place and then some of my other friends like the one further away",
+        implicature: "Some, but not all, of my friends like the one next to my place."
     },
     {
-        // Contextual implicature
+        // some_all which looks like an original but it's unlikely
         id: "instruction_7",
         "asks-for": "interpretation",
-        "speaker-name": "Liam's",
-        "hard_label": 1,
-        scenario: "Two colleagues, Emma and Liam, are discussing a presentation their colleague just gave. Liam says: \"<em>Well, the slides were perfectly formatted.</em>\"",
-        implicature: "The content of the presentation was not very good."
+        "speaker-name": "A",
+        "hard_label": 0,
+        scenario: "A: it really gets annoying, because all my teachers do that",
+        implicature: "Some, but not all, of my teachers do that."
     },
-    // Vanilla utterance implicature and cancellation
     {
+        // two_turn which looks like a cancellation but is likely
         id: "instruction_8",
         "asks-for": "interpretation",
-        "speaker-name": "the",
+        "speaker-name": "T",
         "hard_label": 0,
-        scenario: "<em>Mary arrived at the office at 8 a.m. sharp. Her boss scolded her for being late.</em>",
-        implicature: "Mary arrived got to work early."
-    }
+        scenario: "S: Do you mind sending me that by the end of the day?<br>T: I'm afraid I'm leaving after lunch. Sorry about that.",
+        implicature: "T will not send it by the end of the day."
+    },
+    {
+        // two_turn which does not have a cancellation but is unlikely
+        id: "instruction_9",
+        "asks-for": "interpretation",
+        "speaker-name": "B",
+        "hard_label": 0,
+        scenario: "A: Can you speak any other languages?<br>B: I only know English.",
+        implicature: "B can speak a little French."
+    },
+    {
+        // scenario which looks like a cancellation but is likely
+        id: "instruction_10",
+        "asks-for": "interpretation",
+        "speaker-name": "the advisor",
+        "hard_label": 1,
+        scenario: "Sam is excited about his new research idea. He schedules a meeting with his advisor and explains to him the idea as best he can. His advisor replies \"This idea is as realistic as my mom disproving the theory of relativity. I really very strongly recommend you to think of something else.\"",
+        implicature: "The advisor does not think the research idea is realistic."
+    },
+    {
+        // scenario which does not have a cancellation but is unlikely
+        id: "instruction_11",
+        "asks-for": "interpretation",
+        "speaker-name": "Barb",
+        "hard_label": 0,
+        scenario: "Barb and Alice are playing basketball together. Alice is a skilled player who keeps the ball to herself. At the end of the game, Barb tells Alice \"I really liked how you kept passing the ball to us.\"",
+        implicature: "Barb enjoyed playing with Alice."
+    },
+    {
+        // multi_turn which looks like a cancellation but is likely
+        id: "instruction_11",
+        "asks-for": "interpretation",
+        "speaker-name": "T",
+        "hard_label": 1,
+        scenario: "Context: A and B are talking about financial discussions.<br>Dialogue:<br>B: Well, I think, uh, -<br>B: I haven't had that much, of course<br>B: I just heard,<br>B: but I haven't had that much time to think about it, either.",
+        implicature: "B does not have much to say about the topic."
+    },
+    {
+        // multi_turn which does not have a cancellation but is unlikely
+        id: "instruction_12",
+        "asks-for": "interpretation",
+        "speaker-name": "T",
+        "hard_label": 0,
+        scenario: "Context: A and B are talking about the quality of nursing homes.<br>A: I wouldn't put my mother, father in that nursing home at all.<br>B: Was this in a big town or a little town?<br>A: A small town.<br>B: Oh, really?",
+        implicature: "B was expecting it to be a small town."
+    },
+    {
+        // discourse which looks like a cancellation but is likely
+        id: "instruction_13",
+        "asks-for": "interpretation",
+        "speaker-name": "the passage",
+        "hard_label": 1,
+        scenario: "<strong>Passage:</strong> The controls on cooperatives appeared relatively liberal when first introduced. But that changed following a resolution from the Supreme Soviet banning cooperatives from operating in some areas of the economy, and permitting activity in others only if the cooperatives are under contract to the state.",
+        implicature: "The controls are no longer liberal."
+    },
+    {
+        // discourse which does not have a cancellation but is unlikely
+        id: "instruction_14",
+        "asks-for": "interpretation",
+        "speaker-name": "the passage",
+        "hard_label": 0,
+        scenario: "<strong>Passage:</strong> \"The HUD budget has dropped by more than 70% since 1980,\" argues Mr. Colton. \"We've taken more than our fair share.\"",
+        implicature: "Mr. Colton supports cutting the HUD budget."
+    },
 ];
 
 const FEEDBACK = {
@@ -272,10 +317,10 @@ function displayInstructionExample() {
         `<strong>Possible <mark>${example['asks-for']}</mark>:</strong> ${example.implicature}`;
 
     // Display instruction
-    let instructionText = `<strong>This is a practice example. Choose the best option on the 7-point scale for how likely you find the <mark>${example['asks-for']}</mark> of <mark>${example['speaker-name']}</mark> <em>italicized utterance.</em></strong>`;
+    let instructionText = `<strong>This is a practice example. Rate how likely you find the interpretation of what <mark>${example['speaker-name']}</mark> has said by moving the slider below. Placing the slider to the left means you believe the interpretation is unlikely and placing it to the right means you believe the interpretation is likely.</strong>`;
 
     // Add important instruction for all examples
-    instructionText += ` When giving your rating, be sure to consider the context (if any) and other possible interpretations; some situations will favor more uncertain responses.`;
+    // instructionText += ` When giving your rating, be sure to consider the context (if any) and other possible interpretations; some situations will favor more uncertain responses.`;
 
     document.getElementById('instruction').innerHTML = instructionText;
 
@@ -308,20 +353,20 @@ function displayWelcomeMessage() {
 
     // Display welcome information
     document.getElementById('information').innerHTML =
-        `<strong>Welcome to the experiment!</strong>`;
+        `<strong>Welcome to this experiment!</strong>`;
 
     // Display description
     document.getElementById('alternatives').innerHTML =
         `<strong>What you'll be doing:</strong><br>
-        In this experiment, you'll be asked to rate the likelihood of the interpretation of an utterance (i.e., something someone has said). 
-        You'll see an utterance - potentially accompanied by some context - and be asked to rate how likely the interpretation provided for the utterance is.`;
+        In this experiment, you'll be asked to rate the likelihood of the interpretation of utterances and passages (i.e., things that people have said). 
+        You will see some text - an utterance, a dialogue or a passage - and will be asked to rate how likely an interpretation related to that text is.`;
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
         `<strong>How it works:</strong><br>
-        • We'll start with a couple of practice examples to help you understand the task<br>
-        • Then we'll move on to the real experiment<br>
-        • There are no right or wrong answers in this experiment - we just want your honest opinion<br>
+        • We'll start with a couple of practice examples to help you understand the task. During this stage, we will be give you some feedback after you complete each example.<br>
+        • Then we'll move on to the real experiment.<br>
+        • There are no right or wrong answers in the real experiment - we just want your honest opinions<br>
         • In some cases, you may feel that there isn't enough information to answer. That's perfectly normal, just give your best judgement!`;
 
     // Hide choice and likelihood sections for welcome
@@ -406,7 +451,7 @@ function displayCurrentDatapoint() {
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
-        `<strong>Choose the best option on the 7-point scale based on how likely you find the <mark>${datapoint['asks-for']}</mark> of <mark>${datapoint['speaker-name']}</mark> <em>italicized utterance.</strong>`;
+        `<strong>Rate how likely you find the interpretation of what <mark>${datapoint['speaker-name']}</mark> has said by moving the slider below. Placing the slider to the left means you believe the interpretation is unlikely and placing it to the right means you believe the interpretation is likely.</strong>`;
 
     // Update choice context to show the complete sentence
     const contextText = `${datapoint.scenario}<br><br><strong>Interpretation:</strong> ${datapoint.implicature}`;
@@ -458,7 +503,7 @@ function updateLikelihoodValue() {
         } else {
             if (feedbackDiv) {
                 feedbackDiv.className = 'feedback-hint';
-                feedbackDiv.innerHTML = '<em>Consider reconsidering your rating &mdash; the Continue button will become available once you have selected an appropriate value.</em>';
+                feedbackDiv.innerHTML = '<em>Not quite! Try again to get some feedback about this example.</em>';
                 feedbackDiv.style.display = 'block';
             }
             document.getElementById('continue-btn').disabled = true;
