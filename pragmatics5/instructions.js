@@ -60,8 +60,49 @@ const INSTRUCTIONAL_EXAMPLES = [
         "speaker-name": "the passage",
         scenario: "<strong>Passage:</strong> Hungry for more stock, Ford Motor disclosed that it has raised its holding in Jaguar to 10.4% from 5%. Ford, which has repeatedly signaled its desire to diversify its portfolio, appears poised to make several other major moves.",
         implicature: "Ford will be making more stock acquisitions."
+    },
+    {
+        // Extra dialogue implicature and cancellation
+        identifier: "instruction_5_extra",
+        "asks-for": "interpretation",
+        "hard_label": 0, // Unlikely or less
+        "speaker-name": "the passage",
+        scenario: "<strong>Passage:</strong> Signs of weakness in US economic data have weighed on the dollar, fueling concerns about the rising possibility of a downturn in the second half of the year. Analysts note, however, that these concerns had already taken hold of the market well before these latest economic predictions.",
+        implicature: "The concerns about an economic downturn are directly due to the latest US economic data."
     }
 ];
+
+const FEEDBACK = {
+    instruction_1_some_all: (color) => `
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation of the utterance is quite likely. If the speaker had meant that they drink coffee every evening, they would have said something like \"I drink coffee every evening.\"<br><br>
+    `,
+
+    instruction_2: (color) => `
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation of the utterance is quite unlikely. The fact that B answers with \"Please.\" given signals that they do need a tissue and would be thankful if A handed them one.<br><br>
+    `,
+
+    instruction_3: (color) => `
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation is quite likely if not certain. If Mike finds the idea of ordering both Chinese and Italian dumb, then he is not likely to support doing it.<br><br>
+    `,
+
+    instruction_4: (color) => `
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation is somewhat unlikely. While it's possible that A supports their son in becoming a writer, the way in which A says \"He <em>thinks</em> that's what he'd like to do\" suggests that they do not agree. This is further supported by the fact that they continue to describe their son as strong in math and science.<br><br>
+    `,
+
+    instruction_5: (color) => `
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation is likely, if not very likely. Given that the passage describes Ford as wanting to diversify its portfolio and that it has already done so by acquiring Jaguar stock, this implies that further stock acquisitions are likely to come.<br><br>
+    `,
+
+    instruction_5_extra: (color) => `
+        <strong style="color: ${color};">Feedback:</strong><br><br>
+        This interpretation is unlikely. While the first sentence in the passage notes that US economic data has "weighed" on the economy, the next sentence notes that the sentiment existed before the data came out. This suggests that the concerns are not directly caused by the latest data.<br><br>
+    `,
+};
 
 // Hard-coded attention check datapoints
 const ATTENTION_CHECK_DATA = [
@@ -88,7 +129,7 @@ const ATTENTION_CHECK_DATA = [
         identifier: "instruction_8",
         "asks-for": "interpretation",
         "speaker-name": "T",
-        "hard_label": 0,
+        "hard_label": 1,
         scenario: "<strong>Dialogue:</strong><br>S: Do you mind sending me that by the end of the day?<br>T: I'm afraid I'm leaving after lunch. Sorry about that.",
         implicature: "T will not send it by the end of the day."
     },
@@ -152,37 +193,11 @@ const ATTENTION_CHECK_DATA = [
         "asks-for": "interpretation",
         "speaker-name": "the passage",
         "hard_label": 0,
-        scenario: "<strong>Passage:</strong> \"The HUD budget has dropped by more than 70% since 1980,\" argues Mr. Colton. \"We've taken more than our fair share.\"",
+        scenario: "<strong>Passage:</strong> \"The HUD budget has dropped by more than 70% since 1980,\" deplores Mr. Colton. \"We've taken more than our fair share.\"",
         implicature: "Mr. Colton supports cutting the HUD budget."
     },
 ];
 
-const FEEDBACK = {
-    instruction_1_some_all: (color) => `
-        <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation of the utterance is quite likely. If the speaker had meant that they drink coffee every evening, they would have said something like \"I drink coffee every evening.\"<br><br>
-    `,
-
-    instruction_2: (color) => `
-        <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation of the utterance is quite unlikely. The fact that B answers with \"Please.\" given signals that they do need a tissue and would be thankful if A handed them one.<br><br>
-    `,
-
-    instruction_3: (color) => `
-        <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation is quite likely if not certain. If Mike finds the idea of ordering both Chinese and Italian dumb, then he is not likely to support doing it.<br><br>
-    `,
-
-    instruction_4: (color) => `
-        <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation is somewhat unlikely. While it's possible that A supports their son in becoming a writer, the way in which A says \"He <em>thinks</em> that's what he'd like to do\" suggests that they do not agree. This is further supported by the fact that they continue to describe their son as strong in math and science.<br><br>
-    `,
-
-    instruction_5: (color) => `
-        <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation is likely, if not very likely. Given that the passage describes Ford as wanting to diversify its portfolio and that it has already done so by acquiring Jaguar stock, this implies that further stock acquisitions are likely to come.<br><br>
-    `,
-};
 
 
 // Get URL parameters
@@ -237,6 +252,18 @@ function loadData() {
         for (let i = currentData.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [currentData[i], currentData[j]] = [currentData[j], currentData[i]];
+        }
+
+        // Randomly shuffle the instructional examples
+        for (let i = INSTRUCTIONAL_EXAMPLES.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [INSTRUCTIONAL_EXAMPLES[i], INSTRUCTIONAL_EXAMPLES[j]] = [INSTRUCTIONAL_EXAMPLES[j], INSTRUCTIONAL_EXAMPLES[i]];
+        }
+
+        // Randomly shuffle the attention checks
+        for (let i = ATTENTION_CHECK_DATA.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [ATTENTION_CHECK_DATA[i], ATTENTION_CHECK_DATA[j]] = [ATTENTION_CHECK_DATA[j], ATTENTION_CHECK_DATA[i]];
         }
 
         // Create a mixed array with attention checks randomly interspersed
