@@ -317,7 +317,7 @@ function displayInstructionExample() {
         `<strong>Possible <mark>${example['asks-for']}</mark>:</strong> ${example.implicature}`;
 
     // Display instruction
-    let instructionText = `<strong>This is a practice example. Rate how likely you find the interpretation of what <mark>${example['speaker-name']}</mark> has said by moving the slider below. Placing the slider to the left means you believe the interpretation is unlikely and placing it to the right means you believe the interpretation is likely.</strong>`;
+    let instructionText = `<strong>This is a practice example. Rate how likely you find the interpretation of what <mark>${example['speaker-name']}</mark> has said by selecting a point on the scale below.</strong>`;
 
     // Add important instruction for all examples
     // instructionText += ` When giving your rating, be sure to consider the context (if any) and other possible interpretations; some situations will favor more uncertain responses.`;
