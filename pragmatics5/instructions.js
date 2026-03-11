@@ -335,9 +335,8 @@ function displayInstructionExample() {
     if (instructionElement) {
         instructionElement.classList.remove('hide-instruction');
     }
-    // Reset slider to default position
-    const rangeSlider = document.getElementById('likelihood-range');
-    if (rangeSlider) { rangeSlider.value = 4; }
+    // Reset radio scale
+    document.querySelectorAll('input[name="likelihood-scale"]').forEach(r => { r.checked = false; });
 
     // Clear any feedback from the previous example
     const feedbackDiv = document.getElementById('instruction-feedback');
@@ -466,9 +465,8 @@ function displayCurrentDatapoint() {
         // Hide instruction during main experiment phase
         instructionElement.classList.add('hide-instruction');
     }
-    // Reset slider to default position
-    const rangeSlider = document.getElementById('likelihood-range');
-    if (rangeSlider) { rangeSlider.value = 4; }
+    // Reset radio scale
+    document.querySelectorAll('input[name="likelihood-scale"]').forEach(r => { r.checked = false; });
 
     // Ensure feedback div is hidden during the real experiment
     const feedbackDiv = document.getElementById('instruction-feedback');
@@ -478,13 +476,13 @@ function displayCurrentDatapoint() {
     document.getElementById('continue-btn').disabled = true;
 }
 
-// Handle slider input
+// Handle radio scale selection
 function updateLikelihoodValue() {
     const instructionElement = document.getElementById('slider-instruction');
-    const slider = document.getElementById('likelihood-range');
-    if (!slider) return;
+    const checked = document.querySelector('input[name="likelihood-scale"]:checked');
+    if (!checked) return;
 
-    likelihoodRating = parseInt(slider.value);
+    likelihoodRating = parseInt(checked.value);
     if (instructionElement) instructionElement.classList.add('hide-instruction');
 
     if (isInstructionPhase && !isWelcomePhase && instructionIndex < INSTRUCTIONAL_EXAMPLES.length) {
@@ -685,11 +683,11 @@ function initExperiment() {
 
         // Add event listeners (null-safe)
         console.log('Adding event listeners...');
-        const rangeInput = document.getElementById('likelihood-range');
-        if (rangeInput) {
-            rangeInput.addEventListener('input', updateLikelihoodValue);
+        const scaleInputs = document.querySelectorAll('input[name="likelihood-scale"]');
+        if (scaleInputs && scaleInputs.length) {
+            scaleInputs.forEach(r => r.addEventListener('change', updateLikelihoodValue));
         } else {
-            console.warn('Slider input not found when initializing listeners.');
+            console.warn('Scale radio inputs not found when initializing listeners.');
         }
 
         const continueBtn = document.getElementById('continue-btn');

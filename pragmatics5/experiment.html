@@ -230,17 +230,58 @@
             flex-direction: column;
         }
 
-        #likelihood-range {
-            width: 100%;
-            cursor: pointer;
-            accent-color: #2196f3;
-            margin-bottom: 8px;
-        }
-
-        .slider-tick-labels {
+        .radio-scale {
             display: flex;
             justify-content: space-between;
+            position: relative;
             width: 100%;
+            padding: 4px 0 12px;
+        }
+
+        .radio-scale::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 11px;
+            right: 11px;
+            height: 2px;
+            background-color: #ccc;
+        }
+
+        .radio-scale label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .radio-scale input[type="radio"] {
+            display: none;
+        }
+
+        .radio-dot {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 2px solid #aaa;
+            margin-bottom: 6px;
+            transition: background-color 0.15s, border-color 0.15s;
+        }
+
+        .radio-scale label:hover .radio-dot {
+            border-color: #2196f3;
+        }
+
+        .radio-scale input[type="radio"]:checked+.radio-dot {
+            background-color: #2196f3;
+            border-color: #2196f3;
+        }
+
+        .radio-num {
             font-size: 13px;
             font-weight: bold;
             color: #666;
@@ -380,20 +421,34 @@
                 <div class="likelihood-slider-container">
                     <div class="likelihood-side-label" id="unlikely-label"></div>
                     <div class="likelihood-slider-wrapper">
-                        <div class="slider-instruction" id="slider-instruction">Move the slider to make your selection.
+                        <div class="slider-instruction" id="slider-instruction">Click a point on the scale to make your
+                            selection.
                         </div>
                         <div class="slider-with-endpoints" id="likert-options">
                             <span class="endpoint-label">Absolutely<br>impossible</span>
                             <div class="slider-track-wrapper">
-                                <input type="range" id="likelihood-range" min="1" max="7" step="1" value="4">
-                                <div class="slider-tick-labels">
-                                    <span>1</span>
-                                    <span>2</span>
-                                    <span>3</span>
-                                    <span>4</span>
-                                    <span>5</span>
-                                    <span>6</span>
-                                    <span>7</span>
+                                <div class="radio-scale">
+                                    <label for="scale-1"><input type="radio" name="likelihood-scale" id="scale-1"
+                                            value="1"><span class="radio-dot"></span><span
+                                            class="radio-num">1</span></label>
+                                    <label for="scale-2"><input type="radio" name="likelihood-scale" id="scale-2"
+                                            value="2"><span class="radio-dot"></span><span
+                                            class="radio-num">2</span></label>
+                                    <label for="scale-3"><input type="radio" name="likelihood-scale" id="scale-3"
+                                            value="3"><span class="radio-dot"></span><span
+                                            class="radio-num">3</span></label>
+                                    <label for="scale-4"><input type="radio" name="likelihood-scale" id="scale-4"
+                                            value="4"><span class="radio-dot"></span><span
+                                            class="radio-num">4</span></label>
+                                    <label for="scale-5"><input type="radio" name="likelihood-scale" id="scale-5"
+                                            value="5"><span class="radio-dot"></span><span
+                                            class="radio-num">5</span></label>
+                                    <label for="scale-6"><input type="radio" name="likelihood-scale" id="scale-6"
+                                            value="6"><span class="radio-dot"></span><span
+                                            class="radio-num">6</span></label>
+                                    <label for="scale-7"><input type="radio" name="likelihood-scale" id="scale-7"
+                                            value="7"><span class="radio-dot"></span><span
+                                            class="radio-num">7</span></label>
                                 </div>
                             </div>
                             <span class="endpoint-label">Absolutely<br>certain</span>
