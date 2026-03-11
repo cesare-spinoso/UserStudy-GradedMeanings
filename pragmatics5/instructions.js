@@ -495,7 +495,7 @@ function updateLikelihoodValue() {
         const feedbackDiv = document.getElementById('instruction-feedback');
 
         if (isCorrect) {
-            const feedbackFn = FEEDBACK[example.id];
+            const feedbackFn = FEEDBACK[example.identifier];
             if (feedbackDiv) {
                 feedbackDiv.className = '';
                 feedbackDiv.innerHTML = feedbackFn ? feedbackFn('#2e7d32') : '<strong style="color:#2e7d32;">Correct!</strong>';
