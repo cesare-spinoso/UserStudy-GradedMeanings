@@ -18,7 +18,7 @@ let lastInstructionLikelihood = null;
 const INSTRUCTIONAL_EXAMPLES = [
     {
         // Vanilla utterance implicature
-        id: "instruction_1_some_all",
+        identifier: "instruction_1_some_all",
         "asks-for": "interpretation",
         "speaker-name": "A",
         "hard_label": 1, // Likely or more
@@ -27,7 +27,7 @@ const INSTRUCTIONAL_EXAMPLES = [
     },
     {
         // Dialogue implicature and cancellation
-        id: "instruction_2",
+        identifier: "instruction_2",
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0, // Unlikely or less
@@ -36,7 +36,7 @@ const INSTRUCTIONAL_EXAMPLES = [
     },
     {
         // Contextual implicature
-        id: "instruction_3",
+        identifier: "instruction_3",
         "asks-for": "interpretation",
         "speaker-name": "Mike",
         "hard_label": 1, // Likely or more
@@ -45,7 +45,7 @@ const INSTRUCTIONAL_EXAMPLES = [
     },
     {
         // Context with negated implicature
-        id: "instruction_4",
+        identifier: "instruction_4",
         "asks-for": "interpretation",
         "hard_label": 0, // Unlikely or less
         "speaker-name": "A",
@@ -54,7 +54,7 @@ const INSTRUCTIONAL_EXAMPLES = [
     },
     {
         // Dialogue implicature and cancellation
-        id: "instruction_5",
+        identifier: "instruction_5",
         "asks-for": "interpretation",
         "hard_label": 1, // Unlikely or less
         "speaker-name": "the passage",
@@ -67,7 +67,7 @@ const INSTRUCTIONAL_EXAMPLES = [
 const ATTENTION_CHECK_DATA = [
     {
         // some_all which looks like a cancellation but is likely
-        id: "instruction_6",
+        identifier: "instruction_6",
         "asks-for": "interpretation",
         "speaker-name": "A",
         "hard_label": 1,
@@ -76,7 +76,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // some_all which looks like an original but it's unlikely
-        id: "instruction_7",
+        identifier: "instruction_7",
         "asks-for": "interpretation",
         "speaker-name": "A",
         "hard_label": 0,
@@ -85,7 +85,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // two_turn which looks like a cancellation but is likely
-        id: "instruction_8",
+        identifier: "instruction_8",
         "asks-for": "interpretation",
         "speaker-name": "T",
         "hard_label": 0,
@@ -94,7 +94,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // two_turn which does not have a cancellation but is unlikely
-        id: "instruction_9",
+        identifier: "instruction_9",
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0,
@@ -103,7 +103,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // scenario which looks like a cancellation but is likely
-        id: "instruction_10",
+        identifier: "instruction_10",
         "asks-for": "interpretation",
         "speaker-name": "the advisor",
         "hard_label": 1,
@@ -112,7 +112,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // scenario which does not have a cancellation but is unlikely
-        id: "instruction_11",
+        identifier: "instruction_11",
         "asks-for": "interpretation",
         "speaker-name": "Barb",
         "hard_label": 0,
@@ -121,7 +121,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // multi_turn which looks like a cancellation but is likely
-        id: "instruction_11",
+        identifier: "instruction_11",
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 1,
@@ -130,7 +130,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // multi_turn which does not have a cancellation but is unlikely
-        id: "instruction_12",
+        identifier: "instruction_12",
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0,
@@ -139,7 +139,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // discourse which looks like a cancellation but is likely
-        id: "instruction_13",
+        identifier: "instruction_13",
         "asks-for": "interpretation",
         "speaker-name": "the passage",
         "hard_label": 1,
@@ -148,7 +148,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // discourse which does not have a cancellation but is unlikely
-        id: "instruction_14",
+        identifier: "instruction_14",
         "asks-for": "interpretation",
         "speaker-name": "the passage",
         "hard_label": 0,
