@@ -391,7 +391,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0574_4023_utt@121_wo_cancellation'
 },
 {
-  'scenario': 'A: but um, there are some parts during that exercise that i think, i can not do another second of this .',
+  'scenario': 'A: but um, there are some parts during that exercise that i think, i can not do another second of this.',
   'implicature': 'Some parts, but not all parts, of the exercise make me feel this way.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -511,7 +511,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0574_4023_utt@121_w_cancellation'
 },
 {
-  'scenario': 'A: but um, there are some parts during that exercise that i think, i can not do another second of this . and now, you know, i feel this way about the entire exercise.',
+  'scenario': 'A: but um, there are some parts during that exercise that i think, i can not do another second of this. and now, you know, i feel this way about the entire exercise.',
   'implicature': 'Some parts, but not all parts, of the exercise make me feel this way.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3119,7 +3119,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_5_wo_cancellation'
 },
 {
-  'scenario': 'A: and we have some education programs that he likes .',
+  'scenario': 'A: and we have some education programs that he likes.',
   'implicature': 'He likes some, but not all, of their education programs.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3239,7 +3239,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_5_w_cancellation'
 },
 {
-  'scenario': 'A: and we have some education programs that he likes . he told me recently he likes all of them now',
+  'scenario': 'A: and we have some education programs that he likes. he told me recently he likes all of them now',
   'implicature': 'He likes some, but not all, of their education programs.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
