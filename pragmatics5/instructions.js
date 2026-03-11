@@ -451,7 +451,7 @@ function displayCurrentDatapoint() {
 
     // Display instruction
     document.getElementById('instruction').innerHTML =
-        `<strong>Rate how likely you find the interpretation of what <mark>${example['speaker-name']}</mark> has said by selecting a point on the scale below.</strong>`;
+        `<strong>Rate how likely you find the interpretation of what <mark>${datapoint['speaker-name']}</mark> has said by selecting a point on the scale below.</strong>`;
 
     // Update choice context to show the complete sentence
     const isSomeAll = (datapoint.identifier || '').includes('some_all');
