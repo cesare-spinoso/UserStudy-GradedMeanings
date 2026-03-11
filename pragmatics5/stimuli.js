@@ -652,7 +652,7 @@ IMPLI_DATA = [[{
   'asks-for': 'interpretation',
   'hard_label': 1,
   'speaker-name': 'the passage',
-  'identifier': 'wsj_0764_wo_cancellation'
+  'identifier': 'wsj_0764_1_wo_cancellation'
 },
 {
   'scenario': "<strong>Dialogue:</strong><br>A: Excuse me, I don't understand why flight 213 has been delayed. The weather seems fine now.<br>B: I am afraid that New York got 3 times more snow than it did here.",
@@ -772,7 +772,7 @@ IMPLI_DATA = [[{
   'asks-for': 'interpretation',
   'speaker-name': 'the passage',
   'hard_label': 0,
-  'identifier': 'wsj_0764_w_cancellation'
+  'identifier': 'wsj_0764_1_w_cancellation'
 },
 {
   'scenario': "<strong>Dialogue:</strong><br>A: Excuse me, I don't understand why flight 213 has been delayed. The weather seems fine now.<br>B: I am afraid that New York got 3 times more snow than it did here. Though, if I'm being frank, the mechanical issues are the main reason for the delay.",
@@ -1148,7 +1148,7 @@ IMPLI_DATA = [[{
   'asks-for': 'interpretation',
   'hard_label': 1,
   'speaker-name': 'the passage',
-  'identifier': 'wsj_0764_wo_cancellation'
+  'identifier': 'wsj_0764_2_wo_cancellation'
 },
 {
   'scenario': '<strong>Context:</strong> A and B are discussing pets. A has a fish tank.<br>B: Do you have problems with them, uh, the fish eating each other? <br>A: No, <br>A: not really.',
@@ -1268,7 +1268,7 @@ IMPLI_DATA = [[{
   'asks-for': 'interpretation',
   'speaker-name': 'the passage',
   'hard_label': 0,
-  'identifier': 'wsj_0764_w_cancellation'
+  'identifier': 'wsj_0764_2_w_cancellation'
 },
 {
   'scenario': "<strong>Context:</strong> A and B are discussing pets. A has a fish tank.<br>B: Do you have problems with them, uh, the fish eating each other? <br>A: No, <br>A: not really. <br>A: Only if there's baby fish.",
