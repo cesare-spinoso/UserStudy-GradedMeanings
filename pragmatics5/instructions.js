@@ -158,7 +158,7 @@ const ATTENTION_CHECK_DATA = [
 ];
 
 const FEEDBACK = {
-    instruction_1: (color) => `
+    instruction_1_some_all: (color) => `
         <strong style="color: ${color};">Feedback:</strong><br><br>
         This interpretation of the utterance is quite likely. If the speaker had meant that they drink coffee every evening, they would have said something like \"I drink coffee every evening.\"<br><br>
     `,
