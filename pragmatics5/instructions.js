@@ -68,7 +68,7 @@ const INSTRUCTIONAL_EXAMPLES = [
         "hard_label": 0, // Unlikely or less
         "speaker-name": "the passage",
         scenario: "<strong>Passage:</strong> Signs of weakness in US economic data have weighed on the dollar, fueling concerns about the rising possibility of a downturn in the second half of the year. Analysts note, however, that these concerns had already taken hold of the market well before these latest economic predictions.",
-        implicature: "The concerns about an economic downturn are directly due to the latest US economic data."
+        implicature: "The concerns about a downturn are directly due to the latest US economic data."
     }
 ];
 
@@ -100,7 +100,7 @@ const FEEDBACK = {
 
     instruction_5_extra: (color) => `
         <strong style="color: ${color};">Feedback:</strong><br><br>
-        This interpretation is unlikely. While the first sentence in the passage notes that US economic data has "weighed" on the economy, the next sentence notes that the sentiment existed before the data came out. This suggests that the concerns are not directly caused by the latest data.<br><br>
+        This interpretation is unlikely. While the passage first notes that US economic data has "weighed" on the market, it later points out that this sentiment existed beforehand. This suggests the latest reports aren't the primary cause of the concern.<br><br>
     `,
 };
 
@@ -162,7 +162,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // multi_turn which looks like a cancellation but is likely
-        identifier: "instruction_11",
+        identifier: "instruction_12",
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 1,
@@ -171,7 +171,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // multi_turn which does not have a cancellation but is unlikely
-        identifier: "instruction_12",
+        identifier: "instruction_13",
         "asks-for": "interpretation",
         "speaker-name": "B",
         "hard_label": 0,
@@ -180,7 +180,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // discourse which looks like a cancellation but is likely
-        identifier: "instruction_13",
+        identifier: "instruction_14",
         "asks-for": "interpretation",
         "speaker-name": "the passage",
         "hard_label": 1,
@@ -189,7 +189,7 @@ const ATTENTION_CHECK_DATA = [
     },
     {
         // discourse which does not have a cancellation but is unlikely
-        identifier: "instruction_14",
+        identifier: "instruction_15",
         "asks-for": "interpretation",
         "speaker-name": "the passage",
         "hard_label": 0,
