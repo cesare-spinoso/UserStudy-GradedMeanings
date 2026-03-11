@@ -63,7 +63,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_51_wo_cancellation'
 },
 {
-  'scenario': "A: and while i don't do any drugs myself, i've seen some people who  work there, uh, you know, smoking a joint or whatever.",
+  'scenario': "A: and while i don't do any drugs myself, i've seen some people who work there, uh, you know, smoking a joint or whatever.",
   'implicature': "I've seen some, but not all, of the people who work there smoke a joint.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -111,7 +111,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_4_wo_cancellation'
 },
 {
-  'scenario': 'A: what are some of your favorite foods .',
+  'scenario': 'A: what are some of your favorite foods.',
   'implicature': 'I want to know some, but not all, of your favorite foods.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -119,7 +119,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_29_wo_cancellation'
 },
 {
-  'scenario': "A: what are some of the things they don't recycle  . can you list everything they don't recycle?",
+  'scenario': "A: what are some of the things they don't recycle. can you list everything they don't recycle?",
   'implicature': "I want to know some, but not all, of the things they don't recycle.",
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -143,7 +143,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_1269_w_cancellation'
 },
 {
-  'scenario': 'A: i mean some of them are done  good nowadays all of them are done good otherwise they have to give you a discount',
+  'scenario': 'A: i mean some of them are done good, nowadays all of them are done good otherwise they have to give you a discount',
   'implicature': 'Some, but not all, of them are done good.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -319,7 +319,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_51_w_cancellation'
 },
 {
-  'scenario': "A: and while i don't do any drugs myself, i've seen some people who  work there, uh, you know, smoking a joint or whatever. and, uh, matter fact, i can't think of a single employee who i haven't seen smoking there.",
+  'scenario': "A: and while i don't do any drugs myself, i've seen some people who work there, uh, you know, smoking a joint or whatever. and, uh, matter fact, i can't think of a single employee who i haven't seen smoking there.",
   'implicature': "I've seen some, but not all, of the people who work there smoke a joint.",
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -367,7 +367,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_4_w_cancellation'
 },
 {
-  'scenario': 'A: what are some of your favorite foods . like tell me all your favorites.',
+  'scenario': 'A: what are some of your favorite foods. like tell me all your favorites.',
   'implicature': 'I want to know some, but not all, of your favorite foods.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -447,7 +447,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_49_wo_cancellation'
 },
 {
-  'scenario': 'A: and, uh, granted some people need  to be compensated  if they have really been wronged , you know.',
+  'scenario': 'A: and, uh, granted some people need to be compensated if they have really been wronged, you know.',
   'implicature': 'Some, but not all, people need to be compensated if they have really been wronged.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -567,7 +567,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_49_w_cancellation'
 },
 {
-  'scenario': "A: and, uh, granted some people need  to be compensated  if they have really been wronged , you know. i mean if you've been wronged in any way then you should be compensated.",
+  'scenario': "A: and, uh, granted some people need to be compensated if they have really been wronged, you know. i mean if you've been wronged in any way then you should be compensated.",
   'implicature': 'Some, but not all, people need to be compensated if they have really been wronged.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -903,7 +903,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_23_wo_cancellation'
 },
 {
-  'scenario': 'A: i was trying  to think about some of my favorite people that i liked  in music',
+  'scenario': 'A: i was trying to think about some of my favorite people that i liked in music',
   'implicature': 'I was trying to think about some, but not all, of my favorite people in music.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -943,7 +943,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_40_wo_cancellation'
 },
 {
-  'scenario': 'A: and i think there are some people that  have done that,',
+  'scenario': 'A: and i think there are some people that have done that,',
   'implicature': 'Some, but not all, people have done that.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1023,7 +1023,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_23_w_cancellation'
 },
 {
-  'scenario': 'A: i was trying  to think about some of my favorite people that i liked  in music but then i started trying to list all of my favorite people.',
+  'scenario': 'A: i was trying to think about some of my favorite people that i liked in music but then i started trying to list all of my favorite people.',
   'implicature': 'I was trying to think about some, but not all, of my favorite people in music.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1063,7 +1063,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_40_w_cancellation'
 },
 {
-  'scenario': 'A: and i think there are some people that  have done that, it might actually be all, yes all, that did that.',
+  'scenario': 'A: and i think there are some people that have done that, it might actually be all, yes all, that did that.',
   'implicature': 'Some, but not all, people have done that.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1111,7 +1111,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_28_wo_cancellation'
 },
 {
-  'scenario': 'A: i know that, uh, uh, one of, one thing that  happens to us to vacation trips now is that usually that try to involve some of the members of the family.',
+  'scenario': 'A: i know that, uh, uh, one of, one thing that happens to us to vacation trips now is that usually that try to involve some of the members of the family.',
   'implicature': 'Some, but not all, members of the family are involved in vacation trips.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1231,7 +1231,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_28_w_cancellation'
 },
 {
-  'scenario': 'A: i know that, uh, uh, one of, one thing that  happens to us to vacation trips now is that usually that try to involve some of the members of the family. in the end we end up involving everyone from the family.',
+  'scenario': 'A: i know that, uh, uh, one of, one thing that happens to us to vacation trips now is that usually that try to involve some of the members of the family. in the end we end up involving everyone from the family.',
   'implicature': 'Some, but not all, members of the family are involved in vacation trips.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1439,7 +1439,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_30_wo_cancellation'
 },
 {
-  'scenario': 'A: some of those books are real tough to get into ,',
+  'scenario': 'A: some of those books are real tough to get into,',
   'implicature': 'The speaker finds that some, but not all, of those books are tough to get into.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1559,7 +1559,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_30_w_cancellation'
 },
 {
-  'scenario': "A: some of those books are real tough to get into , and, to be quite frank, for me personally, they're all quite tough.",
+  'scenario': "A: some of those books are real tough to get into, and, to be quite frank, for me personally, they're all quite tough.",
   'implicature': 'The speaker finds that some, but not all, of those books are tough to get into.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1615,7 +1615,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0062_4158_utt@133_wo_cancellation'
 },
 {
-  'scenario': 'A: i h-, i have, we have some, some friends that  did the, exactly the same thing.',
+  'scenario': 'A: i h-, i have, we have some, some friends that did the, exactly the same thing.',
   'implicature': 'Some, but not all, of our friends did the same thing.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1735,7 +1735,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0062_4158_utt@133_w_cancellation'
 },
 {
-  'scenario': "A: i h-, i have, we have some, some friends that  did the, exactly the same thing. now that i think about it, it's all of them that did the same thing.",
+  'scenario': "A: i h-, i have, we have some, some friends that did the, exactly the same thing. now that i think about it, it's all of them that did the same thing.",
   'implicature': 'Some, but not all, of our friends did the same thing.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1815,7 +1815,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_6_w_cancellation'
 },
 {
-  'scenario': 'A: so i guess i get some of both.',
+  'scenario': 'A: so i guess i get some of both',
   'implicature': 'I get some, but not all, of both.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1879,7 +1879,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1205_2441_utt@140_wo_cancellation'
 },
 {
-  'scenario': 'A: it seems that some of them have gotten higher',
+  'scenario': 'A: it seems that some of them have gotten higher.',
   'implicature': 'Some, but not all, of them have gotten higher.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1927,7 +1927,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_39_wo_cancellation'
 },
 {
-  'scenario': 'A: some people say, uh, they, they like  to watch the changing of the seasons',
+  'scenario': 'A: some people say, uh, they, they like to watch the changing of the seasons',
   'implicature': 'The speaker believes that some, but not all, people like to watch the changing of the seasons.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -1935,7 +1935,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_28_wo_cancellation'
 }],
 [{
-  'scenario': "A: so i guess i get some of both. or all of both when i'm lucky, which has been happening a lot lately",
+  'scenario': "A: so i guess i get some of both or all of both when i'm lucky, which has been happening a lot lately",
   'implicature': 'I get some, but not all, of both.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -1999,7 +1999,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1205_2441_utt@140_w_cancellation'
 },
 {
-  'scenario': "A: it seems that some of them have gotten higher actually, looking at them closer, it looks like they've all gotten higher.",
+  'scenario': "A: it seems that some of them have gotten higher. actually, looking at them closer, it looks like they've all gotten higher.",
   'implicature': 'Some, but not all, of them have gotten higher.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2047,7 +2047,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_39_w_cancellation'
 },
 {
-  'scenario': 'A: some people say, uh, they, they like  to watch the changing of the seasons but, in reality, everyone likes to watch the changing of the seasons.',
+  'scenario': 'A: some people say, uh, they, they like to watch the changing of the seasons but, in reality, everyone likes to watch the changing of the seasons.',
   'implicature': 'The speaker believes that some, but not all, people like to watch the changing of the seasons.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2095,7 +2095,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0208_wo_cancellation'
 },
 {
-  'scenario': 'A: and some of it runs off right away into the, in to the streams and rivers',
+  'scenario': 'A: and some of it runs off right away into the, in to the streams and rivers,',
   'implicature': 'Some, but not all, of it runs off right away into the streams and rivers.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2167,7 +2167,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_31_wo_cancellation'
 },
 {
-  'scenario': 'A: ye-, you take some of the batter out and give it to someone else',
+  'scenario': 'A: ye-, you take some of the batter out and give it to someone else.',
   'implicature': 'You take some, but not all, of the batter out.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2215,7 +2215,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0208_w_cancellation'
 },
 {
-  'scenario': "A: and some of it runs off right away into the, in to the streams and rivers it's actually all of it that runs off like that now that i think about it.",
+  'scenario': "A: and some of it runs off right away into the, in to the streams and rivers, it's actually all of it that runs off like that now that i think about it.",
   'implicature': 'Some, but not all, of it runs off right away into the streams and rivers.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2287,7 +2287,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_31_w_cancellation'
 },
 {
-  'scenario': 'A: ye-, you take some of the batter out and give it to someone else you, actually, you take it all out and then',
+  'scenario': 'A: ye-, you take some of the batter out and give it to someone else. you, actually, you take it all out and then',
   'implicature': 'You take some, but not all, of the batter out.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2311,7 +2311,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0295_wo_cancellation'
 },
 {
-  'scenario': 'A: um uh, well, some of both.',
+  'scenario': 'A: um uh, well, some of both,',
   'implicature': 'Some of both, but not all of both.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2351,7 +2351,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_7_wo_cancellation'
 },
 {
-  'scenario': "A: and i think that it's, it's very surprising some of these very expensive volvos can be gotten  for a lot less money than you would think if you're willing  to buy ones that  are about, the vintage of the cars that you and i currently own",
+  'scenario': "A: and i think that it's, it's very surprising some of these very expensive volvos can be gotten for a lot less money than you would think if you're willing to buy ones that are about, the vintage of the cars that you and i currently own,",
   'implicature': 'You can do this for some, but not all, expensive Volvos.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2431,7 +2431,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_0295_w_cancellation'
 },
 {
-  'scenario': 'A: um uh, well, some of both. or, uh, no, all of both.',
+  'scenario': 'A: um uh, well, some of both, or, uh, no, all of both.',
   'implicature': 'Some of both, but not all of both.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2471,7 +2471,7 @@ IMPLI_DATA = [[{
   'identifier': 'jhu_max_7_w_cancellation'
 },
 {
-  'scenario': "A: and i think that it's, it's very surprising some of these very expensive volvos can be gotten  for a lot less money than you would think if you're willing  to buy ones that  are about, the vintage of the cars that you and i currently own looking at their catalogue right now, i may have misspoken, you can do this for all expensive Volvos.",
+  'scenario': "A: and i think that it's, it's very surprising some of these very expensive volvos can be gotten for a lot less money than you would think if you're willing to buy ones that are about, the vintage of the cars that you and i currently own, looking at their catalogue right now, i may have misspoken, you can do this for all expensive Volvos.",
   'implicature': 'You can do this for some, but not all, expensive Volvos.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2543,7 +2543,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_15_wo_cancellation'
 },
 {
-  'scenario': "A: but there's going  to be some negatives anywhere, you know, no matter where you go .",
+  'scenario': "A: but there's going to be some negatives anywhere, you know, no matter where you go.",
   'implicature': 'Anywhere you go there will be some negatives, but not everything will be negative.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2599,7 +2599,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_35_wo_cancellation'
 },
 {
-  'scenario': 'A: i can associate with some of the people in that movie because of the young students i see  over at the medical school.',
+  'scenario': 'A: i can associate with some of the people in that movie because of the young students i see over at the medical school.',
   'implicature': 'I can associate with some, but not all, of the people in that movie.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -2663,7 +2663,7 @@ IMPLI_DATA = [[{
   'identifier': 'ict_15_w_cancellation'
 },
 {
-  'scenario': "A: but there's going  to be some negatives anywhere, you know, no matter where you go . and then there's some places where everything is negative and it's awful.",
+  'scenario': "A: but there's going to be some negatives anywhere, you know, no matter where you go. and then there's some places where everything is negative and it's awful.",
   'implicature': 'Anywhere you go there will be some negatives, but not everything will be negative.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -2719,7 +2719,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_35_w_cancellation'
 },
 {
-  'scenario': 'A: i can associate with some of the people in that movie because of the young students i see  over at the medical school. even the other ones i can associate with as well. i guess this movie had a lot of relatable characters.',
+  'scenario': 'A: i can associate with some of the people in that movie because of the young students i see over at the medical school. even the other ones i can associate with as well. i guess this movie had a lot of relatable characters.',
   'implicature': 'I can associate with some, but not all, of the people in that movie.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3103,7 +3103,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1205_2441_utt@310_wo_cancellation'
 },
 {
-  'scenario': 'A: there are some, you know, types of heavy metal that i really like ,',
+  'scenario': 'A: there are some, you know, types of heavy metal that i really like,',
   'implicature': 'I like some, but not all, types of heavy metal.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3127,7 +3127,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_1_wo_cancellation'
 },
 {
-  'scenario': 'A: so, well, actually some things are pretty good with that because i put it on a gold credit card',
+  'scenario': 'A: so, well, actually some things are pretty good with that because i put it on a gold credit card.',
   'implicature': 'Some but not all things are pretty good with that.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3223,7 +3223,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1205_2441_utt@310_w_cancellation'
 },
 {
-  'scenario': 'A: there are some, you know, types of heavy metal that i really like , really i like all types of heavy metal',
+  'scenario': 'A: there are some, you know, types of heavy metal that i really like, really i like all types of heavy metal',
   'implicature': 'I like some, but not all, types of heavy metal.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3247,7 +3247,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_1_w_cancellation'
 },
 {
-  'scenario': 'A: so, well, actually some things are pretty good with that because i put it on a gold credit card i guess, these days, everything is pretty good with that, actually.',
+  'scenario': 'A: so, well, actually some things are pretty good with that because i put it on a gold credit card. i guess, these days, everything is pretty good with that, actually.',
   'implicature': 'Some but not all things are pretty good with that.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3327,7 +3327,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_55_wo_cancellation'
 },
 {
-  'scenario': 'A: um, up here some of the state parks are really nice',
+  'scenario': 'A: um, up here some of the state parks are really nice,',
   'implicature': 'Some, but not all, of the state parks are really nice.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3447,7 +3447,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_55_w_cancellation'
 },
 {
-  'scenario': "A: um, up here some of the state parks are really nice they're all really nice in fact",
+  'scenario': "A: um, up here some of the state parks are really nice, they're all really nice in fact",
   'implicature': 'Some, but not all, of the state parks are really nice.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3495,7 +3495,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_15_w_cancellation'
 },
 {
-  'scenario': "A: right now some of the things i'm working with  are kids that  are dealing with sexual abuse,",
+  'scenario': "A: right now some of the things i'm working with are kids that are dealing with sexual abuse,",
   'implicature': "Some, but not all, of what I'm working with involves kids dealing with sexual abuse.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3615,7 +3615,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_25_wo_cancellation'
 }],
 [{
-  'scenario': "A: right now some of the things i'm working with  are kids that  are dealing with sexual abuse, recently it's been exclusively about sexual abuse.",
+  'scenario': "A: right now some of the things i'm working with are kids that are dealing with sexual abuse, recently it's been exclusively about sexual abuse.",
   'implicature': "Some, but not all, of what I'm working with involves kids dealing with sexual abuse.",
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3735,7 +3735,7 @@ IMPLI_DATA = [[{
   'identifier': 'george_and_mamidi_25_w_cancellation'
 },
 {
-  'scenario': 'A: um, some of it sounds more like pop music.',
+  'scenario': 'A: um, some of it sounds more like pop music',
   'implicature': 'Some, but not all, of it sounds like pop music.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3831,7 +3831,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1327_4643_utt@45_wo_cancellation'
 },
 {
-  'scenario': "A: what's, what are some other questions they have  ,",
+  'scenario': "A: what's, what are some other questions they have,",
   'implicature': 'I want to know some, but not all, of the other questions they have.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3847,7 +3847,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1327_4643_utt@60_wo_cancellation'
 },
 {
-  'scenario': 'A: and so. but i know some of the other services do not think that women are capable of  doing the job.',
+  'scenario': 'A: and so. but i know some of the other services do not think that women are capable of doing the job.',
   'implicature': 'Some, but not all, of the other services think that women are capable of doing the job.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -3855,7 +3855,7 @@ IMPLI_DATA = [[{
   'identifier': 'some_all_8_wo_cancellation'
 }],
 [{
-  'scenario': 'A: um, some of it sounds more like pop music. and when you listen closely it all sounds like pop.',
+  'scenario': 'A: um, some of it sounds more like pop music and when you listen closely it all sounds like pop.',
   'implicature': 'Some, but not all, of it sounds like pop music.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3951,7 +3951,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1327_4643_utt@45_w_cancellation'
 },
 {
-  'scenario': "A: what's, what are some other questions they have  , just list them all and i'll stop you when i can answer one.",
+  'scenario': "A: what's, what are some other questions they have, just list them all and i'll stop you when i can answer one.",
   'implicature': 'I want to know some, but not all, of the other questions they have.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -3967,7 +3967,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_1327_4643_utt@60_w_cancellation'
 },
 {
-  'scenario': 'A: and so. but i know some of the other services do not think that women are capable of  doing the job. all these services feel the same way about women.',
+  'scenario': 'A: and so. but i know some of the other services do not think that women are capable of doing the job. all these services feel the same way about women.',
   'implicature': 'Some, but not all, of the other services think that women are capable of doing the job.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -4007,7 +4007,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0460_2331_utt@86_wo_cancellation'
 },
 {
-  'scenario': "A: some of these plea bargains and all this kind of stuff that they do , it's just, it just gets out of hand,",
+  'scenario': "A: some of these plea bargains and all this kind of stuff that they do, it's just, it just gets out of hand,",
   'implicature': 'Some, but not all, of these plea bargains get out of hand.',
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -4127,7 +4127,7 @@ IMPLI_DATA = [[{
   'identifier': 'swb_0460_2331_utt@86_w_cancellation'
 },
 {
-  'scenario': "A: some of these plea bargains and all this kind of stuff that they do , it's just, it just gets out of hand, in the end, it always gets out of hand",
+  'scenario': "A: some of these plea bargains and all this kind of stuff that they do, it's just, it just gets out of hand, in the end, it always gets out of hand",
   'implicature': 'Some, but not all, of these plea bargains get out of hand.',
   'asks-for': 'interpretation',
   'speaker-name': 'A',
@@ -4215,7 +4215,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_1852_w_cancellation'
 },
 {
-  'scenario': "A: what are some of the things they don't recycle  .",
+  'scenario': "A: what are some of the things they don't recycle.",
   'implicature': "I want to know some, but not all, of the things they don't recycle.",
   'asks-for': 'interpretation',
   'hard_label': 1,
@@ -4239,7 +4239,7 @@ IMPLI_DATA = [[{
   'identifier': 'wsj_1269_wo_cancellation'
 },
 {
-  'scenario': 'A: i mean some of them are done  good',
+  'scenario': 'A: i mean some of them are done good,',
   'implicature': 'Some, but not all, of them are done good.',
   'asks-for': 'interpretation',
   'hard_label': 1,

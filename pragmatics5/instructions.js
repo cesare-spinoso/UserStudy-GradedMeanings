@@ -67,20 +67,20 @@ const INSTRUCTIONAL_EXAMPLES = [
 const ATTENTION_CHECK_DATA = [
     {
         // some_all which looks like a cancellation but is likely
-        identifier: "instruction_6",
+        identifier: "instruction_6_some_all",
         "asks-for": "interpretation",
         "speaker-name": "A",
         "hard_label": 1,
-        scenario: "A: some of, of, of, my friends like the one next to my place and then some of my other friends like the one further away",
+        scenario: "A: some of, of, of, my friends like the one next to my place. and then some of my other friends like the one further away",
         implicature: "Some, but not all, of my friends like the one next to my place."
     },
     {
         // some_all which looks like an original but it's unlikely
-        identifier: "instruction_7",
+        identifier: "instruction_7_some_all",
         "asks-for": "interpretation",
         "speaker-name": "A",
         "hard_label": 0,
-        scenario: "A: it really gets annoying, because all my teachers do that",
+        scenario: "A: it really gets annoying, because all my teachers do that.",
         implicature: "Some, but not all, of my teachers do that."
     },
     {
