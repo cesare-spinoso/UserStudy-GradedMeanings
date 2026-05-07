@@ -15,88 +15,122 @@ function make_slides(f) {
       } else if (exp.num_interpretations === 5) {
         num_interpretations = "five";
       }
-      $("#start-instructions").html(start_instructions_html(is_alt = exp.is_alt));
+      $("#start-instructions").html(start_instructions_html(condition = exp.condition));
       $("#num-interpretations").text(num_interpretations);
     }
   });
 
+  // Helper function to build scenario text based on condition
+  function buildScenarioText(stim, condition) {
+    // condition: 0 and 1 show a single utterance, 2 and 3 show a choice between two utterances
+    const mainName = stim.mainName || "(Speaker)";
+    const weakerUtterance = stim.weaker_utterance || "";
+    const strongerUtterance = stim.stronger_utterance || "";
+
+    let scenarioText = stim.scenario;
+
+    if (condition === 0) {
+      // Character says an utterance
+      scenarioText += ` ${mainName} says, "<span style="color: #318500;">${_.escape(weakerUtterance)}</span>"`;
+    } else if (condition === 1) {
+      // Character says an utterance
+      scenarioText += ` ${mainName} says, "<span style="color: #318500;">${_.escape(strongerUtterance)}</span>"`;
+    } else if (condition === 2 || condition === 3) {
+      // Visual choice display for alternatives
+      scenarioText += ` ${mainName} is choosing between two ways to express themselves.`;
+    }
+
+    return `<strong>Scenario:</strong> ${scenarioText}`;
+  }
+
+  // Helper function to build visual alternatives display for conditions 2/3
+  function buildAlternativesDisplay(stim) {
+    const utterance1 = stim.weaker_utterance || "";
+    const utterance2 = stim.stronger_utterance || "";
+    return `
+      <div class="alternatives-display">
+        <div class="alternative-option">
+          <span>"${_.escape(utterance1)}"</span>
+        </div>
+        <div class="alternative-option">
+          <span>"${_.escape(utterance2)}"</span>
+        </div>
+      </div>
+    `;
+  }
+
   // Helper functions to populate slides for example, warmup, and main stimuli
 
-  function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationAreaSelector, interpretations, stimuli_type) {
+  function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationAreaSelector, interpretations, stimuli_type, condition, isAlternativesDisplay) {
     const $slide = $(`#${stimuli_type}`);
     $slide.find(scenarioSelector).empty().html(scenarioValue);
     $slide.find(questionSelector).empty().html(questionValue);
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
 
+    // Randomize left/right interpretation assignment
+    const shuffled = _.shuffle([0, 1]);
+    const leftInterpIdx = shuffled[0];
+    const rightInterpIdx = shuffled[1];
+    const leftInterp = interpretations[leftInterpIdx];
+    const rightInterp = interpretations[rightInterpIdx];
+
+    // Store which interpretation is on which side for logging
+    $area.data('left-interp-idx', leftInterpIdx);
+    $area.data('right-interp-idx', rightInterpIdx);
+
     const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
-    const labels = interpretations.map(s => _.escape(s || ''));
 
-    // Build tick items using flex layout — no absolute positioning so edge labels never overflow
-    const ticksHtml = labels.map(function(label, i) {
-      var extraClass = '';
-      if (i === 0) extraClass = ' tick-first';
-      else if (i === labels.length - 1) extraClass = ' tick-last';
-      return '<div class="interp-tick-item' + extraClass + '">' +
-               '<div class="interp-tick-mark"></div>' +
-               '<div class="interp-tick-text">' + label + '</div>' +
-             '</div>';
-    }).join('');
+    let htmlContent = '';
 
-    var sliderHtml =
-      '<div class="interp-choices">' +
-        '<div class="interp-choice-box">' + labels[0] + '</div>' +
-        '<div class="interp-choice-box">' + labels[labels.length - 1] + '</div>' +
-      '</div>' +
+    // Add alternatives display for conditions 2/3
+    if (isAlternativesDisplay) {
+      htmlContent += isAlternativesDisplay;
+    }
+
+    // Flex endpoint labels — no absolute positioning, so edge labels never overflow
+    htmlContent +=
       '<div class="interp-slider-section">' +
         '<input type="range" min="0" max="100" step="1" value="50"' +
                ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
-        '<div class="interp-tick-labels">' + ticksHtml + '</div>' +
+        '<div class="interp-endpoint-labels">' +
+          '<span class="interp-endpoint-left">' + _.escape(leftInterp) + '</span>' +
+          '<span class="interp-endpoint-right">' + _.escape(rightInterp) + '</span>' +
+        '</div>' +
+        '<div class="slider-scale-labels">' +
+          '<span>0</span>' +
+          '<span style="font-weight: bold; color: #800080;">50<br><span style="font-size: 0.85em; font-weight: normal;">Neither</span></span>' +
+          '<span>100</span>' +
+        '</div>' +
       '</div>' +
       '<div class="interp-value-row">' +
         '<span class="interp-value-num" id="' + stimuli_type + '_value_num">50</span>' +
         '<span class="interp-value-hint"> — Move the slider to indicate your interpretation</span>' +
       '</div>';
 
-    $area.append(sliderHtml);
+    $area.append(htmlContent);
 
-    // Set example slider to preset value and disable it
+    // Set example slider to midpoint and disable it
     if (stimuli_type === 'example' && typeof exp !== 'undefined') {
-      var value = 50;
-      if (exp.example_allocations && exp.example_allocations.length === 2) {
-        var a = exp.example_allocations[0] || 0;
-        var b = exp.example_allocations[1] || 0;
-        var sum = a + b;
-        if (sum > 0) { value = Math.round((a / sum) * 100); }
-      }
-      $area.find('#' + stimuli_type + '_slider').val(value).prop('disabled', true);
-      $area.find('#' + stimuli_type + '_value_num').text(value);
+      $area.find('#' + stimuli_type + '_slider').val(50).prop('disabled', true).addClass('thumb-visible');
+      $area.find('#' + stimuli_type + '_value_num').text(50);
     }
 
-    // Update value display on slider move (both input and change for cross-browser compatibility)
-    $area.find('#' + stimuli_type + '_slider').off('input change').on('input change', function() {
-      $area.find('#' + stimuli_type + '_value_num').text($(this).val());
-    });
-
-    // Autofocus the slider when a new stimulus appears
-    var $firstControl = $area.find('#' + stimuli_type + '_slider');
-    if ($firstControl.length && !$firstControl.prop('disabled')) {
-      setTimeout(function() { $firstControl.focus(); }, 0);
+    const $slider = $area.find('#' + stimuli_type + '_slider');
+    if ($slider.length && !$slider.prop('disabled')) {
+      // Reveal thumb on first touch/click
+      $slider.one('mousedown touchstart', function() {
+        $(this).addClass('thumb-visible');
+      });
+      // Update value display when slider is moved (both events for cross-browser compatibility)
+      $slider.off('input change').on('input change', function() {
+        $area.find('#' + stimuli_type + '_value_num').text($(this).val());
+      });
+      // Autofocus
+      setTimeout(function() { $slider.focus(); }, 0);
     }
   }
 
-  function getPointAllocations(slide) {
-    const $inputs = slide.find('.point-input');
-    if ($inputs.length !== 2) return { valid: false, allocations: [null, null], errMsg: 'Inputs missing.' };
-    const val1 = parseInt($inputs.eq(0).val(), 10);
-    const val2 = parseInt($inputs.eq(1).val(), 10);
-    if (isNaN(val1) || isNaN(val2)) return { valid: false, allocations: [val1, val2], errMsg: 'Please enter a value for both bins.' };
-    if (val1 < 0 || val2 < 0) return { valid: false, allocations: [val1, val2], errMsg: 'Points must be non-negative.' };
-    if (val1 + val2 !== 100) return { valid: false, allocations: [val1, val2], errMsg: 'Total must be exactly 100 points.' };
-    return { valid: true, allocations: [val1, val2], errMsg: '' };
-  }
-
-  // Slider selection helper for slider-based UI (pragmatics4)
   function getSliderSelection(slide) {
     const $slider = slide.find('.interp-slider');
     if ($slider.length === 0) return { valid: false, slider_value: null, errMsg: 'Slider missing.' };
@@ -105,35 +139,29 @@ function make_slides(f) {
     return { valid: true, slider_value: parseInt(val, 10), errMsg: '' };
   }
 
-  function display_stimulus(current_index, stimuli, stimuli_type, is_alt) {
+  function display_stimulus(current_index, stimuli, stimuli_type, condition) {
     if (current_index < stimuli.length) {
       const stim = stimuli[current_index];
-      // Prettify the scenario and question
-      const scenario = stim.scenario;
-      // Add <strong>Scenario:</strong> to the beginning of the scenario
-      const scenarioWithLabel = `<strong>Scenario:</strong> ${scenario}`;
-      // Make the utterance green so it stands out
-      var highlighted = scenarioWithLabel.replace(/(\"[^\"]*\").?$/, '<span style="color: #318500;">$1</span>'); // Use [^\"] and $ in case multiple quotes are present
-
-  if (is_alt) {
-  const otherName = stim.secondName || '(Partner)';
-  const mainName = stim.mainName || stim.speaker_name || '(Speaker)';
-    const altUtterance = `<span style="color: #318500;">\"${stim.stronger_alternative}\"</span>`;
-    const cancellationText = stim.alternative_cancellation || "It's not that extreme.";
-    const cancellation = `<span style=\"color: #318500;\">\"${_.escape(cancellationText)}\"</span>`;
-  highlighted += ` ${otherName} says ${altUtterance} ${mainName} responds ${cancellation}`;
-  }
+      // Build scenario text based on condition
+      const scenarioWithLabel = buildScenarioText(stim, condition);
       // Bold the question
       const question = `<strong>${stim.question}</strong>`;
+      // Build alternatives display for conditions 2/3
+      let alternativesDisplay = '';
+      if (condition === 2 || condition === 3) {
+        alternativesDisplay = buildAlternativesDisplay(stim);
+      }
       // Populate the html with the scenario, question, and interpretations
       populateInterpretations(
         scenarioSelector = ".scenario",
-        scenarioValue = highlighted,
+        scenarioValue = scenarioWithLabel,
         questionSelector = ".question",
         questionValue = question,
         interpretationAreaSelector = ".interpretation-area",
         interpretations = stim.interpretations,
-        stimuli_type = stimuli_type
+        stimuli_type = stimuli_type,
+        condition = condition,
+        isAlternativesDisplay = alternativesDisplay
       );
       if (stimuli_type === 'warmup' || stimuli_type === 'main') {
         const $slide = $(`#${stimuli_type}`);
@@ -147,7 +175,7 @@ function make_slides(f) {
 
   // EXAMPLE SLIDE //
 
-  // Removed allocation example table logic per updated design (create_feedback now returns empty string).
+  // Removed allocation example table logic per updated design
   function add_example_allocations() { /* no-op */ }
 
   slides.example = slide({
@@ -156,68 +184,69 @@ function make_slides(f) {
 
     start: function () {
       console.log("In the start of example slide");
-      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", is_alt = exp.is_alt);
-  add_example_allocations();
+      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", condition = exp.condition);
+      add_example_allocations();
     },
 
     button: function () {
       console.log("In the button of example slide");
       this.index++;
-      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", is_alt = exp.is_alt);
+      display_stimulus(current_index = this.index, stimuli = exp.example_stimuli, stimuli_type = "example", condition = exp.condition);
     }
   });
 
   // Helper functions for buttons/logging for warmup and main slides
 
-  // Now we only record slider_value for pragmatics4 (allocations removed)
-  function log_responses(stim, rationale, allocations, is_alt, slider_value) {
+  // Record slider_value for pragmatics4 with condition and utterances
+  function log_responses(stim, rationale, slider_value, condition, leftInterpIdx, rightInterpIdx) {
     let trial_data = {
       id: stim.id,
-      is_alt: is_alt,
+      condition: condition,
       phenomenon: exp.phenomenon,
       batch_index: exp.batch_index,
       scenario: stim.scenario,
       question: stim.question,
-      alternative_utterance: stim.stronger_alternative,
-      alternative_cancellation: stim.alternative_cancellation || null,
-      mainName: stim.mainName || stim.speaker_name || null,
-      secondName: stim.secondName || null,
+      weaker_utterance: stim.weaker_utterance || null,
+      stronger_utterance: stim.stronger_utterance || null,
       rationale: rationale,
       slider_value: (typeof slider_value !== 'undefined' ? slider_value : null),
-      time_in_minutes: (Date.now() - exp.startT) / 60000
+      time_in_minutes: (Date.now() - exp.startT) / 60000,
+      interpretation_left: stim.interpretations[leftInterpIdx],
+      interpretation_right: stim.interpretations[rightInterpIdx],
+      left_option_index: leftInterpIdx,
+      right_option_index: rightInterpIdx,
     };
-    trial_data['interpretation1'] = stim.interpretations[0];
-    trial_data['interpretation2'] = stim.interpretations[1];
     exp.collected_data.push(trial_data);
   }
 
-  function trial_button_event(current_index, stimuli_type, stimuli, is_alt) {
+  function trial_button_event(current_index, stimuli_type, stimuli, condition) {
     const $slide = $(`#${stimuli_type}`);
     $slide.find(".err").hide();
-    // Support both point-allocation and slider-based UI: prefer slider when present
-    let sel;
-    if ($slide.find('.interp-slider').length > 0) {
-      sel = getSliderSelection($slide);
-      if (!sel.valid) { $slide.find('.err').text(sel.errMsg).show(); return false; }
-    } else {
-      sel = getPointAllocations($slide);
-      if (!sel.valid) { $slide.find('.err').text(sel.errMsg).show(); return false; }
+
+    // Get slider selection
+    const $slider = $slide.find('.interp-slider');
+    if ($slider.length === 0) {
+      $slide.find('.err').text('Slider missing.').show();
+      return false;
     }
+    const sliderValue = $slider.val();
+    if (sliderValue === '' || sliderValue == null) {
+      $slide.find('.err').text('Please move the slider.').show();
+      return false;
+    }
+
+    // Get rationale (optional for main trials, not shown for warmup)
     let rationale = "";
-    if (stimuli_type == "warmup") {
-      rationale = "None";
-    } else {
-      rationale = $slide.find("#rationale").val();
-      if (!rationale) {
-        $slide.find(".err").text("Please provide a rationale.").show();
-        return false;
-      }
+    if (stimuli_type !== "warmup") {
+      rationale = $slide.find("#rationale").val() || ""; // Optional - can be empty
     }
-    if (sel.hasOwnProperty('slider_value')) {
-      log_responses(stim = stimuli[current_index], rationale = rationale, allocations = null, is_alt = is_alt, sel.slider_value);
-    } else {
-      log_responses(stim = stimuli[current_index], rationale = rationale, allocations = sel.allocations, is_alt = is_alt);
-    }
+
+    // Get the interpretation indices for left and right positions
+    const $area = $slide.find(".interpretation-area");
+    const leftInterpIdx = $area.data('left-interp-idx') || 0;
+    const rightInterpIdx = $area.data('right-interp-idx') || 1;
+
+    log_responses(stim = stimuli[current_index], rationale = rationale, slider_value = parseInt(sliderValue, 10), condition = condition, leftInterpIdx = leftInterpIdx, rightInterpIdx = rightInterpIdx);
     return true;
   }
 
@@ -226,7 +255,7 @@ function make_slides(f) {
   slides.startWarmup = slide({
     name: "startWarmup",
     start: function () {
-      $("#warmup-instructions").html(warmup_instructions_html(is_alt = exp.is_alt));
+      $("#warmup-instructions").html(warmup_instructions_html(condition = exp.condition));
     },
     button: function () {
       exp.go();
@@ -242,17 +271,17 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
       console.log("In the start");
-      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup", is_alt = exp.is_alt);
+      display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup", condition = exp.condition);
     },
 
     button: function () {
       console.log(this.index);
       console.log(exp.warmup_stimuli);
       console.log("In the button");
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli, is_alt = exp.is_alt);
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "warmup", stimuli = exp.warmup_stimuli, condition = exp.condition);
       if (trial_result) {
         this.index++;
-        display_stimulus(current_index = this.index, stimuli = stimuli, stimuli_type = stimuli_type, is_alt = exp.is_alt);
+        display_stimulus(current_index = this.index, stimuli = exp.warmup_stimuli, stimuli_type = "warmup", condition = exp.condition);
       }
     },
   });
@@ -268,7 +297,6 @@ function make_slides(f) {
 
   // MAIN SLIDE //
 
-
   slides.main = slide({
     name: "main",
     index: 0,
@@ -278,17 +306,17 @@ function make_slides(f) {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the start of main slide");
-      display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", is_alt = exp.is_alt);
+      display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", condition = exp.condition);
     },
 
     button: function () {
       console.log(this.index);
       console.log(exp.stimuli);
       console.log("In the button of main slide");
-      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli, is_alt = exp.is_alt);
+      trial_result = trial_button_event(current_index = this.index, stimuli_type = "main", stimuli = exp.stimuli, condition = exp.condition);
       if (trial_result) {
         this.index++;
-        display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", is_alt = exp.is_alt);
+        display_stimulus(current_index = this.index, stimuli = exp.stimuli, stimuli_type = "main", condition = exp.condition);
       }
     },
   });
@@ -327,28 +355,24 @@ function shuffle_stimuli(stimuli) {
 }
 
 function init() {
-  // IMPORTANT NOTE ABOUT PROLIFERATE: When four vs five interpretations are used, the API only captures the four interpretations when
-  // you do getresults on the python side.
   // Initialize the collected data
   exp.trials = [];
   exp.catch_trials = [];
   // Get the stimuli using the URL parameters
   var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
-  var is_alt = parseInt(get_url_param("alt", 0)); // Whether to use the alternative stimuli or not
+  var condition = parseInt(get_url_param("condition", 0)); // Which experimental condition (0-3)
   exp.example_stimuli = examples_gradable_meanings;
   exp.warmup_stimuli = warm_ups_gradable_meanings;
   exp.stimuli = main_stimuli_gradable_meanings[batch_index];
   exp.stimuli = exp.stimuli.concat(quality_checks_gradable_meanings);
-  // Shuffle the order of the stimuli and of the interpretations
+  // Shuffle the order of the stimuli
   exp.phenomenon = "gradable_meanings"; // Store the phenomenon for later use
-  exp.is_alt = is_alt; // Store whether this is the alternative stimuli or not
+  exp.condition = condition; // Store the condition (0-3)
   exp.batch_index = batch_index; // Store the batch index for later use
   exp.example_stimuli = shuffle_stimuli(exp.example_stimuli);
   exp.warmup_stimuli = shuffle_stimuli(exp.warmup_stimuli);
   exp.stimuli = shuffle_stimuli(exp.stimuli);
-  exp.num_interpretations = exp.stimuli[0].interpretations.length; // Number of interpretations per stimulus, may be different for each phenomenon
-  // Get the example allocations for gradable meanings
-  exp.example_allocations = example_allocations;
+  exp.num_interpretations = exp.stimuli[0].interpretations.length; // Should be 2 for pragmatics4
   // Structure experiment and make slides
   exp.structure = [
     "i0",

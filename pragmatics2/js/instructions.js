@@ -10,7 +10,7 @@ function start_instructions_html(is_alt) {
         possible
         meaning
         interpretations based on how likely <em>you believe</em> each one of them to be. You
-        will also <strong>justify</strong> your point distribution.
+        may also <strong>justify</strong> your point distribution (optional).
     </p>`;
     if (!is_alt) {
         common_instructions_html += `
