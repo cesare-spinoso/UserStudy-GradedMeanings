@@ -1,23 +1,18 @@
 
-// all the examples data which comes from src/human_exp/pragmatics2/pvt21_examples.csv 
+// Pragmatics4 examples: demonstrating weaker vs stronger utterances with slider interpretation
 
 var examples_gradable_meanings = [
     {
-    "id": "examples_0",
-    "scenario": "Mark and John walk into the office and see a dog. Mark says, \"Oh my god! Look at that cute little dog!\"",
-    // Updated study objective: intensity judgment of described quality
-    "question": "What does Mark think about the size of the dog?",
-    "interpretations": [
-        "The dog is very small.",
-        "The dog is small",
-        "The dog is of normal size.",
-        "The dog is big",
-        "The dog is very big",
-    ],
-    "mainName": "Mark",
-    "secondName": "John",
-    "stronger_alternative": "He's so tiny, I almost stepped on him!",
-    "alternative_cancellation": "Oh come on John, he's not that little!",
-    "alternative_amplification": "You're so right. I could probably fit him in my pocket!",
+        "id": "examples_0",
+        "scenario": "Mark and John walk into the office and see a dog.",
+        "question": "What does Mark think about the size of the dog?",
+        "weaker_utterance": "That dog is small.",
+        "stronger_utterance": "Oh my god! Look at that tiny little dog!",
+        "interpretations": [
+            "Very large",
+            "Very small",
+        ],
+        "mainName": "Mark",
+        "secondName": "John",
     }
 ];
