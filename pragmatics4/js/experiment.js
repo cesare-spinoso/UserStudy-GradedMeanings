@@ -24,59 +24,64 @@ function make_slides(f) {
 
   function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationAreaSelector, interpretations, stimuli_type) {
     const $slide = $(`#${stimuli_type}`);
-    const $scenario = $slide.find(scenarioSelector).empty().html(scenarioValue);
-    const $question = $slide.find(questionSelector).empty().html(questionValue);
+    $slide.find(scenarioSelector).empty().html(scenarioValue);
+    $slide.find(questionSelector).empty().html(questionValue);
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
-    // For pragmatics4 we use a continuous slider from 0..100 where the two extremes map to the two interpretations
-  // interpretations array will be used directly for tick labels
+
     const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
-    const sliderHtml = `
-      <div class="slider-allocation" style="margin:18px 0 18px;">
-      <!-- numeric slider value and instructions below ticks -->
-      <div style="margin-top:18px; color:#666; font-size:0.95em; display:flex; flex-direction:column; align-items:center;">
-        <div id="${stimuli_type}_slider_value_display">Slider value (for debugging only): 50</div>
-      </div>
+    const labels = interpretations.map(s => _.escape(s || ''));
 
-        <div style="position:relative; width:100%;">
-          <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%; display:block;">
-          <!-- ticks overlay positioned exactly at 0,25,50,75,100% -->
-          <div class="ticks-overlay" aria-hidden="true">
-            <div class="tick" style="left:0%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[0] || '')}</span></div>
-            <div class="tick" style="left:25%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[1] || '')}</span></div>
-            <div class="tick" style="left:50%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[2] || '')}</span></div>
-            <div class="tick" style="left:75%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[3] || '')}</span></div>
-            <div class="tick" style="left:100%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[4] || '')}</span></div>
-          </div>
-          <div class="ticks-spacer"></div>
-        </div>
+    // Build tick items using flex layout — no absolute positioning so edge labels never overflow
+    const ticksHtml = labels.map(function(label, i) {
+      var extraClass = '';
+      if (i === 0) extraClass = ' tick-first';
+      else if (i === labels.length - 1) extraClass = ' tick-last';
+      return '<div class="interp-tick-item' + extraClass + '">' +
+               '<div class="interp-tick-mark"></div>' +
+               '<div class="interp-tick-text">' + label + '</div>' +
+             '</div>';
+    }).join('');
 
-      </div>`;
+    var sliderHtml =
+      '<div class="interp-choices">' +
+        '<div class="interp-choice-box">' + labels[0] + '</div>' +
+        '<div class="interp-choice-box">' + labels[labels.length - 1] + '</div>' +
+      '</div>' +
+      '<div class="interp-slider-section">' +
+        '<input type="range" min="0" max="100" step="1" value="50"' +
+               ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
+        '<div class="interp-tick-labels">' + ticksHtml + '</div>' +
+      '</div>' +
+      '<div class="interp-value-row">' +
+        '<span class="interp-value-num" id="' + stimuli_type + '_value_num">50</span>' +
+        '<span class="interp-value-hint"> — Move the slider to indicate your interpretation</span>' +
+      '</div>';
+
     $area.append(sliderHtml);
 
-    // If example slide, set slider to midpoint or derive from example_allocations if available
+    // Set example slider to preset value and disable it
     if (stimuli_type === 'example' && typeof exp !== 'undefined') {
-      let value = 50;
+      var value = 50;
       if (exp.example_allocations && exp.example_allocations.length === 2) {
-        const a = exp.example_allocations[0] || 0;
-        const b = exp.example_allocations[1] || 0;
-        const sum = a + b;
+        var a = exp.example_allocations[0] || 0;
+        var b = exp.example_allocations[1] || 0;
+        var sum = a + b;
         if (sum > 0) { value = Math.round((a / sum) * 100); }
       }
-      const $slider = $area.find(`#${stimuli_type}_slider`);
-      $slider.val(value).prop('disabled', true);
+      $area.find('#' + stimuli_type + '_slider').val(value).prop('disabled', true);
+      $area.find('#' + stimuli_type + '_value_num').text(value);
     }
 
-  // Update numeric display on slider input (visible for testing)
-  $area.find('.interp-slider').off('input').on('input', function () {
-    const v = $(this).val();
-    $area.find(`#${stimuli_type}_slider_value_display`).text(`Slider value: ${v}`);
-  });
+    // Update value display on slider move (both input and change for cross-browser compatibility)
+    $area.find('#' + stimuli_type + '_slider').off('input change').on('input change', function() {
+      $area.find('#' + stimuli_type + '_value_num').text($(this).val());
+    });
 
-    // Autofocus the slider when a new stimulus appears (skip if disabled)
-    const $firstControl = $area.find(`#${stimuli_type}_slider`);
+    // Autofocus the slider when a new stimulus appears
+    var $firstControl = $area.find('#' + stimuli_type + '_slider');
     if ($firstControl.length && !$firstControl.prop('disabled')) {
-      setTimeout(function () { $firstControl.focus(); }, 0);
+      setTimeout(function() { $firstControl.focus(); }, 0);
     }
   }
 

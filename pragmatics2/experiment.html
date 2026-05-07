@@ -45,17 +45,86 @@
 
     <style>
         body {
-            font-family: Verdana, Geneva, sans-serif;
-            color: #333333;
-            font-size: 14pt;
+            font-family: Arial, sans-serif;
+            color: #333;
+            font-size: 14px;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .panel {
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            background: #fff;
+        }
+
+        .panel-heading {
+            border-radius: 8px 8px 0 0 !important;
+            font-size: 16px;
+            padding: 12px 18px;
         }
 
         .panel-body {
             text-align: left;
+            padding: 24px 28px;
+            font-size: 15px;
+            line-height: 1.6;
         }
+
+        .btn-primary.continueButton,
+        .btn-primary {
+            background-color: #800080 !important;
+            border-color: #800080 !important;
+            border-radius: 6px;
+            font-size: 15px;
+            padding: 10px 32px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary.continueButton:hover,
+        .btn-primary:hover {
+            background-color: #660066 !important;
+            border-color: #660066 !important;
+        }
+
+        /* Allocation list styling */
+        .interpretation-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            margin-bottom: 8px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .interpretation-list li input[type=number] {
+            width: 64px;
+            padding: 4px 8px;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .scenario { margin-bottom: 10px; line-height: 1.7; }
+        .question { font-size: 16px; margin-bottom: 20px; }
+        #rationale { font-size: 14px; line-height: 1.5; }
 
         .err {
             display: none;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -181,7 +250,7 @@
             <div class="row">
                 <!-- Response Collection Form -->
                 <div class="panel panel-primary"
-                    style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
+                    style="border-color: #800080; margin: 0 auto;">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
                         <strong>Warm-up Scenario</strong>
@@ -247,7 +316,7 @@
             <div class="row">
                 <!-- Response Collection Form -->
                 <div class="panel panel-primary"
-                    style="border-color: #800080; margin: 0 auto; transform: translateX(-7%);">
+                    style="border-color: #800080; margin: 0 auto;">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
                         <strong>Study Scenario</strong>
