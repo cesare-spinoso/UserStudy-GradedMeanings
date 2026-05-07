@@ -22,67 +22,110 @@ function make_slides(f) {
 
   // Helper function to build scenario text based on condition
   function buildScenarioText(stim, condition) {
-    // condition: 0 = weaker utterance, 1 = stronger utterance, 2 = choice then stronger, 3 = choice then stronger
+    // condition: 0 and 1 show a single utterance, 2 and 3 show a choice between two utterances
     const mainName = stim.mainName || "(Speaker)";
-    const secondName = stim.secondName || "(Listener)";
     const weakerUtterance = stim.weaker_utterance || "";
     const strongerUtterance = stim.stronger_utterance || "";
 
     let scenarioText = stim.scenario;
 
     if (condition === 0) {
-      // Character says weaker utterance
+      // Character says an utterance
       scenarioText += ` ${mainName} says, "<span style="color: #318500;">${_.escape(weakerUtterance)}</span>"`;
     } else if (condition === 1) {
-      // Character says stronger utterance
+      // Character says an utterance
       scenarioText += ` ${mainName} says, "<span style="color: #318500;">${_.escape(strongerUtterance)}</span>"`;
     } else if (condition === 2 || condition === 3) {
-      // Character is seen choosing between weaker and stronger, chooses stronger
-      scenarioText += ` ${mainName} is choosing between two ways to express themselves. The options are: `;
-      scenarioText += `"<span style="color: #318500;">${_.escape(weakerUtterance)}</span>" or `;
-      scenarioText += `"<span style="color: #318500;">${_.escape(strongerUtterance)}</span>". `;
-      scenarioText += `${mainName} chooses the stronger option and says, "<span style="color: #318500;">${_.escape(strongerUtterance)}</span>"`;
+      // Visual choice display for alternatives
+      scenarioText += ` ${mainName} is choosing between two ways to express themselves.`;
     }
 
     return `<strong>Scenario:</strong> ${scenarioText}`;
   }
 
+  // Helper function to build visual alternatives display for conditions 2/3
+  function buildAlternativesDisplay(stim) {
+    const utterance1 = stim.weaker_utterance || "";
+    const utterance2 = stim.stronger_utterance || "";
+    return `
+      <div class="alternatives-display">
+        <div class="alternative-option">
+          <span>"${_.escape(utterance1)}"</span>
+        </div>
+        <div class="alternative-option">
+          <span>"${_.escape(utterance2)}"</span>
+        </div>
+      </div>
+    `;
+  }
+
   // Helper functions to populate slides for example, warmup, and main stimuli
 
-  function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationAreaSelector, interpretations, stimuli_type) {
+  function populateInterpretations(scenarioSelector, scenarioValue, questionSelector, questionValue, interpretationAreaSelector, interpretations, stimuli_type, condition, isAlternativesDisplay) {
     const $slide = $(`#${stimuli_type}`);
     const $scenario = $slide.find(scenarioSelector).empty().html(scenarioValue);
     const $question = $slide.find(questionSelector).empty().html(questionValue);
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
+
+    // Randomize left/right interpretation assignment
+    const shuffled = _.shuffle([0, 1]);
+    const leftInterpIdx = shuffled[0];
+    const rightInterpIdx = shuffled[1];
+    const leftInterp = interpretations[leftInterpIdx];
+    const rightInterp = interpretations[rightInterpIdx];
+
+    // Store which interpretation is on which side in current stimulus for logging
+    $area.data('left-interp-idx', leftInterpIdx);
+    $area.data('right-interp-idx', rightInterpIdx);
+
     // For pragmatics4 we use a continuous slider from 0..100 where the two extremes map to the two interpretations
-    // interpretations array should have exactly 2 items
     const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
-    const sliderHtml = `
+
+    let htmlContent = '';
+
+    // Add alternatives display for conditions 2/3
+    if (isAlternativesDisplay) {
+      htmlContent += isAlternativesDisplay;
+    }
+
+    htmlContent += `
       <div class="slider-allocation" style="margin:18px 0 18px;">
         <div style="position:relative; width:100%;">
           <input type="range" min="0" max="100" step="1" value="50" class="interp-slider" id="${stimuli_type}_slider" ${disabledAttr} style="width:100%; display:block;">
           <!-- ticks overlay positioned only at 0 and 100% for two endpoints -->
           <div class="ticks-overlay" aria-hidden="true">
-            <div class="tick" style="left:0%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[0] || '')}</span></div>
-            <div class="tick" style="left:100%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(interpretations[1] || '')}</span></div>
+            <div class="tick" style="left:0%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(leftInterp)}</span></div>
+            <div class="tick" style="left:100%;"><span class="tick-mark"></span><span class="tick-label">${_.escape(rightInterp)}</span></div>
           </div>
           <div class="ticks-spacer"></div>
         </div>
+        <div class="slider-scale-labels">
+          <span>0</span>
+          <span style="font-weight: bold; color: #800080;">50<br><span style="font-size: 0.85em; font-weight: normal;">Neither</span></span>
+          <span>100</span>
+        </div>
       </div>`;
-    $area.append(sliderHtml);
+    $area.append(htmlContent);
 
     // If example slide, set slider to midpoint
     if (stimuli_type === 'example' && typeof exp !== 'undefined') {
       let value = 50;
       const $slider = $area.find(`#${stimuli_type}_slider`);
-      $slider.val(value).prop('disabled', true);
+      $slider.val(value).prop('disabled', true).addClass('thumb-visible');
+    }
+
+    // Show thumb on first interaction (not for example)
+    const $slider = $area.find(`#${stimuli_type}_slider`);
+    if ($slider.length && !$slider.prop('disabled')) {
+      $slider.one('mousedown touchstart', function () {
+        $(this).addClass('thumb-visible');
+      });
     }
 
     // Autofocus the slider when a new stimulus appears (skip if disabled)
-    const $firstControl = $area.find(`#${stimuli_type}_slider`);
-    if ($firstControl.length && !$firstControl.prop('disabled')) {
-      setTimeout(function () { $firstControl.focus(); }, 0);
+    if ($slider.length && !$slider.prop('disabled')) {
+      setTimeout(function () { $slider.focus(); }, 0);
     }
   }
 
@@ -101,6 +144,11 @@ function make_slides(f) {
       const scenarioWithLabel = buildScenarioText(stim, condition);
       // Bold the question
       const question = `<strong>${stim.question}</strong>`;
+      // Build alternatives display for conditions 2/3
+      let alternativesDisplay = '';
+      if (condition === 2 || condition === 3) {
+        alternativesDisplay = buildAlternativesDisplay(stim);
+      }
       // Populate the html with the scenario, question, and interpretations
       populateInterpretations(
         scenarioSelector = ".scenario",
@@ -109,7 +157,9 @@ function make_slides(f) {
         questionValue = question,
         interpretationAreaSelector = ".interpretation-area",
         interpretations = stim.interpretations,
-        stimuli_type = stimuli_type
+        stimuli_type = stimuli_type,
+        condition = condition,
+        isAlternativesDisplay = alternativesDisplay
       );
       if (stimuli_type === 'warmup' || stimuli_type === 'main') {
         const $slide = $(`#${stimuli_type}`);
@@ -145,8 +195,8 @@ function make_slides(f) {
 
   // Helper functions for buttons/logging for warmup and main slides
 
-  // Now we record slider_value for pragmatics4 with condition and weaker/stronger utterances
-  function log_responses(stim, rationale, slider_value, condition) {
+  // Record slider_value for pragmatics4 with condition and utterances
+  function log_responses(stim, rationale, slider_value, condition, leftInterpIdx, rightInterpIdx) {
     let trial_data = {
       id: stim.id,
       condition: condition,
@@ -159,8 +209,10 @@ function make_slides(f) {
       rationale: rationale,
       slider_value: (typeof slider_value !== 'undefined' ? slider_value : null),
       time_in_minutes: (Date.now() - exp.startT) / 60000,
-      interpretation_left: stim.interpretations[0],
-      interpretation_right: stim.interpretations[1],
+      interpretation_left: stim.interpretations[leftInterpIdx],
+      interpretation_right: stim.interpretations[rightInterpIdx],
+      left_option_index: leftInterpIdx,
+      right_option_index: rightInterpIdx,
     };
     exp.collected_data.push(trial_data);
   }
@@ -187,7 +239,12 @@ function make_slides(f) {
       rationale = $slide.find("#rationale").val() || ""; // Optional - can be empty
     }
 
-    log_responses(stim = stimuli[current_index], rationale = rationale, slider_value = parseInt(sliderValue, 10), condition = condition);
+    // Get the interpretation indices for left and right positions
+    const $area = $slide.find(".interpretation-area");
+    const leftInterpIdx = $area.data('left-interp-idx') || 0;
+    const rightInterpIdx = $area.data('right-interp-idx') || 1;
+
+    log_responses(stim = stimuli[current_index], rationale = rationale, slider_value = parseInt(sliderValue, 10), condition = condition, leftInterpIdx = leftInterpIdx, rightInterpIdx = rightInterpIdx);
     return true;
   }
 

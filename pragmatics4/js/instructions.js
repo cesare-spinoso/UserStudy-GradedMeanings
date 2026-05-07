@@ -1,9 +1,9 @@
 function start_instructions_html(condition) {
     const conditionLabels = {
-        0: "where the character says a weaker utterance",
-        1: "where the character says a stronger utterance",
-        2: "where the character chooses between weaker and stronger utterances, selecting the stronger one",
-        3: "where the character chooses between weaker and stronger utterances, selecting the stronger one"
+        0: "where the character says an utterance",
+        1: "where the character says an utterance",
+        2: "where the character chooses between two utterances",
+        3: "where the character chooses between two utterances"
     };
     const conditionLabel = conditionLabels[condition] || "";
 

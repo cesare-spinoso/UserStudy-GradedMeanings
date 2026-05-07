@@ -82,11 +82,15 @@
             border-radius: 4px;
         }
 
+        /* Hide slider thumb initially */
+        .interp-slider {
+            --thumb-visible: 0;
+        }
+
         .interp-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
             margin-top: -7px;
-            /* center the thumb */
             width: 18px;
             height: 18px;
             background: #d3d3d3;
@@ -94,7 +98,12 @@
             border-radius: 50%;
             box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
             z-index: 5;
-            /* ensure thumb sits above overlay */
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .interp-slider.thumb-visible::-webkit-slider-thumb {
+            opacity: 1;
         }
 
         .interp-slider::-moz-range-thumb {
@@ -104,6 +113,57 @@
             border: 2px solid #999;
             border-radius: 50%;
             z-index: 5;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .interp-slider.thumb-visible::-moz-range-thumb {
+            opacity: 1;
+        }
+
+        /* Slider scale labels and midpoint */
+        .slider-scale-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+            padding: 0 8px;
+        }
+
+        .slider-midpoint-label {
+            text-align: center;
+            font-size: 0.85em;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* Visual choice display for conditions 2/3 */
+        .alternatives-display {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .alternative-option {
+            flex: 1;
+            max-width: 280px;
+            padding: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            text-align: center;
+            font-size: 0.95em;
+            line-height: 1.4;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .alternative-option:hover {
+            border-color: #ccc;
+            background-color: #f5f5f5;
         }
 
         /* Tick overlay styling for absolute-positioned ticks */
