@@ -229,11 +229,7 @@ function make_slides(f) {
     if (stimuli_type == "warmup") {
       rationale = "None"; // No rationale for warmup
     } else {
-      rationale = $slide.find("#rationale").val();
-      if (!rationale) {
-        $slide.find(".err").text("Please provide a rationale.").show();
-        return false;
-      }
+      rationale = $slide.find("#rationale").val() || ""; // Rationale is optional
     }
     console.log("Inside the trial_button function");
     console.log("Rationale: ", rationale);
