@@ -129,6 +129,24 @@
             font-size: 16px;
         }
 
+        /* Slider track wrapper — provides space for the tick to extend above/below */
+        .slider-track-wrapper {
+            position: relative;
+            padding: 35px 0;
+        }
+
+        /* Midpoint tick line — spans full wrapper height including padding */
+        .slider-midpoint-tick {
+            position: absolute;
+            left: calc(50% - 1px);
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #888;
+            pointer-events: none;
+            z-index: 1;
+        }
+
         /* Slider base styling */
         .interp-slider {
             -webkit-appearance: none;
@@ -139,7 +157,8 @@
             border-radius: 5px;
             outline: none;
             display: block;
-            margin: 10px 0;
+            position: relative;
+            z-index: 2;
         }
 
         .interp-slider::-webkit-slider-runnable-track {
@@ -211,29 +230,21 @@
             opacity: 0;
         }
 
-        /* Tick mark at slider midpoint */
-        .slider-tick-container {
+        /* Three-label row: left endpoint, Neither (centered), right endpoint — all same vertical level */
+        .interp-labels-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             position: relative;
-            width: 100%;
-            height: 22px;
-            margin-top: 2px;
+            margin-top: 6px;
         }
 
-        .slider-tick-mark {
-            position: absolute;
-            left: calc(50% - 1px);
-            top: 0;
-            width: 2px;
-            height: 8px;
-            background-color: #888;
-        }
-
-        .slider-tick-label {
+        .slider-neither-label {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            top: 9px;
-            font-size: 13px;
+            font-size: 18px;
+            font-weight: 600;
             color: #666;
             white-space: nowrap;
         }
@@ -259,24 +270,20 @@
             cursor: default;
         }
 
-        /* Flex endpoint labels */
-        .interp-endpoint-labels {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 4px;
-            font-size: 15px;
-            font-weight: 600;
-            color: #444;
-        }
-
         .interp-endpoint-left {
             text-align: left;
             max-width: 45%;
+            font-size: 18px;
+            font-weight: 600;
+            color: #444;
         }
 
         .interp-endpoint-right {
             text-align: right;
             max-width: 45%;
+            font-size: 18px;
+            font-weight: 600;
+            color: #444;
         }
 
         /* Slider value display — hidden until slider is touched */

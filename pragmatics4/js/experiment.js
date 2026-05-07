@@ -56,6 +56,7 @@ function make_slides(f) {
     $slide.find(questionSelector).empty().html(questionValue);
     const $area = $slide.find(interpretationAreaSelector);
     $area.empty();
+    $area.data('slider-touched', false);
 
     // Randomize left/right interpretation assignment
     const shuffled = _.shuffle([0, 1]);
@@ -73,14 +74,14 @@ function make_slides(f) {
     const htmlContent =
       '<div class="interp-slider-section">' +
         '<div class="slider-instruction">Click and drag anywhere along the slider to indicate your interpretation!</div>' +
-        '<input type="range" min="0" max="100" step="1" value="50"' +
-               ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
-        '<div class="slider-tick-container">' +
-          '<div class="slider-tick-mark"></div>' +
-          '<div class="slider-tick-label">Neither</div>' +
+        '<div class="slider-track-wrapper">' +
+          '<div class="slider-midpoint-tick"></div>' +
+          '<input type="range" min="0" max="100" step="1" value="50"' +
+                 ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
         '</div>' +
-        '<div class="interp-endpoint-labels">' +
+        '<div class="interp-labels-row">' +
           '<span class="interp-endpoint-left">' + _.escape(leftInterp) + '</span>' +
+          '<span class="slider-neither-label">Neither</span>' +
           '<span class="interp-endpoint-right">' + _.escape(rightInterp) + '</span>' +
         '</div>' +
       '</div>' +
@@ -93,7 +94,8 @@ function make_slides(f) {
     // Set example slider to midpoint, disable it, and show value immediately
     if (stimuli_type === 'example' && typeof exp !== 'undefined') {
       const $exSlider = $area.find('#' + stimuli_type + '_slider');
-      $exSlider.val(50).prop('disabled', true).addClass('thumb-visible slider-interacted');
+      $exSlider.val(50).prop('disabled', true).addClass('thumb-visible');
+      $area.data('slider-touched', true);
       $area.find('#' + stimuli_type + '_value_num').text(50).addClass('show-value');
       $area.find('.slider-instruction').addClass('hide-instruction');
     }
@@ -101,8 +103,9 @@ function make_slides(f) {
     const $slider = $area.find('#' + stimuli_type + '_slider');
     if ($slider.length && !$slider.prop('disabled')) {
       function markInteracted($s) {
-        if ($s.hasClass('slider-interacted')) return;
-        $s.addClass('thumb-visible slider-interacted');
+        if ($area.data('slider-touched')) return;
+        $area.data('slider-touched', true);
+        $s.addClass('thumb-visible');
         $s.closest('.interp-slider-section').find('.slider-instruction').addClass('hide-instruction');
         $area.find('#' + stimuli_type + '_value_num').text($s.val()).addClass('show-value');
       }
@@ -215,11 +218,12 @@ function make_slides(f) {
 
     // Get slider selection
     const $slider = $slide.find('.interp-slider');
+    const $area = $slide.find('.interpretation-area');
     if ($slider.length === 0) {
       $slide.find('.err').text('Slider missing.').show();
       return false;
     }
-    if (!$slider.hasClass('slider-interacted')) {
+    if (!$area.data('slider-touched')) {
       $slide.find('.err').text('Please move the slider to indicate your interpretation.').show();
       return false;
     }
@@ -232,7 +236,6 @@ function make_slides(f) {
     }
 
     // Get the interpretation indices for left and right positions
-    const $area = $slide.find(".interpretation-area");
     const leftInterpIdx = $area.data('left-interp-idx') || 0;
     const rightInterpIdx = $area.data('right-interp-idx') || 1;
 
