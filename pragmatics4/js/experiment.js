@@ -88,9 +88,9 @@ function make_slides(f) {
       htmlContent += isAlternativesDisplay;
     }
 
-    // Flex endpoint labels — no absolute positioning, so edge labels never overflow
     htmlContent +=
       '<div class="interp-slider-section">' +
+        '<div class="slider-instruction">Click and drag anywhere along the slider to indicate your interpretation!</div>' +
         '<input type="range" min="0" max="100" step="1" value="50"' +
                ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
         '<div class="interp-endpoint-labels">' +
@@ -104,29 +104,32 @@ function make_slides(f) {
         '</div>' +
       '</div>' +
       '<div class="interp-value-row">' +
-        '<span class="interp-value-num" id="' + stimuli_type + '_value_num">50</span>' +
-        '<span class="interp-value-hint"> — Move the slider to indicate your interpretation</span>' +
+        '<span class="interp-value-num" id="' + stimuli_type + '_value_num"></span>' +
       '</div>';
 
     $area.append(htmlContent);
 
-    // Set example slider to midpoint and disable it
+    // Set example slider to midpoint, disable it, and show value immediately
     if (stimuli_type === 'example' && typeof exp !== 'undefined') {
-      $area.find('#' + stimuli_type + '_slider').val(50).prop('disabled', true).addClass('thumb-visible');
-      $area.find('#' + stimuli_type + '_value_num').text(50);
+      const $exSlider = $area.find('#' + stimuli_type + '_slider');
+      $exSlider.val(50).prop('disabled', true).addClass('thumb-visible slider-interacted');
+      $area.find('#' + stimuli_type + '_value_num').text(50).addClass('show-value');
+      $area.find('.slider-instruction').addClass('hide-instruction');
     }
 
     const $slider = $area.find('#' + stimuli_type + '_slider');
     if ($slider.length && !$slider.prop('disabled')) {
-      // Reveal thumb on first touch/click
+      // On first touch/click: reveal thumb, mark interacted, hide instruction, show value
       $slider.one('mousedown touchstart', function() {
-        $(this).addClass('thumb-visible');
+        const $s = $(this);
+        $s.addClass('thumb-visible slider-interacted');
+        $s.closest('.interp-slider-section').find('.slider-instruction').addClass('hide-instruction');
+        $area.find('#' + stimuli_type + '_value_num').text($s.val()).addClass('show-value');
       });
-      // Update value display when slider is moved (both events for cross-browser compatibility)
+      // Update value display as slider moves
       $slider.off('input change').on('input change', function() {
         $area.find('#' + stimuli_type + '_value_num').text($(this).val());
       });
-      // Autofocus
       setTimeout(function() { $slider.focus(); }, 0);
     }
   }
@@ -229,11 +232,11 @@ function make_slides(f) {
       $slide.find('.err').text('Slider missing.').show();
       return false;
     }
-    const sliderValue = $slider.val();
-    if (sliderValue === '' || sliderValue == null) {
-      $slide.find('.err').text('Please move the slider.').show();
+    if (!$slider.hasClass('slider-interacted')) {
+      $slide.find('.err').text('Please move the slider to indicate your interpretation.').show();
       return false;
     }
+    const sliderValue = $slider.val();
 
     // Get rationale (optional for main trials, not shown for warmup)
     let rationale = "";
