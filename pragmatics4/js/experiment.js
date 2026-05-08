@@ -240,7 +240,7 @@ function make_slides(f) {
     const rightInterpIdx = $area.data('right-interp-idx') || 1;
 
     const utteranceWeakerFirst = ($slide.data('utterance-weaker-first') !== undefined) ? $slide.data('utterance-weaker-first') : null;
-    log_responses(stim = stimuli[current_index], rationale = rationale, slider_value = parseInt(sliderValue, 10), condition = condition, leftInterpIdx = leftInterpIdx, rightInterpIdx = rightInterpIdx, utteranceWeakerFirst = utteranceWeakerFirst);
+    log_responses(stimuli[current_index], rationale, parseInt(sliderValue, 10), condition, leftInterpIdx, rightInterpIdx, utteranceWeakerFirst);
     return true;
   }
 
