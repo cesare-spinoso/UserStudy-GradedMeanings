@@ -54,10 +54,9 @@ function make_slides(f) {
     $area.empty();
     $area.data('slider-touched', false);
 
-    // Randomize left/right interpretation assignment
-    const shuffled = _.shuffle([0, 1]);
-    const leftInterpIdx = shuffled[0];
-    const rightInterpIdx = shuffled[1];
+    // Fixed order: interpretations[0] always on the left, interpretations[1] always on the right
+    const leftInterpIdx = 0;
+    const rightInterpIdx = 1;
     const leftInterp = interpretations[leftInterpIdx];
     const rightInterp = interpretations[rightInterpIdx];
 
