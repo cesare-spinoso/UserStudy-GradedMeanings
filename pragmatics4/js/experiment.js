@@ -20,29 +20,25 @@ function make_slides(f) {
     }
   });
 
-  // weakerFirst (bool): for conditions 2/3, whether to display weaker utterance first (left)
-  function buildScenarioText(stim, condition, weakerFirst) {
+  // altShuffledOrder: null if no alternatives, or [0,1]/[1,0] indicating display order of stim.alternatives
+  function buildScenarioText(stim, altShuffledOrder) {
     const mainName = stim.mainName || "(Speaker)";
-    const weakerUtterance = stim.weaker_utterance || "";
-    const strongerUtterance = stim.stronger_utterance || "";
+    const observedUtterance = stim.observed_utterance || "";
 
     let scenarioText = stim.scenario;
 
-    if (condition === 0) {
-      scenarioText += ` ${mainName} says, "<strong>${_.escape(weakerUtterance)}</strong>"`;
-    } else if (condition === 1) {
-      scenarioText += ` ${mainName} says, "<strong>${_.escape(strongerUtterance)}</strong>"`;
-    } else if (condition === 2 || condition === 3) {
-      const speaksUtterance = condition === 2 ? weakerUtterance : strongerUtterance;
-      const firstUtterance  = weakerFirst ? weakerUtterance  : strongerUtterance;
-      const secondUtterance = weakerFirst ? strongerUtterance : weakerUtterance;
+    if (stim.alternatives && stim.alternatives.length === 2 && altShuffledOrder) {
+      const firstAlt = stim.alternatives[altShuffledOrder[0]];
+      const secondAlt = stim.alternatives[altShuffledOrder[1]];
       scenarioText +=
         ` <strong>${mainName}</strong> thinks about saying the following two utterances:` +
         `<div class="alternatives-display">` +
-          `<div class="alternative-option"><strong>"${_.escape(firstUtterance)}"</strong></div>` +
-          `<div class="alternative-option"><strong>"${_.escape(secondUtterance)}"</strong></div>` +
+          `<div class="alternative-option"><strong>"${_.escape(firstAlt)}"</strong></div>` +
+          `<div class="alternative-option"><strong>"${_.escape(secondAlt)}"</strong></div>` +
         `</div>` +
-        `In the end, <strong>${mainName}</strong> says, "<strong>${_.escape(speaksUtterance)}</strong>".`;
+        `In the end, <strong>${mainName}</strong> says, "<strong>${_.escape(observedUtterance)}</strong>".`;
+    } else {
+      scenarioText += ` ${mainName} says, "<strong>${_.escape(observedUtterance)}</strong>"`;
     }
 
     return `<strong>Scenario:</strong> ${scenarioText}`;
@@ -134,16 +130,16 @@ function make_slides(f) {
       const stim = stimuli[current_index];
       const $slide = $(`#${stimuli_type}`);
 
-      // For conditions 2/3, randomly decide which utterance is shown first and record it
-      let weakerFirst = null;
-      if (condition === 2 || condition === 3) {
-        weakerFirst = Math.random() < 0.5;
-        $slide.data('utterance-weaker-first', weakerFirst);
+      // Randomly order alternatives when the item has them
+      let altShuffledOrder = null;
+      if (stim.alternatives && stim.alternatives.length === 2) {
+        altShuffledOrder = Math.random() < 0.5 ? [0, 1] : [1, 0];
+        $slide.data('alt-shuffled-order', altShuffledOrder);
       } else {
-        $slide.removeData('utterance-weaker-first');
+        $slide.removeData('alt-shuffled-order');
       }
 
-      const scenarioWithLabel = buildScenarioText(stim, condition, weakerFirst);
+      const scenarioWithLabel = buildScenarioText(stim, altShuffledOrder);
       const question = `<strong>${stim.question}</strong>`;
 
       populateInterpretations(
@@ -189,8 +185,9 @@ function make_slides(f) {
 
   // Helper functions for buttons/logging for warmup and main slides
 
-  // Record slider_value for pragmatics4 with condition and utterances
-  function log_responses(stim, rationale, slider_value, condition, leftInterpIdx, rightInterpIdx, utteranceWeakerFirst) {
+  // Record slider_value for pragmatics4 with observed utterance and optional alternatives
+  function log_responses(stim, rationale, slider_value, condition, leftInterpIdx, rightInterpIdx, altShuffledOrder) {
+    const hasAlts = !!(stim.alternatives && stim.alternatives.length === 2);
     let trial_data = {
       id: stim.id,
       condition: condition,
@@ -198,8 +195,10 @@ function make_slides(f) {
       batch_index: exp.batch_index,
       scenario: stim.scenario,
       question: stim.question,
-      weaker_utterance: stim.weaker_utterance || null,
-      stronger_utterance: stim.stronger_utterance || null,
+      observed_utterance: stim.observed_utterance || null,
+      has_alternatives: hasAlts,
+      alt_shown_first: (hasAlts && altShuffledOrder) ? stim.alternatives[altShuffledOrder[0]] : null,
+      alt_shown_second: (hasAlts && altShuffledOrder) ? stim.alternatives[altShuffledOrder[1]] : null,
       rationale: rationale,
       slider_value: (typeof slider_value !== 'undefined' ? slider_value : null),
       time_in_minutes: (Date.now() - exp.startT) / 60000,
@@ -207,7 +206,6 @@ function make_slides(f) {
       interpretation_right: stim.interpretations[rightInterpIdx],
       left_option_index: leftInterpIdx,
       right_option_index: rightInterpIdx,
-      utterance_weaker_first: (utteranceWeakerFirst !== null && utteranceWeakerFirst !== undefined) ? utteranceWeakerFirst : null,
     };
     exp.collected_data.push(trial_data);
   }
@@ -239,8 +237,8 @@ function make_slides(f) {
     const leftInterpIdx = $area.data('left-interp-idx') || 0;
     const rightInterpIdx = $area.data('right-interp-idx') || 1;
 
-    const utteranceWeakerFirst = ($slide.data('utterance-weaker-first') !== undefined) ? $slide.data('utterance-weaker-first') : null;
-    log_responses(stimuli[current_index], rationale, parseInt(sliderValue, 10), condition, leftInterpIdx, rightInterpIdx, utteranceWeakerFirst);
+    const altShuffledOrder = ($slide.data('alt-shuffled-order') !== undefined) ? $slide.data('alt-shuffled-order') : null;
+    log_responses(stimuli[current_index], rationale, parseInt(sliderValue, 10), condition, leftInterpIdx, rightInterpIdx, altShuffledOrder);
     return true;
   }
 
