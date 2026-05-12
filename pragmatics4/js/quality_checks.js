@@ -31,10 +31,10 @@ var quality_checks_gradable_meanings = [
         "id": "quality_checks_2",
         "scenario": "Tom and Alex are shopping for a new shirt. Alex asks Tom which one he'd like to buy. Tom thinks about what to say.",
         "question": "How likely is it that Tom will buy a blue shirt?",
-        "observed_utterance": "I want the blue one.",
+        "observed_utterance": "I want that shirt.",
         "alternatives": [
-            "I want a shirt.",
-            "I want the blue one.",
+            "I want that shirt.",
+            "I want that blue shirt.",
         ],
         "interpretations": [
             "Absolutely Impossible",
@@ -47,7 +47,7 @@ var quality_checks_gradable_meanings = [
         "id": "quality_checks_3",
         "scenario": "Maria is hosting a birthday party and calls her friend Chris to ask if he can make it. Chris thinks about what to say.",
         "question": "How likely is Chris to attend the party?",
-        "observed_utterance": "I won't be able to make it.",
+        "observed_utterance": "I might be a bit late.",
         "alternatives": [
             "I might be a bit late.",
             "I won't be able to make it.",

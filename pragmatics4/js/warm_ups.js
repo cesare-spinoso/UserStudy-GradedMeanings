@@ -20,7 +20,7 @@ var warm_ups_gradable_meanings = [
         "question": "How likely is Lisa to confront the coworker about it?",
         "observed_utterance": "That wasn't very nice what she said back there.",
         "alternatives": [
-            "That wasn't very good.",
+            "That wasn't very pleasant what she said back there.",
             "That wasn't very nice what she said back there.",
         ],
         "interpretations": [
