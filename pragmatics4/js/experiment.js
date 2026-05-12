@@ -77,7 +77,7 @@ function make_slides(f) {
         '</div>' +
         '<div class="interp-labels-row">' +
           '<span class="interp-endpoint-left">' + _.escape(leftInterp) + '</span>' +
-          '<span class="slider-neither-label">Neither</span>' +
+          '<span class="slider-neither-label">Even chance</span>' +
           '<span class="interp-endpoint-right">' + _.escape(rightInterp) + '</span>' +
         '</div>' +
       '</div>' +
