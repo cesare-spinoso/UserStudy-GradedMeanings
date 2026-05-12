@@ -18,10 +18,10 @@ var examples_gradable_meanings = [
         "id": "examples_1",
         "scenario": "Emily and Sarah are tasting a new dish at a restaurant. Emily thinks about what to say.",
         "question": "How likely is Emily to ask for a glass of water?",
-        "observed_utterance": "This is absolutely scorching hot!",
+        "observed_utterance": "This is so spicy!",
         "alternatives": [
-            "This has some kick to it.",
-            "This is absolutely scorching hot!",
+            "This is so spicy!",
+            "This is so unbearably spicy!",
         ],
         "interpretations": [
             "Absolutely Impossible",
