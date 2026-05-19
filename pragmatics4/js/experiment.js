@@ -66,17 +66,22 @@ function make_slides(f) {
 
     const disabledAttr = (stimuli_type === 'example') ? 'disabled' : '';
 
+    // Insert <br> at each space so each word of the label is on its own line
+    function labelHtml(text) {
+      return _.escape(text).replace(/ /g, '<br>');
+    }
+
     const htmlContent =
       '<div class="interp-slider-section">' +
         '<div class="slider-instruction">Click and drag anywhere along the slider to indicate your interpretation!</div>' +
         '<div class="slider-outer-wrapper">' +
-          '<span class="interp-endpoint-left">' + _.escape(leftInterp) + '</span>' +
+          '<span class="interp-endpoint-left">' + labelHtml(leftInterp) + '</span>' +
           '<div class="slider-track-wrapper">' +
             '<div class="slider-midpoint-tick"></div>' +
             '<input type="range" min="0" max="100" step="1" value="50"' +
                    ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
           '</div>' +
-          '<span class="interp-endpoint-right">' + _.escape(rightInterp) + '</span>' +
+          '<span class="interp-endpoint-right">' + labelHtml(rightInterp) + '</span>' +
         '</div>' +
         '<div class="interp-labels-row">' +
           '<span class="slider-neither-label">Even chance</span>' +
