@@ -69,15 +69,17 @@ function make_slides(f) {
     const htmlContent =
       '<div class="interp-slider-section">' +
         '<div class="slider-instruction">Click and drag anywhere along the slider to indicate your interpretation!</div>' +
-        '<div class="slider-track-wrapper">' +
-          '<div class="slider-midpoint-tick"></div>' +
-          '<input type="range" min="0" max="100" step="1" value="50"' +
-                 ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
+        '<div class="slider-outer-wrapper">' +
+          '<span class="interp-endpoint-left">' + _.escape(leftInterp) + '</span>' +
+          '<div class="slider-track-wrapper">' +
+            '<div class="slider-midpoint-tick"></div>' +
+            '<input type="range" min="0" max="100" step="1" value="50"' +
+                   ' class="interp-slider" id="' + stimuli_type + '_slider" ' + disabledAttr + '>' +
+          '</div>' +
+          '<span class="interp-endpoint-right">' + _.escape(rightInterp) + '</span>' +
         '</div>' +
         '<div class="interp-labels-row">' +
-          '<span class="interp-endpoint-left">' + _.escape(leftInterp) + '</span>' +
           '<span class="slider-neither-label">Even chance</span>' +
-          '<span class="interp-endpoint-right">' + _.escape(rightInterp) + '</span>' +
         '</div>' +
       '</div>' +
       '<div class="interp-value-row">' +
@@ -86,12 +88,8 @@ function make_slides(f) {
 
     $area.append(htmlContent);
 
-    // Set example slider to midpoint, disable it, and show value immediately
+    // Hide instruction for example slides — slider is already disabled via disabledAttr
     if (stimuli_type === 'example' && typeof exp !== 'undefined') {
-      const $exSlider = $area.find('#' + stimuli_type + '_slider');
-      $exSlider.val(50).prop('disabled', true).addClass('thumb-visible');
-      $area.data('slider-touched', true);
-      $area.find('#' + stimuli_type + '_value_num').text(50).addClass('show-value');
       $area.find('.slider-instruction').addClass('hide-instruction');
     }
 
@@ -189,6 +187,8 @@ function make_slides(f) {
     const hasAlts = !!(stim.alternatives && stim.alternatives.length === 2);
     let trial_data = {
       id: stim.id,
+      scenario_id: stim.scenario_id || null,
+      scenario_type: stim.scenario_type || null,
       condition: condition,
       phenomenon: exp.phenomenon,
       batch_index: exp.batch_index,
@@ -280,7 +280,9 @@ function make_slides(f) {
 
   slides.startExp = slide({
     name: "startExp",
-    start: function () { },
+    start: function () {
+      $("#main-scenario-count").text(exp.stimuli.length);
+    },
     button: function () {
       exp.go();
     }
@@ -353,7 +355,11 @@ function init() {
   var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
   var condition = parseInt(get_url_param("condition", 0)); // Which experimental condition (0-3)
   exp.example_stimuli = examples_gradable_meanings;
-  exp.warmup_stimuli = warm_ups_gradable_meanings;
+  // Coin flip: group A = loud_no_alts + rude_with_alts, group B = loud_with_alts + rude_no_alts
+  var warmup_coin = Math.random() < 0.5;
+  exp.warmup_stimuli = warmup_coin
+    ? [warm_ups_gradable_meanings.loud_no_alts, warm_ups_gradable_meanings.rude_with_alts]
+    : [warm_ups_gradable_meanings.loud_with_alts, warm_ups_gradable_meanings.rude_no_alts];
   exp.stimuli = main_stimuli_gradable_meanings[batch_index];
   exp.stimuli = exp.stimuli.concat(quality_checks_gradable_meanings);
   // Shuffle the order of the stimuli

@@ -129,8 +129,16 @@
             font-size: 16px;
         }
 
+        /* Outer wrapper: left label | slider | right label, all vertically centered */
+        .slider-outer-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
         /* Slider track wrapper — provides space for the tick to extend above/below */
         .slider-track-wrapper {
+            flex: 1;
             position: relative;
             padding: 35px 0;
         }
@@ -230,19 +238,14 @@
             opacity: 0;
         }
 
-        /* Three-label row: left endpoint, Neither (centered), right endpoint — all same vertical level */
+        /* Center row for the "Even chance" midpoint label */
         .interp-labels-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            position: relative;
-            margin-top: 6px;
+            text-align: center;
+            margin-top: 4px;
         }
 
         .slider-neither-label {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            display: inline-block;
             font-size: 18px;
             font-weight: 600;
             color: #666;
@@ -271,19 +274,23 @@
         }
 
         .interp-endpoint-left {
-            text-align: left;
-            max-width: 45%;
-            font-size: 18px;
+            text-align: center;
+            width: 110px;
+            flex-shrink: 0;
+            font-size: 16px;
             font-weight: 600;
             color: #444;
+            line-height: 1.3;
         }
 
         .interp-endpoint-right {
-            text-align: right;
-            max-width: 45%;
-            font-size: 18px;
+            text-align: center;
+            width: 110px;
+            flex-shrink: 0;
+            font-size: 16px;
             font-weight: 600;
             color: #444;
+            line-height: 1.3;
         }
 
         /* Slider value display — hidden until slider is touched */
@@ -462,7 +469,7 @@
         <br>
         <br>
         <p id="instruct-text" class="left">
-            Great! Now we can start the real study. You will be presented with seven <strong>study scenarios</strong>.
+            Great! Now we can start the real study. You will be presented with <strong><span id="main-scenario-count"></span> study scenarios</strong>.
             For each scenario, move the slider to indicate your interpretation.
             Providing a rationale is <strong>optional</strong>.
             At the end, you'll also be able to provide any extra feedback about the task as a whole (but only if

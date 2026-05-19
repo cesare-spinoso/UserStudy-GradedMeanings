@@ -5,7 +5,7 @@ function start_instructions_html(condition) {
     </p>`;
     common_instructions_html += `
     <p>
-    <strong>Study structure:</strong> First you'll see two <strong>example scenarios</strong>. Then you'll complete two <strong>warm‑up scenarios</strong> using the slider. After that you'll rate seven <strong>study scenarios</strong>, each time moving the slider to the position that best reflects the speaker's intended meaning.
+    <strong>Study structure:</strong> First you'll see two <strong>example scenarios</strong>. Then you'll complete two <strong>warm‑up scenarios</strong> using the slider. After that you'll rate <strong>${exp.stimuli.length} study scenarios</strong>, each time moving the slider to the position that best reflects the speaker's intended meaning.
     </p>
     <p>
     Expected duration: 10-15 minutes.
