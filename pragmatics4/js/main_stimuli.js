@@ -5,18 +5,18 @@
 var main_stimuli_gradable_meanings = [[{
   'scenario_id': 'pvt21_revised30',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Timothy and Julia are hiking in a forest when Timothy brushes against a thorny bush. He grimaces as he turns to Julia.',
-  'question': 'How likely is Timothy to require first aid?',
-  'observed_utterance': "Ouch, that's unpleasant!",
+  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
+  'question': 'How likely is it that the operation will involve some anesthesia?',
+  'observed_utterance': 'It can get uncomfortable.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Timothy',
-  'secondName': 'Julia'
+  'mainName': 'Dr. Sanders',
+  'secondName': 'Timothy'
 },
 {
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'strong_no_alts',
   'scenario': 'Liam and Harper are getting ready to go out. Liam asks Harper, who has just recently been out, for the temperature outside. Harper looks to Liam.',
-  'question': 'How likely is it that Liam decides to wear a t-shirt and a pair of shorts?',
+  'question': 'How likely is it that Harper suggests that Liam wear a t-shirt and a pair of shorts?',
   'observed_utterance': "It's hot out.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Harper',
@@ -25,9 +25,9 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised40',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert puts his hand against the wall and turns to Jessica.',
+  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
   'question': 'How likely is it that the wall could resist heavy cannon fire?',
-  'observed_utterance': 'This thing feels indestructible.',
+  'observed_utterance': 'This wall seems impenetrable.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Albert',
   'secondName': 'Jessica'
@@ -35,7 +35,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised47',
   'scenario_type': 'strong_no_alts',
-  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, turns to him.",
+  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
   'question': 'How likely is Jack to change into dry clothes?',
   'observed_utterance': 'You look soaked.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -55,8 +55,8 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised5',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Amanda and Paul arrive at their favorite restaurant for dinner. Amanda glances around the dining area and turns to Paul.',
-  'question': 'How likely are Amanda and Paul to go somewhere else?',
+  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
+  'question': 'How likely are Amanda and Paul to wait long for a table?',
   'observed_utterance': 'This place is full!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Amanda',
@@ -75,14 +75,13 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing the performance of a woman who interviewed for a position at their office.',
-  'question': 'How likely is it that the candidate gets rejected?',
-  'observed_utterance': 'I found her responses to be quite blunt.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I liked it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Marie',
   'secondName': 'Jordan',
-  'alternatives': ['I found her responses to be quite blunt.',
-    'I found her responses to be quite rude.']
+  'alternatives': ['I liked it.', 'I loved it.']
 },
 {
   'scenario_id': 'pvt21_revised48',
@@ -93,28 +92,28 @@ var main_stimuli_gradable_meanings = [[{
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Liam',
   'secondName': 'Sophie',
-  'alternatives': ['She played well.', 'She played perfectly.']
+  'alternatives': ['She played well.', 'She played superbly.']
 },
 {
   'scenario_id': 'pvt21_revised1',
   'scenario_type': 'weak_with_alts',
   'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
   'question': "How likely are Joshua and Beverly to find a different way to their friend's house?",
-  'observed_utterance': 'They look angry.',
+  'observed_utterance': 'This crowd looks angry.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Beverly',
   'secondName': 'Joshua',
-  'alternatives': ['They look angry.', 'They look furious.']
+  'alternatives': ['This crowd looks angry.', 'This crowd looks violent.']
 },
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Megan has just run into her new colleague Caleb. After chatting briefly, Megan returns to her desk where her colleague Jerome is sitting. Megan sits down and turns to Jerome.',
-  'question': 'How likely is it that Megan reports this encounter to human resources?',
-  'observed_utterance': 'I just talked to Caleb for the first time. He was so unfriendly.',
+  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm hungry.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Megan',
-  'secondName': 'Jerome'
+  'mainName': 'Caleb',
+  'secondName': 'Megan'
 },
 {
   'scenario_id': 'pvt21_revised11',
@@ -257,7 +256,7 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_type': 'strong_no_alts',
   'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
   'question': "How likely are Joshua and Beverly to find a different way to their friend's house?",
-  'observed_utterance': 'They look furious.',
+  'observed_utterance': 'This crowd looks violent.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Beverly',
   'secondName': 'Joshua'
@@ -301,7 +300,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised47',
   'scenario_type': 'weak_no_alts',
-  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, turns to him.",
+  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
   'question': 'How likely is Jack to change into dry clothes?',
   'observed_utterance': 'You look wet.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -332,12 +331,12 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised30',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Timothy and Julia are hiking in a forest when Timothy brushes against a thorny bush. He grimaces as he turns to Julia.',
-  'question': 'How likely is Timothy to require first aid?',
-  'observed_utterance': "Ouch, that's painful!",
+  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
+  'question': 'How likely is it that the operation will involve some anesthesia?',
+  'observed_utterance': 'It can get painful.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Timothy',
-  'secondName': 'Julia'
+  'mainName': 'Dr. Sanders',
+  'secondName': 'Timothy'
 },
 {
   'scenario_id': 'pvt21_revised0',
@@ -363,8 +362,8 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised5',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Amanda and Paul arrive at their favorite restaurant for dinner. Amanda glances around the dining area and turns to Paul.',
-  'question': 'How likely are Amanda and Paul to go somewhere else?',
+  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
+  'question': 'How likely are Amanda and Paul to wait long for a table?',
   'observed_utterance': 'This place is busy!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Amanda',
@@ -373,21 +372,20 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Megan has just run into her new colleague Caleb. After chatting briefly, Megan returns to her desk where her colleague Jerome is sitting. Megan sits down and turns to Jerome.',
-  'question': 'How likely is it that Megan reports this encounter to human resources?',
-  'observed_utterance': 'I just talked to Caleb for the first time. He was so unfriendly.',
+  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm hungry.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Megan',
-  'secondName': 'Jerome',
-  'alternatives': ['I just talked to Caleb for the first time. He was so unfriendly.',
-    'I just talked to Caleb for the first time. He was so mean.']
+  'mainName': 'Caleb',
+  'secondName': 'Megan',
+  'alternatives': ["I'm hungry.", "I'm starving."]
 },
 {
   'scenario_id': 'pvt21_revised40',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert puts his hand against the wall and turns to Jessica.',
+  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
   'question': 'How likely is it that the wall could resist heavy cannon fire?',
-  'observed_utterance': 'This thing feels thick.',
+  'observed_utterance': 'This wall seems thick.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Albert',
   'secondName': 'Jessica'
@@ -407,21 +405,21 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_type': 'strong_with_alts',
   'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
   'question': 'How likely is Gerald to give the musical performance a five-star rating?',
-  'observed_utterance': 'That was a great show.',
+  'observed_utterance': 'That was an excellent show.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Gerald',
   'secondName': 'Margaret',
-  'alternatives': ['That was a good show.', 'That was a great show.']
+  'alternatives': ['That was a good show.', 'That was an excellent show.']
 },
 {
   'scenario_id': 'pvt21_revised9',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles and comments on their accommodations.',
+  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
   'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
   'observed_utterance': 'The room we had was quite luxurious.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': nan,
-  'secondName': nan,
+  'mainName': 'Lucy',
+  'secondName': 'Mark',
   'alternatives': ['The room we had was quite comfortable.',
     'The room we had was quite luxurious.']
 },
@@ -439,9 +437,9 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing the performance of a woman who interviewed for a position at their office.',
-  'question': 'How likely is it that the candidate gets rejected?',
-  'observed_utterance': 'I found her responses to be quite blunt.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I liked it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Marie',
   'secondName': 'Jordan'
@@ -489,24 +487,24 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised41',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Terry and Jenna are studying an old map. Terry points to a line on the map and turns to Jenna.',
-  'question': 'How likely is it for an average person to not notice the line Terry pointed to?',
-  'observed_utterance': 'This line is barely visible.',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it bad.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Terry',
   'secondName': 'Jenna',
-  'alternatives': ['This line is thin.', 'This line is barely visible.']
+  'alternatives': ['I found it mediocre.', 'I found it bad.']
 },
 {
   'scenario_id': 'pvt21_revised28',
   'scenario_type': 'weak_with_alts',
   'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
   'question': 'How likely is it that Jess has never heard an idea like this before?',
-  'observed_utterance': "That's an unusual idea.",
+  'observed_utterance': "That's an odd idea.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Jess',
   'secondName': 'Ronald',
-  'alternatives': ["That's an unusual idea.", "That's a bizarre idea."]
+  'alternatives': ["That's an odd idea.", "That's a bizarre idea."]
 }],
 [{
   'scenario_id': 'pvt21_revised2',
@@ -522,17 +520,17 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Megan has just run into her new colleague Caleb. After chatting briefly, Megan returns to her desk where her colleague Jerome is sitting. Megan sits down and turns to Jerome.',
-  'question': 'How likely is it that Megan reports this encounter to human resources?',
-  'observed_utterance': 'I just talked to Caleb for the first time. He was so mean.',
+  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm starving.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Megan',
-  'secondName': 'Jerome'
+  'mainName': 'Caleb',
+  'secondName': 'Megan'
 },
 {
   'scenario_id': 'pvt21_revised47',
   'scenario_type': 'strong_with_alts',
-  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, turns to him.",
+  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
   'question': 'How likely is Jack to change into dry clothes?',
   'observed_utterance': 'You look soaked.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -565,14 +563,13 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing the performance of a woman who interviewed for a position at their office.',
-  'question': 'How likely is it that the candidate gets rejected?',
-  'observed_utterance': 'I found her responses to be quite rude.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I loved it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Marie',
   'secondName': 'Jordan',
-  'alternatives': ['I found her responses to be quite blunt.',
-    'I found her responses to be quite rude.']
+  'alternatives': ['I liked it.', 'I loved it.']
 },
 {
   'scenario_id': 'pvt21_revised39',
@@ -621,18 +618,18 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised9',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles and comments on their accommodations.',
+  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
   'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
   'observed_utterance': 'The room we had was quite comfortable.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': nan,
-  'secondName': nan
+  'mainName': 'Lucy',
+  'secondName': 'Mark'
 },
 {
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'strong_with_alts',
   'scenario': 'Liam and Harper are getting ready to go out. Liam asks Harper, who has just recently been out, for the temperature outside. Harper looks to Liam.',
-  'question': 'How likely is it that Liam decides to wear a t-shirt and a pair of shorts?',
+  'question': 'How likely is it that Harper suggests that Liam wear a t-shirt and a pair of shorts?',
   'observed_utterance': "It's hot out.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Harper',
@@ -664,14 +661,14 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised40',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert puts his hand against the wall and turns to Jessica.',
+  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
   'question': 'How likely is it that the wall could resist heavy cannon fire?',
-  'observed_utterance': 'This thing feels indestructible.',
+  'observed_utterance': 'This wall seems impenetrable.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Albert',
   'secondName': 'Jessica',
-  'alternatives': ['This thing feels thick.',
-    'This thing feels indestructible.']
+  'alternatives': ['This wall seems thick.',
+    'This wall seems impenetrable.']
 },
 {
   'scenario_id': 'pvt21_revised23',
@@ -692,14 +689,14 @@ var main_stimuli_gradable_meanings = [[{
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Gerald',
   'secondName': 'Margaret',
-  'alternatives': ['That was a good show.', 'That was a great show.']
+  'alternatives': ['That was a good show.', 'That was an excellent show.']
 },
 {
   'scenario_id': 'pvt21_revised28',
   'scenario_type': 'weak_no_alts',
   'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
   'question': 'How likely is it that Jess has never heard an idea like this before?',
-  'observed_utterance': "That's an unusual idea.",
+  'observed_utterance': "That's an odd idea.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Jess',
   'secondName': 'Ronald'
@@ -731,18 +728,18 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_type': 'strong_with_alts',
   'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
   'question': "How likely are Joshua and Beverly to find a different way to their friend's house?",
-  'observed_utterance': 'They look furious.',
+  'observed_utterance': 'This crowd looks violent.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Beverly',
   'secondName': 'Joshua',
-  'alternatives': ['They look angry.', 'They look furious.']
+  'alternatives': ['This crowd looks angry.', 'This crowd looks violent.']
 },
 {
   'scenario_id': 'pvt21_revised41',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Terry and Jenna are studying an old map. Terry points to a line on the map and turns to Jenna.',
-  'question': 'How likely is it for an average person to not notice the line Terry pointed to?',
-  'observed_utterance': 'This line is barely visible.',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it bad.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Terry',
   'secondName': 'Jenna'
@@ -750,13 +747,13 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised30',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Timothy and Julia are hiking in a forest when Timothy brushes against a thorny bush. He grimaces as he turns to Julia.',
-  'question': 'How likely is Timothy to require first aid?',
-  'observed_utterance': "Ouch, that's unpleasant!",
+  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
+  'question': 'How likely is it that the operation will involve some anesthesia?',
+  'observed_utterance': 'It can get uncomfortable.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Timothy',
-  'secondName': 'Julia',
-  'alternatives': ["Ouch, that's unpleasant!", "Ouch, that's painful!"]
+  'mainName': 'Dr. Sanders',
+  'secondName': 'Timothy',
+  'alternatives': ['It can get uncomfortable.', 'It can get painful.']
 },
 {
   'scenario_id': 'pvt21_revised10',
@@ -792,14 +789,14 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised40',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert puts his hand against the wall and turns to Jessica.',
+  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
   'question': 'How likely is it that the wall could resist heavy cannon fire?',
-  'observed_utterance': 'This thing feels thick.',
+  'observed_utterance': 'This wall seems thick.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Albert',
   'secondName': 'Jessica',
-  'alternatives': ['This thing feels thick.',
-    'This thing feels indestructible.']
+  'alternatives': ['This wall seems thick.',
+    'This wall seems impenetrable.']
 },
 {
   'scenario_id': 'pvt21_revised43',
@@ -821,7 +818,7 @@ var main_stimuli_gradable_meanings = [[{
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Jess',
   'secondName': 'Ronald',
-  'alternatives': ["That's an unusual idea.", "That's a bizarre idea."]
+  'alternatives': ["That's an odd idea.", "That's a bizarre idea."]
 },
 {
   'scenario_id': 'pvt21_revised42',
@@ -840,11 +837,11 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_type': 'strong_with_alts',
   'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
   'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
-  'observed_utterance': 'She played perfectly.',
+  'observed_utterance': 'She played superbly.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Liam',
   'secondName': 'Sophie',
-  'alternatives': ['She played well.', 'She played perfectly.']
+  'alternatives': ['She played well.', 'She played superbly.']
 },
 {
   'scenario_id': 'pvt21_revised38',
@@ -894,7 +891,7 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'weak_no_alts',
   'scenario': 'Liam and Harper are getting ready to go out. Liam asks Harper, who has just recently been out, for the temperature outside. Harper looks to Liam.',
-  'question': 'How likely is it that Liam decides to wear a t-shirt and a pair of shorts?',
+  'question': 'How likely is it that Harper suggests that Liam wear a t-shirt and a pair of shorts?',
   'observed_utterance': "It's warm out.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Harper',
@@ -924,9 +921,9 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised41',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Terry and Jenna are studying an old map. Terry points to a line on the map and turns to Jenna.',
-  'question': 'How likely is it for an average person to not notice the line Terry pointed to?',
-  'observed_utterance': 'This line is thin.',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it mediocre.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Terry',
   'secondName': 'Jenna'
@@ -956,17 +953,17 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised9',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles and comments on their accommodations.',
+  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
   'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
   'observed_utterance': 'The room we had was quite luxurious.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': nan,
-  'secondName': nan
+  'mainName': 'Lucy',
+  'secondName': 'Mark'
 },
 {
   'scenario_id': 'pvt21_revised47',
   'scenario_type': 'weak_with_alts',
-  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, turns to him.",
+  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
   'question': 'How likely is Jack to change into dry clothes?',
   'observed_utterance': 'You look wet.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -977,14 +974,13 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Megan has just run into her new colleague Caleb. After chatting briefly, Megan returns to her desk where her colleague Jerome is sitting. Megan sits down and turns to Jerome.',
-  'question': 'How likely is it that Megan reports this encounter to human resources?',
-  'observed_utterance': 'I just talked to Caleb for the first time. He was so mean.',
+  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm starving.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Megan',
-  'secondName': 'Jerome',
-  'alternatives': ['I just talked to Caleb for the first time. He was so unfriendly.',
-    'I just talked to Caleb for the first time. He was so mean.']
+  'mainName': 'Caleb',
+  'secondName': 'Megan',
+  'alternatives': ["I'm hungry.", "I'm starving."]
 },
 {
   'scenario_id': 'pvt21_revised21',
@@ -1001,8 +997,8 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised5',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Amanda and Paul arrive at their favorite restaurant for dinner. Amanda glances around the dining area and turns to Paul.',
-  'question': 'How likely are Amanda and Paul to go somewhere else?',
+  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
+  'question': 'How likely are Amanda and Paul to wait long for a table?',
   'observed_utterance': 'This place is busy!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Amanda',
@@ -1077,12 +1073,12 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised9',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles and comments on their accommodations.',
+  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
   'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
   'observed_utterance': 'The room we had was quite comfortable.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': nan,
-  'secondName': nan,
+  'mainName': 'Lucy',
+  'secondName': 'Mark',
   'alternatives': ['The room we had was quite comfortable.',
     'The room we had was quite luxurious.']
 },
@@ -1109,13 +1105,13 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised30',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Timothy and Julia are hiking in a forest when Timothy brushes against a thorny bush. He grimaces as he turns to Julia.',
-  'question': 'How likely is Timothy to require first aid?',
-  'observed_utterance': "Ouch, that's painful!",
+  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
+  'question': 'How likely is it that the operation will involve some anesthesia?',
+  'observed_utterance': 'It can get painful.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Timothy',
-  'secondName': 'Julia',
-  'alternatives': ["Ouch, that's unpleasant!", "Ouch, that's painful!"]
+  'mainName': 'Dr. Sanders',
+  'secondName': 'Timothy',
+  'alternatives': ['It can get uncomfortable.', 'It can get painful.']
 },
 {
   'scenario_id': 'pvt21_revised42',
@@ -1145,7 +1141,7 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_type': 'strong_no_alts',
   'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
   'question': 'How likely is Gerald to give the musical performance a five-star rating?',
-  'observed_utterance': 'That was a great show.',
+  'observed_utterance': 'That was an excellent show.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Gerald',
   'secondName': 'Margaret'
@@ -1155,7 +1151,7 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_type': 'weak_no_alts',
   'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
   'question': "How likely are Joshua and Beverly to find a different way to their friend's house?",
-  'observed_utterance': 'They look angry.',
+  'observed_utterance': 'This crowd looks angry.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Beverly',
   'secondName': 'Joshua'
@@ -1187,7 +1183,7 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'weak_with_alts',
   'scenario': 'Liam and Harper are getting ready to go out. Liam asks Harper, who has just recently been out, for the temperature outside. Harper looks to Liam.',
-  'question': 'How likely is it that Liam decides to wear a t-shirt and a pair of shorts?',
+  'question': 'How likely is it that Harper suggests that Liam wear a t-shirt and a pair of shorts?',
   'observed_utterance': "It's warm out.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Harper',
@@ -1199,7 +1195,7 @@ var main_stimuli_gradable_meanings = [[{
   'scenario_type': 'strong_no_alts',
   'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
   'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
-  'observed_utterance': 'She played perfectly.',
+  'observed_utterance': 'She played superbly.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Liam',
   'secondName': 'Sophie'
@@ -1207,13 +1203,13 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised41',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Terry and Jenna are studying an old map. Terry points to a line on the map and turns to Jenna.',
-  'question': 'How likely is it for an average person to not notice the line Terry pointed to?',
-  'observed_utterance': 'This line is thin.',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it mediocre.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Terry',
   'secondName': 'Jenna',
-  'alternatives': ['This line is thin.', 'This line is barely visible.']
+  'alternatives': ['I found it mediocre.', 'I found it bad.']
 },
 {
   'scenario_id': 'pvt21_revised10',
@@ -1270,9 +1266,9 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing the performance of a woman who interviewed for a position at their office.',
-  'question': 'How likely is it that the candidate gets rejected?',
-  'observed_utterance': 'I found her responses to be quite rude.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I loved it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Marie',
   'secondName': 'Jordan'
@@ -1280,8 +1276,8 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised5',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Amanda and Paul arrive at their favorite restaurant for dinner. Amanda glances around the dining area and turns to Paul.',
-  'question': 'How likely are Amanda and Paul to go somewhere else?',
+  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
+  'question': 'How likely are Amanda and Paul to wait long for a table?',
   'observed_utterance': 'This place is full!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Amanda',
