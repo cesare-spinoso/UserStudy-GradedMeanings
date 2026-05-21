@@ -369,20 +369,20 @@ function init() {
   exp.trials = [];
   exp.catch_trials = [];
   // Get the stimuli using the URL parameters
-  var batch_index = parseInt(get_url_param("batch", 0)); // Which batch to select for that phenomenon
-  var condition = parseInt(get_url_param("condition", 0)); // Which experimental condition (0-3)
+  // condition (0-4) selects the batch; there is no separate batch parameter
+  var condition = parseInt(get_url_param("condition", 0)); // Which batch / condition (0-4)
   exp.example_stimuli = examples_gradable_meanings;
   // Coin flip: group A = loud_no_alts + rude_with_alts, group B = loud_with_alts + rude_no_alts
   var warmup_coin = Math.random() < 0.5;
   exp.warmup_stimuli = warmup_coin
     ? [warm_ups_gradable_meanings.loud_no_alts, warm_ups_gradable_meanings.rude_with_alts]
     : [warm_ups_gradable_meanings.loud_with_alts, warm_ups_gradable_meanings.rude_no_alts];
-  exp.stimuli = main_stimuli_gradable_meanings[batch_index];
+  exp.stimuli = main_stimuli_gradable_meanings[condition];
   exp.stimuli = exp.stimuli.concat(quality_checks_gradable_meanings);
   // Shuffle the order of the stimuli
   exp.phenomenon = "gradable_meanings"; // Store the phenomenon for later use
-  exp.condition = condition; // Store the condition (0-3)
-  exp.batch_index = batch_index; // Store the batch index for later use
+  exp.condition = condition; // Store the condition / batch index (0-4)
+  exp.batch_index = condition; // Keep batch_index in logged data for consistency
   exp.example_stimuli = shuffle_stimuli(exp.example_stimuli);
   exp.warmup_stimuli = shuffle_stimuli(exp.warmup_stimuli);
   exp.stimuli = shuffle_stimuli(exp.stimuli);
