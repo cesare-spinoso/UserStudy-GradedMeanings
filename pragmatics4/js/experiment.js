@@ -36,7 +36,7 @@ function make_slides(f) {
           `<div class="alternative-option"><strong>"${_.escape(firstAlt)}"</strong></div>` +
           `<div class="alternative-option"><strong>"${_.escape(secondAlt)}"</strong></div>` +
         `</div>` +
-        `In the end, <strong>${mainName}</strong> says, "<strong>${_.escape(observedUtterance)}</strong>".`;
+        `In the end, <strong>${mainName}</strong> says, "<strong>${_.escape(observedUtterance)}</strong>"`;
     } else {
       scenarioText += ` ${mainName} says, "<strong>${_.escape(observedUtterance)}</strong>"`;
     }
@@ -73,7 +73,7 @@ function make_slides(f) {
 
     const htmlContent =
       '<div class="interp-slider-section">' +
-        '<div class="slider-instruction">Click and drag anywhere along the slider to indicate your how likely you believe the statement above to be!</div>' +
+        '<div class="slider-instruction">Click and drag anywhere along the slider to indicate how likely you believe the statement above to be!</div>' +
         '<div class="slider-outer-wrapper">' +
           '<span class="interp-endpoint-left">' + labelHtml(leftInterp) + '</span>' +
           '<div class="slider-track-wrapper">' +
