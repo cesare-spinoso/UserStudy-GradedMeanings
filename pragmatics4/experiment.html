@@ -489,6 +489,16 @@
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
                         <strong>Study Scenario</strong>
+                        <span id="main-progress-label" style="float: right; font-size: 15px; font-weight: normal; opacity: 0.9;"></span>
+                    </div>
+                    <!-- Progress bar -->
+                    <div style="padding: 8px 16px 0; background: #fff;">
+                        <div class="progress" style="height: 10px; margin-bottom: 0; border-radius: 0 0 4px 4px; background-color: #e0c0e0;">
+                            <div id="main-progress-bar" class="progress-bar" role="progressbar"
+                                 style="width: 0%; background-color: #800080; transition: width 0.3s ease;"
+                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="panel-body" style="padding: 20px;">

@@ -127,6 +127,15 @@ function make_slides(f) {
     return { valid: true, slider_value: parseInt(val, 10), errMsg: '' };
   }
 
+  function updateMainProgressBar(current_index, total) {
+    const completed = current_index;          // 0-based; completed = items already answered
+    const pct = Math.round((completed / total) * 100);
+    $('#main-progress-bar')
+      .css('width', pct + '%')
+      .attr('aria-valuenow', pct);
+    $('#main-progress-label').text((current_index + 1) + ' / ' + total);
+  }
+
   function display_stimulus(current_index, stimuli, stimuli_type, condition) {
     if (current_index < stimuli.length) {
       const stim = stimuli[current_index];
@@ -156,7 +165,10 @@ function make_slides(f) {
       );
       if (stimuli_type === 'warmup' || stimuli_type === 'main') {
         $slide.find('.err').hide();
-        if (stimuli_type === 'main') { $slide.find('#rationale').val(''); }
+        if (stimuli_type === 'main') {
+          $slide.find('#rationale').val('');
+          updateMainProgressBar(current_index, stimuli.length);
+        }
       }
     } else {
       exp.go();
