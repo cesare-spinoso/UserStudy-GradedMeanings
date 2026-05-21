@@ -6,7 +6,7 @@ var examples_gradable_meanings = [
         "id": "examples_0",
         "scenario": "Emily and Sarah are tasting a new dish at a restaurant. Emily thinks about what to say.",
         "question": "How likely is Emily to ask for a glass of water?",
-        "observed_utterance": "This is so spicy!",
+        "observed_utterance": "This is spicy!",
         "interpretations": [
             "Absolutely Impossible",
             "Absolutely Certain",

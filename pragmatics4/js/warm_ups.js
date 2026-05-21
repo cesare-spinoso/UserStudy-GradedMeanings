@@ -10,8 +10,8 @@ var warm_ups_gradable_meanings = {
         "scenario_id": "pvt21_warmup0",
         "scenario_type": "weak_no_alts",
         "scenario": "Jamie and George are going to their friend Michael's party. When they walk in and hear the music, Jamie turns to George.",
-        "question": "How likely is it that Jamie and George have trouble having a conversation at the party?",
-        "observed_utterance": "The music is so loud!",
+        "question": "How likely is it that Jamie could not hear what George is saying at the party?",
+        "observed_utterance": "The music is loud!",
         "interpretations": [
             "Absolutely Impossible",
             "Absolutely Certain",
@@ -24,10 +24,10 @@ var warm_ups_gradable_meanings = {
         "scenario_id": "pvt21_warmup0",
         "scenario_type": "weak_with_alts",
         "scenario": "Jamie and George are going to their friend Michael's party. When they walk in and hear the music, Jamie turns to George.",
-        "question": "How likely is it that Jamie and George have trouble having a conversation at the party?",
+        "question": "How likely is it that Jamie could not hear what George is saying at the party?",
         "observed_utterance": "The music is so loud!",
         "alternatives": [
-            "The music is so loud!",
+            "The music is loud!",
             "The music is deafening!",
         ],
         "interpretations": [

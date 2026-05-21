@@ -73,7 +73,7 @@ function make_slides(f) {
 
     const htmlContent =
       '<div class="interp-slider-section">' +
-        '<div class="slider-instruction">Click and drag anywhere along the slider to indicate your interpretation!</div>' +
+        '<div class="slider-instruction">Click and drag anywhere along the slider to indicate your how likely you believe the statement above to be!</div>' +
         '<div class="slider-outer-wrapper">' +
           '<span class="interp-endpoint-left">' + labelHtml(leftInterp) + '</span>' +
           '<div class="slider-track-wrapper">' +
@@ -238,7 +238,7 @@ function make_slides(f) {
       return false;
     }
     if (!$area.data('slider-touched')) {
-      $slide.find('.err').text('Please move the slider to indicate your interpretation.').show();
+      $slide.find('.err').text('Please move the slider to indicate your level of likelihood.').show();
       return false;
     }
     const sliderValue = $slider.val();
