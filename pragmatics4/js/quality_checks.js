@@ -8,10 +8,10 @@
 // For with_alts: observed_utterance = weak_utterance, alternatives = [weak, strong].
 //
 // Scenarios and expected responses:
-//   quality3  bad (alt: unrelated)   — expected: very LOW   (food tastes bad → unlikely 5-star)
-//   quality4  amazing (alt: unrelated) — expected: very HIGH  (view is amazing → likely takes photo)
-//   quality7  apple / banana         — expected: very HIGH   (Sam says "I want an apple" → wants apple)
-//   quality8  water / coffee         — expected: very LOW    (Nina says "I want water" → doesn't want coffee)
+//   quality3  "The food tastes bad."      (alt: unrelated)    — expected: very LOW  (bad food → unlikely 5-star)
+//   quality4  "This view is amazing."     (alt: unrelated)    — expected: very HIGH (amazing view → likely 5-star)
+//   quality7  "I want an apple."          (alt: negation)     — expected: very HIGH (said they want apple → eats apple)
+//   quality8  "I want a water bottle."    (alt: negation)     — expected: very HIGH (said they want water → buys water)
 
 var quality_checks_gradable_meanings = [
 
@@ -59,7 +59,7 @@ var quality_checks_gradable_meanings = [
         "scenario_id": "pvt21_quality4",
         "scenario_type": "quality_no_alts",
         "scenario": "Cai and Desmond are hiking together. After reaching the top of the hill, Cai turns to Desmond.",
-        "question": "How likely is it that Cai takes a photo of the view?",
+        "question": "How likely is it that Cai gives the view a 5-star rating?",
         "observed_utterance": "This view is amazing.",
         "interpretations": [
             "Absolutely Impossible",
@@ -71,13 +71,13 @@ var quality_checks_gradable_meanings = [
 
     // ── quality4: amazing — WITH alternatives ─────────────────────────────────────
     // Alternative is unrelated ("I need to call my brother back."): no scalar
-    // implicature about how impressive the view is; speaker chose to comment on it.
+    // implicature about view quality; speaker chose to comment on it.
     {
         "id": "quality_checks_q4_with_alts",
         "scenario_id": "pvt21_quality4",
         "scenario_type": "quality_with_alts",
         "scenario": "Cai and Desmond are hiking together. After reaching the top of the hill, Cai turns to Desmond.",
-        "question": "How likely is it that Cai takes a photo of the view?",
+        "question": "How likely is it that Cai gives the view a 5-star rating?",
         "observed_utterance": "This view is amazing.",
         "alternatives": [
             "This view is amazing.",
@@ -96,8 +96,8 @@ var quality_checks_gradable_meanings = [
         "id": "quality_checks_q7_no_alts",
         "scenario_id": "pvt21_quality7",
         "scenario_type": "quality_no_alts",
-        "scenario": "Sam and Dana are looking for a snack. Sam turns to Dana.",
-        "question": "How likely is it that Sam wants an apple?",
+        "scenario": "Sam and Dana are looking for a snack. Sam, looking at the fruit bowl that's in their kitchen, turns to Dana.",
+        "question": "How likely is it that Sam eats an apple?",
         "observed_utterance": "I want an apple.",
         "interpretations": [
             "Absolutely Impossible",
@@ -108,18 +108,18 @@ var quality_checks_gradable_meanings = [
     },
 
     // ── quality7: apple — WITH alternatives ──────────────────────────────────────
-    // Alternative is a direct preference contrast (banana): speaker explicitly
-    // chose apple, making the correct answer even more obvious.
+    // Alternative is the direct negation: speaker explicitly said they want an apple
+    // (not that they don't), making the correct answer even more obvious.
     {
         "id": "quality_checks_q7_with_alts",
         "scenario_id": "pvt21_quality7",
         "scenario_type": "quality_with_alts",
-        "scenario": "Sam and Dana are looking for a snack. Sam turns to Dana.",
-        "question": "How likely is it that Sam wants an apple?",
+        "scenario": "Sam and Dana are looking for a snack. Sam, looking at the fruit bowl that's in their kitchen, turns to Dana.",
+        "question": "How likely is it that Sam eats an apple?",
         "observed_utterance": "I want an apple.",
         "alternatives": [
             "I want an apple.",
-            "I want a banana.",
+            "I do not want an apple.",
         ],
         "interpretations": [
             "Absolutely Impossible",
@@ -134,9 +134,9 @@ var quality_checks_gradable_meanings = [
         "id": "quality_checks_q8_no_alts",
         "scenario_id": "pvt21_quality8",
         "scenario_type": "quality_no_alts",
-        "scenario": "Nina and Carlos are deciding what to drink. Nina turns to Carlos.",
-        "question": "How likely is it that Nina wants coffee?",
-        "observed_utterance": "I want water.",
+        "scenario": "Nina and Carlos are at a vending machine and are deciding what to drink. Nina turns to Carlos.",
+        "question": "How likely is it that Nina buys a Coca Cola?",
+        "observed_utterance": "I want a water bottle.",
         "interpretations": [
             "Absolutely Impossible",
             "Absolutely Certain",
@@ -146,18 +146,18 @@ var quality_checks_gradable_meanings = [
     },
 
     // ── quality8: water — WITH alternatives ──────────────────────────────────────
-    // Alternative is a direct drink contrast (coffee): speaker explicitly chose
-    // water, making the correct answer (coffee = impossible) even clearer.
+    // Alternative is the direct negation: speaker explicitly said they want a water
+    // bottle (not that they don't), making the correct answer even more obvious.
     {
         "id": "quality_checks_q8_with_alts",
         "scenario_id": "pvt21_quality8",
         "scenario_type": "quality_with_alts",
-        "scenario": "Nina and Carlos are deciding what to drink. Nina turns to Carlos.",
-        "question": "How likely is it that Nina wants coffee?",
-        "observed_utterance": "I want water.",
+        "scenario": "Nina and Carlos are at a vending machine and are deciding what to drink. Nina turns to Carlos.",
+        "question": "How likely is it that Nina buys a Coca Cola?",
+        "observed_utterance": "I want a water bottle.",
         "alternatives": [
-            "I want water.",
-            "I want coffee.",
+            "I want a water bottle.",
+            "I do not want a water bottle.",
         ],
         "interpretations": [
             "Absolutely Impossible",
