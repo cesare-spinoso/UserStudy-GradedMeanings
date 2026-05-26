@@ -93,9 +93,12 @@ function make_slides(f) {
 
     $area.append(htmlContent);
 
-    // Hide instruction for example slides — slider is already disabled via disabledAttr
+    // For example slides: replace the instruction with a "demo only" note
     if (stimuli_type === 'example' && typeof exp !== 'undefined') {
-      $area.find('.slider-instruction').addClass('hide-instruction');
+      $area.find('.slider-instruction')
+        .text('🔒 Demo only — you cannot move this slider here.')
+        .css({ 'color': '#999', 'font-style': 'italic', 'font-size': '13px' })
+        .removeClass('hide-instruction');
     }
 
     const $slider = $area.find('#' + stimuli_type + '_slider');
