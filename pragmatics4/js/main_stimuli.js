@@ -15,7 +15,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Liam and Harper are looking at the weather forecast for tomorrow. Harper looks to Liam..',
+  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
   'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
   'observed_utterance': "Looks like it's going to be hot tomorrow.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -75,7 +75,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
   'question': 'How likely is it that Marie recommends watching the talk to others?',
   'observed_utterance': 'I liked it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -108,7 +108,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
   'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
   'observed_utterance': "I'm hungry.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -181,7 +181,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised15',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Larry and Tina are driving through the country side. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
   'question': 'How likely is it that this part of the country is experiencing a drought?',
   'observed_utterance': 'This grass looks arid.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -320,7 +320,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised15',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Larry and Tina are driving through the country side. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
   'question': 'How likely is it that this part of the country is experiencing a drought?',
   'observed_utterance': 'This grass looks arid.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -372,7 +372,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
   'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
   'observed_utterance': "I'm hungry.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -437,7 +437,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
   'question': 'How likely is it that Marie recommends watching the talk to others?',
   'observed_utterance': 'I liked it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -457,7 +457,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised33',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Catherine and Charles are visiting a small village during a roadtrip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
+  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
   'question': 'How likely is Catherine to take a photo of the view?',
   'observed_utterance': 'What a beautiful view.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -520,7 +520,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
   'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
   'observed_utterance': "I'm starving.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -541,7 +541,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised15',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Larry and Tina are driving through the country side. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
   'question': 'How likely is it that this part of the country is experiencing a drought?',
   'observed_utterance': 'This grass looks dry.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -563,7 +563,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
   'question': 'How likely is it that Marie recommends watching the talk to others?',
   'observed_utterance': 'I loved it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -628,7 +628,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Liam and Harper are looking at the weather forecast for tomorrow. Harper looks to Liam..',
+  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
   'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
   'observed_utterance': "Looks like it's going to be hot tomorrow.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -705,7 +705,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised33',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Catherine and Charles are visiting a small village during a roadtrip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
+  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
   'question': 'How likely is Catherine to take a photo of the view?',
   'observed_utterance': 'What a pretty view.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -880,7 +880,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised33',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Catherine and Charles are visiting a small village during a roadtrip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
+  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
   'question': 'How likely is Catherine to take a photo of the view?',
   'observed_utterance': 'What a beautiful view.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -891,7 +891,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Liam and Harper are looking at the weather forecast for tomorrow. Harper looks to Liam..',
+  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
   'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
   'observed_utterance': "Looks like it's going to be warm tomorrow.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -975,7 +975,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised36',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Megan and her husband Caleb are on a roadtrip together. As Megan drives, Caleb turns to her.',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
   'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
   'observed_utterance': "I'm starving.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -1129,7 +1129,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised33',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Catherine and Charles are visiting a small village during a roadtrip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
+  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
   'question': 'How likely is Catherine to take a photo of the view?',
   'observed_utterance': 'What a pretty view.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -1183,7 +1183,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'weak_with_alts',
-  'scenario': 'Liam and Harper are looking at the weather forecast for tomorrow. Harper looks to Liam..',
+  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
   'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
   'observed_utterance': "Looks like it's going to be warm tomorrow.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -1238,7 +1238,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised15',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Larry and Tina are driving through the country side. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
   'question': 'How likely is it that this part of the country is experiencing a drought?',
   'observed_utterance': 'This grass looks dry.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
@@ -1268,7 +1268,7 @@ var main_stimuli_gradable_meanings = [[{
 {
   'scenario_id': 'pvt21_revised24',
   'scenario_type': 'strong_no_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just assisted. Jordan asks Marie how she found the talk.',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
   'question': 'How likely is it that Marie recommends watching the talk to others?',
   'observed_utterance': 'I loved it.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
