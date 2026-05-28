@@ -3,175 +3,90 @@
 // Observed utterance is the stronger form for with-alternatives items, weaker for without.
 
 var main_stimuli_gradable_meanings = [[{
-  'scenario_id': 'pvt21_revised30',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
-  'question': 'How likely is it that the operation will involve some anesthesia?',
-  'observed_utterance': 'It will be uncomfortable.',
+  'scenario_id': 'pvt21_revised39',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'James and Lauren are looking to have a healthy snack in their kitchen. James picks up a banana, notices its texture, and turns to Lauren.',
+  'question': 'How likely is it that the banana has gone bad?',
+  'observed_utterance': 'This banana is kind of mushy.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Dr. Sanders',
-  'secondName': 'Timothy'
-},
-{
-  'scenario_id': 'pvt21_revised45',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
-  'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
-  'observed_utterance': "Looks like it's going to be hot tomorrow.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Harper',
-  'secondName': 'Liam'
-},
-{
-  'scenario_id': 'pvt21_revised40',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
-  'question': 'How likely is it that the wall could resist heavy cannon fire?',
-  'observed_utterance': 'This wall seems impenetrable.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Albert',
-  'secondName': 'Jessica'
-},
-{
-  'scenario_id': 'pvt21_revised47',
-  'scenario_type': 'strong_no_alts',
-  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
-  'question': 'How likely is Jack to change into dry clothes?',
-  'observed_utterance': 'You look soaked.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Judith',
-  'secondName': 'Jack'
-},
-{
-  'scenario_id': 'pvt21_revised32',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Hannah and Jacob just finished a meal at a new restaurant in town. As they are getting ready to pay the bill, Hannah turns to Jacob.',
-  'question': 'How likely is Hannah to leave a larger-than-usual tip?',
-  'observed_utterance': 'I like how friendly the staff is.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Hannah',
-  'secondName': 'Jacob'
-},
-{
-  'scenario_id': 'pvt21_revised5',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
-  'question': 'How likely are Amanda and Paul to wait long for a table?',
-  'observed_utterance': 'This place is full!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Amanda',
-  'secondName': 'Paul'
-},
-{
-  'scenario_id': 'pvt21_revised2',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
-  'question': 'How likely is it that this mansion has more than 10 rooms?',
-  'observed_utterance': 'Damn, this thing is big!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'William',
-  'secondName': 'Katherine'
-},
-{
-  'scenario_id': 'pvt21_revised24',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
-  'question': 'How likely is it that Marie recommends watching the talk to others?',
-  'observed_utterance': 'I liked it.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Marie',
-  'secondName': 'Jordan',
-  'alternatives': ['I liked it.', 'I loved it.']
+  'mainName': 'James',
+  'secondName': 'Lauren',
+  'alternatives': ['This banana is kind of soft.',
+    'This banana is kind of mushy.']
 },
 {
   'scenario_id': 'pvt21_revised48',
-  'scenario_type': 'weak_with_alts',
+  'scenario_type': 'strong_with_alts',
   'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
   'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
-  'observed_utterance': 'She played well.',
+  'observed_utterance': 'She played superbly.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Liam',
   'secondName': 'Sophie',
   'alternatives': ['She played well.', 'She played superbly.']
 },
 {
-  'scenario_id': 'pvt21_revised1',
+  'scenario_id': 'pvt21_revised5',
   'scenario_type': 'weak_with_alts',
-  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
-  'question': 'How likely is it that the protest requires riot police?',
-  'observed_utterance': 'This crowd looks angry.',
+  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
+  'question': 'How likely are Amanda and Paul to wait long for a table?',
+  'observed_utterance': 'This place is busy!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Beverly',
-  'secondName': 'Joshua',
-  'alternatives': ['This crowd looks angry.', 'This crowd looks violent.']
-},
-{
-  'scenario_id': 'pvt21_revised36',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
-  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
-  'observed_utterance': "I'm hungry.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Caleb',
-  'secondName': 'Megan'
+  'mainName': 'Amanda',
+  'secondName': 'Paul',
+  'alternatives': ['This place is busy!', 'This place is full!']
 },
 {
   'scenario_id': 'pvt21_revised11',
-  'scenario_type': 'strong_no_alts',
+  'scenario_type': 'strong_with_alts',
   'scenario': "Daniel and Brenda are having coffee at a trendy café. Brenda just met Daniel's girlfriend for the first time, and she looks pleasantly surprised as she turns to Daniel.",
   'question': "How likely is it that Daniel's girlfriend often gets compliments about her looks?",
   'observed_utterance': "You didn't tell me she was that beautiful.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Brenda',
-  'secondName': 'Daniel'
-},
-{
-  'scenario_id': 'pvt21_revised28',
-  'scenario_type': 'strong_no_alts',
-  'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
-  'question': 'How likely is it that Jess has never heard an idea like this before?',
-  'observed_utterance': "That's a bizarre idea.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jess',
-  'secondName': 'Ronald'
+  'secondName': 'Daniel',
+  'alternatives': ["You didn't tell me she was that cute.",
+    "You didn't tell me she was that beautiful."]
 },
 {
   'scenario_id': 'pvt21_revised27',
-  'scenario_type': 'strong_with_alts',
+  'scenario_type': 'weak_with_alts',
   'scenario': "Jeremy and Marcus are attending a gaming convention. They're discussing a new game that was showcased during the event, particularly the visuals it offered. Jeremy turns to Marcus.",
   'question': 'How likely is the game to receive a five-star rating for its graphics?',
-  'observed_utterance': 'The graphics were great.',
+  'observed_utterance': 'The graphics were nice.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Jeremy',
   'secondName': 'Marcus',
   'alternatives': ['The graphics were nice.', 'The graphics were great.']
 },
 {
-  'scenario_id': 'pvt21_revised43',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
-  'question': 'How likely is it that Pamela failed the exam?',
-  'observed_utterance': 'That exam was impossible.',
+  'scenario_id': 'pvt21_revised32',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Hannah and Jacob just finished a meal at a new restaurant in town. As they are getting ready to pay the bill, Hannah turns to Jacob.',
+  'question': 'How likely is Hannah to leave a larger-than-usual tip?',
+  'observed_utterance': 'I like how polite the staff is.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Pamela',
-  'secondName': 'Bruce'
+  'mainName': 'Hannah',
+  'secondName': 'Jacob'
 },
 {
-  'scenario_id': 'pvt21_revised39',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'James and Lauren are looking to have a healthy snack in their kitchen. James picks up a banana, notices its texture, and turns to Lauren.',
-  'question': 'How likely is it that the banana has gone bad?',
-  'observed_utterance': 'This banana is kind of mushy.',
+  'scenario_id': 'pvt21_revised21',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
+  'question': 'How likely is Carl to watch another performance by that last comedian?',
+  'observed_utterance': 'That last comedian was funny.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'James',
-  'secondName': 'Lauren'
+  'mainName': 'Carl',
+  'secondName': 'Laura',
+  'alternatives': ['That last comedian was funny.',
+    'That last comedian was hilarious.']
 },
 {
   'scenario_id': 'pvt21_revised25',
-  'scenario_type': 'strong_with_alts',
+  'scenario_type': 'weak_with_alts',
   'scenario': 'Sharon is preparing dinner in the kitchen where her son Jason is trying to help. When Jason walks closer to the stove, Sharon turns to Jason.',
   'question': 'How likely is Jason to burn himself if he touches the pot?',
-  'observed_utterance': 'Careful, the pot is boiling.',
+  'observed_utterance': 'Careful, the pot is hot.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Sharon',
   'secondName': 'Jason',
@@ -179,123 +94,16 @@ var main_stimuli_gradable_meanings = [[{
     'Careful, the pot is boiling.']
 },
 {
-  'scenario_id': 'pvt21_revised15',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
-  'question': 'How likely is it that this part of the country is experiencing a drought?',
-  'observed_utterance': 'This grass looks arid.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Larry',
-  'secondName': 'Tina'
-},
-{
   'scenario_id': 'pvt21_revised34',
-  'scenario_type': 'weak_no_alts',
+  'scenario_type': 'weak_with_alts',
   'scenario': 'Max and Judy are sitting in a library, studying for their final exams. Max turns to Judy.',
   'question': 'How likely is it that no talking is allowed in the library?',
   'observed_utterance': 'I like how quiet it is here.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Max',
-  'secondName': 'Judy'
-},
-{
-  'scenario_id': 'pvt21_revised38',
-  'scenario_type': 'strong_with_alts',
-  'scenario': "Tiffany and Matthew are academics at a university. Tiffany is expressing her opinion of Matthew's new research idea he just presented at a talk.",
-  'question': 'How likely is it that no one has thought of this idea before?',
-  'observed_utterance': "That's a brilliant idea.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Tiffany',
-  'secondName': 'Matthew',
-  'alternatives': ["That's a smart idea.", "That's a brilliant idea."]
-},
-{
-  'scenario_id': 'pvt21_revised23',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
-  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
-  'observed_utterance': 'That crowd was loud.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jose',
-  'secondName': 'Jasmine'
-},
-{
-  'scenario_id': 'pvt21_revised42',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Jacqueline and Christian are observing a caterpillar which is resting on a leaf. They are interested in finding out how caterpillars move. Jacqueline turns to Christian.',
-  'question': "How likely is it for an average person to not notice the caterpillar's movement?",
-  'observed_utterance': 'Its movements are imperceptible.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jacqueline',
-  'secondName': 'Christian'
-},
-{
-  'scenario_id': 'pvt21_revised10',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda looks to Kenneth.',
-  'question': 'How likely is it that Linda puts on an extra layer?',
-  'observed_utterance': "It's starting to get a bit cold.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Linda',
-  'secondName': 'Kenneth',
-  'alternatives': ["It's starting to get a bit cool.",
-    "It's starting to get a bit cold."]
-},
-{
-  'scenario_id': 'pvt21_revised21',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
-  'question': 'How likely is Carl to watch another performance by that last comedian?',
-  'observed_utterance': 'That last comedian was hilarious.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Carl',
-  'secondName': 'Laura'
-}],
-[{
-  'scenario_id': 'pvt21_revised1',
-  'scenario_type': 'strong_no_alts',
-  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
-  'question': 'How likely is it that the protest requires riot police?',
-  'observed_utterance': 'This crowd looks violent.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Beverly',
-  'secondName': 'Joshua'
-},
-{
-  'scenario_id': 'pvt21_revised34',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Max and Judy are sitting in a library, studying for their final exams. Max turns to Judy.',
-  'question': 'How likely is it that no talking is allowed in the library?',
-  'observed_utterance': 'I like how silent it is here.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Max',
   'secondName': 'Judy',
   'alternatives': ['I like how quiet it is here.',
     'I like how silent it is here.']
-},
-{
-  'scenario_id': 'pvt21_revised32',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Hannah and Jacob just finished a meal at a new restaurant in town. As they are getting ready to pay the bill, Hannah turns to Jacob.',
-  'question': 'How likely is Hannah to leave a larger-than-usual tip?',
-  'observed_utterance': 'I like how friendly the staff is.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Hannah',
-  'secondName': 'Jacob',
-  'alternatives': ['I like how polite the staff is.',
-    'I like how friendly the staff is.']
-},
-{
-  'scenario_id': 'pvt21_revised21',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
-  'question': 'How likely is Carl to watch another performance by that last comedian?',
-  'observed_utterance': 'That last comedian was hilarious.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Carl',
-  'secondName': 'Laura',
-  'alternatives': ['That last comedian was funny.',
-    'That last comedian was hilarious.']
 },
 {
   'scenario_id': 'pvt21_revised47',
@@ -308,25 +116,70 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Jack'
 },
 {
+  'scenario_id': 'pvt21_revised42',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Jacqueline and Christian are observing a caterpillar which is resting on a leaf. They are interested in finding out how caterpillars move. Jacqueline turns to Christian.',
+  'question': "How likely is it for an average person to not notice the caterpillar's movement?",
+  'observed_utterance': 'Its movements are imperceptible.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jacqueline',
+  'secondName': 'Christian',
+  'alternatives': ['Its movements are tiny.',
+    'Its movements are imperceptible.']
+},
+{
+  'scenario_id': 'pvt21_revised38',
+  'scenario_type': 'weak_with_alts',
+  'scenario': "Tiffany and Matthew are academics at a university. Tiffany is expressing her opinion of Matthew's new research idea he just presented at a talk.",
+  'question': 'How likely is it that no one has thought of this idea before?',
+  'observed_utterance': "That's a smart idea.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Tiffany',
+  'secondName': 'Matthew',
+  'alternatives': ["That's a smart idea.", "That's a brilliant idea."]
+},
+{
+  'scenario_id': 'pvt21_revised45',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
+  'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
+  'observed_utterance': "Looks like it's going to be hot tomorrow.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Harper',
+  'secondName': 'Liam',
+  'alternatives': ["Looks like it's going to be warm tomorrow.",
+    "Looks like it's going to be hot tomorrow."]
+},
+{
   'scenario_id': 'pvt21_revised10',
-  'scenario_type': 'weak_no_alts',
+  'scenario_type': 'strong_no_alts',
   'scenario': 'Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda looks to Kenneth.',
   'question': 'How likely is it that Linda puts on an extra layer?',
-  'observed_utterance': "It's starting to get a bit cool.",
+  'observed_utterance': "It's starting to get a bit cold.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Linda',
   'secondName': 'Kenneth'
 },
 {
-  'scenario_id': 'pvt21_revised15',
+  'scenario_id': 'pvt21_revised43',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
-  'question': 'How likely is it that this part of the country is experiencing a drought?',
-  'observed_utterance': 'This grass looks arid.',
+  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
+  'question': 'How likely is it that Pamela failed the exam?',
+  'observed_utterance': 'That exam was impossible.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Larry',
-  'secondName': 'Tina',
-  'alternatives': ['This grass looks dry.', 'This grass looks arid.']
+  'mainName': 'Pamela',
+  'secondName': 'Bruce',
+  'alternatives': ['That exam was tough.', 'That exam was impossible.']
+},
+{
+  'scenario_id': 'pvt21_revised24',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I loved it.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Marie',
+  'secondName': 'Jordan'
 },
 {
   'scenario_id': 'pvt21_revised30',
@@ -339,46 +192,14 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Timothy'
 },
 {
-  'scenario_id': 'pvt21_revised0',
+  'scenario_id': 'pvt21_revised23',
   'scenario_type': 'weak_no_alts',
-  'scenario': "David and Rachel are watching their favorite hockey team play. As one of their team's players scores, they cheer.",
-  'question': 'How likely is it that this goal is remembered for years to come?',
-  'observed_utterance': 'What an amazing goal!',
+  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
+  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
+  'observed_utterance': 'That crowd was loud.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'David',
-  'secondName': 'Rachel'
-},
-{
-  'scenario_id': 'pvt21_revised2',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
-  'question': 'How likely is it that this mansion has more than 10 rooms?',
-  'observed_utterance': 'Damn, this thing is huge!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'William',
-  'secondName': 'Katherine',
-  'alternatives': ['Damn, this thing is big!', 'Damn, this thing is huge!']
-},
-{
-  'scenario_id': 'pvt21_revised5',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
-  'question': 'How likely are Amanda and Paul to wait long for a table?',
-  'observed_utterance': 'This place is busy!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Amanda',
-  'secondName': 'Paul'
-},
-{
-  'scenario_id': 'pvt21_revised36',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
-  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
-  'observed_utterance': "I'm hungry.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Caleb',
-  'secondName': 'Megan',
-  'alternatives': ["I'm hungry.", "I'm starving."]
+  'mainName': 'Jose',
+  'secondName': 'Jasmine'
 },
 {
   'scenario_id': 'pvt21_revised40',
@@ -391,14 +212,236 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Jessica'
 },
 {
-  'scenario_id': 'pvt21_revised38',
+  'scenario_id': 'pvt21_revised15',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'question': 'How likely is it that this part of the country is experiencing a drought?',
+  'observed_utterance': 'This grass looks arid.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Larry',
+  'secondName': 'Tina'
+},
+{
+  'scenario_id': 'pvt21_revised2',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
+  'question': 'How likely is it that this mansion has more than 10 rooms?',
+  'observed_utterance': 'Damn, this thing is huge!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'William',
+  'secondName': 'Katherine'
+},
+{
+  'scenario_id': 'pvt21_revised36',
   'scenario_type': 'weak_no_alts',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm hungry.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Caleb',
+  'secondName': 'Megan'
+},
+{
+  'scenario_id': 'pvt21_revised1',
+  'scenario_type': 'strong_no_alts',
+  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
+  'question': 'How likely is it that the protest requires riot police?',
+  'observed_utterance': 'This crowd looks violent.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Beverly',
+  'secondName': 'Joshua'
+},
+{
+  'scenario_id': 'pvt21_revised28',
+  'scenario_type': 'weak_no_alts',
+  'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
+  'question': 'How likely is it that Jess has never heard an idea like this before?',
+  'observed_utterance': "That's an odd idea.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jess',
+  'secondName': 'Ronald'
+}],
+[{
+  'scenario_id': 'pvt21_revised30',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
+  'question': 'How likely is it that the operation will involve some anesthesia?',
+  'observed_utterance': 'It will be painful.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Dr. Sanders',
+  'secondName': 'Timothy'
+},
+{
+  'scenario_id': 'pvt21_revised15',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'question': 'How likely is it that this part of the country is experiencing a drought?',
+  'observed_utterance': 'This grass looks arid.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Larry',
+  'secondName': 'Tina'
+},
+{
+  'scenario_id': 'pvt21_revised2',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
+  'question': 'How likely is it that this mansion has more than 10 rooms?',
+  'observed_utterance': 'Damn, this thing is huge!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'William',
+  'secondName': 'Katherine'
+},
+{
+  'scenario_id': 'pvt21_revised25',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Sharon is preparing dinner in the kitchen where her son Jason is trying to help. When Jason walks closer to the stove, Sharon turns to Jason.',
+  'question': 'How likely is Jason to burn himself if he touches the pot?',
+  'observed_utterance': 'Careful, the pot is hot.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Sharon',
+  'secondName': 'Jason',
+  'alternatives': ['Careful, the pot is hot.',
+    'Careful, the pot is boiling.']
+},
+{
+  'scenario_id': 'pvt21_revised47',
+  'scenario_type': 'weak_no_alts',
+  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
+  'question': 'How likely is Jack to change into dry clothes?',
+  'observed_utterance': 'You look wet.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Judith',
+  'secondName': 'Jack'
+},
+{
+  'scenario_id': 'pvt21_revised38',
+  'scenario_type': 'weak_with_alts',
   'scenario': "Tiffany and Matthew are academics at a university. Tiffany is expressing her opinion of Matthew's new research idea he just presented at a talk.",
   'question': 'How likely is it that no one has thought of this idea before?',
   'observed_utterance': "That's a smart idea.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Tiffany',
-  'secondName': 'Matthew'
+  'secondName': 'Matthew',
+  'alternatives': ["That's a smart idea.", "That's a brilliant idea."]
+},
+{
+  'scenario_id': 'pvt21_revised5',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
+  'question': 'How likely are Amanda and Paul to wait long for a table?',
+  'observed_utterance': 'This place is busy!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Amanda',
+  'secondName': 'Paul',
+  'alternatives': ['This place is busy!', 'This place is full!']
+},
+{
+  'scenario_id': 'pvt21_revised21',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
+  'question': 'How likely is Carl to watch another performance by that last comedian?',
+  'observed_utterance': 'That last comedian was funny.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Carl',
+  'secondName': 'Laura',
+  'alternatives': ['That last comedian was funny.',
+    'That last comedian was hilarious.']
+},
+{
+  'scenario_id': 'pvt21_revised14',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Bobby is meeting up with his friend Logan. When Bobby sees Logan, he notices that Logan has gotten a new haircut.',
+  'question': 'How likely is Bobby to ask Logan where he got his haircut?',
+  'observed_utterance': 'Logan, your hair looks great!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Bobby',
+  'secondName': 'Logan',
+  'alternatives': ['Logan, your hair looks nice!',
+    'Logan, your hair looks great!']
+},
+{
+  'scenario_id': 'pvt21_revised10',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda looks to Kenneth.',
+  'question': 'How likely is it that Linda puts on an extra layer?',
+  'observed_utterance': "It's starting to get a bit cold.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Linda',
+  'secondName': 'Kenneth'
+},
+{
+  'scenario_id': 'pvt21_revised23',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
+  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
+  'observed_utterance': 'That crowd was loud.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jose',
+  'secondName': 'Jasmine'
+},
+{
+  'scenario_id': 'pvt21_revised0',
+  'scenario_type': 'strong_with_alts',
+  'scenario': "David and Rachel are watching their favorite hockey team play. As one of their team's players scores, they cheer.",
+  'question': 'How likely is it that this goal is remembered for years to come?',
+  'observed_utterance': 'What a miraculous goal!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'David',
+  'secondName': 'Rachel',
+  'alternatives': ['What an amazing goal!', 'What a miraculous goal!']
+},
+{
+  'scenario_id': 'pvt21_revised1',
+  'scenario_type': 'strong_no_alts',
+  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
+  'question': 'How likely is it that the protest requires riot police?',
+  'observed_utterance': 'This crowd looks violent.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Beverly',
+  'secondName': 'Joshua'
+},
+{
+  'scenario_id': 'pvt21_revised36',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm hungry.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Caleb',
+  'secondName': 'Megan'
+},
+{
+  'scenario_id': 'pvt21_revised24',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I loved it.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Marie',
+  'secondName': 'Jordan'
+},
+{
+  'scenario_id': 'pvt21_revised34',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Max and Judy are sitting in a library, studying for their final exams. Max turns to Judy.',
+  'question': 'How likely is it that no talking is allowed in the library?',
+  'observed_utterance': 'I like how quiet it is here.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Max',
+  'secondName': 'Judy',
+  'alternatives': ['I like how quiet it is here.',
+    'I like how silent it is here.']
+},
+{
+  'scenario_id': 'pvt21_revised41',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it bad.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Terry',
+  'secondName': 'Jenna',
+  'alternatives': ['I found it mediocre.', 'I found it bad.']
 },
 {
   'scenario_id': 'pvt21_revised29',
@@ -424,273 +467,36 @@ var main_stimuli_gradable_meanings = [[{
     'The room we had was quite luxurious.']
 },
 {
-  'scenario_id': 'pvt21_revised23',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
-  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
-  'observed_utterance': 'That crowd was deafening.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jose',
-  'secondName': 'Jasmine',
-  'alternatives': ['That crowd was loud.', 'That crowd was deafening.']
-},
-{
-  'scenario_id': 'pvt21_revised24',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
-  'question': 'How likely is it that Marie recommends watching the talk to others?',
-  'observed_utterance': 'I liked it.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Marie',
-  'secondName': 'Jordan'
-},
-{
-  'scenario_id': 'pvt21_revised14',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Bobby is meeting up with his friend Logan. When Bobby sees Logan, he notices that Logan has gotten a new haircut.',
-  'question': 'How likely is Bobby to ask Logan where he got his haircut?',
-  'observed_utterance': 'Logan, your hair looks nice!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Bobby',
-  'secondName': 'Logan'
-},
-{
   'scenario_id': 'pvt21_revised33',
-  'scenario_type': 'strong_no_alts',
+  'scenario_type': 'strong_with_alts',
   'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
   'question': 'How likely is Catherine to take a photo of the view?',
   'observed_utterance': 'What a beautiful view.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Catherine',
-  'secondName': 'Charles'
+  'secondName': 'Charles',
+  'alternatives': ['What a pretty view.', 'What a beautiful view.']
+},
+{
+  'scenario_id': 'pvt21_revised40',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
+  'question': 'How likely is it that the wall could resist heavy cannon fire?',
+  'observed_utterance': 'This wall seems thick.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Albert',
+  'secondName': 'Jessica'
 },
 {
   'scenario_id': 'pvt21_revised27',
-  'scenario_type': 'weak_no_alts',
+  'scenario_type': 'weak_with_alts',
   'scenario': "Jeremy and Marcus are attending a gaming convention. They're discussing a new game that was showcased during the event, particularly the visuals it offered. Jeremy turns to Marcus.",
   'question': 'How likely is the game to receive a five-star rating for its graphics?',
   'observed_utterance': 'The graphics were nice.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Jeremy',
-  'secondName': 'Marcus'
-},
-{
-  'scenario_id': 'pvt21_revised25',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Sharon is preparing dinner in the kitchen where her son Jason is trying to help. When Jason walks closer to the stove, Sharon turns to Jason.',
-  'question': 'How likely is Jason to burn himself if he touches the pot?',
-  'observed_utterance': 'Careful, the pot is boiling.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Sharon',
-  'secondName': 'Jason'
-},
-{
-  'scenario_id': 'pvt21_revised41',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
-  'question': 'How likely is it that Terry gives the movie a one-star rating?',
-  'observed_utterance': 'I found it bad.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Terry',
-  'secondName': 'Jenna',
-  'alternatives': ['I found it mediocre.', 'I found it bad.']
-},
-{
-  'scenario_id': 'pvt21_revised28',
-  'scenario_type': 'weak_with_alts',
-  'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
-  'question': 'How likely is it that Jess has never heard an idea like this before?',
-  'observed_utterance': "That's an odd idea.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jess',
-  'secondName': 'Ronald',
-  'alternatives': ["That's an odd idea.", "That's a bizarre idea."]
-}],
-[{
-  'scenario_id': 'pvt21_revised2',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
-  'question': 'How likely is it that this mansion has more than 10 rooms?',
-  'observed_utterance': 'Damn, this thing is big!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'William',
-  'secondName': 'Katherine',
-  'alternatives': ['Damn, this thing is big!', 'Damn, this thing is huge!']
-},
-{
-  'scenario_id': 'pvt21_revised36',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
-  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
-  'observed_utterance': "I'm starving.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Caleb',
-  'secondName': 'Megan'
-},
-{
-  'scenario_id': 'pvt21_revised47',
-  'scenario_type': 'strong_with_alts',
-  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
-  'question': 'How likely is Jack to change into dry clothes?',
-  'observed_utterance': 'You look soaked.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Judith',
-  'secondName': 'Jack',
-  'alternatives': ['You look wet.', 'You look soaked.']
-},
-{
-  'scenario_id': 'pvt21_revised15',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
-  'question': 'How likely is it that this part of the country is experiencing a drought?',
-  'observed_utterance': 'This grass looks dry.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Larry',
-  'secondName': 'Tina',
-  'alternatives': ['This grass looks dry.', 'This grass looks arid.']
-},
-{
-  'scenario_id': 'pvt21_revised0',
-  'scenario_type': 'strong_with_alts',
-  'scenario': "David and Rachel are watching their favorite hockey team play. As one of their team's players scores, they cheer.",
-  'question': 'How likely is it that this goal is remembered for years to come?',
-  'observed_utterance': 'What a miraculous goal!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'David',
-  'secondName': 'Rachel',
-  'alternatives': ['What an amazing goal!', 'What a miraculous goal!']
-},
-{
-  'scenario_id': 'pvt21_revised24',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
-  'question': 'How likely is it that Marie recommends watching the talk to others?',
-  'observed_utterance': 'I loved it.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Marie',
-  'secondName': 'Jordan',
-  'alternatives': ['I liked it.', 'I loved it.']
-},
-{
-  'scenario_id': 'pvt21_revised39',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'James and Lauren are looking to have a healthy snack in their kitchen. James picks up a banana, notices its texture, and turns to Lauren.',
-  'question': 'How likely is it that the banana has gone bad?',
-  'observed_utterance': 'This banana is kind of mushy.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'James',
-  'secondName': 'Lauren',
-  'alternatives': ['This banana is kind of soft.',
-    'This banana is kind of mushy.']
-},
-{
-  'scenario_id': 'pvt21_revised14',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Bobby is meeting up with his friend Logan. When Bobby sees Logan, he notices that Logan has gotten a new haircut.',
-  'question': 'How likely is Bobby to ask Logan where he got his haircut?',
-  'observed_utterance': 'Logan, your hair looks nice!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Bobby',
-  'secondName': 'Logan',
-  'alternatives': ['Logan, your hair looks nice!',
-    'Logan, your hair looks great!']
-},
-{
-  'scenario_id': 'pvt21_revised42',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Jacqueline and Christian are observing a caterpillar which is resting on a leaf. They are interested in finding out how caterpillars move. Jacqueline turns to Christian.',
-  'question': "How likely is it for an average person to not notice the caterpillar's movement?",
-  'observed_utterance': 'Its movements are tiny.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jacqueline',
-  'secondName': 'Christian'
-},
-{
-  'scenario_id': 'pvt21_revised43',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
-  'question': 'How likely is it that Pamela failed the exam?',
-  'observed_utterance': 'That exam was tough.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Pamela',
-  'secondName': 'Bruce'
-},
-{
-  'scenario_id': 'pvt21_revised9',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
-  'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
-  'observed_utterance': 'The room we had was quite comfortable.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Lucy',
-  'secondName': 'Mark'
-},
-{
-  'scenario_id': 'pvt21_revised45',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
-  'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
-  'observed_utterance': "Looks like it's going to be hot tomorrow.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Harper',
-  'secondName': 'Liam',
-  'alternatives': ["Looks like it's going to be warm tomorrow.",
-    "Looks like it's going to be hot tomorrow."]
-},
-{
-  'scenario_id': 'pvt21_revised32',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Hannah and Jacob just finished a meal at a new restaurant in town. As they are getting ready to pay the bill, Hannah turns to Jacob.',
-  'question': 'How likely is Hannah to leave a larger-than-usual tip?',
-  'observed_utterance': 'I like how polite the staff is.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Hannah',
-  'secondName': 'Jacob',
-  'alternatives': ['I like how polite the staff is.',
-    'I like how friendly the staff is.']
-},
-{
-  'scenario_id': 'pvt21_revised48',
-  'scenario_type': 'weak_no_alts',
-  'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
-  'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
-  'observed_utterance': 'She played well.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Liam',
-  'secondName': 'Sophie'
-},
-{
-  'scenario_id': 'pvt21_revised40',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
-  'question': 'How likely is it that the wall could resist heavy cannon fire?',
-  'observed_utterance': 'This wall seems impenetrable.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Albert',
-  'secondName': 'Jessica',
-  'alternatives': ['This wall seems thick.',
-    'This wall seems impenetrable.']
-},
-{
-  'scenario_id': 'pvt21_revised23',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
-  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
-  'observed_utterance': 'That crowd was deafening.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jose',
-  'secondName': 'Jasmine'
-},
-{
-  'scenario_id': 'pvt21_revised29',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
-  'question': 'How likely is Gerald to give the musical performance a five-star rating?',
-  'observed_utterance': 'That was a good show.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Gerald',
-  'secondName': 'Margaret',
-  'alternatives': ['That was a good show.', 'That was an excellent show.']
+  'secondName': 'Marcus',
+  'alternatives': ['The graphics were nice.', 'The graphics were great.']
 },
 {
   'scenario_id': 'pvt21_revised28',
@@ -703,123 +509,25 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Ronald'
 },
 {
-  'scenario_id': 'pvt21_revised33',
+  'scenario_id': 'pvt21_revised32',
   'scenario_type': 'weak_no_alts',
-  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
-  'question': 'How likely is Catherine to take a photo of the view?',
-  'observed_utterance': 'What a pretty view.',
+  'scenario': 'Hannah and Jacob just finished a meal at a new restaurant in town. As they are getting ready to pay the bill, Hannah turns to Jacob.',
+  'question': 'How likely is Hannah to leave a larger-than-usual tip?',
+  'observed_utterance': 'I like how polite the staff is.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Catherine',
-  'secondName': 'Charles'
-},
-{
-  'scenario_id': 'pvt21_revised11',
-  'scenario_type': 'weak_with_alts',
-  'scenario': "Daniel and Brenda are having coffee at a trendy café. Brenda just met Daniel's girlfriend for the first time, and she looks pleasantly surprised as she turns to Daniel.",
-  'question': "How likely is it that Daniel's girlfriend often gets compliments about her looks?",
-  'observed_utterance': "You didn't tell me she was that cute.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Brenda',
-  'secondName': 'Daniel',
-  'alternatives': ["You didn't tell me she was that cute.",
-    "You didn't tell me she was that beautiful."]
-},
-{
-  'scenario_id': 'pvt21_revised1',
-  'scenario_type': 'strong_with_alts',
-  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
-  'question': 'How likely is it that the protest requires riot police?',
-  'observed_utterance': 'This crowd looks violent.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Beverly',
-  'secondName': 'Joshua',
-  'alternatives': ['This crowd looks angry.', 'This crowd looks violent.']
-},
-{
-  'scenario_id': 'pvt21_revised41',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
-  'question': 'How likely is it that Terry gives the movie a one-star rating?',
-  'observed_utterance': 'I found it bad.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Terry',
-  'secondName': 'Jenna'
-},
-{
-  'scenario_id': 'pvt21_revised30',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
-  'question': 'How likely is it that the operation will involve some anesthesia?',
-  'observed_utterance': 'It will be uncomfortable.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Dr. Sanders',
-  'secondName': 'Timothy',
-  'alternatives': ['It will be uncomfortable.', 'It will be painful.']
-},
-{
-  'scenario_id': 'pvt21_revised10',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda looks to Kenneth.',
-  'question': 'How likely is it that Linda puts on an extra layer?',
-  'observed_utterance': "It's starting to get a bit cold.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Linda',
-  'secondName': 'Kenneth'
+  'mainName': 'Hannah',
+  'secondName': 'Jacob'
 }],
 [{
-  'scenario_id': 'pvt21_revised27',
-  'scenario_type': 'weak_with_alts',
-  'scenario': "Jeremy and Marcus are attending a gaming convention. They're discussing a new game that was showcased during the event, particularly the visuals it offered. Jeremy turns to Marcus.",
-  'question': 'How likely is the game to receive a five-star rating for its graphics?',
-  'observed_utterance': 'The graphics were nice.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jeremy',
-  'secondName': 'Marcus',
-  'alternatives': ['The graphics were nice.', 'The graphics were great.']
-},
-{
-  'scenario_id': 'pvt21_revised14',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Bobby is meeting up with his friend Logan. When Bobby sees Logan, he notices that Logan has gotten a new haircut.',
-  'question': 'How likely is Bobby to ask Logan where he got his haircut?',
-  'observed_utterance': 'Logan, your hair looks great!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Bobby',
-  'secondName': 'Logan'
-},
-{
-  'scenario_id': 'pvt21_revised40',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
-  'question': 'How likely is it that the wall could resist heavy cannon fire?',
-  'observed_utterance': 'This wall seems thick.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Albert',
-  'secondName': 'Jessica',
-  'alternatives': ['This wall seems thick.',
-    'This wall seems impenetrable.']
-},
-{
-  'scenario_id': 'pvt21_revised43',
+  'scenario_id': 'pvt21_revised29',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
-  'question': 'How likely is it that Pamela failed the exam?',
-  'observed_utterance': 'That exam was impossible.',
+  'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
+  'question': 'How likely is Gerald to give the musical performance a five-star rating?',
+  'observed_utterance': 'That was an excellent show.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Pamela',
-  'secondName': 'Bruce',
-  'alternatives': ['That exam was tough.', 'That exam was impossible.']
-},
-{
-  'scenario_id': 'pvt21_revised28',
-  'scenario_type': 'strong_with_alts',
-  'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
-  'question': 'How likely is it that Jess has never heard an idea like this before?',
-  'observed_utterance': "That's a bizarre idea.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jess',
-  'secondName': 'Ronald',
-  'alternatives': ["That's an odd idea.", "That's a bizarre idea."]
+  'mainName': 'Gerald',
+  'secondName': 'Margaret',
+  'alternatives': ['That was a good show.', 'That was an excellent show.']
 },
 {
   'scenario_id': 'pvt21_revised42',
@@ -834,48 +542,132 @@ var main_stimuli_gradable_meanings = [[{
     'Its movements are imperceptible.']
 },
 {
-  'scenario_id': 'pvt21_revised48',
-  'scenario_type': 'strong_with_alts',
-  'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
-  'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
-  'observed_utterance': 'She played superbly.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Liam',
-  'secondName': 'Sophie',
-  'alternatives': ['She played well.', 'She played superbly.']
-},
-{
-  'scenario_id': 'pvt21_revised38',
+  'scenario_id': 'pvt21_revised39',
   'scenario_type': 'weak_with_alts',
-  'scenario': "Tiffany and Matthew are academics at a university. Tiffany is expressing her opinion of Matthew's new research idea he just presented at a talk.",
-  'question': 'How likely is it that no one has thought of this idea before?',
-  'observed_utterance': "That's a smart idea.",
+  'scenario': 'James and Lauren are looking to have a healthy snack in their kitchen. James picks up a banana, notices its texture, and turns to Lauren.',
+  'question': 'How likely is it that the banana has gone bad?',
+  'observed_utterance': 'This banana is kind of soft.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Tiffany',
-  'secondName': 'Matthew',
-  'alternatives': ["That's a smart idea.", "That's a brilliant idea."]
+  'mainName': 'James',
+  'secondName': 'Lauren',
+  'alternatives': ['This banana is kind of soft.',
+    'This banana is kind of mushy.']
 },
 {
-  'scenario_id': 'pvt21_revised29',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
-  'question': 'How likely is Gerald to give the musical performance a five-star rating?',
-  'observed_utterance': 'That was a good show.',
+  'scenario_id': 'pvt21_revised30',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
+  'question': 'How likely is it that the operation will involve some anesthesia?',
+  'observed_utterance': 'It will be painful.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Gerald',
-  'secondName': 'Margaret'
+  'mainName': 'Dr. Sanders',
+  'secondName': 'Timothy'
+},
+{
+  'scenario_id': 'pvt21_revised1',
+  'scenario_type': 'strong_no_alts',
+  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
+  'question': 'How likely is it that the protest requires riot police?',
+  'observed_utterance': 'This crowd looks violent.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Beverly',
+  'secondName': 'Joshua'
 },
 {
   'scenario_id': 'pvt21_revised11',
-  'scenario_type': 'strong_with_alts',
+  'scenario_type': 'weak_with_alts',
   'scenario': "Daniel and Brenda are having coffee at a trendy café. Brenda just met Daniel's girlfriend for the first time, and she looks pleasantly surprised as she turns to Daniel.",
   'question': "How likely is it that Daniel's girlfriend often gets compliments about her looks?",
-  'observed_utterance': "You didn't tell me she was that beautiful.",
+  'observed_utterance': "You didn't tell me she was that cute.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Brenda',
   'secondName': 'Daniel',
   'alternatives': ["You didn't tell me she was that cute.",
     "You didn't tell me she was that beautiful."]
+},
+{
+  'scenario_id': 'pvt21_revised2',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
+  'question': 'How likely is it that this mansion has more than 10 rooms?',
+  'observed_utterance': 'Damn, this thing is huge!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'William',
+  'secondName': 'Katherine'
+},
+{
+  'scenario_id': 'pvt21_revised41',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it bad.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Terry',
+  'secondName': 'Jenna',
+  'alternatives': ['I found it mediocre.', 'I found it bad.']
+},
+{
+  'scenario_id': 'pvt21_revised28',
+  'scenario_type': 'weak_no_alts',
+  'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
+  'question': 'How likely is it that Jess has never heard an idea like this before?',
+  'observed_utterance': "That's an odd idea.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jess',
+  'secondName': 'Ronald'
+},
+{
+  'scenario_id': 'pvt21_revised45',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
+  'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
+  'observed_utterance': "Looks like it's going to be warm tomorrow.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Harper',
+  'secondName': 'Liam',
+  'alternatives': ["Looks like it's going to be warm tomorrow.",
+    "Looks like it's going to be hot tomorrow."]
+},
+{
+  'scenario_id': 'pvt21_revised43',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
+  'question': 'How likely is it that Pamela failed the exam?',
+  'observed_utterance': 'That exam was tough.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Pamela',
+  'secondName': 'Bruce',
+  'alternatives': ['That exam was tough.', 'That exam was impossible.']
+},
+{
+  'scenario_id': 'pvt21_revised24',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I loved it.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Marie',
+  'secondName': 'Jordan'
+},
+{
+  'scenario_id': 'pvt21_revised15',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'question': 'How likely is it that this part of the country is experiencing a drought?',
+  'observed_utterance': 'This grass looks arid.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Larry',
+  'secondName': 'Tina'
+},
+{
+  'scenario_id': 'pvt21_revised23',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
+  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
+  'observed_utterance': 'That crowd was loud.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jose',
+  'secondName': 'Jasmine'
 },
 {
   'scenario_id': 'pvt21_revised33',
@@ -889,45 +681,27 @@ var main_stimuli_gradable_meanings = [[{
   'alternatives': ['What a pretty view.', 'What a beautiful view.']
 },
 {
-  'scenario_id': 'pvt21_revised45',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
-  'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
-  'observed_utterance': "Looks like it's going to be warm tomorrow.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Harper',
-  'secondName': 'Liam'
-},
-{
   'scenario_id': 'pvt21_revised0',
-  'scenario_type': 'strong_no_alts',
+  'scenario_type': 'strong_with_alts',
   'scenario': "David and Rachel are watching their favorite hockey team play. As one of their team's players scores, they cheer.",
   'question': 'How likely is it that this goal is remembered for years to come?',
   'observed_utterance': 'What a miraculous goal!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'David',
-  'secondName': 'Rachel'
+  'secondName': 'Rachel',
+  'alternatives': ['What an amazing goal!', 'What a miraculous goal!']
 },
 {
-  'scenario_id': 'pvt21_revised23',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
-  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
-  'observed_utterance': 'That crowd was loud.',
+  'scenario_id': 'pvt21_revised9',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
+  'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
+  'observed_utterance': 'The room we had was quite luxurious.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jose',
-  'secondName': 'Jasmine',
-  'alternatives': ['That crowd was loud.', 'That crowd was deafening.']
-},
-{
-  'scenario_id': 'pvt21_revised41',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
-  'question': 'How likely is it that Terry gives the movie a one-star rating?',
-  'observed_utterance': 'I found it mediocre.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Terry',
-  'secondName': 'Jenna'
+  'mainName': 'Lucy',
+  'secondName': 'Mark',
+  'alternatives': ['The room we had was quite comfortable.',
+    'The room we had was quite luxurious.']
 },
 {
   'scenario_id': 'pvt21_revised32',
@@ -940,71 +714,186 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Jacob'
 },
 {
-  'scenario_id': 'pvt21_revised25',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Sharon is preparing dinner in the kitchen where her son Jason is trying to help. When Jason walks closer to the stove, Sharon turns to Jason.',
-  'question': 'How likely is Jason to burn himself if he touches the pot?',
-  'observed_utterance': 'Careful, the pot is hot.',
+  'scenario_id': 'pvt21_revised40',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
+  'question': 'How likely is it that the wall could resist heavy cannon fire?',
+  'observed_utterance': 'This wall seems thick.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Sharon',
-  'secondName': 'Jason',
-  'alternatives': ['Careful, the pot is hot.',
-    'Careful, the pot is boiling.']
+  'mainName': 'Albert',
+  'secondName': 'Jessica'
 },
 {
-  'scenario_id': 'pvt21_revised9',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
-  'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
-  'observed_utterance': 'The room we had was quite luxurious.',
+  'scenario_id': 'pvt21_revised36',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm hungry.",
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Lucy',
-  'secondName': 'Mark'
+  'mainName': 'Caleb',
+  'secondName': 'Megan'
+},
+{
+  'scenario_id': 'pvt21_revised48',
+  'scenario_type': 'weak_with_alts',
+  'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
+  'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
+  'observed_utterance': 'She played well.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Liam',
+  'secondName': 'Sophie',
+  'alternatives': ['She played well.', 'She played superbly.']
+},
+{
+  'scenario_id': 'pvt21_revised10',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda looks to Kenneth.',
+  'question': 'How likely is it that Linda puts on an extra layer?',
+  'observed_utterance': "It's starting to get a bit cold.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Linda',
+  'secondName': 'Kenneth'
 },
 {
   'scenario_id': 'pvt21_revised47',
-  'scenario_type': 'weak_with_alts',
+  'scenario_type': 'weak_no_alts',
   'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
   'question': 'How likely is Jack to change into dry clothes?',
   'observed_utterance': 'You look wet.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Judith',
-  'secondName': 'Jack',
-  'alternatives': ['You look wet.', 'You look soaked.']
+  'secondName': 'Jack'
 },
 {
-  'scenario_id': 'pvt21_revised36',
+  'scenario_id': 'pvt21_revised14',
   'scenario_type': 'strong_with_alts',
-  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
-  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
-  'observed_utterance': "I'm starving.",
+  'scenario': 'Bobby is meeting up with his friend Logan. When Bobby sees Logan, he notices that Logan has gotten a new haircut.',
+  'question': 'How likely is Bobby to ask Logan where he got his haircut?',
+  'observed_utterance': 'Logan, your hair looks great!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Caleb',
-  'secondName': 'Megan',
-  'alternatives': ["I'm hungry.", "I'm starving."]
+  'mainName': 'Bobby',
+  'secondName': 'Logan',
+  'alternatives': ['Logan, your hair looks nice!',
+    'Logan, your hair looks great!']
+}],
+[{
+  'scenario_id': 'pvt21_revised42',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Jacqueline and Christian are observing a caterpillar which is resting on a leaf. They are interested in finding out how caterpillars move. Jacqueline turns to Christian.',
+  'question': "How likely is it for an average person to not notice the caterpillar's movement?",
+  'observed_utterance': 'Its movements are tiny.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jacqueline',
+  'secondName': 'Christian',
+  'alternatives': ['Its movements are tiny.',
+    'Its movements are imperceptible.']
 },
 {
-  'scenario_id': 'pvt21_revised21',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
-  'question': 'How likely is Carl to watch another performance by that last comedian?',
-  'observed_utterance': 'That last comedian was funny.',
+  'scenario_id': 'pvt21_revised40',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Albert and Jessica are exploring a historic castle. They come across a wall whose size impresses them. Albert turns to Jessica.',
+  'question': 'How likely is it that the wall could resist heavy cannon fire?',
+  'observed_utterance': 'This wall seems thick.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Carl',
-  'secondName': 'Laura',
-  'alternatives': ['That last comedian was funny.',
-    'That last comedian was hilarious.']
+  'mainName': 'Albert',
+  'secondName': 'Jessica'
+},
+{
+  'scenario_id': 'pvt21_revised47',
+  'scenario_type': 'weak_no_alts',
+  'scenario': "Jack has just gone out to buy some milk during which it rained unexpectedly. When Jack returns home, Judith, Jack's partner, looks at him.",
+  'question': 'How likely is Jack to change into dry clothes?',
+  'observed_utterance': 'You look wet.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Judith',
+  'secondName': 'Jack'
+},
+{
+  'scenario_id': 'pvt21_revised28',
+  'scenario_type': 'weak_no_alts',
+  'scenario': "Ronald and Jess are sitting in a conference room brainstorming ideas for a new promotional campaign. After listening to Ronald's latest proposal, Jess turns to Ronald.",
+  'question': 'How likely is it that Jess has never heard an idea like this before?',
+  'observed_utterance': "That's an odd idea.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jess',
+  'secondName': 'Ronald'
 },
 {
   'scenario_id': 'pvt21_revised5',
-  'scenario_type': 'weak_with_alts',
+  'scenario_type': 'strong_no_alts',
   'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
   'question': 'How likely are Amanda and Paul to wait long for a table?',
-  'observed_utterance': 'This place is busy!',
+  'observed_utterance': 'This place is full!',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Amanda',
-  'secondName': 'Paul',
-  'alternatives': ['This place is busy!', 'This place is full!']
+  'secondName': 'Paul'
+},
+{
+  'scenario_id': 'pvt21_revised36',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Megan and her husband Caleb are on a road trip together. As Megan drives, Caleb turns to her.',
+  'question': 'How likely is it that Caleb asks Megan to get off at the next exit to eat?',
+  'observed_utterance': "I'm hungry.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Caleb',
+  'secondName': 'Megan'
+},
+{
+  'scenario_id': 'pvt21_revised43',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
+  'question': 'How likely is it that Pamela failed the exam?',
+  'observed_utterance': 'That exam was tough.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Pamela',
+  'secondName': 'Bruce',
+  'alternatives': ['That exam was tough.', 'That exam was impossible.']
+},
+{
+  'scenario_id': 'pvt21_revised48',
+  'scenario_type': 'weak_with_alts',
+  'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
+  'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
+  'observed_utterance': 'She played well.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Liam',
+  'secondName': 'Sophie',
+  'alternatives': ['She played well.', 'She played superbly.']
+},
+{
+  'scenario_id': 'pvt21_revised45',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
+  'question': 'How likely is it that Harper and Liam will use their air conditioning tomorrow?',
+  'observed_utterance': "Looks like it's going to be warm tomorrow.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Harper',
+  'secondName': 'Liam',
+  'alternatives': ["Looks like it's going to be warm tomorrow.",
+    "Looks like it's going to be hot tomorrow."]
+},
+{
+  'scenario_id': 'pvt21_revised11',
+  'scenario_type': 'weak_with_alts',
+  'scenario': "Daniel and Brenda are having coffee at a trendy café. Brenda just met Daniel's girlfriend for the first time, and she looks pleasantly surprised as she turns to Daniel.",
+  'question': "How likely is it that Daniel's girlfriend often gets compliments about her looks?",
+  'observed_utterance': "You didn't tell me she was that cute.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Brenda',
+  'secondName': 'Daniel',
+  'alternatives': ["You didn't tell me she was that cute.",
+    "You didn't tell me she was that beautiful."]
+},
+{
+  'scenario_id': 'pvt21_revised0',
+  'scenario_type': 'strong_with_alts',
+  'scenario': "David and Rachel are watching their favorite hockey team play. As one of their team's players scores, they cheer.",
+  'question': 'How likely is it that this goal is remembered for years to come?',
+  'observed_utterance': 'What a miraculous goal!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'David',
+  'secondName': 'Rachel',
+  'alternatives': ['What an amazing goal!', 'What a miraculous goal!']
 },
 {
   'scenario_id': 'pvt21_revised34',
@@ -1017,16 +906,80 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Judy'
 },
 {
+  'scenario_id': 'pvt21_revised27',
+  'scenario_type': 'strong_no_alts',
+  'scenario': "Jeremy and Marcus are attending a gaming convention. They're discussing a new game that was showcased during the event, particularly the visuals it offered. Jeremy turns to Marcus.",
+  'question': 'How likely is the game to receive a five-star rating for its graphics?',
+  'observed_utterance': 'The graphics were great.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jeremy',
+  'secondName': 'Marcus'
+},
+{
+  'scenario_id': 'pvt21_revised41',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it bad.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Terry',
+  'secondName': 'Jenna',
+  'alternatives': ['I found it mediocre.', 'I found it bad.']
+},
+{
   'scenario_id': 'pvt21_revised39',
-  'scenario_type': 'weak_no_alts',
+  'scenario_type': 'weak_with_alts',
   'scenario': 'James and Lauren are looking to have a healthy snack in their kitchen. James picks up a banana, notices its texture, and turns to Lauren.',
   'question': 'How likely is it that the banana has gone bad?',
   'observed_utterance': 'This banana is kind of soft.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'James',
-  'secondName': 'Lauren'
-}],
-[{
+  'secondName': 'Lauren',
+  'alternatives': ['This banana is kind of soft.',
+    'This banana is kind of mushy.']
+},
+{
+  'scenario_id': 'pvt21_revised32',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Hannah and Jacob just finished a meal at a new restaurant in town. As they are getting ready to pay the bill, Hannah turns to Jacob.',
+  'question': 'How likely is Hannah to leave a larger-than-usual tip?',
+  'observed_utterance': 'I like how polite the staff is.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Hannah',
+  'secondName': 'Jacob'
+},
+{
+  'scenario_id': 'pvt21_revised33',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
+  'question': 'How likely is Catherine to take a photo of the view?',
+  'observed_utterance': 'What a beautiful view.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Catherine',
+  'secondName': 'Charles',
+  'alternatives': ['What a pretty view.', 'What a beautiful view.']
+},
+{
+  'scenario_id': 'pvt21_revised21',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
+  'question': 'How likely is Carl to watch another performance by that last comedian?',
+  'observed_utterance': 'That last comedian was hilarious.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Carl',
+  'secondName': 'Laura'
+},
+{
+  'scenario_id': 'pvt21_revised23',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Jose and Jasmine have just attended a charity concert that included several musical performances. As they leave, Jose turns to Jasmine.',
+  'question': "How likely is it for Jose's ears to still be ringing from the concert?",
+  'observed_utterance': 'That crowd was loud.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jose',
+  'secondName': 'Jasmine'
+},
+{
   'scenario_id': 'pvt21_revised38',
   'scenario_type': 'strong_no_alts',
   'scenario': "Tiffany and Matthew are academics at a university. Tiffany is expressing her opinion of Matthew's new research idea he just presented at a talk.",
@@ -1035,17 +988,6 @@ var main_stimuli_gradable_meanings = [[{
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Tiffany',
   'secondName': 'Matthew'
-},
-{
-  'scenario_id': 'pvt21_revised43',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
-  'question': 'How likely is it that Pamela failed the exam?',
-  'observed_utterance': 'That exam was tough.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Pamela',
-  'secondName': 'Bruce',
-  'alternatives': ['That exam was tough.', 'That exam was impossible.']
 },
 {
   'scenario_id': 'pvt21_revised14',
@@ -1060,23 +1002,21 @@ var main_stimuli_gradable_meanings = [[{
     'Logan, your hair looks great!']
 },
 {
-  'scenario_id': 'pvt21_revised34',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Max and Judy are sitting in a library, studying for their final exams. Max turns to Judy.',
-  'question': 'How likely is it that no talking is allowed in the library?',
-  'observed_utterance': 'I like how quiet it is here.',
+  'scenario_id': 'pvt21_revised25',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Sharon is preparing dinner in the kitchen where her son Jason is trying to help. When Jason walks closer to the stove, Sharon turns to Jason.',
+  'question': 'How likely is Jason to burn himself if he touches the pot?',
+  'observed_utterance': 'Careful, the pot is boiling.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Max',
-  'secondName': 'Judy',
-  'alternatives': ['I like how quiet it is here.',
-    'I like how silent it is here.']
+  'mainName': 'Sharon',
+  'secondName': 'Jason'
 },
 {
   'scenario_id': 'pvt21_revised9',
-  'scenario_type': 'weak_with_alts',
+  'scenario_type': 'strong_with_alts',
   'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
   'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
-  'observed_utterance': 'The room we had was quite comfortable.',
+  'observed_utterance': 'The room we had was quite luxurious.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Lucy',
   'secondName': 'Mark',
@@ -1084,11 +1024,150 @@ var main_stimuli_gradable_meanings = [[{
     'The room we had was quite luxurious.']
 },
 {
-  'scenario_id': 'pvt21_revised25',
+  'scenario_id': 'pvt21_revised29',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
+  'question': 'How likely is Gerald to give the musical performance a five-star rating?',
+  'observed_utterance': 'That was an excellent show.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Gerald',
+  'secondName': 'Margaret',
+  'alternatives': ['That was a good show.', 'That was an excellent show.']
+}],
+[{
+  'scenario_id': 'pvt21_revised33',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
+  'question': 'How likely is Catherine to take a photo of the view?',
+  'observed_utterance': 'What a beautiful view.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Catherine',
+  'secondName': 'Charles',
+  'alternatives': ['What a pretty view.', 'What a beautiful view.']
+},
+{
+  'scenario_id': 'pvt21_revised43',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Pamela and Bruce are exiting their classroom after having taken an exam. As they walk to their next class, Pamela turns to Bruce.',
+  'question': 'How likely is it that Pamela failed the exam?',
+  'observed_utterance': 'That exam was tough.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Pamela',
+  'secondName': 'Bruce',
+  'alternatives': ['That exam was tough.', 'That exam was impossible.']
+},
+{
+  'scenario_id': 'pvt21_revised11',
+  'scenario_type': 'weak_with_alts',
+  'scenario': "Daniel and Brenda are having coffee at a trendy café. Brenda just met Daniel's girlfriend for the first time, and she looks pleasantly surprised as she turns to Daniel.",
+  'question': "How likely is it that Daniel's girlfriend often gets compliments about her looks?",
+  'observed_utterance': "You didn't tell me she was that cute.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Brenda',
+  'secondName': 'Daniel',
+  'alternatives': ["You didn't tell me she was that cute.",
+    "You didn't tell me she was that beautiful."]
+},
+{
+  'scenario_id': 'pvt21_revised24',
   'scenario_type': 'weak_no_alts',
+  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
+  'question': 'How likely is it that Marie recommends watching the talk to others?',
+  'observed_utterance': 'I liked it.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Marie',
+  'secondName': 'Jordan'
+},
+{
+  'scenario_id': 'pvt21_revised29',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
+  'question': 'How likely is Gerald to give the musical performance a five-star rating?',
+  'observed_utterance': 'That was an excellent show.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Gerald',
+  'secondName': 'Margaret',
+  'alternatives': ['That was a good show.', 'That was an excellent show.']
+},
+{
+  'scenario_id': 'pvt21_revised30',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
+  'question': 'How likely is it that the operation will involve some anesthesia?',
+  'observed_utterance': 'It will be uncomfortable.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Dr. Sanders',
+  'secondName': 'Timothy'
+},
+{
+  'scenario_id': 'pvt21_revised42',
+  'scenario_type': 'weak_with_alts',
+  'scenario': 'Jacqueline and Christian are observing a caterpillar which is resting on a leaf. They are interested in finding out how caterpillars move. Jacqueline turns to Christian.',
+  'question': "How likely is it for an average person to not notice the caterpillar's movement?",
+  'observed_utterance': 'Its movements are tiny.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Jacqueline',
+  'secondName': 'Christian',
+  'alternatives': ['Its movements are tiny.',
+    'Its movements are imperceptible.']
+},
+{
+  'scenario_id': 'pvt21_revised21',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
+  'question': 'How likely is Carl to watch another performance by that last comedian?',
+  'observed_utterance': 'That last comedian was hilarious.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Carl',
+  'secondName': 'Laura'
+},
+{
+  'scenario_id': 'pvt21_revised5',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
+  'question': 'How likely are Amanda and Paul to wait long for a table?',
+  'observed_utterance': 'This place is full!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Amanda',
+  'secondName': 'Paul'
+},
+{
+  'scenario_id': 'pvt21_revised15',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
+  'question': 'How likely is it that this part of the country is experiencing a drought?',
+  'observed_utterance': 'This grass looks dry.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Larry',
+  'secondName': 'Tina'
+},
+{
+  'scenario_id': 'pvt21_revised0',
+  'scenario_type': 'strong_with_alts',
+  'scenario': "David and Rachel are watching their favorite hockey team play. As one of their team's players scores, they cheer.",
+  'question': 'How likely is it that this goal is remembered for years to come?',
+  'observed_utterance': 'What a miraculous goal!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'David',
+  'secondName': 'Rachel',
+  'alternatives': ['What an amazing goal!', 'What a miraculous goal!']
+},
+{
+  'scenario_id': 'pvt21_revised38',
+  'scenario_type': 'strong_no_alts',
+  'scenario': "Tiffany and Matthew are academics at a university. Tiffany is expressing her opinion of Matthew's new research idea he just presented at a talk.",
+  'question': 'How likely is it that no one has thought of this idea before?',
+  'observed_utterance': "That's a brilliant idea.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Tiffany',
+  'secondName': 'Matthew'
+},
+{
+  'scenario_id': 'pvt21_revised25',
+  'scenario_type': 'strong_no_alts',
   'scenario': 'Sharon is preparing dinner in the kitchen where her son Jason is trying to help. When Jason walks closer to the stove, Sharon turns to Jason.',
   'question': 'How likely is Jason to burn himself if he touches the pot?',
-  'observed_utterance': 'Careful, the pot is hot.',
+  'observed_utterance': 'Careful, the pot is boiling.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Sharon',
   'secondName': 'Jason'
@@ -1104,71 +1183,6 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Marcus'
 },
 {
-  'scenario_id': 'pvt21_revised30',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Timothy is visiting his doctor, Dr. Sanders, who is recommending that Timothy go through a minor operation. Dr. Sanders is describing the procedure and its risks.',
-  'question': 'How likely is it that the operation will involve some anesthesia?',
-  'observed_utterance': 'It will be painful.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Dr. Sanders',
-  'secondName': 'Timothy',
-  'alternatives': ['It will be uncomfortable.', 'It will be painful.']
-},
-{
-  'scenario_id': 'pvt21_revised42',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Jacqueline and Christian are observing a caterpillar which is resting on a leaf. They are interested in finding out how caterpillars move. Jacqueline turns to Christian.',
-  'question': "How likely is it for an average person to not notice the caterpillar's movement?",
-  'observed_utterance': 'Its movements are imperceptible.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Jacqueline',
-  'secondName': 'Christian',
-  'alternatives': ['Its movements are tiny.',
-    'Its movements are imperceptible.']
-},
-{
-  'scenario_id': 'pvt21_revised33',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Catherine and Charles are visiting a small village during a road trip. After walking up a hill, they arrive at a viewpoint overlooking the entire village. Catherine turns to Charles.',
-  'question': 'How likely is Catherine to take a photo of the view?',
-  'observed_utterance': 'What a pretty view.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Catherine',
-  'secondName': 'Charles',
-  'alternatives': ['What a pretty view.', 'What a beautiful view.']
-},
-{
-  'scenario_id': 'pvt21_revised29',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Gerald and Margaret are attending a live musical concert. As the last song finishes, Gerald turns to Margaret.',
-  'question': 'How likely is Gerald to give the musical performance a five-star rating?',
-  'observed_utterance': 'That was an excellent show.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Gerald',
-  'secondName': 'Margaret'
-},
-{
-  'scenario_id': 'pvt21_revised1',
-  'scenario_type': 'weak_no_alts',
-  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
-  'question': 'How likely is it that the protest requires riot police?',
-  'observed_utterance': 'This crowd looks angry.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Beverly',
-  'secondName': 'Joshua'
-},
-{
-  'scenario_id': 'pvt21_revised0',
-  'scenario_type': 'weak_with_alts',
-  'scenario': "David and Rachel are watching their favorite hockey team play. As one of their team's players scores, they cheer.",
-  'question': 'How likely is it that this goal is remembered for years to come?',
-  'observed_utterance': 'What an amazing goal!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'David',
-  'secondName': 'Rachel',
-  'alternatives': ['What an amazing goal!', 'What a miraculous goal!']
-},
-{
   'scenario_id': 'pvt21_revised39',
   'scenario_type': 'weak_with_alts',
   'scenario': 'James and Lauren are looking to have a healthy snack in their kitchen. James picks up a banana, notices its texture, and turns to Lauren.',
@@ -1181,6 +1195,92 @@ var main_stimuli_gradable_meanings = [[{
     'This banana is kind of mushy.']
 },
 {
+  'scenario_id': 'pvt21_revised10',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda looks to Kenneth.',
+  'question': 'How likely is it that Linda puts on an extra layer?',
+  'observed_utterance': "It's starting to get a bit cool.",
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Linda',
+  'secondName': 'Kenneth'
+},
+{
+  'scenario_id': 'pvt21_revised34',
+  'scenario_type': 'strong_no_alts',
+  'scenario': 'Max and Judy are sitting in a library, studying for their final exams. Max turns to Judy.',
+  'question': 'How likely is it that no talking is allowed in the library?',
+  'observed_utterance': 'I like how silent it is here.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Max',
+  'secondName': 'Judy'
+},
+{
+  'scenario_id': 'pvt21_revised14',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Bobby is meeting up with his friend Logan. When Bobby sees Logan, he notices that Logan has gotten a new haircut.',
+  'question': 'How likely is Bobby to ask Logan where he got his haircut?',
+  'observed_utterance': 'Logan, your hair looks great!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Bobby',
+  'secondName': 'Logan',
+  'alternatives': ['Logan, your hair looks nice!',
+    'Logan, your hair looks great!']
+},
+{
+  'scenario_id': 'pvt21_revised1',
+  'scenario_type': 'weak_no_alts',
+  'scenario': "Joshua and Beverly, who are walking over to a friend's house downtown, come across a group of protesters. Beverly turns to Joshua.",
+  'question': 'How likely is it that the protest requires riot police?',
+  'observed_utterance': 'This crowd looks angry.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Beverly',
+  'secondName': 'Joshua'
+},
+{
+  'scenario_id': 'pvt21_revised2',
+  'scenario_type': 'weak_no_alts',
+  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
+  'question': 'How likely is it that this mansion has more than 10 rooms?',
+  'observed_utterance': 'Damn, this thing is big!',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'William',
+  'secondName': 'Katherine'
+},
+{
+  'scenario_id': 'pvt21_revised48',
+  'scenario_type': 'weak_with_alts',
+  'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
+  'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
+  'observed_utterance': 'She played well.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Liam',
+  'secondName': 'Sophie',
+  'alternatives': ['She played well.', 'She played superbly.']
+},
+{
+  'scenario_id': 'pvt21_revised9',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Lucy and Mark return home after a weekend getaway at a resort. As they unpack, Lucy smiles thinking about their accommodations.',
+  'question': 'How likely is it that Lucy and Mark stayed at a five-star hotel?',
+  'observed_utterance': 'The room we had was quite luxurious.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Lucy',
+  'secondName': 'Mark',
+  'alternatives': ['The room we had was quite comfortable.',
+    'The room we had was quite luxurious.']
+},
+{
+  'scenario_id': 'pvt21_revised41',
+  'scenario_type': 'strong_with_alts',
+  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
+  'question': 'How likely is it that Terry gives the movie a one-star rating?',
+  'observed_utterance': 'I found it bad.',
+  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
+  'mainName': 'Terry',
+  'secondName': 'Jenna',
+  'alternatives': ['I found it mediocre.', 'I found it bad.']
+},
+{
   'scenario_id': 'pvt21_revised45',
   'scenario_type': 'weak_with_alts',
   'scenario': 'Liam and Harper live together and are looking at the weather forecast for tomorrow. Harper looks to Liam.',
@@ -1191,98 +1291,4 @@ var main_stimuli_gradable_meanings = [[{
   'secondName': 'Liam',
   'alternatives': ["Looks like it's going to be warm tomorrow.",
     "Looks like it's going to be hot tomorrow."]
-},
-{
-  'scenario_id': 'pvt21_revised48',
-  'scenario_type': 'strong_no_alts',
-  'scenario': "Liam is discussing his daughter's piano recital performance with his colleague Sophie.",
-  'question': "How likely is it that Liam's daughter did not make any mistakes during the recital?",
-  'observed_utterance': 'She played superbly.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Liam',
-  'secondName': 'Sophie'
-},
-{
-  'scenario_id': 'pvt21_revised41',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Terry is telling Jenna about a movie he recently watched.',
-  'question': 'How likely is it that Terry gives the movie a one-star rating?',
-  'observed_utterance': 'I found it mediocre.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Terry',
-  'secondName': 'Jenna',
-  'alternatives': ['I found it mediocre.', 'I found it bad.']
-},
-{
-  'scenario_id': 'pvt21_revised10',
-  'scenario_type': 'weak_with_alts',
-  'scenario': 'Linda and Kenneth are sitting around a campfire after a long day of hiking. As the stars begin to twinkle above them, Linda looks to Kenneth.',
-  'question': 'How likely is it that Linda puts on an extra layer?',
-  'observed_utterance': "It's starting to get a bit cool.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Linda',
-  'secondName': 'Kenneth',
-  'alternatives': ["It's starting to get a bit cool.",
-    "It's starting to get a bit cold."]
-},
-{
-  'scenario_id': 'pvt21_revised2',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'William and Katherine are walking through an affluent neighborhood with many mansions. As they stop to admire one mansion in particular, William turns to Katherine.',
-  'question': 'How likely is it that this mansion has more than 10 rooms?',
-  'observed_utterance': 'Damn, this thing is huge!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'William',
-  'secondName': 'Katherine'
-},
-{
-  'scenario_id': 'pvt21_revised15',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Larry and Tina are driving through the countryside. As they pass the farmlands, Larry glances at the ground and turns to Tina.',
-  'question': 'How likely is it that this part of the country is experiencing a drought?',
-  'observed_utterance': 'This grass looks dry.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Larry',
-  'secondName': 'Tina'
-},
-{
-  'scenario_id': 'pvt21_revised11',
-  'scenario_type': 'weak_no_alts',
-  'scenario': "Daniel and Brenda are having coffee at a trendy café. Brenda just met Daniel's girlfriend for the first time, and she looks pleasantly surprised as she turns to Daniel.",
-  'question': "How likely is it that Daniel's girlfriend often gets compliments about her looks?",
-  'observed_utterance': "You didn't tell me she was that cute.",
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Brenda',
-  'secondName': 'Daniel'
-},
-{
-  'scenario_id': 'pvt21_revised21',
-  'scenario_type': 'weak_no_alts',
-  'scenario': 'Carl and Laura are at a comedy club, enjoying a night of stand-up performances. At the end of the night, Carl thinks back, chuckles and turns to Laura.',
-  'question': 'How likely is Carl to watch another performance by that last comedian?',
-  'observed_utterance': 'That last comedian was funny.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Carl',
-  'secondName': 'Laura'
-},
-{
-  'scenario_id': 'pvt21_revised24',
-  'scenario_type': 'strong_no_alts',
-  'scenario': 'Marie and Jordan, two colleagues, are discussing a TED talk they just attended. Jordan asks Marie how she found the talk.',
-  'question': 'How likely is it that Marie recommends watching the talk to others?',
-  'observed_utterance': 'I loved it.',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Marie',
-  'secondName': 'Jordan'
-},
-{
-  'scenario_id': 'pvt21_revised5',
-  'scenario_type': 'strong_with_alts',
-  'scenario': 'Amanda and Paul arrive at a restaurant that does not take reservations. Amanda glances around the dining area and turns to Paul.',
-  'question': 'How likely are Amanda and Paul to wait long for a table?',
-  'observed_utterance': 'This place is full!',
-  'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
-  'mainName': 'Amanda',
-  'secondName': 'Paul',
-  'alternatives': ['This place is busy!', 'This place is full!']
 }]]
