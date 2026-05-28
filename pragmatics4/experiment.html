@@ -14,9 +14,8 @@
     <script src="shared/js/exp-V2.js"></script>
     <script src="shared/js/stream-V2.js"></script>
 
-    <!-- utilities to submit data to proliferate -->
-    <!-- NOTE: This now uses webhook to capture the data -->
-    <script src="js/proliferate.js"></script>
+    <!-- Proliferate for data logging -->
+    <script src="https://proliferate.alps.science/static/js/proliferate.js"></script>
 
     <!-- Tailwind CSS for styling (specifically for the table feedback) -->
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
@@ -62,7 +61,7 @@
 
         .panel {
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             background: #fff;
         }
 
@@ -190,7 +189,7 @@
             background: #800080;
             border: 2px solid #fff;
             border-radius: 50%;
-            box-shadow: 0 0 4px rgba(0,0,0,0.3);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -206,7 +205,7 @@
             background: #800080;
             border: 2px solid #fff;
             border-radius: 50%;
-            box-shadow: 0 0 4px rgba(0,0,0,0.3);
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
             cursor: pointer;
             border: none;
             opacity: 0;
@@ -390,8 +389,12 @@
 
                         <div class="panel-body" style="padding: 20px;">
                             <!-- Example notice banner -->
-                            <div style="background-color: #fff8e1; border: 1px solid #ffc107; border-radius: 6px; padding: 10px 15px; margin-bottom: 20px; font-size: 15px; color: #6d4c00;">
-                                <strong>📖 Example only:</strong> This is a pre-filled demonstration of what a completed response looks like. The slider and explanation box below are <strong>not interactive</strong> here — in the actual task, you will drag the slider yourself and optionally type an explanation.
+                            <div
+                                style="background-color: #fff8e1; border: 1px solid #ffc107; border-radius: 6px; padding: 10px 15px; margin-bottom: 20px; font-size: 15px; color: #6d4c00;">
+                                <strong>📖 Example only:</strong> This is a pre-filled demonstration of what a completed
+                                response looks like. The slider and explanation box below are <strong>not
+                                    interactive</strong> here — in the actual task, you will drag the slider yourself
+                                and optionally type an explanation.
                             </div>
 
                             <div class="form-group" style="margin-bottom: 30px;">
@@ -404,10 +407,13 @@
                             </div>
                             <div class="form-group" style="margin-bottom: 30px;">
 
-                                <h4 style="color: #800080; margin-bottom: 15px;">Explanation: <span style="font-size: 0.8em; color: #999; font-weight: normal;">(example — not editable)</span></h4>
-                                <div style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
-                                    <textarea class="form-control" id="pseudo_rationale" rows="3"
-                                        readonly style="background-color: #f0f0f0; color: #888; cursor: not-allowed;">I moved the slider to X because ...</textarea>
+                                <h4 style="color: #800080; margin-bottom: 15px;">Explanation: <span
+                                        style="font-size: 0.8em; color: #999; font-weight: normal;">(example — not
+                                        editable)</span></h4>
+                                <div
+                                    style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                                    <textarea class="form-control" id="pseudo_rationale" rows="3" readonly
+                                        style="background-color: #f0f0f0; color: #888; cursor: not-allowed;">I moved the slider to X because ...</textarea>
                                 </div>
                             </div>
 
@@ -449,8 +455,7 @@
         <section class="container" id="SET1" style="padding: 10px;">
             <div class="row">
                 <!-- Response Collection Form -->
-                <div class="panel panel-primary"
-                    style="border-color: #800080; margin: 0 auto;">
+                <div class="panel panel-primary" style="border-color: #800080; margin: 0 auto;">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
                         <strong>Warm-up Scenario</strong>
@@ -494,7 +499,8 @@
         <br>
         <br>
         <p id="instruct-text" class="left">
-            Great! Now we can start the real study. You will be presented with <strong><span id="main-scenario-count"></span> study scenarios</strong>.
+            Great! Now we can start the real study. You will be presented with <strong><span
+                    id="main-scenario-count"></span> study scenarios</strong>.
             For each scenario, move the slider to indicate your level of likelihood.
             Providing a rationale is <strong>optional</strong>.
             At the end, you'll also be able to provide any extra feedback about the task as a whole (but only if
@@ -511,19 +517,20 @@
         <section class="container" id="SET1" style="padding: 10px;">
             <div class="row">
                 <!-- Response Collection Form -->
-                <div class="panel panel-primary"
-                    style="border-color: #800080; margin: 0 auto;">
+                <div class="panel panel-primary" style="border-color: #800080; margin: 0 auto;">
                     <div class="panel-heading"
                         style="background-image: none;background-color:#800080;border-color: #800080">
                         <strong>Study Scenario</strong>
-                        <span id="main-progress-label" style="float: right; font-size: 15px; font-weight: normal; opacity: 0.9;"></span>
+                        <span id="main-progress-label"
+                            style="float: right; font-size: 15px; font-weight: normal; opacity: 0.9;"></span>
                     </div>
                     <!-- Progress bar -->
                     <div style="padding: 8px 16px 0; background: #fff;">
-                        <div class="progress" style="height: 10px; margin-bottom: 0; border-radius: 0 0 4px 4px; background-color: #e0c0e0;">
+                        <div class="progress"
+                            style="height: 10px; margin-bottom: 0; border-radius: 0 0 4px 4px; background-color: #e0c0e0;">
                             <div id="main-progress-bar" class="progress-bar" role="progressbar"
-                                 style="width: 0%; background-color: #800080; transition: width 0.3s ease;"
-                                 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                style="width: 0%; background-color: #800080; transition: width 0.3s ease;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                             </div>
                         </div>
                     </div>
