@@ -359,15 +359,86 @@
                                 Start Experiment
                             </button>
                         </div>
-                        <hr>
-                        <p class="legal" style="font-size: 0.8em; color: #666;">
-                            <strong>LEGAL INFORMATION</strong>:<br><br>
-                            I consent to take part in the study. I agree to the anonymous use of the data in
-                            research presentations, publications, and online interactive sites to illustrate the
-                            findings. I agree that the collected data could be used in related follow-up studies. I
-                            agree to the use of the data in a not-for-profit anonymous corpus for research purposes
-                            which others will have access to.
-                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Consent form slide -->
+    <div class="slide" id="consent">
+        <section class="container" style="padding: 10px;">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="panel panel-primary" style="border-color: #800080">
+                        <div class="panel-heading"
+                            style="background-image: none; background-color: #800080; border-color: #800080">
+                            <strong>STUDY TITLE: UTTERANCE INTERPRETATION</strong>
+                        </div>
+                        <div class="panel-body">
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px; margin-top: 0;">Study Purpose</h4>
+                            <p>In this study, you will rate how likely different statements are. The statements will be about utterances (i.e., what people have said) in short dialogues/scenarios.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Participant Tasks</h4>
+                            <p>You will be presented with a series of short scenarios. For each scenario, you will move a slider to indicate how likely you believe a given statement to be. You may also optionally provide a brief written explanation of your response.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Compensation</h4>
+                            <p>US$15.00/hr, pro-rated to the median amount of time taken to complete the task.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Data Collection</h4>
+                            <p>We will record your Prolific ID (which will be deleted within 1 year of the study's completion) but no personal identifying information beyond knowing that you are a native English speaker from the UK, US, or Canada.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Data Storage</h4>
+                            <p>Your anonymous responses may be uploaded to a public GitHub repository for research purposes.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Voluntary Participation</h4>
+                            <p>Your participation is voluntary. You may withdraw from the study at any time. Compensation will be awarded on a case by case basis.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Contact Information</h4>
+                            <p>
+                                If you have any questions about this study, please contact:<br>
+                                <strong>Cesare Spinoso-Di Piano</strong><br>
+                                <a href="mailto:cesare.spinoso-dipiano@mail.mcgill.ca">cesare.spinoso-dipiano@mail.mcgill.ca</a>
+                            </p>
+                            <p>
+                                For questions about your rights as a research participant, contact the Research Ethics Board:<br>
+                                REB Protocol #XX-XX-XXX
+                            </p>
+
+                            <div style="background-color: #f8f4ff; border: 1px solid #c8a0c8; border-radius: 6px; padding: 16px 20px; margin-top: 20px;">
+                                <div style="margin-bottom: 12px;">
+                                    <label style="font-weight: normal; display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 0;">
+                                        <input type="checkbox" id="consent-check-1"
+                                            style="margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; accent-color: #800080;">
+                                        <span>I consent to my responses being used in future research.</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label style="font-weight: normal; display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 0;">
+                                        <input type="checkbox" id="consent-check-2"
+                                            style="margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; accent-color: #800080;">
+                                        <span>I consent to my responses being uploaded to a public GitHub repository.</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <p style="margin-top: 16px; font-size: 0.9em; color: #555;">
+                                Clicking "Continue" below indicates that you consent to participate in this study.
+                            </p>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button id="consent_continue_button" class="btn btn-lg btn-primary" disabled
+                                    style="background-color: #800080; border-color: #800080; opacity: 0.45; cursor: not-allowed;">
+                                    Continue
+                                </button>
+                                <div id="consent-err"
+                                    style="display: none; color: #dc3545; margin-top: 10px; font-size: 16px;">
+                                    Please check both boxes above to continue.
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

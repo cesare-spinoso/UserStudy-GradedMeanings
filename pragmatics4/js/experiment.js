@@ -20,6 +20,34 @@ function make_slides(f) {
     }
   });
 
+  // CONSENT SLIDE //
+
+  slides.consent = slide({
+    name: "consent",
+    start: function () {
+      $('#consent-check-1, #consent-check-2').prop('checked', false);
+      $('#consent_continue_button').prop('disabled', true).css({ 'opacity': '0.45', 'cursor': 'not-allowed' });
+      $('#consent-err').hide();
+
+      function updateConsentButton() {
+        var bothChecked = $('#consent-check-1').prop('checked') && $('#consent-check-2').prop('checked');
+        $('#consent_continue_button')
+          .prop('disabled', !bothChecked)
+          .css({ 'opacity': bothChecked ? '1' : '0.45', 'cursor': bothChecked ? 'pointer' : 'not-allowed' });
+      }
+
+      $('#consent-check-1, #consent-check-2').off('change.consent').on('change.consent', updateConsentButton);
+
+      $('#consent_continue_button').off('click.consent').on('click.consent', function () {
+        if ($('#consent-check-1').prop('checked') && $('#consent-check-2').prop('checked')) {
+          exp.go();
+        } else {
+          $('#consent-err').show();
+        }
+      });
+    }
+  });
+
   // altShuffledOrder: null if no alternatives, or [0,1]/[1,0] indicating display order of stim.alternatives
   function buildScenarioText(stim, altShuffledOrder) {
     const mainName = stim.mainName || "(Speaker)";
@@ -393,6 +421,7 @@ function init() {
   // Structure experiment and make slides
   exp.structure = [
     "i0",
+    "consent",
     "example",
     "startWarmup",
     "warmup",
