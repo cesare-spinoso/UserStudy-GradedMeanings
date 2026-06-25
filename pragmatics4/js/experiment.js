@@ -26,14 +26,15 @@ function make_slides(f) {
     name: "consent",
     start: function () {
       $('#consent-check-1, #consent-check-2').prop('checked', false);
-      $('#consent_continue_button').prop('disabled', true).css({ 'opacity': '0.45', 'cursor': 'not-allowed' });
+      $('#consent_continue_button').css({ 'opacity': '0.45', 'cursor': 'not-allowed' });
       $('#consent-err').hide();
 
       function updateConsentButton() {
         var bothChecked = $('#consent-check-1').prop('checked') && $('#consent-check-2').prop('checked');
-        $('#consent_continue_button')
-          .prop('disabled', !bothChecked)
-          .css({ 'opacity': bothChecked ? '1' : '0.45', 'cursor': bothChecked ? 'pointer' : 'not-allowed' });
+        $('#consent_continue_button').css({
+          'opacity': bothChecked ? '1' : '0.45',
+          'cursor': bothChecked ? 'pointer' : 'not-allowed'
+        });
       }
 
       $('#consent-check-1, #consent-check-2').off('change.consent').on('change.consent', updateConsentButton);
