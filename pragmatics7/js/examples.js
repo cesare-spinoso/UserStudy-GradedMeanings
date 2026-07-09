@@ -42,13 +42,13 @@ var examples_gradable_meanings = [
         "display": [
             { "color": "orange", "shape": "circle" },
             { "color": "orange", "shape": "triangle" },
-            { "color": "blue", "shape": "circle" },
+            { "color": "blue", "shape": "square" },
         ],
-        "question": "How likely is it that Ana wants the orange circle (and not the orange triangle)?",
+        "question": "How likely is it that Ana wants the orange circle?",
         "observed_utterance": "Can you hand me the orange one?",
         "alternatives": [
             "Can you hand me the orange one?",
-            "Can you hand me the orange circle?",
+            "Can you hand me the circle?",
         ],
         "interpretations": [
             "Absolutely Impossible",
@@ -59,6 +59,6 @@ var examples_gradable_meanings = [
         "target": { "color": "orange", "shape": "circle" },
         "competitor": { "color": "orange", "shape": "triangle" },
         "weak_utterance": "Can you hand me the orange one?",
-        "strong_utterance": "Can you hand me the orange circle?",
+        "strong_utterance": "Can you hand me the circle?",
     },
 ];

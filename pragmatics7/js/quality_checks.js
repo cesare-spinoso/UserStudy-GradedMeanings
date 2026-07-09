@@ -90,11 +90,12 @@ var quality_checks_gradable_meanings = [
     },
 
     // ── pragmatics7 addition: 2 refgame quality checks ──────────────────────
-    // Both use the fully explicit (strong) utterance only, so there is no
-    // pragmatic inference required — an attentive participant should answer
-    // near one extreme.
+    // Both name a single feature (color) that happens to be unique in that
+    // display, so there is no pragmatic inference required — an attentive
+    // participant should answer near one extreme.
 
-    // quality_refgame_high: strong utterance names the target's exact color+shape.
+    // quality_refgame_high: "blue" is unique in this display (the other two
+    // objects are red), so it unambiguously picks out the target.
     {
         "id": "quality_checks_refgame_high",
         "scenario_id": "refgame_quality_high_likely",
@@ -108,7 +109,7 @@ var quality_checks_gradable_meanings = [
             { "color": "red", "shape": "square" },
         ],
         "question": "How likely is it that Petra wants the blue circle?",
-        "observed_utterance": "Can you hand me the blue circle?",
+        "observed_utterance": "Can you hand me the blue one?",
         "interpretations": [
             "Absolutely Impossible",
             "Absolutely Certain",
@@ -116,12 +117,12 @@ var quality_checks_gradable_meanings = [
         "mainName": "Petra",
         "secondName": "Sam",
         "target": { "color": "blue", "shape": "circle" },
-        "strong_utterance": "Can you hand me the blue circle?",
+        "strong_utterance": "Can you hand me the blue one?",
     },
 
-    // quality_refgame_low: strong utterance names a DIFFERENT object entirely;
-    // the question asks about the one object that matches neither its color
-    // nor its shape.
+    // quality_refgame_low: "purple" is unique in this display (the other two
+    // objects are green), so it unambiguously picks out a DIFFERENT object
+    // than the one the question asks about.
     {
         "id": "quality_checks_refgame_low",
         "scenario_id": "refgame_quality_low_likely",
@@ -135,7 +136,7 @@ var quality_checks_gradable_meanings = [
             { "color": "green", "shape": "triangle" },
         ],
         "question": "How likely is it that Owen wants the green triangle?",
-        "observed_utterance": "Can you hand me the purple square?",
+        "observed_utterance": "Can you hand me the purple one?",
         "interpretations": [
             "Absolutely Impossible",
             "Absolutely Certain",
@@ -143,6 +144,6 @@ var quality_checks_gradable_meanings = [
         "mainName": "Owen",
         "secondName": "Iris",
         "target": { "color": "purple", "shape": "square" },
-        "strong_utterance": "Can you hand me the purple square?",
+        "strong_utterance": "Can you hand me the purple one?",
     },
 ];

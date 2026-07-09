@@ -289,14 +289,14 @@
         },
         {
           "color": "red",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Mia wants the blue circle (and not the blue square)?",
+      "question": "How likely is it that Mia wants the blue circle?",
       "observed_utterance": "Can you hand me the blue one?",
       "alternatives": [
         "Can you hand me the blue one?",
-        "Can you hand me the blue circle?"
+        "Can you hand me the circle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -313,7 +313,7 @@
         "shape": "square"
       },
       "weak_utterance": "Can you hand me the blue one?",
-      "strong_utterance": "Can you hand me the blue circle?"
+      "strong_utterance": "Can you hand me the circle?"
     },
     {
       "scenario_id": "refgame_ctx2",
@@ -332,10 +332,10 @@
         },
         {
           "color": "green",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Priya wants the red circle (and not the red square)?",
+      "question": "How likely is it that Priya wants the red circle?",
       "observed_utterance": "Pass me the red one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -352,7 +352,7 @@
         "shape": "square"
       },
       "weak_utterance": "Pass me the red one.",
-      "strong_utterance": "Pass me the red circle."
+      "strong_utterance": "Pass me the circle."
     },
     {
       "scenario_id": "refgame_ctx3",
@@ -371,14 +371,14 @@
         },
         {
           "color": "yellow",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Farah wants the green circle (and not the green square)?",
+      "question": "How likely is it that Farah wants the green circle?",
       "observed_utterance": "Could you grab the green one?",
       "alternatives": [
         "Could you grab the green one?",
-        "Could you grab the green circle?"
+        "Could you grab the circle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -395,7 +395,7 @@
         "shape": "square"
       },
       "weak_utterance": "Could you grab the green one?",
-      "strong_utterance": "Could you grab the green circle?"
+      "strong_utterance": "Could you grab the circle?"
     },
     {
       "scenario_id": "refgame_ctx4",
@@ -414,10 +414,10 @@
         },
         {
           "color": "purple",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Oscar wants the yellow circle (and not the yellow square)?",
+      "question": "How likely is it that Oscar wants the yellow circle?",
       "observed_utterance": "I'll take the yellow one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -434,7 +434,7 @@
         "shape": "square"
       },
       "weak_utterance": "I'll take the yellow one.",
-      "strong_utterance": "I'll take the yellow circle."
+      "strong_utterance": "I'll take the circle."
     },
     {
       "scenario_id": "refgame_ctx5",
@@ -453,14 +453,14 @@
         },
         {
           "color": "orange",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Grace wants the purple circle (and not the purple square)?",
+      "question": "How likely is it that Grace wants the purple circle?",
       "observed_utterance": "Can I get the purple one?",
       "alternatives": [
         "Can I get the purple one?",
-        "Can I get the purple circle?"
+        "Can I get the circle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -477,7 +477,7 @@
         "shape": "square"
       },
       "weak_utterance": "Can I get the purple one?",
-      "strong_utterance": "Can I get the purple circle?"
+      "strong_utterance": "Can I get the circle?"
     },
     {
       "scenario_id": "refgame_ctx6",
@@ -496,10 +496,10 @@
         },
         {
           "color": "blue",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Ben wants the orange circle (and not the orange square)?",
+      "question": "How likely is it that Ben wants the orange circle?",
       "observed_utterance": "Give me the orange one, please.",
       "interpretations": [
         "Absolutely Impossible",
@@ -516,7 +516,7 @@
         "shape": "square"
       },
       "weak_utterance": "Give me the orange one, please.",
-      "strong_utterance": "Give me the orange circle, please."
+      "strong_utterance": "Give me the circle, please."
     },
     {
       "scenario_id": "refgame_ctx7",
@@ -535,14 +535,14 @@
         },
         {
           "color": "green",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Nadia wants the blue square (and not the blue circle)?",
+      "question": "How likely is it that Nadia wants the blue square?",
       "observed_utterance": "Can you hand me the blue one?",
       "alternatives": [
         "Can you hand me the blue one?",
-        "Can you hand me the blue square?"
+        "Can you hand me the square?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -559,7 +559,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Can you hand me the blue one?",
-      "strong_utterance": "Can you hand me the blue square?"
+      "strong_utterance": "Can you hand me the square?"
     },
     {
       "scenario_id": "refgame_ctx8",
@@ -578,10 +578,10 @@
         },
         {
           "color": "yellow",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Colin wants the red square (and not the red circle)?",
+      "question": "How likely is it that Colin wants the red square?",
       "observed_utterance": "Pass me the red one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -598,7 +598,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Pass me the red one.",
-      "strong_utterance": "Pass me the red square."
+      "strong_utterance": "Pass me the square."
     },
     {
       "scenario_id": "refgame_ctx9",
@@ -617,14 +617,14 @@
         },
         {
           "color": "purple",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Wendy wants the green square (and not the green circle)?",
+      "question": "How likely is it that Wendy wants the green square?",
       "observed_utterance": "Could you grab the green one?",
       "alternatives": [
         "Could you grab the green one?",
-        "Could you grab the green square?"
+        "Could you grab the square?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -641,7 +641,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Could you grab the green one?",
-      "strong_utterance": "Could you grab the green square?"
+      "strong_utterance": "Could you grab the square?"
     },
     {
       "scenario_id": "refgame_ctx10",
@@ -660,10 +660,10 @@
         },
         {
           "color": "orange",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Hassan wants the yellow square (and not the yellow circle)?",
+      "question": "How likely is it that Hassan wants the yellow square?",
       "observed_utterance": "I'll take the yellow one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -680,7 +680,7 @@
         "shape": "circle"
       },
       "weak_utterance": "I'll take the yellow one.",
-      "strong_utterance": "I'll take the yellow square."
+      "strong_utterance": "I'll take the square."
     },
     {
       "scenario_id": "refgame_ctx11",
@@ -699,14 +699,14 @@
         },
         {
           "color": "blue",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Julia wants the purple square (and not the purple circle)?",
+      "question": "How likely is it that Julia wants the purple square?",
       "observed_utterance": "Can I get the purple one?",
       "alternatives": [
         "Can I get the purple one?",
-        "Can I get the purple square?"
+        "Can I get the square?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -723,7 +723,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Can I get the purple one?",
-      "strong_utterance": "Can I get the purple square?"
+      "strong_utterance": "Can I get the square?"
     },
     {
       "scenario_id": "refgame_ctx12",
@@ -742,10 +742,10 @@
         },
         {
           "color": "red",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Marco wants the orange square (and not the orange circle)?",
+      "question": "How likely is it that Marco wants the orange square?",
       "observed_utterance": "Give me the orange one, please.",
       "interpretations": [
         "Absolutely Impossible",
@@ -762,7 +762,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Give me the orange one, please.",
-      "strong_utterance": "Give me the orange square, please."
+      "strong_utterance": "Give me the square, please."
     },
     {
       "scenario_id": "refgame_ctx13",
@@ -781,14 +781,14 @@
         },
         {
           "color": "yellow",
-          "shape": "triangle"
+          "shape": "square"
         }
       ],
-      "question": "How likely is it that Aisha wants the blue triangle (and not the blue circle)?",
+      "question": "How likely is it that Aisha wants the blue triangle?",
       "observed_utterance": "Can you hand me the blue one?",
       "alternatives": [
         "Can you hand me the blue one?",
-        "Can you hand me the blue triangle?"
+        "Can you hand me the triangle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -805,7 +805,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Can you hand me the blue one?",
-      "strong_utterance": "Can you hand me the blue triangle?"
+      "strong_utterance": "Can you hand me the triangle?"
     },
     {
       "scenario_id": "refgame_ctx14",
@@ -824,10 +824,10 @@
         },
         {
           "color": "purple",
-          "shape": "triangle"
+          "shape": "square"
         }
       ],
-      "question": "How likely is it that Derek wants the red triangle (and not the red circle)?",
+      "question": "How likely is it that Derek wants the red triangle?",
       "observed_utterance": "Pass me the red one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -844,7 +844,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Pass me the red one.",
-      "strong_utterance": "Pass me the red triangle."
+      "strong_utterance": "Pass me the triangle."
     },
     {
       "scenario_id": "refgame_ctx15",
@@ -863,14 +863,14 @@
         },
         {
           "color": "orange",
-          "shape": "triangle"
+          "shape": "square"
         }
       ],
-      "question": "How likely is it that Fiona wants the green triangle (and not the green circle)?",
+      "question": "How likely is it that Fiona wants the green triangle?",
       "observed_utterance": "Could you grab the green one?",
       "alternatives": [
         "Could you grab the green one?",
-        "Could you grab the green triangle?"
+        "Could you grab the triangle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -887,7 +887,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Could you grab the green one?",
-      "strong_utterance": "Could you grab the green triangle?"
+      "strong_utterance": "Could you grab the triangle?"
     },
     {
       "scenario_id": "refgame_ctx16",
@@ -906,10 +906,10 @@
         },
         {
           "color": "blue",
-          "shape": "triangle"
+          "shape": "square"
         }
       ],
-      "question": "How likely is it that Kwame wants the yellow triangle (and not the yellow circle)?",
+      "question": "How likely is it that Kwame wants the yellow triangle?",
       "observed_utterance": "I'll take the yellow one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -926,7 +926,7 @@
         "shape": "circle"
       },
       "weak_utterance": "I'll take the yellow one.",
-      "strong_utterance": "I'll take the yellow triangle."
+      "strong_utterance": "I'll take the triangle."
     },
     {
       "scenario_id": "refgame_ctx17",
@@ -945,14 +945,14 @@
         },
         {
           "color": "red",
-          "shape": "triangle"
+          "shape": "square"
         }
       ],
-      "question": "How likely is it that Nora wants the purple triangle (and not the purple circle)?",
+      "question": "How likely is it that Nora wants the purple triangle?",
       "observed_utterance": "Can I get the purple one?",
       "alternatives": [
         "Can I get the purple one?",
-        "Can I get the purple triangle?"
+        "Can I get the triangle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -969,7 +969,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Can I get the purple one?",
-      "strong_utterance": "Can I get the purple triangle?"
+      "strong_utterance": "Can I get the triangle?"
     },
     {
       "scenario_id": "refgame_ctx18",
@@ -988,10 +988,10 @@
         },
         {
           "color": "green",
-          "shape": "triangle"
+          "shape": "square"
         }
       ],
-      "question": "How likely is it that Vincent wants the orange triangle (and not the orange circle)?",
+      "question": "How likely is it that Vincent wants the orange triangle?",
       "observed_utterance": "Give me the orange one, please.",
       "interpretations": [
         "Absolutely Impossible",
@@ -1008,7 +1008,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Give me the orange one, please.",
-      "strong_utterance": "Give me the orange triangle, please."
+      "strong_utterance": "Give me the triangle, please."
     },
     {
       "scenario_id": "refgame_ctx19",
@@ -1027,14 +1027,14 @@
         },
         {
           "color": "purple",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Lena wants the blue circle (and not the blue square)?",
+      "question": "How likely is it that Lena wants the blue circle?",
       "observed_utterance": "Can you hand me the blue one?",
       "alternatives": [
         "Can you hand me the blue one?",
-        "Can you hand me the blue circle?"
+        "Can you hand me the circle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -1051,7 +1051,7 @@
         "shape": "square"
       },
       "weak_utterance": "Can you hand me the blue one?",
-      "strong_utterance": "Can you hand me the blue circle?"
+      "strong_utterance": "Can you hand me the circle?"
     },
     {
       "scenario_id": "refgame_ctx20",
@@ -1070,10 +1070,10 @@
         },
         {
           "color": "orange",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Tobias wants the red circle (and not the red square)?",
+      "question": "How likely is it that Tobias wants the red circle?",
       "observed_utterance": "Pass me the red one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -1090,7 +1090,7 @@
         "shape": "square"
       },
       "weak_utterance": "Pass me the red one.",
-      "strong_utterance": "Pass me the red circle."
+      "strong_utterance": "Pass me the circle."
     },
     {
       "scenario_id": "refgame_ctx21",
@@ -1109,14 +1109,14 @@
         },
         {
           "color": "blue",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Ruby wants the green circle (and not the green square)?",
+      "question": "How likely is it that Ruby wants the green circle?",
       "observed_utterance": "Could you grab the green one?",
       "alternatives": [
         "Could you grab the green one?",
-        "Could you grab the green circle?"
+        "Could you grab the circle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -1133,7 +1133,7 @@
         "shape": "square"
       },
       "weak_utterance": "Could you grab the green one?",
-      "strong_utterance": "Could you grab the green circle?"
+      "strong_utterance": "Could you grab the circle?"
     },
     {
       "scenario_id": "refgame_ctx22",
@@ -1152,10 +1152,10 @@
         },
         {
           "color": "red",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Anders wants the yellow circle (and not the yellow square)?",
+      "question": "How likely is it that Anders wants the yellow circle?",
       "observed_utterance": "I'll take the yellow one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -1172,7 +1172,7 @@
         "shape": "square"
       },
       "weak_utterance": "I'll take the yellow one.",
-      "strong_utterance": "I'll take the yellow circle."
+      "strong_utterance": "I'll take the circle."
     },
     {
       "scenario_id": "refgame_ctx23",
@@ -1191,14 +1191,14 @@
         },
         {
           "color": "green",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Camille wants the purple circle (and not the purple square)?",
+      "question": "How likely is it that Camille wants the purple circle?",
       "observed_utterance": "Can I get the purple one?",
       "alternatives": [
         "Can I get the purple one?",
-        "Can I get the purple circle?"
+        "Can I get the circle?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -1215,7 +1215,7 @@
         "shape": "square"
       },
       "weak_utterance": "Can I get the purple one?",
-      "strong_utterance": "Can I get the purple circle?"
+      "strong_utterance": "Can I get the circle?"
     },
     {
       "scenario_id": "refgame_ctx24",
@@ -1234,10 +1234,10 @@
         },
         {
           "color": "yellow",
-          "shape": "circle"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Diego wants the orange circle (and not the orange square)?",
+      "question": "How likely is it that Diego wants the orange circle?",
       "observed_utterance": "Give me the orange one, please.",
       "interpretations": [
         "Absolutely Impossible",
@@ -1254,7 +1254,7 @@
         "shape": "square"
       },
       "weak_utterance": "Give me the orange one, please.",
-      "strong_utterance": "Give me the orange circle, please."
+      "strong_utterance": "Give me the circle, please."
     },
     {
       "scenario_id": "refgame_ctx25",
@@ -1273,14 +1273,14 @@
         },
         {
           "color": "orange",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Elin wants the blue square (and not the blue circle)?",
+      "question": "How likely is it that Elin wants the blue square?",
       "observed_utterance": "Can you hand me the blue one?",
       "alternatives": [
         "Can you hand me the blue one?",
-        "Can you hand me the blue square?"
+        "Can you hand me the square?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -1297,7 +1297,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Can you hand me the blue one?",
-      "strong_utterance": "Can you hand me the blue square?"
+      "strong_utterance": "Can you hand me the square?"
     },
     {
       "scenario_id": "refgame_ctx26",
@@ -1316,10 +1316,10 @@
         },
         {
           "color": "blue",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Franco wants the red square (and not the red circle)?",
+      "question": "How likely is it that Franco wants the red square?",
       "observed_utterance": "Pass me the red one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -1336,7 +1336,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Pass me the red one.",
-      "strong_utterance": "Pass me the red square."
+      "strong_utterance": "Pass me the square."
     },
     {
       "scenario_id": "refgame_ctx27",
@@ -1355,14 +1355,14 @@
         },
         {
           "color": "red",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Greta wants the green square (and not the green circle)?",
+      "question": "How likely is it that Greta wants the green square?",
       "observed_utterance": "Could you grab the green one?",
       "alternatives": [
         "Could you grab the green one?",
-        "Could you grab the green square?"
+        "Could you grab the square?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -1379,7 +1379,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Could you grab the green one?",
-      "strong_utterance": "Could you grab the green square?"
+      "strong_utterance": "Could you grab the square?"
     },
     {
       "scenario_id": "refgame_ctx28",
@@ -1398,10 +1398,10 @@
         },
         {
           "color": "green",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Hugo wants the yellow square (and not the yellow circle)?",
+      "question": "How likely is it that Hugo wants the yellow square?",
       "observed_utterance": "I'll take the yellow one.",
       "interpretations": [
         "Absolutely Impossible",
@@ -1418,7 +1418,7 @@
         "shape": "circle"
       },
       "weak_utterance": "I'll take the yellow one.",
-      "strong_utterance": "I'll take the yellow square."
+      "strong_utterance": "I'll take the square."
     },
     {
       "scenario_id": "refgame_ctx29",
@@ -1437,14 +1437,14 @@
         },
         {
           "color": "yellow",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Ines wants the purple square (and not the purple circle)?",
+      "question": "How likely is it that Ines wants the purple square?",
       "observed_utterance": "Can I get the purple one?",
       "alternatives": [
         "Can I get the purple one?",
-        "Can I get the purple square?"
+        "Can I get the square?"
       ],
       "interpretations": [
         "Absolutely Impossible",
@@ -1461,7 +1461,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Can I get the purple one?",
-      "strong_utterance": "Can I get the purple square?"
+      "strong_utterance": "Can I get the square?"
     },
     {
       "scenario_id": "refgame_ctx30",
@@ -1480,10 +1480,10 @@
         },
         {
           "color": "purple",
-          "shape": "square"
+          "shape": "triangle"
         }
       ],
-      "question": "How likely is it that Jonas wants the orange square (and not the orange circle)?",
+      "question": "How likely is it that Jonas wants the orange square?",
       "observed_utterance": "Give me the orange one, please.",
       "interpretations": [
         "Absolutely Impossible",
@@ -1500,7 +1500,7 @@
         "shape": "circle"
       },
       "weak_utterance": "Give me the orange one, please.",
-      "strong_utterance": "Give me the orange square, please."
+      "strong_utterance": "Give me the square, please."
     }
   ]
 }

@@ -81,9 +81,9 @@ var warm_ups_gradable_meanings = {
         "display": [
             { "color": "yellow", "shape": "triangle" },
             { "color": "yellow", "shape": "square" },
-            { "color": "green", "shape": "triangle" },
+            { "color": "green", "shape": "circle" },
         ],
-        "question": "How likely is it that Mona wants the yellow triangle (and not the yellow square)?",
+        "question": "How likely is it that Mona wants the yellow triangle?",
         "observed_utterance": "Pass me the yellow one.",
         "interpretations": [
             "Absolutely Impossible",
@@ -94,7 +94,7 @@ var warm_ups_gradable_meanings = {
         "target": { "color": "yellow", "shape": "triangle" },
         "competitor": { "color": "yellow", "shape": "square" },
         "weak_utterance": "Pass me the yellow one.",
-        "strong_utterance": "Pass me the yellow triangle.",
+        "strong_utterance": "Pass me the triangle.",
     },
     refgame_with_alts: {
         "id": "warm_ups_refgame",
@@ -106,13 +106,13 @@ var warm_ups_gradable_meanings = {
         "display": [
             { "color": "yellow", "shape": "triangle" },
             { "color": "yellow", "shape": "square" },
-            { "color": "green", "shape": "triangle" },
+            { "color": "green", "shape": "circle" },
         ],
-        "question": "How likely is it that Mona wants the yellow triangle (and not the yellow square)?",
+        "question": "How likely is it that Mona wants the yellow triangle?",
         "observed_utterance": "Pass me the yellow one.",
         "alternatives": [
             "Pass me the yellow one.",
-            "Pass me the yellow triangle.",
+            "Pass me the triangle.",
         ],
         "interpretations": [
             "Absolutely Impossible",
@@ -123,6 +123,6 @@ var warm_ups_gradable_meanings = {
         "target": { "color": "yellow", "shape": "triangle" },
         "competitor": { "color": "yellow", "shape": "square" },
         "weak_utterance": "Pass me the yellow one.",
-        "strong_utterance": "Pass me the yellow triangle.",
+        "strong_utterance": "Pass me the triangle.",
     },
 };

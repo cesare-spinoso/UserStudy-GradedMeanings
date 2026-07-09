@@ -453,11 +453,13 @@ function init() {
       ? warm_ups_gradable_meanings.refgame_no_alts
       : warm_ups_gradable_meanings.refgame_with_alts
   );
-  // Main stimuli: p4's 24 natural-language items for this batch/condition,
-  // plus this batch's 6 reference-game items (disjoint across the 5
-  // conditions — 30 refgame contexts total / 5 conditions = 6 each).
-  exp.stimuli = main_stimuli_gradable_meanings[condition]
-    .concat(main_stimuli_reference_games[condition]);
+  // Main stimuli: 24 scenarios total per participant, matching pragmatics4's
+  // per-participant count -- 12 natural-language (every-other trim of p4's
+  // original 24-item batch, kept unmodified in main_stimuli.js) + 12
+  // reference-game items (12-item sliding window over the 30 refgame
+  // contexts, so each appears in 2 of the 5 conditions).
+  var naturalBatch = main_stimuli_gradable_meanings[condition].filter(function (_, i) { return i % 2 === 0; });
+  exp.stimuli = naturalBatch.concat(main_stimuli_reference_games[condition]);
   exp.stimuli = exp.stimuli.concat(quality_checks_gradable_meanings);
   // Shuffle the order of the stimuli
   exp.phenomenon = "gradable_meanings_and_reference_games"; // Store the phenomenon for later use

@@ -1300,18 +1300,27 @@ var main_stimuli_gradable_meanings = [[{
 // same kind of question: "How likely (0-100) is X?"
 //
 // 30 unique color/shape contexts (matching the 30-item natural-language
-// pool), each showing a target object plus a same-color competitor (a
-// different shape) and a same-shape foil (a different color). Each context
-// has a "weak" utterance (color word only -- compatible with BOTH the
-// target and the same-color competitor) and a "strong" utterance (color +
-// shape -- compatible with the target only):
+// pool). Each display has three objects, each with a DISTINCT shape, and
+// exactly two objects sharing the target's color:
+//   target      = (color X, shape Y)
+//   competitor  = (color X, shape Z)   -- shares color X with target
+//   foil        = (color W, shape V)   -- shares neither color nor shape
+// Both utterances name exactly ONE feature (never a color+shape compound):
+//   "weak"   utterance = color X alone   -- AMBIGUOUS: true of target AND
+//                          competitor, since they share color X.
+//   "strong" utterance = shape Y alone   -- UNAMBIGUOUS: true of the target
+//                          only, since competitor and foil each have a
+//                          different shape (shapes are never shared).
+// This mirrors ordinary cases like "orange" being unambiguous simply
+// because only one object in the display happens to be orange -- here it's
+// shape Y that is the unique, unambiguous feature for the target.
 //   *_with_alts (15 contexts) — the scenario reveals that the speaker
 //                 considered BOTH the weak and the strong utterance before
 //                 saying the weak one. This is the counterfactual condition:
 //                 participants are told what the speaker could have said
-//                 instead to unambiguously pick out the OTHER same-color
-//                 object -- i.e. the alternative that would let you recover
-//                 the intended object "counterfactually".
+//                 instead to unambiguously pick out the target using its
+//                 unique shape -- i.e. the alternative that would let you
+//                 recover the intended object "counterfactually".
 //   *_no_alts   (15 contexts) — only the weak utterance is shown; the
 //                 strong alternative is never mentioned, so no counterfactual
 //                 information is available to the participant.
@@ -1331,382 +1340,393 @@ var main_stimuli_gradable_meanings = [[{
 var refgame_ctx1 = {
   'scenario_id': 'refgame_ctx1', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx1',
   'scenario': 'Mia and Noah are sorting through a bin of old craft supplies. Three items sit in front of them:',
-  'display': [{ 'color': 'blue', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'square' }, { 'color': 'red', 'shape': 'circle' }],
-  'question': 'How likely is it that Mia wants the blue circle (and not the blue square)?',
+  'display': [{ 'color': 'blue', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'square' }, { 'color': 'red', 'shape': 'triangle' }],
+  'question': 'How likely is it that Mia wants the blue circle?',
   'observed_utterance': 'Can you hand me the blue one?',
-  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the blue circle?'],
+  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the circle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Mia', 'secondName': 'Noah',
   'target': { 'color': 'blue', 'shape': 'circle' }, 'competitor': { 'color': 'blue', 'shape': 'square' },
-  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the blue circle?',
+  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the circle?',
 };
 
 var refgame_ctx2 = {
   'scenario_id': 'refgame_ctx2', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx2',
   'scenario': 'Priya and Sam are unpacking a box of building blocks. Three blocks sit on the table:',
-  'display': [{ 'color': 'red', 'shape': 'circle' }, { 'color': 'red', 'shape': 'square' }, { 'color': 'green', 'shape': 'circle' }],
-  'question': 'How likely is it that Priya wants the red circle (and not the red square)?',
+  'display': [{ 'color': 'red', 'shape': 'circle' }, { 'color': 'red', 'shape': 'square' }, { 'color': 'green', 'shape': 'triangle' }],
+  'question': 'How likely is it that Priya wants the red circle?',
   'observed_utterance': 'Pass me the red one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Priya', 'secondName': 'Sam',
   'target': { 'color': 'red', 'shape': 'circle' }, 'competitor': { 'color': 'red', 'shape': 'square' },
-  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the red circle.',
+  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the circle.',
 };
 
 var refgame_ctx3 = {
   'scenario_id': 'refgame_ctx3', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx3',
   'scenario': 'Farah and Tom are setting up pieces for a board game. Three tokens sit on the table:',
-  'display': [{ 'color': 'green', 'shape': 'circle' }, { 'color': 'green', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'circle' }],
-  'question': 'How likely is it that Farah wants the green circle (and not the green square)?',
+  'display': [{ 'color': 'green', 'shape': 'circle' }, { 'color': 'green', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'triangle' }],
+  'question': 'How likely is it that Farah wants the green circle?',
   'observed_utterance': 'Could you grab the green one?',
-  'alternatives': ['Could you grab the green one?', 'Could you grab the green circle?'],
+  'alternatives': ['Could you grab the green one?', 'Could you grab the circle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Farah', 'secondName': 'Tom',
   'target': { 'color': 'green', 'shape': 'circle' }, 'competitor': { 'color': 'green', 'shape': 'square' },
-  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the green circle?',
+  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the circle?',
 };
 
 var refgame_ctx4 = {
   'scenario_id': 'refgame_ctx4', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx4',
   'scenario': 'Oscar and Ivy are arranging paint chips for a mural. Three chips sit on the table:',
-  'display': [{ 'color': 'yellow', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'square' }, { 'color': 'purple', 'shape': 'circle' }],
-  'question': 'How likely is it that Oscar wants the yellow circle (and not the yellow square)?',
+  'display': [{ 'color': 'yellow', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'square' }, { 'color': 'purple', 'shape': 'triangle' }],
+  'question': 'How likely is it that Oscar wants the yellow circle?',
   'observed_utterance': 'I\'ll take the yellow one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Oscar', 'secondName': 'Ivy',
   'target': { 'color': 'yellow', 'shape': 'circle' }, 'competitor': { 'color': 'yellow', 'shape': 'square' },
-  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the yellow circle.',
+  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the circle.',
 };
 
 var refgame_ctx5 = {
   'scenario_id': 'refgame_ctx5', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx5',
   'scenario': 'Grace and Leo are hanging decorations for a party. Three cutouts sit on the table:',
-  'display': [{ 'color': 'purple', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'square' }, { 'color': 'orange', 'shape': 'circle' }],
-  'question': 'How likely is it that Grace wants the purple circle (and not the purple square)?',
+  'display': [{ 'color': 'purple', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'square' }, { 'color': 'orange', 'shape': 'triangle' }],
+  'question': 'How likely is it that Grace wants the purple circle?',
   'observed_utterance': 'Can I get the purple one?',
-  'alternatives': ['Can I get the purple one?', 'Can I get the purple circle?'],
+  'alternatives': ['Can I get the purple one?', 'Can I get the circle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Grace', 'secondName': 'Leo',
   'target': { 'color': 'purple', 'shape': 'circle' }, 'competitor': { 'color': 'purple', 'shape': 'square' },
-  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the purple circle?',
+  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the circle?',
 };
 
 var refgame_ctx6 = {
   'scenario_id': 'refgame_ctx6', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx6',
   'scenario': 'Ben and Ken are sorting buttons for a sewing project. Three buttons sit on the table:',
-  'display': [{ 'color': 'orange', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'square' }, { 'color': 'blue', 'shape': 'circle' }],
-  'question': 'How likely is it that Ben wants the orange circle (and not the orange square)?',
+  'display': [{ 'color': 'orange', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'square' }, { 'color': 'blue', 'shape': 'triangle' }],
+  'question': 'How likely is it that Ben wants the orange circle?',
   'observed_utterance': 'Give me the orange one, please.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Ben', 'secondName': 'Ken',
   'target': { 'color': 'orange', 'shape': 'circle' }, 'competitor': { 'color': 'orange', 'shape': 'square' },
-  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the orange circle, please.',
+  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the circle, please.',
 };
 
 var refgame_ctx7 = {
   'scenario_id': 'refgame_ctx7', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx7',
   'scenario': 'Nadia and Sara are organizing fridge magnets. Three magnets sit on the counter:',
-  'display': [{ 'color': 'blue', 'shape': 'square' }, { 'color': 'blue', 'shape': 'circle' }, { 'color': 'green', 'shape': 'square' }],
-  'question': 'How likely is it that Nadia wants the blue square (and not the blue circle)?',
+  'display': [{ 'color': 'blue', 'shape': 'square' }, { 'color': 'blue', 'shape': 'circle' }, { 'color': 'green', 'shape': 'triangle' }],
+  'question': 'How likely is it that Nadia wants the blue square?',
   'observed_utterance': 'Can you hand me the blue one?',
-  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the blue square?'],
+  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the square?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Nadia', 'secondName': 'Sara',
   'target': { 'color': 'blue', 'shape': 'square' }, 'competitor': { 'color': 'blue', 'shape': 'circle' },
-  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the blue square?',
+  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the square?',
 };
 
 var refgame_ctx8 = {
   'scenario_id': 'refgame_ctx8', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx8',
   'scenario': 'Colin and Dana are picking out tile samples for a mosaic. Three tiles sit laid out in front of them:',
-  'display': [{ 'color': 'red', 'shape': 'square' }, { 'color': 'red', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'square' }],
-  'question': 'How likely is it that Colin wants the red square (and not the red circle)?',
+  'display': [{ 'color': 'red', 'shape': 'square' }, { 'color': 'red', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'triangle' }],
+  'question': 'How likely is it that Colin wants the red square?',
   'observed_utterance': 'Pass me the red one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Colin', 'secondName': 'Dana',
   'target': { 'color': 'red', 'shape': 'square' }, 'competitor': { 'color': 'red', 'shape': 'circle' },
-  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the red square.',
+  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the square.',
 };
 
 var refgame_ctx9 = {
   'scenario_id': 'refgame_ctx9', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx9',
   'scenario': 'Wendy and Alex are cutting felt shapes for a classroom project. Three pieces sit in front of them:',
-  'display': [{ 'color': 'green', 'shape': 'square' }, { 'color': 'green', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'square' }],
-  'question': 'How likely is it that Wendy wants the green square (and not the green circle)?',
+  'display': [{ 'color': 'green', 'shape': 'square' }, { 'color': 'green', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'triangle' }],
+  'question': 'How likely is it that Wendy wants the green square?',
   'observed_utterance': 'Could you grab the green one?',
-  'alternatives': ['Could you grab the green one?', 'Could you grab the green square?'],
+  'alternatives': ['Could you grab the green one?', 'Could you grab the square?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Wendy', 'secondName': 'Alex',
   'target': { 'color': 'green', 'shape': 'square' }, 'competitor': { 'color': 'green', 'shape': 'circle' },
-  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the green square?',
+  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the square?',
 };
 
 var refgame_ctx10 = {
   'scenario_id': 'refgame_ctx10', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx10',
   'scenario': 'Hassan and Rima are laying out coasters for a dinner party. Three coasters sit on the table:',
-  'display': [{ 'color': 'yellow', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'square' }],
-  'question': 'How likely is it that Hassan wants the yellow square (and not the yellow circle)?',
+  'display': [{ 'color': 'yellow', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'triangle' }],
+  'question': 'How likely is it that Hassan wants the yellow square?',
   'observed_utterance': 'I\'ll take the yellow one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Hassan', 'secondName': 'Rima',
   'target': { 'color': 'yellow', 'shape': 'square' }, 'competitor': { 'color': 'yellow', 'shape': 'circle' },
-  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the yellow square.',
+  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the square.',
 };
 
 var refgame_ctx11 = {
   'scenario_id': 'refgame_ctx11', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx11',
   'scenario': 'Julia and Peter are sorting through a bin of old craft supplies. Three items sit in front of them:',
-  'display': [{ 'color': 'purple', 'shape': 'square' }, { 'color': 'purple', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'square' }],
-  'question': 'How likely is it that Julia wants the purple square (and not the purple circle)?',
+  'display': [{ 'color': 'purple', 'shape': 'square' }, { 'color': 'purple', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'triangle' }],
+  'question': 'How likely is it that Julia wants the purple square?',
   'observed_utterance': 'Can I get the purple one?',
-  'alternatives': ['Can I get the purple one?', 'Can I get the purple square?'],
+  'alternatives': ['Can I get the purple one?', 'Can I get the square?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Julia', 'secondName': 'Peter',
   'target': { 'color': 'purple', 'shape': 'square' }, 'competitor': { 'color': 'purple', 'shape': 'circle' },
-  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the purple square?',
+  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the square?',
 };
 
 var refgame_ctx12 = {
   'scenario_id': 'refgame_ctx12', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx12',
   'scenario': 'Marco and Elena are unpacking a box of building blocks. Three blocks sit on the table:',
-  'display': [{ 'color': 'orange', 'shape': 'square' }, { 'color': 'orange', 'shape': 'circle' }, { 'color': 'red', 'shape': 'square' }],
-  'question': 'How likely is it that Marco wants the orange square (and not the orange circle)?',
+  'display': [{ 'color': 'orange', 'shape': 'square' }, { 'color': 'orange', 'shape': 'circle' }, { 'color': 'red', 'shape': 'triangle' }],
+  'question': 'How likely is it that Marco wants the orange square?',
   'observed_utterance': 'Give me the orange one, please.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Marco', 'secondName': 'Elena',
   'target': { 'color': 'orange', 'shape': 'square' }, 'competitor': { 'color': 'orange', 'shape': 'circle' },
-  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the orange square, please.',
+  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the square, please.',
 };
 
 var refgame_ctx13 = {
   'scenario_id': 'refgame_ctx13', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx13',
   'scenario': 'Aisha and Zane are setting up pieces for a board game. Three tokens sit on the table:',
-  'display': [{ 'color': 'blue', 'shape': 'triangle' }, { 'color': 'blue', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'triangle' }],
-  'question': 'How likely is it that Aisha wants the blue triangle (and not the blue circle)?',
+  'display': [{ 'color': 'blue', 'shape': 'triangle' }, { 'color': 'blue', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'square' }],
+  'question': 'How likely is it that Aisha wants the blue triangle?',
   'observed_utterance': 'Can you hand me the blue one?',
-  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the blue triangle?'],
+  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the triangle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Aisha', 'secondName': 'Zane',
   'target': { 'color': 'blue', 'shape': 'triangle' }, 'competitor': { 'color': 'blue', 'shape': 'circle' },
-  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the blue triangle?',
+  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the triangle?',
 };
 
 var refgame_ctx14 = {
   'scenario_id': 'refgame_ctx14', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx14',
   'scenario': 'Derek and Maya are arranging paint chips for a mural. Three chips sit on the table:',
-  'display': [{ 'color': 'red', 'shape': 'triangle' }, { 'color': 'red', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'triangle' }],
-  'question': 'How likely is it that Derek wants the red triangle (and not the red circle)?',
+  'display': [{ 'color': 'red', 'shape': 'triangle' }, { 'color': 'red', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'square' }],
+  'question': 'How likely is it that Derek wants the red triangle?',
   'observed_utterance': 'Pass me the red one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Derek', 'secondName': 'Maya',
   'target': { 'color': 'red', 'shape': 'triangle' }, 'competitor': { 'color': 'red', 'shape': 'circle' },
-  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the red triangle.',
+  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the triangle.',
 };
 
 var refgame_ctx15 = {
   'scenario_id': 'refgame_ctx15', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx15',
   'scenario': 'Fiona and Owen are hanging decorations for a party. Three cutouts sit on the table:',
-  'display': [{ 'color': 'green', 'shape': 'triangle' }, { 'color': 'green', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'triangle' }],
-  'question': 'How likely is it that Fiona wants the green triangle (and not the green circle)?',
+  'display': [{ 'color': 'green', 'shape': 'triangle' }, { 'color': 'green', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'square' }],
+  'question': 'How likely is it that Fiona wants the green triangle?',
   'observed_utterance': 'Could you grab the green one?',
-  'alternatives': ['Could you grab the green one?', 'Could you grab the green triangle?'],
+  'alternatives': ['Could you grab the green one?', 'Could you grab the triangle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Fiona', 'secondName': 'Owen',
   'target': { 'color': 'green', 'shape': 'triangle' }, 'competitor': { 'color': 'green', 'shape': 'circle' },
-  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the green triangle?',
+  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the triangle?',
 };
 
 var refgame_ctx16 = {
   'scenario_id': 'refgame_ctx16', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx16',
   'scenario': 'Kwame and Abena are sorting buttons for a sewing project. Three buttons sit on the table:',
-  'display': [{ 'color': 'yellow', 'shape': 'triangle' }, { 'color': 'yellow', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'triangle' }],
-  'question': 'How likely is it that Kwame wants the yellow triangle (and not the yellow circle)?',
+  'display': [{ 'color': 'yellow', 'shape': 'triangle' }, { 'color': 'yellow', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'square' }],
+  'question': 'How likely is it that Kwame wants the yellow triangle?',
   'observed_utterance': 'I\'ll take the yellow one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Kwame', 'secondName': 'Abena',
   'target': { 'color': 'yellow', 'shape': 'triangle' }, 'competitor': { 'color': 'yellow', 'shape': 'circle' },
-  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the yellow triangle.',
+  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the triangle.',
 };
 
 var refgame_ctx17 = {
   'scenario_id': 'refgame_ctx17', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx17',
   'scenario': 'Nora and Felix are organizing fridge magnets. Three magnets sit on the counter:',
-  'display': [{ 'color': 'purple', 'shape': 'triangle' }, { 'color': 'purple', 'shape': 'circle' }, { 'color': 'red', 'shape': 'triangle' }],
-  'question': 'How likely is it that Nora wants the purple triangle (and not the purple circle)?',
+  'display': [{ 'color': 'purple', 'shape': 'triangle' }, { 'color': 'purple', 'shape': 'circle' }, { 'color': 'red', 'shape': 'square' }],
+  'question': 'How likely is it that Nora wants the purple triangle?',
   'observed_utterance': 'Can I get the purple one?',
-  'alternatives': ['Can I get the purple one?', 'Can I get the purple triangle?'],
+  'alternatives': ['Can I get the purple one?', 'Can I get the triangle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Nora', 'secondName': 'Felix',
   'target': { 'color': 'purple', 'shape': 'triangle' }, 'competitor': { 'color': 'purple', 'shape': 'circle' },
-  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the purple triangle?',
+  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the triangle?',
 };
 
 var refgame_ctx18 = {
   'scenario_id': 'refgame_ctx18', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx18',
   'scenario': 'Vincent and Rosa are picking out tile samples for a mosaic. Three tiles sit laid out in front of them:',
-  'display': [{ 'color': 'orange', 'shape': 'triangle' }, { 'color': 'orange', 'shape': 'circle' }, { 'color': 'green', 'shape': 'triangle' }],
-  'question': 'How likely is it that Vincent wants the orange triangle (and not the orange circle)?',
+  'display': [{ 'color': 'orange', 'shape': 'triangle' }, { 'color': 'orange', 'shape': 'circle' }, { 'color': 'green', 'shape': 'square' }],
+  'question': 'How likely is it that Vincent wants the orange triangle?',
   'observed_utterance': 'Give me the orange one, please.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Vincent', 'secondName': 'Rosa',
   'target': { 'color': 'orange', 'shape': 'triangle' }, 'competitor': { 'color': 'orange', 'shape': 'circle' },
-  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the orange triangle, please.',
+  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the triangle, please.',
 };
 
 var refgame_ctx19 = {
   'scenario_id': 'refgame_ctx19', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx19',
   'scenario': 'Lena and Milo are cutting felt shapes for a classroom project. Three pieces sit in front of them:',
-  'display': [{ 'color': 'blue', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'square' }, { 'color': 'purple', 'shape': 'circle' }],
-  'question': 'How likely is it that Lena wants the blue circle (and not the blue square)?',
+  'display': [{ 'color': 'blue', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'square' }, { 'color': 'purple', 'shape': 'triangle' }],
+  'question': 'How likely is it that Lena wants the blue circle?',
   'observed_utterance': 'Can you hand me the blue one?',
-  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the blue circle?'],
+  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the circle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Lena', 'secondName': 'Milo',
   'target': { 'color': 'blue', 'shape': 'circle' }, 'competitor': { 'color': 'blue', 'shape': 'square' },
-  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the blue circle?',
+  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the circle?',
 };
 
 var refgame_ctx20 = {
   'scenario_id': 'refgame_ctx20', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx20',
   'scenario': 'Tobias and Petra are laying out coasters for a dinner party. Three coasters sit on the table:',
-  'display': [{ 'color': 'red', 'shape': 'circle' }, { 'color': 'red', 'shape': 'square' }, { 'color': 'orange', 'shape': 'circle' }],
-  'question': 'How likely is it that Tobias wants the red circle (and not the red square)?',
+  'display': [{ 'color': 'red', 'shape': 'circle' }, { 'color': 'red', 'shape': 'square' }, { 'color': 'orange', 'shape': 'triangle' }],
+  'question': 'How likely is it that Tobias wants the red circle?',
   'observed_utterance': 'Pass me the red one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Tobias', 'secondName': 'Petra',
   'target': { 'color': 'red', 'shape': 'circle' }, 'competitor': { 'color': 'red', 'shape': 'square' },
-  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the red circle.',
+  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the circle.',
 };
 
 var refgame_ctx21 = {
   'scenario_id': 'refgame_ctx21', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx21',
   'scenario': 'Ruby and Amir are sorting through a bin of old craft supplies. Three items sit in front of them:',
-  'display': [{ 'color': 'green', 'shape': 'circle' }, { 'color': 'green', 'shape': 'square' }, { 'color': 'blue', 'shape': 'circle' }],
-  'question': 'How likely is it that Ruby wants the green circle (and not the green square)?',
+  'display': [{ 'color': 'green', 'shape': 'circle' }, { 'color': 'green', 'shape': 'square' }, { 'color': 'blue', 'shape': 'triangle' }],
+  'question': 'How likely is it that Ruby wants the green circle?',
   'observed_utterance': 'Could you grab the green one?',
-  'alternatives': ['Could you grab the green one?', 'Could you grab the green circle?'],
+  'alternatives': ['Could you grab the green one?', 'Could you grab the circle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Ruby', 'secondName': 'Amir',
   'target': { 'color': 'green', 'shape': 'circle' }, 'competitor': { 'color': 'green', 'shape': 'square' },
-  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the green circle?',
+  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the circle?',
 };
 
 var refgame_ctx22 = {
   'scenario_id': 'refgame_ctx22', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx22',
   'scenario': 'Anders and Sofia are unpacking a box of building blocks. Three blocks sit on the table:',
-  'display': [{ 'color': 'yellow', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'square' }, { 'color': 'red', 'shape': 'circle' }],
-  'question': 'How likely is it that Anders wants the yellow circle (and not the yellow square)?',
+  'display': [{ 'color': 'yellow', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'square' }, { 'color': 'red', 'shape': 'triangle' }],
+  'question': 'How likely is it that Anders wants the yellow circle?',
   'observed_utterance': 'I\'ll take the yellow one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Anders', 'secondName': 'Sofia',
   'target': { 'color': 'yellow', 'shape': 'circle' }, 'competitor': { 'color': 'yellow', 'shape': 'square' },
-  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the yellow circle.',
+  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the circle.',
 };
 
 var refgame_ctx23 = {
   'scenario_id': 'refgame_ctx23', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx23',
   'scenario': 'Camille and Louis are setting up pieces for a board game. Three tokens sit on the table:',
-  'display': [{ 'color': 'purple', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'square' }, { 'color': 'green', 'shape': 'circle' }],
-  'question': 'How likely is it that Camille wants the purple circle (and not the purple square)?',
+  'display': [{ 'color': 'purple', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'square' }, { 'color': 'green', 'shape': 'triangle' }],
+  'question': 'How likely is it that Camille wants the purple circle?',
   'observed_utterance': 'Can I get the purple one?',
-  'alternatives': ['Can I get the purple one?', 'Can I get the purple circle?'],
+  'alternatives': ['Can I get the purple one?', 'Can I get the circle?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Camille', 'secondName': 'Louis',
   'target': { 'color': 'purple', 'shape': 'circle' }, 'competitor': { 'color': 'purple', 'shape': 'square' },
-  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the purple circle?',
+  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the circle?',
 };
 
 var refgame_ctx24 = {
   'scenario_id': 'refgame_ctx24', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx24',
   'scenario': 'Diego and Ada are arranging paint chips for a mural. Three chips sit on the table:',
-  'display': [{ 'color': 'orange', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'circle' }],
-  'question': 'How likely is it that Diego wants the orange circle (and not the orange square)?',
+  'display': [{ 'color': 'orange', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'triangle' }],
+  'question': 'How likely is it that Diego wants the orange circle?',
   'observed_utterance': 'Give me the orange one, please.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Diego', 'secondName': 'Ada',
   'target': { 'color': 'orange', 'shape': 'circle' }, 'competitor': { 'color': 'orange', 'shape': 'square' },
-  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the orange circle, please.',
+  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the circle, please.',
 };
 
 var refgame_ctx25 = {
   'scenario_id': 'refgame_ctx25', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx25',
   'scenario': 'Elin and Karim are hanging decorations for a party. Three cutouts sit on the table:',
-  'display': [{ 'color': 'blue', 'shape': 'square' }, { 'color': 'blue', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'square' }],
-  'question': 'How likely is it that Elin wants the blue square (and not the blue circle)?',
+  'display': [{ 'color': 'blue', 'shape': 'square' }, { 'color': 'blue', 'shape': 'circle' }, { 'color': 'orange', 'shape': 'triangle' }],
+  'question': 'How likely is it that Elin wants the blue square?',
   'observed_utterance': 'Can you hand me the blue one?',
-  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the blue square?'],
+  'alternatives': ['Can you hand me the blue one?', 'Can you hand me the square?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Elin', 'secondName': 'Karim',
   'target': { 'color': 'blue', 'shape': 'square' }, 'competitor': { 'color': 'blue', 'shape': 'circle' },
-  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the blue square?',
+  'weak_utterance': 'Can you hand me the blue one?', 'strong_utterance': 'Can you hand me the square?',
 };
 
 var refgame_ctx26 = {
   'scenario_id': 'refgame_ctx26', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx26',
   'scenario': 'Franco and Petra are sorting buttons for a sewing project. Three buttons sit on the table:',
-  'display': [{ 'color': 'red', 'shape': 'square' }, { 'color': 'red', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'square' }],
-  'question': 'How likely is it that Franco wants the red square (and not the red circle)?',
+  'display': [{ 'color': 'red', 'shape': 'square' }, { 'color': 'red', 'shape': 'circle' }, { 'color': 'blue', 'shape': 'triangle' }],
+  'question': 'How likely is it that Franco wants the red square?',
   'observed_utterance': 'Pass me the red one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Franco', 'secondName': 'Petra',
   'target': { 'color': 'red', 'shape': 'square' }, 'competitor': { 'color': 'red', 'shape': 'circle' },
-  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the red square.',
+  'weak_utterance': 'Pass me the red one.', 'strong_utterance': 'Pass me the square.',
 };
 
 var refgame_ctx27 = {
   'scenario_id': 'refgame_ctx27', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx27',
   'scenario': 'Greta and Otto are organizing fridge magnets. Three magnets sit on the counter:',
-  'display': [{ 'color': 'green', 'shape': 'square' }, { 'color': 'green', 'shape': 'circle' }, { 'color': 'red', 'shape': 'square' }],
-  'question': 'How likely is it that Greta wants the green square (and not the green circle)?',
+  'display': [{ 'color': 'green', 'shape': 'square' }, { 'color': 'green', 'shape': 'circle' }, { 'color': 'red', 'shape': 'triangle' }],
+  'question': 'How likely is it that Greta wants the green square?',
   'observed_utterance': 'Could you grab the green one?',
-  'alternatives': ['Could you grab the green one?', 'Could you grab the green square?'],
+  'alternatives': ['Could you grab the green one?', 'Could you grab the square?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Greta', 'secondName': 'Otto',
   'target': { 'color': 'green', 'shape': 'square' }, 'competitor': { 'color': 'green', 'shape': 'circle' },
-  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the green square?',
+  'weak_utterance': 'Could you grab the green one?', 'strong_utterance': 'Could you grab the square?',
 };
 
 var refgame_ctx28 = {
   'scenario_id': 'refgame_ctx28', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx28',
   'scenario': 'Hugo and Yuki are picking out tile samples for a mosaic. Three tiles sit laid out in front of them:',
-  'display': [{ 'color': 'yellow', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'circle' }, { 'color': 'green', 'shape': 'square' }],
-  'question': 'How likely is it that Hugo wants the yellow square (and not the yellow circle)?',
+  'display': [{ 'color': 'yellow', 'shape': 'square' }, { 'color': 'yellow', 'shape': 'circle' }, { 'color': 'green', 'shape': 'triangle' }],
+  'question': 'How likely is it that Hugo wants the yellow square?',
   'observed_utterance': 'I\'ll take the yellow one.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Hugo', 'secondName': 'Yuki',
   'target': { 'color': 'yellow', 'shape': 'square' }, 'competitor': { 'color': 'yellow', 'shape': 'circle' },
-  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the yellow square.',
+  'weak_utterance': 'I\'ll take the yellow one.', 'strong_utterance': 'I\'ll take the square.',
 };
 
 var refgame_ctx29 = {
   'scenario_id': 'refgame_ctx29', 'scenario_type': 'refgame_with_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx29',
   'scenario': 'Ines and Sami are cutting felt shapes for a classroom project. Three pieces sit in front of them:',
-  'display': [{ 'color': 'purple', 'shape': 'square' }, { 'color': 'purple', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'square' }],
-  'question': 'How likely is it that Ines wants the purple square (and not the purple circle)?',
+  'display': [{ 'color': 'purple', 'shape': 'square' }, { 'color': 'purple', 'shape': 'circle' }, { 'color': 'yellow', 'shape': 'triangle' }],
+  'question': 'How likely is it that Ines wants the purple square?',
   'observed_utterance': 'Can I get the purple one?',
-  'alternatives': ['Can I get the purple one?', 'Can I get the purple square?'],
+  'alternatives': ['Can I get the purple one?', 'Can I get the square?'],
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Ines', 'secondName': 'Sami',
   'target': { 'color': 'purple', 'shape': 'square' }, 'competitor': { 'color': 'purple', 'shape': 'circle' },
-  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the purple square?',
+  'weak_utterance': 'Can I get the purple one?', 'strong_utterance': 'Can I get the square?',
 };
 
 var refgame_ctx30 = {
   'scenario_id': 'refgame_ctx30', 'scenario_type': 'refgame_no_alts', 'stimulus_type': 'refgame', 'context_id': 'ctx30',
   'scenario': 'Jonas and Elias are laying out coasters for a dinner party. Three coasters sit on the table:',
-  'display': [{ 'color': 'orange', 'shape': 'square' }, { 'color': 'orange', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'square' }],
-  'question': 'How likely is it that Jonas wants the orange square (and not the orange circle)?',
+  'display': [{ 'color': 'orange', 'shape': 'square' }, { 'color': 'orange', 'shape': 'circle' }, { 'color': 'purple', 'shape': 'triangle' }],
+  'question': 'How likely is it that Jonas wants the orange square?',
   'observed_utterance': 'Give me the orange one, please.',
   'interpretations': ['Absolutely Impossible', 'Absolutely Certain'],
   'mainName': 'Jonas', 'secondName': 'Elias',
   'target': { 'color': 'orange', 'shape': 'square' }, 'competitor': { 'color': 'orange', 'shape': 'circle' },
-  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the orange square, please.',
+  'weak_utterance': 'Give me the orange one, please.', 'strong_utterance': 'Give me the square, please.',
 };
 
-var main_stimuli_reference_games = [
-  [refgame_ctx1, refgame_ctx2, refgame_ctx3, refgame_ctx4, refgame_ctx5, refgame_ctx6],
-  [refgame_ctx7, refgame_ctx8, refgame_ctx9, refgame_ctx10, refgame_ctx11, refgame_ctx12],
-  [refgame_ctx13, refgame_ctx14, refgame_ctx15, refgame_ctx16, refgame_ctx17, refgame_ctx18],
-  [refgame_ctx19, refgame_ctx20, refgame_ctx21, refgame_ctx22, refgame_ctx23, refgame_ctx24],
-  [refgame_ctx25, refgame_ctx26, refgame_ctx27, refgame_ctx28, refgame_ctx29, refgame_ctx30],
+var all_refgame_contexts = [
+  refgame_ctx1, refgame_ctx2, refgame_ctx3, refgame_ctx4, refgame_ctx5, refgame_ctx6, refgame_ctx7, refgame_ctx8, refgame_ctx9, refgame_ctx10, refgame_ctx11, refgame_ctx12, refgame_ctx13, refgame_ctx14, refgame_ctx15, refgame_ctx16, refgame_ctx17, refgame_ctx18, refgame_ctx19, refgame_ctx20, refgame_ctx21, refgame_ctx22, refgame_ctx23, refgame_ctx24, refgame_ctx25, refgame_ctx26, refgame_ctx27, refgame_ctx28, refgame_ctx29, refgame_ctx30
 ];
+
+
+// 5 batches of 12 (sliding window of size 12, step 6, wrapping over the 30
+// contexts) so each context appears in exactly 2 of the 5 conditions. Paired
+// in experiment.js with a 12-item (every-other) trim of each 24-item natural
+// batch, so every participant sees 12 natural + 12 refgame = 24 main-phase
+// scenarios total -- matching pragmatics4's per-participant scenario count.
+var main_stimuli_reference_games = [];
+for (var _rgBatch = 0; _rgBatch < 5; _rgBatch++) {
+  var _rgItems = [];
+  for (var _rgOffset = 0; _rgOffset < 12; _rgOffset++) {
+    _rgItems.push(all_refgame_contexts[(_rgBatch * 6 + _rgOffset) % 30]);
+  }
+  main_stimuli_reference_games.push(_rgItems);
+}

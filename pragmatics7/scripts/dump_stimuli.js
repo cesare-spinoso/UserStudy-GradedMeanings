@@ -24,15 +24,10 @@ loadAsScript(sandbox, 'main_stimuli.js');
 
 const naturalItems = sandbox.natural_stimuli_catalog;
 
-// Flatten main_stimuli_reference_games (5 batches of 6) back into one
-// ordered list of 30 unique contexts, sorted by context_id (ctx1..ctx30).
-const refgameItems = sandbox.main_stimuli_reference_games
-  .flat()
-  .sort((a, b) => {
-    const na = parseInt(a.context_id.replace('ctx', ''), 10);
-    const nb = parseInt(b.context_id.replace('ctx', ''), 10);
-    return na - nb;
-  });
+// all_refgame_contexts is already the flat, ordered list of the 30 unique
+// contexts (main_stimuli_reference_games instead holds 5 OVERLAPPING
+// 12-item sliding-window batches, so each context appears twice there).
+const refgameItems = sandbox.all_refgame_contexts;
 
 if (naturalItems.length !== 30) {
   throw new Error(`Expected 30 natural items, got ${naturalItems.length}`);
