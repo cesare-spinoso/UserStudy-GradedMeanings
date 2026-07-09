@@ -424,17 +424,25 @@ function init() {
   exp.catch_trials = [];
 
   if (DEBUG_NOTES) {
-    console.warn(
-      "[DESIGN NOTE] Right now the same object triple (color+shape context) " +
-      "is only shown once to the participant, matching p4/p6 behavior for " +
-      "natural-language scenarios. But the advantage of object stimuli is " +
+    var designNoteText =
+      "[DESIGN NOTES — researcher only, remove before real participants] " +
+      "(1) Right now the same object triple (color+shape context) is only shown once to the participant, " +
+      "matching p4/p6 behavior for natural-language scenarios. But the advantage of object stimuli is " +
       "that we can create some kind of isomorphism between color and shape " +
       "to make the with-alternatives and without-alternatives settings " +
       "directly comparable (reusing the same triple, swapping which " +
       "dimension is ambiguous) -- something natural-language gradable " +
       "adjectives don't allow. Revisit before the next stimulus revision. " +
-      "Set DEBUG_NOTES = false in experiment.js to silence this."
-    );
+      "(2) Color itself may be introducing a salience bias (per a previous study's findings). " +
+      "A potential mitigation: render all objects in a dull grey and use texture " +
+      "(polka dots / stripes / other patterns) as the shared/ambiguous feature instead of color, " +
+      "keeping shape as the unique/unambiguous feature. Not yet implemented -- would require " +
+      "re-rendering every object (refgame_render.js), remapping weak/strong utterances from " +
+      "color-vs-shape to texture-vs-shape, and regenerating the 30-context pool + examples/warmups/QCs + PDFs. " +
+      "Set DEBUG_NOTES = false in experiment.js to silence this.";
+    console.warn(designNoteText);
+    // Visible on-page banner too, so this isn't easy to miss even without devtools open.
+    $('#debug-banner').text(designNoteText).show();
   }
 
   // Get the stimuli using the URL parameters

@@ -1325,16 +1325,24 @@ var main_stimuli_gradable_meanings = [[{
 //                 strong alternative is never mentioned, so no counterfactual
 //                 information is available to the participant.
 //
-// DEBUG / DESIGN NOTE for the researcher (see matching console.warn in
-// experiment.js): each color+shape triple is currently shown only ONCE per
-// participant (in either its with_alts or no_alts form), matching the
-// pre-existing p4/p6 behavior where a given base scenario appears in only
-// one alternative-condition per batch. Because object stimuli decouple color
+// DEBUG / DESIGN NOTES for the researcher (see matching console.warn +
+// visible on-page banner in experiment.js):
+// (1) Each color+shape triple is currently shown only ONCE per participant
+// (in either its with_alts or no_alts form), matching the pre-existing
+// p4/p6 behavior where a given base scenario appears in only one
+// alternative-condition per batch. Because object stimuli decouple color
 // and shape identity, it should be possible to reuse the SAME object triple
 // in both the with_alts and no_alts conditions by swapping which dimension
 // (color vs. shape) is the ambiguous/weak one for that presentation --
 // creating a cleaner within-item isomorphism than natural-language gradable
 // adjectives allow. Revisit before the next stimulus revision.
+// (2) Color itself may introduce a salience bias (per a previous study's
+// findings). Potential mitigation: render all objects in a dull grey and
+// use texture (polka dots / stripes / other patterns) as the shared/
+// ambiguous feature instead of color, keeping shape as the unique/
+// unambiguous feature. Not yet implemented -- would touch renderShape() in
+// refgame_render.js, the weak/strong utterance generation below, and every
+// example/warmup/quality-check refgame item, plus the stimulus PDFs.
 // ─────────────────────────────────────────────────────────────────────────
 
 var refgame_ctx1 = {

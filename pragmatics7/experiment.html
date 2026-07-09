@@ -366,6 +366,10 @@
 <body onload="init()">
     <noscript>This task requires JavaScript.</noscript>
 
+    <!-- Researcher-only reminder banner (gated by DEBUG_NOTES in experiment.js).
+         Set DEBUG_NOTES = false before running real participants so this never shows. -->
+    <div id="debug-banner" style="display:none; position:sticky; top:0; z-index:9999; background:#fff3cd; color:#664d03; border-bottom:2px solid #ffc107; padding:10px 16px; font-size:14px; line-height:1.5; text-align:left;"></div>
+
     <!-- Initial slide -->
     <div class="slide" id="i0">
         <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
