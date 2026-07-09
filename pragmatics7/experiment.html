@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Utterance and Reference Interpretation</title>
+
+    <!-- external general utilities -->
+    <script src="shared/js/jquery-1.11.1.min.js"></script>
+    <script src="shared/full-projects/jquery-ui/jquery-ui.min.js"></script>
+    <script src="shared/js/underscore-min.js"></script>
+
+    <!-- experiment logic -->
+    <script src="shared/js/exp-V2.js"></script>
+    <script src="shared/js/stream-V2.js"></script>
+
+    <!-- Proliferate for data logging -->
+    <script src="https://proliferate.alps.science/static/js/proliferate.js"></script>
+
+    <!-- Tailwind CSS for styling (specifically for the table feedback) -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> -->
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- general utilities -->
+    <script src="shared/js/browserCheck.js"></script>
+    <script src="shared/js/utils.js"></script>
+    <link href="shared/full-projects/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="shared/css/cocolab-style.css" rel="stylesheet" type="text/css">
+
+    <!-- experiment file -->
+    <script src="js/refgame_render.js"></script>
+    <script src="js/examples.js"></script>
+    <script src="js/warm_ups.js"></script>
+    <script src="js/quality_checks.js"></script>
+    <script src="js/main_stimuli.js"></script>
+    <script src="js/instructions.js"></script>
+    <script src="js/feedback.js"></script>
+
+    <!-- NOTE: Always put the data before the experiment.js file -->
+    <script src="js/experiment.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            font-size: 18px;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        /* Constrain experiment width and center it */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .panel {
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+
+        .panel-heading {
+            border-radius: 8px 8px 0 0 !important;
+            font-size: 22px;
+            padding: 12px 18px;
+        }
+
+        .panel-body {
+            text-align: left;
+            padding: 24px 28px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* Continue button */
+        .btn-primary.continueButton,
+        .btn-primary {
+            background-color: #800080 !important;
+            border-color: #800080 !important;
+            border-radius: 6px;
+            font-size: 18px;
+            padding: 10px 32px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary.continueButton:hover,
+        .btn-primary:hover {
+            background-color: #660066 !important;
+            border-color: #660066 !important;
+        }
+
+        /* Scenario box — green left border */
+        .scenario {
+            background-color: #e8f5e8;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        /* Question box — purple left border */
+        .question {
+            background-color: #f3e5f5;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #9c27b0;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        /* Rationale textarea */
+        #rationale {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .err {
+            display: none;
+            font-size: 16px;
+        }
+
+        /* Outer wrapper: left label | slider | right label, all vertically centered */
+        .slider-outer-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* Slider track wrapper — provides space for the tick to extend above/below */
+        .slider-track-wrapper {
+            flex: 1;
+            position: relative;
+            padding: 35px 0;
+        }
+
+        /* Midpoint tick line — spans full wrapper height including padding */
+        .slider-midpoint-tick {
+            position: absolute;
+            left: calc(50% - 1px);
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background-color: #888;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Slider base styling */
+        .interp-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+            outline: none;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        .interp-slider::-webkit-slider-runnable-track {
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        .interp-slider::-moz-range-track {
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        .interp-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -6px;
+            width: 20px;
+            height: 20px;
+            background: #800080;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .interp-slider.thumb-visible::-webkit-slider-thumb {
+            opacity: 1;
+        }
+
+        .interp-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #800080;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            border: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .interp-slider.thumb-visible::-moz-range-thumb {
+            opacity: 1;
+        }
+
+        /* Slider section wrapper */
+        .interp-slider-section {
+            margin: 16px 0 0;
+        }
+
+        /* Instruction shown before slider interaction */
+        .slider-instruction {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 6px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            min-height: 20px;
+        }
+
+        .slider-instruction.hide-instruction {
+            opacity: 0;
+        }
+
+        /* Center row for the "Even chance" midpoint label */
+        .interp-labels-row {
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .slider-neither-label {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        /* Visual choice display for conditions 2/3 */
+        .alternatives-display {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .alternative-option {
+            flex: 1;
+            max-width: 300px;
+            padding: 16px;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            background-color: #fff3e0;
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.5;
+            cursor: default;
+        }
+
+        .interp-endpoint-left {
+            text-align: center;
+            flex-shrink: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.3;
+        }
+
+        .interp-endpoint-right {
+            text-align: center;
+            flex-shrink: 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #444;
+            line-height: 1.3;
+        }
+
+        /* Disabled slider (example slide) */
+        .interp-slider:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .interp-slider:disabled::-webkit-slider-thumb {
+            opacity: 1;
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        .interp-slider:disabled::-moz-range-thumb {
+            opacity: 1;
+            background: #aaa;
+            cursor: not-allowed;
+        }
+
+        /* Wrapper cursor when slider is disabled */
+        .slider-track-wrapper:has(input:disabled) {
+            cursor: not-allowed;
+        }
+
+        /* Slider value display — hidden until slider is touched */
+        .interp-value-row {
+            text-align: center;
+            margin-top: 14px;
+            min-height: 30px;
+        }
+
+        .interp-value-num {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff9800;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .interp-value-num.show-value {
+            opacity: 1;
+        }
+
+        /* Reference-game object display (pragmatics7 addition) — plain,
+           non-interactive, never highlights a target (that would give away
+           the likelihood answer). */
+        .ref-display {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin: 16px 0 6px;
+            flex-wrap: wrap;
+        }
+
+        .ref-obj {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #fafafa;
+        }
+
+        .obj-label {
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body onload="init()">
+    <noscript>This task requires JavaScript.</noscript>
+
+    <!-- Initial slide -->
+    <div class="slide" id="i0">
+        <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+        <section class="container" id="SET1"
+            style="padding: 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:14pt;">
+            <div class="col-xs-12 col-md-12">
+                <div class="panel panel-primary" style="border-color: #800080">
+                    <div class="panel-heading"
+                        style="background-image: none;background-color:#800080;border-color: #800080">
+                        <strong>Utterance and Reference Interpretation</strong>
+                    </div>
+                    <div class="panel-body">
+                        <div id="start-instructions"></div>
+                        <p>
+                            Thanks for your participation!
+                        </p>
+                        <div style="text-align: center; margin-top: 30px;">
+                            <button id="start_button" class="btn btn-lg btn-primary"
+                                style="background-color: #800080; border-color: #800080;">
+                                Start Experiment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Consent form slide -->
+    <div class="slide" id="consent">
+        <section class="container" style="padding: 10px;">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <div class="panel panel-primary" style="border-color: #800080">
+                        <div class="panel-heading"
+                            style="background-image: none; background-color: #800080; border-color: #800080">
+                            <div style="font-size: 0.85em; font-weight: normal; opacity: 0.85; margin-bottom: 4px;">Consent Form</div>
+                            <strong>STUDY TITLE: UTTERANCE AND REFERENCE INTERPRETATION</strong>
+                        </div>
+                        <div class="panel-body">
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px; margin-top: 0;">Study Purpose</h4>
+                            <p>In this study, you will rate how likely different statements are. The statements will be about utterances (i.e., what people have said) in short dialogues/scenarios, or about which object a speaker is referring to in a display of a few colored shapes.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Participant Tasks</h4>
+                            <p>You will be presented with a series of short scenarios, some involving a dialogue and some involving a small set of colored objects. For each scenario, you will move a slider to indicate how likely you believe a given statement to be. You may also optionally provide a brief written explanation of your response. We have carefully designed each question to not contain any sensitive or personal content.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Risks and Benefits</h4>
+                            <p>This experiment involves no known risks or discomfort to you beyond the risks of everyday life, nor is it expected to be of any direct benefit to you.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Compensation</h4>
+                            <p>US$15.00/hr, pro-rated to the median amount of time taken to complete the task.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Data Collection</h4>
+                            <p>We will record your Prolific ID and the fact that you are a native English speaker and situated in either the US, the UK or Canada.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Data Storage and Use</h4>
+                            <p>Your anonymous responses may be uploaded to a public GitHub repository for research purposes.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Voluntary Participation</h4>
+                            <p>Your participation is voluntary. You may withdraw from the study at any time. Compensation will be awarded on a case by case basis.</p>
+
+                            <h4 style="color: #800080; border-bottom: 1px solid #e0d0e0; padding-bottom: 6px;">Contact Information</h4>
+                            <p>
+                                If you have any questions about this study, please contact:<br>
+                                <strong>Cesare Spinoso-Di Piano</strong><br>
+                                <a href="mailto:cesare.spinoso-dipiano@mail.mcgill.ca">cesare.spinoso-dipiano@mail.mcgill.ca</a>
+                            </p>
+                            <p>
+                                For ethical concerns or complaints about your participation, please contact the
+                                <a href="https://www.mcgill.ca/research/research/human/contactus" target="_blank">Research Ethics Board Office</a>
+                                (REB Protocol #XX-XX-XXX).
+                            </p>
+
+                            <div style="background-color: #f8f4ff; border: 1px solid #c8a0c8; border-radius: 6px; padding: 16px 20px; margin-top: 20px;">
+                                <div style="margin-bottom: 12px;">
+                                    <label style="font-weight: normal; display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 0;">
+                                        <input type="checkbox" id="consent-check-1"
+                                            style="margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; accent-color: #800080;">
+                                        <span>I consent to my responses being used in future research.</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label style="font-weight: normal; display: flex; align-items: flex-start; gap: 10px; cursor: pointer; margin-bottom: 0;">
+                                        <input type="checkbox" id="consent-check-2"
+                                            style="margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; accent-color: #800080;">
+                                        <span>I consent to my responses being uploaded to a public GitHub repository.</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <p style="margin-top: 16px; font-size: 0.9em; color: #555;">
+                                Clicking "Continue" below indicates that you consent to participate in this study.
+                            </p>
+
+                            <div style="text-align: center; margin-top: 20px;">
+                                <button id="consent_continue_button" class="btn btn-lg btn-primary"
+                                    style="background-color: #800080; border-color: #800080; opacity: 0.45; cursor: not-allowed;">
+                                    Continue
+                                </button>
+                                <div id="consent-err"
+                                    style="display: none; color: #dc3545; margin-top: 10px; font-size: 16px;">
+                                    Please check both boxes above to continue.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Task example slide -->
+    <div class="slide" id="example">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- Response Collection Form -->
+                    <div class="panel panel-primary" style="border-color: #800080; margin: 0 auto;">
+                        <div class="panel-heading"
+                            style="background-image: none;background-color:#800080;border-color: #800080">
+                            <strong>Example Scenario</strong>
+                        </div>
+
+                        <div class="panel-body" style="padding: 20px;">
+                            <!-- Example notice banner -->
+                            <div
+                                style="background-color: #fff8e1; border: 1px solid #ffc107; border-radius: 6px; padding: 10px 15px; margin-bottom: 20px; font-size: 15px; color: #6d4c00;">
+                                <strong>📖 Example only:</strong> This is a pre-filled demonstration of what a completed
+                                response looks like. The slider and explanation box below are <strong>not
+                                    interactive</strong> here — in the actual task, you will drag the slider yourself
+                                and optionally type an explanation.
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <div class="scenario"></div>
+                                <div class="question"></div>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <div class="interpretation-area"></div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 30px;">
+
+                                <h4 style="color: #800080; margin-bottom: 15px;">Explanation: <span
+                                        style="font-size: 0.8em; color: #999; font-weight: normal;">(example — not
+                                        editable)</span></h4>
+                                <div
+                                    style="background-color: #f0f0f0; padding: 15px; border-radius: 5px; border: 1px solid #ddd;">
+                                    <textarea class="form-control" id="pseudo_rationale" rows="3" readonly
+                                        style="background-color: #f0f0f0; color: #888; cursor: not-allowed;">I moved the slider to X because ...</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row col-xs-12 col-md-12">
+                                <!-- instructions moved below slider -->
+                            </div>
+
+                            <!-- Removed allocations example table (no longer used in slider design) -->
+
+                            <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                                <button id="start_button" class="btn btn-lg btn-primary continueButton"
+                                    onclick="_s.button()" style="background-color: #800080;
+                       border-color: #800080;
+                       padding: 15px 40px;
+                       font-size: 18px;">
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Segue slide from the examples to the warm-up -->
+    <div class="slide" id="startWarmup">
+        <br>
+        <br>
+        <div id="warmup-instructions">
+        </div>
+        <div class="center">
+            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()">Begin warm-up</button>
+        </div>
+    </div>
+
+    <!-- Warm-up examples slide -->
+    <div class="slide" id="warmup">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row">
+                <!-- Response Collection Form -->
+                <div class="panel panel-primary" style="border-color: #800080; margin: 0 auto;">
+                    <div class="panel-heading"
+                        style="background-image: none;background-color:#800080;border-color: #800080">
+                        <strong>Warm-up Scenario</strong>
+                    </div>
+
+                    <div class="panel-body" style="padding: 20px;">
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <div class="scenario"></div>
+                            <div class="question"></div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <div class="interpretation-area"></div>
+                        </div>
+
+
+                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()" style="background-color: #800080;
+                             border-color: #800080;
+                             padding: 15px 40px;
+                             font-size: 18px;">
+                                Continue
+                            </button>
+                            <div class="err" style="color: #dc3545; margin-top: 10px;">
+                                <br>
+                                <br>
+                                Please move the slider to indicate your level of likelihood.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- main instructions slide -->
+    <div class="slide" id="startExp">
+        <br>
+        <br>
+        <p id="instruct-text" class="left">
+            Great! Now we can start the real study. You will be presented with <strong><span
+                    id="main-scenario-count"></span> study scenarios</strong>.
+            For each scenario, move the slider to indicate your level of likelihood.
+            Providing a rationale is <strong>optional</strong>.
+            At the end, you'll also be able to provide any extra feedback about the task as a whole (but only if
+            you'd
+            like to!).
+        </p>
+        <div class="center">
+            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()">Begin</button>
+        </div>
+    </div>
+
+    <!-- main task slide -->
+    <div class="slide" id="main">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row">
+                <!-- Response Collection Form -->
+                <div class="panel panel-primary" style="border-color: #800080; margin: 0 auto;">
+                    <div class="panel-heading"
+                        style="background-image: none;background-color:#800080;border-color: #800080">
+                        <strong>Study Scenario</strong>
+                        <span id="main-progress-label"
+                            style="float: right; font-size: 15px; font-weight: normal; opacity: 0.9;"></span>
+                    </div>
+                    <!-- Progress bar -->
+                    <div style="padding: 8px 16px 0; background: #fff;">
+                        <div class="progress"
+                            style="height: 10px; margin-bottom: 0; border-radius: 0 0 4px 4px; background-color: #e0c0e0;">
+                            <div id="main-progress-bar" class="progress-bar" role="progressbar"
+                                style="width: 0%; background-color: #800080; transition: width 0.3s ease;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-body" style="padding: 20px;">
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <div class="scenario">{{scenario}}</div>
+                            <div class="question">{{question}}</div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <div class="interpretation-area"></div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 30px;">
+                            <h4 style="color: #800080; margin-bottom: 15px;">Your Rationale: <span
+                                    style="font-size: 0.85em; color: #666;">(Optional)</span></h4>
+                            <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                <textarea class="form-control" id="rationale" rows="3"
+                                    placeholder="Briefly explain why you positioned the slider where you did. (Optional)"></textarea>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                            <button class="btn btn-lg btn-primary continueButton" onclick="_s.button()" style="background-color: #800080;
+                             border-color: #800080;
+                             padding: 15px 40px;
+                             font-size: 18px;">
+                                Continue
+                            </button>
+                            <div class="err" style="color: #dc3545; margin-top: 10px;">
+                                <br>
+                                <br>
+                                Please move the slider to indicate your level of likelihood.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+    <!-- additional information slide -->
+    <div class="slide" id="add_info">
+        <section class="container" id="SET1" style="padding: 10px;">
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-xs-12 col-md-12">
+                    <div class="panel panel-primary" style="border-color: #800080">
+                        <div class="panel-heading"
+                            style="background-image: none;background-color:#800080;border-color: #800080">
+                            <strong>Additional Information</strong>
+                        </div>
+                        <div class="panel-body">
+
+                            <p class="info">
+                                Answering these questions is optional, but will help us understand your answers and
+                                improve this study for future participants.
+                            </p>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">Did you understand the task and follow
+                                    the instructions correctly?</h4>
+                                <select id="understood" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">Do you think the payment for this task
+                                    was fair?</h4>
+                                <select id="payment_fairness" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="not_fair">Not fair</option>
+                                    <option value="fair">Fair</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">How enjoyable was this annotation task?
+                                </h4>
+                                <select id="enjoyment" class="form-control">
+                                    <option value="">(Optional) Select an option</option>
+                                    <option value="worse_than_average">Worse than average</option>
+                                    <option value="average">Same as average</option>
+                                    <option value="better_than_average">Better than average</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 30px;">
+                                <h4 style="color: #800080; margin-bottom: 15px;">(Optional) Any Additional Comments
+                                    About the Task?</h4>
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 5px;">
+                                    <textarea class="form-control" id="comments" rows="3"
+                                        placeholder="(Optional) Please share your thoughts here..."></textarea>
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 30px;">
+                                <button onclick="_s.submit()" class="btn btn-lg btn-primary"
+                                    style="background-color: #800080; border-color: #800080;">
+                                    Submit
+                                </button>
+                            </div>
+                            <p class="uploading-text"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+
+</html>
