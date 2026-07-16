@@ -416,7 +416,7 @@ function shuffle_stimuli(stimuli) {
 
 // DEBUG / DESIGN NOTE — see the matching comment block in main_stimuli.js.
 // Set to false to silence this reminder once the design question is resolved.
-var DEBUG_NOTES = true;
+var DEBUG_NOTES = false;
 
 function init() {
   // Initialize the collected data
