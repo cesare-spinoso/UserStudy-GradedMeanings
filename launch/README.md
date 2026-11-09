@@ -13,7 +13,7 @@ python3 launch/launch.py --experiment pragmatics4 --design 0 \
     [--mapping pragmatics4/stimuli_mapping.json] [--notes "pilot"] [--post]
 ```
 
-The stages run in order and stop at the first failure.
+The stages run in order and stop at the first failure. Add `--dry-run` to run stages 1-4 only (no config, no post).
 
 | # | Stage | Guards against |
 |---|---|---|

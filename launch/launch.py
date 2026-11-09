@@ -287,7 +287,10 @@ def main():
     ap.add_argument("--notes", default="")
     ap.add_argument("--post", action="store_true", help="run `proliferate post` after all checks pass")
     ap.add_argument("--overwrite", action="store_true", help="replace an existing config of the same name")
+    ap.add_argument("--dry-run", action="store_true", help="run checks 1-4 only; write no config, post nothing")
     args = ap.parse_args()
+    if args.dry_run and args.post:
+        sys.exit("ERROR: --dry-run and --post are mutually exclusive")
 
     exp_dir = os.path.join(REPO, args.experiment)
     if not os.path.isfile(os.path.join(exp_dir, "experiment.html")):
@@ -304,6 +307,11 @@ def main():
         sha = check_git(args.experiment)
         stage(4, "GitHub Pages serves the pushed version")
         url = check_pages(args.experiment, sha)
+        if args.dry_run:
+            print(f"\nDRY RUN: all checks passed. Would write {n_conditions} conditions x "
+                  f"{args.participants} participants for {url}?design={args.design}&condition=0..{n_conditions - 1}. "
+                  "No config written, nothing posted.")
+            return
         stage(5, "Config")
         cfg_dir = write_config(args, url, n_conditions, sha, source_hashes)
     except StageFailed as e:
