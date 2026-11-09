@@ -1,7 +1,7 @@
 function start_instructions_html(condition) {
     common_instructions_html = `
     <p>
-    <strong>Study description:</strong> We're interested in how <strong>utterances</strong> (what people say) are interpreted in conversations. In this study, you will be shown scenarios where a character says an utterance${exp.design === 0 ? "" : " (sometimes choosing between two)"}. You will then <strong>use a slider</strong> to rate the <strong>likelihood</strong> of a statement related to the speaker's utterance. You will also have the option to provide a rationale for your rating.
+    <strong>Study description:</strong> We're interested in how <strong>utterances</strong> (what people say) are interpreted in conversations. In this study, you will be shown scenarios where a character says an utterance${exp.design === 1 ? " (sometimes choosing between two)" : ""}. You will then <strong>use a slider</strong> to rate the <strong>likelihood</strong> of a statement related to the speaker's utterance. You will also have the option to provide a rationale for your rating.
     </p>`;
     common_instructions_html += `
     <p>

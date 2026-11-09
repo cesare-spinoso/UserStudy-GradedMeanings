@@ -409,16 +409,21 @@ function shuffle_stimuli(stimuli) {
 //             ALL 30 scenarios, 15 with U1 (weak) and 15 with U2 (strong). Every
 //             scenario x utterance pair occurs in exactly one list. Examples,
 //             warm-ups and quality checks never show alternatives either.
+//   design=2  weak utterance only: a single list (condition 0) with ALL 30
+//             scenarios, each with U1 (weak) and no alternatives; everyone
+//             sees the same 30 + 4 quality checks. Examples / warm-ups /
+//             quality checks are alternative-free, as in design=0.
 //
-// In both designs every scenario x cell pair occurs in exactly one list (no
-// pair is collected in two lists), and no participant sees a scenario twice.
+// In designs 0 and 1 every scenario x cell pair occurs in exactly one list
+// (no pair is collected in two lists). In every design, no participant sees a
+// scenario twice.
 //
 // Main items come from natural_stimuli_v2 (generated from alternatives_v2.csv
 // by scripts/sync_natural_stimuli.py). The legacy hand-written batches
 // (main_stimuli_gradable_meanings) are no longer used.
 
 var NUM_CONDITIONS = 5;                        // lists in design=1
-var NUM_CONDITIONS_BY_DESIGN = { 0: 2, 1: NUM_CONDITIONS };
+var NUM_CONDITIONS_BY_DESIGN = { 0: 2, 1: NUM_CONDITIONS, 2: 1 };
 var BLOCK = 6;           // window step; the 30 items form 5 blocks of 6
 var BATCH_SIZE = 24;     // scenarios per participant
 
@@ -484,16 +489,25 @@ function build_no_alts_batch(condition) {
   });
 }
 
+// design=2: every item with U1 (weak), no alternatives.
+function build_weak_only_batch() {
+  return natural_stimuli_v2.map(function (item) {
+    return make_natural_trial(item, 'weak_no_alts');
+  });
+}
+
 function init() {
   // Initialize the collected data
   exp.trials = [];
   exp.catch_trials = [];
   // Get the stimuli using the URL parameters:
-  //   design    -- 1 = alternatives shown in half the items (default), 0 = never shown
-  //   condition -- list / batch index (0-4 for design 1, 0-1 for design 0)
+  //   design    -- 1 = alternatives shown in half the items (default),
+  //                0 = never shown (U1 or U2), 2 = never shown (U1 only)
+  //   condition -- list / batch index (0-4 for design 1, 0-1 for design 0,
+  //                0 for design 2)
   var design = parseInt(get_url_param("design", 1));
-  if (design !== 0 && design !== 1) {
-    throw new Error("design must be 0 (no alternatives) or 1 (alternatives), got '" + get_url_param("design", 1) + "'");
+  if (!NUM_CONDITIONS_BY_DESIGN.hasOwnProperty(design)) {
+    throw new Error("design must be 0 (no alternatives), 1 (alternatives) or 2 (weak utterance only), got '" + get_url_param("design", 1) + "'");
   }
   var condition = parseInt(get_url_param("condition", 0)); // Which batch / condition (0-4)
   var nConditions = NUM_CONDITIONS_BY_DESIGN[design];
@@ -515,11 +529,11 @@ function init() {
     // No alternatives anywhere: examples, warm-ups and quality checks included.
     exp.example_stimuli = examples_gradable_meanings.map(function (e) { return strip_alternatives(e); });
     exp.warmup_stimuli = [warm_ups_gradable_meanings.loud_no_alts, warm_ups_gradable_meanings.rude_no_alts];
-    exp.stimuli = build_no_alts_batch(condition)
+    exp.stimuli = (design === 2 ? build_weak_only_batch() : build_no_alts_batch(condition))
       .concat(quality_checks_gradable_meanings.map(function (q) {
         return q.alternatives ? strip_alternatives(q, 'quality_no_alts') : q;
       }));
-    exp.phenomenon = "gradable_meanings_no_alts";
+    exp.phenomenon = design === 2 ? "gradable_meanings_weak_only" : "gradable_meanings_no_alts";
   }
   // A participant must never see the same scenario twice (e.g. once with U1
   // and once with U2).

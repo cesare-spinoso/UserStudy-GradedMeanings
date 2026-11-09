@@ -11,8 +11,9 @@
 |---|---|---|
 | `1` (default) | 0-4 | **Alternatives.** 24 scenarios per list, 6 in each of weak/strong × with/without alternatives (the original pragmatics4 structure). In the with-alternatives items, the speaker considers U1 and U2, then says one of them. |
 | `0` | 0-1 | **No alternatives.** Each list has **all 30** scenarios, each shown once, with either U1 (weak) or U2 (strong) (15 of each). The two lists are complements: a scenario that gets U1 in list 0 gets U2 in list 1. Examples, warm-ups and quality checks never show alternatives either. |
+| `2` | 0 | **Weak utterance only.** A single list: everyone sees **all 30** scenarios, each with U1 (weak) and no alternatives, plus the 4 quality checks (34 trials). Examples, warm-ups and quality checks never show alternatives either. |
 
-No overcounting: in both designs, every scenario × cell pair (e.g. scenario
+No overcounting: in designs 0 and 1, every scenario × cell pair (e.g. scenario
 `id_7` with U2 and no alternatives) occurs in **exactly one** list. That is
 30 × 4 = 120 pairs over 5 lists × 24 in design 1, and 30 × 2 = 60 pairs over
 2 lists × 30 in design 0. In design 1, each list is a 24-item sliding window
