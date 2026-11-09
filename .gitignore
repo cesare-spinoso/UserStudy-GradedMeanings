@@ -1,0 +1,4 @@
+# Proliferate configs contain the Prolific completion code, and
+# `proliferate getresults` downloads *-workerids.csv (Prolific IDs) into the
+# same folder. This repo is public: keep both out of it.
+launch/configs/
