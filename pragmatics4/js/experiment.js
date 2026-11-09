@@ -239,6 +239,10 @@ function make_slides(f) {
       scenario_id: stim.scenario_id || null,
       scenario_type: stim.scenario_type || null,
       condition: condition,
+      design: exp.design,
+      natural_stimuli_version: (typeof natural_stimuli_source !== 'undefined') ? natural_stimuli_source.alternatives_version : null,
+      weak_utterance: stim.weak_utterance || null,
+      strong_utterance: stim.strong_utterance || null,
       phenomenon: exp.phenomenon,
       batch_index: exp.batch_index,
       scenario: stim.scenario,
@@ -396,23 +400,134 @@ function shuffle_stimuli(stimuli) {
   return stimuli;
 }
 
+// ── Designs (numeric `design` URL param; see README.md) ────────────────────
+//
+//   design=1  (default) alternatives: each list has 24 scenarios, 6 in each of
+//             weak/strong x with/no alternatives (same structure as the
+//             original pragmatics4 batches).
+//   design=0  no alternatives: 2 complementary lists (condition 0/1), each with
+//             ALL 30 scenarios, 15 with U1 (weak) and 15 with U2 (strong). Every
+//             scenario x utterance pair occurs in exactly one list. Examples,
+//             warm-ups and quality checks never show alternatives either.
+//
+// In both designs every scenario x cell pair occurs in exactly one list (no
+// pair is collected in two lists), and no participant sees a scenario twice.
+//
+// Main items come from natural_stimuli_v2 (generated from alternatives_v2.csv
+// by scripts/sync_natural_stimuli.py). The legacy hand-written batches
+// (main_stimuli_gradable_meanings) are no longer used.
+
+var NUM_CONDITIONS = 5;                        // lists in design=1
+var NUM_CONDITIONS_BY_DESIGN = { 0: 2, 1: NUM_CONDITIONS };
+var BLOCK = 6;           // window step; the 30 items form 5 blocks of 6
+var BATCH_SIZE = 24;     // scenarios per participant
+
+var NATURAL_CELLS_ALL = ['weak_with_alts', 'strong_with_alts', 'weak_no_alts', 'strong_no_alts'];
+var NATURAL_CELLS_NO_ALTS = ['weak_no_alts', 'strong_no_alts'];
+
+function strip_alternatives(stim, new_scenario_type) {
+  var copy = _.clone(stim);
+  delete copy.alternatives;
+  if (new_scenario_type) copy.scenario_type = new_scenario_type;
+  return copy;
+}
+
+// One trial from a natural_stimuli_v2 item and a cell
+// ('weak'|'strong' + '_with_alts'|'_no_alts').
+function make_natural_trial(item, cell) {
+  var trial = {
+    id: item.scenario_id + '_' + cell,
+    scenario_id: item.scenario_id,
+    scenario_type: cell,
+    scenario: item.scenario,
+    question: item.question,
+    observed_utterance: cell.indexOf('weak') === 0 ? item.weak_utterance : item.strong_utterance,
+    interpretations: ['Absolutely Impossible', 'Absolutely Certain'],
+    mainName: item.mainName,
+    weak_utterance: item.weak_utterance,
+    strong_utterance: item.strong_utterance,
+  };
+  if (/_with_alts$/.test(cell)) {
+    trial.alternatives = [item.weak_utterance, item.strong_utterance];
+  }
+  return trial;
+}
+
+// List `condition` = 24-item sliding window (step 6, wrapping) over the 30
+// items, i.e. 4 of the 5 blocks of 6; each item is in 4 of the 5 lists.
+// For the item at position j (0-5) of the k-th block in the window
+// (k = 0..3), cell = cells[(j + 3 - k) % cells.length]. Here 3 - k is the
+// item's rank among the lists that contain it. Used for design=1 (4 cells):
+//   - per list: exactly balanced (6 per cell)
+//   - per item, across its 4 lists: each cell exactly once, so every
+//     scenario x cell pair occurs in exactly one list
+function build_natural_batch(condition, cells) {
+  var pool = natural_stimuli_v2;
+  if (pool.length !== NUM_CONDITIONS * BLOCK || BATCH_SIZE % BLOCK !== 0) {
+    throw new Error("Natural batch layout expects " + NUM_CONDITIONS * BLOCK + " items, got " + pool.length);
+  }
+  var nBlocks = BATCH_SIZE / BLOCK;
+  var batch = [];
+  for (var p = 0; p < BATCH_SIZE; p++) {
+    var k = Math.floor(p / BLOCK), j = p % BLOCK;
+    var item = pool[(condition * BLOCK + p) % pool.length];
+    batch.push(make_natural_trial(item, cells[(j + (nBlocks - 1 - k)) % cells.length]));
+  }
+  return batch;
+}
+
+// design=0: list `condition` (0/1) has all 30 items; item i gets U1 if
+// (i + condition) is even, else U2. The two lists are complements.
+function build_no_alts_batch(condition) {
+  return natural_stimuli_v2.map(function (item, i) {
+    return make_natural_trial(item, NATURAL_CELLS_NO_ALTS[(i + condition) % 2]);
+  });
+}
+
 function init() {
   // Initialize the collected data
   exp.trials = [];
   exp.catch_trials = [];
-  // Get the stimuli using the URL parameters
-  // condition (0-4) selects the batch; there is no separate batch parameter
+  // Get the stimuli using the URL parameters:
+  //   design    -- 1 = alternatives shown in half the items (default), 0 = never shown
+  //   condition -- list / batch index (0-4 for design 1, 0-1 for design 0)
+  var design = parseInt(get_url_param("design", 1));
+  if (design !== 0 && design !== 1) {
+    throw new Error("design must be 0 (no alternatives) or 1 (alternatives), got '" + get_url_param("design", 1) + "'");
+  }
   var condition = parseInt(get_url_param("condition", 0)); // Which batch / condition (0-4)
-  exp.example_stimuli = examples_gradable_meanings;
-  // Coin flip: group A = loud_no_alts + rude_with_alts, group B = loud_with_alts + rude_no_alts
-  var warmup_coin = Math.random() < 0.5;
-  exp.warmup_stimuli = warmup_coin
-    ? [warm_ups_gradable_meanings.loud_no_alts, warm_ups_gradable_meanings.rude_with_alts]
-    : [warm_ups_gradable_meanings.loud_with_alts, warm_ups_gradable_meanings.rude_no_alts];
-  exp.stimuli = main_stimuli_gradable_meanings[condition];
-  exp.stimuli = exp.stimuli.concat(quality_checks_gradable_meanings);
+  var nConditions = NUM_CONDITIONS_BY_DESIGN[design];
+  if (!(condition >= 0 && condition < nConditions)) {
+    throw new Error("condition must be an integer in [0, " + (nConditions - 1) + "] for design " + design + ", got '" + get_url_param("condition", 0) + "'");
+  }
+  exp.design = design;
+  if (design === 1) {
+    exp.example_stimuli = examples_gradable_meanings.slice();
+    // Coin flip: group A = loud_no_alts + rude_with_alts, group B = loud_with_alts + rude_no_alts
+    var warmup_coin = Math.random() < 0.5;
+    exp.warmup_stimuli = warmup_coin
+      ? [warm_ups_gradable_meanings.loud_no_alts, warm_ups_gradable_meanings.rude_with_alts]
+      : [warm_ups_gradable_meanings.loud_with_alts, warm_ups_gradable_meanings.rude_no_alts];
+    exp.stimuli = build_natural_batch(condition, NATURAL_CELLS_ALL)
+      .concat(quality_checks_gradable_meanings);
+    exp.phenomenon = "gradable_meanings"; // Store the phenomenon for later use
+  } else {
+    // No alternatives anywhere: examples, warm-ups and quality checks included.
+    exp.example_stimuli = examples_gradable_meanings.map(function (e) { return strip_alternatives(e); });
+    exp.warmup_stimuli = [warm_ups_gradable_meanings.loud_no_alts, warm_ups_gradable_meanings.rude_no_alts];
+    exp.stimuli = build_no_alts_batch(condition)
+      .concat(quality_checks_gradable_meanings.map(function (q) {
+        return q.alternatives ? strip_alternatives(q, 'quality_no_alts') : q;
+      }));
+    exp.phenomenon = "gradable_meanings_no_alts";
+  }
+  // A participant must never see the same scenario twice (e.g. once with U1
+  // and once with U2).
+  var scenarioIds = exp.stimuli.map(function (s) { return s.scenario_id || s.id; });
+  if (_.uniq(scenarioIds).length !== scenarioIds.length) {
+    throw new Error("Duplicate scenario in stimulus list for design " + design + ", condition " + condition);
+  }
   // Shuffle the order of the stimuli
-  exp.phenomenon = "gradable_meanings"; // Store the phenomenon for later use
   exp.condition = condition; // Store the condition / batch index (0-4)
   exp.batch_index = condition; // Keep batch_index in logged data for consistency
   exp.example_stimuli = shuffle_stimuli(exp.example_stimuli);
