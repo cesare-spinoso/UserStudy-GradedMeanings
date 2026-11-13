@@ -81,7 +81,11 @@ def newer_sibling(path):
 
 
 def norm(v):
-    return v.strip() if isinstance(v, str) else v
+    # A blank CSV cell and a JS null both mean "no value" (e.g. a missing U0).
+    if isinstance(v, str):
+        v = v.strip()
+        return v if v else None
+    return v
 
 
 def check_stimuli(exp_dir, mapping_path, source_paths):

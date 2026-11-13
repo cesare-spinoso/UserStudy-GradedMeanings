@@ -1,0 +1,35 @@
+{
+  "description": "How the main stimuli in js/natural_stimuli_v4.js map onto the source CSVs in modulating_beliefs_via_alternatives/src/data. Used by launch/launch.py. (v4: used by design=3.)",
+  "js_file": "js/natural_stimuli_v4.js",
+  "js_variable": "natural_stimuli_v4",
+  "js_key": "scenario_id",
+  "sources": {
+    "alternatives_v4.csv": {
+      "key": "id",
+      "fields": {
+        "Context": "scenario",
+        "Speaker": "mainName",
+        "U0": "u0_utterance",
+        "U1": "weak_utterance",
+        "U2": "strong_utterance",
+        "Question": "question_template"
+      }
+    },
+    "belief_verbalizations.csv": {
+      "key": "id",
+      "fields": {
+        "Belief": "belief"
+      }
+    }
+  },
+  "derived": [
+    {
+      "js_field": "question",
+      "fill_template": {
+        "template_column": "Question",
+        "placeholder": "{}",
+        "fill_column": "Belief"
+      }
+    }
+  ]
+}
