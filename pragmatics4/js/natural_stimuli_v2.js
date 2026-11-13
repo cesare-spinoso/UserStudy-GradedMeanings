@@ -9,9 +9,9 @@
 var natural_stimuli_source = {
   "alternatives_file": "alternatives_v2.csv",
   "alternatives_version": 2,
-  "alternatives_sha256": "f064029e9edfa7c61cb77f84470f8f4d6533cabf4a15863ce6cfb210574513ad",
+  "alternatives_sha256": "59ebf50d0a0e9464f6138d0795b9d01588fecb32034f4887cbaed3f78030726f",
   "beliefs_file": "belief_verbalizations.csv",
-  "beliefs_sha256": "3e354058cb44084598effe151d9207aae68cb2ff34ea6c5fa846dfd4649e5956"
+  "beliefs_sha256": "aaa0480abf56ce017485f75f0b28868f73f4a838ee2d5e423c3b28917dc670c1"
 };
 
 var natural_stimuli_v2 = [

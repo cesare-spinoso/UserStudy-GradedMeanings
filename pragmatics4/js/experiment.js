@@ -240,7 +240,9 @@ function make_slides(f) {
       scenario_type: stim.scenario_type || null,
       condition: condition,
       design: exp.design,
-      natural_stimuli_version: (typeof natural_stimuli_source !== 'undefined') ? natural_stimuli_source.alternatives_version : null,
+      natural_stimuli_version: exp.natural_stimuli_version,
+      utterance_level: stim.utterance_level || null,
+      u0_utterance: stim.u0_utterance || null,
       weak_utterance: stim.weak_utterance || null,
       strong_utterance: stim.strong_utterance || null,
       phenomenon: exp.phenomenon,
@@ -413,17 +415,24 @@ function shuffle_stimuli(stimuli) {
 //             scenarios, each with U1 (weak) and no alternatives; everyone
 //             sees the same 30 + 4 quality checks. Examples / warm-ups /
 //             quality checks are alternative-free, as in design=0.
+//   design=3  U0/U1/U2 pilot (alternatives_v4): 3 lists (condition 0-2) over
+//             the first 3 v4 items; item i gets U[(i + condition) % 3], so
+//             list 0 = U0,U1,U2, list 1 = U1,U2,U0, list 2 = U2,U0,U1. No
+//             alternatives anywhere; only 2 quality checks (apple, TV).
 //
 // In designs 0 and 1 every scenario x cell pair occurs in exactly one list
 // (no pair is collected in two lists). In every design, no participant sees a
 // scenario twice.
 //
 // Main items come from natural_stimuli_v2 (generated from alternatives_v2.csv
-// by scripts/sync_natural_stimuli.py). The legacy hand-written batches
+// by scripts/sync_natural_stimuli.py); design=3 uses natural_stimuli_v4. The legacy hand-written batches
 // (main_stimuli_gradable_meanings) are no longer used.
 
 var NUM_CONDITIONS = 5;                        // lists in design=1
-var NUM_CONDITIONS_BY_DESIGN = { 0: 2, 1: NUM_CONDITIONS, 2: 1 };
+var NUM_CONDITIONS_BY_DESIGN = { 0: 2, 1: NUM_CONDITIONS, 2: 1, 3: 3 };
+var PILOT_NUM_ITEMS = 3;                       // design=3: first 3 v4 items
+var PILOT_LEVELS = ['U0', 'U1', 'U2'];
+var PILOT_QUALITY_CHECK_IDS = ['quality_checks_q7_no_alts', 'quality_checks_q9_no_alts'];
 var BLOCK = 6;           // window step; the 30 items form 5 blocks of 6
 var BATCH_SIZE = 24;     // scenarios per participant
 
@@ -489,6 +498,29 @@ function build_no_alts_batch(condition) {
   });
 }
 
+// design=3: first PILOT_NUM_ITEMS v4 items; item i gets U[(i + condition) % 3].
+function build_u0_pilot_batch(condition) {
+  return natural_stimuli_v4.slice(0, PILOT_NUM_ITEMS).map(function (item, i) {
+    var level = PILOT_LEVELS[(i + condition) % PILOT_LEVELS.length];
+    var utterance = { U0: item.u0_utterance, U1: item.weak_utterance, U2: item.strong_utterance }[level];
+    if (!utterance) throw new Error(item.scenario_id + " has no " + level + " utterance in alternatives_v4");
+    return {
+      id: item.scenario_id + '_' + level,
+      scenario_id: item.scenario_id,
+      scenario_type: level + '_no_alts',
+      utterance_level: level,
+      scenario: item.scenario,
+      question: item.question,
+      observed_utterance: utterance,
+      interpretations: ['Absolutely Impossible', 'Absolutely Certain'],
+      mainName: item.mainName,
+      u0_utterance: item.u0_utterance,
+      weak_utterance: item.weak_utterance,
+      strong_utterance: item.strong_utterance,
+    };
+  });
+}
+
 // design=2: every item with U1 (weak), no alternatives.
 function build_weak_only_batch() {
   return natural_stimuli_v2.map(function (item) {
@@ -502,12 +534,13 @@ function init() {
   exp.catch_trials = [];
   // Get the stimuli using the URL parameters:
   //   design    -- 1 = alternatives shown in half the items (default),
-  //                0 = never shown (U1 or U2), 2 = never shown (U1 only)
+  //                0 = never shown (U1 or U2), 2 = never shown (U1 only),
+  //                3 = U0/U1/U2 pilot (v4, 3 items, never shown)
   //   condition -- list / batch index (0-4 for design 1, 0-1 for design 0,
-  //                0 for design 2)
+  //                0 for design 2, 0-2 for design 3)
   var design = parseInt(get_url_param("design", 1));
   if (!NUM_CONDITIONS_BY_DESIGN.hasOwnProperty(design)) {
-    throw new Error("design must be 0 (no alternatives), 1 (alternatives) or 2 (weak utterance only), got '" + get_url_param("design", 1) + "'");
+    throw new Error("design must be 0 (no alternatives), 1 (alternatives), 2 (weak utterance only) or 3 (U0/U1/U2 pilot), got '" + get_url_param("design", 1) + "'");
   }
   var condition = parseInt(get_url_param("condition", 0)); // Which batch / condition (0-4)
   var nConditions = NUM_CONDITIONS_BY_DESIGN[design];
@@ -515,6 +548,8 @@ function init() {
     throw new Error("condition must be an integer in [0, " + (nConditions - 1) + "] for design " + design + ", got '" + get_url_param("condition", 0) + "'");
   }
   exp.design = design;
+  exp.natural_stimuli_version = design === 3 ? natural_stimuli_v4_source.alternatives_version
+                                             : natural_stimuli_source.alternatives_version;
   if (design === 1) {
     exp.example_stimuli = examples_gradable_meanings.slice();
     // Coin flip: group A = loud_no_alts + rude_with_alts, group B = loud_with_alts + rude_no_alts
@@ -529,11 +564,20 @@ function init() {
     // No alternatives anywhere: examples, warm-ups and quality checks included.
     exp.example_stimuli = examples_gradable_meanings.map(function (e) { return strip_alternatives(e); });
     exp.warmup_stimuli = [warm_ups_gradable_meanings.loud_no_alts, warm_ups_gradable_meanings.rude_no_alts];
-    exp.stimuli = (design === 2 ? build_weak_only_batch() : build_no_alts_batch(condition))
-      .concat(quality_checks_gradable_meanings.map(function (q) {
+    var quality_checks = quality_checks_gradable_meanings;
+    var main_batch;
+    if (design === 3) {
+      quality_checks = quality_checks.filter(function (q) { return PILOT_QUALITY_CHECK_IDS.indexOf(q.id) !== -1; });
+      if (quality_checks.length !== PILOT_QUALITY_CHECK_IDS.length) throw new Error("Missing design=3 quality checks");
+      main_batch = build_u0_pilot_batch(condition);
+    } else {
+      main_batch = design === 2 ? build_weak_only_batch() : build_no_alts_batch(condition);
+    }
+    exp.stimuli = main_batch
+      .concat(quality_checks.map(function (q) {
         return q.alternatives ? strip_alternatives(q, 'quality_no_alts') : q;
       }));
-    exp.phenomenon = design === 2 ? "gradable_meanings_weak_only" : "gradable_meanings_no_alts";
+    exp.phenomenon = { 0: "gradable_meanings_no_alts", 2: "gradable_meanings_weak_only", 3: "gradable_meanings_u0_pilot" }[design];
   }
   // A participant must never see the same scenario twice (e.g. once with U1
   // and once with U2).

@@ -8,7 +8,7 @@ function start_instructions_html(condition) {
     <strong>Study structure:</strong> First you'll see two <strong>example scenarios</strong>. Then you'll complete two <strong>warm‑up scenarios</strong> using the slider. After that you'll rate <strong>${exp.stimuli.length} study scenarios</strong>, each time moving the slider to the position that best reflects how likely you believe the statement is.
     </p>
     <p>
-    Expected duration: 10-15 minutes.
+    Expected duration: ${exp.design === 3 ? "3-5" : "10-15"} minutes.
     </p>`;
     return common_instructions_html
 }
